@@ -13,7 +13,7 @@ function hasLength(str) {
 }
 
 function hasNumber(str) {
-    return (/\d/.test(str));
+    return /\d/.test(str);
 }
 
 function validateForm(event, state) {

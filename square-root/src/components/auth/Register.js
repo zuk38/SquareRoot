@@ -65,6 +65,7 @@ class Register extends Component {
           <FormErrors formerrors={this.state.errors} />
 
           <form onSubmit={this.handleSubmit}>
+              
             <div className="field">
               <p className="control has-icons-left has-icons-right">
                 <input
