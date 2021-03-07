@@ -1,57 +1,72 @@
 const passLength = 8;
 
-function validatePass(str) {
-    return str.toUpperCase() != str && str.toLowerCase() != str && /\d+/g.test(str) && str.length >= passLength;
+function hasUpperCase(str) {
+  return str.toLowerCase() != str;
+}
+
+function hasLowerCase(str) {
+  return str.toUpperCase() != str;
+}
+
+function hasLength(str) {
+  return str.length >= passLength;
+}
+
+function hasNumber(str) {
+    return (/\d/.test(str));
 }
 
 function validateForm(event, state) {
+  // clear all error messages
+  const inputs = document.getElementsByClassName("is-danger");
+  for (let i = 0; i < inputs.length; i++) {
+    if (!inputs[i].classList.contains("error")) {
+      inputs[i].classList.remove("is-danger");
+    }
+  }
 
-    // clear all error messages
-    const inputs = document.getElementsByClassName("is-danger");
-    for (let i = 0; i < inputs.length; i++) {
-      if (!inputs[i].classList.contains("error")) {
-        inputs[i].classList.remove("is-danger");
-      }
-    }
-  
-    if (state.hasOwnProperty("firstname") && state.firstname === "") {
-      document.getElementById("firstname").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    if (state.hasOwnProperty("lastname") && state.lastname === "") {
-      document.getElementById("lastname").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    if (state.hasOwnProperty("email") && state.email === "") {
-      document.getElementById("email").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    if (
-      state.hasOwnProperty("verificationcode") &&
-      state.verificationcode === ""
-    ) {
-      document.getElementById("verificationcode").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    if (state.hasOwnProperty("password") && state.password === "" && validatePass(state.password)) {
-      document.getElementById("password").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    if (state.hasOwnProperty("confirmpassword") && state.confirmpassword === "" && validatePass(state.confirmpassword)) {
-      document.getElementById("confirmpassword").classList.add("is-danger");
-      return { blankfield: true };
-    }
-    //do passwords match?
-    if (
-      state.hasOwnProperty("password") &&
-      state.hasOwnProperty("confirmpassword") &&
-      state.password !== state.confirmpassword
-    ) {
-      document.getElementById("password").classList.add("is-danger");
-      document.getElementById("confirmpassword").classList.add("is-danger");
-      return { passwordmatch: true };
-    }
-    return;
+  if (state.hasOwnProperty("email") && state.email === "") {
+    document.getElementById("email").classList.add("is-danger");
+    return { blankField: true };
+  }
+
+  if (state.hasOwnProperty("password") && state.password === "") {
+    document.getElementById("password").classList.add("is-danger");
+    return { blankField: true };
+  }
+  if (!hasLength(state.password)) {
+    document.getElementById("password").classList.add("is-danger");
+    return { tooShort: true };
   }
   
-  export default validateForm;
+  if (!hasUpperCase(state.password)) {
+    document.getElementById("password").classList.add("is-danger");
+    return { noUpperCase: true };
+  }
+  if (!hasLowerCase(state.password)) {
+    document.getElementById("password").classList.add("is-danger");
+    return { noLowerCase: true };
+  }
+  /*if (!hasNumber(state.password)) {
+    document.getElementById("password").classList.add("is-danger");
+    return { noNumnber: true };
+  }*/
+  if (
+    state.hasOwnProperty("confirmPassword") && state.confirmPassword === "") {
+    document.getElementById("confirmPassword").classList.add("is-danger");
+    return { blankField: true };
+  }
+  //do passwords match?
+  if (
+    state.hasOwnProperty("password") &&
+    state.hasOwnProperty("confirmPassword") &&
+    state.password !== state.confirmPassword
+  ) {
+    document.getElementById("password").classList.add("is-danger");
+    document.getElementById("confirmPassword").classList.add("is-danger");
+    return { passwordsNoMatch: true };
+  }
+  return;
+}
+
+export default validateForm;
