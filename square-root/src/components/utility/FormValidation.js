@@ -1,3 +1,9 @@
+const passLength = 8;
+
+function validatePass(str) {
+    return str.toUpperCase() != str && str.toLowerCase() != str && /\d+/g.test(str) && str.length >= passLength;
+}
+
 function validateForm(event, state) {
 
     // clear all error messages
@@ -27,11 +33,11 @@ function validateForm(event, state) {
       document.getElementById("verificationcode").classList.add("is-danger");
       return { blankfield: true };
     }
-    if (state.hasOwnProperty("password") && state.password === "") {
+    if (state.hasOwnProperty("password") && state.password === "" && validatePass(state.password)) {
       document.getElementById("password").classList.add("is-danger");
       return { blankfield: true };
     }
-    if (state.hasOwnProperty("confirmpassword") && state.confirmpassword === "") {
+    if (state.hasOwnProperty("confirmpassword") && state.confirmpassword === "" && validatePass(state.confirmpassword)) {
       document.getElementById("confirmpassword").classList.add("is-danger");
       return { blankfield: true };
     }
