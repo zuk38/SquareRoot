@@ -1,1 +1,10 @@
-{}
+{
+  "auth": {
+    "squarerootprojectb6eb2ed2": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
