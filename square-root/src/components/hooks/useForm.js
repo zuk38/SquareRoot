@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 const useForm = (callback, validate) => {
   const [values, setValues] = useState({});
-  const [errors, setErrors] = useState('');
+  const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
@@ -17,10 +17,13 @@ const useForm = (callback, validate) => {
     setIsSubmitting(true);
   };
 
-  const handleChange = event => {
+  const handleChange = (event) => {
     event.persist();
-    setValues(values => ({ ...values, [event.target.name]: event.target.value }));  //update & validate
-    setErrors(validate(values));  //update errors
+    setValues(values => ({ ...values, [event.target.id]: event.target.value }));  //update & validate
+    setValues((values) => {
+      setErrors(validate(values));  //update errors
+      return values;
+    });    
   };
 
   return {

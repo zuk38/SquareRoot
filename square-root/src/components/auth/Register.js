@@ -19,10 +19,10 @@ const Register = () => {
               {/*Email field */}
               <div className="field">
                 <label className="label">Email Address</label>
-                <div className="control has-icons-left">
+                <div className="control has-icons-left has-icons-right">
                   <input
                     autoComplete="off"
-                    className={`input ${errors.email && "is-danger"}`}
+                    className="input"
                     type="email"
                     name="email"
                     id="email"
@@ -33,6 +33,9 @@ const Register = () => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
+                  <span class="icon is-small is-right">
+                    <i id="emailCheckIcon" class="fas fa-exclamation-triangle"></i>
+                  </span>
                   {errors.email && (
                     <p className="help is-danger">{errors.email}</p>
                   )}
@@ -41,11 +44,12 @@ const Register = () => {
               {/*Password field */}
               <div className="field">
                 <label className="label">Password</label>
-                <div className="control has-icons-left">
+                <div className="control has-icons-left has-icons-right">
                   <input
-                    className={`input ${errors.password && "is-danger"}`}
+                    className="input"
                     type="password"
                     name="password"
+                    id="password"
                     onChange={handleChange}
                     value={values.password || ""}
                     required
@@ -53,7 +57,10 @@ const Register = () => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
-                </div>                
+                  <span class="icon is-small is-right">
+                    <i id="passwordCheckIcon" class="fas fa-exclamation-triangle"></i>
+                  </span>
+                </div>
                 {errors.password && (
                   <p className="help is-danger">{errors.password}</p>
                 )}
@@ -61,11 +68,12 @@ const Register = () => {
               {/*Conf Password field */}
               <div className="field">
                 <label className="label">Confirm password</label>
-                <div className="control has-icons-left">
+                <div className="control has-icons-left has-icons-right">
                   <input
-                    className={`input ${errors.confirmPassword && "is-danger"}`}
+                    className="input"
                     type="password"
-                    name="password"
+                    name="confPassword"
+                    id="confirmPassword"
                     onChange={handleChange}
                     value={values.confirmPassword || ""}
                     required
@@ -73,14 +81,19 @@ const Register = () => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
+                  <span class="icon is-small is-right">
+                    <i id="confPassCheckIcon" class="fas fa-exclamation-triangle"></i>
+                  </span>
                 </div>
                 {errors.confirmPassword && (
                   <p className="help is-danger">{errors.confirmPassword}</p>
                 )}
               </div>
               <button
-                type="submit"
-                className="button is-block is-info is-fullwidth"
+                type="register"
+                className="button is-light"
+                disabled={true}
+                id="registerBtn"
               >
                 Register
               </button>
