@@ -131,7 +131,7 @@ class Register extends Component {
 
 export default Register;*/
 
-import useForm from "./useForm";
+import useForm from "../hooks/useForm";
 import React from "react";
 import validate from "../utility/FormValidation";
 
