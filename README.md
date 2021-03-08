@@ -10,7 +10,7 @@ A github repo for the squareroot-oslomet student-project
 2. Clone the repo
 
   ```
-  git clone git@github.com:<username>/squarerootstudprojectrepo.git
+  git clone https://github.com/SquareRootOsloMet/SquareRootProject.git
 
   cd square-root && npm install
   ```
