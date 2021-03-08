@@ -8,6 +8,7 @@ const Register = () => {
     validate
   );
   function register() {
+    //callback called, no errors - cognito integration here
     console.log(values);
   }
   return (

@@ -9,6 +9,7 @@ function hasLowerCase(str) {
 }
 
 function hasNumber(str) {
+  console.log(/\d/.test(str))
   return /\d/.test(str);
 }
 
@@ -66,18 +67,18 @@ export default function validate(values) {
   } else if (!hasUpperCase(values.password)) {
     errors.password = "Password must have uppercase letters";
     passValidated = false;
-  } else if (hasNumber(values.password)) {
-    errors.password = "Password must have lowercase letters";
+  } else if (!hasNumber(values.password)) {
+    errors.password = "Password must have digits";
     passValidated = false;
   } else {
     passValidated = true;
   }
 
   if (!values.confirmPassword) {
-    errors.confirmPassword = "Password is required";
+    errors.confirmPassword = "Password confirmation is required";
     confPassValidated = false;
   } else if (values.password !== values.confirmPassword) {
-    errors.confirmPassword = "Password do not match";
+    errors.confirmPassword = "Passwords do not match";
     confPassValidated = false;
   } else {
     confPassValidated = true;
