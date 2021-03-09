@@ -1,15 +1,31 @@
 import useForm from "../hooks/useForm";
 import React from "react";
 import validate from "../utility/LoginFormValidation";
+import { Auth } from "aws-amplify";
 
 const Login = () => {
   const { values, handleChange, errors, handleSubmit } = useForm(
     login,
     validate
   );
-  function login() {
+  async function login() {
     //callback called, no errors - cognito integration here
     console.log(values);
+    const { email, password } = values;
+    try {
+      const signInResponse = await Auth.signIn({
+        username: email,
+        password: password
+      })
+      console.log(signInResponse)
+    } catch (error) {
+      console.log("error signing in", error);
+      let err = null;
+      !error.message ? err = { "message": error} : err = error;
+      errors.cognito = err;
+      console.log(errors.cognito)
+      alert(errors.cognito.message)
+    }
   }
   return (
     <div className="section is-fullheight">
@@ -34,7 +50,10 @@ const Login = () => {
                     <i class="fas fa-envelope"></i>
                   </span>
                   <span class="icon is-small is-right">
-                    <i id="emailCheckIcon" class="fas fa-exclamation-triangle"></i>
+                    <i
+                      id="emailCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
                   </span>
                   {errors.email && (
                     <p className="help is-danger">{errors.email}</p>
@@ -58,14 +77,17 @@ const Login = () => {
                     <i class="fas fa-lock"></i>
                   </span>
                   <span class="icon is-small is-right">
-                    <i id="passwordCheckIcon" class="fas fa-exclamation-triangle"></i>
+                    <i
+                      id="passwordCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
                   </span>
                 </div>
                 {errors.password && (
                   <p className="help is-danger">{errors.password}</p>
                 )}
               </div>
-              
+
               <button
                 type="login"
                 className="button is-block is-info is-fullwidth"

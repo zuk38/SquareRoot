@@ -2,7 +2,6 @@ import useForm from "../hooks/useForm";
 import React from "react";
 import validate from "../utility/RegistrationFormValidation";
 import { Auth } from "aws-amplify";
-import  { Redirect } from 'react-router-dom'
 
 function redirect() {
   this.props.history.push('/welcome')
