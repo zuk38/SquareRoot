@@ -1,6 +1,6 @@
 import useForm from "../hooks/useForm";
 import React from "react";
-import validate from "../utility/FormValidation";
+import validate from "../utility/RegistrationFormValidation";
 
 const Register = () => {
   const { values, handleChange, errors, handleSubmit } = useForm(
