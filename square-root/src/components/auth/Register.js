@@ -29,13 +29,17 @@ const Register = () => {
                     id="email"
                     onChange={handleChange}
                     value={values.email || ""}
+                    placeholder="Enter email address"
                     required
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-envelope"></i>
                   </span>
                   <span class="icon is-small is-right">
-                    <i id="emailCheckIcon" class="fas fa-exclamation-triangle"></i>
+                    <i
+                      id="emailCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
                   </span>
                   {errors.email && (
                     <p className="help is-danger">{errors.email}</p>
@@ -53,13 +57,17 @@ const Register = () => {
                     id="password"
                     onChange={handleChange}
                     value={values.password || ""}
+                    placeholder="Enter password"
                     required
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
                   <span class="icon is-small is-right">
-                    <i id="passwordCheckIcon" class="fas fa-exclamation-triangle"></i>
+                    <i
+                      id="passwordCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
                   </span>
                 </div>
                 {errors.password && (
@@ -77,18 +85,51 @@ const Register = () => {
                     id="confirmPassword"
                     onChange={handleChange}
                     value={values.confirmPassword || ""}
+                    placeholder="Confirm password"
                     required
                   />
                   <span class="icon is-small is-left">
                     <i class="fas fa-lock"></i>
                   </span>
                   <span class="icon is-small is-right">
-                    <i id="confPassCheckIcon" class="fas fa-exclamation-triangle"></i>
+                    <i
+                      id="confPassCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
                   </span>
                 </div>
                 {errors.confirmPassword && (
                   <p className="help is-danger">{errors.confirmPassword}</p>
                 )}
+              </div>
+              {/*Phone number field */}
+              <div className="field">
+                <label className="label">Phone Number</label>
+                <div className="control has-icons-left has-icons-right">
+                  <input
+                    autoComplete="off"
+                    className="input"
+                    type="phone"
+                    name="phone"
+                    id="phone"
+                    onChange={handleChange}
+                    value={values.phone || ""}
+                    placeholder="+47123456789"
+                    required
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-phone"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i
+                      id="phoneCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
+                  </span>
+                  {errors.phone && (
+                    <p className="help is-danger">{errors.phone}</p>
+                  )}
+                </div>
               </div>
               <button
                 type="register"
