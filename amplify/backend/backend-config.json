@@ -1,6 +1,6 @@
 {
   "auth": {
-    "squarerootprojectb6eb2ed2": {
+    "squarerootprojectc2c171e9": {
       "service": "Cognito",
       "providerPlugin": "awscloudformation",
       "dependsOn": [],

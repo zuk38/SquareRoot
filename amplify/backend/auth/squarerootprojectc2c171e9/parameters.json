@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "squarerootprojectb6eb2ed2_identitypool_b6eb2ed2",
+    "identityPoolName": "squarerootprojectc2c171e9_identitypool_c2c171e9",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "squareb6eb2ed2",
-    "userPoolName": "squarerootprojectb6eb2ed2_userpool_b6eb2ed2",
+    "resourceNameTruncated": "squarec2c171e9",
+    "userPoolName": "squarerootprojectc2c171e9_userpool_c2c171e9",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -22,22 +22,24 @@
         "Requires Numbers"
     ],
     "requiredAttributes": [
-        "email"
+        "email",
+        "phone_number"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-        "email"
+        "email",
+        "phone_number"
     ],
     "userpoolClientReadAttributes": [
         "email",
         "phone_number",
         "email_verified"
     ],
-    "userpoolClientLambdaRole": "squareb6eb2ed2_userpoolclient_lambda_role",
+    "userpoolClientLambdaRole": "squarec2c171e9_userpoolclient_lambda_role",
     "userpoolClientSetAttributes": true,
-    "sharedId": "b6eb2ed2",
-    "resourceName": "squarerootprojectb6eb2ed2",
+    "sharedId": "c2c171e9",
+    "resourceName": "squarerootprojectc2c171e9",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -55,18 +57,18 @@
     "usernameAttributes": [
         "email"
     ],
+    "triggers": "{}",
     "userPoolGroupList": [],
     "serviceName": "Cognito",
     "usernameCaseSensitive": false,
-    "dependsOn": [],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "triggers": "{}",
-    "hostedUI": false,
     "parentStack": {
         "Ref": "AWS::StackId"
     },
     "permissions": [],
+    "dependsOn": [],
+    "thirdPartyAuth": false,
+    "userPoolGroups": false,
+    "adminQueries": false,
+    "hostedUI": false,
     "authProviders": []
 }
