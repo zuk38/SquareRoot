@@ -92,7 +92,7 @@ const Register = () => {
               </div>
               <button
                 type="register"
-                className="button is-light"
+                className="button is-block is-info is-fullwidth"
                 disabled={true}
                 id="registerBtn"
               >

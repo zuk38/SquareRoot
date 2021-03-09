@@ -68,7 +68,7 @@ const Login = () => {
               
               <button
                 type="login"
-                className="button is-light"
+                className="button is-block is-info is-fullwidth"
                 disabled={true}
                 id="loginBtn"
               >
