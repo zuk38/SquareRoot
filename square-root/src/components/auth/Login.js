@@ -3,7 +3,7 @@ import React from "react";
 import validate from "../utility/LoginFormValidation";
 import { Auth } from "aws-amplify";
 
-const Login = () => {
+const Login = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
     login,
     validate
@@ -13,11 +13,15 @@ const Login = () => {
     console.log(values);
     const { email, password } = values;
     try {
-      const signInResponse = await Auth.signIn({
+      const user = await Auth.signIn({
         username: email,
         password: password
       })
-      console.log(signInResponse)
+      console.log(user)
+      //set user in the navbar
+      props.auth.setAuthStatus(true);
+      props.auth.setUser(user);
+      //props.history.push('/') home page?
     } catch (error) {
       console.log("error signing in", error);
       let err = null;
