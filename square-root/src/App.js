@@ -3,6 +3,9 @@ import "./App.sass";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
+import ForgotPassword from "./components/auth/ForgotPassword";
+import ForgotPasswordVerification from "./components/auth/ForgotPassVerification";
+import ChangePasswordConfirm from "./components/auth/ChangePassConfirm";
 import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
 import { Auth } from "aws-amplify";
@@ -78,6 +81,21 @@ class App extends Component {
                 exact
                 path="/welcome"
                 render={(props) => <Welcome {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/forgotpassword" 
+                render={(props) => <ForgotPassword {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/forgotpasswordverification" 
+                render={(props) => <ForgotPasswordVerification {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/changepasswordconfirmation" 
+                render={(props) => <ChangePasswordConfirm {...props} auth={authProps} />}
               />
             </Switch>
           </div>

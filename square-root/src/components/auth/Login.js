@@ -15,9 +15,9 @@ const Login = (props) => {
     try {
       const user = await Auth.signIn({
         username: email,
-        password: password
-      })
-      console.log(user)
+        password: password,
+      });
+      console.log(user);
       //set user in the navbar
       props.auth.setAuthStatus(true);
       props.auth.setUser(user);
@@ -25,10 +25,10 @@ const Login = (props) => {
     } catch (error) {
       console.log("error signing in", error);
       let err = null;
-      !error.message ? err = { "message": error} : err = error;
+      !error.message ? (err = { message: error }) : (err = error);
       errors.cognito = err;
-      console.log(errors.cognito)
-      alert(errors.cognito.message)
+      console.log(errors.cognito);
+      alert(errors.cognito.message);
     }
   }
   return (
@@ -91,7 +91,11 @@ const Login = (props) => {
                   <p className="help is-danger">{errors.password}</p>
                 )}
               </div>
-
+              <div className="field">
+                <p className="control">
+                  <a href="/forgotpassword">Forgot password?</a>
+                </p>
+              </div>
               <button
                 type="login"
                 className="button is-block is-info is-fullwidth"
