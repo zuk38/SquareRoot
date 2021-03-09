@@ -18,6 +18,11 @@ function validateRegexString(email) {
   return regexString.test(String(email).toLowerCase()); // true|false
 }
 
+function validatePhone(phone) {
+  const phoneRegex = /^\+[1-9]{1}[0-9]{1,14}$/;
+  return phoneRegex.test(String(phone)); // true|false
+}
+
 function changeIcons(boolean, input, icon) {
   if (boolean) {
     input.classList.remove("is-danger");
@@ -40,9 +45,12 @@ export default function validate(values) {
   let iconPassword = document.getElementById("passwordCheckIcon");
   let inputConfPassword = document.getElementById("confirmPassword");
   let iconConfPassword = document.getElementById("confPassCheckIcon");
+  let inputPhone = document.getElementById("phone");
+  let iconPhone = document.getElementById("phoneCheckIcon");
   let emailValidated = false;
   let passValidated = false;
   let confPassValidated = false;
+  let phoneValidated = false;
   let registerBtn = document.getElementById("registerBtn");
 
   if (!values.email) {
@@ -84,13 +92,24 @@ export default function validate(values) {
     confPassValidated = true;
   }
 
+  if (!values.phone) {
+    errors.phone = "Phone number is required";
+    phoneValidated = false;
+  } else if (!validatePhone(values.phone)) {
+    errors.phone = "Invalid phone number";
+    phoneValidated = false;
+  } else {
+    phoneValidated = true;
+  }
+
   //if (values.apierrors) {
   //}
   changeIcons(emailValidated, inputEmail, iconEmail);
   changeIcons(passValidated, inputPassword, iconPassword);
   changeIcons(confPassValidated, inputConfPassword, iconConfPassword);
+  changeIcons(phoneValidated, inputPhone, iconPhone);
 
-  if (emailValidated && passValidated && confPassValidated) {
+  if (emailValidated && passValidated && confPassValidated && phoneValidated) {
     registerBtn.disabled = false; //button is no longer no-clickable
   } else {
     registerBtn.disabled = true;
