@@ -19,7 +19,7 @@ function validateRegexString(email) {
 }
 
 function validatePhone(phone) {
-  const phoneRegex = /^\+[1-9]{1}[0-9]{1,14}$/;
+  const phoneRegex = /^\+?[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
 }
 
@@ -102,8 +102,6 @@ export default function validate(values) {
     phoneValidated = true;
   }
 
-  //if (values.apierrors) {
-  //}
   changeIcons(emailValidated, inputEmail, iconEmail);
   changeIcons(passValidated, inputPassword, iconPassword);
   changeIcons(confPassValidated, inputConfPassword, iconConfPassword);

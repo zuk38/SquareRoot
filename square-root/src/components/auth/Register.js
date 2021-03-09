@@ -1,15 +1,44 @@
 import useForm from "../hooks/useForm";
 import React from "react";
 import validate from "../utility/RegistrationFormValidation";
+import { Auth } from "aws-amplify";
+import  { Redirect } from 'react-router-dom'
 
-const Register = () => {
+function redirect() {
+  this.props.history.push('/welcome')
+}
+
+const Register = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
     register,
     validate
   );
-  function register() {
+  async function register() {
     //callback called, no errors - cognito integration here
     console.log(values);
+    const {email, password, phone} = values;
+    console.log(email);
+    
+    try {
+      const signUpResponse = await Auth.signUp({
+        username: email,
+        password: password,
+        attributes: {
+          email: email,
+          phone_number: phone
+        }
+      })
+
+      console.log(signUpResponse);
+      props.history.push('/welcome')
+    } catch(error) {
+      console.log("error signing up:", error);
+      let err = null;
+      !error.message ? err = { "message": error} : err = error;
+      errors.cognito = err;
+      console.log(errors.cognito)
+      alert(errors.cognito.message)
+    }
   }
   return (
     <div className="section is-fullheight">
