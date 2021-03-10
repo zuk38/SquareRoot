@@ -71,8 +71,12 @@ export default function validate(values) {
     passValidated = true;
   }
 
-  //if (values.apierrors) {
-  //}
+  if (values.cognito) {
+    console.log("caught cognito errors");
+    errors.cognito = values.cognito.message;
+    console.log(errors)
+  }
+  
   changeIcons(emailValidated, inputEmail, iconEmail);
   changeIcons(passValidated, inputPassword, iconPassword);
 

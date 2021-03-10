@@ -5,12 +5,18 @@ import { Auth } from "aws-amplify";
 
 const Login = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
-    login,
-    validate
+    success,
+    validate,
+    login
   );
+
+  function success(user) {
+    console.log("yay")
+  }
+
   async function login() {
     //callback called, no errors - cognito integration here
-    console.log(values);
+    //console.log(values);
     const { email, password } = values;
     try {
       const user = await Auth.signIn({
@@ -26,10 +32,11 @@ const Login = (props) => {
       console.log("error signing in", error);
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
-      errors.cognito = err;
-      console.log(errors.cognito);
-      alert(errors.cognito.message);
+      values.cognito = err;
+      console.log(values.cognito);
+      //alert(errors.cognito.message);
     }
+    console.log("out of catch")
   }
   return (
     <div className="section is-fullheight">
@@ -37,6 +44,9 @@ const Login = (props) => {
         <div className="column is-4 is-offset-4">
           <div className="box">
             <form onSubmit={handleSubmit} noValidate>
+            {errors.cognito && (
+                    <p className="help is-danger">{errors.cognito}</p>
+                  )}
               {/*Email field */}
               <div className="field">
                 <label className="label">Email Address</label>

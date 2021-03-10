@@ -34,9 +34,10 @@ const Register = (props) => {
       console.log("error signing up:", error);
       let err = null;
       !error.message ? err = { "message": error} : err = error;
-      errors.cognito = err;
+      values.cognito = err;
+      /*errors.cognito = err;
       console.log(errors.cognito)
-      alert(errors.cognito.message)
+      alert(errors.cognito.message)*/
     }
   }
   return (
