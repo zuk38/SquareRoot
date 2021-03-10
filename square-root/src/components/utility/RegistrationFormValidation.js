@@ -19,7 +19,7 @@ function validateRegexString(email) {
 }
 
 function validatePhone(phone) {
-  const phoneRegex = /^\+?[1-9]\d{4,14}$/;
+  const phoneRegex = /^\+[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
 }
 
