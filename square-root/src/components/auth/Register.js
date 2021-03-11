@@ -75,6 +75,9 @@ const Register = (props) => {
                       class="fas fa-exclamation-triangle"
                     ></i>
                   </span>
+                  {errors.name && (
+                    <p className="help is-danger">{errors.name}</p>
+                  )}
                 </div>
               </div>
               {/*Email field */}

@@ -1,41 +1,8 @@
-const PASSLENGTH = 8;
-const NAMELENGTH = 8;
-
-function hasUpperCase(str) {
-  return str.toLowerCase() != str;
-}
-
-function hasLowerCase(str) {
-  return str.toUpperCase() != str;
-}
-
-function hasNumber(str) {
-  console.log(/\d/.test(str))
-  return /\d/.test(str);
-}
-
-function validateRegexString(email) {
-  const regexString = /^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$/;
-  return regexString.test(String(email).toLowerCase()); // true|false
-}
+import { checkEmail, checkPassword, checkConfPassword, checkName, changeIcons } from "./Validation"
 
 function validatePhone(phone) {
   const phoneRegex = /^\+[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
-}
-
-function changeIcons(boolean, input, icon) {
-  if (boolean) {
-    input.classList.remove("is-danger");
-    icon.classList.remove("fa-exclamation-triangle");
-    input.classList.add("is-success");
-    icon.classList.add("fa-check");
-  } else {
-    input.classList.remove("is-success");
-    icon.classList.remove("fa-check");
-    input.classList.add("is-danger");
-    icon.classList.add("fa-exclamation-triangle");
-  }
 }
 
 export default function validate(values) {
@@ -50,51 +17,12 @@ export default function validate(values) {
   let iconPhone = document.getElementById("phoneCheckIcon");
   let inputName = document.getElementById("name");
   let iconName = document.getElementById("nameCheckIcon");
-  let emailValidated = false;
-  let passValidated = false;
-  let confPassValidated = false;
+  let emailValidated = checkEmail(values, errors);
+  let passValidated = checkPassword(values, errors);
+  let confPassValidated = checkConfPassword(values, errors);
   let phoneValidated = false;
-  let nameValidated = false;
+  let nameValidated = checkName(values, errors);
   let registerBtn = document.getElementById("registerBtn");
-
-  if (!values.email) {
-    errors.email = "Email address is required";
-    emailValidated = false;
-  } else if (!validateRegexString(values.email)) {
-    errors.email = "Email address is invalid";
-    emailValidated = false;
-  } else {
-    emailValidated = true;
-  }
-
-  if (!values.password) {
-    errors.password = "Password is required";
-    passValidated = false;
-  } else if (values.password.length < PASSLENGTH) {
-    errors.password = "Password must be 8 or more characters";
-    passValidated = false;
-  } else if (!hasLowerCase(values.password)) {
-    errors.password = "Password must have lowercase letters";
-    passValidated = false;
-  } else if (!hasUpperCase(values.password)) {
-    errors.password = "Password must have uppercase letters";
-    passValidated = false;
-  } else if (!hasNumber(values.password)) {
-    errors.password = "Password must have digits";
-    passValidated = false;
-  } else {
-    passValidated = true;
-  }
-
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Password confirmation is required";
-    confPassValidated = false;
-  } else if (values.password !== values.confirmPassword) {
-    errors.confirmPassword = "Passwords do not match";
-    confPassValidated = false;
-  } else {
-    confPassValidated = true;
-  }
 
   if (!values.phone) {
     errors.phone = "Phone number is required";
@@ -104,16 +32,6 @@ export default function validate(values) {
     phoneValidated = false;
   } else {
     phoneValidated = true;
-  }
-
-  if (!values.name) {
-    errors.name = "Name is required";
-    nameValidated = false;
-  } else if (values.name > NAMELENGTH) {
-    errors.name = "Name too long";
-    nameValidated = false;
-  } else {
-    nameValidated = true;
   }
 
   if (values.cognito) {
@@ -127,7 +45,7 @@ export default function validate(values) {
     console.log(errors)
   }
 
-  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated && !errors.cognito) {
+  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated) {
     registerBtn.disabled = false; //button is no longer no-clickable
   } else {
     registerBtn.disabled = true;

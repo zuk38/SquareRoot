@@ -30,7 +30,7 @@ class App extends Component {
     });
   };
 
-  setUser = (user) => {
+  setUser = (user) => { //set the name if logged in
     this.setState({
       user: user,
     });
@@ -44,7 +44,8 @@ class App extends Component {
       this.setAuthStatus(true);
       console.log(session);
       const user = await Auth.currentAuthenticatedUser();
-      this.setUser(user);
+      const { attributes } = user;
+      this.setUser(attributes.name);
     } catch (error) {
       console.log(error);
     }
