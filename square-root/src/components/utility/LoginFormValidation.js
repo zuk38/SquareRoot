@@ -74,17 +74,19 @@ export default function validate(values) {
   if (values.cognito) {
     console.log("caught cognito errors");
     errors.cognito = values.cognito.message;
+    emailValidated = false
+    passValidated = false
     console.log(errors)
   }
-  
-  changeIcons(emailValidated, inputEmail, iconEmail);
-  changeIcons(passValidated, inputPassword, iconPassword);
 
-  if (emailValidated && passValidated) {
+  if (emailValidated && passValidated && !errors.cognito) {
     loginBtn.disabled = false; //button is no longer no-clickable
   } else {
     loginBtn.disabled = true;
   }
+
+  changeIcons(emailValidated, inputEmail, iconEmail);
+  changeIcons(passValidated, inputPassword, iconPassword);
 
   return errors;
 }

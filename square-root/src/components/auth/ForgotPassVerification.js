@@ -5,21 +5,30 @@ import { Auth } from "aws-amplify";
 
 const ForgotPassVerification = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
-    verify,
-    validate
+    callback,
+    validate,
+    verify
   );
+
+  function callback() {
+    console.log("yay");
+    props.history.push("/changepasswordconfirmation");
+  }
+
   async function verify() {
     //callback called, no errors - cognito integration here
     console.log(values);
     try {
-        await Auth.forgotPasswordSubmit(
-            values.email,
-            values.code,
-            values.password
-        );
-        props.history.push('/changepasswordconfirmation');
-    } catch(error) {
-        console.log(error);
+      await Auth.forgotPasswordSubmit(
+        values.email,
+        values.code,
+        values.password
+      );
+    } catch (error) {
+      console.log(error);
+      let err = null;
+      !error.message ? (err = { message: error }) : (err = error);
+      values.cognito = err;
     }
   }
   return (
@@ -31,6 +40,9 @@ const ForgotPassVerification = (props) => {
           your email address and a new password.
         </p>
         <form onSubmit={handleSubmit} noValidate>
+        {errors.cognito && (
+                    <p className="help is-danger">{errors.cognito}</p>
+                  )}
           {/*Verification code field */}
           <div className="field">
             <label className="label">Verification Code</label>

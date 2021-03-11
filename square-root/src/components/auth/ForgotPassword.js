@@ -5,17 +5,27 @@ import { Auth } from "aws-amplify";
 
 const ForgotPassword = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
-    remind,
-    validate
+    callback,
+    validate,
+    remind
   );
+
+  function callback() {
+    console.log("yay");
+    props.history.push("/forgotpasswordverification");
+  }
+
   async function remind() {
     //callback called, no errors - cognito integration here
     console.log(values);
     try {
-        await Auth.forgotPassword(values.email);
-        props.history.push('/forgotpasswordverification');
-    } catch(error) {
-        console.log(error);
+      await Auth.forgotPassword(values.email);
+    } catch (error) {
+      console.log(error);
+      console.log("error in remind:", error);
+      let err = null;
+      !error.message ? (err = { message: error }) : (err = error);
+      values.cognito = err;
     }
   }
   return (
@@ -26,8 +36,11 @@ const ForgotPassword = (props) => {
           Please enter the email address associated with your account and we'll
           email you a password reset link.
         </p>
-        
+
         <form onSubmit={handleSubmit} noValidate>
+        {errors.cognito && (
+                    <p className="help is-danger">{errors.cognito}</p>
+                  )}
           <div className="field">
             <label className="label">Email Address</label>
             <div className="control has-icons-left has-icons-right">

@@ -1,26 +1,30 @@
 const PASSLENGTH = 8;
+const CODELENGTH = 6;
+
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
 
 function hasUpperCase(str) {
+  if (typeof str != "string") return false
   return str.toLowerCase() != str;
 }
 
 function hasLowerCase(str) {
+  if (typeof str != "string") return false
   return str.toUpperCase() != str;
 }
 
 function hasNumber(str) {
-  console.log(/\d/.test(str))
+  if (typeof str != "string") return false
   return /\d/.test(str);
 }
 
 function validateRegexString(email) {
   const regexString = /^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$/;
   return regexString.test(String(email).toLowerCase()); // true|false
-}
-
-function validatePhone(phone) {
-  const phoneRegex = /^\+?[1-9]\d{4,14}$/;
-  return phoneRegex.test(String(phone)); // true|false
 }
 
 function changeIcons(boolean, input, icon) {
@@ -82,19 +86,33 @@ export default function validate(values) {
   if (!values.code) {
     errors.code = "Verification code is required";
     codeValidated = false;
+  } else if (!isNumeric(values.code) || values.code.length != CODELENGTH) {
+    errors.code = "Incorrect verification code";
+    codeValidated = false;
   } else {
     codeValidated = true;
+  }
+
+  if (values.cognito) {
+    console.log("caught cognito errors");
+    errors.cognito = values.cognito.message;
+    emailValidated = false
+    passValidated = false
+    codeValidated = false
+    console.log(errors)
+  }
+
+  if (emailValidated && passValidated && codeValidated && !errors.cognito) {
+    submitBtn.disabled = false; //button is no longer no-clickable
+  } else {
+    submitBtn.disabled = true;
   }
 
   changeIcons(emailValidated, inputEmail, iconEmail);
   changeIcons(passValidated, inputPassword, iconPassword);
   changeIcons(codeValidated, inputCode, iconCode);
 
-  if (emailValidated && passValidated && codeValidated) {
-    submitBtn.disabled = false; //button is no longer no-clickable
-  } else {
-    submitBtn.disabled = true;
-  }
+  
 
   return errors;
 }

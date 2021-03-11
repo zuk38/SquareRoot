@@ -102,16 +102,26 @@ export default function validate(values) {
     phoneValidated = true;
   }
 
-  changeIcons(emailValidated, inputEmail, iconEmail);
-  changeIcons(passValidated, inputPassword, iconPassword);
-  changeIcons(confPassValidated, inputConfPassword, iconConfPassword);
-  changeIcons(phoneValidated, inputPhone, iconPhone);
+  if (values.cognito) {
+    console.log("caught cognito errors");
+    errors.cognito = values.cognito.message;
+    emailValidated = false
+    passValidated = false
+    confPassValidated = false
+    phoneValidated = false
+    console.log(errors)
+  }
 
-  if (emailValidated && passValidated && confPassValidated && phoneValidated) {
+  if (emailValidated && passValidated && confPassValidated && phoneValidated && !errors.cognito) {
     registerBtn.disabled = false; //button is no longer no-clickable
   } else {
     registerBtn.disabled = true;
   }
+
+  changeIcons(emailValidated, inputEmail, iconEmail);
+  changeIcons(passValidated, inputPassword, iconPassword);
+  changeIcons(confPassValidated, inputConfPassword, iconConfPassword);
+  changeIcons(phoneValidated, inputPhone, iconPhone);
 
   return errors;
 }

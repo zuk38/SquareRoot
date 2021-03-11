@@ -5,18 +5,19 @@ import { Auth } from "aws-amplify";
 
 const Login = (props) => {
   const { values, handleChange, errors, handleSubmit } = useForm(
-    success,
+    callback,
     validate,
     login
   );
 
-  function success(user) {
+  function callback() {
     console.log("yay")
+    //props.history.push('/') home page?
   }
 
   async function login() {
-    //callback called, no errors - cognito integration here
-    //console.log(values);
+    //form validated
+    //cognito integration here, may detect cognito errors
     const { email, password } = values;
     try {
       const user = await Auth.signIn({
@@ -27,16 +28,14 @@ const Login = (props) => {
       //set user in the navbar
       props.auth.setAuthStatus(true);
       props.auth.setUser(user);
-      //props.history.push('/') home page?
+      
     } catch (error) {
-      console.log("error signing in", error);
+      console.log("error loging in", error);
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
       values.cognito = err;
       console.log(values.cognito);
-      //alert(errors.cognito.message);
     }
-    console.log("out of catch")
   }
   return (
     <div className="section is-fullheight">

@@ -22,9 +22,12 @@ const useForm = (callback, validate, action) => {
     console.log(values);
     setValues((values) => {
       setErrors(validate(values));  //update errors
+      setIsSubmitting(true);
       return values;
     });
-    setIsSubmitting(true);
+    
+    console.log(Object.keys(errors).length)
+    console.log(isSubmitting)
   };
 
   const handleChange = (event) => {
@@ -37,6 +40,7 @@ const useForm = (callback, validate, action) => {
       ...values,
       cognito: null,
     })); //update
+    setIsSubmitting(false);
   };
 
   return {

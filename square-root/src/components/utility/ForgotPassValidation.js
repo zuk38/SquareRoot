@@ -33,14 +33,21 @@ function validateRegexString(email) {
     } else {
       emailValidated = true;
     }
-    
-    changeIcons(emailValidated, inputEmail, iconEmail);
+
+    if (values.cognito) {
+      console.log("caught cognito errors");
+      errors.cognito = values.cognito.message;
+      emailValidated = false
+      console.log(errors)
+    }
   
-    if (emailValidated) {
+    if (emailValidated && !errors.cognito) {
       submitBtn.disabled = false; //button is no longer no-clickable
     } else {
       submitBtn.disabled = true;
     }
+
+    changeIcons(emailValidated, inputEmail, iconEmail);
   
     return errors;
   }
