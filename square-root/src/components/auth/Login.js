@@ -10,8 +10,14 @@ const Login = (props) => {
     login
   );
 
-  function callback() {
+  async function callback() {
     console.log("yay")
+    let user = await Auth.currentAuthenticatedUser();
+    const { attributes } = user;
+    //set user in the navbar
+    props.auth.setAuthStatus(true);
+    console.log(attributes.name)
+    props.auth.setUser(attributes.name);
     //props.history.push('/') home page?
   }
 
@@ -25,9 +31,7 @@ const Login = (props) => {
         password: password,
       });
       console.log(user);
-      //set user in the navbar
-      props.auth.setAuthStatus(true);
-      props.auth.setUser(user);
+      
       
     } catch (error) {
       console.log("error loging in", error);

@@ -1,8 +1,8 @@
 {
-    "identityPoolName": "squarerootprojectc2c171e9_identitypool_c2c171e9",
+    "identityPoolName": "squarerootprojectfe3d4090_identitypool_fe3d4090",
     "allowUnauthenticatedIdentities": false,
-    "resourceNameTruncated": "squarec2c171e9",
-    "userPoolName": "squarerootprojectc2c171e9_userpool_c2c171e9",
+    "resourceNameTruncated": "squarefe3d4090",
+    "userPoolName": "squarerootprojectfe3d4090_userpool_fe3d4090",
     "autoVerifiedAttributes": [
         "email"
     ],
@@ -14,32 +14,26 @@
     "smsVerificationMessage": "Your verification code is {####}",
     "emailVerificationSubject": "Your verification code",
     "emailVerificationMessage": "Your verification code is {####}",
-    "defaultPasswordPolicy": true,
+    "defaultPasswordPolicy": false,
     "passwordPolicyMinLength": 8,
-    "passwordPolicyCharacters": [
-        "Requires Lowercase",
-        "Requires Uppercase",
-        "Requires Numbers"
-    ],
+    "passwordPolicyCharacters": [],
     "requiredAttributes": [
         "email",
+        "name",
         "phone_number"
     ],
     "userpoolClientGenerateSecret": false,
     "userpoolClientRefreshTokenValidity": 30,
     "userpoolClientWriteAttributes": [
-        "email",
-        "phone_number"
+        "email"
     ],
     "userpoolClientReadAttributes": [
-        "email",
-        "phone_number",
-        "email_verified"
+        "email"
     ],
-    "userpoolClientLambdaRole": "squarec2c171e9_userpoolclient_lambda_role",
-    "userpoolClientSetAttributes": true,
-    "sharedId": "c2c171e9",
-    "resourceName": "squarerootprojectc2c171e9",
+    "userpoolClientLambdaRole": "squarefe3d4090_userpoolclient_lambda_role",
+    "userpoolClientSetAttributes": false,
+    "sharedId": "fe3d4090",
+    "resourceName": "squarerootprojectfe3d4090",
     "authSelections": "identityPoolAndUserPool",
     "authRoleArn": {
         "Fn::GetAtt": [
@@ -53,7 +47,7 @@
             "Arn"
         ]
     },
-    "useDefault": "manual",
+    "useDefault": "default",
     "usernameAttributes": [
         "email"
     ],
@@ -65,10 +59,5 @@
         "Ref": "AWS::StackId"
     },
     "permissions": [],
-    "dependsOn": [],
-    "thirdPartyAuth": false,
-    "userPoolGroups": false,
-    "adminQueries": false,
-    "hostedUI": false,
-    "authProviders": []
+    "dependsOn": []
 }

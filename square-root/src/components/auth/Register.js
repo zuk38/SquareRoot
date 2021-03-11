@@ -11,31 +11,32 @@ const Register = (props) => {
   );
 
   function callback() {
-    console.log("yay")
-    props.history.push('/welcome')
+    console.log("yay");
+    props.history.push("/welcome");
   }
 
   async function register() {
     //form validated
     //cognito integration here, may detect cognito errors
     console.log(values);
-    const {email, password, phone} = values;
+    const { email, password, name, phone } = values;
     console.log(email);
-    
+
     try {
       const user = await Auth.signUp({
         username: email,
         password: password,
         attributes: {
           email: email,
-          phone_number: phone
-        }
+          name: name,
+          phone_number: phone,
+        },
       });
-      console.log(user);
-    } catch(error) {
+      
+    } catch (error) {
       console.log("error signing up:", error);
       let err = null;
-      !error.message ? err = { "message": error} : err = error;
+      !error.message ? (err = { message: error }) : (err = error);
       values.cognito = err;
     }
   }
@@ -45,9 +46,37 @@ const Register = (props) => {
         <div className="column is-4 is-offset-4">
           <div className="box">
             <form onSubmit={handleSubmit} noValidate>
-            {errors.cognito && (
-                    <p className="help is-danger">{errors.cognito}</p>
-                  )}
+              {errors.cognito && (
+                <p className="help is-danger">{errors.cognito}</p>
+              )}
+
+              {/*Name field */}
+              <div class="field">
+                <label className="label" for="name">
+                  Full Name
+                </label>
+                <div class="control has-icons-left has-icons-right">
+                  <input
+                    className="input"
+                    type="text"
+                    name="name"
+                    placeholder=""
+                    value={values.name || ""}
+                    onChange={handleChange}
+                    id="name"
+                    required
+                  />
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user"></i>
+                  </span>
+                  <span class="icon is-small is-right">
+                    <i
+                      id="nameCheckIcon"
+                      class="fas fa-exclamation-triangle"
+                    ></i>
+                  </span>
+                </div>
+              </div>
               {/*Email field */}
               <div className="field">
                 <label className="label">Email Address</label>

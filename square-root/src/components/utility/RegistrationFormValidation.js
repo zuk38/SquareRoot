@@ -1,4 +1,5 @@
 const PASSLENGTH = 8;
+const NAMELENGTH = 8;
 
 function hasUpperCase(str) {
   return str.toLowerCase() != str;
@@ -47,10 +48,13 @@ export default function validate(values) {
   let iconConfPassword = document.getElementById("confPassCheckIcon");
   let inputPhone = document.getElementById("phone");
   let iconPhone = document.getElementById("phoneCheckIcon");
+  let inputName = document.getElementById("name");
+  let iconName = document.getElementById("nameCheckIcon");
   let emailValidated = false;
   let passValidated = false;
   let confPassValidated = false;
   let phoneValidated = false;
+  let nameValidated = false;
   let registerBtn = document.getElementById("registerBtn");
 
   if (!values.email) {
@@ -102,6 +106,16 @@ export default function validate(values) {
     phoneValidated = true;
   }
 
+  if (!values.name) {
+    errors.name = "Name is required";
+    nameValidated = false;
+  } else if (values.name > NAMELENGTH) {
+    errors.name = "Name too long";
+    nameValidated = false;
+  } else {
+    nameValidated = true;
+  }
+
   if (values.cognito) {
     console.log("caught cognito errors");
     errors.cognito = values.cognito.message;
@@ -109,10 +123,11 @@ export default function validate(values) {
     passValidated = false
     confPassValidated = false
     phoneValidated = false
+    nameValidated = false
     console.log(errors)
   }
 
-  if (emailValidated && passValidated && confPassValidated && phoneValidated && !errors.cognito) {
+  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated && !errors.cognito) {
     registerBtn.disabled = false; //button is no longer no-clickable
   } else {
     registerBtn.disabled = true;
@@ -122,6 +137,7 @@ export default function validate(values) {
   changeIcons(passValidated, inputPassword, iconPassword);
   changeIcons(confPassValidated, inputConfPassword, iconConfPassword);
   changeIcons(phoneValidated, inputPhone, iconPhone);
+  changeIcons(nameValidated, inputName, iconName);
 
   return errors;
 }
