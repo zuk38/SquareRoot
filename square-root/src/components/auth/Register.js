@@ -4,11 +4,13 @@ import validate from "../utility/RegistrationFormValidation";
 import { Auth } from "aws-amplify";
 
 const Register = (props) => {
-  const { values, handleChange, errors, handleSubmit } = useForm(
-    callback,
-    validate,
-    register
-  );
+  const {
+    values,
+    handleChange,
+    errors,
+    handleSubmit,
+    handleDropDownChange,
+  } = useForm(callback, validate, register);
 
   function callback() {
     console.log("yay");
@@ -32,7 +34,6 @@ const Register = (props) => {
           phone_number: phone,
         },
       });
-      
     } catch (error) {
       console.log("error signing up:", error);
       let err = null;
@@ -193,6 +194,26 @@ const Register = (props) => {
                     <p className="help is-danger">{errors.phone}</p>
                   )}
                 </div>
+              </div>
+              {/* I'm a.... */}
+              <div class="is-grouped is-grouped-centered">
+                <p>I'm a...</p>
+                <p class="control has-icons-left">
+                  <span class="select">
+                    <select
+                      id="roleDropDown"
+                      value={values.role}
+                      onChange={handleDropDownChange}
+                    >
+                      <option selected>Real Estate Developer</option>
+                      <option>Landscape Architect</option>
+                      <option>Landscape Entrepreneur</option>
+                    </select>
+                  </span>
+                  <span class="icon is-small is-left">
+                    <i class="fas fa-user-tag"></i>
+                  </span>
+                </p>
               </div>
               <button
                 type="register"

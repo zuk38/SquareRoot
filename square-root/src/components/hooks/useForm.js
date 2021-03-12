@@ -1,7 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 
 const useForm = (callback, validate, action) => {
-  const [values, setValues] = useState({});
+  const [values, setValues] = useState({role: 'Real Estate Developer'});
+  const setRole = useCallback((newValue) => {
+    setValues({ ...values, role: newValue })
+  }, [values]) // ← this bit ensures that the value is always up to date inside the callback
+
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -18,16 +22,17 @@ const useForm = (callback, validate, action) => {
 
   const handleSubmit = async (event) => {
     if (event) event.preventDefault();
+    console.log(values.role)
     await action();
     console.log(values);
     setValues((values) => {
-      setErrors(validate(values));  //update errors
+      setErrors(validate(values)); //update errors
       setIsSubmitting(true);
       return values;
     });
-    
-    console.log(Object.keys(errors).length)
-    console.log(isSubmitting)
+
+    console.log(Object.keys(errors).length);
+    console.log(isSubmitting);
   };
 
   const handleChange = (event) => {
@@ -43,9 +48,14 @@ const useForm = (callback, validate, action) => {
     setIsSubmitting(false);
   };
 
+  const handleDropDownChange = (event) => {
+    setValues({ ...values, role: event.target.value })  //update role
+  };
+
   return {
     handleChange,
     handleSubmit,
+    handleDropDownChange,
     values,
     errors,
   };

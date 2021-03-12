@@ -25,6 +25,8 @@ export default function validate(values) {
   let confPassValidated = checkConfPassword(values, errors);
   let phoneValidated = checkPhone(values, errors);
   let nameValidated = checkName(values, errors);
+  let roleDropDown = document.getElementById("roleDropDown");
+  roleDropDown.classList.add("is-success");
   let registerBtn = document.getElementById("registerBtn");
 
   if (checkCognito(values, errors)) {
