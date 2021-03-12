@@ -1,4 +1,4 @@
-import { checkEmail, checkPassword, changeIcons } from "./Validation"
+import { checkEmail, checkPassword, changeIcons, checkCognito } from "./Validation"
 
 export default function validate(values) {
   let errors = {};
@@ -10,15 +10,7 @@ export default function validate(values) {
   let passValidated = checkPassword(values, errors);
   let loginBtn = document.getElementById("loginBtn");
 
-  if (values.cognito) {
-    console.log("caught cognito errors");
-    errors.cognito = values.cognito.message;
-    emailValidated = false
-    passValidated = false
-    console.log(errors)
-  }
-
-  if (emailValidated && passValidated) {
+  if (emailValidated && passValidated && !checkCognito(values, errors)) {
     loginBtn.disabled = false; //button is no longer no-clickable
   } else {
     loginBtn.disabled = true;

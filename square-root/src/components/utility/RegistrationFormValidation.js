@@ -1,4 +1,4 @@
-import { checkEmail, checkPassword, checkConfPassword, checkName, changeIcons } from "./Validation"
+import { checkEmail, checkPassword, checkConfPassword, checkName, changeIcons, checkCognito } from "./Validation"
 
 function validatePhone(phone) {
   const phoneRegex = /^\+[1-9]\d{4,14}$/;
@@ -34,18 +34,7 @@ export default function validate(values) {
     phoneValidated = true;
   }
 
-  if (values.cognito) {
-    console.log("caught cognito errors");
-    errors.cognito = values.cognito.message;
-    emailValidated = false
-    passValidated = false
-    confPassValidated = false
-    phoneValidated = false
-    nameValidated = false
-    console.log(errors)
-  }
-
-  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated) {
+  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated && !checkCognito(values, errors)) {
     registerBtn.disabled = false; //button is no longer no-clickable
   } else {
     registerBtn.disabled = true;

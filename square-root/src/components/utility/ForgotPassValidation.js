@@ -1,4 +1,4 @@
-import { checkEmail, changeIcons } from "./Validation";
+import { checkEmail, changeIcons, checkCognito } from "./Validation";
 
 export default function validate(values) {
   let errors = {};
@@ -7,14 +7,7 @@ export default function validate(values) {
   let emailValidated = checkEmail(values, errors);
   let submitBtn = document.getElementById("submitBtn");
 
-  if (values.cognito) {
-    console.log("caught cognito errors");
-    errors.cognito = values.cognito.message;
-    emailValidated = false;
-    console.log(errors);
-  }
-
-  if (emailValidated) {
+  if (emailValidated && !checkCognito(values, errors)) {
     submitBtn.disabled = false; //button is no longer no-clickable
   } else {
     submitBtn.disabled = true;

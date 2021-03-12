@@ -1,12 +1,4 @@
-import { checkEmail, checkPassword, changeIcons } from "./Validation"
-
-const CODELENGTH = 6;
-
-function isNumeric(str) {
-  if (typeof str != "string") return false // we only process strings!  
-  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string
-         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
-}
+import { checkEmail, checkPassword, changeIcons, checkCognito, checkCode } from "./Validation"
 
 export default function validate(values) {
   let errors = {};
@@ -18,29 +10,10 @@ export default function validate(values) {
   let iconCode = document.getElementById("codeCheckIcon");
   let emailValidated = checkEmail(values, errors);
   let passValidated = checkPassword(values, errors);
-  let codeValidated = false;
+  let codeValidated = checkCode(values, errors);
   let submitBtn = document.getElementById("submitBtn");
 
-  if (!values.code) {
-    errors.code = "Verification code is required";
-    codeValidated = false;
-  } else if (!isNumeric(values.code) || values.code.length != CODELENGTH) {
-    errors.code = "Incorrect verification code";
-    codeValidated = false;
-  } else {
-    codeValidated = true;
-  }
-
-  if (values.cognito) {
-    console.log("caught cognito errors");
-    errors.cognito = values.cognito.message;
-    emailValidated = false
-    passValidated = false
-    codeValidated = false
-    console.log(errors)
-  }
-
-  if (emailValidated && passValidated && codeValidated) {
+  if (emailValidated && passValidated && codeValidated && !checkCognito(values, errors)) {
     submitBtn.disabled = false; //button is no longer no-clickable
   } else {
     submitBtn.disabled = true;

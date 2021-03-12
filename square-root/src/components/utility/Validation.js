@@ -1,6 +1,7 @@
 //helper functions
 const PASSLENGTH = 8;
 const NAMELENGTH = 40;
+const CODELENGTH = 6;
 
 function hasUpperCase(str) {
   return str.toLowerCase() != str;
@@ -20,21 +21,27 @@ function validateRegexString(email) {
   return regexString.test(String(email).toLowerCase()); // true|false
 }
 
+function isNumeric(str) {
+  if (typeof str != "string") return false // we only process strings!  
+  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string
+         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+}
+
 //--------------------------------------------------------------------------------------------
 
 function changeIcons(boolean, input, icon) {
-    if (boolean) {
-      input.classList.remove("is-danger");
-      icon.classList.remove("fa-exclamation-triangle");
-      input.classList.add("is-success");
-      icon.classList.add("fa-check");
-    } else {
-      input.classList.remove("is-success");
-      icon.classList.remove("fa-check");
-      input.classList.add("is-danger");
-      icon.classList.add("fa-exclamation-triangle");
-    }
+  if (boolean) {
+    input.classList.remove("is-danger");
+    icon.classList.remove("fa-exclamation-triangle");
+    input.classList.add("is-success");
+    icon.classList.add("fa-check");
+  } else {
+    input.classList.remove("is-success");
+    icon.classList.remove("fa-check");
+    input.classList.add("is-danger");
+    icon.classList.add("fa-exclamation-triangle");
   }
+}
 
 function checkEmail(values, errors) {
   if (!values.email) {
@@ -87,9 +94,42 @@ function checkName(values, errors) {
   } else if (values.name.length > NAMELENGTH) {
     errors.name = "Name too long";
     return false;
-  } 
+  }
 
   return true;
 }
 
-export { checkEmail, checkPassword, checkConfPassword, checkName, changeIcons };
+function checkPhone(values, errors) {
+  
+}
+
+function checkCode(values, errors) {
+  if (!values.code) {
+    errors.code = "Verification code is required";
+    return false;
+  } else if (!isNumeric(values.code) || values.code.length != CODELENGTH) {
+    errors.code = "Incorrect verification code";
+    return false;
+  } 
+  return true;
+}
+
+function checkCognito(values, errors) {
+  if (values.cognito) {
+    console.log("caught cognito errors");
+    errors.cognito = values.cognito.message;
+  }
+
+  return errors.cognito;
+}
+
+export {
+  checkEmail,
+  checkPassword,
+  checkConfPassword,
+  checkName,
+  changeIcons,
+  checkCognito,
+  checkCode,
+  checkPhone
+};
