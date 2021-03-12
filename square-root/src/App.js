@@ -8,6 +8,7 @@ import ForgotPasswordVerification from "./components/auth/ForgotPassVerification
 import ChangePasswordConfirm from "./components/auth/ChangePassConfirm";
 import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 import { Auth } from "aws-amplify";
 
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -97,6 +98,11 @@ class App extends Component {
                 exact
                 path="/changepasswordconfirmation" 
                 render={(props) => <ChangePasswordConfirm {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/" 
+                render={(props) => <Home {...props} auth={authProps} />}
               />
             </Switch>
           </div>

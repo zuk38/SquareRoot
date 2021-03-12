@@ -18,7 +18,7 @@ const Login = (props) => {
     props.auth.setAuthStatus(true);
     console.log(attributes.name)
     props.auth.setUser(attributes.name);
-    //props.history.push('/') home page?
+    props.history.push('/') //home
   }
 
   async function login() {
