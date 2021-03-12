@@ -1,9 +1,12 @@
-import { checkEmail, checkPassword, checkConfPassword, checkName, changeIcons, checkCognito } from "./Validation"
-
-function validatePhone(phone) {
-  const phoneRegex = /^\+[1-9]\d{4,14}$/;
-  return phoneRegex.test(String(phone)); // true|false
-}
+import {
+  checkEmail,
+  checkPassword,
+  checkConfPassword,
+  checkName,
+  changeIcons,
+  checkCognito,
+  checkPhone,
+} from "./Validation";
 
 export default function validate(values) {
   let errors = {};
@@ -20,25 +23,25 @@ export default function validate(values) {
   let emailValidated = checkEmail(values, errors);
   let passValidated = checkPassword(values, errors);
   let confPassValidated = checkConfPassword(values, errors);
-  let phoneValidated = false;
+  let phoneValidated = checkPhone(values, errors);
   let nameValidated = checkName(values, errors);
   let registerBtn = document.getElementById("registerBtn");
 
-  if (!values.phone) {
-    errors.phone = "Phone number is required";
-    phoneValidated = false;
-  } else if (!validatePhone(values.phone)) {
-    errors.phone = "Invalid phone number";
-    phoneValidated = false;
-  } else {
-    phoneValidated = true;
+  if (checkCognito(values, errors)) {
+    emailValidated = false
+    phoneValidated = false
+    passValidated = false
+    confPassValidated = false
+    nameValidated = false
   }
 
-  if (emailValidated && passValidated && confPassValidated && phoneValidated && nameValidated && !checkCognito(values, errors)) {
-    registerBtn.disabled = false; //button is no longer no-clickable
-  } else {
-    registerBtn.disabled = true;
-  }
+  emailValidated &&
+  passValidated &&
+  confPassValidated &&
+  phoneValidated &&
+  nameValidated
+    ? (registerBtn.disabled = false)
+    : (registerBtn.disabled = true);
 
   changeIcons(emailValidated, inputEmail, iconEmail);
   changeIcons(passValidated, inputPassword, iconPassword);

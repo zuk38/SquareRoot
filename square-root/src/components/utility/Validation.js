@@ -27,6 +27,11 @@ function isNumeric(str) {
          !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
 }
 
+function validatePhone(phone) {
+  const phoneRegex = /^\+[1-9]\d{4,14}$/;
+  return phoneRegex.test(String(phone)); // true|false
+}
+
 //--------------------------------------------------------------------------------------------
 
 function changeIcons(boolean, input, icon) {
@@ -100,7 +105,14 @@ function checkName(values, errors) {
 }
 
 function checkPhone(values, errors) {
-  
+  if (!values.phone) {
+    errors.phone = "Phone number is required";
+    return false;
+  } else if (!validatePhone(values.phone)) {
+    errors.phone = "Invalid phone number";
+    return false;
+  } 
+  return true;
 }
 
 function checkCode(values, errors) {

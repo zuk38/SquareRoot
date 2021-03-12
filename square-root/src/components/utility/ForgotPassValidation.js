@@ -7,7 +7,11 @@ export default function validate(values) {
   let emailValidated = checkEmail(values, errors);
   let submitBtn = document.getElementById("submitBtn");
 
-  if (emailValidated && !checkCognito(values, errors)) {
+  if (checkCognito(values, errors)) {
+    emailValidated = false;
+  }
+
+  if (emailValidated) {
     submitBtn.disabled = false; //button is no longer no-clickable
   } else {
     submitBtn.disabled = true;

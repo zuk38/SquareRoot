@@ -10,7 +10,12 @@ export default function validate(values) {
   let passValidated = checkPassword(values, errors);
   let loginBtn = document.getElementById("loginBtn");
 
-  if (emailValidated && passValidated && !checkCognito(values, errors)) {
+  if (checkCognito(values, errors)) {
+    emailValidated = false
+    passValidated = false
+  }
+
+  if (emailValidated && passValidated) {
     loginBtn.disabled = false; //button is no longer no-clickable
   } else {
     loginBtn.disabled = true;

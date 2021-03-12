@@ -13,7 +13,13 @@ export default function validate(values) {
   let codeValidated = checkCode(values, errors);
   let submitBtn = document.getElementById("submitBtn");
 
-  if (emailValidated && passValidated && codeValidated && !checkCognito(values, errors)) {
+  if (checkCognito(values, errors)) {
+    emailValidated = false
+    passValidated = false
+    codeValidated = false
+  }
+
+  if (emailValidated && passValidated && codeValidated) {
     submitBtn.disabled = false; //button is no longer no-clickable
   } else {
     submitBtn.disabled = true;
