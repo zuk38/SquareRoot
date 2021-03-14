@@ -2,9 +2,9 @@ import { useState, useEffect, useCallback } from "react";
 
 const useForm = (callback, validate, action) => {
   const [values, setValues] = useState({role: 'Real Estate Developer'});
-  const setRole = useCallback((newValue) => {
+  /*const setRole = useCallback((newValue) => {
     setValues({ ...values, role: newValue })
-  }, [values]) // ← this bit ensures that the value is always up to date inside the callback
+  }, [values]) // ← this bit ensures that the value is always up to date inside the callback*/
 
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);

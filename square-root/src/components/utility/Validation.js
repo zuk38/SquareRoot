@@ -56,7 +56,6 @@ function checkEmail(values, errors) {
   }
 
   return values.email && validateRegexString(values.email);
-  //return errors;
 }
 
 function checkPassword(values, errors) {

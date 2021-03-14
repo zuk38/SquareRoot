@@ -21,7 +21,7 @@ const Register = (props) => {
     //form validated
     //cognito integration here, may detect cognito errors
     console.log(values);
-    const { email, password, name, phone } = values;
+    const { email, password, name, phone, role } = values;
     console.log(email);
 
     try {
@@ -32,6 +32,7 @@ const Register = (props) => {
           email: email,
           name: name,
           phone_number: phone,
+          'custom:role': role
         },
       });
     } catch (error) {

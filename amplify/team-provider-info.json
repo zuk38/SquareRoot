@@ -13,6 +13,12 @@
     "categories": {
       "auth": {
         "squarerootprojectfe3d4090": {}
+      },
+      "function": {
+        "addUserToGroup": {
+          "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
+          "s3Key": "amplify-builds/addUserToGroup-74426941646956302f43-build.zip"
+        }
       }
     }
   }
