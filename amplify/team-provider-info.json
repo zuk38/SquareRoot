@@ -21,7 +21,7 @@
         },
         "contactFormFunction": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/contactFormFunction-424141416d5658773876-build.zip"
+          "s3Key": "amplify-builds/contactFormFunction-6d632f4233684d516a48-build.zip"
         }
       }
     }

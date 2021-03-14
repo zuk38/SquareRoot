@@ -34,61 +34,29 @@ app.use(function(req, res, next) {
 const AWS = require('aws-sdk')
 const docClient = new AWS.DynamoDB.DocumentClient();
 
+function id() {
+  return Math.random().toString(36).substring(2) + Date.now().toString(36);
+}
 
-/**********************
- * Example get method *
- **********************/
+//Create new item for the dynamoDB table
+app.post('/contact', function(req, res){
+  console.log(req);
 
-app.get('/contact', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
+  var params = {
+    TableName: process.env.STORAGE_CONTACTFORMTABLE_NAME,
+    Item: {
+      id: id(),
+      name: req.body.name,
+      email: req.body.email,
+      message: req.body.message
+    }
+  }
 
-app.get('/contact/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'get call succeed!', url: req.url});
-});
-
-/****************************
-* Example post method *
-****************************/
-
-app.post('/contact', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-app.post('/contact/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'post call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example put method *
-****************************/
-
-app.put('/contact', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-app.put('/contact/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'put call succeed!', url: req.url, body: req.body})
-});
-
-/****************************
-* Example delete method *
-****************************/
-
-app.delete('/contact', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
-});
-
-app.delete('/contact/*', function(req, res) {
-  // Add your code here
-  res.json({success: 'delete call succeed!', url: req.url});
+  //pass json to dynamo
+  docClient.put(params, function(err, data) {
+    if (err) res.json({ err })
+    else res.json({ success: 'Contact created succesfully!' })
+  })
 });
 
 app.listen(3000, function() {
