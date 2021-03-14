@@ -18,6 +18,10 @@
         "addUserToGroup": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
           "s3Key": "amplify-builds/addUserToGroup-57355876556e33355938-build.zip"
+        },
+        "contactFormFunction": {
+          "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
+          "s3Key": "amplify-builds/contactFormFunction-424141416d5658773876-build.zip"
         }
       }
     }
