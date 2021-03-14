@@ -5,7 +5,6 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import '@fortawesome/fontawesome-free/css/all.min.css'
 import Amplify from 'aws-amplify';
-import { API } from 'aws-amplify';
 import config from './aws-exports';
 Amplify.configure(config);
 
