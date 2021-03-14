@@ -28,6 +28,20 @@
           ]
         }
       ]
+    },
+    "sendEmail": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda",
+      "dependsOn": [
+        {
+          "category": "storage",
+          "resourceName": "contactFormTable",
+          "attributes": [
+            "StreamArn"
+          ]
+        }
+      ]
     }
   },
   "storage": {
