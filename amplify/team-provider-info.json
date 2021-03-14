@@ -17,7 +17,7 @@
       "function": {
         "addUserToGroup": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/addUserToGroup-74426941646956302f43-build.zip"
+          "s3Key": "amplify-builds/addUserToGroup-57355876556e33355938-build.zip"
         }
       }
     }
