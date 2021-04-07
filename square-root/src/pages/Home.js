@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Container, Button, Form } from "react-bootstrap";
 import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
+//Axios for get request
+import axios from 'axios';
 
 async function addContact() {
   //create request body
@@ -21,22 +23,16 @@ async function addContact() {
   alert("Mail sent!");
 }
 
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}
-
 //zipcode
 const zipState = { zipCode: "", city: "", hZone: "" };
 const findCityFromZip = async () => {
   console.log(zipState.zipCode);
-  console.log(process.env.REACT_APP_MYBRING_API);
 
   const response = await fetch(
     new URL(
-      "https://api.bring.com/pickuppoint/api/postalCode/NO/getCityAndType/1337.json"
+      "https://api.bring.com/pickuppoint/api/postalCode/NO/getCityAndType/" +
+        zipState.zipCode +
+        ".json"
     ),
     {
       method: "get",
@@ -54,15 +50,18 @@ const findCityFromZip = async () => {
   )
     .then((response) => {
       console.log(response);
-      if (response.ok) {
-        return response.json();
-      } else {
+      if (!response.ok) {
         throw new Error("Something went wrong ...");
       }
+      return response.json();
     })
     .catch((error) => console.log(error));
 
   console.log(response);
+  let city = response.postalCode.city.toString();
+  city = city.slice(0, 1) + city.slice(1, city.length).toLowerCase();
+  updateFormState("city", city, zipState);
+  console.log(zipState.city);
 };
 
 //contact form
