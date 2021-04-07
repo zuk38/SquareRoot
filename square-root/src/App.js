@@ -1,6 +1,6 @@
 import "./App.css";
 import "./App.sass";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/ForgotPassword";
@@ -8,9 +8,12 @@ import ForgotPasswordVerification from "./components/auth/ForgotPassVerification
 import ChangePasswordConfirm from "./components/auth/ChangePassConfirm";
 import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
-import Home from "./components/Home";
-import { Auth } from "aws-amplify";
+import Home from "./pages/Home";
+import { Plants } from "./pages/Plants";
+import SinglePlant from "./pages/SinglePlant"
+import Error from "./pages/Error";
 
+import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
@@ -20,8 +23,8 @@ class App extends Component {
   //global state to know if the user is signed in
   state = {
     isAuthenticated: false,
-    isAuthenticating: true,   //assume that we are uthenticating untill componentDidM finishes
-    user: null
+    isAuthenticating: true, //assume that we are uthenticating untill componentDidM finishes
+    user: null,
   };
 
   setAuthStatus = (auuthenticated) => {
@@ -31,7 +34,8 @@ class App extends Component {
     });
   };
 
-  setUser = (user) => { //set the name if logged in
+  setUser = (user) => {
+    //set the name if logged in
     this.setState({
       user: user,
     });
@@ -51,7 +55,7 @@ class App extends Component {
       console.log(error);
     }
 
-    this.setState({ isAuthenticating: false});
+    this.setState({ isAuthenticating: false });
   }
 
   render() {
@@ -63,9 +67,8 @@ class App extends Component {
     };
 
     return (
-      !this.state.isAuthenticating &&
-      <div className="App">
-        <Router>
+      !this.state.isAuthenticating && (
+        <div className="App">
           <div>
             <Navbar auth={authProps} />
             <Switch>
@@ -86,28 +89,47 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/forgotpassword" 
-                render={(props) => <ForgotPassword {...props} auth={authProps} />}
+                path="/forgotpassword"
+                render={(props) => (
+                  <ForgotPassword {...props} auth={authProps} />
+                )}
               />
               <Route
                 exact
-                path="/forgotpasswordverification" 
-                render={(props) => <ForgotPasswordVerification {...props} auth={authProps} />}
+                path="/forgotpasswordverification"
+                render={(props) => (
+                  <ForgotPasswordVerification {...props} auth={authProps} />
+                )}
               />
               <Route
                 exact
-                path="/changepasswordconfirmation" 
-                render={(props) => <ChangePasswordConfirm {...props} auth={authProps} />}
+                path="/changepasswordconfirmation"
+                render={(props) => (
+                  <ChangePasswordConfirm {...props} auth={authProps} />
+                )}
               />
               <Route
                 exact
-                path="/" 
+                path="/"
                 render={(props) => <Home {...props} auth={authProps} />}
               />
+              <Route
+                exact
+                path="/plants"
+                render={(props) => <Plants {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/plants/:name"
+                render={(props) => (
+                  <SinglePlant {...props} auth={authProps} />
+                )}
+              />
+              <Route component={Error} />
             </Switch>
           </div>
-        </Router>
-      </div>
+        </div>
+      )
     );
   }
 }

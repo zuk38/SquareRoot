@@ -198,8 +198,8 @@ const Register = (props) => {
               </div>
               {/* I'm a.... */}
               <div class="is-grouped is-grouped-centered">
-                <p>I'm a...</p>
-                <p class="control has-icons-left">
+                <label>I'm a...</label>
+                <div class="control has-icons-left">
                   <span class="select">
                     <select
                       id="roleDropDown"
@@ -214,8 +214,9 @@ const Register = (props) => {
                   <span class="icon is-small is-left">
                     <i class="fas fa-user-tag"></i>
                   </span>
-                </p>
+                </div>
               </div>
+              <br/>
               <button
                 type="register"
                 className="button is-block is-info is-fullwidth"
