@@ -32,6 +32,7 @@ function handleErrors(response) {
 const zipState = { zipCode: "", city: "", hZone: "" };
 const findCityFromZip = async () => {
   console.log(zipState.zipCode);
+  console.log(process.env.REACT_APP_MYBRING_API);
 
   const response = await fetch(
     new URL(
@@ -40,9 +41,9 @@ const findCityFromZip = async () => {
     {
       method: "get",
       headers: {
-        "X-MyBring-API-Uid": "kmaciejewska14@gmail.com",
-        "X-MyBring-API-Key": "d61c0e32-3f40-4b0c-addf-84929228aed0",
-        "X-Bring-Client-URL": "https://localhost:3000/",
+        "X-MyBring-API-Uid": process.env.REACT_APP_MYBRING_UID,
+        "X-MyBring-API-Key": process.env.REACT_APP_MYBRING_API,
+        "X-Bring-Client-URL": process.env.REACT_APP_MYBRING_CLIENT_URL,
         Accept: "application/json, text/plain, */*",
         "Content-Type": "application/json",
         "Access-Control-Allow-Origin": "*",
