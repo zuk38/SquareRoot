@@ -1,90 +1,342 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createTask = /* GraphQL */ `
-  mutation CreateTask(
-    $input: CreateTaskInput!
-    $condition: ModelTaskConditionInput
+export const createPlant = /* GraphQL */ `
+  mutation CreatePlant(
+    $input: CreatePlantInput!
+    $condition: ModelPlantConditionInput
   ) {
-    createTask(input: $input, condition: $condition) {
+    createPlant(input: $input, condition: $condition) {
       id
-      title
-      description
-      status
+      name
+      images
+      price_per_meter
+      pollinator_friendly
+      edible
+      allergen
+      light_requirement
+      watering_needs
+      soil_type
+      soil_depth
+      featured
+      rooftop
+      rainbed
+      indoor
+      green_wall
       createdAt
       updatedAt
+      greenspaces {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
     }
   }
 `;
-export const updateTask = /* GraphQL */ `
-  mutation UpdateTask(
-    $input: UpdateTaskInput!
-    $condition: ModelTaskConditionInput
+export const updatePlant = /* GraphQL */ `
+  mutation UpdatePlant(
+    $input: UpdatePlantInput!
+    $condition: ModelPlantConditionInput
   ) {
-    updateTask(input: $input, condition: $condition) {
+    updatePlant(input: $input, condition: $condition) {
       id
-      title
-      description
-      status
+      name
+      images
+      price_per_meter
+      pollinator_friendly
+      edible
+      allergen
+      light_requirement
+      watering_needs
+      soil_type
+      soil_depth
+      featured
+      rooftop
+      rainbed
+      indoor
+      green_wall
       createdAt
       updatedAt
+      greenspaces {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
     }
   }
 `;
-export const deleteTask = /* GraphQL */ `
-  mutation DeleteTask(
-    $input: DeleteTaskInput!
-    $condition: ModelTaskConditionInput
+export const deletePlant = /* GraphQL */ `
+  mutation DeletePlant(
+    $input: DeletePlantInput!
+    $condition: ModelPlantConditionInput
   ) {
-    deleteTask(input: $input, condition: $condition) {
+    deletePlant(input: $input, condition: $condition) {
       id
-      title
-      description
-      status
+      name
+      images
+      price_per_meter
+      pollinator_friendly
+      edible
+      allergen
+      light_requirement
+      watering_needs
+      soil_type
+      soil_depth
+      featured
+      rooftop
+      rainbed
+      indoor
+      green_wall
       createdAt
       updatedAt
+      greenspaces {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
     }
   }
 `;
-export const createPrivateNote = /* GraphQL */ `
-  mutation CreatePrivateNote(
-    $input: CreatePrivateNoteInput!
-    $condition: ModelPrivateNoteConditionInput
+export const createGreenspacePlants = /* GraphQL */ `
+  mutation CreateGreenspacePlants(
+    $input: CreateGreenspacePlantsInput!
+    $condition: ModelGreenspacePlantsConditionInput
   ) {
-    createPrivateNote(input: $input, condition: $condition) {
+    createGreenspacePlants(input: $input, condition: $condition) {
       id
-      content
+      plant_id
+      greenspace_id
       createdAt
       updatedAt
-      owner
+      plant {
+        id
+        name
+        images
+        price_per_meter
+        pollinator_friendly
+        edible
+        allergen
+        light_requirement
+        watering_needs
+        soil_type
+        soil_depth
+        featured
+        rooftop
+        rainbed
+        indoor
+        green_wall
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      customer
+      greenspace {
+        id
+        name
+        images
+        price
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const updatePrivateNote = /* GraphQL */ `
-  mutation UpdatePrivateNote(
-    $input: UpdatePrivateNoteInput!
-    $condition: ModelPrivateNoteConditionInput
+export const updateGreenspacePlants = /* GraphQL */ `
+  mutation UpdateGreenspacePlants(
+    $input: UpdateGreenspacePlantsInput!
+    $condition: ModelGreenspacePlantsConditionInput
   ) {
-    updatePrivateNote(input: $input, condition: $condition) {
+    updateGreenspacePlants(input: $input, condition: $condition) {
       id
-      content
+      plant_id
+      greenspace_id
       createdAt
       updatedAt
-      owner
+      plant {
+        id
+        name
+        images
+        price_per_meter
+        pollinator_friendly
+        edible
+        allergen
+        light_requirement
+        watering_needs
+        soil_type
+        soil_depth
+        featured
+        rooftop
+        rainbed
+        indoor
+        green_wall
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      customer
+      greenspace {
+        id
+        name
+        images
+        price
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const deletePrivateNote = /* GraphQL */ `
-  mutation DeletePrivateNote(
-    $input: DeletePrivateNoteInput!
-    $condition: ModelPrivateNoteConditionInput
+export const deleteGreenspacePlants = /* GraphQL */ `
+  mutation DeleteGreenspacePlants(
+    $input: DeleteGreenspacePlantsInput!
+    $condition: ModelGreenspacePlantsConditionInput
   ) {
-    deletePrivateNote(input: $input, condition: $condition) {
+    deleteGreenspacePlants(input: $input, condition: $condition) {
       id
-      content
+      plant_id
+      greenspace_id
       createdAt
       updatedAt
-      owner
+      plant {
+        id
+        name
+        images
+        price_per_meter
+        pollinator_friendly
+        edible
+        allergen
+        light_requirement
+        watering_needs
+        soil_type
+        soil_depth
+        featured
+        rooftop
+        rainbed
+        indoor
+        green_wall
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      customer
+      greenspace {
+        id
+        name
+        images
+        price
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const createGreenspace = /* GraphQL */ `
+  mutation CreateGreenspace(
+    $input: CreateGreenspaceInput!
+    $condition: ModelGreenspaceConditionInput
+  ) {
+    createGreenspace(input: $input, condition: $condition) {
+      id
+      name
+      images
+      price
+      createdAt
+      updatedAt
+      plants {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const updateGreenspace = /* GraphQL */ `
+  mutation UpdateGreenspace(
+    $input: UpdateGreenspaceInput!
+    $condition: ModelGreenspaceConditionInput
+  ) {
+    updateGreenspace(input: $input, condition: $condition) {
+      id
+      name
+      images
+      price
+      createdAt
+      updatedAt
+      plants {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const deleteGreenspace = /* GraphQL */ `
+  mutation DeleteGreenspace(
+    $input: DeleteGreenspaceInput!
+    $condition: ModelGreenspaceConditionInput
+  ) {
+    deleteGreenspace(input: $input, condition: $condition) {
+      id
+      name
+      images
+      price
+      createdAt
+      updatedAt
+      plants {
+        items {
+          id
+          plant_id
+          greenspace_id
+          createdAt
+          updatedAt
+          customer
+        }
+        nextToken
+      }
     }
   }
 `;

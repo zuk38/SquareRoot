@@ -1,17 +1,76 @@
-type Task
-  @model
+type Plant
+  @model(subscriptions: null)
   @auth(
     rules: [
-      { allow: groups, groups: ["Managers"], queries: null, mutations: [create, update, delete] }
-      { allow: groups, groups: ["Employees"], queries: [get, list], mutations: null }
+      # allow admins to create, update and delete plants
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view plants
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view plants
+      { allow: public, operations: [read] }
     ]
   ) {
   id: ID!
-  title: String!
-  description: String
-  status: String
+  name: String!
+  images: String
+  price_per_meter: Float
+  pollinator_friendly: String
+  edible: Boolean
+  allergen: Boolean
+  light_requirement: String
+  watering_needs: String
+  soil_type: String
+  soil_depth: Float 
+  featured: Boolean
+  rooftop: Boolean
+  rainbed: Boolean
+  indoor: Boolean
+  green_wall: Boolean
+
+  greenspaces: [GreenspacePlants] @connection(keyName: "byPlant", fields: ["id"])
 }
-type PrivateNote @model @auth(rules: [{ allow: owner }]) {
+
+type GreenspacePlants
+  @model(subscriptions: null)
+  @key(name: "byPlant", fields: ["plant_id", "greenspace_id"])
+  @key(name: "byGreenspace", fields: ["greenspace_id", "plant_id"])
+  @auth(
+    rules: [
+      # allow all authenticated users to view plants inside 
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view plants inside 
+      { allow: public, operations: [read] }
+      # only owner can see and edit his project plants
+      { allow: owner, identityClaim: "email", ownerField: "customer" }
+      # allow admins to view orders
+      { allow: groups, groups: ["Admin"] }
+    ]
+  ) {
   id: ID!
-  content: String!
+  plant_id: ID!
+  greenspace_id: ID!
+
+  plant: Plant @connection(fields: ["plant_id"])
+  greenspace: Greenspace @connection(fields: ["greenspace_id"])
 }
+
+type Greenspace
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      # allow admins to create, update and delete greenspaces
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view greenspaces
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view greenspaces
+      { allow: public, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  images: String
+  price: Float
+  
+  plants: [GreenspacePlants] @connection(keyName: "byGreenspace", fields: ["id"])
+}
+

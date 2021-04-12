@@ -4,8 +4,6 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-//Axios for get request
-import axios from 'axios';
 
 async function addContact() {
   //create request body
