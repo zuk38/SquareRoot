@@ -1,19 +1,19 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import "./projects.css";
-import icon from '../images/proj_icon.png'
+import icon from '../../../images/proj_icon.png';
 
-export default class All_Projects extends Component {
+/*onst logo = require('../../../images/proj_icon')*/
+
+export default class All_Projects extends Component { 
     render() {
-        return (
+        return (    
             <div class="projects_title">
-            <img class="project-icon" href="../images/proj_icon.png"/> 
-            <h1>MINE PROSJEKTER</h1>
-          
+            <img class="project-icon" src={icon} alt="Prosjektikon"/> 
+            <h1>PROSJEKTER</h1>
+          <br></br>
             <h2>
                 Velg et prosjekt for å legge til eller endre et grøntområde, eller opprett et nytt prosjekt. 
             </h2>
-            
-
             </div>
         )
     }
