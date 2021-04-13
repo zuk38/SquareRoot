@@ -12,8 +12,14 @@
   }
 
 body {
-    padding-top: 660px;
+    padding-top: 100px;
     background: var(--offWhite);
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.4;
-  }
+}
+
+h1 { 
+  display: inline;
+}
+
+
