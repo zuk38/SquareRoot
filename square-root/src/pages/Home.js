@@ -4,7 +4,7 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import HeroSection from 'square-root/src/components/HeroSection.js';
+//import HeroSection from '../components/HeroSection.js';
 
 async function addContact() {
   //create request body
@@ -77,7 +77,7 @@ function updateFormState(key, value, form) {
 export default function Home(props) {
   return (
     <div>
-      <HeroSection/>
+      {/* <HeroSection/> */}
       <section className="section">
         <Container>
           <div>

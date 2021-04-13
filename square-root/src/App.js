@@ -1,5 +1,5 @@
 import "./App.css";
-import "./App.sass";
+//import "./App.sass";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -12,6 +12,16 @@ import Home from "./pages/Home";
 import { Plants } from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
 import Error from "./pages/Error";
+import Rooftop from "./pages/Rooftop"
+import Rainbed from "./pages/Rainbed"
+import Indoor from "./pages/Indoor"
+import All_Projects  from "./pages/User/Projects/All_Projects"
+import Dashboard from "./pages/User/Projects/Dashboard"
+import Members from "./pages/User/Projects/Members"
+import Orders from "./pages/User/Projects/Orders"
+import Settings from "./pages/User/Projects/Settings"
+
+
 
 import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -115,15 +125,51 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/plants"
-                render={(props) => <Plants {...props} auth={authProps} />}
+                path="/Rooftop" 
+                render={(props) => <Rooftop {...props} auth={authProps} />}
               />
+              <Route
+                exact
+                path="/Rainbed"
+                render={(props) => <Rainbed {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Indoor"
+                render={(props) => <Indoor {...props} auth={authProps} />}
+              />
+            
               <Route
                 exact
                 path="/plants/:name"
                 render={(props) => (
                   <SinglePlant {...props} auth={authProps} />
                 )}
+              />
+              <Route
+                exact
+                path="/Projects"
+                render={(props) => <All_Projects {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Dashboard"
+                render={(props) => <Dashboard {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Members"
+                render={(props) => <Members {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Orders"
+                render={(props) => <Orders {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Settings"
+                render={(props) => <Settings {...props} auth={authProps} />}
               />
               <Route component={Error} />
             </Switch>
