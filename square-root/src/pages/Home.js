@@ -4,7 +4,7 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import HeroSection from '../HeroSection';
+import HeroSection from 'square-root/src/components/HeroSection.js';
 
 async function addContact() {
   //create request body
