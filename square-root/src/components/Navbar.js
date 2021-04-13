@@ -45,10 +45,16 @@ export default class Navbar extends Component {
           >
             {/* please correct this and render links as an array in constants file or something */}
             <li>
-              <Link to="/">Home</Link>
+              <Link to="/rooftop">Rooftop</Link>
             </li>
             <li>
-              <Link to="/plants">Plants</Link>
+              <Link to="/rainbed">Rainbed</Link>
+            </li>
+            <li>
+              <Link to="/indoor">Indoor</Link>
+            </li>
+            <li>
+              <Link to="/plants">Our Plants</Link>
             </li>
           </ul>
         </div>
