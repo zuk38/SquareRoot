@@ -11,6 +11,7 @@ import Navbar from "./components/Navbar";
 import Home from "./pages/Home";
 import { Plants } from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
+import Admin from "./pages/Admin"
 import Error from "./pages/Error";
 
 import { Auth } from "aws-amplify";
@@ -123,6 +124,13 @@ class App extends Component {
                 path="/plants/:name"
                 render={(props) => (
                   <SinglePlant {...props} auth={authProps} />
+                )}
+              />
+              <Route
+                exact
+                path="/admin"
+                render={(props) => (
+                  <Admin {...props} auth={authProps} />
                 )}
               />
               <Route component={Error} />
