@@ -1,0 +1,42 @@
+.hero-container{
+    /*background-image: url(https://www.ansgroupglobal.com/sites/default/files/styles/ans_wide_large/public/fields/news/images/chris-barbalis-bIx15C7AnNg-unsplash.jpg?itok=XCgBdGYH)
+    center center/cover no-repeat;*/
+    background: #fff;
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    
+}
+.imagebox{
+    Display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 20px;
+}
+.image{
+    height: 550px;
+    width: 850px;
+    overflow: hidden;
+    padding-top: 8%;
+    padding-left: 6%;
+}
+
+span{
+    padding-left: 3%;
+    padding-top: 67%;
+    padding-right: 10%;
+}
+.h1{
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    
+    
+}
+.hero-btns .btn {
+    margin: 0px;
+    margin-right: 20px;
+    
+  }

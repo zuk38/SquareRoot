@@ -4,6 +4,7 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
+import HeroSection from 'square-root/src/components/HeroSection.js';
 
 async function addContact() {
   //create request body
@@ -76,36 +77,7 @@ function updateFormState(key, value, form) {
 export default function Home(props) {
   return (
     <div>
-      <Hero>
-        <Banner
-          title="Plants of your dreams"
-          subtitle="Design your greens inside, outside and on top of buildings."
-        >
-          <Link to="/plants" className="btn-primary">
-            Our Plants
-          </Link>
-        </Banner>
-        <br></br>
-        <div class="field has-addons">
-          <div class="control">
-            <input
-              class="input"
-              type="text"
-              placeholder="Enter your Zip Code"
-              onChange={(e) =>
-                updateFormState("zipCode", e.target.value, zipState)
-              }
-            />
-          </div>
-          <div class="control">
-            <a class="button is-info" onClick={findCityFromZip}>
-              <span class="icon is-small">
-                <i class="fas fa-arrow-circle-right fa-lg"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-      </Hero>
+      <HeroSection/>
       <section className="section">
         <Container>
           <div>
