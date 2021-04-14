@@ -1,6 +1,4 @@
 .hero-container{
-    /*background-image: url(https://www.ansgroupglobal.com/sites/default/files/styles/ans_wide_large/public/fields/news/images/chris-barbalis-bIx15C7AnNg-unsplash.jpg?itok=XCgBdGYH)
-    center center/cover no-repeat;*/
     background: #fff;
     height: 100vh;
     width: 100%;
@@ -25,8 +23,10 @@
 
 span{
     padding-left: 3%;
-    padding-top: 67%;
+    padding-top: 50%;
     padding-right: 10%;
+    position: relative;
+    bottom: 0px;
 }
 .h1{
     color: rgb(0, 0, 0);
@@ -35,8 +35,26 @@ span{
     
     
 }
-.hero-btns .btn {
-    margin: 0px;
+button{
     margin-right: 20px;
+}
+.bd-notification {
+    padding-top: 40px;
+    margin: 50px;
     
-  }
+}
+.box{
+    padding-left: 3%;
+    padding-top: 50%;
+    padding-right: 10%;
+    position: relative;
+    bottom: 0px;
+}
+.image1{
+    display: block;
+    height: 550px;
+    width: 1850px;
+    
+    padding-top: 8%;
+    padding-left: 6%;
+}

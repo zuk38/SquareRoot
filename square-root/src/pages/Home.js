@@ -4,7 +4,7 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import HeroSection from 'square-root/src/components/HeroSection.js';
+import HeroSection from '../components/HeroSection.js';
 
 async function addContact() {
   //create request body
@@ -78,44 +78,7 @@ export default function Home(props) {
   return (
     <div>
       <HeroSection/>
-      <section className="section">
-        <Container>
-          <div>
-            <h3>Get in touch</h3>
-            <br />
-            <Form>
-              <Form.Group>
-                <Form.Label>Name</Form.Label>
-                <Form.Control
-                  placeholder="Name"
-                  onChange={(e) =>
-                    updateFormState("name", e.target.value, formState)
-                  }
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Email</Form.Label>
-                <Form.Control
-                  placeholder="Email"
-                  onChange={(e) =>
-                    updateFormState("email", e.target.value, formState)
-                  }
-                />
-              </Form.Group>
-              <Form.Group>
-                <Form.Label>Message</Form.Label>
-                <Form.Control
-                  placeholder="Message"
-                  onChange={(e) =>
-                    updateFormState("message", e.target.value, formState)
-                  }
-                />
-              </Form.Group>
-              <Button onClick={addContact}>Send a message</Button>
-            </Form>
-          </div>
-        </Container>
-      </section>
+      
     </div>
   );
 }
