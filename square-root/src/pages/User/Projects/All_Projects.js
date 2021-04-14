@@ -49,9 +49,9 @@ export default class All_Projects extends Component {
         </div>
         )
     }
+    
+    }
 
-  
-}
 
  
 
