@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom'
 
 export const Plants = () => {
     return (
+        
         <Hero hero="plantsHero">
             <Banner title="Our Plants">
                 <Link to="/" className="btn-primary">
