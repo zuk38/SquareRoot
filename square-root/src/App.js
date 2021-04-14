@@ -1,9 +1,9 @@
 import "./App.css";
-<<<<<<< HEAD
+
 /*import "./App.sass";*/
-=======
+
 //import "./App.sass";
->>>>>>> 1b010025537ca3fec78a234d8777b5d98aae0e97
+
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";

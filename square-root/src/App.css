@@ -189,7 +189,7 @@ body {
   justify-content: center;
 }
 .plantsHero {
-  background-image: url("./images/defaultBackground.jpg");
+  background-image: url("./images/defaultBackground.png");
   min-height: 60vh;
 }
 /* End of Hero */

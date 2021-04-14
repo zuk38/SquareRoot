@@ -4,11 +4,11 @@ import { API } from "aws-amplify";
 import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-<<<<<<< HEAD
+
 import HeroSection from '../components/HeroSection.js';
-=======
+
 //import HeroSection from '../components/HeroSection.js';
->>>>>>> 1b010025537ca3fec78a234d8777b5d98aae0e97
+
 
 async function addContact() {
   //create request body
@@ -81,11 +81,8 @@ function updateFormState(key, value, form) {
 export default function Home(props) {
   return (
     <div>
-<<<<<<< HEAD
-      <HeroSection/>
-      
-=======
-      {/* <HeroSection/> */}
+
+          {/* <HeroSection/> */}
       <section className="section">
         <Container>
           <div>
@@ -124,7 +121,7 @@ export default function Home(props) {
           </div>
         </Container>
       </section>
->>>>>>> 1b010025537ca3fec78a234d8777b5d98aae0e97
+
     </div>
   );
 }
