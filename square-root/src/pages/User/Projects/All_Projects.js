@@ -1,11 +1,7 @@
 import React, { Component } from 'react';
 import "./projects.css";
 import icon from '../../../images/proj_icon.png';
-import Modul from '../../appProjects.js';
-import { Container } from '../../Modal/container.js';
-import { Trigger } from '../../Modal/triggerButton.js';
-import { Modal } from '../../Modal/modal.js';
-import TriggerButton from '../../Modal/triggerButton.js';
+
 
 /*onst logo = require('../../../images/proj_icon')*/
 
@@ -16,11 +12,17 @@ export default class All_Projects extends Component {
             <div class="projects-title">
                 <img class="project-icon" src={icon} alt="Prosjektikon"/> 
                 <h1>PROSJEKTER</h1>
-                <button class="btn" onclick={Modul} ><i class="fas fa-plus"></i>NYTT PROSJEKT</button>
+                <button class="btn"><i class="fas fa-plus"></i>NYTT PROSJEKT</button>
+                <div id="Modal" class="modal">
+                    <div class="modal-content">
+                        <span class="close">&times;</span>
+                        <p class={FormData}></p>
+                    </div>
+                </div>
                 <br></br>
                 <br></br>
                 <h2>Velg et prosjekt for å legge til eller endre et grøntområde, eller opprett et nytt prosjekt.</h2>
-            
+    
             </div>
             
             {/*TABLE must GET data from GraphQL*/}
