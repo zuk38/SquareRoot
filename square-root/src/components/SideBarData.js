@@ -3,7 +3,7 @@ import * as FaIcons from "react-icons/fa";
 import * as AiIcons from "react-icons/ai";
 import * as IoIcons from "react-icons/io";
 
-export const SideBarData = [
+const SideBarData = [
   {
     title: "HOME",
     path: "/",
@@ -35,3 +35,35 @@ export const SideBarData = [
     className: "sidebar-text",
   },
 ];
+
+const NavbarData = [
+  {
+    title: "ROOFTOP",
+    path: "/rooftop",
+    icon: <AiIcons.AiFillHome />,
+    className: "sidebar-text",
+  },
+  {
+    title: "RAINBED",
+    path: "/rainbed",
+    icon: <AiIcons.AiFillHome />,
+    className: "sidebar-text",
+  },
+  {
+    title: "INDOOR",
+    path: "/indoor",
+    icon: <AiIcons.AiFillHome />,
+    className: "sidebar-text",
+  },
+  {
+    title: "OUR PLANTS",
+    path: "/plants",
+    icon: <AiIcons.AiFillHome />,
+    className: "sidebar-text",
+  },
+];
+
+export {
+  SideBarData,
+  NavbarData
+};

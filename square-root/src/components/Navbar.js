@@ -3,13 +3,26 @@ import React, { Component, useEffect, useState } from "react";
 import logo from "../images/logo.png";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SideBarData } from "./SideBarData";
+import { SideBarData, NavbarData } from "./SideBarData";
 import { IconContext } from "react-icons";
 import Backdrop from "./Backdrop"
 
 function Navbar() {
   const [sidebar, setSidebar] = useState(false);
   const showSideBar = () => setSidebar(!sidebar);
+  const[itemsHidden, setItemsHidden] = useState(false);
+
+  //depending on the screen size hide or show
+  const hideItems = () => {
+    if (window.innerWidth <= 768) setItemsHidden(true);
+    else setItemsHidden(false);
+  };
+  //render only once
+  useEffect(() => {
+    hideItems();
+  }, []);
+
+  window.addEventListener("resize", hideItems);
 
   const [currentPage, setCurrentPage] = useState("/");
 
@@ -24,27 +37,14 @@ function Navbar() {
           <div className="menu-icon" onClick={showSideBar}>
             <i className={sidebar ? <FaIcons.FaTimes /> : <FaIcons.FaBars />} />
           </div>
-          <ul className={sidebar ? "nav-menu active" : "nav-menu"}>
-            <li className="nav-item">
-              <Link to="/Rooftop" className="nav-links">
-                Rooftop
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/Rainbed" className="nav-links">
-                Rainbed
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/Indoor" className="nav-links">
-                Indoor
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link to="/Plants" className="nav-links">
-                Our Plants
-              </Link>
-            </li>
+          <ul className={itemsHidden ? "nav-menu active" : "nav-menu"}>
+            {NavbarData.map((item, index) => {
+              return (
+                <li key={index} className="nav-item">
+                  <Link to={item.path} className="nav-links">{item.title}</Link>
+                </li>
+              );
+            })}
           </ul>
           <div className="user">
             <FaIcons.FaUser />
