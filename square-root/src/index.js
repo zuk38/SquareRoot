@@ -7,6 +7,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css'
 
 
+
 require('dotenv').config()
 
 ReactDOM.render(

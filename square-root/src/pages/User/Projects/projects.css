@@ -16,14 +16,14 @@ body {
     padding-top: 100px;
     background: var(--offWhite);
     line-height: 1.4;
+    padding-left: 10%;
 }
 
 h1 { 
   display: inline;
   font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
+  font-weight: 400;
   font-size: x-large;
- 
 }
 
 h2 { 
@@ -35,9 +35,9 @@ h2 {
 
 .project-icon {
   width: 30px;
-  height: auto;
+  height: auto;;
 }
 
 .projects-title{
-  padding-bottom: 100px;
+  padding: 40%;
 }
