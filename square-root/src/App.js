@@ -1,5 +1,4 @@
-import "./App.css";
-//import "./App.sass";
+import "./App.css"
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -79,10 +78,9 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating && (
-        <div className="App">
           <div>
-            <MyNavbar auth={authProps} />
-            {/*<Switch>
+            <Navbar auth={authProps} />
+            <Switch>
               <Route
                 exact
                 path="/login"
@@ -173,10 +171,9 @@ class App extends Component {
                 render={(props) => <Settings {...props} auth={authProps} />}
               />
               <Route component={Error} />
-            </Switch> */}
+            </Switch>
             
           </div>
-        </div>
       )
     );
   }

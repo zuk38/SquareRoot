@@ -1,94 +1,86 @@
 import Auth from "@aws-amplify/auth";
 import React, { Component, useEffect, useState } from "react";
 import logo from "../images/logo.png";
-import { FaAlignRight } from "react-icons/fa";
+import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { SideBarData } from "./SideBarData";
+import { IconContext } from "react-icons";
+import Backdrop from "./Backdrop"
 
-/*function Navbar() {
-  const [button, setButton] = useState(true);
+function Navbar() {
+  const [sidebar, setSidebar] = useState(false);
+  const showSideBar = () => setSidebar(!sidebar);
 
-  const closeMobileMenu = () => setClick(false);
-
-  const showButton = () => {
-    if (window.innerWidth <= 960) {
-      setButton(false);
-    } else {
-      setButton(true);
-    }
-  };
-
-  useEffect(() => {
-    showButton();
-  }, []);
-
-  window.addEventListener('resize', showButton);
+  const [currentPage, setCurrentPage] = useState("/");
 
   return (
-    <>
-      <nav className='navbar'>
-        <div className='navbar-container'>
-          <Link to='/' className='navbar-logo' onClick={closeMobileMenu}>
+    <IconContext.Provider value={{ color: "#000" }}>
+      
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo">
             SQUAREROOT
           </Link>
-          <div className='menu-icon' onClick={handleClick}>
-            <i className={click ? 'fas fa-times' : 'fas fa-bars'} />
+          <div className="menu-icon" onClick={showSideBar}>
+            <i className={sidebar ? <FaIcons.FaTimes /> : <FaIcons.FaBars />} />
           </div>
-          <ul className={click ? 'nav-menu active' : 'nav-menu'}>
-            <li className='nav-item'>
-              <Link to='/' className='nav-links' onClick={closeMobileMenu}>
-                RAINBEDS
+          <ul className={sidebar ? "nav-menu active" : "nav-menu"}>
+            <li className="nav-item">
+              <Link to="/Rooftop" className="nav-links">
+                Rooftop
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/services'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                BIODIVERSITY
+            <li className="nav-item">
+              <Link to="/Rainbed" className="nav-links">
+                Rainbed
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                WALLS
+            <li className="nav-item">
+              <Link to="/Indoor" className="nav-links">
+                Indoor
               </Link>
             </li>
-            <li className='nav-item'>
-              <Link
-                to='/products'
-                className='nav-links'
-                onClick={closeMobileMenu}
-              >
-                INDOOR
-              </Link>
-            </li>
-
-            <li>
-              <Link
-                to='/sign-up'
-                className='nav-links-mobile'
-                onClick={closeMobileMenu}
-              >
-                Sign Up
+            <li className="nav-item">
+              <Link to="/Plants" className="nav-links">
+                Our Plants
               </Link>
             </li>
           </ul>
-          <div className='user'>
-          <i class="fas fa-user"/>
+          <div className="user">
+            <FaIcons.FaUser />
           </div>
         </div>
+        {/*sidebar*/}
+        <div className="sidebar">
+          <Link to="#" className="sidebar-bars" onClick={showSideBar}>
+            {!sidebar ? <FaIcons.FaBars /> : <></>}
+          </Link>
+          {sidebar ? <Backdrop/> : <></>}
+          <div className={sidebar ? "side-menu active" : "side-menu"}>
+          <ul className="side-menu-items" onClick={showSideBar}>
+            <li className="sidebar-toggle">
+              <Link to="#" className="sidebar-bars">
+                <FaIcons.FaTimes />
+              </Link>
+            </li>
+            {SideBarData.map((item, index) => {
+              return (
+                <li key={index} className={item.className}>
+                  <Link to={item.path}>{item.title}</Link>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+        </div>
       </nav>
-    </>
+    </IconContext.Provider>
   );
 }
 
-export default Navbar; */
+export default Navbar;
 
-export default class Navbar extends Component {
+/*export default class Navbar extends Component {
   state = {
     isClicked: false,
   };
@@ -164,7 +156,7 @@ export default class Navbar extends Component {
             className={this.state.isOpen ? "nav-links show-nav" : "nav-links"}
           >
             {/* please correct this and render links as an array in constants file or something */
-        /*}
+/*}
             <li>
               <Link to="/Rooftop">Rooftop</Link>
             </li>
@@ -206,8 +198,8 @@ export default class Navbar extends Component {
               )}
             </div>
           </div>
-        </div>*/}
+        </div>
       </nav>
     );
   }
-}
+}*/
