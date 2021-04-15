@@ -17,13 +17,39 @@ body{
 }
 
 body {
-    padding-top: 15%;
     background: var(--offWhite);
     line-height: 1.4;
-    padding-left: 5%;
-    padding-right: 5%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
+/* COLUMNS */
+
+
+.row{
+  padding-top: 15%;
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  width: 10%;
+ float: left;
+}
+
+.right {
+  width: 90%;
+  float: right;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* end of COLUMNS */
 
 /* TITLE */
 .project-icon {
@@ -34,8 +60,8 @@ body {
 }
 
 .projects-title{
-  overflow: hidden;
   padding-bottom: 5%;
+  
 }
 
 h1 { 
@@ -99,3 +125,27 @@ button {
 }
 
 /* end of BUTTON */
+
+/* PROJECTS-MENU */
+.menu-vertical {
+  width: 200px;
+  float: left;
+}
+
+.menu-vertical a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.menu-vertical a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.menu-vertical a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
