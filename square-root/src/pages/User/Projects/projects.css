@@ -10,13 +10,58 @@
     --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
     --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   }
-
+  
+html,
+body{ 
+  height: 100%;
+}
 
 body {
-    padding-top: 100px;
     background: var(--offWhite);
     line-height: 1.4;
-    padding-left: 10%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+/* COLUMNS */
+
+
+.row{
+  padding-top: 15%;
+  display: flex;
+  width: 100%;
+}
+
+.left {
+  width: 10%;
+ float: left;
+}
+
+.right {
+  width: 90%;
+  float: right;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* end of COLUMNS */
+
+/* TITLE */
+.project-icon {
+  width: 22px;
+  height: auto;
+  float:left;
+  margin: 0 16px 16px 0;
+}
+
+.projects-title{
+  padding-bottom: 5%;
+  
 }
 
 h1 { 
@@ -32,12 +77,75 @@ h2 {
   font-weight: 300;
   font-size: medium;
 }
+/* end of TITLE */
 
-.project-icon {
-  width: 30px;
-  height: auto;;
+/* TABLE */
+table {
+  font-family: 'Montserrat', sans-serif;
+  width: 100%;
+  border-collapse: separate;
 }
 
-.projects-title{
-  padding: 40%;
+th {
+  font-weight: 500;
+  padding: 15px;
 }
+
+td {
+  font-weight: 300;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+#projects-table{
+  border-spacing: 0 10px;
+}
+/* end of TABLE */
+
+/* BUTTON */
+button {
+  padding: 15px 10px;
+  background-color: #D0E2B0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 300;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn:hover {
+  background-color: #EBF4DE;
+  font-size: 12px;
+}
+
+.fas {
+  padding: 0 10px;
+}
+
+/* end of BUTTON */
+
+/* PROJECTS-MENU */
+.menu-vertical {
+  width: 200px;
+  float: left;
+}
+
+.menu-vertical a {
+  background-color: #eee; /* Grey background color */
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+}
+
+.menu-vertical a:hover {
+  background-color: #ccc; /* Dark grey background on mouse-over */
+}
+
+.menu-vertical a.active {
+  background-color: #4CAF50; /* Add a green color to the "active/current" link */
+  color: white;
+}
+
