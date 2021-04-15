@@ -11,36 +11,31 @@
     --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   }
   
-html,
-body{ 
-  height: 100%;
-}
-
-body {
-    background: var(--offWhite);
-    line-height: 1.4;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-}
 
 /* COLUMNS */
 
-
+#content {
+  background-color: var(--offWhite);
+}
 .row{
-  padding-top: 15%;
+  padding-top: 10%;
   display: flex;
   width: 100%;
+  background: var(--offWhite);
+  height: 100%;
+  position: absolute;
 }
 
 .left {
   width: 10%;
  float: left;
+ background: var(--offWhite);
 }
 
 .right {
   width: 90%;
   float: right;
+  background: var(--offWhite);
 }
 
 .row:after {
@@ -103,7 +98,7 @@ td {
 /* end of TABLE */
 
 /* BUTTON */
-button {
+.btn-projects {
   padding: 15px 10px;
   background-color: #D0E2B0;
   font-family: 'Montserrat', sans-serif;
@@ -115,7 +110,7 @@ button {
   font-size: 12px;
 }
 
-.btn:hover {
+.btn-projects:hover {
   background-color: #EBF4DE;
   font-size: 12px;
 }
