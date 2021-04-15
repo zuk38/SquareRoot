@@ -12,7 +12,7 @@ export default class Dashboard extends Component {
     
         return (
            <div class="row">
-             {/*<div class="column left">
+            <div class="column left">
             <div class="menu-vertical">
                 <a href="#" class="active"><i class="fas fa-users"></i>Dashbord</a>
                 <a href="/Members"><i class="fas fa-users"></i>Medlemmer</a>
@@ -20,7 +20,7 @@ export default class Dashboard extends Component {
                 <a href="/Settings"> <i class="fas fa-cog"></i>Instillinger</a>
                 </div>
             </div>
-        */}
+     
             <div class="projects-title column right">
                 
                 <img class="project-icon" src={icon} alt="Prosjektikon"/> 
