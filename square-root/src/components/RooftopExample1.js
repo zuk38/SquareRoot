@@ -25,14 +25,15 @@ class RooftopExample1 extends Component {
 														<img src={role.similaricon2} className='similaricon'/>
 													</a>
 													<p className='city'>{role.city}</p>
-													<div className='options'>
-													<button class="button is-medium is-light is-fullwidth">Tilpass</button>
-      												<button class="button is-medium is-dark is-fullwidth">
-          											Legg til i prosjekt<i class="fas fa-chevron-right"/></button>
-													  </div>
 												</div>
 											})}
+											<div className='options'>
+													<button class="button is-medium is-light is-fullwidth" className='tilpass'>Tilpass</button>
+      												<button class="button is-medium is-dark is-fullwidth">
+          											Legg til i prosjekt<i class="fas fa-chevron-right"/></button>
+											</div>
 									</div>
+									
 								</div>
 							</div>
 						);
