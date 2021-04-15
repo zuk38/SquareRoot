@@ -1,0 +1,42 @@
+body{
+    background: white;
+}
+
+.img-rooftop1{
+    height: 600px;
+    width: 900px;
+}
+.rooftop{
+    position: relative;
+    left: -7%;
+}
+.rooftopinfo{
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    grid-gap: 2%;
+    padding-top: 20px;
+}
+h5{
+    font-size: 30px;
+}
+.similaricon{
+    height: 170px;
+    width: 280px;
+    padding-top: 3%;
+    padding-right: 1%;
+    padding-left: 1%;
+}
+.city{
+    padding-top: 1%;
+}
+p{
+    padding-bottom: 2%;
+}
+.button{
+    margin-top: 3%;
+}
+.options{
+    position: absolute;
+    bottom: auto;
+    padding-top: 20px;
+}

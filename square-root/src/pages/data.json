@@ -1,0 +1,34 @@
+{"Rooftop1": [
+    {
+      "icon": "../../../images/rooftop.png",
+      "roles": [
+        {
+          "title": "Rooftop Garden",
+          "description": "Tekst om hvorfor Rooftop Garden er bra for alle.",
+          "startDate": "2017-01-01",
+          "endDate": "2017-05-01",
+          "location": "New York, USA",
+          "similarurl1": "blank",
+          "similaricon1": "../../../images/rooftop.png",
+          "similarurl2": "blank",
+          "similaricon2": "../../../images/rooftop.png",
+          "city": "OSLO"
+        }
+      ]
+    },
+    {
+      "companyName": "Demo2 Technologies",
+      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
+      "url": "https://www.google.com/",
+      "roles": [
+        {
+          "title": "UI Designer",
+          "description": "Design user-fridendly web page",
+          "startDate": "2016-05-01",
+          "endDate": "2016-09-01",
+          "location": "Beijing, China"
+        }
+      ]
+    }
+  ]
+}
