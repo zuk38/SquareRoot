@@ -1,25 +1,67 @@
 import React, { Component } from 'react';
 import "./projects.css";
 import icon from '../../../images/proj_icon.png';
+import Modal from 'react-modal';
 
+const customStyles = {
+    content : {
+      top                   : '50%',
+      left                  : '50%',
+      right                 : 'auto',
+      bottom                : 'auto',
+      marginRight           : '-50%',
+      transform             : 'translate(-50%, -50%)'
+    }
+  };
 
-/*onst logo = require('../../../images/proj_icon')*/
+  const title = 
+  const subtitle = "Fortell oss litt mer om prosjektet"
 
 export default class All_Projects extends Component { 
+    let sub
+    state = {
+        modalOpen: false,
+        title: "La oss lage et økosystem",
+        subtitle: "Fortell oss litt mer om prosjektet"
+
+    };
+
+    openModal = () => {
+        this.setState(true);
+    }
+
+    closeModal = () => {
+        this.setState(false);
+    }
+
     render() {
         return (    
         <div class="row">
+
            {/* <div class="column left"/> */}
             <div class="projects-title column right">
                 <img class="project-icon" src={icon} alt="Prosjektikon"/> 
                 <h1>PROSJEKTER</h1>
-                <button class="btn"><i class="fas fa-plus"></i>NYTT PROSJEKT</button>
-                <div id="Modal" class="modal">
-                    <div class="modal-content">
-                        <span class="close">&times;</span>
-                        <p class={FormData}></p>
-                    </div>
-                </div>
+                <button class="btn-projects" onClick={this.openModal}><i class="fas fa-plus"></i>NYTT PROSJEKT</button>
+                <Modal
+                    isOpen={modalIsOpen}
+                    onAfterOpen={afterOpenModal}
+                    onRequestClose={closeModal}
+                    style={customStyles}
+                    contentLabel="Example Modal"
+                    >
+
+                    <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
+                    <button onClick={closeModal}>close</button>
+                    <div>I am a modal</div>
+                    <form>
+                        <input />
+                        <button>tab navigation</button>
+                        <button>stays</button>
+                        <button>inside</button>
+                        <button>the modal</button>
+                    </form>
+        </Modal>
                 
                 <br></br>
                 <br></br>
