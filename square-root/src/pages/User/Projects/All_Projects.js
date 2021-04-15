@@ -10,28 +10,27 @@ const customStyles = {
       right                 : 'auto',
       bottom                : 'auto',
       marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
+      transform             : 'translate(-50%, -50%)',
+      width                 : '70%',
+      height                : '70%'
     }
   };
 
-  const title = 
-  const subtitle = "Fortell oss litt mer om prosjektet"
-
 export default class All_Projects extends Component { 
-    let sub
     state = {
-        modalOpen: false,
-        title: "La oss lage et økosystem",
-        subtitle: "Fortell oss litt mer om prosjektet"
-
+        modalOpen: false
     };
 
     openModal = () => {
-        this.setState(true);
+        this.setState({
+            modalOpen: true,
+        });
     }
 
     closeModal = () => {
-        this.setState(false);
+        this.setState({
+            modalOpen: false,
+        });
     }
 
     render() {
@@ -43,16 +42,19 @@ export default class All_Projects extends Component {
                 <img class="project-icon" src={icon} alt="Prosjektikon"/> 
                 <h1>PROSJEKTER</h1>
                 <button class="btn-projects" onClick={this.openModal}><i class="fas fa-plus"></i>NYTT PROSJEKT</button>
-                <Modal
-                    isOpen={modalIsOpen}
-                    onAfterOpen={afterOpenModal}
-                    onRequestClose={closeModal}
+               
+               <div class="modal"> 
+               <Modal
+                    isOpen={this.state.modalOpen}
+                    onRequestClose={this.closeModal}
                     style={customStyles}
                     contentLabel="Example Modal"
                     >
 
-                    <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-                    <button onClick={closeModal}>close</button>
+                    <h1>La oss lage et økosystem</h1>
+                    <br/>
+                    <h2>Fortell oss litt mer om prosjektet</h2>
+                    <button onClick={this.closeModal}>close</button>
                     <div>I am a modal</div>
                     <form>
                         <input />
@@ -62,6 +64,7 @@ export default class All_Projects extends Component {
                         <button>the modal</button>
                     </form>
         </Modal>
+        </div>
                 
                 <br></br>
                 <br></br>
