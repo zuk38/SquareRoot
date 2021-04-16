@@ -1,33 +1,29 @@
 import Auth from "@aws-amplify/auth";
-import React, { Component, useEffect, useState } from "react";
+import React, { Component, useEffect, useState, useRef } from "react";
 import logo from "../images/logo.png";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import { IconContext } from "react-icons";
 import Backdrop from "./Backdrop";
+import useWindowDimensions from "./hooks/useWindowDimensions"
 
 function Navbar(props) {
   const [sidebar, setSidebar] = useState(false);
   const showSideBar = () => setSidebar(!sidebar);
-  const [itemsHidden, setItemsHidden] = useState(true);
+  const [itemsHidden, setItemsHidden] = useState(false);
   const [currentPage, setCurrentPage] = useState("/");
+  const { width } = useWindowDimensions();
 
   //depending on the screen size hide or show
   const hideItems = () => {
-    if (window.innerWidth <= 768) setItemsHidden(true);
-    else setItemsHidden(false);
+    if (width <= 768) setItemsHidden(true)
+    else setItemsHidden(false)
   };
   //render only once
   useEffect(() => {
     hideItems();
   }, []);
-
-  window.addEventListener("resize", hideItems);
-
-  /*beach resort here */
-  const [isOpen, setIsOpen] = useState(false);
-  const handleToggle = () => setIsOpen(!isOpen);
 
   const handleLogOut = async (event) => {
     event.preventDefault();
