@@ -1,3 +1,6 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+
 * {
   margin: 0;
   padding: 0;
@@ -116,76 +119,23 @@ h6 {
   align-items: center;
   font-size: 1.2rem;
 }
-
-.navbar-container {
-  background: var(--navbarBack);
+.nav-header {
   display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 80px;
-  max-width: 1500px;
-  z-index: 1;
-}
-
-.navbar-logo {
-  color: var(--mainBlack);
-  justify-self: start;
-  margin-left: 5%;
-  cursor: pointer;
-  text-decoration: none;
-  font-size: 2rem;
-  display: flex;
-  align-items: center;
-  font-family: "Montserrat", sans-serif;
-}
-
-.nav-btn {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  outline: none;
-}
-
-.nav-icon {
-  margin-right: 0.5rem;
-  font-size: 1.5rem;
-  color: var(--primaryColor);
-}
-
-.nav-menu {
-  display: grid;
-  grid-template-columns: repeat(4, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 2000px;
-  justify-content: center;
-  font-family: "Montserrat", sans-serif;
-  padding-right: 220px;
-}
-
-.nav-item {
-  height: 80px;
+  justify-content: space-between;
 }
 
 .nav-links {
-  height: 100%;
-  padding: 0.5rem 1rem;
-  color: var(--mainBlack);
+  height: 0;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  text-decoration: none;
   transition: var(--mainTransition);
   list-style-type: none;
+  /*additional stuff*/
   font-family: "Montserrat", sans-serif;
+  text-decoration: none;
+  list-style-type: none;
+  align-items: center;
+  display: flex;
 }
-
-.nav-links:hover {
-  border-bottom: 4px solid var(--mainBlack);
-  transition: all 0.2s ease-out;
-}
-
 .nav-links a {
   display: block;
   text-decoration: none;
@@ -202,6 +152,97 @@ h6 {
   transition: all 0.2s ease-out;
 }
 
+.show-nav {
+  height: 100px;
+}
+
+@media screen and (min-width: 768px) {
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+}
+
+/* beach resort tutorial here */
+/*.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  padding: 0.75rem 2rem;
+  background: var(--offWhite);
+  z-index: 1;
+}
+.nav-header {
+  display: flex;
+  justify-content: space-between;
+}
+.nav-btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
+}
+.nav-icon {
+  font-size: 1.5rem;
+  color: var(--primaryColor);
+}
+.nav-links {
+  height: 0;
+  overflow: hidden;
+  transition: var(--mainTransition);
+  list-style-type: none;
+}
+.nav-links a {
+  display: block;
+  text-decoration: none;
+  padding: 1rem 0;
+  color: var(--mainBlack);
+  transition: var(--mainTransition);
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: var(--mainSpacing);
+}
+.nav-links a:hover {
+  color: var(--primaryColor);
+}
+
+.show-nav {
+  height: 100px;
+}
+@media screen and (min-width: 768px) {
+  .nav-btn {
+    display: none;
+  }
+  .nav-center {
+    max-width: 1170px;
+    margin: 0 auto;
+    display: flex;
+  }
+  .nav-links {
+    height: auto;
+    display: flex;
+    margin-left: 4rem;
+  }
+  .nav-links a {
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+  }
+}*/
+
+/*
+
 .btn-link {
   display: flex;
   justify-content: center;
@@ -212,34 +253,29 @@ h6 {
   width: 100%;
 }
 
-.nav-links-mobile {
+/*.navbar-item {
+  display: flex !important;
+}
+
+.navbar-end {
+  justify-content: flex-end !important;
+  margin-left: auto !important;
+}*/
+
+/*.nav-links-mobile {
   display: none;
-}
+}*/
 
-.show-nav {
-  height: 100px;
-}
-
-.menu-icon {
+/*.user {
   display: block;
   position: absolute;
   top: 0;
-  right: 55px;
-  transform: translate(-100%, 60%);
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-.user {
-  display: block;
-  position: absolute;
-  top: 0;
-  transform: translate(-100%, 60%);
-  right: 55px;
-  font-size: 1.8rem;
+  transform: translate(-100%, 55%);
+  right: 0.5px;
   cursor: pointer;
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 960px) {
   .nav-btn {
     display: none;
   }
@@ -249,37 +285,31 @@ h6 {
     margin-right: 5rem;
     display: flex;
   }*/
-  /*.nav-links {
+/*.nav-links {
     height: auto;
     display: flex;
     margin-left: 4rem;
   }*/
-  .nav-links a {
+/*.nav-links a {
     margin: 0 1rem;
     padding: 0.5rem 0;
   }
-}
+}*/
 
 /* end of navbar */
 /*sidebar */
-.sidebar {
-  background-color: #060b26;
-  height: 80px;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  z-index: 200;
-}
 .sidebar-bars {
-  font-size: 1.8rem;
-  background: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  outline: none;
   display: block;
   position: absolute;
-  top: 1px;
   transform: translate(-100%, 60%);
+  top: 1px;
   right: 2px;
-  cursor: pointer;
   z-index: 200;
+  font-size: 1.5rem;
 }
 .side-menu {
   background-color: var(--navbarBack);
@@ -299,16 +329,6 @@ h6 {
   transition: 350ms;
   box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
   z-index: 200;
-}
-
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
 }
 
 .side-menu-items {
@@ -349,8 +369,18 @@ h6 {
   align-items: center;
   z-index: 200;
 }
-
 /*end of sidebar */
+/* backdrop - backround for side menu, modals etc */
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+/*end of backdrop */
 
 /* Hero */
 /*.defaultHero,

@@ -7,7 +7,6 @@ import ForgotPasswordVerification from "./components/auth/ForgotPassVerification
 import ChangePasswordConfirm from "./components/auth/ChangePassConfirm";
 import Welcome from "./components/Welcome";
 import Navbar from "./components/Navbar";
-import MyNavbar from "./components/MyNavbar"
 import Home from "./pages/Home";
 import { Plants } from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
@@ -78,7 +77,7 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating && (
-          <div>
+          <>
             <Navbar auth={authProps} />
             <Switch>
               <Route
@@ -173,7 +172,7 @@ class App extends Component {
               <Route component={Error} />
             </Switch>
             
-          </div>
+          </>
       )
     );
   }

@@ -3,14 +3,15 @@ import React, { Component, useEffect, useState } from "react";
 import logo from "../images/logo.png";
 import * as FaIcons from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { SideBarData, NavbarData } from "./SideBarData";
+import { NavbarData } from "./NavbarData";
 import { IconContext } from "react-icons";
-import Backdrop from "./Backdrop"
+import Backdrop from "./Backdrop";
 
-function Navbar() {
+function Navbar(props) {
   const [sidebar, setSidebar] = useState(false);
   const showSideBar = () => setSidebar(!sidebar);
-  const[itemsHidden, setItemsHidden] = useState(false);
+  const [itemsHidden, setItemsHidden] = useState(true);
+  const [currentPage, setCurrentPage] = useState("/");
 
   //depending on the screen size hide or show
   const hideItems = () => {
@@ -24,56 +25,162 @@ function Navbar() {
 
   window.addEventListener("resize", hideItems);
 
-  const [currentPage, setCurrentPage] = useState("/");
+  /*beach resort here */
+  const [isOpen, setIsOpen] = useState(false);
+  const handleToggle = () => setIsOpen(!isOpen);
+
+  const handleLogOut = async (event) => {
+    event.preventDefault();
+    try {
+      Auth.signOut();
+      this.props.auth.setAuthStatus(false);
+      this.props.auth.setUser(null);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   return (
     <IconContext.Provider value={{ color: "#000" }}>
-      
-      <nav className="navbar" role="navigation" aria-label="main navigation">
-        <div className="navbar-container">
-          <Link to="/" className="navbar-logo">
-            SQUAREROOT
-          </Link>
-          <div className="menu-icon" onClick={showSideBar}>
-            <i className={sidebar ? <FaIcons.FaTimes /> : <FaIcons.FaBars />} />
+      <nav className="navbar">
+        <div className="nav-center">
+          <div className="nav-header">
+            <Link to="/">
+              <img src={logo} alt="SQUAREROOT" />
+            </Link>
+            <div className="sidebar-bars" onClick={showSideBar}>
+              {sidebar ? <FaIcons.FaTimes /> : <FaIcons.FaBars />}
+            </div>
           </div>
-          <ul className={itemsHidden ? "nav-menu active" : "nav-menu"}>
-            {NavbarData.map((item, index) => {
-              return (
-                <li key={index} className="nav-item">
-                  <Link to={item.path} className="nav-links">{item.title}</Link>
-                </li>
-              );
-            })}
-          </ul>
-          <div className="user">
-            <FaIcons.FaUser />
-          </div>
+          {!itemsHidden && (
+            <ul className="nav-links">
+              {NavbarData.slice(
+                0,
+                NavbarData.map(function(e) {
+                  return e.title;
+                }).indexOf("HOME")
+              ).map((item, index) => {
+                return (
+                  <li key={index}>
+                    <Link to={item.path}>{item.title}</Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
         </div>
         {/*sidebar*/}
-        <div className="sidebar">
-          <Link to="#" className="sidebar-bars" onClick={showSideBar}>
-            {!sidebar ? <FaIcons.FaBars /> : <></>}
-          </Link>
-          {sidebar ? <Backdrop/> : <></>}
-          <div className={sidebar ? "side-menu active" : "side-menu"}>
+        <Link to="#" className="sidebar-bars" onClick={showSideBar}>
+          {!sidebar ? <FaIcons.FaBars /> : <></>}
+        </Link>
+        {sidebar ? <Backdrop /> : <></>}
+        <div className={sidebar ? "side-menu active" : "side-menu"}>
           <ul className="side-menu-items" onClick={showSideBar}>
             <li className="sidebar-toggle">
               <Link to="#" className="sidebar-bars">
                 <FaIcons.FaTimes />
               </Link>
             </li>
-            {SideBarData.map((item, index) => {
+            {itemsHidden
+              ? NavbarData.map((item, index) => {
+                  return (
+                    <li key={index} className={item.className}>
+                      <Link to={item.path}>{item.title}</Link>
+                    </li>
+                  );
+                })
+              : NavbarData.slice(
+                  NavbarData.map(function(e) {
+                    return e.title;
+                  }).indexOf("HOME")
+                ).map((item, index) => {
+                  return (
+                    <li key={index} className={item.className}>
+                      <Link to={item.path}>{item.title}</Link>
+                    </li>
+                  );
+                })}
+          </ul>
+        </div>
+      </nav>
+
+      {/* beach resort
+        <nav className="navbar">
+        <div className="nav-center">
+          <div className="nav-header">
+            <Link to="/">
+              <img src={logo} alt="SQUAREROOT" />
+            </Link>
+            <button type="button" className="nav-btn">
+              <FaIcons.FaAlignRight
+                className="nav-icon"
+                onClick={handleToggle}
+              />
+            </button>
+          </div>
+          <ul className={isOpen ? "nav-links show-nav" : "nav-links"}>
+            {NavbarData.map((item, index) => {
               return (
-                <li key={index} className={item.className}>
-                  <Link to={item.path}>{item.title}</Link>
+                <li key={index}>
+                  <Link to={item.path}>
+                    {item.title}
+                  </Link>
                 </li>
               );
             })}
           </ul>
         </div>
-        </div>
       </nav>
+      */}
+
+      {/*
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-container">
+          <Link to="/" className="navbar-logo">
+            SQUAREROOT
+          </Link>
+          <div className="sidebar-bars" onClick={showSideBar}>
+            <i className={sidebar ? <FaIcons.FaTimes /> : <FaIcons.FaBars />} />
+          </div>
+          {!itemsHidden && (
+            <ul className="nav-menu">
+              {NavbarData.map((item, index) => {
+                return (
+                  <li key={index} className="nav-item">
+                    <Link to={item.path} className="nav-links">
+                      {item.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+
+          {props.auth.isAuthenticated && props.auth.user && (
+            <p>{props.auth.user}</p>
+          )}
+          <div className="user">
+            {!props.auth.isAuthenticated && (
+              <a href="/login" className="button is-outlined">
+                <span>Sign in</span>
+                <span class="icon is-small">
+                  <FaIcons.FaUser />
+                </span>
+              </a>
+            )}
+            {props.auth.isAuthenticated && (
+              <a href="/" onClick={handleLogOut} className="button is-outlined">
+                Log out
+              </a>
+            )}
+          </div>
+        </div>
+        
+
+        <div className="user">
+            <FaIcons.FaUser />
+          </div> 
+      </nav> */}
     </IconContext.Provider>
   );
 }
