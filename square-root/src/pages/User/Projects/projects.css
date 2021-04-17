@@ -12,11 +12,9 @@
   }
 /* COLUMNS */
 
-#content {
-  background-color: var(--offWhite);
-}
+
 .row{
-  padding-top: 10%;
+  padding-top: 5%;
   display: flex;
   width: 100%;
   background: var(--offWhite);
@@ -25,15 +23,19 @@
 }
 
 .left {
-  width: 10%;
+width: 25%;
  float: left;
  background: var(--offWhite);
+ padding-left: 5%
+
 }
 
 .right {
-  width: 90%;
-  float: right;
+  width: 75%;
+  float: left;
   background: var(--offWhite);
+  padding-right: 5%;
+  padding-left:5%;
 }
 
 .row:after {
@@ -51,10 +53,23 @@
   float:left;
   margin: 0 16px 16px 0;
 }
+.p-icon-main{
+  width: 50px;
+  height: auto;
+  float:left;
+  margin: 0 16px 16px 0;
+}
 
 .projects-title{
+  padding-top: 10%;
   padding-bottom: 5%;
-  
+  width: 100%;
+  float: left;
+  background: var(--offWhite);
+  padding-right: 5%;
+  padding-left: 5%;
+  position: absolute;
+  height: 100%;
 }
 
 h1 { 
@@ -69,6 +84,7 @@ h2 {
   font-family: 'Montserrat', sans-serif;
   font-weight: 300;
   font-size: medium;
+  
 }
 /* end of TITLE */
 
@@ -77,11 +93,13 @@ table {
   font-family: 'Montserrat', sans-serif;
   width: 100%;
   border-collapse: separate;
+  padding-top: 5%;
 }
 
 th {
   font-weight: 500;
   padding: 15px;
+  text-align: left;
 }
 
 td {
@@ -93,9 +111,10 @@ td {
 #projects-table{
   border-spacing: 0 10px;
 }
+
 /* end of TABLE */
 
-/* BUTTON */
+/* BUTTON : NEW PROJECT*/
 .btn-projects {
   padding: 15px 10px;
   background-color: #D0E2B0;
@@ -119,32 +138,72 @@ td {
 
 /* end of BUTTON */
 
+/* BUTTON : BACK TO PROJECTS*/
+.btn-back{
+  padding: 15px 10px;
+  background-color: var(--offWhite);
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+  font-size: 13px;
+}
+a.btn-back:hover{
+  font-weight: 600;
+}
+
+/* end of BUTTON */
+
+/* BUTTON : CLOSE MODAL*/
+.btn-modal-close{
+  float: right;
+  background-color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+}
+
+
+.fa-times {
+  width: 30px;
+  height: auto;
+}
+/* end of BUTTON */
+
 /* PROJECTS-MENU */
 .menu-vertical {
   width: 200px;
   float: left;
+  font-family: 'Montserrat', sans-serif;
+  border-radius: 5px;
+  margin-top: 10%;
 }
 
 .menu-vertical a {
-  background-color: #eee; /* Grey background color */
   color: black; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 12px; /* Add some padding */
   text-decoration: none; /* Remove underline from links */
+  border-radius: 5px;
 }
 
 .menu-vertical a:hover {
-  background-color: #ccc; /* Dark grey background on mouse-over */
+  background-color: #E0E0E0; /* Dark grey background on mouse-over */
+  font-weight: 500;
 }
 
 .menu-vertical a.active {
-  background-color: #4CAF50; /* Add a green color to the "active/current" link */
-  color: white;
+  background-color: #D0E2B0;
+  font-weight: 500;
 }
 
 /*MODAL*/
 .modal {
   padding-left:10px;
+  text-align: center;
 
 }
 
