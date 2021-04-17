@@ -12,7 +12,7 @@ import { Plants } from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
 import Error from "./pages/Error";
 import Rooftop from "./pages/Rooftop"
-import Rainbed from "./pages/Rainbed"
+import {Rainbed} from "./pages/Rainbed"
 import Indoor from "./pages/Indoor"
 import All_Projects  from "./pages/User/Projects/All_Projects"
 import Dashboard from "./pages/User/Projects/Dashboard"
@@ -123,20 +123,26 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Rooftop" 
+                path="/rooftop" 
                 render={(props) => <Rooftop {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Rainbed"
+                path="/rainbed"
                 render={(props) => <Rainbed {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Indoor"
+                path="/indoor"
                 render={(props) => <Indoor {...props} auth={authProps} />}
               />
-            
+              <Route
+                exact
+                path="/plants"
+                render={(props) => (
+                  <Plants {...props} auth={authProps} />
+                )}
+              />            
               <Route
                 exact
                 path="/plants/:name"
@@ -146,27 +152,27 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Projects"
+                path="/projects"
                 render={(props) => <All_Projects {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Dashboard"
+                path="/dashboard"
                 render={(props) => <Dashboard {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Members"
+                path="/members"
                 render={(props) => <Members {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Orders"
+                path="/orders"
                 render={(props) => <Orders {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Settings"
+                path="/settings"
                 render={(props) => <Settings {...props} auth={authProps} />}
               />
               <Route component={Error} />
