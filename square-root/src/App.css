@@ -1,11 +1,6 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
+/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";*/
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 :root {
   --primaryColor: #af9a7d;
   --mainWhite: #fff;
@@ -18,14 +13,35 @@
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --navbarBack: #f9f9f9;
+  --bg: #242526;
+  --bg-accent: #484a4d;
+  --text-color: #dadce1;
+  --nav-size: 60px;
+  --border: 1px solid #474a4d;
+  --border-radius: 8px;
+  --speed: 500ms;
 }
 /* globals */
 body {
-  padding-top: 0px;
-  color: var(--mainBlack);
+  padding-top: 10px;
+  color: var(--mainWhite);
   background: var(--mainBlack);
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: "Montserrat", sans-serif;
   /*font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;*/
+}
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: var(--text-color);
+  text-decoration: none;
 }
 /*h1 {
   font-size: 3em;
@@ -106,31 +122,65 @@ h6 {
 /* end of globals */
 /* Navbar */
 .navbar {
-  background: var(--navbarBack);
+  height: var(--nav-size);
+  background-color: var(--navbarBack);
   position: fixed;
+  padding: 0.75 2rem;
   top: 0;
   left: 0;
-  padding: 0.75rem 2rem;
-  width: 100%;
-  z-index: 1;
-  /*height: 80px;
+  border-bottom: var(--border);
   display: flex;
-  justify-content: center;
-  align-items: center;*/
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
   font-size: 1.2rem;
+  z-index: 1;
+}
+.navbar-nav {
+  max-width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 15px;
+  align-items: center;
+}
+.nav-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+}
+.icon-button {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--bg-accent);
+  border-radius: 50%;
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+.icon-button:hover {
+  filter: brightness(1.2);
+}
+.icon-button svg {
+  fill: var(--text-color);
+  width: 20px;
+  height: 20px;
 }
 .nav-header {
   display: flex;
   justify-content: space-between;
 }
-
 .nav-links {
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
   list-style-type: none;
   /*additional stuff*/
-  font-family: "Montserrat", sans-serif;
   text-decoration: none;
   list-style-type: none;
   align-items: center;
@@ -147,30 +197,41 @@ h6 {
   letter-spacing: var(--mainSpacing);
 }
 .nav-links a:hover {
-  border-bottom: 4px solid rgb(0, 0, 0);
+  border-bottom: 4px solid var(--bg);
   transition: all 0.2s ease-out;
 }
-.user{
-  display: block;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translate(-100%, -55%);
-  right: -30px;
-  cursor: pointer;
+.user-round-button {
+  min-width: 60px;
+  max-width: 600px;
+  height: 40px;
+  text-decoration: none;
+  display: inline-block;
+  outline: none;
+  border-style: none;
+  background-color: var(--bg-accent);
+  color: var(--text-color);
+  overflow: none;
+  border-radius: 16px;
+  transition: filter 300ms;
+  padding: 12px 16px;
+  font-size: 16px;
+  cursor: pointer; 
 }
-.user-logged{
-  display: block;
-  position: absolute;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translate(-100%, -65%);
-  right: -60px;
-  cursor: pointer;
-  font-size: large;
-  text-align: center;
+.round-button:before {
+  content:'';
+  display:inline-block;
+  vertical-align:middle;
+  padding-top:100%;
 }
-
+span {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 90%;
+  padding-left: 10px;
+}
+.user-round-button:hover {
+  filter: brightness(1.2);
+}
 @media screen and (min-width: 1190px) {
   .nav-center {
     max-width: 1170px;
@@ -257,35 +318,80 @@ h6 {
 }
 /*end of sidebar */
 /* dropdown */
-.dropdown-menu {
-  width: 200px;
+.dropdown {
   position: absolute;
-  top: 50%;
-  list-style: none;
-  text-align: start;
-  top: 50%;
-  -ms-transform: translateY(-50%);
-  transform: translate(-100%, -65%);
-  right: -60px;
-  height: 200px;
+  top: 58px;
+  width: 300px;
+  transform: translateX(-30%);
+  background-color: var(--bg);
+  border: var(--border);
+  border-radius: var(--border-radius);
+  padding: 1rem;
+  overflow: hidden;
+  transition: height var(--speed) ease;
+  z-index: 200;
 }
-/*.dropdown-menu li {
-  background: #1888ff;
-  cursor: pointer;
-}
-.dropdown-menu li:hover{
-  background: #5cabff;
-}
-.dropdown-menu.clicked {
-  display: none;
-}*/
-.dropdown-link {
-  display: block;
+.menu {
   width: 100%;
-  height: 100%;
-  text-decoration: none;
-  color: var(--mainBlack);
-  padding: 16px;
+}
+.dropdown-item {
+  height: 50px;
+  display: flex;
+  align-items: center;
+  border-radius: var(--border-radius);
+  transition: background var(--speed);
+  padding: 0.5rem;
+}
+
+.dropdown-item .icon-button {
+  margin-right: 0.5rem;
+}
+
+.dropdown-item .icon-button:hover {
+  filter: none;
+}
+
+.dropdown-item:hover {
+  background-color: #525357;
+}
+
+.icon-right {
+  margin-left: auto;
+  width: 20px;
+  height: 20px;  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+  fill: var(--text-color);
+}
+
+/* CSSTransition classes  */
+.menu-primary-enter {
+  position: absolute;
+  transform: translateX(-110%);
+}
+.menu-primary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-primary-exit {
+  position: absolute;
+}
+.menu-primary-exit-active {
+  transform: translateX(-110%);
+  transition: all var(--speed) ease;
+}
+.menu-secondary-enter {
+  transform: translateX(110%);
+}
+.menu-secondary-enter-active {
+  transform: translateX(0%);
+  transition: all var(--speed) ease;
+}
+.menu-secondary-exit-active {
+  transform: translateX(110%);
+  transition: all var(--speed) ease;
 }
 /*end of dropdown */
 /* backdrop - backround for side menu, modals etc */
@@ -299,7 +405,6 @@ h6 {
   z-index: 100;
 }
 /*end of backdrop */
-
 /* Hero */
 /*.defaultHero,
 .plantsHero {
