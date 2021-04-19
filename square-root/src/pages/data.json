@@ -15,20 +15,6 @@
           "city": "OSLO"
         }
       ]
-    },
-    {
-      "companyName": "Demo2 Technologies",
-      "logo": "https://upload.wikimedia.org/wikipedia/commons/a/ac/No_image_available.svg",
-      "url": "https://www.google.com/",
-      "roles": [
-        {
-          "title": "UI Designer",
-          "description": "Design user-fridendly web page",
-          "startDate": "2016-05-01",
-          "endDate": "2016-09-01",
-          "location": "Beijing, China"
-        }
-      ]
     }
   ]
 }

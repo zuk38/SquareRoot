@@ -1,20 +1,11 @@
+
 import React, {Component} from 'react';
+
 import "./projects.css";
 import icon from '../../../images/proj_icon.png';
 import Modal from 'react-modal';
 
-const customStyles = {
-    content: {
-        top: '50%',
-        left: '50%',
-        right: 'auto',
-        bottom: 'auto',
-        marginRight: '-50%',
-        transform: 'translate(-50%, -50%)',
-        width: '70%',
-        height: '70%',
-    }
-};
+
 
 export default class All_Projects extends Component {
     state = {
@@ -81,7 +72,6 @@ export default class All_Projects extends Component {
 
                 <br></br>
                 <h2>Velg et prosjekt for å legge til eller endre et grøntområde, eller opprett et nytt prosjekt.</h2>
-
 
                 {/*TABLE must GET data from GraphQL*/}
                 <table id="projects-table">
