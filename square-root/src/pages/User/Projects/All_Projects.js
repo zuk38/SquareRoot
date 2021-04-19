@@ -1,24 +1,10 @@
-import React, { Component } from 'react';
+/*import React, { Component } from 'react';
 import "./projects.css";
 import icon from '../../../images/proj_icon.png';
 import Modal from 'react-modal';
 
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)'
-    }
-  };
-
-  const title = 
-  const subtitle = "Fortell oss litt mer om prosjektet"
 
 export default class All_Projects extends Component { 
-    let sub
     state = {
         modalOpen: false,
         title: "La oss lage et økosystem",
@@ -38,7 +24,7 @@ export default class All_Projects extends Component {
         return (    
         <div class="row">
 
-           {/* <div class="column left"/> */}
+           {/* <div class="column left"/> *//*}
             <div class="projects-title column right">
                 <img class="project-icon" src={icon} alt="Prosjektikon"/> 
                 <h1>PROSJEKTER</h1>
@@ -70,7 +56,7 @@ export default class All_Projects extends Component {
     
            
             
-            {/*TABLE must GET data from GraphQL*/}
+            {/*TABLE must GET data from GraphQL*//*}
             <table id="projects-table">
                 <tr>
                     <th>PROSJEKTNAVN</th>
@@ -97,7 +83,7 @@ export default class All_Projects extends Component {
     }
     
     }
-
+*/
 
  
 

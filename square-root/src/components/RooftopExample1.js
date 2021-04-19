@@ -5,7 +5,8 @@ import './Rooftop.css';
 class RooftopExample1 extends Component {
 	render() {
 		return (
-            <div className='rooftop'>
+			<div className='roof'>
+            	<div className='rooftop'>
                 {
 					data.Rooftop1.map((rooftop, i) => {
 						return (
@@ -28,9 +29,11 @@ class RooftopExample1 extends Component {
 												</div>
 											})}
 											<div className='options'>
-													<button class="button is-medium is-light is-fullwidth" className='tilpass'>Tilpass</button>
-      												<button class="button is-medium is-dark is-fullwidth">
-          											Legg til i prosjekt<i class="fas fa-chevron-right"/></button>
+												<div className="tilpass">
+													<button class="button is-medium is-light is-fullwidth">Tilpass</button>
+													</div>
+													  <button class="button is-medium is-dark is-fullwidth">
+          											Legg til i prosjekt<i class="fas fa-chevron-right"/></button>	  
 											</div>
 									</div>
 									
@@ -39,7 +42,29 @@ class RooftopExample1 extends Component {
 						);
 					})
 				}
-            </div>
+            	</div>
+			{
+					data.Rooftop1.map((rooftopfunc, i) => {
+						return (
+							<div key={i}>
+								<div className='rooftopinfo'>
+									<div>
+											{rooftopfunc.roles.map(function (role, i) { 
+												return <div key={i}>
+													<h5>{role.title}</h5>
+													<p>{role.description}</p>
+													
+													<p className='city'>{role.city}</p>
+												</div>
+											})}
+									</div>
+									
+								</div>
+							</div>
+						);
+					})
+			}
+			</div>
         );
     }
 } 

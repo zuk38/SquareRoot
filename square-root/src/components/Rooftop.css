@@ -34,7 +34,9 @@ p{
 .options{
     position: absolute;
     bottom: 0px;
+    width: 42%;
 }
 .tilpass{
-    padding-bottom: 5%;
+    padding-bottom: 20px;
 }
+
