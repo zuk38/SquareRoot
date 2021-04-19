@@ -69,10 +69,11 @@ export default class All_Projects extends Component {
 
                         <div>I am a modal</div>
                         <form>
-                            <input/>
+                            <input type="String">Navn</input>
+                            <input type="String">Adresse</input>
+                            <input type="String">PostNr</input>
+                            <input type="String">Poststed</input>
                             <button>tab navigation</button>
-                            <button>stays</button>
-                            <button>inside</button>
                             <button>the modal</button>
                         </form>
                     </Modal>
