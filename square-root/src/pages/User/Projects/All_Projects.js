@@ -1,10 +1,8 @@
-
 import React, {Component} from 'react';
 
 import "./projects.css";
 import icon from '../../../images/proj_icon.png';
 import Modal from 'react-modal';
-
 
 
 export default class All_Projects extends Component {
@@ -22,55 +20,74 @@ export default class All_Projects extends Component {
 
     render() {
         return (
-
-
-            <div class="projects-title">
+            <div className="projects-title">
                 <img class="p-icon-main"
                     src={icon}
                     alt="Prosjektikon"/>
                 <h1>PROSJEKTER</h1>
-                <button class="btn-projects"
+
+                <button className="btn-new-project"
                     onClick={
                         this.openModal
                 }>
                     <i class="fas fa-plus"></i>NYTT PROSJEKT</button>
 
-                <div class="modal">
-                    <Modal isOpen={
-                            this.state.modalOpen
-                        }
-                        onRequestClose={
-                            this.closeModal
-                        }
-                        style={customStyles}
-                        contentLabel="Example Modal"
-                        >
 
+                <Modal isOpen={
+                        this.state.modalOpen
+                    }
+                    onRequestClose={
+                        this.closeModal
+                    }
+                    className={"modal-project"}>
+
+
+                    <div className="p-modal-content">
                         <button onClick={
                                 this.closeModal
                             }
-                            class="btn-modal-close" alt="Lukk">
+                            className="btn-modal-close"
+                            alt="Lukk">
                             <i class="fas fa-times fa-lg"></i>
                         </button>
-
-
                         <h1>La oss lage et økosystem</h1>
                         <br/>
                         <h2>Fortell oss litt mer om prosjektet</h2>
 
-                        <div>I am a modal</div>
+
                         <form>
-                            <input type="String">Navn</input>
-                            <input type="String">Adresse</input>
-                            <input type="String">PostNr</input>
-                            <input type="String">Poststed</input>
+                            <div className="p-inputBox">
+
+                            <label className="p-lbl">Navn</label>
+                            <input type="text" placeholder="Prosjektets navn.." className="p-inp-text"/>
+
+
+                            <label className="p-lbl">Adresse</label>
+                            <input type="text" placeholder="Prosjektets adresse.." className="p-inp-text"/>
+
+                            <div className="p-flex">
+                                <div className="p-classFlex">
+                                    <label className="p-lblFlex">PostNr</label>
+                                    <input type="text" className="p-input-inline" pattern="[0-4]*"/>
+                                </div>
+
+                                <div className="p-classFlex">
+                                    <label className="p-lblFlex">Poststed</label>
+                                    <input type="text" className="p-input-inline"/>
+                                </div>
+                            </div>
                             <button>tab navigation</button>
                             <button>the modal</button>
+                            </div>
+
                         </form>
-                    </Modal>
-                </div>
+                    </div>
+
+                </Modal>
+
 
                 <br></br>
+
                 <h2>Velg et prosjekt for å legge til eller endre et grøntområde, eller opprett et nytt prosjekt.</h2>
 
                 {/*TABLE must GET data from GraphQL*/}
@@ -95,6 +112,7 @@ export default class All_Projects extends Component {
                     </tr>
                 </table>
             </div>
+
 
         )
     }

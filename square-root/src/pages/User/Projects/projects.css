@@ -115,7 +115,7 @@ td {
 /* end of TABLE */
 
 /* BUTTON : NEW PROJECT*/
-.btn-projects {
+.btn-new-project {
   padding: 15px 10px;
   background-color: #D0E2B0;
   font-family: 'Montserrat', sans-serif;
@@ -127,7 +127,7 @@ td {
   font-size: 12px;
 }
 
-.btn-projects:hover {
+.btn-new-project:hover {
   background-color: #EBF4DE;
   font-size: 12px;
 }
@@ -157,14 +157,7 @@ a.btn-back:hover{
 
 /* end of BUTTON */
 
-/* BUTTON : CLOSE MODAL*/
-.btn-modal-close{
-  float: right;
-  background-color: white;
-  border: none;
-  padding: 10px 10px;
-  cursor: pointer;
-}
+
 
 
 .fa-times {
@@ -201,12 +194,116 @@ a.btn-back:hover{
 }
 
 /*MODAL*/
-.modal {
-  padding-left:10px;
-  text-align: center;
-
+.modal-project {
+background: #fff;
+ position: absolute;
+ left: 0;
+ right: 0;
+ top: 0;
+ bottom: 0;
+ margin: auto;
+ width: 70%;
+ height: 70%;
+ box-shadow: 0 5px 10px 2px rgba(195,192,192,.5);
+ padding: 20px;
+ text-align: center;
 }
 
 
+.p-modal-content{
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  z-index: 1;
+  align-content: center;
+  padding-right: 5%;
+  padding-left: 5%;
+  
+}
+
+.modal-project form {
+   text-align: center;
+   align-items:initial;
+   justify-content: center;
+}
+ /*
+input[type=text], select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+*/
+
+.p-inputBox {
+  width: 100%;
+}
+.p-lbl  {
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  padding-top: 15px;
+  display: block;
+  text-align: left;
+  padding-bottom: 1%;
+}
+
+
+
+input[type="text"] {
+  padding: 1em;
+  border-radius: .3em;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400px;
+}
+
+/*FLEX BOXES (PostNr & PostSted */
+
+.p-flex /* div PostNr & PostSted */{
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.p-classFlex {
+  flex-basis:48%;
+}
+
+
+.p-lblFlex  {
+  float: left;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  display: block;
+  text-align: left;
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 1%;
+}
+
+.p-input-inline /* input PostNr & PostSted */{
+  box-sizing: border-box;
+  width: 100%;
+}
+
+
+/* BUTTON : CLOSE MODAL*/
+.btn-modal-close{
+  float: right;
+  background-color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+}
 
 
