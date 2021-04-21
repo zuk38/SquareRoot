@@ -1,5 +1,6 @@
-/*@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
-@import "@fortawesome/fontawesome-free/css/all.min.css";*/
+@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
+@import "@fortawesome/fontawesome-free/css/all.min.css";
+@import "./components/navbar/Dropdown.css";
 
 :root {
   --primaryColor: #af9a7d;
@@ -7,7 +8,7 @@
   --offWhite: #f7f7f7;
   --mainBlack: #222;
   --mainGrey: #bababa;
-  --darkGrey: #cfcfcf;
+  --darkGrey: #838383;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
@@ -33,16 +34,7 @@ body {
   /*font-family: Verdana, Geneva, Tahoma, sans-serif;
   line-height: 1.4;*/
 }
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
 
-a {
-  color: var(--text-color);
-  text-decoration: none;
-}
 /*h1 {
   font-size: 3em;
   line-height: 1;
@@ -150,27 +142,6 @@ h6 {
   justify-content: center;
   padding: 5px;
 }
-.icon-button {
-  --button-size: calc(var(--nav-size) * 0.5);
-  width: var(--button-size);
-  height: var(--button-size);
-  background-color: var(--bg-accent);
-  border-radius: 50%;
-  padding: 5px;
-  margin: 2px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 300ms;
-}
-.icon-button:hover {
-  filter: brightness(1.2);
-}
-.icon-button svg {
-  fill: var(--text-color);
-  width: 20px;
-  height: 20px;
-}
 .nav-header {
   display: flex;
   justify-content: space-between;
@@ -200,38 +171,7 @@ h6 {
   border-bottom: 4px solid var(--bg);
   transition: all 0.2s ease-out;
 }
-.user-round-button {
-  min-width: 60px;
-  max-width: 600px;
-  height: 40px;
-  text-decoration: none;
-  display: inline-block;
-  outline: none;
-  border-style: none;
-  background-color: var(--bg-accent);
-  color: var(--text-color);
-  overflow: none;
-  border-radius: 16px;
-  transition: filter 300ms;
-  padding: 12px 16px;
-  font-size: 16px;
-  cursor: pointer; 
-}
-.round-button:before {
-  content:'';
-  display:inline-block;
-  vertical-align:middle;
-  padding-top:100%;
-}
-span {
-  display: inline-block;
-  vertical-align: middle;
-  max-width: 90%;
-  padding-left: 10px;
-}
-.user-round-button:hover {
-  filter: brightness(1.2);
-}
+
 @media screen and (min-width: 1190px) {
   .nav-center {
     max-width: 1170px;
@@ -252,17 +192,20 @@ span {
 /* end of navbar */
 /*sidebar */
 .sidebar-bars {
-  background: transparent;
-  border: none;
+  --button-size: calc(var(--nav-size) * 0.4);
+  width: var(--button-size);
+  height: var(--button-size);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
   cursor: pointer;
-  outline: none;
-  display: block;
-  position: absolute;
-  top: 0px;
-  transform: translate(-100%, 45%);
-  right: 0;
-  z-index: 200;
-  font-size: 1.6rem;
+}
+.sidebar-bars:hover {
+  filter: brightness(5.2);
+}
+.sidebar-bars svg {
+  fill: var(--bg);
 }
 .side-menu {
   background-color: var(--navbarBack);
@@ -317,83 +260,6 @@ span {
   z-index: 200;
 }
 /*end of sidebar */
-/* dropdown */
-.dropdown {
-  position: absolute;
-  top: 58px;
-  width: 300px;
-  transform: translateX(-30%);
-  background-color: var(--bg);
-  border: var(--border);
-  border-radius: var(--border-radius);
-  padding: 1rem;
-  overflow: hidden;
-  transition: height var(--speed) ease;
-  z-index: 200;
-}
-.menu {
-  width: 100%;
-}
-.dropdown-item {
-  height: 50px;
-  display: flex;
-  align-items: center;
-  border-radius: var(--border-radius);
-  transition: background var(--speed);
-  padding: 0.5rem;
-}
-
-.dropdown-item .icon-button {
-  margin-right: 0.5rem;
-}
-
-.dropdown-item .icon-button:hover {
-  filter: none;
-}
-
-.dropdown-item:hover {
-  background-color: #525357;
-}
-
-.icon-right {
-  margin-left: auto;
-  width: 20px;
-  height: 20px;  
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 300ms;
-  fill: var(--text-color);
-}
-
-/* CSSTransition classes  */
-.menu-primary-enter {
-  position: absolute;
-  transform: translateX(-110%);
-}
-.menu-primary-enter-active {
-  transform: translateX(0%);
-  transition: all var(--speed) ease;
-}
-.menu-primary-exit {
-  position: absolute;
-}
-.menu-primary-exit-active {
-  transform: translateX(-110%);
-  transition: all var(--speed) ease;
-}
-.menu-secondary-enter {
-  transform: translateX(110%);
-}
-.menu-secondary-enter-active {
-  transform: translateX(0%);
-  transition: all var(--speed) ease;
-}
-.menu-secondary-exit-active {
-  transform: translateX(110%);
-  transition: all var(--speed) ease;
-}
-/*end of dropdown */
 /* backdrop - backround for side menu, modals etc */
 .backdrop {
   position: fixed;

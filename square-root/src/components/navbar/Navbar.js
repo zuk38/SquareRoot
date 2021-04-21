@@ -1,17 +1,19 @@
 import React, { useState } from "react";
-import logo from "../images/logo.png";
+import logo from "../../images/logo.png";
 import * as FaIcons from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import { IconContext } from "react-icons";
-import Backdrop from "./Backdrop";
-import useWindowDimensions from "./hooks/useWindowDimensions";
+import Backdrop from "../Backdrop";
+import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
-import { ReactComponent as MenuIcon } from "../icons/menu.svg";
+import Sidebar from "./Sidebar";
+import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 
 const Navbar = (props) => {
   const [sidebar, setSidebar] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const showSidebar = () => setSidebar(!sidebar);
   let width = useWindowDimensions();
 
   return (
@@ -26,10 +28,9 @@ const Navbar = (props) => {
           <ul className="nav-links">
             {width > 1190 &&
               NavbarData.slice(
-                0,
                 NavbarData.map(function(e) {
                   return e.title;
-                }).indexOf("HOME")
+                }).indexOf("ROOFTOP")
               ).map((item, index) => {
                 return (
                   <li key={index}>
@@ -57,7 +58,7 @@ const Navbar = (props) => {
           ) : (
             <li className="nav-item">
               <button
-                class="user-round-button"
+                className="user-round-button"
                 onClick={() => setDropdown(!dropdown)}
               >
                 {props.auth.user}
@@ -65,63 +66,22 @@ const Navbar = (props) => {
                   <i class="fas fa-caret-down" />
                 </span>
               </button>
-              {dropdown && <Dropdown />}
+              {dropdown && <Dropdown {...props}/>}
             </li>
           )}
 
           {/*sidebar*/}
-          {sidebar && <Backdrop />}
           <li className="nav-item">
             <Link
               to="#"
-              className="icon-button"
+              className="sidebar-bars"
               onClick={() => setSidebar(!sidebar)}
             >
               {!sidebar && <MenuIcon />}
             </Link>
           </li>
-          <div className={sidebar ? "side-menu active" : "side-menu"}>
-            <ul
-              className="side-menu-items"
-              onClick={() => setSidebar(!sidebar)}
-            >
-              <li className="sidebar-toggle">
-                <Link to="#" className="sidebar-bars">
-                  <FaIcons.FaTimes />
-                </Link>
-              </li>
-              {width <= 1190
-                ? NavbarData.map((item, index) => {
-                    return (
-                      <li key={index} className={item.className}>
-                        <NavLink
-                          to={item.path}
-                          activeStyle={{ fontWeight: "bold" }}
-                          exact={true}
-                        >
-                          {item.title}
-                        </NavLink>
-                      </li>
-                    );
-                  })
-                : NavbarData.slice(
-                    NavbarData.map(function(e) {
-                      return e.title;
-                    }).indexOf("HOME")
-                  ).map((item, index) => {
-                    return (
-                      <li key={index} className={item.className}>
-                        <NavLink
-                          to={item.path}
-                          activeStyle={{ fontWeight: "bold" }}
-                          exact={true}
-                        >
-                          {item.title}
-                        </NavLink>
-                      </li>
-                    );
-                  })}
-            </ul>
+          <div className={props.sidebar ? "side-menu active" : "side-menu"}>
+            <Sidebar width={width} onClick={showSidebar} sidebar={sidebar} />
           </div>
         </ul>
       </nav>
