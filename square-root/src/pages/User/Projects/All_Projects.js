@@ -32,7 +32,7 @@ export default class All_Projects extends Component {
   };
 
   closeModal = () => {
-    this.setState({ modalOpen: false });
+    this.setState({ modalOpen: false, name: "", postalCode: "", address: "", city: "" });
   };
 
   submitModal = () => {
@@ -73,6 +73,7 @@ export default class All_Projects extends Component {
                   type="text"
                   placeholder="Prosjektets navn.."
                   className="p-inp-text"
+                  value={this.state.name || ""}
                   onChange={(e) =>
                     this.updateModalState("name", e.target.value)
                   }
@@ -83,6 +84,7 @@ export default class All_Projects extends Component {
                   type="text"
                   placeholder="Prosjektets adresse.."
                   className="p-inp-text"
+                  value={this.state.address || ""}
                   onChange={(e) =>
                     this.updateModalState("address", e.target.value)
                   }
@@ -95,7 +97,7 @@ export default class All_Projects extends Component {
                       type="text"
                       className="p-input-inline"
                       pattern="[0-4]*"
-                      value={this.state.postalCode}
+                      value={this.state.postalCode || ""}
                       onChange={(e) =>
                         this.updateModalState("postalCode", e.target.value)
                       }
@@ -107,7 +109,7 @@ export default class All_Projects extends Component {
                     <input
                       type="text"
                       className="p-input-inline"
-                      value={this.state.city}
+                      value={this.state.city || ""}
                       onChange={(e) =>
                         this.updateModalState("city", e.target.value)
                       }
