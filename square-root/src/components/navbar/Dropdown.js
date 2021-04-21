@@ -5,7 +5,6 @@ import { ReactComponent as HelpICon } from "../../icons/question.svg";
 import { ReactComponent as AccountIcon } from "../../icons/user.svg";
 import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
-import { MenuItems } from "./NavbarData";
 
 export default function Dropdown(props) {
   const dropdownRef = useRef(null);
@@ -21,9 +20,9 @@ export default function Dropdown(props) {
     }
   };
 
-  function DropdownItem({ leftIcon, children, onItemClick }) {
+  function DropdownItem({ leftIcon, children, onItemClick, path }) {
     return (
-      <a href="#" className="my-dropdown-item" onClick={onItemClick}>
+      <a href={path} className="my-dropdown-item" onClick={onItemClick}>
         <span className="icon-button">{leftIcon}</span>
         {children}
       </a>
@@ -33,9 +32,9 @@ export default function Dropdown(props) {
   return (
     <div className="my-dropdown">
       <div className="menu" ref={dropdownRef}>
-        <DropdownItem leftIcon={<ProjectIcon />}>My Projects</DropdownItem>
-        <DropdownItem leftIcon={<AccountIcon />}>Account</DropdownItem>
-        <DropdownItem leftIcon={<HelpICon />}>Help Center</DropdownItem>
+        <DropdownItem leftIcon={<ProjectIcon />} path="/projects">My Projects</DropdownItem>
+        <DropdownItem leftIcon={<AccountIcon />} path="/account">Account</DropdownItem>
+        <DropdownItem leftIcon={<HelpICon />} path="/help">Help Center</DropdownItem>
 
         <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
           Log Out
