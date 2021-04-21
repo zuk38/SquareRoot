@@ -102,6 +102,7 @@ export default class All_Projects extends Component {
                         this.updateModalState("postalCode", e.target.value)
                       }
                     />
+                    <p className="help is-danger">{this.state.error}</p>
                   </div>
 
                   <div className="p-classFlex">
@@ -114,7 +115,7 @@ export default class All_Projects extends Component {
                         this.updateModalState("city", e.target.value)
                       }
                     />
-                    <p className="help is-danger">{this.state.error}</p>
+                    
                   </div>
                 </div>
                 <button>tab navigation</button>
