@@ -3,8 +3,6 @@ import logo from "../../images/logo.png";
 import * as FaIcons from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
-import { IconContext } from "react-icons";
-import Backdrop from "../Backdrop";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
 import Sidebar from "./Sidebar";
@@ -17,7 +15,6 @@ const Navbar = (props) => {
   let width = useWindowDimensions();
 
   return (
-    <IconContext.Provider value={{ color: "#000" }}>
       <nav className="navbar">
         <div className="nav-center">
           <div className="nav-header">
@@ -49,25 +46,25 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           {/* user */}
           {!props.auth.isAuthenticated ? (
-            <button href="/login" className="user-round-button">
-              <a href="/login">Sign in</a>
-              <span>
-                <FaIcons.FaUser />
+            <a href="/login" class="button is-white pad">
+              <span>Sign in</span>
+              <span class="icon is-small">
+                <i class="fas fa-user"></i>
               </span>
-            </button>
+            </a>
           ) : (
-            <li className="nav-item">
+            <>
               <button
-                className="user-round-button"
+                class="button is-white pad"
                 onClick={() => setDropdown(!dropdown)}
               >
-                {props.auth.user}
-                <span>
-                  <i class="fas fa-caret-down" />
+                <span>{props.auth.user}</span>
+                <span class="icon is-medium">
+                  <i class="fas fa-angle-down"></i>
                 </span>
               </button>
-              {dropdown && <Dropdown {...props}/>}
-            </li>
+              {dropdown && <Dropdown {...props} />}
+            </>
           )}
 
           {/*sidebar*/}
@@ -85,7 +82,6 @@ const Navbar = (props) => {
           </div>
         </ul>
       </nav>
-    </IconContext.Provider>
   );
 };
 

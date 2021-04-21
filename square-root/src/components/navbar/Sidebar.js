@@ -3,6 +3,7 @@ import { NavbarData } from "./NavbarData";
 import { Link, NavLink } from "react-router-dom";
 import * as FaIcons from "react-icons/fa";
 import Backdrop from "../Backdrop";
+import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 
 export default function Sidebar(props) {
   return (
@@ -11,8 +12,8 @@ export default function Sidebar(props) {
       <div className={props.sidebar ? "side-menu active" : "side-menu"}>
         <ul className="side-menu-items" onClick={() => props.onClick()}>
           <li className="sidebar-toggle">
-            <Link to="#" className="sidebar-bars">
-              <FaIcons.FaTimes />
+            <Link to="#" className="sidebar-close">
+                <CloseIcon/>
             </Link>
           </li>
           {props.width <= 1190

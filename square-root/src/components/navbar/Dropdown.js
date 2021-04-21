@@ -20,11 +20,11 @@ export default function Dropdown(props) {
     }
   };
 
-  function DropdownItem({leftIcon, rightIcon, children, onItemClick}) {
+  function DropdownItem({leftIcon, children, onItemClick}) {
     return (
       <a
         href="#"
-        className="dropdown-item"
+        className="my-dropdown-item"
         onClick={onItemClick}
       >
         <span className="icon-button">{leftIcon}</span>
@@ -34,7 +34,7 @@ export default function Dropdown(props) {
   }
 
   return (
-    <div className="dropdown">
+    <div className="my-dropdown">
       <div className="menu">
         <DropdownItem leftIcon={<FaIcons.FaUser />}>My Projects</DropdownItem>
         <DropdownItem leftIcon="">Account</DropdownItem>

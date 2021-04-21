@@ -1,4 +1,5 @@
 import "./App.css"
+import "./App.sass"
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -26,6 +27,7 @@ import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
+import { FaIcons } from "react-icons/fa";
 library.add(faEdit);
 
 class App extends Component {
