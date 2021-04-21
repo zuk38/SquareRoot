@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import logo from "../../images/logo.png";
-import * as FaIcons from "react-icons/fa";
 import { Link, NavLink } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
