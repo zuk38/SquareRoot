@@ -1,5 +1,5 @@
-export const findCityFromZip = async () => {
-    //console.log(zipState.zipCode);
+export const findCityFromZip = async (zipCode) => {
+    console.log(zipCode);
     console.log(process.env.REACT_APP_MYBRING_API);
   
     const response = await fetch(

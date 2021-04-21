@@ -9,9 +9,7 @@ import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 
 const Navbar = (props) => {
   const [sidebar, setSidebar] = useState(false);
-  const [dropdown, setDropdown] = useState(false);
   const closeSidebar = () => setSidebar(false);
-  const closeDropDown = () => setDropdown(false);
   let width = useWindowDimensions();
 
   return (
@@ -54,16 +52,8 @@ const Navbar = (props) => {
             </a>
           ) : (
             <>
-              <button
-                class="button is-white pad"
-                onClick={() => setDropdown(!dropdown)}
-              >
-                <span>{props.auth.user}</span>
-                <span class="icon is-medium">
-                  <i class="fas fa-angle-down"></i>
-                </span>
-              </button>
-              {dropdown && <Dropdown {...props} onClose={closeDropDown} />}
+              
+              <Dropdown {...props} />
             </>
           )}
 

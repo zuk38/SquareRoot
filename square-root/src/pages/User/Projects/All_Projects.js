@@ -1,13 +1,21 @@
 import React, { Component } from "react";
-
-import "./projects.css";
+import "./Projects.css";
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
+import { findCityFromZip } from "../../../functions/apiCalls";
 
 export default class All_Projects extends Component {
   state = {
     modalOpen: false,
+    name: "",
+    address: "",
+    postalCode: "",
+    city: ""
   };
+
+  updateModalState = (key, value) => {
+      this.setState({[key]: value});
+  }
 
   openModal = () => {
     this.setState({ modalOpen: true });
@@ -16,6 +24,10 @@ export default class All_Projects extends Component {
   closeModal = () => {
     this.setState({ modalOpen: false });
   };
+
+  submitModal = () => {
+      console.log(this.state);
+  }
 
   render() {
     return (
@@ -51,6 +63,9 @@ export default class All_Projects extends Component {
                   type="text"
                   placeholder="Prosjektets navn.."
                   className="p-inp-text"
+                  onChange={(e) =>
+                    this.updateModalState("name", e.target.value)
+                  }
                 />
 
                 <label className="p-lbl">Adresse</label>
@@ -58,6 +73,9 @@ export default class All_Projects extends Component {
                   type="text"
                   placeholder="Prosjektets adresse.."
                   className="p-inp-text"
+                  onChange={(e) =>
+                    this.updateModalState("address", e.target.value)
+                  }
                 />
 
                 <div className="p-flex">
@@ -67,12 +85,22 @@ export default class All_Projects extends Component {
                       type="text"
                       className="p-input-inline"
                       pattern="[0-4]*"
+                      value={this.state.postalCode}
+                      onChange={(e) =>
+                        this.updateModalState("postalCode", e.target.value)
+                      }
                     />
                   </div>
 
                   <div className="p-classFlex">
                     <label className="p-lblFlex">Poststed</label>
-                    <input type="text" className="p-input-inline" />
+                    <input
+                      type="text"
+                      className="p-input-inline"
+                      onChange={(e) =>
+                        this.updateModalState("city", e.target.value)
+                      }
+                    />
                   </div>
                 </div>
                 <button>tab navigation</button>
