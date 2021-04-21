@@ -10,12 +10,22 @@ export default class All_Projects extends Component {
     name: "",
     address: "",
     postalCode: "",
-    city: ""
+    city: "",
+    error: "",
   };
 
   updateModalState = (key, value) => {
-      this.setState({[key]: value});
-  }
+    if (key == "postalCode" && value.length == 4) {
+      this.setState({ postalCode: value }, function() {
+        findCityFromZip(value).then((response) => {
+          if (response) this.setState({ city: response });
+          else this.setState({error: "invalid zip"})
+        });
+      });
+    }
+    this.setState({ [key]: value });
+    this.setState({ error: "" });
+  };
 
   openModal = () => {
     this.setState({ modalOpen: true });
@@ -26,8 +36,8 @@ export default class All_Projects extends Component {
   };
 
   submitModal = () => {
-      console.log(this.state);
-  }
+    console.log(this.state);
+  };
 
   render() {
     return (
@@ -97,10 +107,12 @@ export default class All_Projects extends Component {
                     <input
                       type="text"
                       className="p-input-inline"
+                      value={this.state.city}
                       onChange={(e) =>
                         this.updateModalState("city", e.target.value)
                       }
                     />
+                    <p className="help is-danger">{this.state.error}</p>
                   </div>
                 </div>
                 <button>tab navigation</button>
