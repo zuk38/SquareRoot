@@ -1,14 +1,15 @@
-import React, { useState, useEffect, useRef } from "react";
+import React, { useRef } from "react";
 import Auth from "@aws-amplify/auth";
-import { CSSTransition } from "react-transition-group";
-import { ReactComponent as ArrowIcon } from "../../icons/arrow.svg";
 import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
-import { ReactComponent as ChevronIcon } from "../../icons/chevron.svg";
-import * as FaIcons from "react-icons/fa";
+import { ReactComponent as HelpICon } from "../../icons/question.svg";
+import { ReactComponent as AccountIcon } from "../../icons/user.svg";
+import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
+import useOutsideAlerter from "../hooks/useOutsideAlerter";
 import { MenuItems } from "./NavbarData";
 
 export default function Dropdown(props) {
   const dropdownRef = useRef(null);
+  useOutsideAlerter(dropdownRef, props.onClose);
   const handleLogOut = async (event) => {
     event.preventDefault();
     try {
@@ -20,13 +21,9 @@ export default function Dropdown(props) {
     }
   };
 
-  function DropdownItem({leftIcon, children, onItemClick}) {
+  function DropdownItem({ leftIcon, children, onItemClick }) {
     return (
-      <a
-        href="#"
-        className="my-dropdown-item"
-        onClick={onItemClick}
-      >
+      <a href="#" className="my-dropdown-item" onClick={onItemClick}>
         <span className="icon-button">{leftIcon}</span>
         {children}
       </a>
@@ -35,10 +32,10 @@ export default function Dropdown(props) {
 
   return (
     <div className="my-dropdown">
-      <div className="menu">
-        <DropdownItem leftIcon={<FaIcons.FaUser />}>My Projects</DropdownItem>
-        <DropdownItem leftIcon="">Account</DropdownItem>
-        <DropdownItem leftIcon="">Help Center</DropdownItem>
+      <div className="menu" ref={dropdownRef}>
+        <DropdownItem leftIcon={<ProjectIcon />}>My Projects</DropdownItem>
+        <DropdownItem leftIcon={<AccountIcon />}>Account</DropdownItem>
+        <DropdownItem leftIcon={<HelpICon />}>Help Center</DropdownItem>
 
         <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
           Log Out

@@ -11,7 +11,8 @@ import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 const Navbar = (props) => {
   const [sidebar, setSidebar] = useState(false);
   const [dropdown, setDropdown] = useState(false);
-  const showSidebar = () => setSidebar(!sidebar);
+  const closeSidebar = () => setSidebar(false);
+  const closeDropDown = () => setDropdown(false);
   let width = useWindowDimensions();
 
   return (
@@ -63,7 +64,7 @@ const Navbar = (props) => {
                   <i class="fas fa-angle-down"></i>
                 </span>
               </button>
-              {dropdown && <Dropdown {...props} />}
+              {dropdown && <Dropdown {...props} onClose={closeDropDown} />}
             </>
           )}
 
@@ -78,7 +79,7 @@ const Navbar = (props) => {
             </Link>
           </li>
           <div className={props.sidebar ? "side-menu active" : "side-menu"}>
-            <Sidebar width={width} onClick={showSidebar} sidebar={sidebar} />
+            <Sidebar width={width} onClose={closeSidebar} sidebar={sidebar} />
           </div>
         </ul>
       </nav>

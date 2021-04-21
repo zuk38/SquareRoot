@@ -57,6 +57,7 @@ a {
 
 .my-dropdown-item .icon-button {
   margin-right: 0.5rem;
+  padding: 0;
 }
 
 .my-dropdown-item .icon-button:hover {
