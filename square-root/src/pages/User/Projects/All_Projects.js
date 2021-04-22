@@ -41,6 +41,10 @@ export default class All_Projects extends Component {
     });
   };
 
+  componentWillMount() {
+    Modal.setAppElement("body");
+  }
+
   render() {
     const { items } = this.state;
     return (
@@ -54,7 +58,6 @@ export default class All_Projects extends Component {
           isOpen={this.state.modalOpen}
           onRequestClose={this.closeModal}
           className={"modal-project"}
-          appElement={document.getElementById("app")}
         >
           <button
             onClick={this.closeModal}
