@@ -1,19 +1,19 @@
+
 :root {
-    --primaryColor: #af9a7d;
-    --mainWhite: #fff;
-    --offWhite: #f7f7f7;
-    --mainBlack: #222;
-    --mainGrey: #ececec;
-    --darkGrey: #cfcfcf;
-    --mainTransition: all 0.3s linear;
-    --mainSpacing: 3px;
-    --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-    --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  }
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
 /* COLUMNS */
 
-
-.row{
+.row {
   padding-top: 5%;
   display: flex;
   width: 100%;
@@ -23,11 +23,10 @@
 }
 
 .left {
-width: 25%;
- float: left;
- background: var(--offWhite);
- padding-left: 5%
-
+  width: 25%;
+  float: left;
+  background: var(--offWhite);
+  padding-left: 5%;
 }
 
 .right {
@@ -35,7 +34,7 @@ width: 25%;
   float: left;
   background: var(--offWhite);
   padding-right: 5%;
-  padding-left:5%;
+  padding-left: 5%;
 }
 
 .row:after {
@@ -50,17 +49,17 @@ width: 25%;
 .project-icon {
   width: 22px;
   height: auto;
-  float:left;
+  float: left;
   margin: 0 16px 16px 0;
 }
-.p-icon-main{
+.p-icon-main {
   width: 50px;
   height: auto;
-  float:left;
+  float: left;
   margin: 0 16px 16px 0;
 }
 
-.projects-title{
+.projects-title {
   padding-top: 10%;
   padding-bottom: 5%;
   width: 100%;
@@ -72,25 +71,24 @@ width: 25%;
   height: 100%;
 }
 
-h1 { 
+h1 {
   display: inline;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   font-size: x-large;
 }
 
-h2 { 
+h2 {
   display: inline;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   font-size: medium;
-  
 }
 /* end of TITLE */
 
 /* TABLE */
 table {
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   width: 100%;
   border-collapse: separate;
   padding-top: 5%;
@@ -108,7 +106,7 @@ td {
   padding: 15px;
 }
 
-#projects-table{
+#projects-table {
   border-spacing: 0 10px;
 }
 
@@ -117,8 +115,8 @@ td {
 /* BUTTON : NEW PROJECT*/
 .btn-new-project {
   padding: 15px 10px;
-  background-color: #D0E2B0;
-  font-family: 'Montserrat', sans-serif;
+  background-color: #d0e2b0;
+  font-family: "Montserrat", sans-serif;
   font-weight: 300;
   border: none;
   border-radius: 5px;
@@ -128,7 +126,7 @@ td {
 }
 
 .btn-new-project:hover {
-  background-color: #EBF4DE;
+  background-color: #ebf4de;
   font-size: 12px;
 }
 
@@ -139,10 +137,10 @@ td {
 /* end of BUTTON */
 
 /* BUTTON : BACK TO PROJECTS*/
-.btn-back{
+.btn-back {
   padding: 15px 10px;
   background-color: var(--offWhite);
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400;
   color: black;
   border: none;
@@ -151,14 +149,11 @@ td {
   cursor: pointer;
   font-size: 13px;
 }
-a.btn-back:hover{
+a.btn-back:hover {
   font-weight: 600;
 }
 
 /* end of BUTTON */
-
-
-
 
 .fa-times {
   width: 30px;
@@ -170,7 +165,7 @@ a.btn-back:hover{
 .menu-vertical {
   width: 200px;
   float: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   border-radius: 5px;
   margin-top: 10%;
 }
@@ -184,33 +179,32 @@ a.btn-back:hover{
 }
 
 .menu-vertical a:hover {
-  background-color: #E0E0E0; /* Dark grey background on mouse-over */
+  background-color: #e0e0e0; /* Dark grey background on mouse-over */
   font-weight: 500;
 }
 
 .menu-vertical a.active {
-  background-color: #D0E2B0;
+  background-color: #d0e2b0;
   font-weight: 500;
 }
 
 /*MODAL*/
 .modal-project {
-background: #fff;
- position: absolute;
- left: 0;
- right: 0;
- top: 0;
- bottom: 0;
- margin: auto;
- width: 70%;
- height: 70%;
- box-shadow: 0 5px 10px 2px rgba(195,192,192,.5);
- padding: 20px;
- text-align: center;
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70%;
+  height: 70%;
+  box-shadow: 0 5px 10px 2px rgba(195, 192, 192, 0.5);
+  padding: 20px;
+  text-align: center;
 }
 
-
-.p-modal-content{
+.p-modal-content {
   display: block;
   flex-direction: column;
   align-items: center;
@@ -221,23 +215,33 @@ background: #fff;
   align-content: center;
   padding-right: 5%;
   padding-left: 5%;
-  
 }
 
 .modal-project form {
-   text-align: center;
-   align-items:initial;
-   justify-content: center;
+  text-align: center;
+  align-items: initial;
+  justify-content: center;
 }
+/*
+input[type=text], select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+*/
 
 .p-inputBox {
   width: 100%;
 }
-.p-lbl  {
+.p-lbl {
   float: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400px;
-  font-size: 17px;
+  font-size: 20px;
   padding-top: 15px;
   display: block;
   text-align: left;
@@ -246,100 +250,48 @@ background: #fff;
 
 input[type="text"] {
   padding: 1em;
-  border-radius: .3em;
+  border-radius: 0.3em;
   border: 1px solid grey;
   box-sizing: border-box;
   width: 100%;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400px;
 }
 
 /*FLEX BOXES (PostNr & PostSted */
 
-.p-flex /* div PostNr & PostSted */{
+.p-flex /* div PostNr & PostSted */ {
   display: flex;
   justify-content: space-between;
   width: 50%;
 }
 .p-classFlex {
-  flex-basis:48%;
+  flex-basis: 48%;
 }
 
-.p-lblFlex  {
+.p-lblFlex {
   float: left;
-  font-family: 'Montserrat', sans-serif;
+  font-family: "Montserrat", sans-serif;
   font-weight: 400px;
-  font-size: 17px;
+  font-size: 20px;
   display: block;
   text-align: left;
   float: left;
-  padding-top: 20px;
+  padding-top: 15px;
   padding-bottom: 1%;
 }
 
-.p-input-inline /* input PostNr & PostSted */{
+.p-input-inline /* input PostNr & PostSted */ {
   box-sizing: border-box;
   width: 100%;
 }
 
-
 /* BUTTON : CLOSE MODAL*/
-.btn-modal-close{
+.btn-modal-close {
   float: right;
   background-color: white;
   border: none;
   padding: 10px 10px;
   cursor: pointer;
 }
-
-
-
-.btn-modal-create-p {
-  padding: 15px 20px;
-  background-color: #D0E2B0;
-  font-family: 'Montserrat', sans-serif;
-  font-weight: 500;
-  border: none;
-  border-radius: 5px;
-  float: right;
-  cursor: pointer;
-  font-size: 13px;
-  
-}
-
-.btn-modal-create-p:hover {
-  background-color: #EBF4DE;
-  font-size: 12px;
-  
-}
-
-
-.p-btn-create{
-  float: right;
-  padding-right: 3%;
-}
-
-
-/*ALL PORJ - Greenspace overview*/
-.greensp-container {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: flex-start;
-  align-items: flex-start;
-  align-content: flex-start;
-  padding: 0;
-  margin: 0;
-  list-style: none;
-}
-
-.proj-col {
-  width: 20%;
-  box-sizing: border-box;
-  border-radius: .3em;
-  border: 1px solid grey;
-  padding: 5%;
-  float: left;
-  text-align: center;
-  margin: 0 0 10px 0;
-}
-
+>>>>>>> c4c3cf078d60240903a89f5b29a6d11ae0b4c22c
