@@ -7,9 +7,7 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import All_Projects from "./All_Projects";
 import data from "../../data.json";
-​
-/*onst logo = require('../../../images/proj_icon')*/
-​
+
 export default class Dashboard extends Component {
   render() {
     return (

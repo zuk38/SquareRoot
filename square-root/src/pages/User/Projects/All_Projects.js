@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Projects.css";
+import "./projects.css";
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
