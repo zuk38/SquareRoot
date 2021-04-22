@@ -229,17 +229,6 @@ background: #fff;
    align-items:initial;
    justify-content: center;
 }
- /*
-input[type=text], select {
-  width: 70%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-}
-*/
 
 .p-inputBox {
   width: 100%;
@@ -248,14 +237,12 @@ input[type=text], select {
   float: left;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400px;
-  font-size: 20px;
+  font-size: 17px;
   padding-top: 15px;
   display: block;
   text-align: left;
   padding-bottom: 1%;
 }
-
-
 
 input[type="text"] {
   padding: 1em;
@@ -278,16 +265,15 @@ input[type="text"] {
   flex-basis:48%;
 }
 
-
 .p-lblFlex  {
   float: left;
   font-family: 'Montserrat', sans-serif;
   font-weight: 400px;
-  font-size: 20px;
+  font-size: 17px;
   display: block;
   text-align: left;
   float: left;
-  padding-top: 15px;
+  padding-top: 20px;
   padding-bottom: 1%;
 }
 
@@ -306,4 +292,54 @@ input[type="text"] {
   cursor: pointer;
 }
 
+
+
+.btn-modal-create-p {
+  padding: 15px 20px;
+  background-color: #D0E2B0;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+  font-size: 13px;
+  
+}
+
+.btn-modal-create-p:hover {
+  background-color: #EBF4DE;
+  font-size: 12px;
+  
+}
+
+
+.p-btn-create{
+  float: right;
+  padding-right: 3%;
+}
+
+
+/*ALL PORJ - Greenspace overview*/
+.greensp-container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.proj-col {
+  width: 20%;
+  box-sizing: border-box;
+  border-radius: .3em;
+  border: 1px solid grey;
+  padding: 5%;
+  float: left;
+  text-align: center;
+  margin: 0 0 10px 0;
+}
 

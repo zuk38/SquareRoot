@@ -7,18 +7,43 @@ import Modal from 'react-modal';
 
 export default class All_Projects extends Component {
     state = {
-        modalOpen: false
+        modalOpen: false, 
+        projectName: "",
     };
+
+    updateName = (event) => {
+        this.setState({projectName: event.target.value});
+    }
+
+    updateAdress = (event) => {
+        this.setState({projectAdress: event.target.value});
+    }
+
+    updateZipcode = (event) => {
+        this.setState({projectZipcode: event.target.value});
+    }
+
+    updateCity = (event) => {
+        this.setState({projectCity: event.target.value});
+    }
 
     openModal = () => {
         this.setState({modalOpen: true});
     }
 
-    closeModal = () => {
+    closeModal = () => {console.log(this.state)
+
         this.setState({modalOpen: false});
     }
 
+    onSubmitForm() {
+        console.log(this.state)
+        this.closeModal()
+    }
+
     render() {
+        const {items} = this.state;
+
         return (
             <div className="projects-title">
                 <img class="p-icon-main"
@@ -40,49 +65,64 @@ export default class All_Projects extends Component {
                         this.closeModal
                     }
                     className={"modal-project"}>
-
+                    <button onClick={
+                            this.closeModal
+                        }
+                        className="btn-modal-close"
+                        alt="Lukk">
+                        <i class="fas fa-times fa-lg"></i>
+                    </button>
 
                     <div className="p-modal-content">
-                        <button onClick={
-                                this.closeModal
-                            }
-                            className="btn-modal-close"
-                            alt="Lukk">
-                            <i class="fas fa-times fa-lg"></i>
-                        </button>
+
                         <h1>La oss lage et økosystem</h1>
                         <br/>
                         <h2>Fortell oss litt mer om prosjektet</h2>
 
 
-                        <form>
+                        <form onSubmit={this.closeModal}> 
                             <div className="p-inputBox">
 
-                            <label className="p-lbl">Navn</label>
-                            <input type="text" placeholder="Prosjektets navn.." className="p-inp-text"/>
+                                <label className="p-lbl">Navn</label>
+                                <input name="name" type="text" placeholder="Prosjektets navn.." className="p-inp-text"
+                                    value={
+                                        this.state.projectName || ""
+                                    } onChange={this.updateName}/>
 
 
-                            <label className="p-lbl">Adresse</label>
-                            <input type="text" placeholder="Prosjektets adresse.." className="p-inp-text"/>
+                                <label className="p-lbl">Adresse</label>
+                                <input name="adress" type="text" placeholder="Prosjektets adresse.." className="p-inp-text"
+                                    value={
+                                        this.state.projectAdress || ""
+                                    } onChange={this.updateAdress}/>
 
-                            <div className="p-flex">
-                                <div className="p-classFlex">
-                                    <label className="p-lblFlex">PostNr</label>
-                                    <input type="text" className="p-input-inline" pattern="[0-4]*"/>
+                                <div className="p-flex">
+                                    <div className="p-classFlex">
+                                        <label className="p-lblFlex">PostNr</label>
+                                        <input name="zipcode" type="number" className="p-input-inline"
+                                            value={
+                                                this.state.projectZipcode || ""
+                                            } onChange={this.updateZipcode}/>
+                                    </div>
+
+                                    <div className="p-classFlex">
+                                        <label className="p-lblFlex">Poststed</label>
+                                        <input name="city" type="text" className="p-input-inline"
+                                            value={
+                                                this.state.projectCity || ""
+                                            } onChange={this.updateCity}/>
+                                    </div>
                                 </div>
 
-                                <div className="p-classFlex">
-                                    <label className="p-lblFlex">Poststed</label>
-                                    <input type="text" className="p-input-inline"/>
-                                </div>
-                            </div>
-                            <button>tab navigation</button>
-                            <button>the modal</button>
                             </div>
 
                         </form>
                     </div>
-
+                    <div className="p-btn-create">
+                        {/*NEED a button onClick -- save in database*/}
+                        <button onClick={this.closeModal}
+                            className="btn-modal-create-p">OPPRETT PROSJEKT</button>
+                    </div>
                 </Modal>
 
 

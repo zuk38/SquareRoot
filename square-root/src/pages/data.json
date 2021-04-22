@@ -1,4 +1,5 @@
-{"Rooftop1": [
+{
+  "Rooftop1": [
     {
       "icon": "../../../images/rooftop.png",
       "roles": [
@@ -16,5 +17,66 @@
         }
       ]
     }
+  ],
+
+  "Projects": [
+    { 
+      "icon": "Rooftop Garden",
+      "project": [
+        {
+          "projectID":"",
+          "project_name":"Sørengkai",
+          "project_start":"21.04.2021",
+          "project_end":"",
+          "project_groupID":"",
+          "project_img":"../../../images/rooftop.png"
+        }
+      ],
+
+      "greenspace_category": [
+        {
+          "categoryID":"",
+          "category_name":"Rooftop"
+        }
+      ],
+
+      "greenspace": [
+        {
+          "greenspaceID": "",
+          "greenspace_name": "Takterrasse",
+          "price": "",
+          "greenspace_project":"",
+          "greenspace_category":"Rooftop"
+        }
+      
+      ],
+
+      "plants": [
+        {
+          "plantID":"",
+          "pricePerM2":"",
+          "from_greenery":"",
+          "allergens":"",
+          "friendlyness_to_bees":""
+        }
+      ]
+  
+    }
+  ],
+  "Members": [
+    { 
+      "icon": "Rooftop Garden",
+      "greenspace": [
+        {
+          "greenspaceID": ""
+        }
+      
+      ]
+  
+    }
   ]
-}
+  }
+  
+
+
+
