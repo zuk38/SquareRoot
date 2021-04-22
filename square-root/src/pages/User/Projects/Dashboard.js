@@ -47,17 +47,17 @@ export default class Dashboard extends Component {
                           alt="Prosjektikon"
                         />{" "}
                         {/*GET DATA*/}
-                        <h1>{project.project_name}</h1>
+                        <h1 className="p-h1">{project.project_name}</h1>
                         <br></br>
                         <br></br>
-                        <h2>Role: {/*GET DATA*/}</h2>
+                        <h2 className="p-h2">Role: {/*GET DATA*/}</h2>
                         <ul className="greensp-container">
                           <li className="proj-col">
                             <img
                               src={project.project_img}
                               className="project_img"
                             />
-                            {}
+                            
                           </li>
                           <li className="proj-col">2 of 5</li>
                           <li className="proj-col">3 of 5</li>

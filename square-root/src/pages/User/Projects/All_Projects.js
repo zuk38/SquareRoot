@@ -46,7 +46,7 @@ export default class All_Projects extends Component {
     return (
       <div className="projects-title">
         <img class="p-icon-main" src={icon} alt="Prosjektikon" />
-        <h1>PROSJEKTER</h1>
+        <h1 className="p-h1">PROSJEKTER</h1>
         <button className="btn-new-project" onClick={this.openModal}>
           <i class="fas fa-plus"></i>NYTT PROSJEKT
         </button>
@@ -64,9 +64,9 @@ export default class All_Projects extends Component {
             <i class="fas fa-times fa-lg"></i>
           </button>
           <div className="p-modal-content">
-            <h1>La oss lage et økosystem</h1>
+            <h1 className="p-h1">La oss lage et økosystem</h1>
             <br />
-            <h2>Fortell oss litt mer om prosjektet</h2>
+            <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
             <form onSubmit={this.closeModal}>
               <div className="p-inputBox">
                 <label className="p-lbl">Navn</label>
@@ -131,24 +131,24 @@ export default class All_Projects extends Component {
           opprett et nytt prosjekt.
         </h2>
         {/*TABLE must GET data from GraphQL*/}
-        <table id="projects-table">
-          <tr>
-            <th>PROSJEKTNAVN</th>
-            <th>ADRESSE</th>
-            <th>BESKRIVELSE</th>
-            <th>OPPRETTET</th>
+        <table className="p-table">
+          <tr className="p-tr">
+            <th className="p-th">PROSJEKTNAVN</th>
+            <th className="p-th">ADRESSE</th>
+            <th className="p-th">BESKRIVELSE</th>
+            <th className="p-th">OPPRETTET</th>
           </tr>
           <tr>
-            <td>Sørengkaia</td>
-            <td>Sørengkaia 63, 0166 Oslo</td>
-            <td>OBOS</td>
-            <td>04.03.2021</td>
+            <td className="p-td">Sørengkaia</td>
+            <td className="p-td">Sørengkaia 63, 0166 Oslo</td>
+            <td className="p-td">OBOS</td>
+            <td className="p-td">04.03.2021</td>
           </tr>
-          <tr>
-            <td>Liertoppen</td>
-            <td>Lierveien 3, 1657 Lier</td>
-            <td>Privat</td>
-            <td>12.02.2021</td>
+          <tr className="p-tr">
+            <td className="p-td">Liertoppen</td>
+            <td className="p-td">Lierveien 3, 1657 Lier</td>
+            <td className="p-td">Privat</td>
+            <td className="p-td">12.02.2021</td>
           </tr>
         </table>
       </div>

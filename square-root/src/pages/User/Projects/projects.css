@@ -20,6 +20,7 @@
   background: var(--offWhite);
   height: 100%;
   position: absolute;
+  color: var(--mainBlack);
 }
 
 .left {
@@ -71,7 +72,7 @@
   height: 100%;
 }
 
-h1 {
+.p-h1 {
   display: inline;
   font-family: "Montserrat", sans-serif;
   font-weight: 400;
@@ -87,20 +88,20 @@ h1 {
 /* end of TITLE */
 
 /* TABLE */
-table {
+.p-table {
   font-family: "Montserrat", sans-serif;
   width: 100%;
   border-collapse: separate;
   padding-top: 5%;
 }
 
-th {
+.p-th {
   font-weight: 500;
   padding: 15px;
   text-align: left;
 }
 
-td {
+.p-td {
   font-weight: 300;
   background-color: #ffffff;
   padding: 15px;
