@@ -12,6 +12,7 @@ export default class All_Projects extends Component {
     city: "",
     error: "",
   };
+
   updateModalState = (key, value) => {
     if (key == "postalCode" && value.length == 4) {
       this.setState({ postalCode: value }, function() {
@@ -24,9 +25,11 @@ export default class All_Projects extends Component {
     this.setState({ [key]: value });
     this.setState({ error: "" });
   };
+
   openModal = () => {
     this.setState({ modalOpen: true });
   };
+
   closeModal = () => {
     console.log(this.state);
     this.setState({
@@ -37,6 +40,7 @@ export default class All_Projects extends Component {
       city: "",
     });
   };
+
   render() {
     const { items } = this.state;
     return (
@@ -122,7 +126,7 @@ export default class All_Projects extends Component {
           </div>
         </Modal>
         <br></br>
-        <h2>
+        <h2 className="p-h2">
           Velg et prosjekt for å legge til eller endre et grøntområde, eller
           opprett et nytt prosjekt.
         </h2>

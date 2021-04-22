@@ -78,7 +78,7 @@ h1 {
   font-size: x-large;
 }
 
-h2 {
+.p-h2 {
   display: inline;
   font-family: "Montserrat", sans-serif;
   font-weight: 300;
