@@ -18,7 +18,7 @@ const Login = (props) => {
     props.auth.setAuthStatus(true);
     console.log(attributes.name)
     props.auth.setUser(attributes.name);
-    props.history.push('/') //home
+    props.history.goBack() //access last page viewed
   }
 
   async function login() {

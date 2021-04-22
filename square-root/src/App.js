@@ -57,13 +57,12 @@ class App extends Component {
     //used for session persistance - remembering logged in user
     //load session object from local storage
     try {
-      //const session = await Auth.currentSession();
+      const session = await Auth.currentSession();
       this.setAuthStatus(true);
-      //console.log(session);
-      //const user = await Auth.currentAuthenticatedUser();
-      //const { attributes } = user;
-      //this.setUser(attributes.name);
-      this.setUser("Karolina IsCool");
+      console.log(session);
+      const user = await Auth.currentAuthenticatedUser();
+      const { attributes } = user;
+      this.setUser(attributes.name);
     } catch (error) {
       console.log(error);
     }
