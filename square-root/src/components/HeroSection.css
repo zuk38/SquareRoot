@@ -1,0 +1,55 @@
+.hero-container {
+  background: #fff;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Montserrat", sans-serif;
+}
+.imagebox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 20px;
+}
+.image {
+  height: 550px;
+  width: 850px;
+  overflow: hidden;
+  padding-top: 8%;
+  padding-left: 6%;
+}
+.span-imagebox {
+  padding-left: 3%;
+  padding-top: 50%;
+  padding-right: 10%;
+  position: relative;
+  bottom: 0px;
+}
+.h1 {
+  color: rgb(0, 0, 0);
+  display: flex;
+  align-items: center;
+}
+button {
+  margin-right: 20px;
+}
+.bd-notification {
+  padding-top: 40px;
+  margin: 50px;
+}
+.box {
+  padding-left: 3%;
+  padding-top: 50%;
+  padding-right: 10%;
+  position: relative;
+  bottom: 0px;
+}
+.image1 {
+  display: block;
+  height: 550px;
+  width: 1850px;
+
+  padding-top: 8%;
+  padding-left: 6%;
+}

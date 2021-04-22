@@ -1,0 +1,297 @@
+
+:root {
+  --primaryColor: #af9a7d;
+  --mainWhite: #fff;
+  --offWhite: #f7f7f7;
+  --mainBlack: #222;
+  --mainGrey: #ececec;
+  --darkGrey: #cfcfcf;
+  --mainTransition: all 0.3s linear;
+  --mainSpacing: 3px;
+  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
+  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
+}
+/* COLUMNS */
+
+.row {
+  padding-top: 5%;
+  display: flex;
+  width: 100%;
+  background: var(--offWhite);
+  height: 100%;
+  position: absolute;
+  color: var(--mainBlack);
+}
+
+.left {
+  width: 25%;
+  float: left;
+  background: var(--offWhite);
+  padding-left: 5%;
+}
+
+.right {
+  width: 75%;
+  float: left;
+  background: var(--offWhite);
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* end of COLUMNS */
+
+/* TITLE */
+.project-icon {
+  width: 22px;
+  height: auto;
+  float: left;
+  margin: 0 16px 16px 0;
+}
+.p-icon-main {
+  width: 50px;
+  height: auto;
+  float: left;
+  margin: 0 16px 16px 0;
+}
+
+.projects-title {
+  padding-top: 10%;
+  padding-bottom: 5%;
+  width: 100%;
+  float: left;
+  background: var(--offWhite);
+  padding-right: 5%;
+  padding-left: 5%;
+  position: absolute;
+  height: 100%;
+}
+
+.p-h1 {
+  display: inline;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  font-size: x-large;
+}
+
+.p-h2 {
+  display: inline;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  font-size: medium;
+}
+/* end of TITLE */
+
+/* TABLE */
+.p-table {
+  font-family: "Montserrat", sans-serif;
+  width: 100%;
+  border-collapse: separate;
+  padding-top: 5%;
+}
+
+.p-th {
+  font-weight: 500;
+  padding: 15px;
+  text-align: left;
+}
+
+.p-td {
+  font-weight: 300;
+  background-color: #ffffff;
+  padding: 15px;
+}
+
+#projects-table {
+  border-spacing: 0 10px;
+}
+
+/* end of TABLE */
+
+/* BUTTON : NEW PROJECT*/
+.btn-new-project {
+  padding: 15px 10px;
+  background-color: #d0e2b0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 300;
+  border: none;
+  border-radius: 5px;
+  float: right;
+  cursor: pointer;
+  font-size: 12px;
+}
+
+.btn-new-project:hover {
+  background-color: #ebf4de;
+  font-size: 12px;
+}
+
+.fas {
+  padding: 0 10px;
+}
+
+/* end of BUTTON */
+
+/* BUTTON : BACK TO PROJECTS*/
+.btn-back {
+  padding: 15px 10px;
+  background-color: var(--offWhite);
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  color: black;
+  border: none;
+  border-radius: 5px;
+  float: left;
+  cursor: pointer;
+  font-size: 13px;
+}
+a.btn-back:hover {
+  font-weight: 600;
+}
+
+/* end of BUTTON */
+
+.fa-times {
+  width: 30px;
+  height: auto;
+}
+/* end of BUTTON */
+
+/* PROJECTS-MENU */
+.menu-vertical {
+  width: 200px;
+  float: left;
+  font-family: "Montserrat", sans-serif;
+  border-radius: 5px;
+  margin-top: 10%;
+}
+
+.menu-vertical a {
+  color: black; /* Black text color */
+  display: block; /* Make the links appear below each other */
+  padding: 12px; /* Add some padding */
+  text-decoration: none; /* Remove underline from links */
+  border-radius: 5px;
+}
+
+.menu-vertical a:hover {
+  background-color: #e0e0e0; /* Dark grey background on mouse-over */
+  font-weight: 500;
+}
+
+.menu-vertical a.active {
+  background-color: #d0e2b0;
+  font-weight: 500;
+}
+
+/*MODAL*/
+.modal-project {
+  background: #fff;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 70%;
+  height: 70%;
+  box-shadow: 0 5px 10px 2px rgba(195, 192, 192, 0.5);
+  padding: 20px;
+  text-align: center;
+}
+
+.p-modal-content {
+  display: block;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  z-index: 1;
+  align-content: center;
+  padding-right: 5%;
+  padding-left: 5%;
+}
+
+.modal-project form {
+  text-align: center;
+  align-items: initial;
+  justify-content: center;
+}
+/*
+input[type=text], select {
+  width: 70%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+}
+*/
+
+.p-inputBox {
+  width: 100%;
+}
+.p-lbl {
+  float: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  padding-top: 15px;
+  display: block;
+  text-align: left;
+  padding-bottom: 1%;
+}
+
+input[type="text"] {
+  padding: 1em;
+  border-radius: 0.3em;
+  border: 1px solid grey;
+  box-sizing: border-box;
+  width: 100%;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400px;
+}
+
+/*FLEX BOXES (PostNr & PostSted */
+
+.p-flex /* div PostNr & PostSted */ {
+  display: flex;
+  justify-content: space-between;
+  width: 50%;
+}
+.p-classFlex {
+  flex-basis: 48%;
+}
+
+.p-lblFlex {
+  float: left;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400px;
+  font-size: 20px;
+  display: block;
+  text-align: left;
+  float: left;
+  padding-top: 15px;
+  padding-bottom: 1%;
+}
+
+.p-input-inline /* input PostNr & PostSted */ {
+  box-sizing: border-box;
+  width: 100%;
+}
+
+/* BUTTON : CLOSE MODAL*/
+.btn-modal-close {
+  float: right;
+  background-color: white;
+  border: none;
+  padding: 10px 10px;
+  cursor: pointer;
+}

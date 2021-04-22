@@ -1,0 +1,82 @@
+{
+  "Rooftop1": [
+    {
+      "icon": "../../../images/rooftop.png",
+      "roles": [
+        {
+          "title": "Rooftop Garden",
+          "description": "Tekst om hvorfor Rooftop Garden er bra for alle.",
+          "startDate": "2017-01-01",
+          "endDate": "2017-05-01",
+          "location": "New York, USA",
+          "similarurl1": "blank",
+          "similaricon1": "../../../images/rooftop.png",
+          "similarurl2": "blank",
+          "similaricon2": "../../../images/rooftop.png",
+          "city": "OSLO"
+        }
+      ]
+    }
+  ],
+
+  "Projects": [
+    { 
+      "icon": "Rooftop Garden",
+      "project": [
+        {
+          "projectID":"",
+          "project_name":"Sørengkai",
+          "project_start":"21.04.2021",
+          "project_end":"",
+          "project_groupID":"",
+          "project_img":"../../../images/rooftop.png"
+        }
+      ],
+
+      "greenspace_category": [
+        {
+          "categoryID":"",
+          "category_name":"Rooftop"
+        }
+      ],
+
+      "greenspace": [
+        {
+          "greenspaceID": "",
+          "greenspace_name": "Takterrasse",
+          "price": "",
+          "greenspace_project":"",
+          "greenspace_category":"Rooftop"
+        }
+      
+      ],
+
+      "plants": [
+        {
+          "plantID":"",
+          "pricePerM2":"",
+          "from_greenery":"",
+          "allergens":"",
+          "friendlyness_to_bees":""
+        }
+      ]
+  
+    }
+  ],
+  "Members": [
+    { 
+      "icon": "Rooftop Garden",
+      "greenspace": [
+        {
+          "greenspaceID": ""
+        }
+      
+      ]
+  
+    }
+  ]
+  }
+  
+
+
+

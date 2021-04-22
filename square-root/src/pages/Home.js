@@ -5,6 +5,10 @@ import { Link } from "react-router-dom";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
 
+import HeroSection from "../components/HeroSection.js";
+
+//import HeroSection from '../components/HeroSection.js';
+
 async function addContact() {
   //create request body
   const data = {
@@ -23,44 +27,6 @@ async function addContact() {
 
 //zipcode
 const zipState = { zipCode: "", city: "", hZone: "" };
-const findCityFromZip = async () => {
-  console.log(zipState.zipCode);
-
-  const response = await fetch(
-    new URL(
-      "https://api.bring.com/pickuppoint/api/postalCode/NO/getCityAndType/" +
-        zipState.zipCode +
-        ".json"
-    ),
-    {
-      method: "get",
-      headers: {
-        "X-MyBring-API-Uid": process.env.REACT_APP_MYBRING_UID,
-        "X-MyBring-API-Key": process.env.REACT_APP_MYBRING_API,
-        "X-Bring-Client-URL": process.env.REACT_APP_MYBRING_CLIENT_URL,
-        Accept: "application/json, text/plain, */*",
-        "Content-Type": "application/json",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Credentials": true,
-        "Access-Control-Allow-Methods": "GET",
-      },
-    }
-  )
-    .then((response) => {
-      console.log(response);
-      if (!response.ok) {
-        throw new Error("Something went wrong ...");
-      }
-      return response.json();
-    })
-    .catch((error) => console.log(error));
-
-  console.log(response);
-  let city = response.postalCode.city.toString();
-  city = city.slice(0, 1) + city.slice(1, city.length).toLowerCase();
-  updateFormState("city", city, zipState);
-  console.log(zipState.city);
-};
 
 //contact form
 const formState = { name: "", email: "", message: "" };
@@ -73,36 +39,7 @@ function updateFormState(key, value, form) {
 export default function Home(props) {
   return (
     <div>
-      <Hero>
-        <Banner
-          title="Plants of your dreams"
-          subtitle="Design your greens inside, outside and on top of buildings."
-        >
-          <Link to="/plants" className="btn-primary">
-            Our Plants
-          </Link>
-        </Banner>
-        <br></br>
-        <div class="field has-addons">
-          <div class="control">
-            <input
-              class="input"
-              type="text"
-              placeholder="Enter your Zip Code"
-              onChange={(e) =>
-                updateFormState("zipCode", e.target.value, zipState)
-              }
-            />
-          </div>
-          <div class="control">
-            <a class="button is-info" onClick={findCityFromZip}>
-              <span class="icon is-small">
-                <i class="fas fa-arrow-circle-right fa-lg"></i>
-              </span>
-            </a>
-          </div>
-        </div>
-      </Hero>
+      <HeroSection/> 
       <section className="section">
         <Container>
           <div>
