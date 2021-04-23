@@ -1,10 +1,5 @@
 import React, { Component } from "react";
 import "./projects.css";
-<<<<<<< HEAD
-import icon from '../../../images/proj_icon.png';
-import Modal from 'react-modal';
-
-=======
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
@@ -17,7 +12,7 @@ export default class All_Projects extends Component {
     city: "",
     error: "",
   };
->>>>>>> fc4c9a6fbfef633ba641571ecaf1992b0469bef4
+
 
   updateModalState = (key, value) => {
     if (key == "postalCode" && value.length == 4) {

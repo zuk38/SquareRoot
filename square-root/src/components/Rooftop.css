@@ -5,16 +5,11 @@
 .rooftop{
     position: relative;
     left: 3%;
-    width: 1450px;
-    height: 620px;
+    width: 95%;
+    
 }
-.rooftop {
-  position: relative;
-  left: 3%;
-  width: 1500px;
-  height: 620px;
 
-}
+
 .rooftopinfo {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
@@ -36,15 +31,6 @@ h5 {
     padding-top: 1%;
     padding-left: 3%;
 }
-.similaricon {
-  height: 190px;
-  width: 310px;
-  padding-top: 3%;
-  padding-right: 3%;
-}
-.city {
-  padding-top: 1%;
-}
 p {
   padding-bottom: 5%;
   padding-top: 2%;
@@ -54,6 +40,7 @@ p {
   position: absolute;
   bottom: 0px;
   width: 42%;
+  height: 53%;
 }
 .tilpass {
   padding-bottom: 20px;
