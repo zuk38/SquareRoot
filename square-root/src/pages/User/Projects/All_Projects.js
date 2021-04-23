@@ -3,21 +3,6 @@ import "./projects.css";
 import icon from '../../../images/proj_icon.png';
 import Modal from 'react-modal';
 
-<<<<<<< HEAD
-=======
-const customStyles = {
-    content : {
-      top                   : '50%',
-      left                  : '50%',
-      right                 : 'auto',
-      bottom                : 'auto',
-      marginRight           : '-50%',
-      transform             : 'translate(-50%, -50%)',
-      width                 : '70%',
-      height                : '70%'
-    }
-  };
->>>>>>> 119a9c44f2cc599810f737140611f91917cf1ed6
 
 export default class All_Projects extends Component { 
     state = {

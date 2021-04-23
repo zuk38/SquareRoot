@@ -5,7 +5,7 @@
 .rooftop{
     position: relative;
     left: 3%;
-    width: 1500px;
+    width: 1450px;
     height: 620px;
 }
 .rooftopinfo{
@@ -19,12 +19,14 @@ h5{
 }
 .similaricon{
     height: 190px;
-    width: 310px;
+    width: 300px;
     padding-top: 3%;
     padding-right: 3%;
+    padding-left: 3%;
 }
 .city{
     padding-top: 1%;
+    padding-left: 3%;
 }
 p{
     padding-bottom: 5%;
@@ -39,4 +41,66 @@ p{
 .tilpass{
     padding-bottom: 20px;
 }
+.requirements{
+    padding-top: 1%;
+    
 
+}
+/*
+.req_info{
+    background-color: var(--offWhite);
+    width: 55%;
+    padding-left: 2%;
+
+}
+*/
+.func_icon{
+    height: 30px;
+    width: 30px;
+    padding-right: 2%;
+    
+    padding-top: 2%;
+}
+.func{
+    display: grid;
+    grid-template-columns: 0.5fr 0.5fr;
+    grid-gap: 5%;
+    background-color: var(--offWhite);
+    width: 55%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+}
+.h4{
+    font-weight: 700;
+    padding-top: 2%;
+
+}
+.desc{
+    background-color: var(--offWhite);
+    width: 55%;
+    padding-left: 1%;
+    padding-bottom: 1%;
+    margin-top: 2%;
+}
+.desc_info{
+    padding-top: 2%;
+    padding-right: 1%;
+
+}
+.plantlist{
+    width: 55%;
+    padding-top: 2%;
+}
+/*
+.func_info{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 0%;
+    width: 55%;
+    background-color: var(--offWhite);
+}
+
+.req_box{
+    padding-left: 5%;
+}
+*/
