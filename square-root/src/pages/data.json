@@ -25,11 +25,14 @@
       "project": [
         {
           "projectID":"",
-          "project_name":"Sørengkai",
+          "project_name":"Sørengkaia",
           "project_start":"21.04.2021",
           "project_end":"",
           "project_groupID":"",
-          "project_img":"../../../images/rooftop.png"
+          "project_img":"../../../images/rooftop.png",
+          "project_adress":"Sørengkaia 63",
+          "project_zip":"0166",
+          "project_city":"Oslo"
         }
       ],
 
