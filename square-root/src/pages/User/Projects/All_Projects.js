@@ -14,6 +14,7 @@ export default class All_Projects extends Component {
     error: "",
   };
 
+
   updateModalState = (key, value) => {
     if (key == "postalCode" && value.length == 4) {
       this.setState({ postalCode: value }, function() {
