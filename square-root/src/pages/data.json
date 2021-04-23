@@ -114,8 +114,21 @@
       ]
   
     }
+  ],
+
+  "Users": [
+    {
+      "userID": "",
+      "user_fName": "Tony",
+      "user_lName": "Hermanssen",
+      "user_groupID": "",
+      "user_email": "t.hermanssen@lark.no",
+      "phone_number": "",
+      "user_role": "Real Estate Developer"
+    }
   ]
   }
+  
   
 
 

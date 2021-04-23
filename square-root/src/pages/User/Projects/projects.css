@@ -49,7 +49,7 @@
 
 /* TITLE */
 .project-icon {
-  width: 22px;
+  width: 30px;
   height: auto;
   float: left;
   margin: 0 16px 16px 0;
@@ -303,4 +303,10 @@ input[type="text"] {
   border: none;
   padding: 10px 10px;
   cursor: pointer;
+}
+
+/* DASHBOARD */
+
+.p-title {
+  display: inline-block;
 }
