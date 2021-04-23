@@ -1,22 +1,30 @@
-
-.img-rooftop1{
-    height: 600px;
+.img-rooftop1 {
+  height: 600px;
 }
+
 .rooftop{
     position: relative;
     left: 3%;
     width: 1450px;
     height: 620px;
 }
-.rooftopinfo{
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    grid-gap: 3%;
-    padding-top: 20px;
+.rooftop {
+  position: relative;
+  left: 3%;
+  width: 1500px;
+  height: 620px;
+
 }
-h5{
-    font-size: 30px;
+.rooftopinfo {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-gap: 3%;
+  padding-top: 20px;
 }
+h5 {
+  font-size: 30px;
+}
+
 .similaricon{
     height: 190px;
     width: 300px;
@@ -28,32 +36,35 @@ h5{
     padding-top: 1%;
     padding-left: 3%;
 }
-p{
-    padding-bottom: 5%;
-    padding-top: 2%;
+.similaricon {
+  height: 190px;
+  width: 310px;
+  padding-top: 3%;
+  padding-right: 3%;
+}
+.city {
+  padding-top: 1%;
+}
+p {
+  padding-bottom: 5%;
+  padding-top: 2%;
 }
 
-.options{
-    position: absolute;
-    bottom: 0px;
-    width: 42%;
+.options {
+  position: absolute;
+  bottom: 0px;
+  width: 42%;
 }
-.tilpass{
-    padding-bottom: 20px;
+.tilpass {
+  padding-bottom: 20px;
 }
+
 .requirements{
     padding-top: 1%;
     
 
 }
-/*
-.req_info{
-    background-color: var(--offWhite);
-    width: 55%;
-    padding-left: 2%;
 
-}
-*/
 .func_icon{
     height: 30px;
     width: 30px;
@@ -91,16 +102,3 @@ p{
     width: 55%;
     padding-top: 2%;
 }
-/*
-.func_info{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-gap: 0%;
-    width: 55%;
-    background-color: var(--offWhite);
-}
-
-.req_box{
-    padding-left: 5%;
-}
-*/

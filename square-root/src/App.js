@@ -1,5 +1,5 @@
-
-
+import "./App.css"
+import "./App.sass"
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -7,13 +7,13 @@ import ForgotPassword from "./components/auth/ForgotPassword";
 import ForgotPasswordVerification from "./components/auth/ForgotPassVerification";
 import ChangePasswordConfirm from "./components/auth/ChangePassConfirm";
 import Welcome from "./components/Welcome";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import { Plants } from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
 import Error from "./pages/Error";
 import Rooftop from "./pages/Rooftop"
-import Rainbed from "./pages/Rainbed"
+import {Rainbed} from "./pages/Rainbed"
 import Indoor from "./pages/Indoor"
 import All_Projects  from "./pages/User/Projects/All_Projects"
 import Dashboard from "./pages/User/Projects/Dashboard"
@@ -27,6 +27,7 @@ import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
+import { FaIcons } from "react-icons/fa";
 library.add(faEdit);
 
 class App extends Component {
@@ -55,12 +56,13 @@ class App extends Component {
     //used for session persistance - remembering logged in user
     //load session object from local storage
     try {
-      const session = await Auth.currentSession();
+      //const session = await Auth.currentSession();
       this.setAuthStatus(true);
-      console.log(session);
-      const user = await Auth.currentAuthenticatedUser();
-      const { attributes } = user;
-      this.setUser(attributes.name);
+      //console.log(session);
+      //const user = await Auth.currentAuthenticatedUser();
+      //const { attributes } = user;
+      //this.setUser(attributes.name);
+      this.setUser("Karolina IsCool");
     } catch (error) {
       console.log(error);
     }
@@ -78,8 +80,7 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating && (
-        <div className="App">
-          <div>
+          <>
             <Navbar auth={authProps} />
             <Switch>
               <Route
@@ -125,20 +126,26 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Rooftop" 
+                path="/rooftop" 
                 render={(props) => <Rooftop {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Rainbed"
+                path="/rainbed"
                 render={(props) => <Rainbed {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Indoor"
+                path="/indoor"
                 render={(props) => <Indoor {...props} auth={authProps} />}
               />
-            
+              <Route
+                exact
+                path="/plants"
+                render={(props) => (
+                  <Plants {...props} auth={authProps} />
+                )}
+              />            
               <Route
                 exact
                 path="/plants/:name"
@@ -148,33 +155,33 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Projects"
+                path="/projects"
                 render={(props) => <All_Projects {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Dashboard"
+                path="/dashboard"
                 render={(props) => <Dashboard {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Members"
+                path="/members"
                 render={(props) => <Members {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Orders"
+                path="/orders"
                 render={(props) => <Orders {...props} auth={authProps} />}
               />
               <Route
                 exact
-                path="/Settings"
+                path="/settings"
                 render={(props) => <Settings {...props} auth={authProps} />}
               />
               <Route component={Error} />
             </Switch>
-          </div>
-        </div>
+            
+          </>
       )
     );
   }
