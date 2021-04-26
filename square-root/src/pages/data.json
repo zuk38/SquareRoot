@@ -68,7 +68,16 @@
           "project_groupID":"",
           "project_adress":"Sørengkaia 63",
           "project_zip":"0166",
-          "project_city":"Oslo"
+          "project_city":"Oslo",
+
+          "projectID2":"",
+          "project_name2":"Tøyenhagen",
+          "project_start2":"03.12.2021",
+          "project_end2":"",
+          "project_groupID2":"",
+          "project_adress2":"Tøyengata 3",
+          "project_zip2":"0356",
+          "project_city2":"Oslo"
         }
       ],
 

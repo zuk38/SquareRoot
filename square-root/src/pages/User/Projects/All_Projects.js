@@ -159,9 +159,9 @@ export default class All_Projects extends Component {
                                                     <td className="p-td">{project.project_start}</td>
                                                 </tr>
                                                 <tr>
-                                                    <td className="p-td">{project.project_name}</td>
-                                                    <td className="p-td">{project.project_adress}, {project.project_zip} {project.project_city}</td>
-                                                    <td className="p-td">{project.project_start}</td>
+                                                    <td className="p-td">{project.project_name2}</td>
+                                                    <td className="p-td">{project.project_adress2}, {project.project_zip} {project.project_city}</td>
+                                                    <td className="p-td">{project.project_start2}</td>
                                                 </tr>
                                             </table>
                                         </div>
