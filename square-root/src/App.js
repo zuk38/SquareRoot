@@ -18,6 +18,7 @@ import {Rainbed} from "./pages/Rainbed"
 import Indoor from "./pages/Indoor"
 import All_Projects  from "./pages/User/Projects/All_Projects"
 import Dashboard from "./pages/User/Projects/Dashboard"
+import Greenspace from "./pages/User/Projects/Greenspace"
 import Members from "./pages/User/Projects/Members"
 import Orders from "./pages/User/Projects/Orders"
 import Settings from "./pages/User/Projects/Settings"
@@ -170,6 +171,13 @@ class App extends Component {
                 path="/dashboard"
                 render={(props) => <Dashboard {...props} auth={authProps} />}
               />
+
+              <Route
+                exact
+                path="/greenspace"
+                render={(props) => <Greenspace {...props} auth={authProps} />}
+              />
+
               <Route
                 exact
                 path="/members"

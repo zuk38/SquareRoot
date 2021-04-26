@@ -2,20 +2,57 @@
   "Rooftop1": [
     {
       "icon": "../../../images/rooftop.png",
+      "city": "OSLO",
+      "func": "Functional Requirements",
+      "main": "Maintenance needs",
       "roles": [
         {
           "title": "Rooftop Garden",
           "description": "Tekst om hvorfor Rooftop Garden er bra for alle.",
-          "startDate": "2017-01-01",
-          "endDate": "2017-05-01",
-          "location": "New York, USA",
           "similarurl1": "blank",
           "similaricon1": "../../../images/rooftop.png",
           "similarurl2": "blank",
           "similaricon2": "../../../images/rooftop.png",
-          "city": "OSLO"
+          "city": "OSLO",
+          "func": "Functional Fea"
         }
+      ],
+      "functions": [
+        {
+          "name": "Stormwater Management",
+          "icon": "../../../images/stormwater.png",
+          "True/false": true
+        },
+        {
+          "name": "Biodiverse",
+          "icon": "../../../images/bee.png",
+          "True/false": false
+        }
+      ],
+      "maintenance": [
+        {
+          "name": "Sun: Low",
+          "icon": "../../../images/sun.png"
+        },
+        {
+          "name": "Water: Low",
+          "icon": "../../../images/waterdrop.png"
+        },
+        {
+          "name": "Soil: High",
+          "icon": "../../../images/showel.png"
+        }
+
+      ],
+      "description": [
+        {
+          "name": "Description",
+          "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
+          
+        }
+
       ]
+
     }
   ],
 
@@ -25,11 +62,22 @@
       "project": [
         {
           "projectID":"",
-          "project_name":"Sørengkai",
+          "project_name":"Sørengkaia",
           "project_start":"21.04.2021",
           "project_end":"",
           "project_groupID":"",
-          "project_img":"../../../images/rooftop.png"
+          "project_adress":"Sørengkaia 63",
+          "project_zip":"0166",
+          "project_city":"Oslo",
+
+          "projectID2":"",
+          "project_name2":"Tøyenhagen",
+          "project_start2":"03.12.2021",
+          "project_end2":"",
+          "project_groupID2":"",
+          "project_adress2":"Tøyengata 3",
+          "project_zip2":"0356",
+          "project_city2":"Oslo"
         }
       ],
 
@@ -43,10 +91,36 @@
       "greenspace": [
         {
           "greenspaceID": "",
-          "greenspace_name": "Takterrasse",
+          "greenspace_name": "Oslo Takterrasse",
           "price": "",
           "greenspace_project":"",
-          "greenspace_category":"Rooftop"
+          "greenspace_category":"Rooftop",
+          "greenspace_description": "Vestre del",
+          "greenspace_img":"../../../images/rooftop.png",
+          
+          "greenspaceID2": "",
+          "greenspace_name2": "Grønn Vegg",
+          "price2": "",
+          "greenspace_project2":"",
+          "greenspace_category2":"Green Wall",
+          "greenspace_description2": "2. etg",
+          "greenspace_img2": "../../../images/greenWall.png",
+
+          "greenspaceID3": "",
+          "greenspace_name3": "Bievennlig Hage",
+          "price3": "",
+          "greenspace_project3":"",
+          "greenspace_category3" :"Biodiversity",
+          "greenspace_description3": "Uteområde 4. etg",
+          "greenspace_img3": "../../../images/biodiversity.png",
+
+          "greenspaceID4": "",
+          "greenspace_name4": "Kjøkkenhage",
+          "price4": "",
+          "greenspace_project4":"",
+          "greenspace_category4" :"Rainbeds",
+          "greenspace_description4": "2. etg vestover",
+          "greenspace_img4": "../../../images/rainbeds.png"
         }
       
       ],
@@ -74,8 +148,28 @@
       ]
   
     }
+  ],
+
+  "Users": [
+    {
+      "1_userID": "",
+      "1_user_fName": "Tony",
+      "1_user_lName": "Hermanssen",
+      "1_user_groupID": "",
+      "1_user_email": "t.hermanssen@lark.no",
+      "1_phone_number": "",
+      "1_user_role": "Real Estate Developer",
+      "2_userID": "",
+      "2_user_fName": "Tony",
+      "2_user_lName": "Hermanssen",
+      "2_user_groupID": "",
+      "2_user_email": "t.hermanssen@lark.no",
+      "2_phone_number": "",
+      "2_user_role": "Real Estate Developer"
+    }
   ]
   }
+  
   
 
 
