@@ -21,8 +21,15 @@ export default class Dashboard extends Component {
                             {
                             projects.project.map(function (project, i) {
                                 return (
-                                    <div key={i}>
-                                        <div class="row">
+                                    <div key={i}>{
+                                        projects.greenspace.map(function (greenspace, i) { 
+                                        
+                                            return (
+                                            <div key = {i}>
+                                                {
+                                                
+                                            
+                                        <div class="p-row">
                                             <div class="p-column left">
                                                 <a href="/Projects" class="btn-back">
                                                     <i class="fas fa-chevron-left"></i>Alle Prosjekter
@@ -54,23 +61,58 @@ export default class Dashboard extends Component {
                                                     project.project_name
                                                 }</h1></div>
                                                 <br></br>
-                                                <br></br>
+                                               
                                                 
                                                 <h2 className="p-h2">Role: {/*GET DATA*/}</h2>
-                                                <ul className="greensp-container">
-                                                    <li className="proj-col">
+                                                <div className="green-container">
+                                                    <a href="greenspace" /*ONLY FOR 1 HERE -- NEEDS TO BE SPECIFIC FOR ALL*/ >
+                                                        <div className="green-item">
                                                         <img src={
-                                                                project.project_img
+                                                                greenspace.greenspace_img
                                                             }
                                                             className="project_img"/>
+                                                            <div className="green-info">
+                                                            <h3 className="p-h3">{greenspace.greenspace_name}</h3>
+                                                            <h4 className="p-h4">{greenspace.greenspace_description}</h4>
+                                                            </div>
 
-                                                    </li>
-                                                    <li className="proj-col">2 of 5</li>
-                                                    <li className="proj-col">3 of 5</li>
-                                                    <li className="proj-col">4 of 5</li>
-                                                </ul>
+                                                    </div>
+                                                    </a>
+                                                    <div className="green-item"><img src={
+                                                                greenspace.greenspace_img2
+                                                            }
+                                                            className="project_img"/>
+                                                            <div className="green-info">
+                                                            <h3 className="p-h3">{greenspace.greenspace_name2}</h3>
+                                                            <h4 className="p-h4">{greenspace.greenspace_description2}</h4>
+                                                            </div>
+
+                                                   </div>
+                                                    <div className="green-item"><img src={
+                                                                greenspace.greenspace_img3
+                                                            }
+                                                            className="project_img"/>
+                                                            <div className="green-info">
+                                                            <h3 className="p-h3">{greenspace.greenspace_name3}</h3>
+                                                            <h4 className="p-h4">{greenspace.greenspace_description3}</h4>
+                                                            </div>
+
+                                                   </div>
+                                                    <div className="green-item"><img src={
+                                                                greenspace.greenspace_img4
+                                                            }
+                                                            className="project_img"/>
+                                                            <div className="green-info">
+                                                            <h3 className="p-h3">{greenspace.greenspace_name4}</h3>
+                                                            <h4 className="p-h4">{greenspace.greenspace_description4}</h4>
+                                                            </div>
+
+                                                   </div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        </div> /*p-row*/
+                            } </div> )})}
+                                        
                                     </div>
                                 );
                             })
