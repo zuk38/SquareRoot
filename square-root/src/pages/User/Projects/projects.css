@@ -389,21 +389,14 @@ input[type="text"] {
 
 .greenspace {
   display: inline-block;
-  vertical-align: middle;
-  float: none;
-  
-  
+  vertical-align: top;
+  line-height: 1;
 }
 
-.gr-cont-top{
-  position: fixed;
-  display: flex;
-  background-color: purple;
+.gr-cont-top {
   width: 100%;
 }
 
-.gr-cont-bottom{
-  width: 100%;
-  display: flex;
-}
+
+
 

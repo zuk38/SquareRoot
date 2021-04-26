@@ -61,8 +61,7 @@ export default class Dashboard extends Component {
                                                     project.project_name
                                                 }</h1></div>
                                                 <br></br>
-                                               
-                                                
+    
                                                 <h2 className="p-h2">Role: {/*GET DATA*/}</h2>
                                                 <div className="green-container">
                                                     <a href="greenspace" /*ONLY FOR 1 HERE -- NEEDS TO BE SPECIFIC FOR ALL*/ >

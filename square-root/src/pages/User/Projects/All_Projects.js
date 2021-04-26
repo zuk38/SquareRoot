@@ -123,6 +123,10 @@ export default class All_Projects extends Component {
               </div>
             </form>
           </div>
+
+          <li>
+            <ul></ul>
+          </li>
           <div className="p-btn-create">
             {/*NEED a button onClick -- save in database*/}
             <button onClick={this.closeModal} className="btn-modal-create-p">
