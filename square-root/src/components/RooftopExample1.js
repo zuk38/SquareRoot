@@ -30,8 +30,8 @@ class RooftopExample1 extends Component {
 											})}
 											<div className='options'>
 												<div className="tilpass">
-													<button class="button is-medium is-light is-fullwidth">Tilpass</button>
-													</div>
+													<a class="button is-medium is-light is-fullwidth" href="Customize">Tilpass</a>
+												</div>
 													  <button class="button is-medium is-dark is-fullwidth">
           											Legg til i prosjekt<i class="fas fa-chevron-right"/></button>	  
 											</div>

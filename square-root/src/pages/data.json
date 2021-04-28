@@ -4,6 +4,9 @@
       "icon": "../../../images/rooftop.png",
       "city": "OSLO",
       "func": "Functional Requirements",
+      "type": "Type",
+      "origin": "Origin",
+      "sun": "Sun light",
       "main": "Maintenance needs",
       "roles": [
         {
@@ -51,10 +54,25 @@
           
         }
 
+      ],
+      "plants": [
+        {
+          "plant1":{
+            "name": "plante 1",
+            "stormwater": true
+          },
+          "plant2":{
+            "name": "plante 2",
+            "stormwater": false
+          }
+          
+        }
+    
       ]
 
     }
   ],
+  
 
   "Projects": [
     { 

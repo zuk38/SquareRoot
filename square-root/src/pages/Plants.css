@@ -1,0 +1,61 @@
+p{
+    padding-bottom: 1%;
+    padding-left: 7%;
+}
+
+.pf{
+    display:block;
+}
+label{
+    display:block;
+    
+}
+h5{
+    padding-left: 7%;
+}
+
+
+.filters{
+    
+    height: auto; 
+    width: 18%; 
+  position: fixed; 
+  z-index: 1; 
+  top: 28%; 
+  left: 0%;
+  padding-left: 2.5%;
+  background-color: var(--offWhite); 
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+input{
+    margin:2%;
+
+}
+.pn{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 20%;
+    align-items: center;
+
+}
+.plants{
+     /* Same as the width of the sidebar */
+    padding: 40px;
+    height: 30%;
+    flex-wrap: wrap;
+    
+    
+}
+.plant{
+    height: 200px;
+    
+}
+.name{
+    padding-left: 27%;
+    align-items: center;
+    
+}
+
