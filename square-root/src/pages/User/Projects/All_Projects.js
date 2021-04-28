@@ -3,6 +3,7 @@ import "./projects.css";
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
+import data from "../../data.json";
 export default class All_Projects extends Component {
   state = {
     modalOpen: false,
@@ -122,6 +123,10 @@ export default class All_Projects extends Component {
               </div>
             </form>
           </div>
+
+          <li>
+            <ul></ul>
+          </li>
           <div className="p-btn-create">
             {/*NEED a button onClick -- save in database*/}
             <button onClick={this.closeModal} className="btn-modal-create-p">
@@ -134,28 +139,44 @@ export default class All_Projects extends Component {
           Velg et prosjekt for å legge til eller endre et grøntområde, eller
           opprett et nytt prosjekt.
         </h2>
-        {/*TABLE must GET data from GraphQL*/}
-        <table className="p-table">
-          <tr className="p-tr">
-            <th className="p-th">PROSJEKTNAVN</th>
-            <th className="p-th">ADRESSE</th>
-            <th className="p-th">BESKRIVELSE</th>
-            <th className="p-th">OPPRETTET</th>
-          </tr>
-          <tr>
-            <td className="p-td">Sørengkaia</td>
-            <td className="p-td">Sørengkaia 63, 0166 Oslo</td>
-            <td className="p-td">OBOS</td>
-            <td className="p-td">04.03.2021</td>
-          </tr>
-          <tr className="p-tr">
-            <td className="p-td">Liertoppen</td>
-            <td className="p-td">Lierveien 3, 1657 Lier</td>
-            <td className="p-td">Privat</td>
-            <td className="p-td">12.02.2021</td>
-          </tr>
-        </table>
-      </div>
+       
+        <div> {" "}
+                {
+                data.Projects.map((projects, i) => {
+                    return (
+                        <div key={i}>
+                            {
+                            projects.project.map(function (project, i) {
+                                return (
+                                    <div key={i}>
+                                
+                                            {/*TABLE must GET data from GraphQL*/}
+                                            <table className="p-table">
+                                                <tr className="p-tr">
+                                                    <th className="p-th">PROSJEKTNAVN</th>
+                                                    <th className="p-th">ADRESSE</th>
+                                                    <th className="p-th">OPPRETTET</th>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-td">{project.project_name}</td>
+                                                    <td className="p-td">{project.project_adress}, {project.project_zip} {project.project_city}</td>
+                                                    <td className="p-td">{project.project_start}</td>
+                                                </tr>
+                                                <tr>
+                                                    <td className="p-td">{project.project_name2}</td>
+                                                    <td className="p-td">{project.project_adress2}, {project.project_zip} {project.project_city}</td>
+                                                    <td className="p-td">{project.project_start2}</td>
+                                                </tr>
+                                            </table>
+                                        </div>
+                                );
+                            })
+                        } </div>
+                    );
+                })
+            }
+                {" "} </div>
+                </div>
     );
   }
 }

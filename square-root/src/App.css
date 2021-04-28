@@ -16,7 +16,7 @@
   --navbarBack: #f9f9f9;
   --bg: #242526;
   --bg-accent: #d3d3d3;
-  --text-color: #dadce1;
+  --text-color: var(--mainBlack);
   --nav-size: 80px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
