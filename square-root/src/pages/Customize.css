@@ -58,4 +58,16 @@ input{
     align-items: center;
     
 }
+.check{
+    position: absolute;
+    top: 22%;
+  left: 49%;
+}
+.orders{
+    position: absolute;
+    top: 5%;
+  right: 5%;
+  font-size: 20px;
+ 
+}
 
