@@ -355,6 +355,11 @@ input[type="text"] {
   transition: .4s;
 }
 
+img[src*="plus"]{
+  width: 30%;
+  height: auto;
+  position: center;
+}
 .green-item:hover img {
   padding: 0px;
   transform: scale(2);

@@ -108,6 +108,9 @@
 
       "greenspace": [
         {
+    
+          "greenspace_img0":"../../../images/plus-icon-transparent.png",
+          
           "greenspaceID": "",
           "greenspace_name": "Oslo Takterrasse",
           "price": "",
