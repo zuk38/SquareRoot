@@ -65,7 +65,7 @@ export default class Dashboard extends Component {
                                                 <h2 className="p-h2">Role: {/*GET DATA*/}</h2>
                                                 <div className="green-container">
 
-                                                <div className="green-item">
+                                                <div className="green-item" id="gr-0">
                                                         <img src={
                                                                 greenspace.greenspace_img0
                                                             }
