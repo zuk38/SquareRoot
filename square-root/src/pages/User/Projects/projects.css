@@ -355,8 +355,8 @@ input[type="text"] {
   font-size: 15px;
 }
 #gr-0 {
-  border: 1px dashed --mainBlack;
-  margin: auto;
+  border: 1px dashed #BEBBBB;
+  
 }
 
 .green-item img {
@@ -400,16 +400,20 @@ img[src*="plus"]{
 
 /* GREENSPACE */
 
-.greenspace {
-  display: inline-block;
-  vertical-align: top;
-  line-height: 1;
+.greensp-page {
+  padding-top: 5%;
+  width: 80%;
+  background: var(--offWhite);
+  height: 100%;
+  position: absolute;
+  color: var(--mainBlack);
+  
+}
+.greensp-center {
+  background-color: var(--offWhite);
 }
 
-.gr-cont-top {
-  width: 100%;
+.greensp-center table {
+  margin: auto;
+  width: 80%;
 }
-
-
-
-
