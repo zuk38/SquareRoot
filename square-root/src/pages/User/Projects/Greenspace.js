@@ -9,7 +9,7 @@ import All_Projects from "./All_Projects";
 import data from "../../data.json";
 
 
-export default class Dashboard extends Component {
+export default class Greenspace extends Component {
             render() {
             return (<div> {" "}
                 {
@@ -31,7 +31,7 @@ export default class Dashboard extends Component {
                                                     <div class = "p-header"> 
                                     <div class="p-column left">
                                                         <a href="/Dashboard" class="btn-back">
-                                                            <i class="fas fa-chevron-left"></i>Dashbord
+                                                            <i class="fas fa-chevron-left"></i>{project.project_name}
                                                         </a>
                                                         
                                                         <h2>{
@@ -42,62 +42,48 @@ export default class Dashboard extends Component {
 
                                                 ​ <div class = "p-column right"> 
                                                 
-                                                        <h1 className="p-h1">
+                                                        
+                                                <h1 className="p-h1">
                                                             {
                                                             greenspace.greenspace_name
                                                         }</h1>
-                                                   
                                                     
                                                     </div>
                                                     </div>
                                                     
                                     <div class="greensp-center">
+                                    
                                                
                                                         <table className="p-table">
                                                             <tr className="p-tr">
+                                                                <th classname="p-th">BILDE</th>
                                                                 <th className="p-th">PLANTE</th>
                                                                 <th className="p-th">ANTALL</th>
                                                                 <th className="p-th">LAGT TIL</th>
+                    
                                                             </tr>
                                                             <tr>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_name
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_adress
-                                                                }, {
-                                                                    project.project_zip
+                                                            <td className="p-td">
+                                                            {
+                                                                    greenspace.plant_img1
                                                                 }
+                                                            </td>
+                                                                <td className="p-td">
                                                                     {
-                                                                    project.project_city
+                                                                    greenspace.plant_name1
                                                                 }</td>
                                                                 <td className="p-td">
                                                                     {
-                                                                    project.project_start
+                                                                    greenspace.plant_quantity1
+                                                                }
+                                                                    </td>
+                                                                <td className="p-td">
+                                                                {
+                                                                    greenspace.plant_date1
                                                                 }</td>
+                                                                
                                                             </tr>
-                                                            <tr>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_name
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_adress
-                                                                }, {
-                                                                    project.project_zip
-                                                                }
-                                                                    {
-                                                                    project.project_city
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_start
-                                                                }
-                                                                </td>
-                                                            </tr>
+                                                          
                                                         </table>
 
                                                        

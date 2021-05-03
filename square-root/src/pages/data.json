@@ -141,10 +141,17 @@
           "greenspace_project4":"",
           "greenspace_category4" :"Rainbeds",
           "greenspace_description4": "2. etg vestover",
-          "greenspace_img4": "../../../images/rainbeds.png"
+          "greenspace_img4": "../../../images/rainbeds.png",
+
+          "plant_name1":"Kosakkveronika",
+          "plant_quantity1":"2",
+          "plant_date1":"03.04.2021",
+          "plant_img1":"../../images/plant-img1.png"
         }
       
       ],
+
+  
 
       "plants": [
         {
