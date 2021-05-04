@@ -65,7 +65,7 @@ export default class Members extends Component {
                                               
                                             
                                                 <div className="p-container">
-                                                <h2 className="p-table-title">Medlemmer</h2>
+                                                
                                                 <button className="btn-p-invite"><i class="fas fa-user-plus"></i>Inviter medlemmer</button>
                                                 </div>
                                               <table className="p-table">

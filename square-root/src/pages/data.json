@@ -181,6 +181,37 @@
 
       ],
 
+      "order": [
+        {
+          "orderID":"45679",
+          "greenspace_ordered":"Takterrasse",
+          "greenspace_description":"Vestre del",
+          "order_company":"",
+          "ordered_by_user":"",
+          "order_placed_date":"03.05.2021",
+          "order_price":"",
+          "order_status": "Under behandling",
+
+          "orderID2":"74329",
+          "greenspace_ordered2":"Regnseng",
+          "greenspace_description2":"2. etg",
+          "order_company2":"",
+          "ordered_by_user2":"",
+          "order_placed_date2":"01.05.2021",
+          "order_price2":"",
+          "order_status2": "Bestilt",
+
+          "orderID3": "73829",
+          "greenspace_ordered3":"Biomangfold",
+          "greenspace_description3":"Takterrasse",
+          "order_company3":"",
+          "ordered_by_user3":"",
+          "order_placed_date3":"12.01.2021",
+          "order_price3":"",
+          "order_status3": "Bestilt"
+        }
+      ],
+
   
 
       "plants": [
