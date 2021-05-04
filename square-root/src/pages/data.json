@@ -81,15 +81,18 @@
         {
           "projectID":"",
           "project_name":"Sørengkaia",
+          "project_description":"OBOS",
           "project_start":"21.04.2021",
           "project_end":"",
           "project_groupID":"",
           "project_adress":"Sørengkaia 63",
           "project_zip":"0166",
           "project_city":"Oslo",
+          "user_role":"Eiendomsutvikler",
 
           "projectID2":"",
           "project_name2":"Tøyenhagen",
+          "project_description2":"Oslo Kommune",
           "project_start2":"03.12.2021",
           "project_end2":"",
           "project_groupID2":"",
@@ -149,6 +152,33 @@
           "plant_img1":"../../images/plant-img1.png"
         }
       
+      ],
+
+      "user": [
+        {
+          "userID":"",
+          "user_first_name":"Michel",
+          "user_last_name":"Wolfstirn",
+          "user_email":"michel@squareroot.cc",
+          "user_phone_number":"",
+          "user_role":"Eiendomsutvikler",
+
+          "userID2":"",
+          "user_first_name2":"Jo",
+          "user_last_name2":"Deketelaere",
+          "user_email2":"jo@squareroot.cc",
+          "user_phone_number2":"",
+          "user_role2":"Landskapsarkitekt",
+
+          "userID3":"",
+          "user_first_name3":"Andre",
+          "user_last_name3":"Johansen",
+          "user_email3":"andre@squareroot.cc",
+          "user_phone_number3":"",
+          "user_role3":"Landskapsentreprenør"
+
+        }
+
       ],
 
   

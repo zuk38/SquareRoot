@@ -20,7 +20,7 @@ export default class Members extends Component {
                           projects.project.map(function (project, i) {
                               return (
                                   <div key={i}>{
-                                      projects.greenspace.map(function (greenspace, i) { 
+                                      projects.user.map(function (user, i) { 
                                       
                                           return (
                                           <div key = {i}>
@@ -60,24 +60,30 @@ export default class Members extends Component {
                                               }</h1></div>
                                               <br></br>
   
-                                              <h2 className="p-h2">Rolle: {/*GET DATA*/}</h2>
-                                             
+                                              <h2 className="p-h2">Rolle: {project.user_role}</h2>
 
+                                              
+                                            
+                                                <div className="p-container">
+                                                <h2 className="p-table-title">Medlemmer</h2>
+                                                <button className="btn-p-invite"><i class="fas fa-user-plus"></i>Inviter medlemmer</button>
+                                                </div>
                                               <table className="p-table">
-                                                <tr className="p-tr">
-                                                    <th className="p-th">NAVN</th>
-                                                    <th className="p-th">ROLLE</th>
-                                                    <th className="p-th"></th>
+                                                
+                                                <tr>
+                                                    <td className="p-td">{user.user_first_name} {user.user_last_name}</td>
+                                                    <td className="p-td">{user.user_role}</td>
+                                
                                                 </tr>
                                                 <tr>
-                                                    <td className="p-td">{project.project_name}</td>
-                                                    <td className="p-td">{project.project_adress}, {project.project_zip} {project.project_city}</td>
-                                                    <td className="p-td"></td>
+                                                    <td className="p-td">{user.user_first_name2} {user.user_last_name2}</td>
+                                                    <td className="p-td">{user.user_role2}</td>
+                                
                                                 </tr>
                                                 <tr>
-                                                    <td className="p-td">{project.project_name2}</td>
-                                                    <td className="p-td">{project.project_adress2}, {project.project_zip} {project.project_city}</td>
-                                                    <td className="p-td"></td>
+                                                    <td className="p-td">{user.user_first_name3} {user.user_last_name3}</td>
+                                                    <td className="p-td">{user.user_role3}</td>
+                                
                                                 </tr>
                                             </table>
                                              
