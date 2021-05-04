@@ -1,10 +1,12 @@
 
 :root {
   --primaryColor: #af9a7d;
+  --mainGreen: #8ca68c;
+  --hoverGreen: #CCD7CC;
+  --mainGrey: #3e3d3d;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
   --mainBlack: #222;
-  --mainGrey: #ececec;
   --darkGrey: #cfcfcf;
   --mainTransition: all 0.3s linear;
   --mainSpacing: 3px;
@@ -93,17 +95,44 @@
 }
 /* end of TITLE */
 
+/*CONTAINER OVER TABLE*/
+.p-container{
+  position: relative;
+  margin-top:5%;
+}
+
+.p-table-title {
+  font-weight: 500;
+  font-size: 20px;
+  display: block;
+  text-align: left;
+  float: left;
+}
+
+.btn-p-invite {
+  background-color: #E5E5E5;
+  border:none;
+  padding:10px;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  float: right;
+  margin:auto;
+}
+
+.btn-p-invite:hover {
+background-color: #EFEFEF;
+}
+
 /* TABLE */
 .p-table {
   font-family: "Montserrat", sans-serif;
   width: 100%;
   border-collapse: separate;
-  padding-top: 5%;
   color: var(--mainBlack);
   border-spacing: 0 10px;
-  
+  margin-top: 5%;
 }
-
 .p-th {
   font-weight: 500;
   padding: 15px;
@@ -118,12 +147,13 @@
   color: var(--mainBlack);
   font-weight: 400;
 }
+
 /* end of TABLE */
 
 /* BUTTON : NEW PROJECT*/
 .btn-new-project {
   padding: 15px 10px;
-  background-color: #d0e2b0;
+  background-color: var(--mainGreen);
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   border: none;
@@ -132,10 +162,11 @@
   cursor: pointer;
   font-size: 12px;
  color: var(--mainBlack);
+
 }
 
 .btn-new-project:hover {
-  background-color: #ebf4de;
+  background-color: var(--hoverGreen);
   font-size: 12px;
   color: var(--mainBlack);
 }
@@ -195,7 +226,7 @@ a.btn-back:hover {
 }
 
 .menu-vertical a.active {
-  background-color: #d0e2b0;
+  background-color: var(--mainGreen);
   font-weight: 500;
 }
 
@@ -217,10 +248,11 @@ a.btn-back:hover {
   top: 0;
   bottom: 0;
   margin: auto;
-  width: 70%;
-  height: 70%;
+  margin-top: 8%;
+  width: 50%;
+  height: 80%;
   box-shadow: 0 5px 10px 2px rgba(195, 192, 192, 0.5);
-  padding: 20px;
+  padding-top: 20px;
   text-align: center;
 }
 
@@ -255,7 +287,8 @@ input[type=text], select {
 */
 
 .p-inputBox {
-  width: 100%;
+  width: 80%;
+  margin: auto;
 }
 .p-lbl {
   float: left;
@@ -277,6 +310,7 @@ input[type="text"] {
   width: 100%;
   font-family: "Montserrat", sans-serif;
   font-weight: 400px;
+  margin: auto;
 }
 
 /*FLEX BOXES (PostNr & PostSted */
@@ -284,14 +318,13 @@ input[type="text"] {
 .p-flex /* div PostNr & PostSted */ {
   display: flex;
   justify-content: space-between;
-  width: 50%;
+  width: 80%;
 }
 .p-classFlex {
   flex-basis: 48%;
 }
 
 .p-lblFlex {
-  float: left;
   font-family: "Montserrat", sans-serif;
   font-weight: 400px;
   font-size: 20px;
@@ -306,6 +339,27 @@ input[type="text"] {
   box-sizing: border-box;
   width: 100%;
 }
+
+/* BUTTON : CREATE PROJECT */
+.btn-modal-create-p {
+  float: right;
+  margin: auto;
+  width: 40%;
+  background-color: var(--mainGreen);
+  border: none;
+  padding: 15px;
+  cursor: pointer;
+  color: var(--mainBlack);
+  border-radius: 5px;
+  font-weight: 550;
+}
+
+/* BUTTON : HOVER CREATE PROJECT */
+.btn-modal-create-p:hover {
+  background-color: var(--hoverGreen);
+}
+
+
 
 /* BUTTON : CLOSE MODAL*/
 .btn-modal-close {
@@ -416,4 +470,9 @@ img[src*="plus"]{
 .greensp-center table {
   margin: auto;
   width: 80%;
+}
+
+/* GREENSPACE */
+.light {
+  font-weight: 400;
 }
