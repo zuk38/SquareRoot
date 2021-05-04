@@ -8,6 +8,7 @@ export default class All_Projects extends Component {
   state = {
     modalOpen: false,
     name: "",
+    description:"",
     address: "",
     postalCode: "",
     city: "",
@@ -37,6 +38,7 @@ export default class All_Projects extends Component {
     this.setState({
       modalOpen: false,
       name: "",
+      description:"",
       postalCode: "",
       address: "",
       city: "",
@@ -84,6 +86,16 @@ export default class All_Projects extends Component {
                     this.updateModalState("name", e.target.value)
                   }
                 />
+                <label className="p-lbl">Beskrivelse</label>
+                <input
+                  type="text"
+                  placeholder="Tilknyttet firma, prosjekt e.l..."
+                  className="p-inp-text"
+                  value={this.state.description || ""}
+                  onChange={(e) =>
+                    this.updateModalState("description", e.target.value)
+                  }
+                />
                 <label className="p-lbl">Adresse</label>
                 <input
                   type="text"
@@ -120,18 +132,18 @@ export default class All_Projects extends Component {
                     />
                   </div>
                 </div>
+                <button onClick={this.closeModal} className="btn-modal-create-p">
+              OPPRETT PROSJEKT
+            </button>
               </div>
+              
             </form>
           </div>
 
-          <li>
-            <ul></ul>
-          </li>
+          
           <div className="p-btn-create">
             {/*NEED a button onClick -- save in database*/}
-            <button onClick={this.closeModal} className="btn-modal-create-p">
-              OPPRETT PROSJEKT
-            </button>
+            
           </div>
         </Modal>
         <br></br>
