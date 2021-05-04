@@ -159,6 +159,12 @@ const plantList = [
     return (
       <div>
           <a href="Rooftop"><i class="fas fa-chevron-left"/>Tilbake til Rooftop</a>
+          <div className="check"><button class="button is-rounded"><span class="icon is-small"><i class="fas fa-check"></i></span></button></div>
+        
+
+          
+          <div className="orders"><i class="fas fa-tasks fa-2x"></i>12<i class="fas fa-chevron-down"/></div>
+            
         <h5>Customize Rooftop Garden</h5>
         <p>Tekst om hvorfor Rooftop Garden er bra for alle.</p>
         <div className="filters">
