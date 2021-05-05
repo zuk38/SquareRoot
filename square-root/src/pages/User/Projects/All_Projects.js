@@ -142,12 +142,12 @@ export default class All_Projects extends Component {
                                             }/>
                                     </div>
                                 </div>
-                                <button onClick={
+                                <a href="/Dashboard"><button type="submit" className="btn-modal-create-p" onClick={
                                         this.closeModal
                                     }
-                                    className="btn-modal-create-p">
-                                    OPPRETT PROSJEKT
-                                </button>
+                                    >OPPRETT PROSJEKT</button></a>
+                                
+                                
                             </div>
 
                         </form>
@@ -192,7 +192,7 @@ export default class All_Projects extends Component {
                                                     }, {
                                                         project.project_zip
                                                     }
-                                                        {
+                                                         {
                                                         project.project_city
                                                     }</td>
                                                     <td className="p-td">
@@ -214,9 +214,9 @@ export default class All_Projects extends Component {
                                                         project.project_adress2
                                                     }, {
                                                         project.project_zip
-                                                    }
+                                                    } 
                                                         {
-                                                        project.project_city
+                                                         project.project_city
                                                     }</td>
                                                     <td className="p-td">
                                                         {
