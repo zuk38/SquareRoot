@@ -138,6 +138,7 @@ function PlantPage() {
         });
     };
 
+   
 
     return (
         <div>
@@ -161,6 +162,7 @@ function PlantPage() {
             <Modal isOpen={modalOpen}
                 onRequestClose={
                     () => setModalOpen(false)
+                    
                 }
                 className={"modal-orders"}>
                 <div className="o-modal-content">
