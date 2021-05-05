@@ -88,15 +88,15 @@ input{
   font-weight: 600;
   font-size: 15px;
 }
+
+
 /*MODAL*/
-
-
 /* !THIS CHANGES ALL MODALS! */
 .ReactModal__Overlay--after-open{
   background: rgba(0, 0, 0, 0.5) !important;
   z-index: 1000;
   position: fixed;
-  -webkit-transition: 1s ease;
+  -webkit-transition: 0.2s ease;
 }
 
 /* ORDER MODAL */
@@ -170,7 +170,7 @@ input{
     padding:20px;
     width:100%;
     text-align: center;
-    border-top: 0.5px solid grey;
+  
   }
   .orders-btn-close{
     margin: auto;
@@ -204,11 +204,5 @@ input{
 .orders-btn-close:hover {
   background-color: #BEBBBB;
 }
-
-
-  /* BUTTON : HOVER CREATE PROJECT */
-  .btn-modal-create-p:hover {
-    background-color: var(--hoverGreen);
-  }
 
   /*END OF MODAL*/
