@@ -71,7 +71,23 @@ input{
  
 }
 
+.btn-orders {
+  float:right;
+  background-color: white;
+  border:none;
+  padding:10px;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  float: right;
+  margin-top: 3%;
+  display: inline-flex;
+}
 
+.order-items {
+  font-weight: 600;
+  font-size: 15px;
+}
 /*MODAL*/
 
 
@@ -80,6 +96,7 @@ input{
   background: rgba(0, 0, 0, 0.5) !important;
   z-index: 1000;
   position: fixed;
+  -webkit-transition: 1s ease;
 }
 
 /* ORDER MODAL */
@@ -87,9 +104,8 @@ input{
     background:white;
     display: block;
     margin:auto;
-    width: 40%;
+    width: 30%;
     height: 80%;
-    padding-top: 20px;
     position:absolute;
     top: 0px;
     right:0px;
@@ -100,16 +116,18 @@ input{
     color: black;
   }
 
+  .o-h1 {
+    font-size: 20px;
+    padding:30px;
+  }
+
   .o-modal-container {
     padding:5%;
     margin:auto;
-    position:relative;
-    
+    position:relative;  
   }
 
-  .o-h1 {
-    font-size: 20px;
-  }
+  
 
   /*TABLE IN MODAL */
 
@@ -120,13 +138,14 @@ input{
 
   .modal-plantList tr{
     border-bottom: 1px solid grey;
-    border-top:1px solid grey;
+    
     border-collapse: collapse;
   }
 
   .modal-plantList td{
     vertical-align: middle;
     left: 50px;
+    text-align-last: center;
   }
 
   td.o-modal-img {
@@ -135,24 +154,23 @@ input{
   }
   td.o-modal-name{
     width:auto;
-    text-align:center;
-    background-color: blue;
   }
 
   td.o-modal-remove{
     width:20%;
-    background-color: hotpink;
   }
 
   /* BUTTONS FOOTER IN MODAL */
 
   .modal-btns-footer {
-    background-color: purple;
+    background-color: #F4F4F4;
     margin: auto;
     position:sticky;
     bottom:0;
     padding:20px;
     width:100%;
+    text-align: center;
+    border-top: 0.5px solid grey;
   }
   .orders-btn-close{
     margin: auto;
@@ -167,7 +185,7 @@ input{
   }
   
 .orders-btn-save {
-    margin: auto;
+    margin-left: 10px;
     width: 40%;
     background-color: #3A83F7;
     border: none;

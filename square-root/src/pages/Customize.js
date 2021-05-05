@@ -158,8 +158,12 @@ function PlantPage() {
                 onClick={
                     () => setModalOpen(true)
             }>
-                <i className="fas fa-tasks fa-2x"></i>12{/*GET NUMBER OF ITEMS*/}
-                <i className="fas fa-chevron-down"/>
+                <i className="fas fa-tasks fa-2x"></i>
+                <div className="order-items">
+                    12{/*GET NUMBER OF ITEMS*/}
+                    <i className="fas fa-chevron-left"/>
+                </div>
+                
             </button>
 
 
@@ -170,12 +174,22 @@ function PlantPage() {
                 }
                 className={"modal-orders"}>
                 <div className="o-modal-content">
-
+                <h1 className="o-h1">
+                            Det er <strong>12</strong> {/*GET ITEM NUMBERS*/}planter
+                            i Oslo Takterrasse{/*GET GREENSPACE NAME*/} </h1>
                     <div className="o-modal-container">
-                        <h1 className="o-h1">
-                            Det er {/*GET ITEM NUMBERS*/}
-                            i {/*GET GREENSPACE NAME*/} </h1>
+                        
                         <table className="modal-plantList">
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
                             <tr>
                                 <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
                                 <td className="o-modal-name">Pertusem</td>
