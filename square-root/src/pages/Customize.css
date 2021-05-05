@@ -17,8 +17,8 @@ h5{
 
 .filters{
     
-    height: auto; 
-    width: 18%; 
+  height: auto; 
+  width: 18%; 
   position: fixed; 
   z-index: 1; 
   top: 28%; 
@@ -79,111 +79,115 @@ input{
 .ReactModal__Overlay--after-open{
   background: rgba(0, 0, 0, 0.5) !important;
   z-index: 1000;
-  color:black;
   position: fixed;
-  display:fixed;
 }
 
 /* ORDER MODAL */
 .modal-orders {
     background:white;
     display: block;
-    float:right;
     margin:auto;
-    width: 30%;
+    width: 40%;
     height: 80%;
     padding-top: 20px;
-  
+    position:absolute;
+    top: 0px;
+    right:0px;
+    overflow: auto;
   }
   
   .o-modal-content {
-    display: block;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    font-size: calc(10px + 2vmin);
     color: black;
-    z-index: 1;
-    align-content: center;
-    padding-right: 5%;
-    padding-left: 5%;
   }
-  
-  .modal-project form {
-    text-align: center;
-    align-items: initial;
-    justify-content: center;
+
+  .o-modal-container {
+    padding:5%;
+    margin:auto;
+    position:relative;
+    
   }
- 
-  
-  .p-inputBox {
-    width: 80%;
-    margin: auto;
-  }
-  .p-lbl {
-    float: left;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400px;
+
+  .o-h1 {
     font-size: 20px;
-    padding-top: 15px;
-    display: block;
-    text-align: left;
-    padding-bottom: 1%;
-    color: var(--mainBlack);
   }
-  
-  input[type="text"] {
-    padding: 1em;
-    border-radius: 0.3em;
-    border: 1px solid grey;
-    box-sizing: border-box;
-    width: 100%;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400px;
+
+  /*TABLE IN MODAL */
+
+  .modal-plantList {
+    width:100%;
+    overflow: scroll;
+  }
+
+  .modal-plantList tr{
+    border-bottom: 1px solid grey;
+    border-top:1px solid grey;
+    border-collapse: collapse;
+  }
+
+  .modal-plantList td{
+    vertical-align: middle;
+    left: 50px;
+  }
+
+  td.o-modal-img {
+    width:20%;
+
+  }
+  td.o-modal-name{
+    width:auto;
+    text-align:center;
+    background-color: blue;
+  }
+
+  td.o-modal-remove{
+    width:20%;
+    background-color: hotpink;
+  }
+
+  /* BUTTONS FOOTER IN MODAL */
+
+  .modal-btns-footer {
+    background-color: purple;
     margin: auto;
+    position:sticky;
+    bottom:0;
+    padding:20px;
+    width:100%;
   }
-  
-  /*FLEX BOXES (PostNr & PostSted */
-  
-  .p-flex /* div PostNr & PostSted */ {
-    display: flex;
-    justify-content: space-between;
-    width: 80%;
-  }
-  .p-classFlex {
-    flex-basis: 48%;
-  }
-  
-  .p-lblFlex {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 400px;
-    font-size: 20px;
-    display: block;
-    text-align: left;
-    float: left;
-    padding-top: 15px;
-    padding-bottom: 1%;
-  }
-  
-  .p-input-inline /* input PostNr & PostSted */ {
-    box-sizing: border-box;
-    width: 100%;
-  }
-  
-  /* BUTTON : CREATE PROJECT */
-  .orders-btn{
-    float: right;
+  .orders-btn-close{
     margin: auto;
-    width: 40%;
-    background-color: var(--mainGreen);
+    width: 20%;
+    background-color: #E5E5E5;
     border: none;
     padding: 15px;
     cursor: pointer;
     color: var(--mainBlack);
     border-radius: 5px;
-    font-weight: 550;
+    font-weight: 400;
   }
   
+.orders-btn-save {
+    margin: auto;
+    width: 40%;
+    background-color: #3A83F7;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    
+}
+
+.orders-btn-save:hover {
+  background-color: #6BA3FA;
+}
+
+.orders-btn-close:hover {
+  background-color: #BEBBBB;
+}
+
+
   /* BUTTON : HOVER CREATE PROJECT */
   .btn-modal-create-p:hover {
     background-color: var(--hoverGreen);

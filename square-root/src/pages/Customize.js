@@ -120,6 +120,7 @@ function PlantPage() {
             newPlantList = plantList;
         
 
+
         setFilteredPlants(newPlantList);
     }, [plantFilter]);
 
@@ -138,7 +139,6 @@ function PlantPage() {
         });
     };
 
-   
 
     return (
         <div>
@@ -151,6 +151,9 @@ function PlantPage() {
                 </button>
             </div>
 
+
+            {/*BUTTON OPEN MODAL*/}
+
             <button className="btn-orders"
                 onClick={
                     () => setModalOpen(true)
@@ -159,19 +162,44 @@ function PlantPage() {
                 <i className="fas fa-chevron-down"/>
             </button>
 
+
+            {/*MODAL*/}
             <Modal isOpen={modalOpen}
                 onRequestClose={
                     () => setModalOpen(false)
-                    
                 }
                 className={"modal-orders"}>
                 <div className="o-modal-content">
-                    <h1 className="o-h1">
-                        Det er {/*GET ITEM NUMBERS*/}
-                        i {/*GET GREENSPACE NAME*/} </h1>
 
-                    <div className="modal-plantList">
-                        {/*PLANTS GO HERE*/}</div>
+                    <div className="o-modal-container">
+                        <h1 className="o-h1">
+                            Det er {/*GET ITEM NUMBERS*/}
+                            i {/*GET GREENSPACE NAME*/} </h1>
+                        <table className="modal-plantList">
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
+                            <tr>
+                                <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
+                                <td className="o-modal-name">Pertusem</td>
+                                <td className="o-modal-remove" alt="Fjern plante"><i class="fas fa-times fa-lg"></i></td>
+                            </tr>
+                        </table>
+
+
+                    </div>
 
                     <div className="modal-btns-footer">
                         <button className="orders-btn-close"
@@ -179,14 +207,14 @@ function PlantPage() {
                                 () => setModalOpen(false)
                             }
                             alt="Lukk">
-                            Lukk
+                            LUKK
                         </button>
                         <button className="orders-btn-save"
                             onClick={
                                 () => setModalOpen(false)
                             }
                             alt="Lagre">
-                            Lagre
+                            LAGRE
                         </button>
                     </div>
                 </div>
