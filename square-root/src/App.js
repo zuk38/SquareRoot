@@ -83,6 +83,14 @@ class App extends Component {
     return (
       !this.state.isAuthenticating && (
           <>
+          <Switch>
+          <Route
+                exact
+                path="/customize"
+                render={(props) => <Customize {...props} auth={authProps} />}
+              />
+          </Switch>
+          
             <Navbar auth={authProps} />
             <Switch>
               <Route
@@ -131,11 +139,7 @@ class App extends Component {
                 path="/rooftop" 
                 render={(props) => <Rooftop {...props} auth={authProps} />}
               />
-              <Route
-                exact
-                path="/customize"
-                render={(props) => <Customize {...props} auth={authProps} />}
-              />
+              
               <Route
                 exact
                 path="/rainbed"
