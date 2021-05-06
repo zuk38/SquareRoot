@@ -159,8 +159,8 @@ const plantList = [
     return (
       <div>
           <a href="Home"><i class="fas fa-chevron-left"/>Hjem</a>
-        <h5>Our Plants</h5>
-        <p>Tekst om hvorfor alle våre planter er bra.</p>
+        <h5 className="header">Our Plants</h5>
+        <p className="p-info">Tekst om hvorfor alle våre planter er bra.</p>
         <div className="filters">
           {
             Object.keys(plantFilters).map((pf) => { 

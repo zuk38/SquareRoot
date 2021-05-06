@@ -1,4 +1,4 @@
-p{
+.p-info{
     padding-bottom: 1%;
     padding-left: 7%;
 }
@@ -10,9 +10,10 @@ label{
     display:block;
     
 }
-h5{
+.header{
     padding-left: 7%;
 }
+
 
 
 .filters{

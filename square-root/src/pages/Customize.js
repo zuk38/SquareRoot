@@ -235,8 +235,8 @@ function PlantPage() {
             </Modal>
 
 
-            <h5>Customize Rooftop Garden</h5>
-            <p>Tekst om hvorfor Rooftop Garden er bra for alle.</p>
+            <h5 className="header">Customize Rooftop Garden</h5>
+            <p className="p-info">Tekst om hvorfor Rooftop Garden er bra for alle.</p>
             <div className="filters">
                 {
                 Object.keys(plantFilters).map((pf) => {
