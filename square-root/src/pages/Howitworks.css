@@ -1,9 +1,11 @@
-.title{
+.how-title{
     position: relative;
     left: 42%;
     padding-top: 2%;
+    font-weight: bold;
+    font-size: 30px;
 }
-.desc{
+.how-desc{
     position: relative;
     left: 24%;
     padding-top: 1%;
