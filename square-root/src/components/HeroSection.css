@@ -26,10 +26,17 @@
   position: relative;
   bottom: 0px;
 }
+.frontimage{
+  position: relative;
+  
+  height: 750px;
+  width: 1850px;
+}
 .h1 {
   color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
+  font-size: 30px;
 }
 button {
   margin-right: 20px;
@@ -52,4 +59,30 @@ button {
 
   padding-top: 8%;
   padding-left: 6%;
+}
+.front{
+  position: relative;
+  text-align: center;
+}
+.fronttext{
+  position: absolute;
+  bottom: 20%;
+  left: 2%;
+  font-size: 50px;
+  color: white;
+}
+.frontdesc{
+  position: absolute;
+  bottom: 10%;
+  left: 2%;
+  font-size: 30px;
+  color: white;
+  width: 40%;
+  
+}
+.frontoption{
+  position: absolute;
+  bottom: 3%;
+  left: 39%;
+  
 }

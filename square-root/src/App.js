@@ -22,6 +22,8 @@ import Members from "./pages/User/Projects/Members"
 import Orders from "./pages/User/Projects/Orders"
 import Settings from "./pages/User/Projects/Settings"
 import Customize from "./pages/Customize"
+import Howitworks from "./pages/Howitworks"
+import Why from "./pages/Why"
 
 
 
@@ -190,6 +192,16 @@ class App extends Component {
                 exact
                 path="/orders"
                 render={(props) => <Orders {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Howitworks"
+                render={(props) => <Howitworks {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Why"
+                render={(props) => <Why {...props} auth={authProps} />}
               />
               <Route
                 exact
