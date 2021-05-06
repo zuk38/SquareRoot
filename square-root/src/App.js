@@ -24,6 +24,7 @@ import Settings from "./pages/User/Projects/Settings"
 import Customize from "./pages/Customize"
 import Howitworks from "./pages/Howitworks"
 import Why from "./pages/Why"
+import Footer from "./components/Footer";
 
 
 
@@ -210,6 +211,7 @@ class App extends Component {
               />
               <Route component={Error} />
             </Switch>
+            <Footer auth={authProps} />
             
           </>
       )
