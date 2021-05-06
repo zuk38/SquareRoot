@@ -35,7 +35,7 @@ class RooftopExample1 extends Component {
     }
 
     render() {
-
+        const {items} = this.state;
 
         return (
             <div className='roof'>
@@ -168,7 +168,7 @@ class RooftopExample1 extends Component {
                                     {/*BUTTON OPEN MODAL*/}
 
 
-                                    <button class="button is-medium is-light is-fullwidth"
+                                    <button className="button is-medium is-light is-fullwidth"
                                         onClick={
 											this.openModal
 									}>Se hele plantelisten
