@@ -25,6 +25,8 @@ import Customize from "./pages/Customize"
 import Howitworks from "./pages/Howitworks"
 import Why from "./pages/Why"
 import Footer from "./components/Footer";
+import About from "./pages/About"
+import Partner from "./pages/Partner"
 
 
 
@@ -203,6 +205,16 @@ class App extends Component {
                 exact
                 path="/Why"
                 render={(props) => <Why {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/About"
+                render={(props) => <About {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Partner"
+                render={(props) => <Partner {...props} auth={authProps} />}
               />
               <Route
                 exact
