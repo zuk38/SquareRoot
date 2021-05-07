@@ -23,7 +23,7 @@
   width: 100%;
   background: var(--offWhite);
   height: 100%;
-  position: absolute;
+  padding-bottom: 10%;
   color: var(--mainBlack);
   
 }
@@ -73,7 +73,6 @@
   background: var(--offWhite);
   padding-right: 5%;
   padding-left: 5%;
-  position: absolute;
   height: 100%;
   color: var(--mainBlack);
 }
