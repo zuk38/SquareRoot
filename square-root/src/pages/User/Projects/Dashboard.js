@@ -58,7 +58,8 @@ export default class All_Projects extends Component {
 
     render() {
         const {items} = this.state;
-        return(< div class = "p-row" > <div class="p-column left">
+        return(
+        < div class = "p-row" > <div class="p-column left">
             <a href="/Projects" class="btn-back">
                 <i class="fas fa-chevron-left"></i>Alle Prosjekter
             </a>
@@ -92,19 +93,26 @@ export default class All_Projects extends Component {
 
             <h2 className="p-h2">Rolle: Eiendomsutvikler</h2>
 
-
-            <button className="btn-new-greenspace">
+{/* --- REMOVING "ADD GREENSPACE" BUTTON ---
+B/c: The user should understand that in order to add greenspace/plant, 
+they should navigate through the menu, rather than us setting up another route for them to take.
+           
+<button className="btn-new-greenspace">
                 <i class="fas fa-plus"></i>Legg til grøntområde
             </button>
         </div>
 
         <br/>
+
+        */}
         <div className="green-container">
 
 
+
+{/*EVERY GREEN ITEM SHOULD BE A BUTTON*/}
             <button onClick={
                     this.openModal
-                }
+                } className="btn-dash-greenspace"
                 
             >
                 <div className="green-item">
@@ -123,6 +131,68 @@ export default class All_Projects extends Component {
 
                 </div>
             </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                 <div className="green-item"><img src={
+                        "../../../images/greenWall.png"
+                    }
+                    className="project_img"/>
+                <div className="green-info">
+                    <h3 className="p-h3">
+                        Grønn vegg</h3>
+                    <h4 className="p-h4">
+                        2. etg</h4>
+                </div>
+
+            </div>
+            </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                 <div className="green-item"><img src={
+                       "../../../images/biodiversity.png"
+                    }
+                    className="project_img"/>
+                <div className="green-info">
+                    <h3 className="p-h3">
+                        Biomangfoldig hage</h3>
+                    <h4 className="p-h4">
+                        Uteomårde 4. etg</h4>
+                </div>
+
+            </div>
+            </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                  <div className="green-item"><img src={
+                
+                "../../../images/plant-img1.png"
+            }
+            className="project_img"/>
+        <div className="green-info">
+            <h3 className="p-h3">
+                Kjøkkenhage</h3>
+            <h4 className="p-h4">
+                2. etg vestover</h4>
+        </div>
+
+    </div>
+            </button>
+
+           
+            
+          
 
 <Modal isOpen={
                         this.state.modalOpen
@@ -199,11 +269,11 @@ export default class All_Projects extends Component {
                     </div>
 
                     <div className="modal-btns-footer">
-                        <button className="orders-btn-close"
+                        <a href="/Customize"><button className="orders-btn-close"
                             onClick={this.closeModal}
                             alt="Lukk">
-                            REDIGER
-                        </button>
+                            TILPASS
+                        </button></a>
                         <button className="orders-btn-save"
                             onClick={this.closeModal}
                                 
@@ -217,46 +287,11 @@ export default class All_Projects extends Component {
                 
 
     
-            <div className="green-item"><img src={
-                        "../../../images/greenWall.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Grønn vegg</h3>
-                    <h4 className="p-h4">
-                        2. etg</h4>
-                </div>
-
-            </div>
-            <div className="green-item"><img src={
-                       "../../../images/biodiversity.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Biomangfoldig hage</h3>
-                    <h4 className="p-h4">
-                        Uteomårde 4. etg</h4>
-                </div>
-
-            </div>
-            <div className="green-item"><img src={
-                
-                        "../../../images/plant-img1.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Kjøkkenhage</h3>
-                    <h4 className="p-h4">
-                        2. etg vestover</h4>
-                </div>
-
-            </div>
+           
         </div>
     </div>
 </div>
+</ div>
 
 
 )}}

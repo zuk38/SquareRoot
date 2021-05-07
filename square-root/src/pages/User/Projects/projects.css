@@ -23,7 +23,7 @@
   width: 100%;
   background: var(--offWhite);
   height: 100%;
-  position: absolute;
+  padding-bottom: 10%;
   color: var(--mainBlack);
   
 }
@@ -37,7 +37,7 @@
 
 .right {
   width: 75%;
-  float: left;
+  float: right;
   background: var(--offWhite);
   padding-right: 5%;
   padding-left: 5%;
@@ -73,7 +73,6 @@
   background: var(--offWhite);
   padding-right: 5%;
   padding-left: 5%;
-  position: absolute;
   height: 100%;
   color: var(--mainBlack);
 }
@@ -357,6 +356,12 @@ input[type="text"] {
   width: 100%;
 }
 
+.btn-dash-greenspace {
+  border: none;
+  background-color: var(--offWhite);
+  padding: 0px;
+}
+
 
 /*DASHBOARD MODAL */
 
@@ -383,6 +388,7 @@ input[type="text"] {
   z-index: 1;
   padding-right: 5%;
   padding-left: 5%;
+  
 }
 
 /* TABLE */
@@ -482,12 +488,15 @@ img[src*="plus"]{
 }
 
 .green-item:hover .green-info {
-
   padding: 20px;
+  margin-top:10px;
   transform: scale(1.1);
   transform-origin:50% 50%;
   -webkit-transition: 0.5s ease;
+}
 
+.green-item:hover img {
+  transform: scale(1.4);
 }
 
 .green-info {
