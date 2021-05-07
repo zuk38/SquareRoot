@@ -137,21 +137,20 @@ body.ReactModal__Body--open{
 
   /*TABLE IN MODAL */
 
-  .modal-plantList {
+  .modal-list {
     width:100%;
     overflow: scroll;
   }
 
-  .modal-plantList tr{
+  .modal-list tr{
     border-bottom: 1px solid grey;
-    
     border-collapse: collapse;
   }
 
-  .modal-plantList td{
+  .modal-list td{
     vertical-align: middle;
     left: 50px;
-    text-align-last: center;
+  
   }
 
   td.o-modal-img {
@@ -170,12 +169,13 @@ body.ReactModal__Body--open{
 
   .modal-btns-footer {
     background-color: #F4F4F4;
-    margin: auto;
+   
     position:sticky;
     bottom:0;
     padding:20px;
     width:100%;
     text-align: center;
+  
   
   }
   .orders-btn-close{
