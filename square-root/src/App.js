@@ -1,6 +1,6 @@
 import "./App.css"
 import "./App.sass"
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, withRouter } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
 import ForgotPassword from "./components/auth/ForgotPassword";
@@ -88,15 +88,7 @@ class App extends Component {
     return (
       !this.state.isAuthenticating && (
           <>
-          <Switch>
-          <Route
-                exact
-                path="/customize"
-                render={(props) => <Customize {...props} auth={authProps} />}
-              />
-          </Switch>
-          
-            <Navbar auth={authProps} />
+            {this.props.location.pathname != "/customize" && <Navbar auth={authProps} />}           
             <Switch>
               <Route
                 exact
@@ -221,6 +213,11 @@ class App extends Component {
                 path="/settings"
                 render={(props) => <Settings {...props} auth={authProps} />}
               />
+              <Route
+                exact
+                path="/customize"
+                render={(props) => <Customize {...props} auth={authProps} />}
+              />
               <Route component={Error} />
             </Switch>
             <Footer auth={authProps} />
@@ -231,7 +228,7 @@ class App extends Component {
   }
 }
 
-export default App;
+export default withRouter(App);
 
 
 
