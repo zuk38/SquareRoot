@@ -22,6 +22,9 @@ import Members from "./pages/User/Projects/Members"
 import Orders from "./pages/User/Projects/Orders"
 import Settings from "./pages/User/Projects/Settings"
 import Customize from "./pages/Customize"
+import Howitworks from "./pages/Howitworks"
+import Why from "./pages/Why"
+import Footer from "./components/Footer";
 
 
 
@@ -193,11 +196,22 @@ class App extends Component {
               />
               <Route
                 exact
+                path="/Howitworks"
+                render={(props) => <Howitworks {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Why"
+                render={(props) => <Why {...props} auth={authProps} />}
+              />
+              <Route
+                exact
                 path="/settings"
                 render={(props) => <Settings {...props} auth={authProps} />}
               />
               <Route component={Error} />
             </Switch>
+            <Footer auth={authProps} />
             
           </>
       )
