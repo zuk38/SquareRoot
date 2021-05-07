@@ -1,6 +1,7 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
 @import "@fortawesome/fontawesome-free/css/all.min.css";
 @import "./components/navbar/Dropdown.css";
+@import "./components/Footer.css";
 
 :root {
   --primaryColor: #af9a7d;
@@ -351,3 +352,4 @@ body {
 /* end of Title */
 
 /*Project Space*/
+
