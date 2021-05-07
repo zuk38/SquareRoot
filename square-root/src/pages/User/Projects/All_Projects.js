@@ -4,6 +4,8 @@ import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import {findCityFromZip} from "../../../functions/apiCalls";
 import data from "../../data.json";
+
+
 export default class All_Projects extends Component {
     state = {
         modalOpen: false,
