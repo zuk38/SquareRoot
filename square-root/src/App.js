@@ -1,5 +1,5 @@
-import "./App.css"
-import "./App.sass"
+import "./App.css";
+import "./App.sass";
 import { Route, Switch } from "react-router-dom";
 import Login from "./components/auth/Login";
 import Register from "./components/auth/Register";
@@ -10,20 +10,18 @@ import Welcome from "./components/Welcome";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import { Plants } from "./pages/Plants";
-import SinglePlant from "./pages/SinglePlant"
-import Admin from "./pages/Admin"
+import SinglePlant from "./pages/SinglePlant";
+import Admin from "./pages/Admin";
 import Error from "./pages/Error";
-import Rooftop from "./pages/Rooftop"
-import {Rainbed} from "./pages/Rainbed"
-import Indoor from "./pages/Indoor"
-import All_Projects  from "./pages/User/Projects/All_Projects"
-import Dashboard from "./pages/User/Projects/Dashboard"
-import Greenspace from "./pages/User/Projects/Greenspace"
-import Members from "./pages/User/Projects/Members"
-import Orders from "./pages/User/Projects/Orders"
-import Settings from "./pages/User/Projects/Settings"
-
-
+import Rooftop from "./pages/Rooftop";
+import { Rainbed } from "./pages/Rainbed";
+import Indoor from "./pages/Indoor";
+import All_Projects from "./pages/User/Projects/All_Projects";
+import Dashboard from "./pages/User/Projects/Dashboard";
+import Greenspace from "./pages/User/Projects/Greenspace";
+import Members from "./pages/User/Projects/Members";
+import Orders from "./pages/User/Projects/Orders";
+import Settings from "./pages/User/Projects/Settings";
 
 import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -81,130 +79,118 @@ class App extends Component {
 
     return (
       !this.state.isAuthenticating && (
-          <>
-            <Navbar auth={authProps} />
-            <Switch>
-              <Route
-                exact
-                path="/login"
-                render={(props) => <Login {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/register"
-                render={(props) => <Register {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/welcome"
-                render={(props) => <Welcome {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/forgotpassword"
-                render={(props) => (
-                  <ForgotPassword {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/forgotpasswordverification"
-                render={(props) => (
-                  <ForgotPasswordVerification {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/changepasswordconfirmation"
-                render={(props) => (
-                  <ChangePasswordConfirm {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/"
-                render={(props) => <Home {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/rooftop" 
-                render={(props) => <Rooftop {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/rainbed"
-                render={(props) => <Rainbed {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/indoor"
-                render={(props) => <Indoor {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/plants"
-                render={(props) => (
-                  <Plants {...props} auth={authProps} />
-                )}
-              />            
-              <Route
-                exact
-                path="/plants/:name"
-                render={(props) => (
-                  <SinglePlant {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/admin"
-                render={(props) => (
-                  <Admin {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/projects"
-                render={(props) => <All_Projects {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/dashboard"
-                render={(props) => <Dashboard {...props} auth={authProps} />}
-              />
+        <>
+          <Switch>
+            <Route
+              exact
+              path="/login"
+              render={(props) => <Login {...props} auth={authProps} />}
+            />
+          </Switch>
+          <Navbar auth={authProps} />
+          <Switch>
+            <Route
+              exact
+              path="/register"
+              render={(props) => <Register {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/welcome"
+              render={(props) => <Welcome {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/forgotpassword"
+              render={(props) => <ForgotPassword {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/forgotpasswordverification"
+              render={(props) => (
+                <ForgotPasswordVerification {...props} auth={authProps} />
+              )}
+            />
+            <Route
+              exact
+              path="/changepasswordconfirmation"
+              render={(props) => (
+                <ChangePasswordConfirm {...props} auth={authProps} />
+              )}
+            />
+            <Route
+              exact
+              path="/"
+              render={(props) => <Home {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/rooftop"
+              render={(props) => <Rooftop {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/rainbed"
+              render={(props) => <Rainbed {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/indoor"
+              render={(props) => <Indoor {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/plants"
+              render={(props) => <Plants {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/plants/:name"
+              render={(props) => <SinglePlant {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/admin"
+              render={(props) => <Admin {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/projects"
+              render={(props) => <All_Projects {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/dashboard"
+              render={(props) => <Dashboard {...props} auth={authProps} />}
+            />
 
-              <Route
-                exact
-                path="/greenspace"
-                render={(props) => <Greenspace {...props} auth={authProps} />}
-              />
+            <Route
+              exact
+              path="/greenspace"
+              render={(props) => <Greenspace {...props} auth={authProps} />}
+            />
 
-              <Route
-                exact
-                path="/members"
-                render={(props) => <Members {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/orders"
-                render={(props) => <Orders {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/settings"
-                render={(props) => <Settings {...props} auth={authProps} />}
-              />
-              <Route component={Error} />
-            </Switch>
-            
-          </>
+            <Route
+              exact
+              path="/members"
+              render={(props) => <Members {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/orders"
+              render={(props) => <Orders {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/settings"
+              render={(props) => <Settings {...props} auth={authProps} />}
+            />
+            <Route component={Error} />
+          </Switch>
+        </>
       )
     );
   }
 }
 
 export default App;
-
-
-
-
-

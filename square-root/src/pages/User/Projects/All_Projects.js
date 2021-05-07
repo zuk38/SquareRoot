@@ -1,182 +1,168 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import "./projects.css";
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
+import ProjectsContainer from "../../../components/user/ProjectsContainer";
 import data from "../../data.json";
-export default class All_Projects extends Component {
-  state = {
-    modalOpen: false,
+import { ProjectContext } from "../../../context/projects";
+import API, { graphqlOperation } from "@aws-amplify/api";
+import { createProject } from "../../../api/mutations";
+
+export default function All_Projects() {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [projectDetails, setProjectDetails] = useState({
     name: "",
     address: "",
-    postalCode: "",
     city: "",
-    error: "",
-  };
+    postalCode: "",
+    start_date: "",
+  });
+  const [error, setError] = useState("");
+  const [foundZip, setFoundZip] = useState(false);
 
+  useEffect(() => {
+    Modal.setAppElement("body");
+  }, []);
 
-  updateModalState = (key, value) => {
-    if (key == "postalCode" && value.length == 4) {
-      this.setState({ postalCode: value }, function() {
-        findCityFromZip(value).then((response) => {
-          if (response) this.setState({ city: response });
-          else this.setState({ error: "invalid zip" });
-        });
+  useEffect(() => {
+    if (!foundZip) {
+      console.log("update city");
+      findCityFromZip(projectDetails.postalCode).then((response) => {
+        if (response) {
+          setProjectDetails({ ...projectDetails, city: response });
+        } else {
+          setProjectDetails({ ...projectDetails, city: "" });
+          setError("invalid zip");
+        }
+        setFoundZip(true);
       });
     }
-    this.setState({ [key]: value });
-    this.setState({ error: "" });
+  }, [projectDetails]);
+
+  const updateModalState = (key, value) => {
+    console.log(key);
+    console.log(value.length);
+    if (key == "postalCode" && value.length == 4) setFoundZip(false);
+    setProjectDetails({ ...projectDetails, [key]: value });
+    setError("");
   };
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
+  const openModal = () => {
+    setModalOpen(true);
   };
 
-  closeModal = () => {
-    console.log(this.state);
-    this.setState({
-      modalOpen: false,
-      name: "",
-      postalCode: "",
-      address: "",
-      city: "",
-    });
+  const closeModal = () => {
+    setModalOpen(false);
   };
 
-  componentWillMount() {
-    Modal.setAppElement("body");
-  }
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(projectDetails);
+    try {
+      if (
+        !projectDetails.name ||
+        !projectDetails.postalCode ||
+        !projectDetails.city ||
+        !projectDetails.address
+      )
+        return;
+      var today = new Date(),
+        date =
+          today.getFullYear() +
+          "-" +
+          (today.getMonth() + 1) +
+          "-" +
+          today.getDate();
+          console.log(date)
+      setProjectDetails({ ...projectDetails, start_date: date });
+      console.log(projectDetails)
+      await API.graphql(
+        graphqlOperation(createProject, { input: projectDetails })
+      );
+      setProjectDetails({ name: "", city: "", postalCode: "" });
+      closeModal();
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+  };
 
-  render() {
-    const { items } = this.state;
-    return (
-      <div className="projects-title">
-        <img class="p-icon-main" src={icon} alt="Prosjektikon" />
-        <h1 className="p-h1">PROSJEKTER</h1>
-        <button className="btn-new-project" onClick={this.openModal}>
-          <i class="fas fa-plus"></i>NYTT PROSJEKT
+  return (
+    <div className="projects-title">
+      <img class="p-icon-main" src={icon} alt="Prosjektikon" />
+      <h1 className="p-h1">PROSJEKTER</h1>
+      <button className="btn-new-project" onClick={openModal}>
+        <i class="fas fa-plus"></i>NYTT PROSJEKT
+      </button>
+      <Modal
+        isOpen={modalOpen}
+        onRequestClose={closeModal}
+        className={"modal-project"}
+      >
+        <button onClick={closeModal} className="btn-modal-close" alt="Lukk">
+          <i class="fas fa-times fa-lg"></i>
         </button>
-        <Modal
-          isOpen={this.state.modalOpen}
-          onRequestClose={this.closeModal}
-          className={"modal-project"}
-        >
-          <button
-            onClick={this.closeModal}
-            className="btn-modal-close"
-            alt="Lukk"
-          >
-            <i class="fas fa-times fa-lg"></i>
-          </button>
-          <div className="p-modal-content">
-            <h1 className="p-h1">La oss lage et økosystem</h1>
-            <br />
-            <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
-            <form onSubmit={this.closeModal}>
-              <div className="p-inputBox">
-                <label className="p-lbl">Navn</label>
-                <input
-                  type="text"
-                  placeholder="Prosjektets navn.."
-                  className="p-inp-text"
-                  value={this.state.name || ""}
-                  onChange={(e) =>
-                    this.updateModalState("name", e.target.value)
-                  }
-                />
-                <label className="p-lbl">Adresse</label>
-                <input
-                  type="text"
-                  placeholder="Prosjektets adresse.."
-                  className="p-inp-text"
-                  value={this.state.address || ""}
-                  onChange={(e) =>
-                    this.updateModalState("address", e.target.value)
-                  }
-                />
-                <div className="p-flex">
-                  <div className="p-classFlex">
-                    <label className="p-lblFlex">PostNr</label>
-                    <input
-                      type="text"
-                      className="p-input-inline"
-                      pattern="[0-4]*"
-                      value={this.state.postalCode || ""}
-                      onChange={(e) =>
-                        this.updateModalState("postalCode", e.target.value)
-                      }
-                    />
-                    <p className="help is-danger">{this.state.error}</p>
-                  </div>
-                  <div className="p-classFlex">
-                    <label className="p-lblFlex">Poststed</label>
-                    <input
-                      type="text"
-                      className="p-input-inline"
-                      value={this.state.city || ""}
-                      onChange={(e) =>
-                        this.updateModalState("city", e.target.value)
-                      }
-                    />
-                  </div>
+        <div className="p-modal-content">
+          <h1 className="p-h1">La oss lage et økosystem</h1>
+          <br />
+          <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="p-inputBox">
+              <label className="p-lbl">Navn</label>
+              <input
+                type="text"
+                placeholder="Prosjektets navn.."
+                className="p-inp-text"
+                value={projectDetails.name || ""}
+                onChange={(e) => updateModalState("name", e.target.value)}
+              />
+              <label className="p-lbl">Adresse</label>
+              <input
+                type="text"
+                placeholder="Prosjektets adresse.."
+                className="p-inp-text"
+                value={projectDetails.address || ""}
+                onChange={(e) => updateModalState("address", e.target.value)}
+              />
+              <div className="p-flex">
+                <div className="p-classFlex">
+                  <label className="p-lblFlex">PostNr</label>
+                  <input
+                    type="text"
+                    className="p-input-inline"
+                    pattern="[0-9]{4}"
+                    value={projectDetails.postalCode || ""}
+                    onChange={(e) =>
+                      updateModalState("postalCode", e.target.value)
+                    }
+                  />
+                  <p className="help is-danger">{error}</p>
+                </div>
+                <div className="p-classFlex">
+                  <label className="p-lblFlex">Poststed</label>
+                  <input
+                    type="text"
+                    className="p-input-inline"
+                    value={projectDetails.city || ""}
+                    onChange={(e) => updateModalState("city", e.target.value)}
+                  />
                 </div>
               </div>
-            </form>
-          </div>
+            </div>
+            <div className="p-btn-create">
+              {/*NEED a button onClick -- save in database*/}
+              <button className="btn-modal-create-p">OPPRETT PROSJEKT</button>
+            </div>
+          </form>
+        </div>
+      </Modal>
+      <br></br>
+      <h2 className="p-h2">
+        Velg et prosjekt for å legge til eller endre et grøntområde, eller
+        opprett et nytt prosjekt.
+      </h2>
 
-          <li>
-            <ul></ul>
-          </li>
-          <div className="p-btn-create">
-            {/*NEED a button onClick -- save in database*/}
-            <button onClick={this.closeModal} className="btn-modal-create-p">
-              OPPRETT PROSJEKT
-            </button>
-          </div>
-        </Modal>
-        <br></br>
-        <h2 className="p-h2">
-          Velg et prosjekt for å legge til eller endre et grøntområde, eller
-          opprett et nytt prosjekt.
-        </h2>
-       
-        <div> {" "}
-                {
-                data.Projects.map((projects, i) => {
-                    return (
-                        <div key={i}>
-                            {
-                            projects.project.map(function (project, i) {
-                                return (
-                                    <div key={i}>
-                                
-                                            {/*TABLE must GET data from GraphQL*/}
-                                            <table className="p-table">
-                                                <tr className="p-tr">
-                                                    <th className="p-th">PROSJEKTNAVN</th>
-                                                    <th className="p-th">ADRESSE</th>
-                                                    <th className="p-th">OPPRETTET</th>
-                                                </tr>
-                                                <tr>
-                                                    <td className="p-td">{project.project_name}</td>
-                                                    <td className="p-td">{project.project_adress}, {project.project_zip} {project.project_city}</td>
-                                                    <td className="p-td">{project.project_start}</td>
-                                                </tr>
-                                                <tr>
-                                                    <td className="p-td">{project.project_name2}</td>
-                                                    <td className="p-td">{project.project_adress2}, {project.project_zip} {project.project_city}</td>
-                                                    <td className="p-td">{project.project_start2}</td>
-                                                </tr>
-                                            </table>
-                                        </div>
-                                );
-                            })
-                        } </div>
-                    );
-                })
-            }
-                {" "} </div>
-                </div>
-    );
-  }
+      <ProjectsContainer />
+    </div>
+  );
 }

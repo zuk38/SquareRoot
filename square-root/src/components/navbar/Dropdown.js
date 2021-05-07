@@ -18,6 +18,7 @@ export default function Dropdown(props) {
       Auth.signOut();
       props.auth.setAuthStatus(false);
       props.auth.setUser(null);
+      props.history.push("/");
     } catch (error) {
       console.log(error.message);
     }
