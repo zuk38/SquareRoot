@@ -58,7 +58,8 @@ export default class All_Projects extends Component {
 
     render() {
         const {items} = this.state;
-        return(< div class = "p-row" > <div class="p-column left">
+        return(
+        < div class = "p-row" > <div class="p-column left">
             <a href="/Projects" class="btn-back">
                 <i class="fas fa-chevron-left"></i>Alle Prosjekter
             </a>
@@ -92,13 +93,18 @@ export default class All_Projects extends Component {
 
             <h2 className="p-h2">Rolle: Eiendomsutvikler</h2>
 
-
-            <button className="btn-new-greenspace">
+{/* --- REMOVING "ADD GREENSPACE" BUTTON ---
+B/c: The user should understand that in order to add greenspace/plant, 
+they should navigate through the menu, rather than us setting up another route for them to take.
+           
+<button className="btn-new-greenspace">
                 <i class="fas fa-plus"></i>Legg til grøntområde
             </button>
         </div>
 
         <br/>
+
+        */}
         <div className="green-container">
 
 
@@ -263,11 +269,11 @@ export default class All_Projects extends Component {
                     </div>
 
                     <div className="modal-btns-footer">
-                        <button className="orders-btn-close"
+                        <a href="/Customize"><button className="orders-btn-close"
                             onClick={this.closeModal}
                             alt="Lukk">
                             TILPASS
-                        </button>
+                        </button></a>
                         <button className="orders-btn-save"
                             onClick={this.closeModal}
                                 
@@ -285,6 +291,7 @@ export default class All_Projects extends Component {
         </div>
     </div>
 </div>
+</ div>
 
 
 )}}

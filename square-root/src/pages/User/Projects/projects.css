@@ -37,7 +37,7 @@
 
 .right {
   width: 75%;
-  float: left;
+  float: right;
   background: var(--offWhite);
   padding-right: 5%;
   padding-left: 5%;
@@ -388,6 +388,7 @@ input[type="text"] {
   z-index: 1;
   padding-right: 5%;
   padding-left: 5%;
+  
 }
 
 /* TABLE */
