@@ -102,9 +102,11 @@ export default class All_Projects extends Component {
         <div className="green-container">
 
 
+
+{/*EVERY GREEN ITEM SHOULD BE A BUTTON*/}
             <button onClick={
                     this.openModal
-                }
+                } className="btn-dash-greenspace"
                 
             >
                 <div className="green-item">
@@ -123,6 +125,68 @@ export default class All_Projects extends Component {
 
                 </div>
             </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                 <div className="green-item"><img src={
+                        "../../../images/greenWall.png"
+                    }
+                    className="project_img"/>
+                <div className="green-info">
+                    <h3 className="p-h3">
+                        Grønn vegg</h3>
+                    <h4 className="p-h4">
+                        2. etg</h4>
+                </div>
+
+            </div>
+            </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                 <div className="green-item"><img src={
+                       "../../../images/biodiversity.png"
+                    }
+                    className="project_img"/>
+                <div className="green-info">
+                    <h3 className="p-h3">
+                        Biomangfoldig hage</h3>
+                    <h4 className="p-h4">
+                        Uteomårde 4. etg</h4>
+                </div>
+
+            </div>
+            </button>
+
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                  <div className="green-item"><img src={
+                
+                "../../../images/plant-img1.png"
+            }
+            className="project_img"/>
+        <div className="green-info">
+            <h3 className="p-h3">
+                Kjøkkenhage</h3>
+            <h4 className="p-h4">
+                2. etg vestover</h4>
+        </div>
+
+    </div>
+            </button>
+
+           
+            
+          
 
 <Modal isOpen={
                         this.state.modalOpen
@@ -202,7 +266,7 @@ export default class All_Projects extends Component {
                         <button className="orders-btn-close"
                             onClick={this.closeModal}
                             alt="Lukk">
-                            REDIGER
+                            TILPASS
                         </button>
                         <button className="orders-btn-save"
                             onClick={this.closeModal}
@@ -217,43 +281,7 @@ export default class All_Projects extends Component {
                 
 
     
-            <div className="green-item"><img src={
-                        "../../../images/greenWall.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Grønn vegg</h3>
-                    <h4 className="p-h4">
-                        2. etg</h4>
-                </div>
-
-            </div>
-            <div className="green-item"><img src={
-                       "../../../images/biodiversity.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Biomangfoldig hage</h3>
-                    <h4 className="p-h4">
-                        Uteomårde 4. etg</h4>
-                </div>
-
-            </div>
-            <div className="green-item"><img src={
-                
-                        "../../../images/plant-img1.png"
-                    }
-                    className="project_img"/>
-                <div className="green-info">
-                    <h3 className="p-h3">
-                        Kjøkkenhage</h3>
-                    <h4 className="p-h4">
-                        2. etg vestover</h4>
-                </div>
-
-            </div>
+           
         </div>
     </div>
 </div>
