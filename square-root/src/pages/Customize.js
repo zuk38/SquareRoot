@@ -179,7 +179,7 @@ function PlantPage() {
                             i Oslo Takterrasse{/*GET GREENSPACE NAME*/} </h1>
                     <div className="o-modal-container">
                         
-                        <table className="modal-plantList">
+                        <table className="modal-list">
                             <tr>
                                 <td className="o-modal-img"><img src="../../../images/pertusem.png"></img></td>
                                 <td className="o-modal-name">Pertusem</td>
