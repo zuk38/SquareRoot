@@ -356,6 +356,12 @@ input[type="text"] {
   width: 100%;
 }
 
+.btn-dash-greenspace {
+  border: none;
+  background-color: var(--offWhite);
+  padding: 0px;
+}
+
 
 /*DASHBOARD MODAL */
 
@@ -481,12 +487,15 @@ img[src*="plus"]{
 }
 
 .green-item:hover .green-info {
-
   padding: 20px;
+  margin-top:10px;
   transform: scale(1.1);
   transform-origin:50% 50%;
   -webkit-transition: 0.5s ease;
+}
 
+.green-item:hover img {
+  transform: scale(1.4);
 }
 
 .green-info {
