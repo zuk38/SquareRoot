@@ -1,3 +1,20 @@
+type Project
+  @model
+  @auth(
+    rules: [
+      # allow owners of the project to create, update and delete their projects
+      { allow: owner }
+    ]
+  ) {
+  id: ID!
+  name: String!
+  address: String!
+  city: String!
+  postalCode: String!
+  end_date: String
+  owner: String!
+}
+
 type Plant
   @model(subscriptions: null)
   @auth(

@@ -5,18 +5,19 @@ import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
 import ProjectsContainer from "../../../components/user/ProjectsContainer";
 import data from "../../data.json";
-import { ProjectContext } from "../../../context/projects";
+import { ProjectContext, withProjectConsumer } from "../../../context/projects";
 import API, { graphqlOperation } from "@aws-amplify/api";
 import { createProject } from "../../../api/mutations";
 
-export default function All_Projects() {
+function All_Projects( {context }) {
+  const { projects, loading, fetchProjects } = context;
+
   const [modalOpen, setModalOpen] = useState(false);
   const [projectDetails, setProjectDetails] = useState({
     name: "",
     address: "",
     city: "",
     postalCode: "",
-    start_date: "",
   });
   const [error, setError] = useState("");
   const [foundZip, setFoundZip] = useState(false);
@@ -67,7 +68,7 @@ export default function All_Projects() {
         !projectDetails.address
       )
         return;
-      var today = new Date(),
+      /*var today = new Date(),
         date =
           today.getFullYear() +
           "-" +
@@ -75,12 +76,13 @@ export default function All_Projects() {
           "-" +
           today.getDate();
           console.log(date)
-      setProjectDetails({ ...projectDetails, start_date: date });
+      setProjectDetails({ ...projectDetails, start_date: date });*/
       console.log(projectDetails)
       await API.graphql(
         graphqlOperation(createProject, { input: projectDetails })
       );
       setProjectDetails({ name: "", city: "", postalCode: "" });
+      fetchProjects()
       closeModal();
     } catch (err) {
       console.log("error creating todo:", err);
@@ -166,3 +168,5 @@ export default function All_Projects() {
     </div>
   );
 }
+
+export default withProjectConsumer(All_Projects);

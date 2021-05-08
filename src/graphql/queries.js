@@ -7,11 +7,12 @@ export const getProject = /* GraphQL */ `
       id
       name
       address
-      start_date
+      city
+      postalCode
       end_date
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -26,11 +27,12 @@ export const listProjects = /* GraphQL */ `
         id
         name
         address
-        start_date
+        city
+        postalCode
         end_date
+        owner
         createdAt
         updatedAt
-        owner
       }
       nextToken
     }

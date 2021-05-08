@@ -7,11 +7,12 @@ export const onCreateProject = /* GraphQL */ `
       id
       name
       address
-      start_date
+      city
+      postalCode
       end_date
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -21,11 +22,12 @@ export const onUpdateProject = /* GraphQL */ `
       id
       name
       address
-      start_date
+      city
+      postalCode
       end_date
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
@@ -35,11 +37,12 @@ export const onDeleteProject = /* GraphQL */ `
       id
       name
       address
-      start_date
+      city
+      postalCode
       end_date
+      owner
       createdAt
       updatedAt
-      owner
     }
   }
 `;
