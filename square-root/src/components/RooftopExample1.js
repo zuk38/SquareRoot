@@ -175,90 +175,82 @@ class RooftopExample1 extends Component {
                                         <i class="fas fa-chevron-right"/></button>
                                     {/*MODAL*/}
                                     <Modal isOpen={
-                                            this.state.modalOpen
-                                        }
-                                        onRequestClose={
-                                            this.closeModal
-                                        }
-                                        className={"modal-project"}>
-                                        <button onClick={
-                                                this.closeModal
-                                            }
-                                            className="btn-modal-close"
-                                            alt="Lukk">
-                                            <i class="fas fa-times fa-lg"></i>
-                                        </button>
-                                        <div className="p-modal-content">
-                                            <h1 className="p-h1">La oss lage et økosystem</h1>
-                                            <br/>
-                                            <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
-                                            <form onSubmit={
-                                                this.closeModal
-                                            }>
-                                                <div className="p-inputBox">
-                                                    <label className="p-lbl">Navn</label>
-                                                    <input type="text" placeholder="Prosjektets navn.." className="p-inp-text"
-                                                        value={
-                                                            this.state.name || ""
-                                                        }
-                                                        onChange={
-                                                            (e) => this.updateModalState("name", e.target.value)
-                                                        }/>
-                                                    <label className="p-lbl">Beskrivelse</label>
-                                                    <input type="text" placeholder="Tilknyttet firma, prosjekt e.l..." className="p-inp-text"
-                                                        value={
-                                                            this.state.description || ""
-                                                        }
-                                                        onChange={
-                                                            (e) => this.updateModalState("description", e.target.value)
-                                                        }/>
-                                                    <label className="p-lbl">Adresse</label>
-                                                    <input type="text" placeholder="Prosjektets adresse.." className="p-inp-text"
-                                                        value={
-                                                            this.state.address || ""
-                                                        }
-                                                        onChange={
-                                                            (e) => this.updateModalState("address", e.target.value)
-                                                        }/>
-                                                    <div className="p-flex">
-                                                        <div className="p-classFlex">
-                                                            <label className="p-lblFlex">PostNr</label>
-                                                            <input type="text" className="p-input-inline" pattern="[0-4]*"
-                                                                value={
-                                                                    this.state.postalCode || ""
-                                                                }
-                                                                onChange={
-                                                                    (e) => this.updateModalState("postalCode", e.target.value)
-                                                                }/>
-                                                            <p className="help is-danger">
-                                                                {
-                                                                this.state.error
-                                                            }</p>
-                                                        </div>
-                                                        <div className="p-classFlex">
-                                                            <label className="p-lblFlex">Poststed</label>
-                                                            <input type="text" className="p-input-inline"
-                                                                value={
-                                                                    this.state.city || ""
-                                                                }
-                                                                onChange={
-                                                                    (e) => this.updateModalState("city", e.target.value)
-                                                                }/>
-                                                        </div>
-                                                    </div>
-                                                    <a href="/Dashboard">
-                                                        <button type="submit" className="btn-modal-create-p"
-                                                            onClick={
-                                                                this.closeModal
-                                                        }>OPPRETT PROSJEKT</button>
-                                                    </a>
+                        this.state.modalOpen
+                    }
+                    onRequestClose={
+                        this.closeModal
+                    }
+                    className={"modal-dashboard"}>
+                    <button onClick={
+                            this.closeModal
+                        }
+                        className="btn-modal-close"
+                        alt="Lukk">
+                        <i class="fas fa-times fa-lg"></i>
+                    </button>
+                    <div className="d-modal-content">
+                        <h1 className="p-h1">Oslo Takterrasse</h1> {/*greenspace_name*/}
+                        <br/>
+                        <div className="d-modal-container">
+                        
+                        <table className="d-table">
+                                            
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-lucifer.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Crocosmia Lucifer</td> {/*greenspace_name*/}
+                                                    <td className="d-td">3 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-falcatum.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Cyrtomium Falcatum</td> {/*greenspace_name*/}
+                                                    <td className="d-td">6 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-belladonna.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Delpinium Belladonna</td> {/*greenspace_name*/}
+                                                    <td className="d-td">3 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-tomatosoup.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Echinacea 'Tomato Soup'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">3 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-purpurea.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Echinacea Purpurea 'tiki torch'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">2 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-bremen.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Gaillardia 'Bremen'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">7 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-woblitz.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Galium Odoratum 'Woblitz'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">1 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-thomson.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Geranium 'Anne Thomson'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">4 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                                <tr>
+                                                    <td className="d-modal-img"><img src="../../../images/r-helenium.jpg"></img></td> {/*greenspace_img*/}
+                                                    <td className="d-td">Helenium 'Sahins Early Flowerer'</td> {/*greenspace_name*/}
+                                                    <td className="d-td">3 stk</td> {/*number of one plant in greenspace*/}
+                                                </tr>
+                                           
+                                              
+                                                
+                                            </table>
 
 
-                                                </div>
+                    </div>
 
-                                            </form>
-                                        </div>
-                                    </Modal>
+                         
+                    </div>
+                </Modal>
                                 </div>
 
 
