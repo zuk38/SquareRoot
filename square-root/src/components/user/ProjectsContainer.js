@@ -1,17 +1,9 @@
 import React, { useContext, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
-import { ProjectContext, ProjectProvider } from "../../context/projects";
-import fetchProjects from "../../context/projects";
+import { withProjectConsumer } from "../../context/projects";
 
-const ProjectsContainer = () => {
-  const { projects } = useContext(ProjectContext);
-
-  useEffect(() => {
-    //component mount
-    return () => {
-      //component unmount
-    };
-  }, [projects]);
+function ProjectsContainer({ context }) {
+  const { projects, loading } = context;
 
   if (!projects.length || !projects) {
     return <h3>No Projects Created</h3>;
@@ -39,4 +31,4 @@ const ProjectsContainer = () => {
   );
 };
 
-export default ProjectsContainer;
+export default withProjectConsumer(ProjectsContainer);
