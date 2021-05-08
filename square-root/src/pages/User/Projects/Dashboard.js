@@ -6,6 +6,8 @@ import Modal from "react-modal";
 import {findCityFromZip} from "../../../functions/apiCalls";
 import data from "../../data.json";
 export default class All_Projects extends Component {
+    
+    /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/
     state = {
         modalOpen: false,
         name: "",
@@ -14,26 +16,6 @@ export default class All_Projects extends Component {
         postalCode: "",
         city: "",
         error: ""
-    };
-
-
-    updateModalState = (key, value) => {
-        if (key == "postalCode" && value.length == 4) {
-            this.setState({
-                postalCode: value
-            }, function () {
-                findCityFromZip(value).then((response) => {
-                    if (response) 
-                        this.setState({city: response});
-                     else 
-                        this.setState({error: "invalid zip"});
-                    
-
-                });
-            });
-        }
-        this.setState({[key]: value});
-        this.setState({error: ""});
     };
 
     openModal = () => {

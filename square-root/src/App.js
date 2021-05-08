@@ -24,9 +24,10 @@ import Settings from "./pages/User/Projects/Settings"
 import Customize from "./pages/Customize"
 import Howitworks from "./pages/Howitworks"
 import Why from "./pages/Why"
-import Footer from "./components/Footer";
+import Footer from "./components/Footer"
 import About from "./pages/About"
 import Partner from "./pages/Partner"
+import Account from "./pages/User/Account"
 
 
 
@@ -187,6 +188,11 @@ class App extends Component {
                 exact
                 path="/orders"
                 render={(props) => <Orders {...props} auth={authProps} />}
+              />
+              <Route
+                exact
+                path="/Account"
+                render={(props) => <Account {...props} auth={authProps} />}
               />
               <Route
                 exact
