@@ -38,6 +38,39 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
+export const getGreenspaceCategory = /* GraphQL */ `
+  query GetGreenspaceCategory($id: ID!) {
+    getGreenspaceCategory(id: $id) {
+      id
+      category_id
+      category_name
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listGreenspaceCategorys = /* GraphQL */ `
+  query ListGreenspaceCategorys(
+    $filter: ModelGreenspaceCategoryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGreenspaceCategorys(
+      filter: $filter
+      limit: $limit
+      nextToken: $nextToken
+    ) {
+      items {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const listPlants = /* GraphQL */ `
   query ListPlants(
     $filter: ModelPlantFilterInput
@@ -47,21 +80,6 @@ export const listPlants = /* GraphQL */ `
     listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        name
-        images
-        price_per_meter
-        pollinator_friendly
-        edible
-        allergen
-        light_requirement
-        watering_needs
-        soil_type
-        soil_depth
-        featured
-        rooftop
-        rainbed
-        indoor
-        green_wall
         createdAt
         updatedAt
         greenspaces {
@@ -76,21 +94,6 @@ export const getPlant = /* GraphQL */ `
   query GetPlant($id: ID!) {
     getPlant(id: $id) {
       id
-      name
-      images
-      price_per_meter
-      pollinator_friendly
-      edible
-      allergen
-      light_requirement
-      watering_needs
-      soil_type
-      soil_depth
-      featured
-      rooftop
-      rainbed
-      indoor
-      green_wall
       createdAt
       updatedAt
       greenspaces {
@@ -107,9 +110,75 @@ export const getPlant = /* GraphQL */ `
     }
   }
 `;
-export const getGreenspacePlants = /* GraphQL */ `
-  query GetGreenspacePlants($id: ID!) {
-    getGreenspacePlants(id: $id) {
+export const getPlantMetadata = /* GraphQL */ `
+  query GetPlantMetadata($id: ID!) {
+    getPlantMetadata(id: $id) {
+      id
+      latin_name
+      norwegian_name
+      type
+      native
+      norwegian_nursery
+      size_in_cm
+      image
+      featured
+      climate_zone
+      pollinator_friendly
+      edible
+      rain_garden
+      pet_kids_friendly
+      air_puryfying
+      sun_seeker
+      createdAt
+      updatedAt
+      plant {
+        items {
+          id
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const listPlantMetadatas = /* GraphQL */ `
+  query ListPlantMetadatas(
+    $filter: ModelPlantMetadataFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlantMetadatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const getGreenspacePlant = /* GraphQL */ `
+  query GetGreenspacePlant($id: ID!) {
+    getGreenspacePlant(id: $id) {
       id
       plant_id
       greenspace_id
@@ -117,21 +186,6 @@ export const getGreenspacePlants = /* GraphQL */ `
       updatedAt
       plant {
         id
-        name
-        images
-        price_per_meter
-        pollinator_friendly
-        edible
-        allergen
-        light_requirement
-        watering_needs
-        soil_type
-        soil_depth
-        featured
-        rooftop
-        rainbed
-        indoor
-        green_wall
         createdAt
         updatedAt
         greenspaces {
@@ -144,6 +198,24 @@ export const getGreenspacePlants = /* GraphQL */ `
         name
         images
         price
+        project {
+          id
+          name
+          address
+          city
+          postalCode
+          end_date
+          owner
+          createdAt
+          updatedAt
+        }
+        category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
         plants {
@@ -153,13 +225,13 @@ export const getGreenspacePlants = /* GraphQL */ `
     }
   }
 `;
-export const listGreenspacePlantss = /* GraphQL */ `
-  query ListGreenspacePlantss(
-    $filter: ModelGreenspacePlantsFilterInput
+export const listGreenspacePlants = /* GraphQL */ `
+  query ListGreenspacePlants(
+    $filter: ModelGreenspacePlantFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listGreenspacePlantss(
+    listGreenspacePlants(
       filter: $filter
       limit: $limit
       nextToken: $nextToken
@@ -172,21 +244,6 @@ export const listGreenspacePlantss = /* GraphQL */ `
         updatedAt
         plant {
           id
-          name
-          images
-          price_per_meter
-          pollinator_friendly
-          edible
-          allergen
-          light_requirement
-          watering_needs
-          soil_type
-          soil_depth
-          featured
-          rooftop
-          rainbed
-          indoor
-          green_wall
           createdAt
           updatedAt
         }
@@ -216,6 +273,24 @@ export const listGreenspaces = /* GraphQL */ `
         name
         images
         price
+        project {
+          id
+          name
+          address
+          city
+          postalCode
+          end_date
+          owner
+          createdAt
+          updatedAt
+        }
+        category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         createdAt
         updatedAt
         plants {
@@ -233,6 +308,24 @@ export const getGreenspace = /* GraphQL */ `
       name
       images
       price
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        createdAt
+        updatedAt
+      }
+      category {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
       plants {

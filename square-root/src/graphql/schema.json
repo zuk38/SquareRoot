@@ -77,6 +77,68 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+          "name" : "getGreenspaceCategory",
+          "description" : null,
+          "args" : [ {
+            "name" : "id",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspaceCategory",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "listGreenspaceCategorys",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelGreenspaceCategoryConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
           "name" : "listPlants",
           "description" : null,
           "args" : [ {
@@ -139,7 +201,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "getGreenspacePlants",
+          "name" : "getPlantMetadata",
           "description" : null,
           "args" : [ {
             "name" : "id",
@@ -157,20 +219,20 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GreenspacePlants",
+            "name" : "PlantMetadata",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "listGreenspacePlantss",
+          "name" : "listPlantMetadatas",
           "description" : null,
           "args" : [ {
             "name" : "filter",
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsFilterInput",
+              "name" : "ModelPlantMetadataFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -195,7 +257,69 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelGreenspacePlantsConnection",
+            "name" : "ModelPlantMetadataConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "getGreenspacePlant",
+          "description" : null,
+          "args" : [ {
+            "name" : "id",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "SCALAR",
+                "name" : "ID",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspacePlant",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "listGreenspacePlants",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspacePlantFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelGreenspacePlantConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -991,6 +1115,196 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
+        "name" : "GreenspaceCategory",
+        "description" : null,
+        "fields" : [ {
+          "name" : "id",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "category_id",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "category_name",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createdAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updatedAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "ModelGreenspaceCategoryConnection",
+        "description" : null,
+        "fields" : [ {
+          "name" : "items",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "OBJECT",
+              "name" : "GreenspaceCategory",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "nextToken",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelGreenspaceCategoryFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelGreenspaceCategoryFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
         "name" : "ModelPlantConnection",
         "description" : null,
         "fields" : [ {
@@ -1044,175 +1358,6 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "name",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "images",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "price_per_meter",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "pollinator_friendly",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "edible",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "allergen",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "light_requirement",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "watering_needs",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "soil_type",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "soil_depth",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "featured",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "rooftop",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "rainbed",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "indoor",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
-          "name" : "green_wall",
-          "description" : null,
-          "args" : [ ],
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "isDeprecated" : false,
-          "deprecationReason" : null
-        }, {
           "name" : "createdAt",
           "description" : null,
           "args" : [ ],
@@ -1259,7 +1404,7 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsFilterInput",
+              "name" : "ModelGreenspacePlantFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -1293,7 +1438,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelGreenspacePlantsConnection",
+            "name" : "ModelGreenspacePlantConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1304,17 +1449,8 @@
         "enumValues" : null,
         "possibleTypes" : null
       }, {
-        "kind" : "SCALAR",
-        "name" : "Float",
-        "description" : "Built-in Float",
-        "fields" : null,
-        "inputFields" : null,
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
         "kind" : "OBJECT",
-        "name" : "ModelGreenspacePlantsConnection",
+        "name" : "ModelGreenspacePlantConnection",
         "description" : null,
         "fields" : [ {
           "name" : "items",
@@ -1325,7 +1461,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "OBJECT",
-              "name" : "GreenspacePlants",
+              "name" : "GreenspacePlant",
               "ofType" : null
             }
           },
@@ -1349,7 +1485,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "OBJECT",
-        "name" : "GreenspacePlants",
+        "name" : "GreenspacePlant",
         "description" : null,
         "fields" : [ {
           "name" : "id",
@@ -1521,6 +1657,28 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
+          "name" : "project",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "Project",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "category",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspaceCategory",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
           "name" : "createdAt",
           "description" : null,
           "args" : [ ],
@@ -1567,7 +1725,7 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsFilterInput",
+              "name" : "ModelGreenspacePlantFilterInput",
               "ofType" : null
             },
             "defaultValue" : null
@@ -1601,7 +1759,7 @@
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "ModelGreenspacePlantsConnection",
+            "name" : "ModelGreenspacePlantConnection",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -1609,6 +1767,15 @@
         } ],
         "inputFields" : null,
         "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "SCALAR",
+        "name" : "Float",
+        "description" : "Built-in Float",
+        "fields" : null,
+        "inputFields" : null,
+        "interfaces" : null,
         "enumValues" : null,
         "possibleTypes" : null
       }, {
@@ -1689,7 +1856,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelGreenspacePlantsFilterInput",
+        "name" : "ModelGreenspacePlantFilterInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -1727,7 +1894,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsFilterInput",
+              "name" : "ModelGreenspacePlantFilterInput",
               "ofType" : null
             }
           },
@@ -1740,7 +1907,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsFilterInput",
+              "name" : "ModelGreenspacePlantFilterInput",
               "ofType" : null
             }
           },
@@ -1750,7 +1917,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelGreenspacePlantsFilterInput",
+            "name" : "ModelGreenspacePlantFilterInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -1792,141 +1959,6 @@
           },
           "defaultValue" : null
         }, {
-          "name" : "name",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "images",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "price_per_meter",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelFloatInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pollinator_friendly",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "edible",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "allergen",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "light_requirement",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "watering_needs",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_type",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_depth",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelFloatInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "featured",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rooftop",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rainbed",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "indoor",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "green_wall",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "and",
           "description" : null,
           "type" : {
@@ -1958,6 +1990,540 @@
           "type" : {
             "kind" : "INPUT_OBJECT",
             "name" : "ModelPlantFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "PlantMetadata",
+        "description" : null,
+        "fields" : [ {
+          "name" : "id",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "latin_name",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "norwegian_name",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "native",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "norwegian_nursery",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "size_in_cm",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "image",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "featured",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "climate_zone",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "pollinator_friendly",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "edible",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "rain_garden",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "pet_kids_friendly",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "air_puryfying",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "sun_seeker",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createdAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updatedAt",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "AWSDateTime",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "plant",
+          "description" : null,
+          "args" : [ {
+            "name" : "filter",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelPlantFilterInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "sortDirection",
+            "description" : null,
+            "type" : {
+              "kind" : "ENUM",
+              "name" : "ModelSortDirection",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "limit",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "Int",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "nextToken",
+            "description" : null,
+            "type" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "ModelPlantConnection",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "OBJECT",
+        "name" : "ModelPlantMetadataConnection",
+        "description" : null,
+        "fields" : [ {
+          "name" : "items",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "OBJECT",
+              "name" : "PlantMetadata",
+              "ofType" : null
+            }
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "nextToken",
+          "description" : null,
+          "args" : [ ],
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        } ],
+        "inputFields" : null,
+        "interfaces" : [ ],
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelPlantMetadataFilterInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "latin_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "native",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_nursery",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "size_in_cm",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "image",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "featured",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "climate_zone",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pollinator_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "edible",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "rain_garden",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pet_kids_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "air_puryfying",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "sun_seeker",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelPlantMetadataFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelPlantMetadataFilterInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelPlantMetadataFilterInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelBooleanInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "ne",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "eq",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeExists",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "attributeType",
+          "description" : null,
+          "type" : {
+            "kind" : "ENUM",
+            "name" : "ModelAttributeTypes",
             "ofType" : null
           },
           "defaultValue" : null
@@ -2035,51 +2601,6 @@
               "name" : "Float",
               "ofType" : null
             }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeExists",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "attributeType",
-          "description" : null,
-          "type" : {
-            "kind" : "ENUM",
-            "name" : "ModelAttributeTypes",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        } ],
-        "interfaces" : null,
-        "enumValues" : null,
-        "possibleTypes" : null
-      }, {
-        "kind" : "INPUT_OBJECT",
-        "name" : "ModelBooleanInput",
-        "description" : null,
-        "fields" : null,
-        "inputFields" : [ {
-          "name" : "ne",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "eq",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
           },
           "defaultValue" : null
         }, {
@@ -2422,7 +2943,7 @@
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "createGreenspacePlants",
+          "name" : "createPlantMetadata",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2432,7 +2953,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "CreateGreenspacePlantsInput",
+                "name" : "CreatePlantMetadataInput",
                 "ofType" : null
               }
             },
@@ -2442,20 +2963,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsConditionInput",
+              "name" : "ModelPlantMetadataConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GreenspacePlants",
+            "name" : "PlantMetadata",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "updateGreenspacePlants",
+          "name" : "updatePlantMetadata",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2465,7 +2986,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "UpdateGreenspacePlantsInput",
+                "name" : "UpdatePlantMetadataInput",
                 "ofType" : null
               }
             },
@@ -2475,20 +2996,20 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsConditionInput",
+              "name" : "ModelPlantMetadataConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GreenspacePlants",
+            "name" : "PlantMetadata",
             "ofType" : null
           },
           "isDeprecated" : false,
           "deprecationReason" : null
         }, {
-          "name" : "deleteGreenspacePlants",
+          "name" : "deletePlantMetadata",
           "description" : null,
           "args" : [ {
             "name" : "input",
@@ -2498,7 +3019,7 @@
               "name" : null,
               "ofType" : {
                 "kind" : "INPUT_OBJECT",
-                "name" : "DeleteGreenspacePlantsInput",
+                "name" : "DeletePlantMetadataInput",
                 "ofType" : null
               }
             },
@@ -2508,14 +3029,212 @@
             "description" : null,
             "type" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsConditionInput",
+              "name" : "ModelPlantMetadataConditionInput",
               "ofType" : null
             },
             "defaultValue" : null
           } ],
           "type" : {
             "kind" : "OBJECT",
-            "name" : "GreenspacePlants",
+            "name" : "PlantMetadata",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createGreenspacePlant",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "CreateGreenspacePlantInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspacePlantConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspacePlant",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updateGreenspacePlant",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "UpdateGreenspacePlantInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspacePlantConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspacePlant",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "deleteGreenspacePlant",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "DeleteGreenspacePlantInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspacePlantConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspacePlant",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "createGreenspaceCategory",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "CreateGreenspaceCategoryInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspaceCategory",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "updateGreenspaceCategory",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "UpdateGreenspaceCategoryInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspaceCategory",
+            "ofType" : null
+          },
+          "isDeprecated" : false,
+          "deprecationReason" : null
+        }, {
+          "name" : "deleteGreenspaceCategory",
+          "description" : null,
+          "args" : [ {
+            "name" : "input",
+            "description" : null,
+            "type" : {
+              "kind" : "NON_NULL",
+              "name" : null,
+              "ofType" : {
+                "kind" : "INPUT_OBJECT",
+                "name" : "DeleteGreenspaceCategoryInput",
+                "ofType" : null
+              }
+            },
+            "defaultValue" : null
+          }, {
+            "name" : "condition",
+            "description" : null,
+            "type" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryConditionInput",
+              "ofType" : null
+            },
+            "defaultValue" : null
+          } ],
+          "type" : {
+            "kind" : "OBJECT",
+            "name" : "GreenspaceCategory",
             "ofType" : null
           },
           "isDeprecated" : false,
@@ -2913,145 +3632,6 @@
             "ofType" : null
           },
           "defaultValue" : null
-        }, {
-          "name" : "name",
-          "description" : null,
-          "type" : {
-            "kind" : "NON_NULL",
-            "name" : null,
-            "ofType" : {
-              "kind" : "SCALAR",
-              "name" : "String",
-              "ofType" : null
-            }
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "images",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "price_per_meter",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pollinator_friendly",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "edible",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "allergen",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "light_requirement",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "watering_needs",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_type",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_depth",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "featured",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rooftop",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rainbed",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "indoor",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "green_wall",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
         } ],
         "interfaces" : null,
         "enumValues" : null,
@@ -3062,141 +3642,6 @@
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
-          "name" : "name",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "images",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "price_per_meter",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelFloatInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pollinator_friendly",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "edible",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "allergen",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "light_requirement",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "watering_needs",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_type",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelStringInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_depth",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelFloatInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "featured",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rooftop",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rainbed",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "indoor",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "green_wall",
-          "description" : null,
-          "type" : {
-            "kind" : "INPUT_OBJECT",
-            "name" : "ModelBooleanInput",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
           "name" : "and",
           "description" : null,
           "type" : {
@@ -3253,141 +3698,6 @@
             }
           },
           "defaultValue" : null
-        }, {
-          "name" : "name",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "images",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "price_per_meter",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "pollinator_friendly",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "edible",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "allergen",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "light_requirement",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "watering_needs",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_type",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "String",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "soil_depth",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Float",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "featured",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rooftop",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "rainbed",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "indoor",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
-        }, {
-          "name" : "green_wall",
-          "description" : null,
-          "type" : {
-            "kind" : "SCALAR",
-            "name" : "Boolean",
-            "ofType" : null
-          },
-          "defaultValue" : null
         } ],
         "interfaces" : null,
         "enumValues" : null,
@@ -3412,7 +3722,514 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "CreateGreenspacePlantsInput",
+        "name" : "CreatePlantMetadataInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "latin_name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "native",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_nursery",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "size_in_cm",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "image",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "featured",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "climate_zone",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pollinator_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "edible",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "rain_garden",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pet_kids_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "air_puryfying",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "sun_seeker",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelPlantMetadataConditionInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "latin_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "native",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_nursery",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "size_in_cm",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelFloatInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "image",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "featured",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "climate_zone",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pollinator_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "edible",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "rain_garden",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pet_kids_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "air_puryfying",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "sun_seeker",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelBooleanInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelPlantMetadataConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelPlantMetadataConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelPlantMetadataConditionInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "UpdatePlantMetadataInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "latin_name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "type",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "native",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "norwegian_nursery",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "size_in_cm",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Float",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "image",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "featured",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "climate_zone",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pollinator_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "edible",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "rain_garden",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "pet_kids_friendly",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "air_puryfying",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "sun_seeker",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "Boolean",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "DeletePlantMetadataInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "CreateGreenspacePlantInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3456,7 +4273,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "ModelGreenspacePlantsConditionInput",
+        "name" : "ModelGreenspacePlantConditionInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3485,7 +4302,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsConditionInput",
+              "name" : "ModelGreenspacePlantConditionInput",
               "ofType" : null
             }
           },
@@ -3498,7 +4315,7 @@
             "name" : null,
             "ofType" : {
               "kind" : "INPUT_OBJECT",
-              "name" : "ModelGreenspacePlantsConditionInput",
+              "name" : "ModelGreenspacePlantConditionInput",
               "ofType" : null
             }
           },
@@ -3508,7 +4325,7 @@
           "description" : null,
           "type" : {
             "kind" : "INPUT_OBJECT",
-            "name" : "ModelGreenspacePlantsConditionInput",
+            "name" : "ModelGreenspacePlantConditionInput",
             "ofType" : null
           },
           "defaultValue" : null
@@ -3518,7 +4335,7 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "UpdateGreenspacePlantsInput",
+        "name" : "UpdateGreenspacePlantInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -3558,7 +4375,171 @@
         "possibleTypes" : null
       }, {
         "kind" : "INPUT_OBJECT",
-        "name" : "DeleteGreenspacePlantsInput",
+        "name" : "DeleteGreenspacePlantInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "CreateGreenspaceCategoryInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_id",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_name",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "String",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "ModelGreenspaceCategoryConditionInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "category_id",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelIDInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_name",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelStringInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "and",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "or",
+          "description" : null,
+          "type" : {
+            "kind" : "LIST",
+            "name" : null,
+            "ofType" : {
+              "kind" : "INPUT_OBJECT",
+              "name" : "ModelGreenspaceCategoryConditionInput",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "not",
+          "description" : null,
+          "type" : {
+            "kind" : "INPUT_OBJECT",
+            "name" : "ModelGreenspaceCategoryConditionInput",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "UpdateGreenspaceCategoryInput",
+        "description" : null,
+        "fields" : null,
+        "inputFields" : [ {
+          "name" : "id",
+          "description" : null,
+          "type" : {
+            "kind" : "NON_NULL",
+            "name" : null,
+            "ofType" : {
+              "kind" : "SCALAR",
+              "name" : "ID",
+              "ofType" : null
+            }
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_id",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "ID",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        }, {
+          "name" : "category_name",
+          "description" : null,
+          "type" : {
+            "kind" : "SCALAR",
+            "name" : "String",
+            "ofType" : null
+          },
+          "defaultValue" : null
+        } ],
+        "interfaces" : null,
+        "enumValues" : null,
+        "possibleTypes" : null
+      }, {
+        "kind" : "INPUT_OBJECT",
+        "name" : "DeleteGreenspaceCategoryInput",
         "description" : null,
         "fields" : null,
         "inputFields" : [ {
@@ -4799,6 +5780,14 @@
         "onFragment" : false,
         "onField" : false
       }, {
+        "name" : "aws_api_key",
+        "description" : "Tells the service this field/object has access authorized by an API key.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
         "name" : "deprecated",
         "description" : null,
         "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
@@ -4812,14 +5801,6 @@
           },
           "defaultValue" : "\"No longer supported\""
         } ],
-        "onOperation" : false,
-        "onFragment" : false,
-        "onField" : false
-      }, {
-        "name" : "aws_api_key",
-        "description" : "Tells the service this field/object has access authorized by an API key.",
-        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
-        "args" : [ ],
         "onOperation" : false,
         "onFragment" : false,
         "onField" : false

@@ -5,7 +5,8 @@ type Project
       # allow owners of the project to create, update and delete their projects
       { allow: owner }
     ]
-  ) {
+  ) 
+  @key(name:"projectID", fields:["id"]) {
   id: ID!
   name: String!
   address: String!
@@ -13,41 +14,61 @@ type Project
   postalCode: String!
   end_date: String
   owner: String!
+  #projectgroup_ID: ProjectGroup @connection(fields:["id"])
 }
 
 type Plant
   @model(subscriptions: null)
   @auth(
     rules: [
-      # allow admins to create, update and delete plants
+      # allow nurseries to create, update and delete plants
       { allow: groups, groups: ["Admin"] }
       # allow all authenticated users to view plants
       { allow: private, operations: [read] }
       # allow all guest users (not authenticated) to view plants
       { allow: public, operations: [read] }
     ]
-  ) {
+  )
+  @key(name: "plantID", fields:["id"]) {
   id: ID!
-  name: String!
-  images: String
-  price_per_meter: Float
-  pollinator_friendly: String
-  edible: Boolean
-  allergen: Boolean
-  light_requirement: String
-  watering_needs: String
-  soil_type: String
-  soil_depth: Float 
-  featured: Boolean
-  rooftop: Boolean
-  rainbed: Boolean
-  indoor: Boolean
-  green_wall: Boolean
-
-  greenspaces: [GreenspacePlants] @connection(keyName: "byPlant", fields: ["id"])
+  greenspaces: [GreenspacePlant] @connection(keyName: "byPlant", fields: ["id"])
 }
 
-type GreenspacePlants
+type PlantMetadata
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      # allow nurseries to create, update and delete plants data
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view plants
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view plants
+      { allow: public, operations: [read] }
+    ]
+  )
+  @key(name: "foreignPlantID", fields:["id"])
+  {
+  id: ID!
+  plant: [Plant] @connection(keyName: "plantID", fields:["id"])
+  latin_name: String
+  norwegian_name: String
+  type: String
+  native: Boolean
+  norwegian_nursery: Boolean
+  size_in_cm: Float
+  image: String
+  featured: Boolean
+  climate_zone: String
+  #functional requirements
+  pollinator_friendly: Boolean
+  edible: Boolean
+  rain_garden: Boolean
+  pet_kids_friendly: Boolean
+  air_puryfying: Boolean
+  sun_seeker: Boolean #if false then shadow lover
+}
+
+type GreenspacePlant
   @model(subscriptions: null)
   @key(name: "byPlant", fields: ["plant_id", "greenspace_id"])
   @key(name: "byGreenspace", fields: ["greenspace_id", "plant_id"])
@@ -59,16 +80,24 @@ type GreenspacePlants
       { allow: public, operations: [read] }
       # only owner can see and edit his project plants
       { allow: owner, identityClaim: "email", ownerField: "customer" }
-      # allow admins to view orders
+      # allow admins to crud plants in greenspace 
       { allow: groups, groups: ["Admin"] }
     ]
   ) {
   id: ID!
   plant_id: ID!
   greenspace_id: ID!
-
   plant: Plant @connection(fields: ["plant_id"])
   greenspace: Greenspace @connection(fields: ["greenspace_id"])
+  #from_nursery: Plant_Nursery @connection(fields:["id"])
+}
+
+type GreenspaceCategory #rooftop, rainbed, etc.
+  @model(subscriptions: null)
+  @key(name: "greenSpaceCategory", fields:["category_id"]) {
+  id: ID!
+  category_id: ID!
+  category_name: String!
 }
 
 type Greenspace
@@ -82,12 +111,74 @@ type Greenspace
       # allow all guest users (not authenticated) to view greenspaces
       { allow: public, operations: [read] }
     ]
-  ) {
+  ) 
+  @key(name:"greenspaceID", fields:["id"]) {
   id: ID!
   name: String!
   images: String
   price: Float
-  
-  plants: [GreenspacePlants] @connection(keyName: "byGreenspace", fields: ["id"])
+  project: Project @connection(fields:["id"])
+  category: GreenspaceCategory @connection(fields:["id"])
+
+  plants: [GreenspacePlant] @connection(keyName: "byGreenspace", fields: ["id"])
 }
 
+#------------------------------------------------------------------------------------------------------
+
+#type UserGroup
+ # @key(name:"usergroupID", fields:["user_ID"]){
+
+  #user_ID: User @connection(fields:["id"])
+  #group_ID: ProjectGroup @connection(fields:["id"])
+
+#}
+
+#type ProjectGroup
+
+ # @key(name:"projectgroupID", fields:["id"]) {
+
+  #id: ID!
+  #group_name: String!
+  #primary_email: String!
+#}
+
+#type User
+ #   @key(name: "userID", fields: ["id"])
+  #  {
+   #     id: ID!
+    #    first_name: String!
+     #   last_name: String
+      #  email: String
+      #  phone_number: Int
+      #  user_role: String!
+    #}
+
+
+#type Order 
+ # @key(name:"orderID", fields:["id"])
+  #{
+
+   #   id: ID!
+    #  greenspace_ordered: Greenspace @connection(fields:["id"])
+    #  ordered_by_group: ProjectGroup @connection(fields:["id"])
+    #  order_placed: String
+    #  order_price: Int
+  #}
+
+  #type PlantNursery 
+   # @key(name:"nurseryID", fields:["id"])
+   # {
+
+    #  id: ID!
+    #  nursery_name: String!
+    #  nursery_email: String
+    #  nursery_number: Int
+    #}
+
+#type BillingCompany
+  #@key(name:"billingCompanyID", fields:["id"])
+  #{
+  #  company_name: String!
+  #  company_groupID: ProjectGroup @connection(fields:["id"])
+  #  billing_email: String!
+  #}
