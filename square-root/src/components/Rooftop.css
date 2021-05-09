@@ -1,5 +1,6 @@
 .img-rooftop1 {
   height: 600px;
+  
 }
 
 .rooftop{
@@ -8,21 +9,22 @@
     width: 95%;
     
 }
-
-
 .rooftopinfo {
   display: grid;
   grid-template-columns: 1.3fr 1fr;
   grid-gap: 3%;
-  padding-top: 20px;
+  padding-top: 2%;
+
+
+  
 }
 h5 {
   font-size: 30px;
 }
 
 .similaricon{
-    height: 190px;
-    width: 300px;
+    height: 10%;
+    width: 50%;
     padding-top: 3%;
     padding-right: 3%;
     padding-left: 3%;
@@ -40,7 +42,7 @@ p {
   position: absolute;
   bottom: 0px;
   width: 42%;
-  height: 53%;
+  height: 52.7%;
 }
 .tilpass {
   padding-bottom: 20px;

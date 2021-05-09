@@ -1,0 +1,216 @@
+.p-info{
+    padding-bottom: 1%;
+    padding-left: 7%;
+}
+
+.pf{
+    display:block;
+}
+label{
+    display:block;
+    
+}
+.header{
+    padding-left: 7%;
+}
+
+
+.filters{
+    
+  height: auto; 
+  width: 18%; 
+  position: fixed; 
+  z-index: 1; 
+  top: 28%; 
+  left: 0%;
+  padding-left: 2.5%;
+  background-color: var(--offWhite); 
+  overflow-x: hidden; 
+  padding-top: 20px;
+}
+
+input{
+    margin:2%;
+
+}
+.pn{
+    display: flex;
+    flex-wrap: wrap;
+    width: 80%;
+    margin-left: 20%;
+    align-items: center;
+
+}
+.plants{
+     /* Same as the width of the sidebar */
+    padding: 40px;
+    height: 30%;
+    flex-wrap: wrap;
+    
+    
+}
+.plant{
+    height: 200px;
+    
+}
+.name{
+    padding-left: 27%;
+    align-items: center;
+    
+}
+.check{
+    position: absolute;
+    top: 22%;
+  left: 49%;
+}
+.orders{
+    position: absolute;
+    top: 18%;
+  right: 5%;
+  font-size: 20px;
+ 
+}
+
+.btn-orders {
+  float:right;
+  background-color: white;
+  border:none;
+  padding:10px;
+  border-radius: 5px;
+  display: block;
+  cursor: pointer;
+  float: right;
+  margin-top: 3%;
+  display: inline-flex;
+}
+
+.order-items {
+  font-weight: 600;
+  font-size: 15px;
+}
+
+
+/*MODAL*/
+/* !THIS CHANGES ALL MODALS! */
+.ReactModal__Overlay--after-open{
+  background: rgba(0, 0, 0, 0.5) !important;
+  z-index: 1000;
+  position: fixed;
+  -webkit-transition: 0.2s ease;
+}
+
+body.ReactModal__Body--open{
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  height: 100%;
+}
+
+
+/* ORDER MODAL */
+.modal-orders {
+    background:white;
+    display: block;
+    margin:auto;
+    width: 30%;
+    height: 80%;
+    position:absolute;
+    top: 0px;
+    right:0px;
+    overflow: auto;
+  }
+  
+  .o-modal-content {
+    color: black;
+  }
+
+  .o-h1 {
+    font-size: 20px;
+    padding:30px;
+  }
+
+  .o-modal-container {
+    padding:5%;
+    margin:auto;
+    position:relative;  
+  }
+
+  
+
+  /*TABLE IN MODAL */
+
+  .modal-list {
+    width:100%;
+    overflow: scroll;
+  }
+
+  .modal-list tr{
+    border-bottom: 1px solid grey;
+    border-collapse: collapse;
+  }
+
+  .modal-list td{
+    vertical-align: middle;
+    left: 50px;
+  
+  }
+
+  td.o-modal-img {
+    width:20%;
+
+  }
+  td.o-modal-name{
+    width:auto;
+  }
+
+  td.o-modal-remove{
+    width:20%;
+  }
+
+  /* BUTTONS FOOTER IN MODAL */
+
+  .modal-btns-footer {
+    background-color: #F4F4F4;
+   
+    position:sticky;
+    bottom:0;
+    padding:20px;
+    width:100%;
+    text-align: center;
+  
+  
+  }
+  .orders-btn-close{
+    margin: auto;
+    width: 20%;
+    background-color: #E5E5E5;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: var(--mainBlack);
+    border-radius: 5px;
+    font-weight: 400;
+  }
+  
+.orders-btn-save {
+    margin-left: 10px;
+    width: 40%;
+    background-color: #3A83F7;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    color: white;
+    border-radius: 5px;
+    font-weight: 600;
+    
+}
+
+.orders-btn-save:hover {
+  background-color: #6BA3FA;
+}
+
+.orders-btn-close:hover {
+  background-color: #BEBBBB;
+}
+
+  /*END OF MODAL*/

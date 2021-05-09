@@ -1,0 +1,41 @@
+.footer{
+    margin-top: 1rem;
+    padding: 1rem;
+    background-color: var(--offWhite);
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+.footer-container{
+    width: 80%;
+    position: relative;
+    left: 8%;
+    padding-top: 2%;
+}
+.footer-child1{
+    position: relative;
+    float: left;
+    width: 43%;
+    padding-right: 5%;
+}
+.footer-child2{
+    position: relative;
+    float: left;
+    width: 22%;
+    display: block;
+    padding-left: 2%;
+
+}
+.footer-child3{
+    position: relative;
+    float: left;
+    width: 33%;
+    padding-left: 8%;
+}
+.footer-h{
+    font-weight: bold;
+    font-size: 20px;
+}
+.footer-p{
+    padding-right: 5%;
+}

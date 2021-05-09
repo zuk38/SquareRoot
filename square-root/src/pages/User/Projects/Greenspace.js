@@ -9,7 +9,7 @@ import All_Projects from "./All_Projects";
 import data from "../../data.json";
 
 
-export default class Dashboard extends Component {
+export default class Greenspace extends Component {
             render() {
             return (<div> {" "}
                 {
@@ -26,98 +26,71 @@ export default class Dashboard extends Component {
 
                                                 return (<div key={i}>
                                                     {
+                                                        <div className="greensp-page">
 
-                                                    <div class = "p-row"> 
+                                                    <div class = "p-header"> 
                                     <div class="p-column left">
-                                                        <a href="/Projects" class="btn-back">
-                                                            <i class="fas fa-chevron-left"></i>Alle Prosjekter
+                                                        <a href="/Dashboard" class="btn-back">
+                                                            <i class="fas fa-chevron-left"></i>{project.project_name}
                                                         </a>
-                                                        <div class="menu-vertical">
-                                                            <a href="#" class="active">
-                                                                <i class="fas fa-columns"></i>Dashbord
-                                                            </a>
-                                                            <a href="/Members">
-                                                                <i class="fas fa-users"></i>Medlemmer
-                                                            </a>
-                                                            <a href="/Orders">
-                                                                <i class="fas fa-tasks"></i>Bestillinger
-                                                            </a>
-                                                            <a href="/Settings">
-                                                                <i class="fas fa-cog"></i>Innstillinger
-                                                            </a>
-                                                        </div>
+                                                        
+                                                        <h2>{
+                                                            
+                                                        }</h2>
                                                     </div>
 
 
                                                 ​ <div class = "p-column right"> 
-                                                <div className="p-title">
-                                                        <img className="project-icon"
-                                                            src={icon}
-                                                            alt="Prosjektikon"/>{" "}
-                                                        {/*GET DATA*/}
-                                                        <h1 className="p-h1">
+                                                
+                                                        
+                                                <h1 className="p-h1">
                                                             {
-                                                            project.project_name
-                                                        }: {
                                                             greenspace.greenspace_name
                                                         }</h1>
-                                                    </div>
-                                                    <br></br>
-                                    
-                                                <div class="greenspace_plantList">
                                                     
-                                                      
-                                                        {/*TABLE must GET data from GraphQL*/}
+                                                    </div>
+                                                    </div>
+                                                    
+                                    <div class="greensp-center">
+                                    
+                                               
                                                         <table className="p-table">
                                                             <tr className="p-tr">
-                                                                <th className="p-th">PROSJEKTNAVN</th>
-                                                                <th className="p-th">ADRESSE</th>
-                                                                <th className="p-th">OPPRETTET</th>
+                                                                <th classname="p-th">BILDE</th>
+                                                                <th className="p-th">PLANTE</th>
+                                                                <th className="p-th">ANTALL</th>
+                                                                <th className="p-th">LAGT TIL</th>
+                    
                                                             </tr>
                                                             <tr>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_name
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_adress
-                                                                }, {
-                                                                    project.project_zip
+                                                            <td className="p-td">
+                                                            {
+                                                                    greenspace.plant_img1
                                                                 }
+                                                            </td>
+                                                                <td className="p-td">
                                                                     {
-                                                                    project.project_city
+                                                                    greenspace.plant_name1
                                                                 }</td>
                                                                 <td className="p-td">
                                                                     {
-                                                                    project.project_start
+                                                                    greenspace.plant_quantity1
+                                                                }
+                                                                    </td>
+                                                                <td className="p-td">
+                                                                {
+                                                                    greenspace.plant_date1
                                                                 }</td>
+                                                                
                                                             </tr>
-                                                            <tr>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_name
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_adress
-                                                                }, {
-                                                                    project.project_zip
-                                                                }
-                                                                    {
-                                                                    project.project_city
-                                                                }</td>
-                                                                <td className="p-td">
-                                                                    {
-                                                                    project.project_start
-                                                                }
-                                                                </td>
-                                                            </tr>
+                                                          
                                                         </table>
+
+                                                       
                                                   </div>
-                                                </div>
-                                                </div>
-                                                    }
+                                                
+                                                
+                                                    </div>}
                                             </div>
                                             
                                                 ) 
