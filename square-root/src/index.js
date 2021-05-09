@@ -4,6 +4,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from "react-router-dom";
 import '@fortawesome/fontawesome-free/css/all.min.css'
+import WebFont from 'webfontloader';
+
+WebFont.load({
+  google: {
+    families: ['Poppins Web:100,200,300,400,500,600,700,800', 'sans-serif']
+  }
+});
 
 require('dotenv').config()
 
