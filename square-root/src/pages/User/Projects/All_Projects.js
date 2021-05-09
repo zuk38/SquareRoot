@@ -4,14 +4,12 @@ import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../../functions/apiCalls";
 import ProjectsContainer from "../../../components/user/ProjectsContainer";
-import data from "../../data.json";
-import { ProjectContext, withProjectConsumer } from "../../../context/projects";
+import { withProjectConsumer } from "../../../context/projects";
 import API, { graphqlOperation } from "@aws-amplify/api";
 import { createProject } from "../../../api/mutations";
 
 function All_Projects( {context }) {
-  const { projects, loading, fetchProjects } = context;
-
+  const { fetchProjects } = context;
   const [modalOpen, setModalOpen] = useState(false);
   const [projectDetails, setProjectDetails] = useState({
     name: "",
@@ -68,15 +66,6 @@ function All_Projects( {context }) {
         !projectDetails.address
       )
         return;
-      /*var today = new Date(),
-        date =
-          today.getFullYear() +
-          "-" +
-          (today.getMonth() + 1) +
-          "-" +
-          today.getDate();
-          console.log(date)
-      setProjectDetails({ ...projectDetails, start_date: date });*/
       console.log(projectDetails)
       await API.graphql(
         graphqlOperation(createProject, { input: projectDetails })
