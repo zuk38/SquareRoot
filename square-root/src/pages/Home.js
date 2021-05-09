@@ -47,7 +47,7 @@ export default function Home(props) {
   return (
     <div>
       <HeroSection/> 
-      <section className="section">
+      {/*<section className="section">
         <Container>
           <div>
             <h3>Get in touch</h3>
@@ -84,7 +84,7 @@ export default function Home(props) {
             </Form>
           </div>
         </Container>
-      </section>
+                </section>*/}
     </div>
   );
 }
