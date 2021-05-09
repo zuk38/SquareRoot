@@ -172,6 +172,26 @@ they should navigate through the menu, rather than us setting up another route f
     </div>
             </button>
 
+            <button onClick={
+                    this.openModal
+                } className="btn-dash-greenspace"
+                
+            >
+                  <div className="green-item"><img src={
+                
+                "../../../images/musa.png"
+            }
+            className="project_img"/>
+        <div className="green-info">
+            <h3 className="p-h3">
+                Planter</h3>
+            <h4 className="p-h4">
+                Inneplanter</h4>
+        </div>
+
+    </div>
+            </button>
+
            
             
           
