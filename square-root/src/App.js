@@ -201,7 +201,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Why"
+                path="/Why-urban-greenspaces"
                 render={(props) => <Why {...props} auth={authProps} />}
               />
               <Route
@@ -211,7 +211,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Partner"
+                path="/become-a-partner"
                 render={(props) => <Partner {...props} auth={authProps} />}
               />
               <Route
