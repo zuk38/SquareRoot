@@ -1,9 +1,9 @@
 import React, {Component} from 'react';
 import data from "../pages/data.json";
-import './Rooftop.css';
+import './IndoorExample.css';
 import Modal from "react-modal";
 
-class RooftopExample1 extends Component {
+class IndoorExample extends Component {
 
     state = {
         modalOpen: false,
@@ -38,19 +38,19 @@ class RooftopExample1 extends Component {
         const {items} = this.state;
 
         return (
-            <div className='roof'>
-                <div className='rooftop'>
+            <div className='indoor'>
+                <div className='indoor1'>
                     {
-                    data.Rooftop1.map((rooftop, i) => {
+                    data.Indoor.map((indoor, i) => {
                         return (
                             <div key={i}>
-                                <div className='rooftopinfo'>
+                                <div className='indoorinfo'>
                                     <img src={
-                                            rooftop.icon
+                                            indoor.icon
                                         }
-                                        className='img-rooftop1'/>
+                                        className='img-indoor1'/>
                                     <div> {
-                                        rooftop.roles.map(function (role, i) {
+                                        indoor.roles.map(function (role, i) {
                                             return <div key={i}>
                                                 <h5>{
                                                     role.title
@@ -95,20 +95,20 @@ class RooftopExample1 extends Component {
                                 </div>
                                 <div className='requirements'>
                                     <h5>{
-                                        rooftop.city
+                                        indoor.city
                                     }</h5>
                                     <div className="func">
                                         <h4 className="h4">
                                             {
-                                            rooftop.func
+                                            indoor.func
                                         }</h4>
                                         <h4 className="h4">
                                             {
-                                            rooftop.main
+                                            indoor.main
                                         }</h4>
                                         <div className="func_info">
                                             {
-                                            rooftop.functions.map(function (func, i) {
+                                            indoor.functions.map(function (func, i) {
                                                 return (
                                                     <div key={i}>
                                                         <div className='req_info'>
@@ -124,7 +124,7 @@ class RooftopExample1 extends Component {
                                         } </div>
                                         <div className="main_info">
                                             {
-                                            rooftop.maintenance.map(function (main, i) {
+                                            indoor.maintenance.map(function (main, i) {
                                                 return (
                                                     <div key={i}>
                                                         <div className="req_box">
@@ -146,7 +146,7 @@ class RooftopExample1 extends Component {
                                 </div>
                                 <div className='description'>
                                     {
-                                    rooftop.description.map(function (desc, i) {
+                                    indoor.description.map(function (desc, i) {
                                         return (
                                             <div key={i}>
                                                 <div className='desc'>
@@ -262,4 +262,4 @@ class RooftopExample1 extends Component {
         );
     }
 }
-export default RooftopExample1;
+export default IndoorExample;

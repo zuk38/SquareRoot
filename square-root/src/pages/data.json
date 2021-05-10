@@ -72,7 +72,152 @@
 
     }
   ],
-  
+  "Rainbed": [
+    {
+      "icon": "../../../images/rooftop.png",
+      "city": "OSLO",
+      "func": "Functional Requirements",
+      "type": "Type",
+      "origin": "Origin",
+      "sun": "Sun light",
+      "main": "Maintenance needs",
+      "roles": [
+        {
+          "title": "Rainbed",
+          "description": "Tekst om hvorfor Rainbed er bra for alle.",
+          "similarurl1": "blank",
+          "similaricon1": "../../../images/rooftop.png",
+          "similarurl2": "blank",
+          "similaricon2": "../../../images/rooftop.png",
+          "city": "OSLO",
+          "func": "Functional Fea"
+        }
+      ],
+      "functions": [
+        {
+          "name": "Stormwater Management",
+          "icon": "../../../images/stormwater.png",
+          "True/false": true
+        },
+        {
+          "name": "Biodiverse",
+          "icon": "../../../images/bee.png",
+          "True/false": false
+        }
+      ],
+      "maintenance": [
+        {
+          "name": "Sun: Low",
+          "icon": "../../../images/sun.png"
+        },
+        {
+          "name": "Water: Low",
+          "icon": "../../../images/waterdrop.png"
+        },
+        {
+          "name": "Soil: High",
+          "icon": "../../../images/showel.png"
+        }
+
+      ],
+      "description": [
+        {
+          "name": "Description",
+          "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
+          
+        }
+
+      ],
+      "plants": [
+        {
+          "plant1":{
+            "name": "plante 1",
+            "stormwater": true
+          },
+          "plant2":{
+            "name": "plante 2",
+            "stormwater": false
+          }
+          
+        }
+    
+      ]
+
+    }
+  ],
+  "Indoor": [
+    {
+      "icon": "../../../images/rooftop.png",
+      "city": "OSLO",
+      "func": "Functional Requirements",
+      "type": "Type",
+      "origin": "Origin",
+      "sun": "Sun light",
+      "main": "Maintenance needs",
+      "roles": [
+        {
+          "title": "Indoor",
+          "description": "Tekst om hvorfor Indoor er bra for alle.",
+          "similarurl1": "blank",
+          "similaricon1": "../../../images/rooftop.png",
+          "similarurl2": "blank",
+          "similaricon2": "../../../images/rooftop.png",
+          "city": "OSLO",
+          "func": "Functional Fea"
+        }
+      ],
+      "functions": [
+        {
+          "name": "Stormwater Management",
+          "icon": "../../../images/stormwater.png",
+          "True/false": true
+        },
+        {
+          "name": "Biodiverse",
+          "icon": "../../../images/bee.png",
+          "True/false": false
+        }
+      ],
+      "maintenance": [
+        {
+          "name": "Sun: Low",
+          "icon": "../../../images/sun.png"
+        },
+        {
+          "name": "Water: Low",
+          "icon": "../../../images/waterdrop.png"
+        },
+        {
+          "name": "Soil: High",
+          "icon": "../../../images/showel.png"
+        }
+
+      ],
+      "description": [
+        {
+          "name": "Description",
+          "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
+          
+        }
+
+      ],
+      "plants": [
+        {
+          "plant1":{
+            "name": "plante 1",
+            "stormwater": true
+          },
+          "plant2":{
+            "name": "plante 2",
+            "stormwater": false
+          }
+          
+        }
+    
+      ]
+
+    }
+  ],
 
   "Projects": [
     { 

@@ -13,7 +13,7 @@ import Plants from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant"
 import Error from "./pages/Error";
 import Rooftop from "./pages/Rooftop"
-import {Rainbed} from "./pages/Rainbed"
+import Rainbed from "./pages/Rainbed"
 import Indoor from "./pages/Indoor"
 import All_Projects  from "./pages/User/Projects/All_Projects"
 import Dashboard from "./pages/User/Projects/Dashboard"
