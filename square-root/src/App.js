@@ -196,7 +196,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Howitworks"
+                path="/how-it-works"
                 render={(props) => <Howitworks {...props} auth={authProps} />}
               />
               <Route
