@@ -485,7 +485,7 @@ img[src*="plus"]{
 
 .green-item:hover .green-info {
   padding: 20px;
-  margin-top:20px;
+  margin-top:10%;
   transform: scale(1.2);
   transform-origin:50% 50%;
   -webkit-transition: 0.5s ease;
