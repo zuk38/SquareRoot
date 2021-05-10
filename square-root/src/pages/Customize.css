@@ -1,7 +1,4 @@
-.p-info{
-    padding-bottom: 1%;
-    padding-left: 7%;
-}
+
 
 .pf{
     display:block;
@@ -10,22 +7,58 @@ label{
     display:block;
     
 }
-.header{
-    padding-left: 7%;
+
+.customize-header{
+  top:13%;
+  left:45%;
+  position:absolute;
+}
+.btn-white{
+    background-color:white;
+    position:absolute;
+    top:13%;
+  }
+
+.btn-orders {
+  background-color: white;
+  border:none;
+  padding:10px;
+  border-radius: 5px;
+  cursor: pointer;
+  float:right;
+  display: inline-flex;
+  position:absolute;
+  top:13%;
+  right:0;
 }
 
 
+.cust-concept-title{
+  position:relative;
+  left:5%;
+  width:100%;
+  margin-top:8%;
+}
+
+.cust-concept-title h1{
+  font-size:50px;
+  font-weight:bold;
+}
+
+.cust-concept-title p{
+    width:60%;
+    padding-top:0;
+}
+
 .filters{
-    
   height: auto; 
-  width: 18%; 
-  position: fixed; 
+  width: 18%;
   z-index: 1; 
-  top: 28%; 
+  top: 50%; 
   left: 0%;
   padding-left: 2.5%;
   background-color: var(--offWhite); 
-  overflow-x: hidden; 
+  position:absolute;
   padding-top: 20px;
 }
 
@@ -58,11 +91,73 @@ input{
     align-items: center;
     
 }
-.check{
-    position: absolute;
-    top: 22%;
-  left: 49%;
+
+/*CHECKBOXES*/
+.checkbox-container-float-right{
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 15px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  float:right;
 }
+
+.checkbox-container-float-right input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox-container-float-right:hover{
+background-color:purple;
+}
+
+
+.checkmark-is-round{
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 40px;
+  width: 40px;
+  border: 1px solid #799779;
+}
+
+.checkmark-is-round:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+
+.checkbox-container-float-right input:checked ~ .checkmark-is-round:after {
+  display: block;
+}
+
+
+.checkbox-container-float-right .checkmark-is-round:after {
+  left: 15px;
+  top: 9px;
+  width: 8px;
+  height: 20px;
+  border: 3px solid #799779;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  
+}
+
+/*END OF CHECKBOXES*/
+
+
 .orders{
     position: absolute;
     top: 18%;
@@ -71,18 +166,7 @@ input{
  
 }
 
-.btn-orders {
-  float:right;
-  background-color: white;
-  border:none;
-  padding:10px;
-  border-radius: 5px;
-  display: block;
-  cursor: pointer;
-  float: right;
-  margin-top: 3%;
-  display: inline-flex;
-}
+
 
 .order-items {
   font-weight: 600;
@@ -171,7 +255,6 @@ body.ReactModal__Body--open{
 
   .modal-btns-footer {
     background-color: #F4F4F4;
-   
     position:sticky;
     bottom:0;
     padding:20px;
@@ -214,3 +297,5 @@ body.ReactModal__Body--open{
 }
 
   /*END OF MODAL*/
+
+  

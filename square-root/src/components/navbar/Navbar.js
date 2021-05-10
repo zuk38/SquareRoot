@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import logo from "../../images/logo.png";
+import logo from "../../images/logo-dark.png";
 import { Link, NavLink } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";

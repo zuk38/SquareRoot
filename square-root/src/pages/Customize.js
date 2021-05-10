@@ -142,17 +142,13 @@ function PlantPage() {
 
     return (
         <div>
-            <a href="Rooftop"><i class="fas fa-chevron-left"/>Tilbake til Rooftop</a>
-            <div className="check">
-                <button class="button is-rounded">
-                    <span class="icon is-small">
-                        <i class="fas fa-check"></i>
-                    </span>
-                </button>
-            </div>
-
-
+        <div className="cust-header-span">
+            <a href="/Rooftop" class="btn-back btn-white"><i class="fas fa-chevron-left"/>Tilbake til Takterrasse</a>
+            
+        <h5 className="customize-header">Tilpass Takterasse</h5>
+        
             {/*BUTTON OPEN MODAL*/}
+
 
             <button className="btn-orders"
                 onClick={
@@ -165,6 +161,7 @@ function PlantPage() {
                 </div>
                 
             </button>
+            </div>
 
 
             {/*MODAL*/}
@@ -235,8 +232,10 @@ function PlantPage() {
             </Modal>
 
 
-            <h5 className="header">Customize Rooftop Garden</h5>
-            <p className="p-info">Tekst om hvorfor Rooftop Garden er bra for alle.</p>
+<div className="customize-content">
+<div className="cust-concept-title"><h1>OSLO</h1>     
+            <p>I Oslo anbefales det med biologisk mangfoldige planter og temperaturregulerende planter.
+Vi kan skrive mer her for å gi mer informasjon.</p></div>
             <div className="filters">
                 {
                 Object.keys(plantFilters).map((pf) => {
@@ -264,10 +263,14 @@ function PlantPage() {
                 {
                 filteredPlants.map((plant) => {
                     return <div className="plants">
+                    <label className="checkbox-container-float-right">
+                            <input type="checkbox"/><span class="checkmark-is-round"></span>
+                            </label>
                         <img className="plant"
                             src={
                                 plant.img
                             }/>
+                            
                         <h3 className="name">
                             {
                             plant.name
@@ -275,6 +278,7 @@ function PlantPage() {
                     </div>
             })
             } </div>
+        </div>
         </div>
     );
 
