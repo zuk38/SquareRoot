@@ -8,8 +8,15 @@ import { ProjectProvider } from "./context/projects"
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
+import WebFont from 'webfontloader';
 
-require("dotenv").config();
+WebFont.load({
+  google: {
+    families: ['Poppins Web:100,200,300,400,500,600,700,800', 'sans-serif']
+  }
+});
+
+require('dotenv').config()
 
 ReactDOM.render(
   <ProjectProvider>

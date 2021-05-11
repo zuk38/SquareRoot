@@ -5,6 +5,11 @@ export const NavbarData = [
     className: "sidebar-text"
   },
   {
+    title: "HOW IT WORKS",
+    path: "/how-it-works",
+    className: "sidebar-text",
+  },
+  {
     title: "WHY URBAN GREEN SPACES",
     path: "/why-urban-greenspaces",
     className: "sidebar-text",

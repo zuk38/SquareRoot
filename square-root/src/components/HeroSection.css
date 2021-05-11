@@ -5,7 +5,6 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  font-family: "Montserrat", sans-serif;
 }
 .imagebox {
   display: grid;
@@ -26,12 +25,82 @@
   position: relative;
   bottom: 0px;
 }
-.frontimage{
+
+/*.front-image{
   position: relative;
-  
   height: 750px;
   width: 1850px;
+  }*/
+
+/*FRONT-HEADER*/
+
+
+.hero-header{
+  position:relative;
+  color:white;
+  top:0;
+  left:0;
+  height: 600px;
+  width: 100vw;
+  overflow: hidden;
+  background: #3e3d3d;  /* fallback colour. Make sure this is just one solid colour. */
+  background: -webkit-linear-gradient(rgba(165, 154, 148, 0.8));
+  }
+
+.hero-background{
+  object-fit:cover;
+  opacity:0.6;
 }
+
+
+.top-left{
+  position:absolute;
+  top:0px;
+  left:0px;
+  width:60%;
+}
+
+.bottom-right{
+  position:absolute;
+  left:40%;
+  top:60%;
+  width:61%;
+  padding-right:7%;
+  
+}
+
+.hero-header-text h2{
+  font-size: 30px;
+  font-weight: bold;
+  text-align: left;
+  margin-left:10px;
+}
+
+.hero-asterisk {
+  float:left;
+  width: 10px;
+  height:10px;
+  margin-top:10px;
+  margin-right:10px;
+}
+
+.frontoption{
+  margin-top:20px;
+}
+
+.front-btn-1{
+  padding:20px;
+  width:30%;
+}
+
+.front-btn-2{
+  padding:20px;
+  width:30%;
+}
+
+/*END FRONT-HEADER*/
+
+
 .h1 {
   color: rgb(0, 0, 0);
   display: flex;
@@ -52,18 +121,15 @@ button {
   position: relative;
   bottom: 0px;
 }
+
 .image1 {
   display: block;
   height: 550px;
   width: 1850px;
-
   padding-top: 8%;
   padding-left: 6%;
 }
-.front{
-  position: relative;
-  text-align: center;
-}
+
 .fronttext{
   position: absolute;
   bottom: 20%;
@@ -78,11 +144,5 @@ button {
   font-size: 30px;
   color: white;
   width: 40%;
-  
-}
-.frontoption{
-  position: absolute;
-  bottom: 3%;
-  left: 39%;
   
 }

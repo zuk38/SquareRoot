@@ -158,9 +158,13 @@ const plantList = [
 
     return (
       <div>
-          <a href="Home"><i class="fas fa-chevron-left"/>Hjem</a>
-        <h5 className="header">Our Plants</h5>
-        <p className="p-info">Tekst om hvorfor alle våre planter er bra.</p>
+         
+
+    <div className="customize-content">
+<div className="cust-concept-title"><h1>PLANTER</h1>     
+            <p>I Oslo anbefales det med biologisk mangfoldige planter og temperaturregulerende planter.
+Vi kan skrive mer her for å gi mer informasjon.</p></div>
+          </div>
         <div className="filters">
           {
             Object.keys(plantFilters).map((pf) => { 

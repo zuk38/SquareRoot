@@ -48,16 +48,16 @@ export default function Dropdown(props) {
         <div className="my-dropdown">
           <div className="menu">
             <DropdownItem leftIcon={<ProjectIcon />} path="/projects">
-              My Projects
+              Mine Prosjekter
             </DropdownItem>
             <DropdownItem leftIcon={<AccountIcon />} path="/account">
-              Account
+              Kontoinnstillinger
             </DropdownItem>
-            <DropdownItem leftIcon={<HelpICon />} path="/help">
-              Help Center
-            </DropdownItem>
+            {/*<DropdownItem leftIcon={<HelpICon />} path="/help">
+              Hjelp
+      </DropdownItem>*/}
             <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
-              Log Out
+              Logg Ut
             </DropdownItem>
           </div>
         </div>

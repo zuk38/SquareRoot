@@ -13,15 +13,15 @@ import Plants from "./pages/Plants";
 import SinglePlant from "./pages/SinglePlant";
 import Admin from "./pages/Admin";
 import Error from "./pages/Error";
-import Rooftop from "./pages/Rooftop";
-import { Rainbed } from "./pages/Rainbed";
-import Indoor from "./pages/Indoor";
-import All_Projects from "./pages/User/Projects/All_Projects";
-import Dashboard from "./pages/User/Projects/Dashboard";
-import Greenspace from "./pages/User/Projects/Greenspace";
-import Members from "./pages/User/Projects/Members";
-import Orders from "./pages/User/Projects/Orders";
-import Settings from "./pages/User/Projects/Settings";
+import Rooftop from "./pages/Rooftop"
+import Rainbed from "./pages/Rainbed"
+import Indoor from "./pages/Indoor"
+import All_Projects  from "./pages/User/Projects/All_Projects"
+import Dashboard from "./pages/User/Projects/Dashboard"
+import Greenspace from "./pages/User/Projects/Greenspace"
+import Members from "./pages/User/Projects/Members"
+import Orders from "./pages/User/Projects/Orders"
+import Settings from "./pages/User/Projects/Settings"
 import Customize from "./pages/Customize"
 import Howitworks from "./pages/Howitworks"
 import Why from "./pages/Why"
@@ -194,7 +194,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/Howitworks"
+                path="/how-it-works"
                 render={(props) => <Howitworks {...props} auth={authProps} />}
               />
               <Route
@@ -204,7 +204,7 @@ class App extends Component {
               />
               <Route
                 exact
-                path="/About"
+                path="/about-us"
                 render={(props) => <About {...props} auth={authProps} />}
               />
               <Route
