@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import data from "../pages/data.json";
-import "./Rooftop.css";
+import "./SingleGreenspace.css";
 import Modal from "react-modal";
 
 class RooftopExample1 extends Component {
@@ -37,13 +37,13 @@ class RooftopExample1 extends Component {
     const { items } = this.state;
 
     return (
-      <div className="roof">
-        <div className="rooftop">
+      <div>
+        <div className="greenspace">
           {data.Rooftop1.map((rooftop, i) => {
             return (
               <div key={i}>
-                <div className="rooftopinfo">
-                  <img src={rooftop.icon} className="img-rooftop1" />
+                <div className="greenspaceinfo">
+                  <img src={rooftop.icon} className="img-greenspace" />
                   <div>
                     {" "}
                     {rooftop.roles.map(function(role, i) {

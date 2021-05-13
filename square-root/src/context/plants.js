@@ -16,7 +16,7 @@ class PlantProvider extends Component {
     let tempPlants = [...this.state.plants];
     const plant = tempPlants.find((plant) => plant.name === name);
     return plant;
-  }
+  };
 
   componentDidMount() {
     //this.fetchPlants();
@@ -41,7 +41,7 @@ class PlantProvider extends Component {
 
   render() {
     return (
-      <PlantContext.Provider value={{ ...this.state }}>
+      <PlantContext.Provider value={{ ...this.state, getPlant: this.getPlant }}>
         {this.props.children}
       </PlantContext.Provider>
     );
