@@ -82,6 +82,26 @@ export const listPlants = /* GraphQL */ `
         id
         createdAt
         updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
         greenspaces {
           nextToken
         }
@@ -96,6 +116,31 @@ export const getPlant = /* GraphQL */ `
       id
       createdAt
       updatedAt
+      metadata {
+        id
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          id
+          createdAt
+          updatedAt
+        }
+      }
       greenspaces {
         items {
           id
@@ -104,38 +149,6 @@ export const getPlant = /* GraphQL */ `
           createdAt
           updatedAt
           customer
-        }
-        nextToken
-      }
-    }
-  }
-`;
-export const getPlantMetadata = /* GraphQL */ `
-  query GetPlantMetadata($id: ID!) {
-    getPlantMetadata(id: $id) {
-      id
-      latin_name
-      norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
-      createdAt
-      updatedAt
-      plant {
-        items {
-          id
-          createdAt
-          updatedAt
         }
         nextToken
       }
@@ -169,10 +182,64 @@ export const listPlantMetadatas = /* GraphQL */ `
         createdAt
         updatedAt
         plant {
-          nextToken
+          id
+          createdAt
+          updatedAt
         }
       }
       nextToken
+    }
+  }
+`;
+export const getPlantMetadata = /* GraphQL */ `
+  query GetPlantMetadata($id: ID!) {
+    getPlantMetadata(id: $id) {
+      id
+      latin_name
+      norwegian_name
+      type
+      native
+      norwegian_nursery
+      size_in_cm
+      image
+      featured
+      climate_zone
+      pollinator_friendly
+      edible
+      rain_garden
+      pet_kids_friendly
+      air_puryfying
+      sun_seeker
+      createdAt
+      updatedAt
+      plant {
+        id
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        greenspaces {
+          nextToken
+        }
+      }
     }
   }
 `;
@@ -188,6 +255,26 @@ export const getGreenspacePlant = /* GraphQL */ `
         id
         createdAt
         updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
         greenspaces {
           nextToken
         }

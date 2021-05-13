@@ -4,25 +4,27 @@ import App from "./App";
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
-import { ProjectProvider } from "./context/projects"
+import { ProjectProvider } from "./context/projects";
+import { PlantProvider } from "./context/plants";
+import WebFont from "webfontloader";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
-import WebFont from 'webfontloader';
+require("dotenv").config();
 
 WebFont.load({
   google: {
-    families: ['Poppins Web:100,200,300,400,500,600,700,800', 'sans-serif']
-  }
+    families: ["Poppins Web:100,200,300,400,500,600,700,800", "sans-serif"],
+  },
 });
-
-require('dotenv').config()
 
 ReactDOM.render(
   <ProjectProvider>
-    <Router>
-      <App />
-    </Router>
+    <PlantProvider>
+      <Router>
+        <App />
+      </Router>
+    </PlantProvider>
   </ProjectProvider>,
   document.getElementById("root")
 );

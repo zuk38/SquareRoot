@@ -31,6 +31,7 @@ type Plant
   )
   @key(name: "plantID", fields:["id"]) {
   id: ID!
+  metadata: PlantMetadata @connection(name: "PlantMetadata")
   greenspaces: [GreenspacePlant] @connection(keyName: "byPlant", fields: ["id"])
 }
 
@@ -49,7 +50,7 @@ type PlantMetadata
   @key(name: "foreignPlantID", fields:["id"])
   {
   id: ID!
-  plant: [Plant] @connection(keyName: "plantID", fields:["id"])
+  plant: Plant @connection(name: "PlantMetadata")
   latin_name: String
   norwegian_name: String
   type: String
