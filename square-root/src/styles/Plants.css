@@ -29,7 +29,8 @@ label {
 input {
   margin: 2%;
 }
-.pn {
+
+/*.pn {
   display: flex;
   flex-wrap: wrap;
   width: 80%;
@@ -38,7 +39,7 @@ input {
 }
 .plants {
   /* Same as the width of the sidebar */
-  padding: 40px;
+  /*padding: 40px;
   height: 30%;
   flex-wrap: wrap;
 }
@@ -46,7 +47,7 @@ input {
 .name {
   padding-left: 27%;
   align-items: center;
-}
+}*/
 
 /*---------------*/
 .plant {
@@ -82,7 +83,7 @@ input {
   position: absolute;
   top: 0;
   right: 0;
-  width: 50%;
+  width: 40%;
   height: 30%;
   transition: var(--mainTransition);
   margin-top: 2px;
@@ -125,11 +126,10 @@ input {
   grid-template-columns: repeat(auto-fill, minmax(15px, 1fr));
   grid-row-gap: 5px;
   grid-column-gap: 15px;
-  padding-left: 40px;
-  padding-right: 40px;
-  height: 30%;
+  padding: 0 40px;
+  height: 10%;
   flex-wrap: wrap;
-  width: 10vw;
+  width: 150px;
 }
 
 .plant:hover {
@@ -162,50 +162,32 @@ input {
   padding: 5rem 0;
 }
 .plantList-center {
-  margin: 0 0 0 20%;
+  width: 80vw;
+  margin: 0 auto 0 20%;
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
   grid-row-gap: 4rem;
   grid-column-gap: 30px;
+  padding: 40px;
   height: 30%;
   flex-wrap: wrap;
 }
-
+@media screen and (max-width: 812px) {
+  .plant {
+    width: 300px;
+  }
+  .plantlist-center {
+    margin: 0 auto;
+  }
+}
 @media screen and (min-width: 776px) {
-  .plantList-center {
+  .plantlist-center {
     width: 80vw;
-    margin: 0 0 0 20%;
-  }
-}
-@media screen and (min-width: 900px) {
-  .plantList-center {
-    width: 80vw;
-    max-width: 1170px;
-  }
-}
-@media screen and (max-width: 1350px) {
-  .featureList-center {
-    opacity: 0;
-  }
-}
-
-/*@media screen and (min-width: 776px) {
-  .plantList-center {
-    width: 50vw;
-    max-width: 50vw;
-  }
-  .badge-top img {
-    max-height: 100%;
-    max-width: 100%;
   }
 }
 @media screen and (min-width: 992px) {
-  .plantList-center {
-    width: 50vw;
+  .plantlist-center {
+    width: 85vw;
+    max-width: 1170px;
   }
 }
-@media screen and (max-width: 1300px) {
-  .featureList-center {
-    opacity: 0;
-  }
-}*/

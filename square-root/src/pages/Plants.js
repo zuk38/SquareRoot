@@ -5,9 +5,8 @@ import "../styles/Plants.css";
 import Loading from "../components/Loading";
 import PlantMiniature from "../components/PlantMiniature";
 import Title from "../components/PlantMiniature";
-import QualityBadge from "../images/quality.png";
 
-export default class Plants extends Component {
+/*export default class Plants extends Component {
   static contextType = PlantContext;
 
   render() {
@@ -26,9 +25,96 @@ export default class Plants extends Component {
       </div>
     );
   }
-}
+}*/
 
-/*
+const plantList =  [
+  {
+    Id: "1001",
+    name: "Musa",
+    img: "../../../images/musa.png",
+    pollinator_friendly: true,
+    edible: false,
+    rain_garden: false,
+    pet_kids_friendly: false,
+    air_puryfying: true,
+    sun_seeker: true,
+    native: true,
+    norwegian_nursery: true,
+    featured: true,
+  },
+  {
+    Id: "1002",
+    name: "Pertusem",
+    img: "../../../images/pertusem.png",   
+    pollinator_friendly: true,
+    edible: true,
+    rain_garden: false,
+    pet_kids_friendly: false,
+    air_puryfying: false,
+    sun_seeker: false,
+    native: false,
+    norwegian_nursery: true,
+    featured: true,
+  },
+  {
+    Id: "1003",
+    name: "Philodendron",
+    img: "../../../images/philodendron.png",
+    pollinator_friendly: true,
+    edible: true,
+    rain_garden: false,
+    pet_kids_friendly: true,
+    air_puryfying: true,
+    sun_seeker: false,
+    native: true,
+    norwegian_nursery: true,
+    featured: true,
+  },
+  {
+    Id: "1001",
+    name: "Musa",
+    img: "../../../images/musa.png",
+    pollinator_friendly: true,
+    edible: false,
+    rain_garden: false,
+    pet_kids_friendly: false,
+    air_puryfying: false,
+    sun_seeker: false,
+    native: false,
+    norwegian_nursery: false,
+    featured: false,
+  },
+  {
+    Id: "1002",
+    name: "Pertusem",
+    img: "../../../images/pertusem.png",
+    pollinator_friendly: true,
+    edible: true,
+    rain_garden: true,
+    pet_kids_friendly: true,
+    air_puryfying: true,
+    sun_seeker: true,
+    native: true,
+    norwegian_nursery: true,
+    featured: true,
+  },
+  {
+    Id: "1003",
+    name: "Philodendron",
+    img: "../../../images/philodendron.png",
+    pollinator_friendly: true,
+    edible: true,
+    rain_garden: false,
+    pet_kids_friendly: false,
+    air_puryfying: false,
+    sun_seeker: false,
+    native: true,
+    norwegian_nursery: false,
+    featured: true,
+  },
+];
+
+
 const plantFilters = {
   "Functional Requirements": ["Rain Garden", "Pollinator Friendly", "Edible"],
   Type: ["Flower", "Grass", "Buss & Berry"],
@@ -148,4 +234,4 @@ function Plants() {
 
 ReactDOM.render(<Plants />, document.getElementById("root"));
 
-export default Plants;*/
+export default Plants;

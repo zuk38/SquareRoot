@@ -26,80 +26,69 @@
   bottom: 0px;
 }
 
-/*.front-image{
-  position: relative;
-  height: 750px;
-  width: 1850px;
-  }*/
-
 /*FRONT-HEADER*/
-
-
-.hero-header{
-  position:relative;
-  color:white;
-  top:0;
-  left:0;
-  height: 600px;
-  width: 100vw;
+.hero-header {
+  max-height: calc(100vh - var(--nav-size));
+  position: relative;
+  color: white;
+  top: 0;
+  left: 0;
+  width: 100%;
   overflow: hidden;
-  background: #3e3d3d;  /* fallback colour. Make sure this is just one solid colour. */
+  background: #3e3d3d; /* fallback colour. Make sure this is just one solid colour. */
   background: -webkit-linear-gradient(rgba(165, 154, 148, 0.8));
-  }
-
-.hero-background{
-  object-fit:cover;
-  opacity:0.6;
 }
 
-
-.top-left{
-  position:absolute;
-  top:0px;
-  left:0px;
-  width:60%;
+.hero-background {
+  object-fit: cover;
+  opacity: 0.6;
 }
 
-.bottom-right{
-  position:absolute;
-  left:40%;
-  top:60%;
-  width:61%;
-  padding-right:7%;
-  
+.top-left {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 60%;
 }
 
-.hero-header-text h2{
+.bottom-right {
+  position: absolute;
+  left: 40%;
+  top: 60%;
+  width: 61%;
+  padding-right: 7%;
+}
+
+.hero-header-text h2 {
   font-size: 30px;
   font-weight: bold;
   text-align: left;
-  margin-left:10px;
+  margin-left: 10px;
 }
 
 .hero-asterisk {
-  float:left;
+  float: left;
   width: 10px;
-  height:10px;
-  margin-top:10px;
-  margin-right:10px;
+  height: 10px;
+  margin-top: 10px;
+  margin-right: 10px;
 }
 
-.frontoption{
-  margin-top:20px;
+.frontoption {
+  margin-top: 20px;
 }
 
-.front-btn-1{
-  padding:20px;
-  width:30%;
+.front-btn-1 {
+  padding: 20px;
+  width: 30%;
 }
 
-.front-btn-2{
-  padding:20px;
-  width:30%;
+.front-btn-2 {
+  padding: 20px;
+  width: 30%;
 }
 
 /*END FRONT-HEADER*/
-
 
 .h1 {
   color: rgb(0, 0, 0);
@@ -130,19 +119,18 @@ button {
   padding-left: 6%;
 }
 
-.fronttext{
+.fronttext {
   position: absolute;
   bottom: 20%;
   left: 2%;
   font-size: 50px;
   color: white;
 }
-.frontdesc{
+.frontdesc {
   position: absolute;
   bottom: 10%;
   left: 2%;
   font-size: 30px;
   color: white;
   width: 40%;
-  
 }
