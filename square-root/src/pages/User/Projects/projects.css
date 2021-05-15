@@ -1,20 +1,4 @@
-:root {
-  --primaryColor: #af9a7d;
-  --mainGreen: #8ca68c;
-  --hoverGreen: #ccd7cc;
-  --mainGrey: #3e3d3d;
-  --mainWhite: #fff;
-  --offWhite: #f7f7f7;
-  --mainBlack: #222;
-  --darkGrey: #cfcfcf;
-  --mainTransition: all 0.3s linear;
-  --mainSpacing: 3px;
-  --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
-  --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
-  background-color: var(--offWhite);
-}
 /* COLUMNS */
-
 .p-row {
   padding-top: 5%;
   display: flex;
@@ -45,9 +29,7 @@
   display: table;
   clear: both;
 }
-
 /* end of COLUMNS */
-
 /* TITLE */
 .project-icon {
   width: 30px;
@@ -76,7 +58,6 @@
 
 .p-h1 {
   display: inline;
-
   font-weight: 400;
   font-size: x-large;
   color: var(--mainBlack);
@@ -84,13 +65,11 @@
 
 .p-h2 {
   display: inline;
-
   font-weight: 400;
   font-size: medium;
   color: var(--mainBlack);
 }
 /* end of TITLE */
-
 /*CONTAINER OVER TABLE*/
 .p-container {
   position: relative;
@@ -142,9 +121,7 @@
   color: var(--mainBlack);
   font-weight: 400;
 }
-
 /* end of TABLE */
-
 /* BUTTON : NEW PROJECT*/
 .btn-new-project {
   padding: 15px 10px;
@@ -167,9 +144,7 @@
 .fas {
   padding: 0 10px;
 }
-
 /* end of BUTTON */
-
 /* BUTTON : BACK TO PROJECTS*/
 .btn-back {
   padding: 15px 10px;
@@ -183,18 +158,18 @@
   cursor: pointer;
   font-size: 13px;
 }
+
 a.btn-back:hover {
   font-weight: 600;
 }
-
 /* end of BUTTON */
 
 .fa-times {
   width: 30px;
   height: auto;
 }
-/* end of BUTTON */
 
+/* end of BUTTON */
 /* PROJECTS-MENU */
 .menu-vertical {
   width: 200px;
@@ -228,7 +203,6 @@ a.btn-back:hover {
     position: relative;
   }
 }
-
 /*MODAL*/
 .modal-project {
   background: var(--offWhite);
@@ -278,7 +252,6 @@ a.btn-back:hover {
 }
 .p-lbl {
   float: left;
-
   font-weight: 400px;
   font-size: 20px;
   padding-top: 15px;
@@ -300,7 +273,6 @@ input[type="text"] {
 }
 
 /*FLEX BOXES (PostNr & PostSted */
-
 .p-flex /* div PostNr & PostSted */ {
   display: flex;
   justify-content: space-between;
@@ -339,7 +311,7 @@ input[type="text"] {
 .p-title {
   display: inline-block;
 }
-/* DASHBOARD */
+
 .project_img {
   border-radius: 10px;
   padding: 10px;
@@ -353,7 +325,6 @@ input[type="text"] {
 }
 
 /*DASHBOARD MODAL */
-
 .modal-dashboard {
   background: var(--offWhite);
   position: absolute;
@@ -413,7 +384,6 @@ td.d-modal-img {
   margin: 0;
 }
 /*GREENSPACES*/
-
 /* BUTTON : NEW GREENSPACE*/
 .btn-new-greenspace {
   float: right;
@@ -499,7 +469,6 @@ img[src*="plus"] {
 }
 
 /* GREENSPACE */
-
 .greensp-page {
   padding-top: 5%;
   width: 80%;
@@ -523,7 +492,6 @@ img[src*="plus"] {
 }
 
 /*SETTINGS*/
-
 .settings-container {
   margin-top: 5%;
   width: 60%;

@@ -1,0 +1,35 @@
+.plant-modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  height: 400px;
+  width: 600px;
+}
+
+.btn-plant-modal-close {
+  float: right;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.plant-modal-content {
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: black;
+  padding: 2% 5%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
+
