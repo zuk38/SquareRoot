@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "../styles/Plants.css";
 import QualityBadge from "../images/quality.png";
 import { ReactComponent as BeeIcon } from "../icons/bee.svg";
@@ -7,9 +7,10 @@ import { ReactComponent as NativeIcon } from "../icons/norway.svg";
 import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
-import PropTypes from 'prop-types';
+import PropTypes from "prop-types";
+import { SinglePlant } from "./SinglePlant";
 
-export default function PlantMiniature({ plant }) {
+export default function PlantMiniature({ plant, showModal, setShowPlantModal }) {
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
     edible: <EdibleIcon />,
@@ -46,26 +47,34 @@ export default function PlantMiniature({ plant }) {
   console.log(features);
 
   return (
-    <article className="plant">
-      <div className="plant-img-container">
-        <img src={img} alt={name} />
-        {norwegian_nursery && (
-          <div className="badge-top">
-            <img src={QualityBadge} />
+    <>
+      <article className="plant">
+        <div className="plant-img-container">
+          <img src={img} alt={name} />
+          {norwegian_nursery && (
+            <div className="badge-top">
+              <img src={QualityBadge} />
+            </div>
+          )}
+          <div className="featureList">
+            <div className="featureList-center">
+              {features.map((icon) => (
+                <span className="icon-button">{iconMap[icon]}</span>
+              ))}
+            </div>
           </div>
-        )}
-        <div className="featureList">
-          <div className="featureList-center">
-            {features.map((icon) => (
-              <span className="icon-button">{iconMap[icon]}</span>
-            ))}
-          </div>
+          {!showModal && (
+            <button
+              class="button is-dark plant-link"
+              onClick={setShowPlantModal}
+            >
+              FEATURES
+            </button>
+          )}
+          <p className="plant-info">{name.toUpperCase()}</p>
         </div>
-
-        <button class="button is-dark plant-link">FEATURES</button>
-        <p className="plant-info">{name.toUpperCase()}</p>
-      </div>
-    </article>
+      </article>
+    </>
   );
 }
 
@@ -80,5 +89,5 @@ PlantMiniature.propTypes = {
     air_puryfying: PropTypes.bool.isRequired,
     sun_seeker: PropTypes.bool.isRequired,
     native: PropTypes.bool.isRequired,
-  })
-}
+  }),
+};

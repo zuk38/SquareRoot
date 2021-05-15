@@ -1,8 +1,7 @@
-
 :root {
   --primaryColor: #af9a7d;
   --mainGreen: #8ca68c;
-  --hoverGreen: #CCD7CC;
+  --hoverGreen: #ccd7cc;
   --mainGrey: #3e3d3d;
   --mainWhite: #fff;
   --offWhite: #f7f7f7;
@@ -13,7 +12,6 @@
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   background-color: var(--offWhite);
-
 }
 /* COLUMNS */
 
@@ -25,7 +23,6 @@
   height: 100%;
   padding-bottom: 10%;
   color: var(--mainBlack);
-  
 }
 
 .left {
@@ -95,9 +92,9 @@
 /* end of TITLE */
 
 /*CONTAINER OVER TABLE*/
-.p-container{
+.p-container {
   position: relative;
-  margin-top:5%;
+  margin-top: 5%;
 }
 
 .p-table-title {
@@ -109,23 +106,22 @@
 }
 
 .btn-p-invite {
-  background-color: #E5E5E5;
-  border:none;
-  padding:10px;
+  background-color: #e5e5e5;
+  border: none;
+  padding: 10px;
   border-radius: 5px;
   display: block;
   cursor: pointer;
   float: right;
-  margin:auto;
+  margin: auto;
 }
 
 .btn-p-invite:hover {
-background-color: #EFEFEF;
+  background-color: #efefef;
 }
 
 /* TABLE */
 .p-table {
-
   width: 100%;
   border-collapse: separate;
   color: var(--mainBlack);
@@ -186,7 +182,6 @@ background-color: #EFEFEF;
   float: left;
   cursor: pointer;
   font-size: 13px;
-
 }
 a.btn-back:hover {
   font-weight: 600;
@@ -226,12 +221,11 @@ a.btn-back:hover {
   font-weight: 500;
 }
 
-@media screen and (max-width: 1000px){
-  .menu-vertical{
+@media screen and (max-width: 1000px) {
+  .menu-vertical {
     width: 100%;
     height: auto;
     position: relative;
-    
   }
 }
 
@@ -250,10 +244,11 @@ a.btn-back:hover {
   text-align: center;
 }
 
-
 @media screen and (max-width: 600px) {
-  .p-inputBox, .p-lbl, input[type="submit"]{
-    width:100%;
+  .p-inputBox,
+  .p-lbl,
+  input[type="submit"] {
+    width: 100%;
     margin-top: 0;
   }
 }
@@ -276,7 +271,6 @@ a.btn-back:hover {
   align-items: initial;
   justify-content: center;
 }
-
 
 .p-inputBox {
   width: 80%;
@@ -302,8 +296,8 @@ input[type="text"] {
   font-weight: 400px;
   margin: auto;
   border-radius: 5px;
-  border:1px solid lightgray;
-  }
+  border: 1px solid lightgray;
+}
 
 /*FLEX BOXES (PostNr & PostSted */
 
@@ -330,7 +324,6 @@ input[type="text"] {
   box-sizing: border-box;
   width: 100%;
 }
-
 
 /* BUTTON : CLOSE MODAL*/
 .btn-modal-close {
@@ -359,7 +352,6 @@ input[type="text"] {
   padding: 0px;
 }
 
-
 /*DASHBOARD MODAL */
 
 .modal-dashboard {
@@ -376,7 +368,6 @@ input[type="text"] {
   overflow: scroll;
 }
 
-
 .d-modal-content {
   display: block;
   flex-direction: column;
@@ -385,7 +376,6 @@ input[type="text"] {
   z-index: 1;
   padding-right: 5%;
   padding-left: 5%;
-  
 }
 
 /* TABLE */
@@ -396,7 +386,7 @@ input[type="text"] {
   margin-top: 5%;
 }
 
-.d-table td{
+.d-table td {
   vertical-align: middle;
   font-size: 70%;
 }
@@ -414,20 +404,19 @@ input[type="text"] {
   color: var(--mainBlack);
   font-weight: 400;
   font-size: 60%;
-  height:auto;
+  height: auto;
 }
 
 td.d-modal-img {
-  width:20%;
-  height:auto;
-  margin:0;
-
+  width: 20%;
+  height: auto;
+  margin: 0;
 }
 /*GREENSPACES*/
 
 /* BUTTON : NEW GREENSPACE*/
-.btn-new-greenspace{
-  float:right;
+.btn-new-greenspace {
+  float: right;
   padding: 15px 10px;
   font-weight: 500;
   border: 1px solid var(--mainGreen);
@@ -445,7 +434,7 @@ td.d-modal-img {
 }
 
 /* GRID GREENSPACES*/
-.green-container{
+.green-container {
   padding-top: 5%;
   display: grid;
   max-width: 1200px;
@@ -453,7 +442,6 @@ td.d-modal-img {
   grid-gap: 1rem;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 }
-
 
 .green-item {
   padding: 1rem;
@@ -466,51 +454,49 @@ td.d-modal-img {
   text-align: center;
 }
 
-
 .green-item img {
-  transition: .4s;
+  transition: 0.4s;
 }
 
-img[src*="plus"]{
+img[src*="plus"] {
   width: 20%;
   text-align: center;
 }
 .green-item:hover {
   transform: scale(1.02);
- 
   cursor: pointer;
+  transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
 }
 
 .green-item:hover .green-info {
   padding: 20px;
-  margin-top:10%;
+  margin-top: 10%;
   transform: scale(1.2);
-  transform-origin:50% 50%;
+  transform-origin: 50% 50%;
+  transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
-  
 }
 
 .green-item:hover img {
   transform: scale(1.5);
-  transform-origin:50% 50%;
+  transform-origin: 50% 50%;
+  transition: 0.5s ease;
   -webkit-transition: 0.5s ease;
-
 }
 
 .green-info {
   text-align: center;
 }
 
-.p-h3{
+.p-h3 {
   font-size: 20px;
 }
 
-.p-h4{
+.p-h4 {
   font-size: 15px;
 }
-
 
 /* GREENSPACE */
 
@@ -521,7 +507,6 @@ img[src*="plus"]{
   height: 100%;
   position: absolute;
   color: var(--mainBlack);
-  
 }
 .greensp-center {
   background-color: var(--offWhite);
@@ -537,19 +522,16 @@ img[src*="plus"]{
   font-weight: 400;
 }
 
-
 /*SETTINGS*/
 
 .settings-container {
-  margin-top:5%;
-  width:60%;
-
+  margin-top: 5%;
+  width: 60%;
 }
 
-
-button[type=submit] {
+button[type="submit"] {
   width: 100%;
-  background-color: #3A83F7;
+  background-color: #3a83f7;
   color: white;
   padding: 14px 20px;
   margin: 8px 0;
@@ -559,25 +541,24 @@ button[type=submit] {
   font-size: 15px;
   font-weight: 550;
 }
-button[type=submit]:hover{
-  background-color: #6BA3FA;
+button[type="submit"]:hover {
+  background-color: #6ba3fa;
 }
-
 
 .settings-lbl {
- padding:10px;
+  padding: 10px;
 }
 
-.settings-p{
+.settings-p {
   padding: 2px;
   font-size: 20px;
 }
 
-/*ACCOUNT*/ 
+/*ACCOUNT*/
 
 .acc-container {
-  margin-top:5%;
-  width:50%;
+  margin-top: 5%;
+  width: 50%;
   margin-left: 10%;
 }
 
@@ -589,25 +570,25 @@ button[type=submit]:hover{
   color: var(--mainBlack);
 }
 
-input[type="number"], select{
-width: 38%;
-background-color: white;
+input[type="number"],
+select {
+  width: 38%;
+  background-color: white;
   border-radius: 5px;
-  border:1px solid lightgray;
+  border: 1px solid lightgray;
   padding: 1em;
   border-radius: 0.3em;
   background-color: white;
   box-sizing: border-box;
   font-weight: 400px;
   margin: auto;
-  
 }
-input[name="email"]{
-  width:60%;
+input[name="email"] {
+  width: 60%;
 }
 
-button[name="btn-account"]{
-  width:60%
+button[name="btn-account"] {
+  width: 60%;
 }
 
 input::-webkit-outer-spin-button,
@@ -620,5 +601,3 @@ select {
   color: gray;
   -webkit-appearance: none;
 }
-
-

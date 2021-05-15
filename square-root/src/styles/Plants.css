@@ -30,24 +30,7 @@ input {
   margin: 2%;
 }
 
-/*.pn {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: 20%;
-  align-items: center;
-}
-.plants {
-  /* Same as the width of the sidebar */
-  /*padding: 40px;
-  height: 30%;
-  flex-wrap: wrap;
-}
 
-.name {
-  padding-left: 27%;
-  align-items: center;
-}*/
 
 /*---------------*/
 .plant {
@@ -159,7 +142,7 @@ input {
 
 /*plant list */
 .plantList {
-  padding: 5rem 0;
+  padding: 0.5rem 0;
 }
 .plantList-center {
   width: 80vw;

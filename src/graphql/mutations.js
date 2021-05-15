@@ -66,6 +66,13 @@ export const createPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         latin_name
         norwegian_name
         type
@@ -114,6 +121,13 @@ export const updatePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         latin_name
         norwegian_name
         type
@@ -162,6 +176,13 @@ export const deletePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         latin_name
         norwegian_name
         type
@@ -206,6 +227,33 @@ export const createPlantMetadata = /* GraphQL */ `
   ) {
     createPlantMetadata(input: $input, condition: $condition) {
       id
+      greenspace_category {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+      }
       latin_name
       norwegian_name
       type
@@ -261,6 +309,33 @@ export const updatePlantMetadata = /* GraphQL */ `
   ) {
     updatePlantMetadata(input: $input, condition: $condition) {
       id
+      greenspace_category {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+      }
       latin_name
       norwegian_name
       type
@@ -316,6 +391,33 @@ export const deletePlantMetadata = /* GraphQL */ `
   ) {
     deletePlantMetadata(input: $input, condition: $condition) {
       id
+      greenspace_category {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+      }
       latin_name
       norwegian_name
       type
@@ -591,6 +693,38 @@ export const createGreenspaceCategory = /* GraphQL */ `
       category_name
       createdAt
       updatedAt
+      plant {
+        id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          id
+          createdAt
+          updatedAt
+        }
+      }
     }
   }
 `;
@@ -605,6 +739,38 @@ export const updateGreenspaceCategory = /* GraphQL */ `
       category_name
       createdAt
       updatedAt
+      plant {
+        id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          id
+          createdAt
+          updatedAt
+        }
+      }
     }
   }
 `;
@@ -619,6 +785,38 @@ export const deleteGreenspaceCategory = /* GraphQL */ `
       category_name
       createdAt
       updatedAt
+      plant {
+        id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          id
+          createdAt
+          updatedAt
+        }
+      }
     }
   }
 `;
@@ -649,6 +847,26 @@ export const createGreenspace = /* GraphQL */ `
         category_name
         createdAt
         updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
       }
       createdAt
       updatedAt
@@ -693,6 +911,26 @@ export const updateGreenspace = /* GraphQL */ `
         category_name
         createdAt
         updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
       }
       createdAt
       updatedAt
@@ -737,6 +975,26 @@ export const deleteGreenspace = /* GraphQL */ `
         category_name
         createdAt
         updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
       }
       createdAt
       updatedAt

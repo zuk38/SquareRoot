@@ -1,13 +1,8 @@
 import React from "react";
 
-export default function Title({ title, subtitle, typeName}) {
-  const componentClass = classNames("Title", {
-    error: typeName === "customize",
-    confirm: typeName === "howitworks",
-  });
-
+export default function Title({ title, subtitle, style}) {
   return (
-    <div className={componentClass}>
+    <div className={style}>
       <h1>{title}</h1>
       <p>{subtitle}</p>
     </div>

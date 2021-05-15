@@ -51,6 +51,7 @@ type PlantMetadata
   {
   id: ID!
   plant: Plant @connection(name: "PlantMetadata")
+  greenspace_category: GreenspaceCategory @connection(name: "GreenspaceCategory")
   latin_name: String
   norwegian_name: String
   type: String
@@ -99,6 +100,7 @@ type GreenspaceCategory #rooftop, rainbed, etc.
   id: ID!
   category_id: ID!
   category_name: String!
+  plant: PlantMetadata @connection(name: "GreenspaceCategory")
 }
 
 type Greenspace

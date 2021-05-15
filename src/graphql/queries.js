@@ -46,6 +46,38 @@ export const getGreenspaceCategory = /* GraphQL */ `
       category_name
       createdAt
       updatedAt
+      plant {
+        id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+        plant {
+          id
+          createdAt
+          updatedAt
+        }
+      }
     }
   }
 `;
@@ -66,6 +98,26 @@ export const listGreenspaceCategorys = /* GraphQL */ `
         category_name
         createdAt
         updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
       }
       nextToken
     }
@@ -118,6 +170,13 @@ export const getPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         latin_name
         norwegian_name
         type
@@ -164,6 +223,13 @@ export const listPlantMetadatas = /* GraphQL */ `
     listPlantMetadatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        greenspace_category {
+          id
+          category_id
+          category_name
+          createdAt
+          updatedAt
+        }
         latin_name
         norwegian_name
         type
@@ -195,6 +261,33 @@ export const getPlantMetadata = /* GraphQL */ `
   query GetPlantMetadata($id: ID!) {
     getPlantMetadata(id: $id) {
       id
+      greenspace_category {
+        id
+        category_id
+        category_name
+        createdAt
+        updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+      }
       latin_name
       norwegian_name
       type
@@ -412,6 +505,26 @@ export const getGreenspace = /* GraphQL */ `
         category_name
         createdAt
         updatedAt
+        plant {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
       }
       createdAt
       updatedAt

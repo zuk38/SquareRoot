@@ -276,42 +276,106 @@ body {
 }
 /*end of backdrop */
 /* Titles */
-/* customize + plants */
-.cust-concept-title {
-  position: relative;
-  left: 5%;
-  width: 100%;
-  margin-top: 8%;
+.plants-title {
+  margin: 1rem 0 0 5%;
+  text-align: left;
 }
 
-.cust-concept-title h1 {
+.plants-title h1 {
   font-size: 50px;
   font-weight: bold;
-  text-transform: capitalize;
+  background-color: transparent;
+  line-height: 70px;
+  margin: auto;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+  letter-spacing: var(--mainSpacing);
 }
 
-.cust-concept-title p {
-  width: 60%;
+.plants-title p {
+  width: 50%;
+  background-color: transparent;
+  font-size: 15px;
+  line-height: 20px;
   padding-top: 0;
+  vertical-align: left;
+  height: auto;
 }
 /* how it works */
 .how-title {
-  position: relative;
-  left: 42%;
-  padding-top: 2%;
-  font-weight: bold;
-  font-size: 30px;
-  text-transform: capitalize;
+  text-align: center;
+  margin-bottom: 1rem;
 }
 
-.how-desc {
+.how-title h1 {
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 30px;
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 0.2rem;
+  letter-spacing: var(--mainSpacing);
+}
+
+.how-title p {
   position: relative;
-  left: 24%;
+  left: 25%;
   padding-top: 1%;
-  background-color: white;
+  background-color: transparent;
   font-size: 20px;
   width: 50%;
   text-align: center;
+  height: auto;
+}
+/* plant-modal*/
+.plant-modal-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.plant-modal-title h1 {
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  font-size: 26px;
+  line-height: 26px;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 0.2rem;
+  letter-spacing: var(--mainSpacing);
+}
+
+.plant-modal-title p {
+  background-color: transparent;
+  color: var(--darkGrey);
+  font-size: 20px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  height: auto;
+  text-align: center;
+  white-space: nowrap;
+  width: auto;
+  letter-spacing: var(--mainSpacing);
+}
+/* How it works */
+.how {
+  height: 100%;
+  width: 100%;
+  padding-top: 2%;
+}
+
+.how img {
+  width: 100%;
+  height: 100%;
+  padding-top: 2%;
 }
 /* Hero */
 /*.defaultHero,

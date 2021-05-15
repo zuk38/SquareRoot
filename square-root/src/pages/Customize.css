@@ -29,6 +29,23 @@ label {
   right: 0;
 }
 
+.cust-concept-title {
+  position: relative;
+  left: 5%;
+  width: 100%;
+  margin-top: 8%;
+}
+
+.cust-concept-title h1 {
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.cust-concept-title p {
+  width: 60%;
+  padding-top: 0;
+}
+
 .filters {
   height: auto;
   width: 18%;
@@ -144,7 +161,7 @@ input {
   background: rgba(0, 0, 0, 0.5) !important;
   z-index: 1000;
   position: fixed;
-  transition: ease;
+  transition: 0.2s ease;
   -webkit-transition: 0.2s ease;
 }
 

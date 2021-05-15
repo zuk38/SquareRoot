@@ -4,28 +4,75 @@ import ReactDOM from "react-dom";
 import "../styles/Plants.css";
 import Loading from "../components/Loading";
 import PlantMiniature from "../components/PlantMiniature";
-import Title from "../components/PlantMiniature";
+import Title from "../components/Title";
+import SinglePlant from "../components/SinglePlant";
 
-/*export default class Plants extends Component {
+export default class Plants extends Component {
+  constructor() {
+    super();
+    this.state = {
+      showPlantModal: false,
+      activePlant: null, //plant that triggered modal
+    };
+    this.openModal = this.openModal.bind(this);
+    this.closeModal = this.closeModal.bind(this);
+  }
+
   static contextType = PlantContext;
+
+  openModal = (plant) => {
+    this.setState({
+      showPlantModal: true,
+      activePlant: plant,
+    });
+  };
+
+  closeModal = () => {
+    this.setState({
+      showPlantModal: false,
+      activePlant: null,
+    });
+  };
 
   render() {
     let { loading, plants } = this.context;
     plants = plants.map((plant) => {
-      return <PlantMiniature key={plant.Id} plant={plant} />;
+      return (
+        <PlantMiniature
+          key={plant.Id}
+          plant={plant}
+          showModal={this.state.showPlantModal}
+          setShowPlantModal={() => this.openModal(plant)}
+        />
+      );
     });
 
     return (
-      
-      <div className="plantList">
-        <div className="plantList-center">
-          {loading ? <Loading/> : plants}
+      <>
+        <Title
+          title="PLANTER"
+          subtitle="I Oslo anbefales det med biologisk mangfoldige planter og
+              temperaturregulerende planter. Vi kan skrive mer her for å gi mer
+              informasjon."
+          style="plants-title"
+        />
+        <div className="plantList">
+          <div className="plantList-center">
+            {loading ? <Loading /> : plants}
+          </div>
         </div>
-        
-      </div>
+        {this.state.activePlant && (
+          <SinglePlant
+            plant={this.state.activePlant}
+            showModal={this.state.showPlantModal}
+            setShowPlantModal={this.closeModal}
+          />
+        )}
+        ;
+      </>
     );
   }
-}*/
+} /*
 
 const plantList =  [
   {
@@ -182,6 +229,7 @@ function Plants() {
 
   return (
     <div>
+      <SinglePlant/>
       <div className="customize-content">
         <div className="cust-concept-title">
           <h1>PLANTER</h1>
@@ -235,3 +283,4 @@ function Plants() {
 ReactDOM.render(<Plants />, document.getElementById("root"));
 
 export default Plants;
+*/

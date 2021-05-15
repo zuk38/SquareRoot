@@ -1,16 +1,17 @@
-import React, { Component } from 'react';
-import './Howitworks.css';
+import React from "react";
+import Title from "../components/Title";
 
 function Howitworks() {
-    return (
-        <div>
-            <h1 className="how-title">HOW IT WORKS</h1>
-            <p className="how-desc">SquareRoot connects you to plants that will thrive in your area, tailored to your property’s needs. Learn more about how it works here. </p>
-            <img src="../images/Howitworks.png" className="image"></img>
-
-        </div>
-
-
-    );
+  return (
+    <div className="how">
+      <Title
+        title="HOW IT WORKS"
+        subtitle="SquareRoot connects you to plants that will thrive in your area,
+        tailored to your property’s needs. Learn more about how it works here."
+        style="how-title"
+      />
+      <img src="../images/Howitworks.png" />
+    </div>
+  );
 }
 export default Howitworks;

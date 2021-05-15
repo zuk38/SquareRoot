@@ -42,7 +42,7 @@ export default  [
     featured: true,
   },
   {
-    Id: "1001",
+    Id: "1004",
     name: "Musa",
     img: "../../../images/musa.png",
     pollinator_friendly: true,
@@ -56,7 +56,7 @@ export default  [
     featured: false,
   },
   {
-    Id: "1002",
+    Id: "1005",
     name: "Pertusem",
     img: "../../../images/pertusem.png",
     pollinator_friendly: true,
@@ -70,7 +70,7 @@ export default  [
     featured: true,
   },
   {
-    Id: "1003",
+    Id: "1006",
     name: "Philodendron",
     img: "../../../images/philodendron.png",
     pollinator_friendly: true,
