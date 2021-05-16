@@ -9,7 +9,23 @@ class PlantProvider extends Component {
     sortedPlants: [], //filtered
     featuredPlants: [],
     loading: true,
+    //filters
+    type: 'all',
+    nursery: '',  //norwegian or external
+    origin: '', //native or imported 
+    light: '', //shadow lover or sun seeker
+    greenspace_category: 'all',
+    size: 0,
+    minSize: 0,
+    maxSize: 0,
+    climateZone: 'all',
+    edible: false,
+    pollinator_friendly: false,
+    pet_kids_friendly: false,
+    rain_garden: false, 
+    air_puryfying: false
   };
+
   //fetchPlants() {}
 
   getPlant = (name) => {

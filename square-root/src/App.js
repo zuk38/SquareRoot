@@ -10,7 +10,6 @@ import Welcome from "./components/Welcome";
 import Navbar from "./components/navbar/Navbar";
 import Home from "./pages/Home";
 import Plants from "./pages/Plants";
-import SinglePlant from "./pages/SinglePlant";
 import Admin from "./pages/Admin";
 import Error from "./pages/Error";
 import Rooftop from "./pages/Rooftop"
@@ -151,13 +150,6 @@ class App extends Component {
                 path="/plants"
                 render={(props) => (
                   <Plants {...props} auth={authProps} />
-                )}
-              />            
-              <Route
-                exact
-                path="/plants/:name"
-                render={(props) => (
-                  <SinglePlant {...props} auth={authProps} />
                 )}
               />
               <Route

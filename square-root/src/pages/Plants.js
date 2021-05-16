@@ -1,6 +1,6 @@
 import React, { Component } from "react";
+import ReactDOM from 'react-dom'
 import { PlantContext } from "../context/plants";
-import ReactDOM from "react-dom";
 import "../styles/Plants.css";
 import Loading from "../components/Loading";
 import PlantMiniature from "../components/PlantMiniature";
@@ -82,9 +82,9 @@ export default class Plants extends Component {
       </>
     );
   }
-} /*
+} 
 
-const plantList =  [
+/*const plantList =  [
   {
     Id: "1001",
     name: "Musa",
@@ -239,7 +239,6 @@ function Plants() {
 
   return (
     <div>
-      <SinglePlant/>
       <div className="customize-content">
         <div className="cust-concept-title">
           <h1>PLANTER</h1>
@@ -292,5 +291,4 @@ function Plants() {
 
 ReactDOM.render(<Plants />, document.getElementById("root"));
 
-export default Plants;
-*/
+export default Plants;*/

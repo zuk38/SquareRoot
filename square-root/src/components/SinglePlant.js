@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import "./SinglePlant.css";
 import Modal from "react-modal";
 import Title from "./Title";
-import { CSSTransition } from "react-transition-group";
 
 Modal.setAppElement("body");
 
@@ -67,7 +66,7 @@ export default function SinglePlant({
     {
       feature: native,
       featureName: "Origin:",
-      featureContent: native ? `local` : `imported`,
+      featureContent: native ? `native` : `imported`,
     },
     {
       feature: sun_seeker,
