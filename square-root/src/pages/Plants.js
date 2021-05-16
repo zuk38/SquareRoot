@@ -13,6 +13,7 @@ export default class Plants extends Component {
     this.state = {
       showPlantModal: false,
       activePlant: null, //plant that triggered modal
+      features: [],
     };
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
@@ -20,10 +21,11 @@ export default class Plants extends Component {
 
   static contextType = PlantContext;
 
-  openModal = (plant) => {
+  openModal = (plant, features) => {
     this.setState({
       showPlantModal: true,
       activePlant: plant,
+      features: features
     });
   };
 
@@ -31,6 +33,13 @@ export default class Plants extends Component {
     this.setState({
       showPlantModal: false,
       activePlant: null,
+      features: [],
+    });
+  };
+
+  setFeatures = (features) => {
+    this.setState({
+      features: features,
     });
   };
 
@@ -42,7 +51,7 @@ export default class Plants extends Component {
           key={plant.Id}
           plant={plant}
           showModal={this.state.showPlantModal}
-          setShowPlantModal={() => this.openModal(plant)}
+          setShowPlantModal={this.openModal}
         />
       );
     });
@@ -66,6 +75,7 @@ export default class Plants extends Component {
             plant={this.state.activePlant}
             showModal={this.state.showPlantModal}
             setShowPlantModal={this.closeModal}
+            features={this.state.features}
           />
         )}
         ;

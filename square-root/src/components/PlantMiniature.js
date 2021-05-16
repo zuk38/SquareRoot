@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import "../styles/Plants.css";
 import QualityBadge from "../images/quality.png";
 import { ReactComponent as BeeIcon } from "../icons/bee.svg";
@@ -8,9 +8,12 @@ import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
 import PropTypes from "prop-types";
-import { SinglePlant } from "./SinglePlant";
 
-export default function PlantMiniature({ plant, showModal, setShowPlantModal }) {
+export default function PlantMiniature({
+  plant,
+  showModal,
+  setShowPlantModal, 
+}) {
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
     edible: <EdibleIcon />,
@@ -44,7 +47,6 @@ export default function PlantMiniature({ plant, showModal, setShowPlantModal }) 
   var features = Object.keys(tempFeatures).filter(function(x) {
     return tempFeatures[x] !== false;
   });
-  console.log(features);
 
   return (
     <>
@@ -66,7 +68,7 @@ export default function PlantMiniature({ plant, showModal, setShowPlantModal }) 
           {!showModal && (
             <button
               class="button is-dark plant-link"
-              onClick={setShowPlantModal}
+              onClick={() => setShowPlantModal(plant, features)}
             >
               FEATURES
             </button>
