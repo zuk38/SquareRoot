@@ -334,6 +334,108 @@ body {
   text-align: center;
   height: auto;
 }
+/* login */
+.login-title {
+  color: var(--bg);
+  text-align: center;
+  margin-bottom: 5rem;
+}
+
+.login-title h1 {
+  font-size: 30px;
+  line-height: 35px;
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 0.2rem;
+}
+
+.login-title p {
+  vertical-align: middle;
+  padding-top: 1%;
+  background-color: transparent;
+  color: var(--darkGrey);
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+}
+/* register */
+.register-title {
+  color: var(--bg);
+  text-align: center;
+  margin-bottom: 0;
+}
+
+.register-title h1 {
+  font-size: 30px;
+  line-height: 35px;
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 0.2rem;
+}
+
+.register-title p {
+  vertical-align: middle;
+  padding-top: 1%;
+  background-color: transparent;
+  color: var(--darkGrey);
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+}
+/* forgot password */
+.forgot-title {
+  color: var(--bg);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.forgot-title h1 {
+  font-size: 30px;
+  line-height: 35px;
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 0.2rem;
+}
+
+.forgot-title p {
+  vertical-align: middle;
+  padding-top: 1%;
+  background-color: transparent;
+  color: var(--darkGrey);
+  font-size: 16px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  text-align: center;
+  height: auto;
+  width: auto;
+  white-space: pre-wrap;
+}
 /* plant-modal*/
 .plant-modal-title {
   text-align: center;
@@ -366,6 +468,38 @@ body {
   white-space: nowrap;
   width: auto;
   letter-spacing: var(--mainSpacing);
+}
+/* welcome */
+.auth-title {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.auth-title h1 {
+  background-color: transparent;
+  margin: auto;
+  vertical-align: middle;
+  height: auto;
+  font-size: 40px;
+  line-height: 26px;
+  white-space: nowrap;
+  width: auto;
+  margin-bottom: 1rem;
+  letter-spacing: var(--mainSpacing);
+}
+
+.auth-title p {
+  background-color: transparent;
+  color: var(--darkGrey);
+  width: auto;
+  font-size: 20px;
+  line-height: 20px;
+  font-style: normal;
+  font-weight: 400;
+  vertical-align: middle;
+  height: auto;
+  text-align: center;
+  white-space: pre-wrap;
 }
 /* customize */
 .cust-concept-title {

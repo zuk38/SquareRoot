@@ -22,9 +22,10 @@ function validateRegexString(email) {
 }
 
 function isNumeric(str) {
-  if (typeof str != "string") return false // we only process strings!  
-  return !isNaN(str) && // use type coercion to parse the _entirety_ of the string
-         !isNaN(parseFloat(str)) // ...and ensure strings of whitespace fail
+  if (typeof str != "string") return false; // we only process strings!
+  return (
+    !isNaN(str) && !isNaN(parseFloat(str)) // use type coercion to parse the _entirety_ of the string
+  ); // ...and ensure strings of whitespace fail
 }
 
 function validatePhone(phone) {
@@ -34,95 +35,44 @@ function validatePhone(phone) {
 
 //--------------------------------------------------------------------------------------------
 
-function changeIcons(boolean, input, icon) {
-  if (boolean) {
-    input.classList.remove("is-danger");
-    icon.classList.remove("fa-exclamation-triangle");
-    input.classList.add("is-success");
-    icon.classList.add("fa-check");
-  } else {
-    input.classList.remove("is-success");
-    icon.classList.remove("fa-check");
-    input.classList.add("is-danger");
-    icon.classList.add("fa-exclamation-triangle");
-  }
-}
-
 function checkEmail(values, errors) {
-  if (!values.email) {
-    errors.email = "Email address is required";
-  } else if (!validateRegexString(values.email)) {
+  if (!values.email) errors.email = "Email address is required";
+  else if (!validateRegexString(values.email))
     errors.email = "Email address is invalid";
-  }
-
-  return values.email && validateRegexString(values.email);
 }
 
 function checkPassword(values, errors) {
-  if (!values.password) {
-    errors.password = "Password is required";
-    return false;
-  } else if (values.password.length < PASSLENGTH) {
+  if (!values.password) errors.password = "Password is required";
+  else if (values.password.length < PASSLENGTH)
     errors.password = "Password must be 8 or more characters";
-    return false;
-  } else if (!hasLowerCase(values.password)) {
+  else if (!hasLowerCase(values.password))
     errors.password = "Password must have lowercase letters";
-    return false;
-  } else if (!hasUpperCase(values.password)) {
+  else if (!hasUpperCase(values.password))
     errors.password = "Password must have uppercase letters";
-    return false;
-  } else if (!hasNumber(values.password)) {
+  else if (!hasNumber(values.password))
     errors.password = "Password must have digits";
-    return false;
-  }
-
-  return true;
 }
 
 function checkConfPassword(values, errors) {
-  if (!values.confirmPassword) {
-    errors.confirmPassword = "Password is required";
-    return false;
-  } else if (values.password !== values.confirmPassword) {
+  if (!values.confirmPassword) errors.confirmPassword = "Password is required";
+  else if (values.password !== values.confirmPassword)
     errors.confirmPassword = "Passwords do not match";
-    return false;
-  }
-
-  return true;
 }
 
 function checkName(values, errors) {
-  if (!values.name) {
-    errors.name = "Name is required";
-    return false;
-  } else if (values.name.length > NAMELENGTH) {
-    errors.name = "Name too long";
-    return false;
-  }
-
-  return true;
+  if (!values.name) errors.name = "Name is required";
+  else if (values.name.length > NAMELENGTH) errors.name = "Name too long";
 }
 
 function checkPhone(values, errors) {
-  if (!values.phone) {
-    errors.phone = "Phone number is required";
-    return false;
-  } else if (!validatePhone(values.phone)) {
-    errors.phone = "Invalid phone number";
-    return false;
-  } 
-  return true;
+  if (!values.phone) errors.phone = "Phone number is required";
+  else if (!validatePhone(values.phone)) errors.phone = "Invalid phone number";
 }
 
 function checkCode(values, errors) {
-  if (!values.code) {
-    errors.code = "Verification code is required";
-    return false;
-  } else if (!isNumeric(values.code) || values.code.length != CODELENGTH) {
+  if (!values.code) errors.code = "Verification code is required";
+  else if (!isNumeric(values.code) || values.code.length != CODELENGTH)
     errors.code = "Incorrect verification code";
-    return false;
-  } 
-  return true;
 }
 
 function checkCognito(values, errors) {
@@ -139,8 +89,7 @@ export {
   checkPassword,
   checkConfPassword,
   checkName,
-  changeIcons,
   checkCognito,
   checkCode,
-  checkPhone
+  checkPhone,
 };
