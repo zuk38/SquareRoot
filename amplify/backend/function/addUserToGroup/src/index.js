@@ -14,6 +14,8 @@ exports.handler = function afterConfirmationTrigger(event, context, callback) {
     groupName = "LARKs";
   } else if (groupName === "Landscape Entrepreneur") {
     groupName = "LENTs";
+  } else if (groupName === "Plant Nursery") {
+    groupName = "PNs";
   }
 
   const params = {

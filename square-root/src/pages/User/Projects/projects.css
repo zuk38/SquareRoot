@@ -538,7 +538,7 @@ button[type="submit"]:hover {
   color: var(--mainBlack);
 }
 
-input[type="number"],
+.acc-container input[type="number"],
 select {
   width: 38%;
   background-color: white;
@@ -551,7 +551,7 @@ select {
   font-weight: 400px;
   margin: auto;
 }
-input[name="email"] {
+.acc-container input[name="email"] {
   width: 60%;
 }
 
