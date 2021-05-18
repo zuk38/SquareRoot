@@ -9,7 +9,7 @@
   background-color: white;
   border-radius: 10px;
   height: 400px;
-  width: 600px;
+  width: 650px;
 }
 
 .btn-plant-modal-close {
@@ -39,9 +39,9 @@
 }
 
 .plant-modal-img-container {
-  flex: 50%;
+  flex: 40%;
   margin: 0px 15px 15px 0px;
-  width: 180px;
+ 
   height: 200px;
 }
 
@@ -51,12 +51,12 @@
 }
 
 .features-container {
-  flex: 50%;
+  flex: 60%;
   width: 90%;
   margin: auto;
   display: grid;
-  margin-left: 2%;
-  grid-template-rows: repeat(auto-fill, 30px);
+  margin-left: 10%;
+  grid-template-rows: repeat(auto-fill, 25px);
   grid-row-gap: 0;
   text-align: left;
   font-size: 18px;
@@ -83,7 +83,7 @@
   overflow: hidden;
   float: left;
   margin-left: 10px;
-  width: 140px;
+  width: 170px;
   height: auto;
 }
 

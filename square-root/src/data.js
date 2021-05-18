@@ -11,6 +11,8 @@ export default  [
     sun_seeker: true,
     native: true,
     norwegian_nursery: true,
+    size: 15,
+    type: "grass",
     featured: true,
   },
   {
@@ -25,6 +27,8 @@ export default  [
     sun_seeker: false,
     native: false,
     norwegian_nursery: true,
+    size: 75,
+    type: "berry",
     featured: true,
   },
   {
@@ -39,6 +43,8 @@ export default  [
     sun_seeker: false,
     native: true,
     norwegian_nursery: true,
+    size: 25,
+    type: "bush",
     featured: true,
   },
   {
@@ -53,6 +59,8 @@ export default  [
     sun_seeker: false,
     native: false,
     norwegian_nursery: false,
+    size: 55,
+    type: "berry",
     featured: false,
   },
   {
@@ -67,6 +75,8 @@ export default  [
     sun_seeker: true,
     native: true,
     norwegian_nursery: true,
+    size: 45,
+    type: "bush",
     featured: true,
   },
   {
@@ -81,6 +91,8 @@ export default  [
     sun_seeker: false,
     native: true,
     norwegian_nursery: false,
+    size: 45,
+    type: "berry",
     featured: true,
   },
 ];

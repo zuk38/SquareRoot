@@ -3,27 +3,27 @@ import items from "../data.js";
 
 const PlantContext = React.createContext();
 
-class PlantProvider extends Component {
+export default class PlantProvider extends Component {
   state = {
     plants: [],
     sortedPlants: [], //filtered
     featuredPlants: [],
     loading: true,
     //filters
-    type: 'all',
-    nursery: '',  //norwegian or external
-    origin: '', //native or imported 
-    light: '', //shadow lover or sun seeker
-    greenspace_category: 'all',
+    type: "all",
+    nursery: "all", //norwegian or external
+    origin: "all", //native or imported
+    light: "all", //shadow lover or sun seeker
+    greenspace_category: "all",
     size: 0,
     minSize: 0,
     maxSize: 0,
-    climateZone: 'all',
+    climateZone: "all",
     edible: false,
     pollinator_friendly: false,
     pet_kids_friendly: false,
-    rain_garden: false, 
-    air_puryfying: false
+    rain_garden: false,
+    air_puryfying: false,
   };
 
   //fetchPlants() {}
@@ -34,16 +34,31 @@ class PlantProvider extends Component {
     return plant;
   };
 
+  handleChange = (event) => {
+    //filtering
+    const type = event.target.type;
+    const name = event.target.name;
+    const value = event.target.value;
+    console.log(type, name, value);
+  };
+
+  filterRooms = () => {
+    console.log("hello");
+  };
+
   componentDidMount() {
     //this.fetchPlants();
     let plants = this.formatData(items);
     console.log(plants);
     let featuredPlants = plants.filter((plant) => plant.featured === true);
+    let maxSize = Math.max(...plants.map((item) => item.size)); //find the max size from the data
     this.setState({
       plants,
       featuredPlants,
       sortedPlants: plants,
       loading: false,
+      size: maxSize,
+      maxSize: maxSize,
     });
   }
 
@@ -57,7 +72,13 @@ class PlantProvider extends Component {
 
   render() {
     return (
-      <PlantContext.Provider value={{ ...this.state, getPlant: this.getPlant }}>
+      <PlantContext.Provider
+        value={{
+          ...this.state,
+          getPlant: this.getPlant,
+          handleChange: this.handleChange,
+        }}
+      >
         {this.props.children}
       </PlantContext.Provider>
     );
@@ -67,3 +88,13 @@ class PlantProvider extends Component {
 const PlantConsumer = PlantContext.Consumer;
 
 export { PlantProvider, PlantConsumer, PlantContext };
+
+export function withPlantConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <PlantConsumer>
+        {value => <Component {...props} context={value} />}
+      </PlantConsumer>
+    );
+  };
+}

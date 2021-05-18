@@ -11,7 +11,7 @@ export default function SinglePlant({
   setShowPlantModal,
   features,
 }) {
-  const { name, img, norwegian_nursery, sun_seeker, native } = plant;
+  const { name, img, norwegian_nursery, size, type, sun_seeker, native } = plant;
 
   const [planBenefits, setPlantBenefits] = useState([]);
   useEffect(() => {
@@ -44,20 +44,22 @@ export default function SinglePlant({
   removeFeatures(native);
   removeFeatures(sun_seeker);
   console.log(planBenefits);
+  console.log(plant);
 
   const featureMap = [
     /*{
       featureName: "Suitable for", 
       featureContent: greenspace_category
     },
+    */
     {
-      featureName: "Size", 
-      featureContent: size
+      featureName: "Type:",
+      featureContent: type,
     },
     {
-      featureName: "Type", 
-      featureContent: type
-    },*/
+      featureName: "Size (cm):",
+      featureContent: size,
+    },
     {
       feature: norwegian_nursery,
       featureName: "Nursery:",
