@@ -1,9 +1,8 @@
 .float-container-partner {
   padding: 2%;
   height: 550px;
-  background-color: #8ca68c;
-  margin-left: 5%;
-  margin-right: 5%;
+  background-color: var(--mainGreen);
+  margin: 2% 5%;
 }
 
 .float-child {
@@ -50,14 +49,18 @@
   color: black;
 }
 
-.partner-lbl {
+.partner-field {
   margin-bottom: 20px;
 }
 
-input[name="partner-input"] {
+.partner-field input {
   border: none;
   border-radius: 0;
   border-bottom: 1px solid grey;
+}
+
+.partner-field p {
+  margin-bottom: -8%;
 }
 
 a[href="terms-and-conditions"] {
@@ -127,21 +130,6 @@ a[href="terms-and-conditions"] {
   cursor: pointer;
 }
 
-.about-inspo {
-  font-weight: bold;
-  font-size: 30px;
-  position: relative;
-  left: 40%;
-  padding-top: 3%;
-}
-.about-inspo-desc {
-  font-size: 20px;
-  position: relative;
-  text-align: center;
-  left: 25%;
-  width: 50%;
-  padding-bottom: 2%;
-}
 .inspo-images {
   border: 3px solid #fff;
   padding-top: 0%;
@@ -159,20 +147,4 @@ a[href="terms-and-conditions"] {
   position: relative;
   left: 45%;
   font-size: 20px;
-}
-.partner-title {
-  position: relative;
-  left: 42%;
-  padding-top: 2%;
-  font-weight: bold;
-  font-size: 30px;
-}
-.partner-desc {
-  position: relative;
-  left: 24%;
-  padding-top: 1%;
-  background-color: white;
-  font-size: 20px;
-  width: 50%;
-  text-align: center;
 }

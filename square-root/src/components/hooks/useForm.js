@@ -8,8 +8,13 @@ const useForm = (callback, validate, action) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log(values)
       callback();
+      setTriedSubmitting(false)
+      setValues({
+        name: '',
+        email: '',
+        message: ''
+      })
     }
   }, [errors]);
 

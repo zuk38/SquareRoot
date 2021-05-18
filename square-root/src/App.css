@@ -38,24 +38,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-.btn-primary {
-  display: inline-block;
-  text-decoration: none;
-  letter-spacing: var(--mainSpacing);
-  color: var(--mainBlack);
-  background: var(--primaryColor);
-  padding: 0.4rem 0.9rem;
-  border: 3px solid var(--primaryColor);
-  transition: var(--mainTransition);
-  text-transform: uppercase;
-  cursor: pointer;
-}
-.btn-primary:hover {
-  background: transparent;
-  color: var(--primaryColor);
-}
 .loading {
-  position: absolute;
+  position: fixed;
+  padding: 0;
+  margin: 0;
   top: 0;
   left: 0;
   width: 100%;
@@ -518,6 +504,34 @@ body {
   width: 60%;
   padding-top: 0;
 }
+/* partner */
+.partner-title {
+  margin-bottom: 2rem;
+  width: 100%;
+  text-align: center;
+}
+
+.partner-title h1 {
+  padding-top: 2%;
+  font-weight: bold;
+  font-size: 30px;
+  background-color: transparent;
+  vertical-align: middle;
+  height: auto;
+  white-space: nowrap;
+  margin-bottom: 0.5rem;
+}
+
+.partner-title p {
+  padding-top: 1%;
+  background-color: white;
+  font-size: 20px;
+  width: 50%;
+  text-align: center;
+  left: 24%;
+  position: relative;
+}
+/* partner */
 /* End of Titles */
 /* How it works */
 .how {

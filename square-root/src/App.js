@@ -94,7 +94,6 @@ class App extends Component {
               path="/login"
               render={(props) => <LoginPage {...props} auth={authProps} />}
             />
-
             <Route
               exact
               path="/forgotpassword"
@@ -102,7 +101,6 @@ class App extends Component {
                 <ForgotPasswordPage {...props} auth={authProps} />
               )}
             />
-
             <Route
               exact
               path="/"
@@ -113,7 +111,6 @@ class App extends Component {
               path="/rooftop"
               render={(props) => <Rooftop {...props} auth={authProps} />}
             />
-
             <Route
               exact
               path="/rainbed"
@@ -139,13 +136,11 @@ class App extends Component {
               path="/dashboard"
               render={(props) => <Dashboard {...props} auth={authProps} />}
             />
-
             <Route
               exact
               path="/greenspace"
               render={(props) => <Greenspace {...props} auth={authProps} />}
             />
-
             <Route
               exact
               path="/members"
