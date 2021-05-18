@@ -12,7 +12,7 @@ export default function PlantsFilter({ plants }) {
   const {
     handleChange,
     type,
-    nursery,
+    norwegian_nursery,
     origin,
     light,
     greenspace_category,
@@ -57,6 +57,54 @@ export default function PlantsFilter({ plants }) {
           </select>
         </div>
         {/* end of select type */}
+        {/* plant size */}
+        <div className="form-group">
+          <label htmlFor="size">Plant Size [cm]</label>
+          <div className="size-inputs">
+            <input
+              type="number"
+              name="minSize"
+              id="size"
+              value={minSize}
+              onChange={handleChange}
+              className="size-input"
+            />
+            <input
+              type="number"
+              name="maxSize"
+              id="size"
+              value={maxSize}
+              onChange={handleChange}
+              className="size-input"
+            />
+          </div>
+        </div>
+        {/* end of plant size */}
+        {/* norwegian nursery */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="norwegian_nursery" id="norwegian_nursery" checked={norwegian_nursery} onChange={handleChange}/>
+                <label htmlFor="norwegian_nursery">Norwegian Nursery</label>
+            </div>
+        </div>
+        {/* end of norwegian nursery */ }
+        {/* native */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="origin" id="origin" checked={origin} onChange={handleChange}/>
+                <label htmlFor="origin">Native</label>
+            </div>
+        </div>
+        {/* end of norwegian nursery? */ }
+        
+        {/* light req */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="light" id="sunSeeker" checked={light} onChange={handleChange}/>
+                <label htmlFor="light">Sun seekers</label>
+            </div>
+        </div>
+        {/* end of light req */ }
       </form>
     </section>
   );

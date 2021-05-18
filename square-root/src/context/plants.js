@@ -11,9 +11,9 @@ export default class PlantProvider extends Component {
     loading: true,
     //filters
     type: "all",
-    nursery: "all", //norwegian or external
-    origin: "all", //native or imported
-    light: "all", //shadow lover or sun seeker
+    norwegian_nursery: false, //norwegian or external
+    origin: false, //native or imported
+    light: false, //shadow lover or sun seeker
     greenspace_category: "all",
     size: 0,
     minSize: 0,
@@ -36,14 +36,71 @@ export default class PlantProvider extends Component {
 
   handleChange = (event) => {
     //filtering
-    const type = event.target.type;
+    const target = event.target; //to check if it's a checkbox
+    const value = target.type === "checkbox" ? target.checked : target.value;
     const name = event.target.name;
-    const value = event.target.value;
-    console.log(type, name, value);
+
+    this.setState(
+      {
+        [name]: value,
+      },
+      this.filterRooms
+    ); //filter as a callback depending on state
   };
 
   filterRooms = () => {
-    console.log("hello");
+    //backup all original values
+    let {
+      plants,
+      type,
+      norwegian_nursery,
+      origin,
+      light,
+      greenspace_category,
+      size,
+      minSize,
+      maxSize,
+      climateZone,
+      edible,
+      pollinator_friendly,
+      pet_kids_friendly,
+      rain_garden,
+      air_puryfying,
+    } = this.state;
+
+    let tempPlants = [...plants];
+    //transform value from string
+    size = parseInt(size);
+
+    // filter by type
+    if (type !== "all") {
+      tempPlants = tempPlants.filter((plant) => plant.type === type);
+    }
+
+    // filter by size
+    tempPlants = tempPlants.filter(
+      (plant) => plant.size >= minSize && plant.size <= maxSize
+    );
+
+    // filter by nursery
+    if (norwegian_nursery) {
+      tempPlants = tempPlants.filter((plant) => plant.norwegian_nursery === true);
+    }
+
+    // filter by origin
+    if (origin) {
+      tempPlants = tempPlants.filter((plant) => plant.origin === true);
+    }
+
+    // filter by light
+    if (light) {
+      tempPlants = tempPlants.filter((plant) => plant.light === true);
+    }
+
+    //change state
+    this.setState({
+      sortedPlants: tempPlants,
+    });
   };
 
   componentDidMount() {
@@ -58,7 +115,7 @@ export default class PlantProvider extends Component {
       sortedPlants: plants,
       loading: false,
       size: maxSize,
-      maxSize: maxSize,
+      maxSize,
     });
   }
 
@@ -93,7 +150,7 @@ export function withPlantConsumer(Component) {
   return function ConsumerWrapper(props) {
     return (
       <PlantConsumer>
-        {value => <Component {...props} context={value} />}
+        {(value) => <Component {...props} context={value} />}
       </PlantConsumer>
     );
   };
