@@ -5,6 +5,9 @@ import HeroSection from "../components/HeroSection.js";
 import Partner from "../components/Partner";
 
 export default function Home(props) {
+  const handleStart = () => {
+    props.history.push({ pathname: "/projects", state: { modalOpen: true } });
+  };
   return (
     <>
       <Hero>
@@ -17,7 +20,7 @@ export default function Home(props) {
           </h2>
 
           <p class="buttons">
-            <button class="button is-light front-btn-1">START PROSJEKT</button>
+            <button class="button is-light front-btn-1" onClick={handleStart}>START PROSJEKT </button>
             <button class="button is-dark front-btn-2">LES MER</button>
           </p>
         </Banner>

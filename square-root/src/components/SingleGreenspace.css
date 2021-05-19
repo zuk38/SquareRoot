@@ -1,85 +1,84 @@
 .img-greenspace {
-    height: 600px;
-  }
-  
-  .greenspace {
-    position: relative;
-    left: 3%;
-    width: 95%;
-  }
-  .greenspaceinfo {
-    display: grid;
-    grid-template-columns: 1.3fr 1fr;
-    grid-gap: 3%;
-    padding-top: 2%;
-  }
-  h5 {
-    font-size: 30px;
-  }
-  
-  .similaricon {
-    height: 10%;
-    width: 50%;
-    padding-top: 3%;
-    padding-right: 3%;
-    padding-left: 3%;
-  }
-  .city {
-    padding-top: 1%;
-    padding-left: 3%;
-  }
-  p {
-    padding-bottom: 5%;
-    padding-top: 2%;
-  }
-  
-  .options {
-    position: absolute;
-    bottom: 0px;
-    width: 42%;
-    height: 52.7%;
-  }
-  .tilpass {
-    padding-bottom: 20px;
-  }
-  
-  .requirements {
-    padding-top: 1%;
-  }
-  
-  .func_icon {
-    height: 30px;
-    width: 30px;
-    padding-right: 2%;
-  
-    padding-top: 2%;
-  }
-  .func {
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-    grid-gap: 5%;
-    background-color: var(--offWhite);
-    width: 55%;
-    padding-left: 1%;
-    padding-bottom: 1%;
-  }
-  .h4 {
-    font-weight: 700;
-    padding-top: 2%;
-  }
-  .desc {
-    background-color: var(--offWhite);
-    width: 55%;
-    padding-left: 1%;
-    padding-bottom: 1%;
-    margin-top: 2%;
-  }
-  .desc_info {
-    padding-top: 2%;
-    padding-right: 1%;
-  }
-  .plantlist {
-    width: 55%;
-    padding-top: 2%;
-  }
-  
+  height: 600px;
+}
+
+.greenspace {
+  position: relative;
+  left: 3%;
+  width: 95%;
+}
+.greenspaceinfo {
+  display: grid;
+  grid-template-columns: 1.3fr 1fr;
+  grid-gap: 3%;
+  padding-top: 2%;
+}
+h5 {
+  font-size: 30px;
+}
+
+.similaricon {
+  height: 10%;
+  width: 50%;
+  padding-top: 3%;
+  padding-right: 3%;
+  padding-left: 3%;
+}
+.city {
+  padding-top: 1%;
+  padding-left: 3%;
+}
+p {
+  padding-bottom: 5%;
+  padding-top: 2%;
+}
+
+.options {
+  position: absolute;
+  bottom: 0px;
+  width: 42%;
+  height: 52.7%;
+}
+.tilpass {
+  padding-bottom: 20px;
+}
+
+.requirements {
+  padding-top: 1%;
+}
+
+.func_icon {
+  height: 30px;
+  width: 30px;
+  padding-right: 2%;
+
+  padding-top: 2%;
+}
+.func {
+  display: grid;
+  grid-template-columns: 0.5fr 0.5fr;
+  grid-gap: 5%;
+  background-color: var(--offWhite);
+  width: 55%;
+  padding-left: 1%;
+  padding-bottom: 1%;
+}
+.h4 {
+  font-weight: 700;
+  padding-top: 2%;
+}
+.desc {
+  background-color: var(--offWhite);
+  width: 55%;
+  padding-left: 1%;
+  padding-bottom: 1%;
+  margin-top: 2%;
+}
+.desc_info {
+  padding-top: 2%;
+  padding-right: 1%;
+}
+.plantlist {
+  width: 55%;
+  padding-top: 2%;
+}
