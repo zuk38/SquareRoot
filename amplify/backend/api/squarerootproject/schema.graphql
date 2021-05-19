@@ -90,6 +90,7 @@ type GreenspacePlant
   greenspace_id: ID!
   plant: Plant @connection(fields: ["plant_id"])
   greenspace: Greenspace @connection(fields: ["greenspace_id"])
+  quantity: Float
   #from_nursery: Plant_Nursery @connection(fields:["id"])
 }
 

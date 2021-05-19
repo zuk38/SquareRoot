@@ -205,6 +205,7 @@ export const getPlant = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -342,6 +343,7 @@ export const getGreenspacePlant = /* GraphQL */ `
       id
       plant_id
       greenspace_id
+      quantity
       createdAt
       updatedAt
       plant {
@@ -420,6 +422,7 @@ export const listGreenspacePlants = /* GraphQL */ `
         id
         plant_id
         greenspace_id
+        quantity
         createdAt
         updatedAt
         plant {
@@ -533,6 +536,7 @@ export const getGreenspace = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer

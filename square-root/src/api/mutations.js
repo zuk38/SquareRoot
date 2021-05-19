@@ -101,6 +101,7 @@ export const createPlant = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -156,6 +157,7 @@ export const updatePlant = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -211,6 +213,7 @@ export const deletePlant = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -475,6 +478,7 @@ export const createGreenspacePlant = /* GraphQL */ `
       id
       plant_id
       greenspace_id
+      quantity
       createdAt
       updatedAt
       plant {
@@ -547,6 +551,7 @@ export const updateGreenspacePlant = /* GraphQL */ `
       id
       plant_id
       greenspace_id
+      quantity
       createdAt
       updatedAt
       plant {
@@ -619,6 +624,7 @@ export const deleteGreenspacePlant = /* GraphQL */ `
       id
       plant_id
       greenspace_id
+      quantity
       createdAt
       updatedAt
       plant {
@@ -875,6 +881,7 @@ export const createGreenspace = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -939,6 +946,7 @@ export const updateGreenspace = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
@@ -1003,6 +1011,7 @@ export const deleteGreenspace = /* GraphQL */ `
           id
           plant_id
           greenspace_id
+          quantity
           createdAt
           updatedAt
           customer
