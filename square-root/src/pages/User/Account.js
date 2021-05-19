@@ -1,8 +1,5 @@
 import React, { Component } from "react";
 import "./Projects/projects.css";
-import icon from "../../images/proj_icon.png";
-import { Menu } from "semantic-ui-react";
-import { findCityFromZip } from "../../functions/apiCalls";
 
 /*onst logo = require('../../../images/proj_icon')*/
 

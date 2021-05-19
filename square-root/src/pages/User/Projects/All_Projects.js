@@ -71,7 +71,7 @@ function All_Projects(props) {
       await API.graphql(
         graphqlOperation(createProject, { input: projectDetails })
       );
-      setProjectDetails({ name: "", city: "", postalCode: "" });
+      setProjectDetails({ name: "", city: "", postalCode: "", address: ""});
       fetchProjects();
       closeModal();
     } catch (err) {
@@ -99,7 +99,7 @@ function All_Projects(props) {
             <h1 className="p-h1">La oss lage et økosystem</h1>
             <br />
             <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
-            <form onSubmit={handleSubmit}>
+            <form >
               <div className="p-inputBox">
                 <label className="p-lbl">Navn</label>
                 <input
@@ -144,7 +144,7 @@ function All_Projects(props) {
               </div>
               <div className="p-btn-create">
                 {/*NEED a button onClick -- save in database*/}
-                <button className="btn-modal-create-p">OPPRETT PROSJEKT</button>
+                <button type="button" className="btn-modal-create-p" onClick={handleSubmit}>OPPRETT PROSJEKT</button>
               </div>
             </form>
           </div>

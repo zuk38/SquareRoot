@@ -5,15 +5,14 @@ type Project
       # allow owners of the project to create, update and delete their projects
       { allow: owner }
     ]
-  ) 
-  @key(name:"projectID", fields:["id"]) {
+  ) {
   id: ID!
   name: String!
   address: String!
   city: String!
   postalCode: String!
   end_date: String
-  owner: String!
+  owner: String
   #projectgroup_ID: ProjectGroup @connection(fields:["id"])
 }
 
