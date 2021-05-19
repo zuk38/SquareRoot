@@ -1,14 +1,19 @@
-import React from 'react'
-import Hero from '../components/Hero'
-import Banner from '../components/Banner'
-import { Link } from "react-router-dom"
+import React from "react";
+import Hero from "../components/Hero";
+import Banner from "../components/Banner";
+import { Link } from "react-router-dom";
 
-export default function Error() {
-    return (
-        <Hero>
-            <Banner title="404" subtitle="page not found">
-                <Link to="/" className="btn-primary">Return home</Link>
-            </Banner>
-        </Hero>
-    )
+export default function Error(props) {
+  return (
+    <Hero>
+      <Banner title="Oops... We didn't find what you were looking for">
+        <button
+          class="button is-light front-btn-2"
+          onClick={() => props.history.push("/")}
+        >
+          Return home
+        </button>
+      </Banner>
+    </Hero>
+  );
 }
