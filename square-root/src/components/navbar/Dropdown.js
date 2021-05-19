@@ -1,4 +1,5 @@
 import React, { useRef, useState } from "react";
+import { Redirect } from "react-router-dom";
 import Auth from "@aws-amplify/auth";
 import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
 import { ReactComponent as HelpICon } from "../../icons/question.svg";
@@ -18,7 +19,7 @@ export default function Dropdown(props) {
       Auth.signOut();
       props.auth.setAuthStatus(false);
       props.auth.setUser(null);
-      props.history.push("/");
+      return <Redirect to="/" />;
     } catch (error) {
       console.log(error.message);
     }

@@ -1,4 +1,5 @@
-import React from "react";
+import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 import Title from "../Title";
 import "./LoginStyle.scss";
 import useForm from "../hooks/useForm";
@@ -6,6 +7,8 @@ import validate from "../utility/LoginFormValidation";
 import { Auth } from "aws-amplify";
 
 export function Login(props) {
+  const [redirectToRefferer, setRedirectToRefferer] = useState(false);
+
   const { values, errors, handleChange, handleSubmit } = useForm(
     callback,
     validate,
@@ -20,9 +23,10 @@ export function Login(props) {
       props.auth.setAuthStatus(true);
       console.log(attributes.name);
       props.auth.setUser(attributes.name);
-      props.history.goBack(); //access last page viewed
+      setRedirectToRefferer(true);
+      //props.history.goBack(); //access last page viewed
     } catch (error) {
-        console.log("error loging in", error);
+      console.log("error loging in", error);
     }
   }
 
@@ -43,6 +47,12 @@ export function Login(props) {
       values.cognito = err;
       console.log(values.cognito);
     }
+  }
+
+  const { from } = props.location.state || { from: { pathname: "/" } };
+
+  if (redirectToRefferer === true) {
+    return <Redirect to={from} />;
   }
 
   return (

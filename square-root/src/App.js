@@ -4,6 +4,7 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
+import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
 import Plants from "./pages/Plants";
 import Admin from "./pages/Admin";
@@ -126,36 +127,7 @@ class App extends Component {
               path="/plants"
               render={(props) => <Plants {...props} auth={authProps} />}
             />
-            <Route
-              exact
-              path="/projects"
-              render={(props) => <All_Projects {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/dashboard"
-              render={(props) => <Dashboard {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/greenspace"
-              render={(props) => <Greenspace {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/members"
-              render={(props) => <Members {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/orders"
-              render={(props) => <Orders {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/Account"
-              render={(props) => <Account {...props} auth={authProps} />}
-            />
+
             <Route
               exact
               path="/how-it-works"
@@ -176,16 +148,63 @@ class App extends Component {
               path="/become-a-partner"
               render={(props) => <Partner {...props} auth={authProps} />}
             />
-            <Route
-              exact
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/projects"
+              component={All_Projects}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/dashboard"
+              component={Dashboard}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/greenspace"
+              component={Greenspace}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/members"
+              component={Members}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/orders"
+              component={Orders}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/account"
+              component={Account}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
               path="/settings"
-              render={(props) => <Settings {...props} auth={authProps} />}
+              component={Settings}
             />
-            <Route
-              exact
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
               path="/customize"
-              render={(props) => <Customize {...props} auth={authProps} />}
+              component={Customize}
             />
+
             <Route component={Error} />
           </Switch>
           {this.props.location.pathname != "/login" &&
