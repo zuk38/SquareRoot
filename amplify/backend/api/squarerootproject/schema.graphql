@@ -21,7 +21,7 @@ type Plant
   @auth(
     rules: [
       # allow nurseries to create, update and delete plants
-      { allow: groups, groups: ["Admin"] }
+      { allow: groups, groups: ["PNs"] }
       # allow all authenticated users to view plants
       { allow: private, operations: [read] }
       # allow all guest users (not authenticated) to view plants
@@ -30,7 +30,8 @@ type Plant
   )
   @key(name: "plantID", fields:["id"]) {
   id: ID!
-  metadata: PlantMetadata @connection(name: "PlantMetadata")
+  metadataID: ID!
+  metadata: PlantMetadata @connection(fields: ["metadataID"])
   greenspaces: [GreenspacePlant] @connection(keyName: "byPlant", fields: ["id"])
 }
 
@@ -39,17 +40,15 @@ type PlantMetadata
   @auth(
     rules: [
       # allow nurseries to create, update and delete plants data
-      { allow: groups, groups: ["Admin"] }
+      { allow: groups, groups: ["PNs"] }
       # allow all authenticated users to view plants
       { allow: private, operations: [read] }
       # allow all guest users (not authenticated) to view plants
       { allow: public, operations: [read] }
     ]
   )
-  @key(name: "foreignPlantID", fields:["id"])
   {
   id: ID!
-  plant: Plant @connection(name: "PlantMetadata")
   greenspace_category: GreenspaceCategory @connection(name: "GreenspaceCategory")
   latin_name: String
   norwegian_name: String

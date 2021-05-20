@@ -7,7 +7,7 @@ import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/Home";
 import Plants from "./pages/Plants";
-import Admin from "./pages/Admin";
+import PN from "./pages/PN";
 import Error from "./pages/Error";
 import Rooftop from "./pages/Rooftop";
 import Rainbed from "./pages/Rainbed";
@@ -203,6 +203,13 @@ class App extends Component {
               auth={authProps}
               path="/customize"
               component={Customize}
+            />
+
+            <PrivateRoute
+              authed={this.state.isAuthenticated}
+              auth={authProps}
+              path="/pn"
+              component={PN}
             />
 
             <Route component={Error} />

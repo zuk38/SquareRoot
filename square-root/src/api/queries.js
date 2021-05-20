@@ -72,11 +72,6 @@ export const getGreenspaceCategory = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
-        plant {
-          id
-          createdAt
-          updatedAt
-        }
       }
     }
   }
@@ -132,6 +127,7 @@ export const listPlants = /* GraphQL */ `
     listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        metadataID
         createdAt
         updatedAt
         metadata {
@@ -166,6 +162,7 @@ export const getPlant = /* GraphQL */ `
   query GetPlant($id: ID!) {
     getPlant(id: $id) {
       id
+      metadataID
       createdAt
       updatedAt
       metadata {
@@ -194,11 +191,6 @@ export const getPlant = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
-        plant {
-          id
-          createdAt
-          updatedAt
-        }
       }
       greenspaces {
         items {
@@ -248,11 +240,6 @@ export const listPlantMetadatas = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
-        plant {
-          id
-          createdAt
-          updatedAt
-        }
       }
       nextToken
     }
@@ -306,34 +293,6 @@ export const getPlantMetadata = /* GraphQL */ `
       sun_seeker
       createdAt
       updatedAt
-      plant {
-        id
-        createdAt
-        updatedAt
-        metadata {
-          id
-          latin_name
-          norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
-          createdAt
-          updatedAt
-        }
-        greenspaces {
-          nextToken
-        }
-      }
     }
   }
 `;
@@ -348,6 +307,7 @@ export const getGreenspacePlant = /* GraphQL */ `
       updatedAt
       plant {
         id
+        metadataID
         createdAt
         updatedAt
         metadata {
@@ -427,6 +387,7 @@ export const listGreenspacePlants = /* GraphQL */ `
         updatedAt
         plant {
           id
+          metadataID
           createdAt
           updatedAt
         }
