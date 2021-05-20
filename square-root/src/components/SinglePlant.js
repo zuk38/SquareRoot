@@ -11,7 +11,7 @@ export default function SinglePlant({
   setShowPlantModal,
   features,
 }) {
-  const { name, img, norwegian_nursery, size, type, sun_seeker, native } = plant;
+  const { norwegian_name, latin_name, image, norwegian_nursery, size_in_cm, type, sun_seeker, native } = plant;
 
   const [planBenefits, setPlantBenefits] = useState([]);
   useEffect(() => {
@@ -58,7 +58,7 @@ export default function SinglePlant({
     },
     {
       featureName: "Size (cm):",
-      featureContent: size,
+      featureContent: size_in_cm,
     },
     {
       feature: norwegian_nursery,
@@ -99,14 +99,14 @@ export default function SinglePlant({
 
       <div className="plant-modal-header">
         <Title
-          title={name.toUpperCase()}
-          subtitle={name.toUpperCase()}
+          title={latin_name.toUpperCase()}
+          subtitle={norwegian_name.toUpperCase()}
           style="plant-modal-title"
         />
       </div>
       <div className="plant-modal-content">
         <div className="plant-modal-img-container">
-          <img src={img} alt={name} />
+          <img src={image} alt={norwegian_name} />
         </div>
         <div className="features-container">
           {features &&

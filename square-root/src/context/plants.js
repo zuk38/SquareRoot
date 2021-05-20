@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import items from "../data.js";
+import { API, graphqlOperation } from "aws-amplify";
+import { listPlants } from "../api/queries";
 
 const PlantContext = React.createContext();
 
@@ -11,14 +12,14 @@ export default class PlantProvider extends Component {
     loading: true,
     //filters
     type: "all",
-    norwegian_nursery: false, //norwegian or external
-    origin: false, //native or imported
-    light: false, //shadow lover or sun seeker
     greenspace_category: "all",
-    size: 0,
+    climate_zone: "all",
+    norwegian_nursery: false, //norwegian or external
+    native: false, //native or imported
+    sun_seeker: false, //shadow lover or sun seeker
+    size_in_cm: 0,
     minSize: 0,
     maxSize: 0,
-    climateZone: "all",
     edible: false,
     pollinator_friendly: false,
     pet_kids_friendly: false,
@@ -26,11 +27,32 @@ export default class PlantProvider extends Component {
     air_puryfying: false,
   };
 
-  //fetchPlants() {}
+  fetchPlants = async () => {
+    try {
+      // Switch authMode to API_KEY for public access
+      const { data } = await API.graphql({
+        query: listPlants,
+        authMode: "API_KEY",
+      });
+      let plants = this.formatData(data.listPlants.items);
+      let featuredPlants = plants.filter((plant) => plant.featured === true);
+      let maxSize = Math.max(...plants.map((item) => item.size_in_cm)); //find the max size from the data
+      this.setState({
+        plants,
+        featuredPlants,
+        sortedPlants: plants,
+        loading: false,
+        size_in_cm: maxSize,
+        maxSize,
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
 
   getPlant = (name) => {
     let tempPlants = [...this.state.plants];
-    const plant = tempPlants.find((plant) => plant.name === name);
+    const plant = tempPlants.find((plant) => plant.norwegian_name === name);
     return plant;
   };
 
@@ -54,13 +76,13 @@ export default class PlantProvider extends Component {
       plants,
       type,
       norwegian_nursery,
-      origin,
-      light,
+      native,
       greenspace_category,
-      size,
+      size_in_cm,
       minSize,
       maxSize,
-      climateZone,
+      climate_zone,
+      sun_seeker,
       edible,
       pollinator_friendly,
       pet_kids_friendly,
@@ -70,7 +92,7 @@ export default class PlantProvider extends Component {
 
     let tempPlants = [...plants];
     //transform value from string
-    size = parseInt(size);
+    size_in_cm = parseInt(size_in_cm);
 
     // filter by type
     if (type !== "all") {
@@ -79,22 +101,24 @@ export default class PlantProvider extends Component {
 
     // filter by size
     tempPlants = tempPlants.filter(
-      (plant) => plant.size >= minSize && plant.size <= maxSize
+      (plant) => plant.size_in_cm >= minSize && plant.size_in_cm <= maxSize
     );
 
     // filter by nursery
     if (norwegian_nursery) {
-      tempPlants = tempPlants.filter((plant) => plant.norwegian_nursery === true);
+      tempPlants = tempPlants.filter(
+        (plant) => plant.norwegian_nursery === true
+      );
     }
 
     // filter by origin
-    if (origin) {
-      tempPlants = tempPlants.filter((plant) => plant.origin === true);
+    if (native) {
+      tempPlants = tempPlants.filter((plant) => plant.native === true);
     }
 
     // filter by light
-    if (light) {
-      tempPlants = tempPlants.filter((plant) => plant.light === true);
+    if (sun_seeker) {
+      tempPlants = tempPlants.filter((plant) => plant.sun_seeker === true);
     }
 
     //change state
@@ -104,24 +128,15 @@ export default class PlantProvider extends Component {
   };
 
   componentDidMount() {
-    //this.fetchPlants();
-    let plants = this.formatData(items);
-    console.log(plants);
-    let featuredPlants = plants.filter((plant) => plant.featured === true);
-    let maxSize = Math.max(...plants.map((item) => item.size)); //find the max size from the data
-    this.setState({
-      plants,
-      featuredPlants,
-      sortedPlants: plants,
-      loading: false,
-      size: maxSize,
-      maxSize,
-    });
+    this.fetchPlants();
   }
 
   formatData(items) {
     let tempItems = items.map((item) => {
-      let plant = item;
+      let image = item.metadata.image;
+      let metadata = item.metadata;
+      let plant = { image, ...metadata };
+      console.log(plant)
       return plant;
     });
     return tempItems;

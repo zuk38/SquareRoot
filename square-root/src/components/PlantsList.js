@@ -1,8 +1,6 @@
 import React, { useState } from "react";
 import "../styles/Plants.css";
-import Loading from "../components/Loading";
 import PlantMiniature from "../components/PlantMiniature";
-import Title from "../components/Title";
 import SinglePlant from "../components/SinglePlant";
 
 export default function PlantsList({ plants }) {
@@ -33,7 +31,7 @@ export default function PlantsList({ plants }) {
   plants = plants.map((plant) => {
     return (
       <PlantMiniature
-        key={plant.Id}
+        key={plant.id}
         plant={plant}
         showModal={showPlantModal}
         setShowPlantModal={openModal}

@@ -59,12 +59,12 @@ export default function PlantsFilter({ plants }) {
         {/* end of select type */}
         {/* plant size */}
         <div className="form-group">
-          <label htmlFor="size">Plant Size [cm]</label>
+          <label htmlFor="size_in_cm">Plant Size [cm]</label>
           <div className="size-inputs">
             <input
               type="number"
               name="minSize"
-              id="size"
+              id="size_in_cm"
               value={minSize}
               onChange={handleChange}
               className="size-input"
@@ -72,7 +72,7 @@ export default function PlantsFilter({ plants }) {
             <input
               type="number"
               name="maxSize"
-              id="size"
+              id="size_in_cm"
               value={maxSize}
               onChange={handleChange}
               className="size-input"
@@ -91,17 +91,17 @@ export default function PlantsFilter({ plants }) {
         {/* native */ }
         <div className="form-group">
             <div className="single-extra">
-                <input type="checkBox" name="origin" id="origin" checked={origin} onChange={handleChange}/>
-                <label htmlFor="origin">Native</label>
+                <input type="checkBox" name="native" id="native" checked={origin} onChange={handleChange}/>
+                <label htmlFor="native">Native</label>
             </div>
         </div>
-        {/* end of norwegian nursery? */ }
+        {/* end of norwegian nursery */ }
         
         {/* light req */ }
         <div className="form-group">
             <div className="single-extra">
-                <input type="checkBox" name="light" id="sunSeeker" checked={light} onChange={handleChange}/>
-                <label htmlFor="light">Sun seekers</label>
+                <input type="checkBox" name="sun_seeker" id="sun_seeker" checked={light} onChange={handleChange}/>
+                <label htmlFor="sun_seeker">Sun seekers</label>
             </div>
         </div>
         {/* end of light req */ }

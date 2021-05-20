@@ -183,11 +183,12 @@ const PN = () => {
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
-                      pollinator_friendly: e.target.value,
+                      type: e.target.value,
                     })
                   }
                   required
                 >
+                  <option value="potted" selected>potted</option>
                   <option value="grass">grass</option>
                   <option value="berry">berry</option>
                   <option value="bush">bush</option>
@@ -337,7 +338,6 @@ const PN = () => {
                       size_in_cm: e.target.value,
                     })
                   }
-                  required
                 />
               </p>
             </div>
@@ -354,7 +354,6 @@ const PN = () => {
                       climate_zone: e.target.value,
                     })
                   }
-                  required
                 />
               </p>
             </div>

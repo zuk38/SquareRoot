@@ -12,7 +12,7 @@ import PropTypes from "prop-types";
 export default function PlantMiniature({
   plant,
   showModal,
-  setShowPlantModal, 
+  setShowPlantModal,
 }) {
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
@@ -24,8 +24,9 @@ export default function PlantMiniature({
   };
 
   const {
-    name,
-    img,
+    norwegian_name,
+    latin_name,
+    image,
     norwegian_nursery,
     pollinator_friendly,
     edible,
@@ -52,7 +53,7 @@ export default function PlantMiniature({
     <>
       <article className="plant">
         <div className="plant-img-container">
-          <img src={img} alt={name} />
+          <img src={image} alt={norwegian_name} />
           {norwegian_nursery && (
             <div className="badge-top">
               <img src={QualityBadge} />
@@ -60,8 +61,10 @@ export default function PlantMiniature({
           )}
           <div className="featureList">
             <div className="featureList-center">
-              {features.map((icon) => (
-                <span className="icon-button">{iconMap[icon]}</span>
+              {features.map((icon, index) => (
+                <span className="icon-button" key={index}>
+                  {iconMap[icon]}
+                </span>
               ))}
             </div>
           </div>
@@ -73,7 +76,9 @@ export default function PlantMiniature({
               FEATURES
             </button>
           )}
-          <p className="plant-info">{name.toUpperCase()}</p>
+          <div className="plant-name">
+            <p>{latin_name.toUpperCase()}</p>
+          </div>
         </div>
       </article>
     </>
