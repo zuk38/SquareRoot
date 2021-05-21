@@ -20,8 +20,8 @@ type Project
     ]
   ) {
   id: ID!
-  projectgroup_ID: ID!
-  project_group: ProjectGroup @connection(fields: ["projectgroup_ID"])
+  #projectgroup_ID: ID!
+  #project_group: ProjectGroup @connection(fields: ["projectgroup_ID"])
   name: String!
   address: String!
   city: String!

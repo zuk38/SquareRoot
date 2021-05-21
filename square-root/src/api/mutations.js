@@ -47,13 +47,6 @@ export const createProject = /* GraphQL */ `
   ) {
     createProject(input: $input, condition: $condition) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
@@ -72,13 +65,6 @@ export const updateProject = /* GraphQL */ `
   ) {
     updateProject(input: $input, condition: $condition) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
@@ -97,13 +83,6 @@ export const deleteProject = /* GraphQL */ `
   ) {
     deleteProject(input: $input, condition: $condition) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
