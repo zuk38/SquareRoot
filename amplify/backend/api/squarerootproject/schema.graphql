@@ -1,3 +1,16 @@
+type ProjectGroup
+  @model 
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+    ]
+  ) {
+  id: ID!
+  #group_name: String
+  owner: String
+}
+
 type Project
   @model
   @auth(
@@ -7,13 +20,14 @@ type Project
     ]
   ) {
   id: ID!
+  projectgroup_ID: ID!
+  project_group: ProjectGroup @connection(fields: ["projectgroup_ID"])
   name: String!
   address: String!
   city: String!
   postalCode: String!
   end_date: String
   owner: String
-  #projectgroup_ID: ProjectGroup @connection(fields:["id"])
 }
 
 type Plant
@@ -49,7 +63,8 @@ type PlantMetadata
   )
   {
   id: ID!
-  greenspace_category: GreenspaceCategory @connection(name: "GreenspaceCategory")
+  greenspace_category_ID: ID
+  greenspace_category: GreenspaceCategory @connection(fields: ["greenspace_category_ID"])
   latin_name: String
   norwegian_name: String
   type: String
@@ -79,7 +94,7 @@ type GreenspacePlant
       # allow all guest users (not authenticated) to view plants inside 
       { allow: public, operations: [read] }
       # only owner can see and edit his project plants
-      { allow: owner, identityClaim: "email", ownerField: "customer" }
+      { allow: owner }
       # allow admins to crud plants in greenspace 
       { allow: groups, groups: ["Admin"] }
     ]
@@ -94,12 +109,10 @@ type GreenspacePlant
 }
 
 type GreenspaceCategory #rooftop, rainbed, etc.
-  @model(subscriptions: null)
-  @key(name: "greenSpaceCategory", fields:["category_id"]) {
+  @model(subscriptions: null) {
   id: ID!
   category_id: ID!
   category_name: String!
-  plant: PlantMetadata @connection(name: "GreenspaceCategory")
 }
 
 type Greenspace
@@ -117,11 +130,12 @@ type Greenspace
   @key(name:"greenspaceID", fields:["id"]) {
   id: ID!
   name: String!
-  images: String
+  category_ID: ID
+  image: String
+  featured: Boolean
   price: Float
-  project: Project @connection(fields:["id"])
-  category: GreenspaceCategory @connection(fields:["id"])
-
+  description: String
+  category: GreenspaceCategory @connection(fields:["category_ID"])
   plants: [GreenspacePlant] @connection(keyName: "byGreenspace", fields: ["id"])
 }
 
@@ -133,15 +147,6 @@ type Greenspace
   #user_ID: User @connection(fields:["id"])
   #group_ID: ProjectGroup @connection(fields:["id"])
 
-#}
-
-#type ProjectGroup
-
- # @key(name:"projectgroupID", fields:["id"]) {
-
-  #id: ID!
-  #group_name: String!
-  #primary_email: String!
 #}
 
 #type User

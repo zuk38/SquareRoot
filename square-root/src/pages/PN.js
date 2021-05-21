@@ -15,7 +15,7 @@ const {
 } = config;
 
 const PN = () => {
-  //check if it is admin
+  //check if it is pn
   const [isPN, updatePNInfo] = useState(false);
   useEffect(() => {
     // Get the AWS credentials for the current user from Identity Pools.
@@ -24,8 +24,7 @@ const PN = () => {
         const {
           idToken: { payload },
         } = cognitoUser;
-        // Loop through the groups that the user is a member of
-        // Set isAdmin to true if the user is part of the Admins group
+        // Loop through the groups that the user is a member of PNs group
         payload["cognito:groups"] &&
           payload["cognito:groups"].forEach((group) => {
             if (group === "PNs") updatePNInfo(true);
