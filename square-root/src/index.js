@@ -6,6 +6,7 @@ import { BrowserRouter as Router } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { ProjectProvider } from "./context/projects";
 import { PlantProvider } from "./context/plants";
+import { GreenspaceProvider } from "./context/greenspaces";
 import WebFont from "webfontloader";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
@@ -19,13 +20,15 @@ WebFont.load({
 });
 
 ReactDOM.render(
-  <ProjectProvider>
-    <PlantProvider>
-      <Router>
-        <App />
-      </Router>
-    </PlantProvider>
-  </ProjectProvider>,
+  <GreenspaceProvider>
+    <ProjectProvider>
+      <PlantProvider>
+        <Router>
+          <App />
+        </Router>
+      </PlantProvider>
+    </ProjectProvider>
+  </GreenspaceProvider>,
   document.getElementById("root")
 );
 

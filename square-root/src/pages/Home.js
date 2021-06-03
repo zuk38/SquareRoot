@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../components/Hero";
 import Banner from "../components/Banner";
-import HeroSection from "../components/HeroSection.js";
+import FeaturedGreenspaces from "../components/FeaturedGreenspaces";
 import Partner from "../components/Partner";
 
 export default function Home(props) {
@@ -11,7 +11,7 @@ export default function Home(props) {
   return (
     <>
       <Hero>
-        <Banner img={"../images/logo-white.png"}>
+        <Banner img="../images/logo-white.png">
           <img src="../images/logo-asterisk-white.png" />
 
           <h2>
@@ -25,7 +25,7 @@ export default function Home(props) {
           </p>
         </Banner>
       </Hero>
-      <HeroSection />
+      <FeaturedGreenspaces />
       <Partner />
     </>
   );
