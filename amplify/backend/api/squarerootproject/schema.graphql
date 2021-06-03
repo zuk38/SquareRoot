@@ -1,3 +1,16 @@
+type ProjectTeam
+  @model
+  @auth(
+    rules: [
+      { allow: owner }
+      { allow: private, operations: [read] }
+    ]
+  ) {
+  member_ID: String #cognito ID
+  projectGroup_ID: ID!  
+  project: ProjectGroup @connection(fields: ["projectGroup_ID"])
+}
+
 type ProjectGroup
   @model 
   @auth(
@@ -7,7 +20,6 @@ type ProjectGroup
     ]
   ) {
   id: ID!
-  #group_name: String
   owner: String
 }
 
@@ -20,14 +32,15 @@ type Project
     ]
   ) {
   id: ID!
-  #projectgroup_ID: ID!
-  #project_group: ProjectGroup @connection(fields: ["projectgroup_ID"])
+  projectgroup_ID: ID!
+  project_group: ProjectGroup @connection(fields: ["projectgroup_ID"])
   name: String!
   address: String!
   city: String!
   postalCode: String!
   end_date: String
   owner: String
+  greenspaces: [GreenspaceInProject] @connection(keyName: "byProject", fields: ["id"])
 }
 
 type Plant
@@ -64,7 +77,7 @@ type PlantMetadata
   {
   id: ID!
   greenspace_category_ID: ID
-  greenspace_category: GreenspaceCategory @connection(fields: ["greenspace_category_ID"])
+  greenspace_category: GreenspaceCategory 
   latin_name: String
   norwegian_name: String
   type: String
@@ -108,11 +121,22 @@ type GreenspacePlant
   #from_nursery: Plant_Nursery @connection(fields:["id"])
 }
 
-type GreenspaceCategory #rooftop, rainbed, etc.
-  @model(subscriptions: null) {
+enum GreenspaceCategory {
+  RAINBED,
+  ROOFTOP,
+  BIODIVERSITY, 
+  INDOOR
+}
+
+type GreenspaceInProject
+  @model(subscriptions: null, queries: null) 
+  @key(name: "byProject", fields: ["projectID", "greenspaceID"])
+  @key(name: "byGreenspace", fields: ["greenspaceID", "projectID"]) {
   id: ID!
-  category_id: ID!
-  category_name: String!
+  projectID: ID!
+  greenspaceID: ID!
+  project: Project! @connection(fields: ["projectID"])
+  greenspace: Greenspace! @connection(fields: ["greenspaceID"])
 }
 
 type Greenspace
@@ -126,8 +150,7 @@ type Greenspace
       # allow all guest users (not authenticated) to view greenspaces
       { allow: public, operations: [read] }
     ]
-  ) 
-  @key(name:"greenspaceID", fields:["id"]) {
+  ) {
   id: ID!
   name: String!
   category_ID: ID
@@ -135,19 +158,14 @@ type Greenspace
   featured: Boolean
   price: Float
   description: String
-  category: GreenspaceCategory @connection(fields:["category_ID"])
+  category: GreenspaceCategory 
   plants: [GreenspacePlant] @connection(keyName: "byGreenspace", fields: ["id"])
+  projects: [GreenspaceInProject] @connection(keyName: "byGreenspace", fields: ["id"])
 }
 
 #------------------------------------------------------------------------------------------------------
 
-#type UserGroup
- # @key(name:"usergroupID", fields:["user_ID"]){
 
-  #user_ID: User @connection(fields:["id"])
-  #group_ID: ProjectGroup @connection(fields:["id"])
-
-#}
 
 #type User
  #   @key(name: "userID", fields: ["id"])

@@ -1,6 +1,69 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const createProjectTeam = /* GraphQL */ `
+  mutation CreateProjectTeam(
+    $input: CreateProjectTeamInput!
+    $condition: ModelProjectTeamConditionInput
+  ) {
+    createProjectTeam(input: $input, condition: $condition) {
+      id
+      member_ID
+      projectGroup_ID
+      project {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const updateProjectTeam = /* GraphQL */ `
+  mutation UpdateProjectTeam(
+    $input: UpdateProjectTeamInput!
+    $condition: ModelProjectTeamConditionInput
+  ) {
+    updateProjectTeam(input: $input, condition: $condition) {
+      id
+      member_ID
+      projectGroup_ID
+      project {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const deleteProjectTeam = /* GraphQL */ `
+  mutation DeleteProjectTeam(
+    $input: DeleteProjectTeamInput!
+    $condition: ModelProjectTeamConditionInput
+  ) {
+    deleteProjectTeam(input: $input, condition: $condition) {
+      id
+      member_ID
+      projectGroup_ID
+      project {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
 export const createProjectGroup = /* GraphQL */ `
   mutation CreateProjectGroup(
     $input: CreateProjectGroupInput!
@@ -47,12 +110,29 @@ export const createProject = /* GraphQL */ `
   ) {
     createProject(input: $input, condition: $condition) {
       id
+      projectgroup_ID
+      project_group {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
       name
       address
       city
       postalCode
       end_date
       owner
+      greenspaces {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -65,12 +145,29 @@ export const updateProject = /* GraphQL */ `
   ) {
     updateProject(input: $input, condition: $condition) {
       id
+      projectgroup_ID
+      project_group {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
       name
       address
       city
       postalCode
       end_date
       owner
+      greenspaces {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -83,12 +180,29 @@ export const deleteProject = /* GraphQL */ `
   ) {
     deleteProject(input: $input, condition: $condition) {
       id
+      projectgroup_ID
+      project_group {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
       name
       address
       city
       postalCode
       end_date
       owner
+      greenspaces {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -107,13 +221,7 @@ export const createPlant = /* GraphQL */ `
       metadata {
         id
         greenspace_category_ID
-        greenspace_category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
-        }
+        greenspace_category
         latin_name
         norwegian_name
         type
@@ -160,13 +268,7 @@ export const updatePlant = /* GraphQL */ `
       metadata {
         id
         greenspace_category_ID
-        greenspace_category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
-        }
+        greenspace_category
         latin_name
         norwegian_name
         type
@@ -213,13 +315,7 @@ export const deletePlant = /* GraphQL */ `
       metadata {
         id
         greenspace_category_ID
-        greenspace_category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
-        }
+        greenspace_category
         latin_name
         norwegian_name
         type
@@ -261,13 +357,7 @@ export const createPlantMetadata = /* GraphQL */ `
     createPlantMetadata(input: $input, condition: $condition) {
       id
       greenspace_category_ID
-      greenspace_category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
-      }
+      greenspace_category
       latin_name
       norwegian_name
       type
@@ -296,13 +386,7 @@ export const updatePlantMetadata = /* GraphQL */ `
     updatePlantMetadata(input: $input, condition: $condition) {
       id
       greenspace_category_ID
-      greenspace_category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
-      }
+      greenspace_category
       latin_name
       norwegian_name
       type
@@ -331,13 +415,7 @@ export const deletePlantMetadata = /* GraphQL */ `
     deletePlantMetadata(input: $input, condition: $condition) {
       id
       greenspace_category_ID
-      greenspace_category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
-      }
+      greenspace_category
       latin_name
       norwegian_name
       type
@@ -378,6 +456,7 @@ export const createGreenspacePlant = /* GraphQL */ `
         metadata {
           id
           greenspace_category_ID
+          greenspace_category
           latin_name
           norwegian_name
           type
@@ -409,12 +488,9 @@ export const createGreenspacePlant = /* GraphQL */ `
         featured
         price
         description
-        category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
+        category
+        projects {
+          nextToken
         }
         createdAt
         updatedAt
@@ -445,6 +521,7 @@ export const updateGreenspacePlant = /* GraphQL */ `
         metadata {
           id
           greenspace_category_ID
+          greenspace_category
           latin_name
           norwegian_name
           type
@@ -476,12 +553,9 @@ export const updateGreenspacePlant = /* GraphQL */ `
         featured
         price
         description
-        category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
+        category
+        projects {
+          nextToken
         }
         createdAt
         updatedAt
@@ -512,6 +586,7 @@ export const deleteGreenspacePlant = /* GraphQL */ `
         metadata {
           id
           greenspace_category_ID
+          greenspace_category
           latin_name
           norwegian_name
           type
@@ -543,12 +618,9 @@ export const deleteGreenspacePlant = /* GraphQL */ `
         featured
         price
         description
-        category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
+        category
+        projects {
+          nextToken
         }
         createdAt
         updatedAt
@@ -559,45 +631,162 @@ export const deleteGreenspacePlant = /* GraphQL */ `
     }
   }
 `;
-export const createGreenspaceCategory = /* GraphQL */ `
-  mutation CreateGreenspaceCategory(
-    $input: CreateGreenspaceCategoryInput!
-    $condition: ModelGreenspaceCategoryConditionInput
+export const createGreenspaceInProject = /* GraphQL */ `
+  mutation CreateGreenspaceInProject(
+    $input: CreateGreenspaceInProjectInput!
+    $condition: ModelGreenspaceInProjectConditionInput
   ) {
-    createGreenspaceCategory(input: $input, condition: $condition) {
+    createGreenspaceInProject(input: $input, condition: $condition) {
       id
-      category_id
-      category_name
+      projectID
+      greenspaceID
+      project {
+        id
+        projectgroup_ID
+        project_group {
+          id
+          owner
+          createdAt
+          updatedAt
+        }
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        greenspaces {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      greenspace {
+        id
+        name
+        category_ID
+        image
+        featured
+        price
+        description
+        category
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const updateGreenspaceCategory = /* GraphQL */ `
-  mutation UpdateGreenspaceCategory(
-    $input: UpdateGreenspaceCategoryInput!
-    $condition: ModelGreenspaceCategoryConditionInput
+export const updateGreenspaceInProject = /* GraphQL */ `
+  mutation UpdateGreenspaceInProject(
+    $input: UpdateGreenspaceInProjectInput!
+    $condition: ModelGreenspaceInProjectConditionInput
   ) {
-    updateGreenspaceCategory(input: $input, condition: $condition) {
+    updateGreenspaceInProject(input: $input, condition: $condition) {
       id
-      category_id
-      category_name
+      projectID
+      greenspaceID
+      project {
+        id
+        projectgroup_ID
+        project_group {
+          id
+          owner
+          createdAt
+          updatedAt
+        }
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        greenspaces {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      greenspace {
+        id
+        name
+        category_ID
+        image
+        featured
+        price
+        description
+        category
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const deleteGreenspaceCategory = /* GraphQL */ `
-  mutation DeleteGreenspaceCategory(
-    $input: DeleteGreenspaceCategoryInput!
-    $condition: ModelGreenspaceCategoryConditionInput
+export const deleteGreenspaceInProject = /* GraphQL */ `
+  mutation DeleteGreenspaceInProject(
+    $input: DeleteGreenspaceInProjectInput!
+    $condition: ModelGreenspaceInProjectConditionInput
   ) {
-    deleteGreenspaceCategory(input: $input, condition: $condition) {
+    deleteGreenspaceInProject(input: $input, condition: $condition) {
       id
-      category_id
-      category_name
+      projectID
+      greenspaceID
+      project {
+        id
+        projectgroup_ID
+        project_group {
+          id
+          owner
+          createdAt
+          updatedAt
+        }
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        greenspaces {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      greenspace {
+        id
+        name
+        category_ID
+        image
+        featured
+        price
+        description
+        category
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
@@ -614,12 +803,16 @@ export const createGreenspace = /* GraphQL */ `
       featured
       price
       description
-      category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
+      category
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -651,12 +844,16 @@ export const updateGreenspace = /* GraphQL */ `
       featured
       price
       description
-      category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
+      category
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt
@@ -688,12 +885,16 @@ export const deleteGreenspace = /* GraphQL */ `
       featured
       price
       description
-      category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
+      category
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt

@@ -1,6 +1,49 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
+export const getProjectTeam = /* GraphQL */ `
+  query GetProjectTeam($id: ID!) {
+    getProjectTeam(id: $id) {
+      id
+      member_ID
+      projectGroup_ID
+      project {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+      owner
+    }
+  }
+`;
+export const listProjectTeams = /* GraphQL */ `
+  query ListProjectTeams(
+    $filter: ModelProjectTeamFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listProjectTeams(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        member_ID
+        projectGroup_ID
+        project {
+          id
+          owner
+          createdAt
+          updatedAt
+        }
+        createdAt
+        updatedAt
+        owner
+      }
+      nextToken
+    }
+  }
+`;
 export const getProjectGroup = /* GraphQL */ `
   query GetProjectGroup($id: ID!) {
     getProjectGroup(id: $id) {
@@ -32,12 +75,29 @@ export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
       id
+      projectgroup_ID
+      project_group {
+        id
+        owner
+        createdAt
+        updatedAt
+      }
       name
       address
       city
       postalCode
       end_date
       owner
+      greenspaces {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
@@ -52,45 +112,22 @@ export const listProjects = /* GraphQL */ `
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        projectgroup_ID
+        project_group {
+          id
+          owner
+          createdAt
+          updatedAt
+        }
         name
         address
         city
         postalCode
         end_date
         owner
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
-export const getGreenspaceCategory = /* GraphQL */ `
-  query GetGreenspaceCategory($id: ID!) {
-    getGreenspaceCategory(id: $id) {
-      id
-      category_id
-      category_name
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listGreenspaceCategorys = /* GraphQL */ `
-  query ListGreenspaceCategorys(
-    $filter: ModelGreenspaceCategoryFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listGreenspaceCategorys(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
-      items {
-        id
-        category_id
-        category_name
+        greenspaces {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -113,6 +150,7 @@ export const listPlants = /* GraphQL */ `
         metadata {
           id
           greenspace_category_ID
+          greenspace_category
           latin_name
           norwegian_name
           type
@@ -149,13 +187,7 @@ export const getPlant = /* GraphQL */ `
       metadata {
         id
         greenspace_category_ID
-        greenspace_category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
-        }
+        greenspace_category
         latin_name
         norwegian_name
         type
@@ -199,13 +231,7 @@ export const listPlantMetadatas = /* GraphQL */ `
       items {
         id
         greenspace_category_ID
-        greenspace_category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
-        }
+        greenspace_category
         latin_name
         norwegian_name
         type
@@ -233,13 +259,7 @@ export const getPlantMetadata = /* GraphQL */ `
     getPlantMetadata(id: $id) {
       id
       greenspace_category_ID
-      greenspace_category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
-      }
+      greenspace_category
       latin_name
       norwegian_name
       type
@@ -277,6 +297,7 @@ export const getGreenspacePlant = /* GraphQL */ `
         metadata {
           id
           greenspace_category_ID
+          greenspace_category
           latin_name
           norwegian_name
           type
@@ -308,12 +329,9 @@ export const getGreenspacePlant = /* GraphQL */ `
         featured
         price
         description
-        category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
+        category
+        projects {
+          nextToken
         }
         createdAt
         updatedAt
@@ -357,6 +375,7 @@ export const listGreenspacePlants = /* GraphQL */ `
           featured
           price
           description
+          category
           createdAt
           updatedAt
         }
@@ -380,12 +399,9 @@ export const listGreenspaces = /* GraphQL */ `
         featured
         price
         description
-        category {
-          id
-          category_id
-          category_name
-          createdAt
-          updatedAt
+        category
+        projects {
+          nextToken
         }
         createdAt
         updatedAt
@@ -407,12 +423,16 @@ export const getGreenspace = /* GraphQL */ `
       featured
       price
       description
-      category {
-        id
-        category_id
-        category_name
-        createdAt
-        updatedAt
+      category
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
+        }
+        nextToken
       }
       createdAt
       updatedAt

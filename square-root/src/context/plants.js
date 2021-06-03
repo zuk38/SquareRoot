@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { API, graphqlOperation } from "aws-amplify";
+import { API } from "aws-amplify";
 import { listPlants } from "../api/queries";
 
 const PlantContext = React.createContext();
