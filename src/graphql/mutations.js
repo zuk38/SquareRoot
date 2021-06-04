@@ -483,7 +483,6 @@ export const createGreenspacePlant = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -548,7 +547,6 @@ export const updateGreenspacePlant = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -613,7 +611,6 @@ export const deleteGreenspacePlant = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -666,7 +663,6 @@ export const createGreenspaceInProject = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -719,7 +715,6 @@ export const updateGreenspaceInProject = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -772,7 +767,6 @@ export const deleteGreenspaceInProject = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -798,7 +792,6 @@ export const createGreenspace = /* GraphQL */ `
     createGreenspace(input: $input, condition: $condition) {
       id
       name
-      category_ID
       image
       featured
       price
@@ -839,7 +832,6 @@ export const updateGreenspace = /* GraphQL */ `
     updateGreenspace(input: $input, condition: $condition) {
       id
       name
-      category_ID
       image
       featured
       price
@@ -880,7 +872,6 @@ export const deleteGreenspace = /* GraphQL */ `
     deleteGreenspace(input: $input, condition: $condition) {
       id
       name
-      category_ID
       image
       featured
       price

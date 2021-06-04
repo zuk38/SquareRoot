@@ -324,7 +324,6 @@ export const getGreenspacePlant = /* GraphQL */ `
       greenspace {
         id
         name
-        category_ID
         image
         featured
         price
@@ -370,7 +369,6 @@ export const listGreenspacePlants = /* GraphQL */ `
         greenspace {
           id
           name
-          category_ID
           image
           featured
           price
@@ -394,7 +392,6 @@ export const listGreenspaces = /* GraphQL */ `
       items {
         id
         name
-        category_ID
         image
         featured
         price
@@ -418,7 +415,6 @@ export const getGreenspace = /* GraphQL */ `
     getGreenspace(id: $id) {
       id
       name
-      category_ID
       image
       featured
       price

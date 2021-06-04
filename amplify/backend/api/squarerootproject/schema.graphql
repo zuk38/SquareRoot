@@ -112,7 +112,6 @@ type GreenspacePlant
       { allow: groups, groups: ["Admin"] }
     ]
   ) {
-  id: ID!
   plant_id: ID!
   greenspace_id: ID!
   plant: Plant @connection(fields: ["plant_id"])
@@ -132,7 +131,6 @@ type GreenspaceInProject
   @model(subscriptions: null, queries: null) 
   @key(name: "byProject", fields: ["projectID", "greenspaceID"])
   @key(name: "byGreenspace", fields: ["greenspaceID", "projectID"]) {
-  id: ID!
   projectID: ID!
   greenspaceID: ID!
   project: Project! @connection(fields: ["projectID"])
@@ -153,7 +151,6 @@ type Greenspace
   ) {
   id: ID!
   name: String!
-  category_ID: ID
   image: String
   featured: Boolean
   price: Float
