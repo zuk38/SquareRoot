@@ -39,6 +39,32 @@ export default function PlantsFilter({ plants }) {
     );
   });
 
+  //get unique categories
+  let categories = getUnique(plants, "greenspace_category");
+  //add all
+  categories = ["all", ...categories];
+  //map to jsx
+  categories = categories.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  //get unique climate zones
+  let zones = getUnique(plants, "climateZone");
+  //add all
+  zones = ["all", ...zones];
+  //map to jsx
+  zones = categories.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
   return (
     <section className="filter-container">
       <form className="filter-form">
@@ -56,6 +82,20 @@ export default function PlantsFilter({ plants }) {
           </select>
         </div>
         {/* end of select type */}
+        {/* select climate */}
+        <div className="form-group">
+          <label htmlFor="type">Climate Zone</label>
+          <select
+            name="zone"
+            id="zone"
+            value={type}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {zones}
+          </select>
+        </div>
+        {/* end of select zone */}
         {/* plant size */}
         <div className="form-group">
           <label htmlFor="size_in_cm">Plant Size [cm]</label>
