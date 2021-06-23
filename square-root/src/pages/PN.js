@@ -193,6 +193,7 @@ const PN = () => {
                   <option value="bush">bush</option>
                   <option value="perennial">perennial</option>
                   <option value="fern">fern</option>
+                  <option value="herb">herb</option>
                 </select>
               </p>
             </div>

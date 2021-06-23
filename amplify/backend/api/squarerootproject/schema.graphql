@@ -76,7 +76,6 @@ type PlantMetadata
   )
   {
   id: ID!
-  greenspace_category_ID: ID
   greenspace_category: GreenspaceCategory 
   latin_name: String
   norwegian_name: String
@@ -114,8 +113,8 @@ type GreenspacePlant
   ) {
   plant_id: ID!
   greenspace_id: ID!
-  plant: Plant @connection(fields: ["plant_id"])
-  greenspace: Greenspace @connection(fields: ["greenspace_id"])
+  plant: Plant! @connection(fields: ["plant_id"])
+  greenspace: Greenspace! @connection(fields: ["greenspace_id"])
   quantity: Float
   #from_nursery: Plant_Nursery @connection(fields:["id"])
 }
@@ -129,6 +128,14 @@ enum GreenspaceCategory {
 
 type GreenspaceInProject
   @model(subscriptions: null, queries: null) 
+  @auth(
+    rules: [
+      # allow all authenticated users to view greenspaces
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view greenspaces
+      { allow: public, operations: [read] }
+    ]
+  )
   @key(name: "byProject", fields: ["projectID", "greenspaceID"])
   @key(name: "byGreenspace", fields: ["greenspaceID", "projectID"]) {
   projectID: ID!
@@ -161,19 +168,6 @@ type Greenspace
 }
 
 #------------------------------------------------------------------------------------------------------
-
-
-
-#type User
- #   @key(name: "userID", fields: ["id"])
-  #  {
-   #     id: ID!
-    #    first_name: String!
-     #   last_name: String
-      #  email: String
-      #  phone_number: Int
-      #  user_role: String!
-    #}
 
 
 #type Order 

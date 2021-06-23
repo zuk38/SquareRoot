@@ -123,6 +123,8 @@ export const createProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -133,8 +135,6 @@ export const createProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -158,6 +158,8 @@ export const updateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -168,8 +170,6 @@ export const updateProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -193,6 +193,8 @@ export const deleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -203,8 +205,6 @@ export const deleteProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -220,7 +220,6 @@ export const createPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        greenspace_category_ID
         greenspace_category
         latin_name
         norwegian_name
@@ -267,7 +266,6 @@ export const updatePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        greenspace_category_ID
         greenspace_category
         latin_name
         norwegian_name
@@ -314,7 +312,6 @@ export const deletePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        greenspace_category_ID
         greenspace_category
         latin_name
         norwegian_name
@@ -356,7 +353,6 @@ export const createPlantMetadata = /* GraphQL */ `
   ) {
     createPlantMetadata(input: $input, condition: $condition) {
       id
-      greenspace_category_ID
       greenspace_category
       latin_name
       norwegian_name
@@ -385,7 +381,6 @@ export const updatePlantMetadata = /* GraphQL */ `
   ) {
     updatePlantMetadata(input: $input, condition: $condition) {
       id
-      greenspace_category_ID
       greenspace_category
       latin_name
       norwegian_name
@@ -414,7 +409,6 @@ export const deletePlantMetadata = /* GraphQL */ `
   ) {
     deletePlantMetadata(input: $input, condition: $condition) {
       id
-      greenspace_category_ID
       greenspace_category
       latin_name
       norwegian_name
@@ -455,7 +449,6 @@ export const createGreenspacePlant = /* GraphQL */ `
         updatedAt
         metadata {
           id
-          greenspace_category_ID
           greenspace_category
           latin_name
           norwegian_name
@@ -488,12 +481,12 @@ export const createGreenspacePlant = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -519,7 +512,6 @@ export const updateGreenspacePlant = /* GraphQL */ `
         updatedAt
         metadata {
           id
-          greenspace_category_ID
           greenspace_category
           latin_name
           norwegian_name
@@ -552,12 +544,12 @@ export const updateGreenspacePlant = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -583,7 +575,6 @@ export const deleteGreenspacePlant = /* GraphQL */ `
         updatedAt
         metadata {
           id
-          greenspace_category_ID
           greenspace_category
           latin_name
           norwegian_name
@@ -616,12 +607,12 @@ export const deleteGreenspacePlant = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -652,11 +643,11 @@ export const createGreenspaceInProject = /* GraphQL */ `
         postalCode
         end_date
         owner
+        createdAt
+        updatedAt
         greenspaces {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       createdAt
       updatedAt
@@ -668,12 +659,12 @@ export const createGreenspaceInProject = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -704,11 +695,11 @@ export const updateGreenspaceInProject = /* GraphQL */ `
         postalCode
         end_date
         owner
+        createdAt
+        updatedAt
         greenspaces {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       createdAt
       updatedAt
@@ -720,12 +711,12 @@ export const updateGreenspaceInProject = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -756,11 +747,11 @@ export const deleteGreenspaceInProject = /* GraphQL */ `
         postalCode
         end_date
         owner
+        createdAt
+        updatedAt
         greenspaces {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       createdAt
       updatedAt
@@ -772,12 +763,12 @@ export const deleteGreenspaceInProject = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -797,16 +788,6 @@ export const createGreenspace = /* GraphQL */ `
       price
       description
       category
-      projects {
-        items {
-          id
-          projectID
-          greenspaceID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -818,6 +799,16 @@ export const createGreenspace = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
         }
         nextToken
       }
@@ -837,16 +828,6 @@ export const updateGreenspace = /* GraphQL */ `
       price
       description
       category
-      projects {
-        items {
-          id
-          projectID
-          greenspaceID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -858,6 +839,16 @@ export const updateGreenspace = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
         }
         nextToken
       }
@@ -877,16 +868,6 @@ export const deleteGreenspace = /* GraphQL */ `
       price
       description
       category
-      projects {
-        items {
-          id
-          projectID
-          greenspaceID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -898,6 +879,16 @@ export const deleteGreenspace = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
         }
         nextToken
       }

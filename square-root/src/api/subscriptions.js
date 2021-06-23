@@ -102,6 +102,8 @@ export const onCreateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -112,8 +114,6 @@ export const onCreateProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -134,6 +134,8 @@ export const onUpdateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -144,8 +146,6 @@ export const onUpdateProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -166,6 +166,8 @@ export const onDeleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -176,8 +178,6 @@ export const onDeleteProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;

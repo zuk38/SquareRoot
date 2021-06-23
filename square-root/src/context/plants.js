@@ -66,11 +66,11 @@ export default class PlantProvider extends Component {
       {
         [name]: value,
       },
-      this.filterRooms
+      this.filterPlants
     ); //filter as a callback depending on state
   };
 
-  filterRooms = () => {
+  filterPlants = () => {
     //backup all original values
     let {
       plants,

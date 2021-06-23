@@ -88,6 +88,8 @@ export const getProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      createdAt
+      updatedAt
       greenspaces {
         items {
           id
@@ -98,8 +100,6 @@ export const getProject = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -125,11 +125,11 @@ export const listProjects = /* GraphQL */ `
         postalCode
         end_date
         owner
+        createdAt
+        updatedAt
         greenspaces {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -149,7 +149,6 @@ export const listPlants = /* GraphQL */ `
         updatedAt
         metadata {
           id
-          greenspace_category_ID
           greenspace_category
           latin_name
           norwegian_name
@@ -186,7 +185,6 @@ export const getPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        greenspace_category_ID
         greenspace_category
         latin_name
         norwegian_name
@@ -230,7 +228,6 @@ export const listPlantMetadatas = /* GraphQL */ `
     listPlantMetadatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        greenspace_category_ID
         greenspace_category
         latin_name
         norwegian_name
@@ -258,7 +255,6 @@ export const getPlantMetadata = /* GraphQL */ `
   query GetPlantMetadata($id: ID!) {
     getPlantMetadata(id: $id) {
       id
-      greenspace_category_ID
       greenspace_category
       latin_name
       norwegian_name
@@ -296,7 +292,6 @@ export const getGreenspacePlant = /* GraphQL */ `
         updatedAt
         metadata {
           id
-          greenspace_category_ID
           greenspace_category
           latin_name
           norwegian_name
@@ -329,12 +324,12 @@ export const getGreenspacePlant = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -397,12 +392,12 @@ export const listGreenspaces = /* GraphQL */ `
         price
         description
         category
-        projects {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        projects {
           nextToken
         }
       }
@@ -420,16 +415,6 @@ export const getGreenspace = /* GraphQL */ `
       price
       description
       category
-      projects {
-        items {
-          id
-          projectID
-          greenspaceID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -441,6 +426,16 @@ export const getGreenspace = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      projects {
+        items {
+          id
+          projectID
+          greenspaceID
+          createdAt
+          updatedAt
         }
         nextToken
       }
