@@ -15,16 +15,15 @@ export default function PlantsFilter({ plants }) {
     norwegian_nursery,
     origin,
     light,
-    greenspace_category,
-    size,
+    greenspace_category,  //dropdown
     minSize,
     maxSize,
-    climateZone,
-    edible,
-    pollinator_friendly,
-    pet_kids_friendly,
-    rain_garden,
-    air_puryfying,
+    climateZone,  //dropdown
+    edible, //checkbox
+    pollinator_friendly,  //checkbox
+    pet_kids_friendly,  //checkboox
+    rain_garden,  //checkbox
+    air_puryfying,  //checkbox
   } = context;
 
   //get unique types
