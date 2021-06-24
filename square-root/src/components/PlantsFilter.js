@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
-import { PlantContext } from "../../context/plants";
-import "../../styles/Plants.css";
+import { PlantContext } from "../context/plants";
+import "../styles/Plants.css";
 
 //get all unique values
 const getUnique = (items, value) => {

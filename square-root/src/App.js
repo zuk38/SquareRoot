@@ -6,12 +6,9 @@ import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/frontpages/Home";
-import Plants from "./pages/plants/Plants";
-import PN from "./pages/plants/PN";
+import Plants from "./pages/Plants";
+import PN from "./pages/PN";
 import Error from "./pages/Error";
-import Rooftop from "./pages/greenspaces/Rooftop";
-import Rainbed from "./pages/greenspaces/Rainbed";
-import Indoor from "./pages/greenspaces/Indoor";
 import All_Projects from "./pages/user-pages/All_Projects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
@@ -23,14 +20,14 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
 import Footer from "./components/Footer";
 import About from "./pages/frontpages/About";
-import Partner from "./pages/frontpages/Partner";
+import Partner from "./components/Partner";
 import Account from "./pages/user-pages/Account";
+import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
 
 import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
 import { Component } from "react";
-import { FaIcons } from "react-icons/fa";
 library.add(faEdit);
 
 class App extends Component {
