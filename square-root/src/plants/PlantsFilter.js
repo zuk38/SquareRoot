@@ -15,16 +15,15 @@ export default function PlantsFilter({ plants }) {
     norwegian_nursery,
     origin,
     light,
-    greenspace_category,
-    size,
+    greenspace_category,  //dropdown
     minSize,
     maxSize,
-    climateZone,
-    edible,
-    pollinator_friendly,
-    pet_kids_friendly,
-    rain_garden,
-    air_puryfying,
+    climateZone,  //dropdown
+    edible, //checkbox
+    pollinator_friendly,  //checkbox
+    pet_kids_friendly,  //checkboox
+    rain_garden,  //checkbox
+    air_puryfying,  //checkbox
   } = context;
 
   //get unique types
@@ -33,6 +32,32 @@ export default function PlantsFilter({ plants }) {
   types = ["all", ...types];
   //map to jsx
   types = types.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  //get unique categories
+  let categories = getUnique(plants, "greenspace_category");
+  //add all
+  categories = ["all", ...categories];
+  //map to jsx
+  categories = categories.map((item, index) => {
+    return (
+      <option value={item} key={index}>
+        {item}
+      </option>
+    );
+  });
+
+  //get unique climate zones
+  let zones = getUnique(plants, "climateZone");
+  //add all
+  zones = ["all", ...zones];
+  //map to jsx
+  zones = categories.map((item, index) => {
     return (
       <option value={item} key={index}>
         {item}
@@ -57,6 +82,20 @@ export default function PlantsFilter({ plants }) {
           </select>
         </div>
         {/* end of select type */}
+        {/* select climate */}
+        <div className="form-group">
+          <label htmlFor="type">Climate Zone</label>
+          <select
+            name="zone"
+            id="zone"
+            value={type}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {zones}
+          </select>
+        </div>
+        {/* end of select zone */}
         {/* plant size */}
         <div className="form-group">
           <label htmlFor="size_in_cm">Plant Size [cm]</label>
