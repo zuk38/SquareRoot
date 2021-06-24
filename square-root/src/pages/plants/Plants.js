@@ -1,8 +1,8 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import "../styles/Plants.css";
-import Title from "../components/Title";
-import PlantsContainer from "../components/PlantsContainer";
+import "../../styles/Plants.css";
+import Title from "../../components/Title";
+import PlantsContainer from "./PlantsContainer";
 
 export default function Plants() {
   return (

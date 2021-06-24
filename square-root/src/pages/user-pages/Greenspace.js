@@ -1,12 +1,12 @@
 import React, {Component} from "react";
 import "./projects.css";
-import icon from "../../../images/proj_icon.png";
+import icon from "../../images/proj_icon.png";
 import {Menu} from "semantic-ui-react";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import All_Projects from "./All_Projects";
-import data from "../../data.json";
+import data from "../data.json";
 
 
 export default class Greenspace extends Component {

@@ -175,14 +175,16 @@ label {
   background-color: var(--offWhite);
   overflow-x: hidden;
   padding-top: 20px;
-}*/
+}
 
 .filter-container {
   padding: 5rem 0;
 }
+
+*/
 .filter-form {
-  width: 60vw;
-  margin: 0 auto;
+  width: 100%;
+  margin: 1rem 0 0 5%;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
   grid-row-gap: 2rem;
@@ -193,7 +195,6 @@ label {
 }
 .form-group label {
   display: block;
-  letter-spacing: var(--mainSpacing);
   margin-bottom: 0.5rem;
 }
 .form-control {
@@ -206,8 +207,9 @@ label {
 }
 .size-input {
   width: 40%;
-  padding: 0.2rem;
-  border: 1px solid var(--mainBlack);
+  font-size: 1rem;
+  padding: 1rem;
+  border: 1px solid lightgray;
   border-radius: 0.3rem;
   margin-right: 0.3rem;
 }

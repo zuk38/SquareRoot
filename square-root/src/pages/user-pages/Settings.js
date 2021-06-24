@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import "./projects.css";
-import icon from "../../../images/proj_icon.png";
-import data from "../../data.json";
-import { findCityFromZip } from "../../../functions/apiCalls";
+import icon from "../../images/proj_icon.png";
+import data from "../data.json";
+import { findCityFromZip } from "../../functions/apiCalls";
 
 export default class Settings extends Component {
   render() {

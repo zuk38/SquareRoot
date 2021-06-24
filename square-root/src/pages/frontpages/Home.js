@@ -1,7 +1,7 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
-import FeaturedGreenspaces from "../greenspaces/FeaturedGreenspaces";
+import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import Partner from "./Partner";
 
 export default function Home(props) {

@@ -1,10 +1,10 @@
 import React, {Component} from "react";
 import "./projects.css";
-import "../../../styles/Customize.css";
-import icon from "../../../images/proj_icon.png";
+import "../../styles/Customize.css";
+import icon from "../../images/proj_icon.png";
 import Modal from "react-modal";
-import {findCityFromZip} from "../../../functions/apiCalls";
-import data from "../../data.json";
+import {findCityFromZip} from "../../functions/apiCalls";
+import data from "../data.json";
 export default class All_Projects extends Component {
     
     /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/

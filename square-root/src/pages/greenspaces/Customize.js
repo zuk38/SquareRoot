@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import "../../styles/Customize.css";
 import Modal from "react-modal";
+import Title from "../../components/Title";
 
 const plantList = [
   {
@@ -243,12 +244,13 @@ function PlantPage() {
 
       <div className="customize-content">
         <div className="cust-concept-title">
-          <h1>OSLO</h1>
-          <p>
-            I Oslo anbefales det med biologisk mangfoldige planter og
-            temperaturregulerende planter. Vi kan skrive mer her for å gi mer
-            informasjon.
-          </p>
+        <Title
+        title="Oslo"
+        subtitle="I Oslo anbefales det med biologisk mangfoldige planter og
+              temperaturregulerende planter. Vi kan skrive mer her for å gi mer
+              informasjon."
+        style="plants-title"
+      />
         </div>
         <div className="filters">
           {Object.keys(plantFilters).map((pf) => {

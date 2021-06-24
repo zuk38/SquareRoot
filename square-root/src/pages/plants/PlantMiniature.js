@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
-import "../styles/Plants.css";
-import QualityBadge from "../images/quality.png";
-import { ReactComponent as BeeIcon } from "../icons/bee.svg";
-import { ReactComponent as EdibleIcon } from "../icons/eat.svg";
-import { ReactComponent as NativeIcon } from "../icons/norway.svg";
-import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
-import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
-import { ReactComponent as SunIcon } from "../icons/sun.svg";
+import "../../styles/Plants.css";
+import QualityBadge from "../../images/quality.png";
+import { ReactComponent as BeeIcon } from "../../icons/bee.svg";
+import { ReactComponent as EdibleIcon } from "../../icons/eat.svg";
+import { ReactComponent as NativeIcon } from "../../icons/norway.svg";
+import { ReactComponent as PetKidsIcon } from "../../icons/pets.svg";
+import { ReactComponent as AirIcon } from "../../icons/air-purifier.svg";
+import { ReactComponent as SunIcon } from "../../icons/sun.svg";
 import PropTypes from "prop-types";
 
 export default function PlantMiniature({

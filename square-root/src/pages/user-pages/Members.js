@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./projects.css";
-import icon from "../../../images/proj_icon.png";
-import data from "../../data.json";
+import icon from "../../images/proj_icon.png";
+import data from "../data.json";
 
 export default class Members extends Component {
   render() {
