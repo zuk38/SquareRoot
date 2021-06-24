@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import "../../styles/SinglePlant.css";
+import "../styles/SinglePlant.css";
 import Modal from "react-modal";
-import Title from "../../components/Title";
+import Title from "./Title";
 
 Modal.setAppElement("body");
 

@@ -1,14 +1,13 @@
 import React, { Component } from "react";
 import { GreenspaceContext } from "../context/greenspaces";
-import Greenspace from "./Greenspace"
-import Loading from "./Loading"
-import "../styles/Home.css";
+import Greenspace from "../../components/Greenspace"
+import "./Home.css";
 
 export default class FeaturedGreenspaces extends Component {
   static contextType = GreenspaceContext;
 
   render() {
-    let {loading, featuredGreenspaces : greenspaces} = this.context;
+    const {loading, featuredGreenspaces : greenspaces} = this.context;
     greenspaces = greenspaces.map(greenspace => {
       return <Greenspace key={greenspace.id} greenspace={greenspace} />
     })

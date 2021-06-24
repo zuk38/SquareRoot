@@ -51,6 +51,7 @@ export default class GreenspaceProvider extends Component {
         console.log(plant)
         return plant;
       })
+      
     })
   }
 

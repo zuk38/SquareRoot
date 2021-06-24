@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/Plants.css";
+import "../styles/Plants.css";
 import PlantMiniature from "./PlantMiniature";
 import SinglePlant from "./SinglePlant";
 
