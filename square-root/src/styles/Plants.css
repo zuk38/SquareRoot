@@ -231,8 +231,7 @@ label {
 }
 
 
-input[name=filter-checkbox]{
-  border-color: red;
+.filter-checkbox{
   width: 20px;
   height: 20px;
 }
