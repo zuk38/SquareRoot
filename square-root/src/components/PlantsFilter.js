@@ -104,7 +104,7 @@ export default function PlantsFilter({ plants }) {
           <select
             name="zone"
             id="zone"
-            value={type}
+            value={zones}
             className="form-control"
             onChange={handleChange}
           >
