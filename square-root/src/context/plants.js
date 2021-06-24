@@ -136,7 +136,6 @@ export default class PlantProvider extends Component {
       let image = item.metadata.image;
       let metadata = item.metadata;
       let plant = { image, ...metadata };
-      console.log(plant)
       return plant;
     });
     return tempItems;
