@@ -229,3 +229,8 @@ label {
     max-width: 1170px;
   }
 }
+input[name=filter-checkbox]{
+  border-color: lightgray !important;
+  width: 20px;
+  height: 20px;
+}

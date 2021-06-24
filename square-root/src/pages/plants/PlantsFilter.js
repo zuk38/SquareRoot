@@ -68,6 +68,22 @@ export default function PlantsFilter({ plants }) {
   return (
     <section className="filter-container">
       <form className="filter-form">
+
+        {/* select greenspace */}
+        <div className="form-group">
+          <label htmlFor="type">Greenspace</label>
+          <select
+            name="greenspace"
+            id="greenspace"
+            value={categories}
+            className="form-control"
+            onChange={handleChange}
+          >
+            {categories}
+          </select>
+        </div>
+        {/* end of select greenspace */}
+
         {/* select type */}
         <div className="form-group">
           <label htmlFor="type">Plant Type</label>
@@ -119,10 +135,13 @@ export default function PlantsFilter({ plants }) {
           </div>
         </div>
         {/* end of plant size */}
+
+<div className="form-group-container">
+<label htmlFor="size_in_cm">Origin</label>
         {/* norwegian nursery */ }
         <div className="form-group">
             <div className="single-extra">
-                <input type="checkBox" name="norwegian_nursery" id="norwegian_nursery" checked={norwegian_nursery} onChange={handleChange}/>
+                <input type="checkBox" name="filter-checkbox" id="norwegian_nursery" checked={norwegian_nursery} onChange={handleChange}/>
                 <label htmlFor="norwegian_nursery">Norwegian Nursery</label>
             </div>
         </div>
@@ -130,20 +149,70 @@ export default function PlantsFilter({ plants }) {
         {/* native */ }
         <div className="form-group">
             <div className="single-extra">
-                <input type="checkBox" name="native" id="native" checked={origin} onChange={handleChange}/>
+                <input type="checkBox" name="filter-checkbox" id="native" checked={origin} onChange={handleChange}/>
                 <label htmlFor="native">Native</label>
             </div>
         </div>
-        {/* end of norwegian nursery */ }
+        {/* end of native */ }
+        </div>
+        {/* end of group container */ }
         
-        {/* light req */ }
+<div className="form-group-container">
+<label htmlFor="size_in_cm">Light requirements</label>
+        {/* sun seekers */ }
         <div className="form-group">
             <div className="single-extra">
-                <input type="checkBox" name="sun_seeker" id="sun_seeker" checked={light} onChange={handleChange}/>
+                <input type="checkBox" name="filter-checkbox" id="sun_seeker" checked={light} onChange={handleChange}/>
                 <label htmlFor="sun_seeker">Sun seekers</label>
             </div>
         </div>
+      {/* shadow lovers */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="filter-checkbox" id="shadow_lover" checked={light} onChange={handleChange}/>
+                <label htmlFor="shadow_lover">Shadow lovers</label>
+            </div>
+        </div>
         {/* end of light req */ }
+        </div>
+        {/* end of group container */ }
+
+  <div className="form-group-container">
+<label htmlFor="size_in_cm">Egenskaper</label>
+        {/* pollinator friendly */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="filter-checkbox" id="poll_friendly" checked={pollinator_friendly} onChange={handleChange}/>
+                <label htmlFor="poll_friendly">Pollinator friendly</label>
+            </div>
+        </div>
+
+      {/* edible */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="filter-checkbox" id="edible" checked={edible} onChange={handleChange}/>
+                <label htmlFor="edible">Edible</label>
+            </div>
+        </div>
+
+        {/* air purifying */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="filter-checkbox" id="air_puryfying" checked={air_puryfying} onChange={handleChange}/>
+                <label htmlFor="air_puryfying">Air puryfying</label>
+            </div>
+        </div>
+
+        {/* pet & kids friendly */ }
+        <div className="form-group">
+            <div className="single-extra">
+                <input type="checkBox" name="filter-checkbox" id="pet_kids_friendly" checked={pet_kids_friendly} onChange={handleChange}/>
+                <label htmlFor="pet_kids_friendly">Pet and kids friendly</label>
+            </div>
+        </div>
+        
+        </div>
+        {/* end of group container */ }
       </form>
     </section>
   );
