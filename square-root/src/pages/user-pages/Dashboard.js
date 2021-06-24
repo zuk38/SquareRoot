@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import "./projects.css";
-import "../../Customize.css";
+import "../../../styles/Customize.css";
 import icon from "../../../images/proj_icon.png";
 import Modal from "react-modal";
 import {findCityFromZip} from "../../../functions/apiCalls";

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { API } from "aws-amplify";
-import Loading from "./Loading";
-import useForm from "./hooks/useForm";
+import Loading from "../../components/Loading";
+import useForm from "../../../hooks/useForm";
 import validate from "./utility/ContactFormValidation";
 
 export default function Partner(props) {

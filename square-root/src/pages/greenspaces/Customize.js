@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Customize.css";
+import "../../styles/Customize.css";
 import Modal from "react-modal";
 
 const plantList = [

@@ -1,8 +1,8 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
-import FeaturedGreenspaces from "../components/FeaturedGreenspaces";
-import Partner from "../components/Partner";
+import FeaturedGreenspaces from "../greenspaces/FeaturedGreenspaces";
+import Partner from "./Partner";
 
 export default function Home(props) {
   const handleStart = () => {
