@@ -1,11 +1,9 @@
 import React, { Component } from "react";
 import "./projects.css";
-import icon from "../../../images/proj_icon.png";
-import data from "../../data.json";
+import icon from "../../images/proj_icon.png";
+import data from "../data.json";
 
-/*onst logo = require('../../../images/proj_icon')*/
-
-export default class Orders extends Component {
+export default class Members extends Component {
   render() {
     return (
       <div>
@@ -16,7 +14,7 @@ export default class Orders extends Component {
               {projects.project.map(function(project, i) {
                 return (
                   <div key={i}>
-                    {projects.order.map(function(order, i) {
+                    {projects.user.map(function(user, i) {
                       return (
                         <div key={i}>
                           {
@@ -30,10 +28,10 @@ export default class Orders extends Component {
                                   <a href="/Dashboard">
                                     <i class="fas fa-columns"></i>Dashbord
                                   </a>
-                                  <a href="/Members">
+                                  <a href="/#" class="active">
                                     <i class="fas fa-users"></i>Medlemmer
                                   </a>
-                                  <a href="/#" class="active">
+                                  <a href="/Orders">
                                     <i class="fas fa-tasks"></i>Bestillinger
                                   </a>
                                   <a href="/Settings">
@@ -56,55 +54,37 @@ export default class Orders extends Component {
                                 </div>
                                 <br></br>
 
-                                <h2 className="p-h2">Role: {/*GET DATA*/}</h2>
+                                <h2 className="p-h2">
+                                  Rolle: {project.user_role}
+                                </h2>
 
+                                <div className="p-container">
+                                  <button className="btn-p-invite">
+                                    <i class="fas fa-user-plus"></i>Inviter
+                                    medlemmer
+                                  </button>
+                                </div>
                                 <table className="p-table">
-                                  <tr className="p-tr">
-                                    <th className="p-th">ORDRE NR</th>
-                                    <th className="p-th">GRØNTOMRÅDE</th>
-                                    <th className="p-th">BESTILLINGSDATO</th>
-                                    <th className="p-th">STATUS</th>
+                                  <tr>
+                                    <td className="p-td">
+                                      {user.user_first_name}{" "}
+                                      {user.user_last_name}
+                                    </td>
+                                    <td className="p-td">{user.user_role}</td>
                                   </tr>
                                   <tr>
-                                    <td className="p-td">{order.orderID}</td>
                                     <td className="p-td">
-                                      {order.greenspace_ordered} -{" "}
-                                      {order.greenspace_description}
+                                      {user.user_first_name2}{" "}
+                                      {user.user_last_name2}
                                     </td>
-                                    <td className="p-td">
-                                      {order.order_placed_date}
-                                    </td>
-                                    <td className="p-td">
-                                      {order.order_status}
-                                    </td>
+                                    <td className="p-td">{user.user_role2}</td>
                                   </tr>
-
                                   <tr>
-                                    <td className="p-td">{order.orderID2}</td>
                                     <td className="p-td">
-                                      {order.greenspace_ordered2} -{" "}
-                                      {order.greenspace_description2}
+                                      {user.user_first_name3}{" "}
+                                      {user.user_last_name3}
                                     </td>
-                                    <td className="p-td">
-                                      {order.order_placed_date2}
-                                    </td>
-                                    <td className="p-td">
-                                      {order.order_status2}
-                                    </td>
-                                  </tr>
-
-                                  <tr>
-                                    <td className="p-td">{order.orderID3}</td>
-                                    <td className="p-td">
-                                      {order.greenspace_ordered3} -{" "}
-                                      {order.greenspace_description3}
-                                    </td>
-                                    <td className="p-td">
-                                      {order.order_placed_date3}
-                                    </td>
-                                    <td className="p-td">
-                                      {order.order_status3}
-                                    </td>
+                                    <td className="p-td">{user.user_role3}</td>
                                   </tr>
                                 </table>
                               </div>

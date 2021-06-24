@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import IndoorExample from '../components/IndoorExample.js';
+import IndoorExample from './IndoorExample.js';
 
  
 class Indoor extends Component {

@@ -2,9 +2,26 @@
   padding-top: 0;
 }
 
+/*PLANTS FILTER*/
 .pf {
   display: block;
 }
+
+.filters {
+  height: auto;
+  width: 18%;
+  z-index: 1;
+  top: 50%;
+  left: 0%;
+  padding-left: 2.5%;
+  background-color: var(--offWhite);
+  position: absolute;
+  padding-top: 20px;
+}
+
+/*END FILTERS*/
+
+
 label {
   display: block;
 }
@@ -33,17 +50,7 @@ label {
   right: 0;
 }
 
-.filters {
-  height: auto;
-  width: 18%;
-  z-index: 1;
-  top: 50%;
-  left: 0%;
-  padding-left: 2.5%;
-  background-color: var(--offWhite);
-  position: absolute;
-  padding-top: 20px;
-}
+
 
 /*input {
   margin: 2%;

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { GreenspaceContext } from "../context/greenspaces";
 import Greenspace from "./Greenspace"
-import "./Home.css";
+import "../styles/Home.css";
 
 export default class FeaturedGreenspaces extends Component {
   static contextType = GreenspaceContext;

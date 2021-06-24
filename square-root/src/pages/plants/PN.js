@@ -1,7 +1,8 @@
+/*
 import React, { useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 import { API, graphqlOperation, Storage } from "aws-amplify";
-import { createPlant, createPlantMetadata } from "../api/mutations";
+import { createPlant, createPlantMetadata } from "../../api/mutations";
 import config from "../aws-exports";
 import Error from "./Error";
 import Amplify, { Auth } from "aws-amplify";
@@ -370,3 +371,4 @@ const PN = () => {
 };
 
 export default PN;
+*/

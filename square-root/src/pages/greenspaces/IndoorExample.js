@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import data from "../pages/data.json";
-import "./SingleGreenspace.css";
+import data from "../data.json";
+import "../../styles/SingleGreenspace.css";
 import Modal from "react-modal";
 
 class IndoorExample extends Component {

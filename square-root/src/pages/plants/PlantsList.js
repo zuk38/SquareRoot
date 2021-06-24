@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import "../styles/Plants.css";
-import PlantMiniature from "../components/PlantMiniature";
-import SinglePlant from "../components/SinglePlant";
+import "../../styles/Plants.css";
+import PlantMiniature from "./PlantMiniature";
+import SinglePlant from "./SinglePlant";
 
 export default function PlantsList({ plants }) {
   const [showPlantModal, setShowPlantModal] = useState(false);

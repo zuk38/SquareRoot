@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import RainbedExample from '../components/RainbedExample.js';
+import RainbedExample from './RainbedExample.js';
 
  
 class Rainbed extends Component {

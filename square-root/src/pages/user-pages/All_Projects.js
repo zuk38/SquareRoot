@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./projects.css";
-import icon from "../../../images/proj_icon.png";
+import icon from "../../images/proj_icon.png";
 import Modal from "react-modal";
-import { findCityFromZip } from "../../../functions/apiCalls";
-import ProjectsContainer from "../../../components/user/ProjectsContainer";
-import { withProjectConsumer } from "../../../context/projects";
+import { findCityFromZip } from "../../functions/apiCalls";
+import ProjectsContainer from "../../components/user/ProjectsContainer";
+import { withProjectConsumer } from "../../context/projects";
 import API, { graphqlOperation } from "@aws-amplify/api";
-import { createProject } from "../../../api/mutations";
+import { createProject } from "../../api/mutations";
 
 function All_Projects(props) {
   const { fetchProjects } = props.context;

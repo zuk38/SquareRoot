@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./Projects/projects.css";
+import "./projects.css";
 
 /*onst logo = require('../../../images/proj_icon')*/
 
