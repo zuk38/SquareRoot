@@ -109,19 +109,10 @@ class App extends Component {
             />
             <Route
               exact
-              path="/rooftop"
-              render={(props) => <Rooftop {...props} auth={authProps} />}
+              path="/greenspaces/:name"
+              render={(props) => <SingleGreenspace {...props} auth={authProps} />}
             />
-            <Route
-              exact
-              path="/rainbed"
-              render={(props) => <Rainbed {...props} auth={authProps} />}
-            />
-            <Route
-              exact
-              path="/indoor"
-              render={(props) => <Indoor {...props} auth={authProps} />}
-            />
+
             <Route
               exact
               path="/plants"

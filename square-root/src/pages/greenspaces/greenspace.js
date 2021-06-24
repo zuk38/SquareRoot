@@ -1,36 +1,26 @@
 import React from "react";
-import {Link} from "react-router-dom";
-/*
+import { Link } from "react-router-dom";
 
-const Greenspace = memo(({greenspace }) => {
-    const {name, description, images, category, slug} = greenspace;
+export default function Greenspace({ greenspace }) {
+  const { name, description, image } = greenspace;
 
-    return (
-        <article className="greenspace">
-            <div className="img-container">
-                <img src={images[0] || defaultImg} alt="single greenspace"/>
-                <div className="name-top">
-                    <h3>{name}</h3>
-                    <h4>{description}</h4>
-                </div>
-                <Link to ={`/greenspaces/${slug}`} className="btn-primary greenspace-link">
-                    features
-                </Link>
-            </div>
-            <p className="greenspace-info">{name}</p>
-        </article>
-    );
-});
+  return (
+    <div className="imagebox">
+      <img classname="image" src={image} alt="single greenspace" />
+      <span>
+        <h1>{name.toUpperCase()}</h1>
+        <p>{description}</p>
+        <div className="hero-btns">
+          <Link to={`/greenspaces/${name}`}>
+            <button class="button is-light">LEARN MORE</button>
+          </Link>
 
-Greenspace.propTypes = (
-    greenspace: PropTypes.shape ({
-        name: PropTypes.string.isRequired,
-        description: PropTypes.string.isRequired,
-        images: PropTypes.arrayOf(PropTypes.string).isRequired,
-        category: PropTypes.string.isRequired,
-        slug: PropTypes.string.isRequired
-
-    })
-);
-
-export default Greenspace;*/
+          <button class="button is-dark">
+            ADD TO PROJECT
+            <i class="fas fa-chevron-right" />
+          </button>
+        </div>
+      </span>
+    </div>
+  );
+}

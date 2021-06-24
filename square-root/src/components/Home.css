@@ -154,14 +154,8 @@
   grid-template-columns: 1fr 1fr;
   grid-gap: 20px;
 }
-.image {
-  height: 550px;
-  width: 850px;
-  overflow: hidden;
-  padding-top: 8%;
-  padding-left: 6%;
-}
-.span-imagebox {
+
+.imagebox span {
   padding-left: 3%;
   padding-top: 50%;
   padding-right: 10%;
@@ -169,15 +163,25 @@
   bottom: 0px;
 }
 
-.h1 {
+.image {
+  height: 550px;
+  width: 850px;
+  overflow: hidden;
+  padding-top: 8%;
+  padding-left: 6%;
+}
+
+.imagebox h1 {
   color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   font-size: 30px;
 }
+
 button {
   margin-right: 20px;
 }
+
 .bd-notification {
   padding-top: 40px;
   margin: 50px;
