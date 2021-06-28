@@ -25,7 +25,7 @@ export default function Home(props) {
           </p>
         </Banner>
       </Hero>
-      {/*<FeaturedGreenspaces />*/}
+      <FeaturedGreenspaces />
       <Partner />
     </>
   );

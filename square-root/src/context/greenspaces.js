@@ -19,13 +19,14 @@ export default class GreenspaceProvider extends Component {
       });
 
       let greenspaces = this.formatData(data.listGreenspaces.items);
-      //let featuredGreenspaces = greenspaces.filter((greenspace) => greenspace.featured === true);
+      console.log(greenspaces)
+      let featuredGreenspaces = greenspaces.filter((greenspace) => greenspace.featured === true);
       
-      /*this.setState({
+      this.setState({
         greenspaces,
         featuredGreenspaces,
         loading: false,
-      });*/
+      });
 
       console.log(data);
     } catch (error) {
@@ -51,8 +52,14 @@ export default class GreenspaceProvider extends Component {
         console.log(plant)
         return plant;
       })
-      
+      let name = item.name
+      let description = item.description
+      let image = item.image
+      let featured = item.featured
+      let greenspace = { name, description, image, featured, ...tempPlants};
+      return greenspace
     })
+    return tempItems
   }
 
   /*formatData(items) {
