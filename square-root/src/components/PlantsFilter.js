@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { PlantContext } from "../context/plants";
 import "../styles/Plants.css";
+import Dropdown from "./Dropdown"
+import DropdownStyle from "../styles/dropdown.css"
 
 //get all unique values
 const getUnique = (items, value) => {
@@ -65,9 +67,149 @@ export default function PlantsFilter({ plants }) {
     );
   });
 
+  const items_properties = [
+    {
+      name: 'pollinator_friendly',
+      id: 'pollinator_friendly',
+      checked: {pollinator_friendly},
+      value: 'Bievennlig'
+    },
+    {
+      name: 'edible',
+      id: 'edible',
+      checked: {edible},
+      value: 'Spiselig'
+    },
+    {
+      name: 'air_puryfying',
+      id: 'air_puryfying',
+      checked: {air_puryfying},
+      value: "Luftrensende"
+    },
+    {
+      name: 'pet_kids_friendly',
+      id: 'pet_kids_friendly',
+      checked: {pet_kids_friendly},
+      value: "Dyr- og barnevennlig"
+    }
+
+  ];
+
+const items_greenspace = [
+    {
+      name:  'greenspace',
+      id: 'greenspace',
+      value: {categories}
+    }
+  ];
+
+  const items_types = [
+    {
+      name:  'type',
+      id: 'type',
+      value: {types}
+    }
+  ];
+
+  const items_zones = [
+    {
+      name:  'zone',
+      id: 'zone',
+      value: {zones},
+    }
+  ];
+
+  const items_size_inputs = [
+    {
+      name:  'minSize',
+      id: 'size_in_cm',
+      value: {minSize},
+      type: "number",
+      className: "size-input"
+    },
+    {
+      name:  'maxSize',
+      id: 'size_in_cm',
+      value: {maxSize},
+      type: "number",
+      className: "size-input"
+    }
+
+  ];
+
+  const items_origin = [
+    {
+      name:  'norwegian_nursery',
+      id: 'size_in_cm',
+      value: 'Norsk planteskole',
+      checked: [norwegian_nursery]
+    },
+    {
+      name:  'native',
+      id: 'native',
+      value: 'Norske planter',
+      checked: {native}
+    }
+  ];
+
+  const items_light = [
+    {
+      name:  'sun_seeker',
+      id: 'sun_seeker',
+      value: 'Mest sol',
+      checked: {light}
+    },
+    {
+      name:  'shadow_lover', //is this correct since it's not in DB?
+      id: 'shadow_lover',
+      value: 'Mest skygge',
+      checked: {light}
+    }
+  ];
+
+
+
   return (
+
     <section className="filter-container">
       <form className="filter-form">
+
+    {/*Dropdown.js */}
+
+    <div className="dd-container">
+      <Dropdown title="Grøntområde" items={items_greenspace}/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Type" items={items_types}/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Klimasone" items={items_zones}/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Størrelse" items={items_size_inputs}/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Opprinnelse" items={items_origin} multiSelect/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Lysforhold" items={items_light}/>
+    </div>
+
+    <div className="dd-container">
+      <Dropdown title="Egenskaper" items={items_properties} multiSelect/>
+    </div>
+    
+    {/* end Dropdown.js */}
+
+
+   <br/>
+
+
 
         {/* select greenspace */}
         <div className="form-group">
@@ -100,7 +242,7 @@ export default function PlantsFilter({ plants }) {
         {/* end of select type */}
         {/* select climate */}
         <div className="form-group">
-          <label htmlFor="type">Climate Zone</label>
+          <label htmlFor="zone">Climate Zone</label>
           <select
             name="zone"
             id="zone"
@@ -142,7 +284,7 @@ export default function PlantsFilter({ plants }) {
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="norwegian_nursery" id="norwegian_nursery" checked={norwegian_nursery} onChange={handleChange}/>
-                <label htmlFor="norwegian_nursery">Norwegian Nursery</label>
+                <label className="checkbox-label" htmlFor="norwegian_nursery">Norwegian Nursery</label>
             </div>
         </div>
         {/* end of norwegian nursery */ }
@@ -150,7 +292,7 @@ export default function PlantsFilter({ plants }) {
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="native" id="native" checked={native} onChange={handleChange}/>
-                <label htmlFor="native">Native</label>
+                <label className="checkbox-label" htmlFor="native">Native</label>
             </div>
         </div>
         {/* end of native */ }
@@ -158,19 +300,19 @@ export default function PlantsFilter({ plants }) {
         {/* end of group container */ }
         
 <div className="form-group-container">
-<label htmlFor="light-req">Light requirements</label>
+<label htmlFor="light">Light requirements</label>
         {/* sun seekers */ }
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="sun_seeker" id="sun_seeker" checked={light} onChange={handleChange}/>
-                <label htmlFor="sun_seeker">Sun seekers</label>
+                <label className="checkbox-label" htmlFor="sun_seeker">Sun seekers</label>
             </div>
         </div>
       {/* shadow lovers */ }
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="shadow_lover" id="shadow_lover" checked={light} onChange={handleChange}/>
-                <label htmlFor="shadow_lover">Shadow lovers</label>
+                <label className="checkbox-label" htmlFor="shadow_lover">Shadow lovers</label>
             </div>
         </div>
         {/* end of light req */ }
@@ -179,41 +321,43 @@ export default function PlantsFilter({ plants }) {
 
   <div className="form-group-container">
 <label htmlFor="plant-properties">Egenskaper</label>
-        {/* pollinator friendly */ }
+{
+        /* pollinator friendly */}
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="pollinator_friendly" id="pollinator_friendly" checked={pollinator_friendly} onChange={handleChange}/>
-                <label htmlFor="pollinator_friendly">Pollinator friendly</label>
+                <label className="checkbox-label" htmlFor="pollinator_friendly">Pollinator friendly</label>
             </div>
         </div>
 
-      {/* edible */ }
+      {/* edible */}
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="edible" id="edible" checked={edible} onChange={handleChange}/>
-                <label htmlFor="edible">Edible</label>
+                <label className="checkbox-label" htmlFor="edible">Edible</label>
             </div>
         </div>
 
-        {/* air puryfying */ }
+        {/* air puryfying*/}
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="air_puryfying" id="air_puryfying" checked={air_puryfying} onChange={handleChange}/>
-                <label htmlFor="air_puryfying">Air puryfying</label>
+                <label className="checkbox-label" htmlFor="air_puryfying">Air puryfying</label>
             </div>
         </div>
-
-        {/* pet & kids friendly */ }
+        {/* pet & kids friendly*/}
         <div className="form-group">
             <div className="single-extra">
                 <input type="checkbox" className="filter-checkbox" name="pet_kids_friendly" id="pet_kids_friendly" checked={pet_kids_friendly} onChange={handleChange}/>
-                <label htmlFor="pet_kids_friendly">Pet and kids friendly</label>
+                <label className="checkbox-label" htmlFor="pet_kids_friendly">Pet and kids friendly</label>
             </div>
         </div>
-        
         </div>
         {/* end of group container */ }
       </form>
+
+  
     </section>
+
   );
 }

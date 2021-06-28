@@ -1,0 +1,69 @@
+
+
+.dd-container {
+    max-width: 1140px;
+    width:90%;
+    height:auto;
+    background-color: white;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    border-radius: 5px;
+  }
+
+.dd-wrapper {
+    display: flex;
+    min-height: 38px;
+    flex-wrap: wrap;
+}
+
+.dd-wrapper:focus{
+    border:1px solid black;
+}
+
+.dd-header {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    width: 100%;
+    padding:5%;
+    text-align: center;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.title--bold {
+    font-weight: bold;
+  }
+
+.dd-list {
+    padding: 2px;
+    margin: 0;
+    width: 100%;
+    margin-top: 20px;
+}
+
+li {
+      list-style-type: none;
+    }
+
+
+.dd-button {
+        display: flex;
+        justify-content: space-between;
+        background-color: white;
+        font-size: 16px;
+        padding: 15px 20px 15px 20px;
+        border: 0;
+        border-bottom: 1px solid #ccc;
+        width: 100%;
+        text-align: left;
+    }
+
+
+
+.dd-button:hover{
+    background-color: var(--offWhite);
+    font-weight: bold;
+    cursor: pointer;
+}
+

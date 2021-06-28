@@ -176,19 +176,19 @@ label {
   overflow-x: hidden;
   padding-top: 20px;
 }
+*/
 
 .filter-container {
-  padding: 5rem 0;
+  margin:2em;
+  width: 50%;
 }
 
-*/
+
 .filter-form {
-  width: 100%;
-  margin: 1rem 0 0 5%;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(202px, 1fr));
-  grid-row-gap: 2rem;
-  grid-column-gap: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-row-gap: 1rem;
+  margin:1rem 0 0 5%;
 }
 .form-group {
   text-transform: capitalize;
@@ -198,40 +198,49 @@ label {
   margin-bottom: 0.5rem;
 }
 .form-control {
-  width: 100%;
+  width: 80%;
   background: transparent;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 .size-inputs {
   display: flex;
 }
 .size-input {
   width: 40%;
-  font-size: 1rem;
-  padding: 1rem;
+  font-size: 0.8rem;
+  padding: 0.8rem;
   border: 1px solid lightgray;
   border-radius: 0.3rem;
   margin-right: 0.3rem;
+  
 }
+
 .single-extra label {
   display: inline-block;
   font-size: 0.8rem;
   margin-left: 0.5rem;
+  vertical-align: middle;
 }
 @media screen and (min-width: 776px) {
   .filter-form {
     width: 70vw;
+
   }
 }
 @media screen and (min-width: 992px) {
   .filter-form {
-    width: 95vw;
+    width: 100%;
     max-width: 1170px;
+    grid-template-columns: repeat(4, 1fr);
   }
 }
-
-
+.form-group-container label{
+  margin-bottom: 8px;
+}
 .filter-checkbox{
   width: 20px;
   height: 20px;
 }
+
+
+
