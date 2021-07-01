@@ -1,7 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../styles/Plants.css";
 import Title from "../components/Title";
 import PlantsContainer from "../components/PlantsContainer";
+
 
 export default function Plants() {
   return (
@@ -15,6 +16,7 @@ export default function Plants() {
       />
       <PlantsContainer/>
     </>
+    
   );
 }
 
