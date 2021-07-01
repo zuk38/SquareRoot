@@ -137,7 +137,7 @@ label {
   width: 80vw;
   margin: 0 auto 0 20%;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-row-gap: 5rem;
   grid-column-gap: 40px;
   padding: 40px;
@@ -179,19 +179,25 @@ label {
 */
 
 .filter-container {
-  margin:2em;
-  width: 50%;
+  margin:0 0 2em;
+  min-width: 0;
+  display: flex;
 }
-
 
 .filter-form {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-row-gap: 1rem;
   margin:1rem 0 0 5%;
+  align-items:flex-start;
+  min-width: 180px;
+  width: 100%;
+
 }
+
 .form-group {
   text-transform: capitalize;
+
 }
 .form-group label {
   display: block;
@@ -229,8 +235,7 @@ label {
 }
 @media screen and (min-width: 992px) {
   .filter-form {
-    width: 100%;
-    max-width: 1170px;
+    max-width: 800px;
     grid-template-columns: repeat(4, 1fr);
   }
 }
