@@ -24,8 +24,35 @@
     position: relative;
 }
 
-.seperate-line{
-    border:1 px solid #ccc;
+.boldBox-open{
+    display: flex;
+    min-height: 38px;
+    flex-wrap: wrap;
+    position: relative;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+    border-bottom:none;
+}
+
+
+.boldBox-open{
+    display: flex;
+    min-height: 38px;
+    flex-wrap: wrap;
+    position: relative;
+    border-left:2px solid black;
+    border-right:2px solid black;
+    border-top:2px solid black;
+    border-bottom:none;
+}
+
+.boldBox-closed{
+    display: flex;
+    min-height: 38px;
+    flex-wrap: wrap;
+    position: relative;
+    border: 2px solid black;
 }
 
 
@@ -43,7 +70,7 @@
     position: absolute;
     z-index: 1;
     width:101.5%;
-left: -0.5%;
+    left: -0.5%;
     border-radius: 0px;
     border-bottom: 1px solid #ccc;
     border-right: 1px solid #ccc;
@@ -51,6 +78,19 @@ left: -0.5%;
     background-color: white;
 }
 
+.dd-list-bold {
+    top: 100%;
+    position: absolute;
+    z-index: 1;
+    width:102.5%;
+    left: -1%;
+    border-radius: 0px;
+    border-top: none;
+    border-top:nnon;
+    border-bottom: 2px solid black;
+    border-right: 2px solid black;
+    border-left:2px solid black;
+}
 
 /*
 .dd-list:hover .dd-container{
@@ -91,3 +131,12 @@ width:100%;
     margin:2px 0 0 5%;
 
   }
+
+.bold {
+    font-weight: bold;
+    color:black;
+}
+
+.regular {
+    font-weight: normal;
+}
