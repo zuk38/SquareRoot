@@ -116,7 +116,8 @@ const items_greenspace = [
     {
       name:  'zone',
       id: 'zone',
-      value: {zones},
+      checked: {zones},
+      value: 'H6',
     }
   ];
 
@@ -143,7 +144,7 @@ const items_greenspace = [
       name:  'norwegian_nursery',
       id: 'size_in_cm',
       value: 'Norsk planteskole',
-      checked: [norwegian_nursery]
+      checked: {norwegian_nursery}
     },
     {
       name:  'native',
