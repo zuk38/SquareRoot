@@ -8,7 +8,7 @@ export default class GreenspaceProvider extends Component {
   state = {
     greenspaces: [],
     featuredGreenspaces: [],
-    loading: true,
+    loading: false,
   };
 
   fetchGreenspaces = async () => {
