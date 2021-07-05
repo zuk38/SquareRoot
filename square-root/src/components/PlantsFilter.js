@@ -8,11 +8,11 @@ const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
-const formatData = (items) => {
+const formatData = (items, dbID) => {
   let tempItems = items.map((item) => {
     let value = item;
     let id = item;
-    let newItem = { id: id, value: value };
+    let newItem = { id: id, value: value, dbID: dbID };
     return newItem;
   });
   return tempItems;
@@ -25,7 +25,8 @@ export default function PlantsFilter({ plants }) {
     type,
     norwegian_nursery,
     native,
-    light,
+    sun_seeker,
+    shadow_lover,
     greenspace_category, //dropdown
     minSize,
     maxSize,
@@ -40,23 +41,23 @@ export default function PlantsFilter({ plants }) {
   //get unique types
   let types = getUnique(plants, "type");
   //add all
-  types = ["All", ...types];
+  types = ["all", ...types];
   //format to dropdown
-  types = formatData(types);
+  types = formatData(types, "type");
 
   //get unique categories
   let categories = getUnique(plants, "greenspace_category");
   //add all
-  categories = ["All", ...categories];
+  categories = ["all", ...categories];
   //format to dropdown
-  categories = formatData(categories);
+  categories = formatData(categories, "greenspace_category");
 
   //get unique climate zones
   let zones = getUnique(plants, "climate_zone");
   //add all
-  zones = ["All", ...zones];
+  zones = ["all", ...zones];
   //format to dropdown
-  zones = formatData(zones);
+  zones = formatData(zones, "climate_zone");
 
   const items_properties = [
     {
@@ -122,13 +123,13 @@ export default function PlantsFilter({ plants }) {
       name: "sun_seeker",
       id: "sun_seeker",
       value: "Mest sol",
-      checked: { light },
+      checked: { sun_seeker },
     },
     {
       name: "shadow_lover", //is this correct since it's not in DB?
       id: "shadow_lover",
       value: "Mest skygge",
-      checked: { light },
+      checked: { shadow_lover },
     },
   ];
 
@@ -137,19 +138,19 @@ export default function PlantsFilter({ plants }) {
       <form className="filter-form">
         {/*Dropdown.js */}
 
-        <Dropdown title="Grøntområde" items={categories} />
+        <Dropdown title="Grøntområde" items={categories} onChange={handleChange}/>
 
-        <Dropdown title="Type" items={types} />
+        <Dropdown title="Type" items={types} onChange={handleChange}/>
 
-        <Dropdown title="Klimasone" items={zones} />
+        <Dropdown title="Klimasone" items={zones} onChange={handleChange}/>
 
-        <Dropdown title="Størrelse" items={items_size_inputs} />
+        <Dropdown title="Størrelse" items={items_size_inputs} onChange={handleChange}/>
 
-        <Dropdown title="Opprinnelse" items={items_origin} multiSelect />
+        <Dropdown title="Opprinnelse" items={items_origin} multiSelect onChange={handleChange}/>
 
-        <Dropdown title="Lysforhold" items={items_light} />
+        <Dropdown title="Lysforhold" items={items_light} onChange={handleChange}/>
 
-        <Dropdown title="Egenskaper" items={items_properties} multiSelect />
+        <Dropdown title="Egenskaper" items={items_properties} multiSelect onChange={handleChange}/>
 
         {/* end Dropdown.js */}
       </form>

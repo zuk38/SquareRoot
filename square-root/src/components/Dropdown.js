@@ -1,19 +1,22 @@
-import React, { useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "../styles/Plants.css";
 import "../styles/dropdown.css";
 import useOutsideAlerter from "./hooks/useOutsideAlerter";
 
-function Dropdown({ title, items, multiSelect = false }) {
+function Dropdown({ title, items, multiSelect = false, onChange}) {
   const [open, setOpen] = useState(false);
   const [selection, setSelection] = useState([]);
+  const[isSelected, setIsSelected] = useState(false)
   const toggle = () => setOpen(!open);
   const closeDropDown = () => setOpen(false);
-
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, closeDropDown);
 
+  useEffect(() => {
+    onChange(selection) //update errors every time values change
+  }, [selection]);
+
   function handleOnClick(item) {
-    console.log(item);
     if (!selection.some((current) => current.id === item.id)) {
       if (!multiSelect) {
         setSelection([item]);
@@ -80,7 +83,7 @@ function Dropdown({ title, items, multiSelect = false }) {
                         {isItemInSelection(item) && multiSelect ? (
                           <i className="far fa-check-square"/>
                         ) : (
-                          multiSelect && <i class="far fa-square"/>
+                          multiSelect && <i className="far fa-square"/>
                         )}
                       </span>
 

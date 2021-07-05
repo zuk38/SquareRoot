@@ -17,6 +17,7 @@ export default class PlantProvider extends Component {
     norwegian_nursery: false, //norwegian or external
     native: false, //native or imported
     sun_seeker: false, //shadow lover or sun seeker
+    shadow_lover: false, //shadow lover or sun seeker
     size_in_cm: 0,
     minSize: 0,
     maxSize: 0,
@@ -56,15 +57,24 @@ export default class PlantProvider extends Component {
     return plant;
   };
 
-  handleChange = (event) => {
-    //filtering
-    const target = event.target; //to check if it's a checkbox
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = event.target.name;
+  handleChange = (selection) => {
+    console.log(selection);
+    var values = [];
+    let value;
+    let id;
+    for (let i = 0; i < selection.length; i++) {
+      selection[i].dbID != null
+        ? (id = selection[i].dbID)
+        : (id = selection[i].id);
+      //values.push(selection[i].value);
+      value = selection[i].value;
+    }
+    console.log(value);
 
+    //filtering
     this.setState(
       {
-        [name]: value,
+        [id]: value,
       },
       this.filterPlants
     ); //filter as a callback depending on state
@@ -83,6 +93,7 @@ export default class PlantProvider extends Component {
       maxSize,
       climate_zone,
       sun_seeker,
+      shadow_lover,
       edible,
       pollinator_friendly,
       pet_kids_friendly,
@@ -119,6 +130,9 @@ export default class PlantProvider extends Component {
     // filter by light
     if (sun_seeker) {
       tempPlants = tempPlants.filter((plant) => plant.sun_seeker === true);
+    }
+    if (shadow_lover) {
+      tempPlants = tempPlants.filter((plant) => plant.sun_seeker === false);
     }
 
     //change state
