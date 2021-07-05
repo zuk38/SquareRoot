@@ -1,6 +1,6 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
-
+/*
 export const StyleButton = styled.button`
     background-color: red;
     border: none;
@@ -13,7 +13,20 @@ export const StyleButton = styled.button`
     top: 13%;
     right: 0;
     `;
-/*
+
+export const StyleInputFields = styled.inputFields `
+  padding: 1em;
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 400px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-size: 18px;
+`;
+
+
 export const ddContainer = styled.ddContainer`
     width:90%;
     background-color: white;
