@@ -9,7 +9,7 @@ export default class PlantProvider extends Component {
     plants: [],
     sortedPlants: [], //filtered
     featuredPlants: [],
-    loading: false,
+    loading: true,
     //filters
     type: "all",
     greenspace_category: "all",
