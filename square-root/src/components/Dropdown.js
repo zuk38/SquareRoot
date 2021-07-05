@@ -13,6 +13,7 @@ function Dropdown({ title, items, multiSelect = false }) {
   useOutsideAlerter(dropdownRef, closeDropDown);
 
   function handleOnClick(item) {
+    console.log(item);
     if (!selection.some((current) => current.id === item.id)) {
       if (!multiSelect) {
         setSelection([item]);
@@ -69,30 +70,32 @@ function Dropdown({ title, items, multiSelect = false }) {
               </div>
               {items.map((item) => (
                 <li className="dd-list-item" key={item.id}>
-                  <button
-                    type="button"
-                    className="dd-button"
-                    onClick={() => handleOnClick(item)}
-                  >
-                    <span>
-                      {" "}
-                      {isItemInSelection(item) && multiSelect ? (
-                        <i className="far fa-check-square"></i>
-                      ) : (
-                        multiSelect && <i class="far fa-square"></i>
-                      )}
-                    </span>
-                    <span
-                      className={isItemInSelection(item) ? "bold" : "regular"}
+                  {item.value && (
+                    <button
+                      type="button"
+                      className="dd-button"
+                      onClick={() => handleOnClick(item)}
                     >
-                      {item.value}
-                    </span>
-                  </button>
+                      <span>
+                        {isItemInSelection(item) && multiSelect ? (
+                          <i className="far fa-check-square"/>
+                        ) : (
+                          multiSelect && <i class="far fa-square"/>
+                        )}
+                      </span>
+
+                      <span
+                        className={isItemInSelection(item) ? "bold" : "regular"}
+                      >
+                        {item.value.toUpperCase()}
+                      </span>
+                    </button>
+                  )}
                 </li>
-              ))}{" "}
+              ))}
             </div>
           </ul>
-        )}{" "}
+        )}
       </div>
     </div>
   );
