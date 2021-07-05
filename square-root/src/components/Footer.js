@@ -5,7 +5,7 @@ const Footer = () => (
   <div className="footer">
       <div className="footer-container">
       <div className="footer-child1">
-      <h className="footer-h">Squareroot</h>
+      <h1 className="footer-h">Squareroot</h1>
     <p className="footer-p">Our mission is to bring nature back to the cities, creating places where people love to live.</p>
     <p className="footer-p">We are doing this by making the implementation of urban green spaces outside, inside and on top of buildings easy, cheaper, and available everywhere.
     </p>
