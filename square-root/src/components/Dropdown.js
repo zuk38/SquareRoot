@@ -1,10 +1,7 @@
 import React, { useRef, useState } from "react";
-// import { Dropdown } from 'semantic-ui-react'
-// import 'semantic-ui-css/semantic.min.css'
 import "../styles/Plants.css";
 import "../styles/dropdown.css";
 import useOutsideAlerter from "./hooks/useOutsideAlerter";
-import StyledComponents from "../styles/StyledComponents";
 
 function Dropdown({ title, items, multiSelect = false }) {
   const [open, setOpen] = useState(false);
