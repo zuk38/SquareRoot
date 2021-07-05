@@ -1,25 +1,53 @@
-.float-container {
-    border: 3px solid #fff;
-    padding: 1%;
-    height: 500px;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+.why-hero{
+    padding:clamp(32px,6.7349926794vw,92px);
+    color:var(--mainGrey);
 }
 
-.float-child {
-    width: 50%;
-    float: left;
-    padding: 0%;
-    height: 100%;
-    
+.why-txt--hero{
+    word-break: break-word;
+    font-size:clamp(32px,calc(1rem + 4.5387994143vw),80px);
+    font-weight:600;
+    max-width:22ch;
+    line-height: 1.15;
+    margin: 0;
 }
-.why{
-    background-color: #8ca68c;
-    width: 100%;
-    height: 100%;
+
+.why-txt--hero-p{
+    font-size:clamp(18px,calc(1rem + 1.9033674963vw),44px);
+    font-weight: 200;
+    letter-spacing:-.03em;
+    max-width:40ch;
+    line-height:1.2;
 }
-.why-image{
-    height: 100%;
-    width: 100%;
+
+.why-container{
+    padding-left:20px;
+    padding-right:20px;
+    margin:auto;
+    max-width:calc(1100px + 2*20px);
+    text-align: inherit;
 }
+
+.why-img img{
+    display:inline-block;
+    max-width:100%;
+    height:auto;
+    vertical-align:middle;
+}
+.float-container {
+   display:grid;
+   grid-template-columns: 35% 65%;
+}
+
+.why-h1{
+    color:black;
+    font-size: 40px;
+}
+
+
 .why-name{
     font-size: 50px;
     color: white;
