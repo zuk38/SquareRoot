@@ -297,6 +297,7 @@ input[type="text"] {
   margin: auto;
   border-radius: 5px;
   border: 1px solid lightgray;
+  font-size: 18px;
 }
 
 /*FLEX BOXES (PostNr & PostSted */
