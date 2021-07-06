@@ -98,7 +98,6 @@ export default function Partner(props) {
               type="button"
               className="box2-btn"
               onClick={handleSubmit}
-    
             >
               Send
             </button>
