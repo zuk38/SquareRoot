@@ -31,7 +31,7 @@
 /* globals */
 body {
   padding-top: 10px;
-  color: var(--mainBlack);
+  color: #333 !important;
   background: var(--mainWhite);
   margin: 0;
   -webkit-font-smoothing: antialiased;
