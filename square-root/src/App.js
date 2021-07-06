@@ -123,7 +123,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Why-urban-greenspaces"
+              path="/Why-us"
               render={(props) => <Why {...props} auth={authProps} />}
             />
             <Route

@@ -1,4 +1,5 @@
 import React from "react";
+import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import "../../styles/Why.css";
 
 function Why() {
@@ -30,7 +31,7 @@ function Why() {
                     <p className="c-txt--punchline">Noen ord fra våre grunnleggere</p>
                     <div className="c-grid--founders">
                         <div className="u-mrg--reset">
-                            <img className="u-mrg-img1"></img>
+                            <img className="u-mrg-img1" src="../images/jo-profil.png"></img>
                             <p className="u-mrg-txt1">
                                 <strong>Jo Deketelaere</strong>
                                 <br/>
@@ -130,21 +131,32 @@ Amongst other things he has contributed building for Gruten the first norwegian 
             </div>
 
 
-{/* 'ROOT PROJECTS */}
-<div className="c-section">
-  <div className="o-container">
-    <h2 className="c-txt--sectiontitle c-mrg--bottom">
-      'Root-prosjekter
-    </h2>
-    <p className="c-txt--punchline--sm">
-      Hvorfor oss? Vi har knyttet alle aktører til samme plattform slik at vi sammen kan gjøre det enklere å velge grønt. 
-      <br/><br/>Vi baserer databasen vår på forskningsbaserte resultater for å finne de beste plantene for riktig sted. Dette knyttes til lovgivninger, miljøsertifiseringer og økonomiske insentiver, 
+{/* WHY US */}
+<div className="c-section u-mrg--txt2">
+  <div className="o-container ">
+    <p className="c-txt--punchline--sm ">
+      <strong className="strong--m">Hvorfor oss?</strong> Vi har knyttet alle aktører til samme plattform slik at vi sammen kan gjøre det enklere å velge grønt. 
+      <br/><br/>
+      Vi baserer databasen vår på forskningsbaserte resultater for å finne de beste plantene for riktig sted. Dette knyttes til lovgivninger, miljøsertifiseringer og økonomiske insentiver, 
       og sørger dermed for at du velger et motstandsyktig, bærekraftig og økonomisk grøntområde. Vi samarbeider med planteskoler slik at forsyningen av planter holder tritt med etterspørselen,
       slik at din bedrift mottar bestillingen i tide med de rette plantene.
-
+      <br/><br/>
       Vi forstår at slike prosesser kan innebære endringer grunnet ulike faktorer. For at denne prosessen skal forbli sømløs er det enkelt å kontinuerlige endre og oppdatere prosjektet ditt.
   
     </p>
+  </div>
+</div>
+
+{/* 'ROOT PROJECTS */}
+<div className="c-section background-grey">
+  <div className="o-container">
+  <h2 className="c-txt--sectiontitle u-mrg--x0">
+      'Root-prosjekter
+    </h2>
+    <p className="c-txt--punchline">
+      Sammen utvikler vi grønne byrom.
+    </p>
+    <FeaturedGreenspaces></FeaturedGreenspaces>
   </div>
 </div>
 
