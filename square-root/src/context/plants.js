@@ -58,29 +58,34 @@ export default class PlantProvider extends Component {
   };
 
   handleChange = (selection) => {
-    console.log(selection);
+  
     var values = [];
     let value;
     let id;
     for (let i = 0; i < selection.length; i++) {
-      selection[i].dbID != null
-        ? (id = selection[i].dbID)
-        : (id = selection[i].id);
-      //values.push(selection[i].value);
-      value = selection[i].value;
+      console.log(selection[i])
+      if (selection[i].dbID != null) {
+        id = selection[i].dbID
+        value = selection[i].value;
+      } else {
+        id = selection[i].id;
+        value = true;
+      }     
     }
-    console.log(value);
 
     //filtering
-    this.setState(
-      {
-        [id]: value,
-      },
-      this.filterPlants
-    ); //filter as a callback depending on state
+    if (value != null) {
+      this.setState(
+        {
+          [id]: value,
+        },
+        this.filterPlants() //filter as a callback depending on state
+      )
+    }
   };
 
   filterPlants = () => {
+    console.log(this.state)
     //backup all original values
     let {
       plants,
@@ -102,12 +107,18 @@ export default class PlantProvider extends Component {
     } = this.state;
 
     let tempPlants = [...plants];
+   
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
 
     // filter by type
     if (type !== "all") {
       tempPlants = tempPlants.filter((plant) => plant.type === type);
+    }
+
+    // filter by climate zone
+    if (climate_zone !== "all") {
+      tempPlants = tempPlants.filter((plant) => plant.climate_zone === climate_zone);
     }
 
     // filter by size
@@ -133,6 +144,20 @@ export default class PlantProvider extends Component {
     }
     if (shadow_lover) {
       tempPlants = tempPlants.filter((plant) => plant.sun_seeker === false);
+    }
+
+    // filter by properties
+    if (pollinator_friendly) {
+      tempPlants = tempPlants.filter((plant) => plant.pollinator_friendly === true);
+    }
+    if (edible) {
+      tempPlants = tempPlants.filter((plant) => plant.edible === true);
+    }
+    if (pet_kids_friendly) {
+      tempPlants = tempPlants.filter((plant) => plant.pet_kids_friendly === true);
+    }
+    if (air_puryfying) {
+      tempPlants = tempPlants.filter((plant) => plant.air_puryfying === true);
     }
 
     //change state

@@ -6,13 +6,13 @@ import useOutsideAlerter from "./hooks/useOutsideAlerter";
 function Dropdown({ title, items, multiSelect = false, onChange}) {
   const [open, setOpen] = useState(false);
   const [selection, setSelection] = useState([]);
-  const[isSelected, setIsSelected] = useState(false)
   const toggle = () => setOpen(!open);
   const closeDropDown = () => setOpen(false);
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, closeDropDown);
 
   useEffect(() => {
+    console.log(selection)
     onChange(selection) //update errors every time values change
   }, [selection]);
 
@@ -30,6 +30,7 @@ function Dropdown({ title, items, multiSelect = false, onChange}) {
       );
       setSelection([...selectionAfterRemoval]);
     }
+    
   }
 
   function isItemInSelection(item) {

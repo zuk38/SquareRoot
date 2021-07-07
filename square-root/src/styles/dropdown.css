@@ -35,18 +35,6 @@
     border-bottom:none;
 }
 
-
-.boldBox-open{
-    display: flex;
-    min-height: 38px;
-    flex-wrap: wrap;
-    position: relative;
-    border-left:2px solid black;
-    border-right:2px solid black;
-    border-top:2px solid black;
-    border-bottom:none;
-}
-
 .boldBox-closed{
     display: flex;
     min-height: 38px;
