@@ -4,14 +4,17 @@ export const NavbarData = [
     path: "/",
     className: "sidebar-text"
   },
+  {title: "WHAT WE DO",
+  path: "/what-we-do",
+  className: "sidebar-text"},
   {
     title: "HOW IT WORKS",
     path: "/how-it-works",
     className: "sidebar-text",
   },
   {
-    title: "WHY URBAN GREEN SPACES",
-    path: "/why-urban-greenspaces",
+    title: "WHY US",
+    path: "/why-us",
     className: "sidebar-text",
   },
   {

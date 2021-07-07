@@ -19,7 +19,7 @@
     font-size:clamp(15px,calc(1rem + 1.9033674963vw),44px);
     font-weight: 200;
     letter-spacing:-.03em;
-    max-width:40ch;
+    max-width: 40ch;
     line-height:1.2;
 }
 
