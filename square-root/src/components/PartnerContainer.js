@@ -99,8 +99,7 @@ export default function Partner(props) {
             </form>
             <ButtonPrimary
               float="right"
-              onClick={handleSubmit}
-            >
+              onClick={handleSubmit}>
               Send
             </ButtonPrimary>
           </div>
