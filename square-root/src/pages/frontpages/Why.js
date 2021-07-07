@@ -2,8 +2,26 @@ import React from "react";
 import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import "../../styles/Why.css";
 import ButtonPrimary from "../../styles/StyledComponents";
+import Grid from "../../components/Grid_2x2"
 
 export default function Why(){
+
+    const grid_values = [{
+        title: "Våre verdier og tilnærminger",
+        img_1: "../images/planet-earth.png",
+        img_2: "../images/planet-earth.png",
+        img_3: "../images/planet-earth.png",
+        img_4: "../images/planet-earth.png",
+        subtitle_1: "Naturlige planter",
+        subtitle_2: "Naturlige planter",
+        subtitle_3: "Naturlige planter",
+        subtitle_4: "Naturlige planter",
+        paragraph_1: "Vi har høye standarder til plantene.",
+        paragraph_2: "Vi har høye standarder til plantene.",
+        paragraph_3: "Vi har høye standarder til plantene.",
+        paragraph_4: "Vi har høye standarder til plantene."
+    }];
+
     return (
 
         <div>
@@ -71,6 +89,8 @@ export default function Why(){
                 </div>
 
             </div>
+
+            <Grid></Grid>
 
 
             {/*OUR VALUES*/}
