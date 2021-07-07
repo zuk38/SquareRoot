@@ -1,25 +1,216 @@
-.float-container {
-    border: 3px solid #fff;
-    padding: 1%;
-    height: 500px;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
+
+.c-hero{
+    padding:clamp(32px,6.7349926794vw,92px);
+    color:var(--mainGrey);
 }
 
-.float-child {
-    width: 50%;
-    float: left;
-    padding: 0%;
-    height: 100%;
-    
+.c-txt--hero{
+    word-break: break-word;
+    font-size:clamp(32px,calc(1rem + 4.5387994143vw),80px);
+    font-weight:600;
+    max-width:22ch;
+    line-height: 1.15;
+    margin: 0;
 }
-.why{
-    background-color: #8ca68c;
-    width: 100%;
-    height: 100%;
+
+.c-txt--hero-p{
+    font-size:clamp(15px,calc(1rem + 1.9033674963vw),44px);
+    font-weight: 200;
+    letter-spacing:-.03em;
+    max-width: 40ch;
+    line-height:1.2;
 }
-.why-image{
-    height: 100%;
-    width: 100%;
+
+.c-container{
+    padding:clamp(25px,5.7349926794vw,25px);
+    padding-bottom:1px;
+    margin:auto;
+    max-width:calc(1100px + 2*20px);
+    text-align: inherit;
 }
+
+.c-img img{
+    display:inline-block;
+    max-width:100%;
+    height:auto;
+    vertical-align:middle;
+}
+
+@media (min-width: 768px){
+    .c-grid--founders{
+        grid-template-columns: 1fr 2.4fr;
+    }
+}
+
+.c-grid--founders{
+    grid-gap:clamp(24px,5.270863836vw,72px);
+    display:grid;
+}
+
+.c-grid--founders>div, body, html{
+    text-align:left;
+}
+
+.c-section{
+    padding-bottom:clamp(24px,8.78477306vw,120px);
+    padding-top:clamp(24px,8.78477306vw,120px);
+    overflow:hidden;
+}
+
+.u-mrg--reset>:first-child, dt:first-child{
+    margin-top:0;
+}
+
+.u-mrg--reset>:last-child{
+    margin-bottom: 0;
+}
+
+.c-txt--sectiontitle{
+    margin-bottom: 2px;
+    font-size: clamp(24px,calc(1rem + 3.3674963397vw),64px);
+    line-height: 1.15;
+    letter-spacing: -.03em;
+    font-weight:600;
+}
+
+.c-txt-sectiontitle--sm{
+    font-size: clamp(18px,calc(1rem + 1.9033674963vw),44px);
+    font-weight: 600;
+    line-height: 1.15;
+    letter-spacing: -.03;
+}
+
+.c-txt--punchline{
+    font-size: clamp(18px,calc(1rem + 1.9033674963vw),44px);
+    font-weight:300;
+    line-height:1.15;
+    letter-spacing: -.03em;
+    max-width:35ch;
+    margin-bottom: clamp(24px,5.8565153734vw,80px);
+}
+
+.c-txt-punchline--sm{
+    font-size: clamp(18px,calc(1rem + .7320644217vw),28px);
+    letter-spacing: -.03;
+}
+
+.u-mrg--txt2{
+    margin: 0 0 0 24px;
+}
+
+
+.u-mrg--reset p {
+    margin: 0 0 1em;
+    line-height: calc(1ex/.32);
+}
+
+.u-mrg--txt1{
+    margin-top:24px;
+
+}
+
+.background-grey{
+    background-color: var(--offWhite);
+}
+
+.c-mrg--bottom{
+    margin-bottom:clamp(24px,5.8565153734vw,80px);
+}
+
+.o-container{
+    padding-left: 20px;
+    padding-right:20px;
+    margin:auto;
+    max-width: calc(1100px + 2*20px);
+    text-align: inherit;
+}
+
+@media (min-width:1024){
+    .o-container{
+        padding-left:60px;
+        padding-right:60px;
+        max-width:calc(1100px + 2*60px);
+    }
+}
+
+@media (min-width:768px){
+    .c-grid--2x2{
+        grid-template-columns:1fr 1fr;
+    }
+}
+
+.c-grid--2x2{
+    display:grid;
+    grid-gap:clamp(24px,2.9282576867vw,40px);
+}
+
+.c-mrg--bottom\/4{
+    margin-bottom:16px;
+}
+
+.o-card-media{
+    -webkit-box-align:start;
+    align-items:start;
+}
+
+.o-card{
+    --o-card--gap:20px;
+    display:grid;
+    grid-gap: var(--o-card--gap);
+    grid-template-columns: auto 1fr;
+
+}
+
+.c-icon img{
+    display:inline-block;
+    max-width:100%;
+    height:auto;
+    vertical-align:middle;
+    font-style:italic;
+    width:70px;
+}
+
+.c-txt--sectionsubtitle{
+    font-size: clamp(18px,calc(1rem + 1.0248901903vw),32px);
+}
+
+.c-section--cta{
+    padding-bottom: clamp(24px,8.1991215227vw,112px);
+    padding-bottom: clamp(24px,8.1991215227vw,112px);
+    text-align: center;
+}
+
+.u-txt--center{
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 40px;
+}
+
+.no-float{
+    float: none;
+}
+
+.strong--m{
+    font-size: 18px;
+}
+
+
+/* ----- OLD CSS FOR WHY.JS------
+
+.float-container {
+   display:grid;
+   grid-template-columns: 35% 65%;
+}
+
+.why-h1{
+    color:black;
+    font-size: 40px;
+}
+
+
 .why-name{
     font-size: 50px;
     color: white;
@@ -87,3 +278,5 @@
     left: 45%;
     font-size: 20px;
 }
+
+*/

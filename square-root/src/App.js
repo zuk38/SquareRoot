@@ -20,9 +20,10 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
 import Footer from "./components/Footer";
 import About from "./pages/frontpages/About";
-import Partner from "./components/Partner";
+import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
 import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
+import What from "./pages/frontpages/What";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 
 import { Auth } from "aws-amplify";
@@ -130,7 +131,7 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Why-urban-greenspaces"
+              path="/Why-us"
               render={(props) => <Why {...props} auth={authProps} />}
             />
             <Route
@@ -142,6 +143,12 @@ class App extends Component {
               exact
               path="/become-a-partner"
               render={(props) => <Partner {...props} auth={authProps} />}
+            />
+
+<Route
+              exact
+              path="/what-we-do"
+              render={(props) => <What {...props} auth={authProps} />}
             />
 
             <PrivateRoute
@@ -206,6 +213,8 @@ class App extends Component {
               path="/pn"
               component={PN}
             />
+
+
 
             <Route component={Error} />
           </Switch>

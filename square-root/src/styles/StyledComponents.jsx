@@ -1,19 +1,51 @@
-import styled from "styled-components";
+import styled from "styled-components"
 
 
-export const StyleButton = styled.button`
-    background-color: red;
-    border: none;
+const handleFloat = float => {
+    switch (float) {
+        case "right":
+            return "right";
+        case "left":
+            return "left";
+        case "none":
+            return "none";
+    }
+};
+
+
+const ButtonPrimary = styled.button`
+    width: 20%;
     padding: 10px;
-    border-radius: 5px;
+    background-color: var(--mainGreen); //normal
+    color:  white; //hover
+    font-weight: bold;
+    border: none;
+    font-size: 18px;
+    float: ${({float}) => handleFloat(float)};
     cursor: pointer;
-    float: right;
-    display: inline-flex;
-    position: absolute;
-    top: 13%;
-    right: 0;
-    `;
+    border-radius: 5px;
+    
+    &:hover{
+        background-color: #6C836C;
+    }
+    `
+    export default ButtonPrimary;
+
+
 /*
+export const StyleInputFields = styled.inputFields `
+  padding: 1em;
+  background-color: white;
+  box-sizing: border-box;
+  width: 100%;
+  font-weight: 400px;
+  margin: auto;
+  border-radius: 5px;
+  border: 1px solid lightgray;
+  font-size: 18px;
+`;
+
+
 export const ddContainer = styled.ddContainer`
     width:90%;
     background-color: white;

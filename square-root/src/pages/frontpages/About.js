@@ -30,11 +30,8 @@ function About() {
         <img src="../images/plantbed.png"></img>
         <h className="inspo-h">Project 2</h>
         </div>
-
         </div>
         </div>
-
-
     );
 }
 export default About;

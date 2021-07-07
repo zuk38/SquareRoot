@@ -2,7 +2,7 @@ import React from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
-import Partner from "../../components/Partner";
+import PartnerContainer from "../../components/PartnerContainer";
 
 export default function Home(props) {
   const handleStart = () => {
@@ -26,7 +26,7 @@ export default function Home(props) {
         </Banner>
       </Hero>
       <FeaturedGreenspaces />
-      <Partner />
+      <PartnerContainer />
     </>
   );
 }
