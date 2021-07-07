@@ -158,7 +158,7 @@ type Greenspace
   ) {
   id: ID!
   name: String!
-  img: String
+  image: String
   featured: Boolean
   price: Float
   description: String

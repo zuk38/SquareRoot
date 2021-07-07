@@ -54,9 +54,9 @@ export default class GreenspaceProvider extends Component {
       })
       let name = item.name
       let description = item.description
-      let image = item.img
+      let image = item.image
       let featured = item.featured
-      let greenspace = { name, description, image, featured, ...tempPlants};
+      let greenspace = { name, description, image, featured, plants: tempPlants};
       return greenspace
     })
     return tempItems
