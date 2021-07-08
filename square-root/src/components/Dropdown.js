@@ -9,6 +9,7 @@ export default class Dropdown extends Component {
     this.state = {
       multi: props.multi,
       selectValues: props.selectValues,
+      searchable: false,
       searchBy: "value",
       clearable: props.clearable,
       handle: true,
