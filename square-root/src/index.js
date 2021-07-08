@@ -8,6 +8,9 @@ import { ProjectProvider } from "./context/projects";
 import { PlantProvider } from "./context/plants";
 import { GreenspaceProvider } from "./context/greenspaces";
 import WebFont from "webfontloader";
+import Amplify from "aws-amplify";
+import config from "./aws-exports";
+Amplify.configure(config);
 
 require("dotenv").config();
 

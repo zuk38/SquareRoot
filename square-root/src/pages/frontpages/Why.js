@@ -103,8 +103,8 @@ export default function Why(){
             {/* WHY US */}
             <div className="c-section u-mrg--txt2">
                 <div className="o-container ">
-                    <p className="c-txt--punchline--sm ">
-                        <strong className="strong--m">Hvorfor oss? </strong>
+                    <p className="c-txt-punchline--sm">
+                        <strong>Hvorfor oss? </strong>
                         Vi har knyttet alle aktører til samme plattform slik at vi sammen kan gjøre det enklere å velge grønt.
                         <br/><br/>
                         Vi baserer databasen vår på forskningsbaserte resultater for å finne de beste plantene for riktig sted. Dette knyttes til lovgivninger, miljøsertifiseringer og økonomiske insentiver, 

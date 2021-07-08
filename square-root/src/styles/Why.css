@@ -97,8 +97,9 @@
 }
 
 .c-txt-punchline--sm{
-    font-size: clamp(18px,calc(1rem + .7320644217vw),28px);
+    font-size:18px;
     letter-spacing: -.03;
+    line-height: 1.50;
 }
 
 .u-mrg--txt2{
@@ -132,6 +133,7 @@
     margin-top:24px;
 }
 
+
 .o-container{
     padding-left: 20px;
     padding-right:20px;
@@ -156,7 +158,7 @@
 
 .c-grid-2x1{
     display: grid;
-    grid-gap:clamp(24px,2.9282576867vw,40px);
+    grid-gap:clamp(24px,2.9282576867vw,80px);
 }
 
 
@@ -165,11 +167,70 @@
     grid-gap:clamp(24px,2.9282576867vw,40px);
 }
 
+.is-centered{
+    -webkit-box-align: center;
+    align-items:center;
+}
+
+@media (min-width:768px){
+    .c-grid-2x1{
+        grid-template-columns: repeat(2,1fr);
+        padding-bottom: 0px;
+    }
+    .c-grid-2x1>div.is-right{
+        -webkit-box-ordinal-group: 3;
+        order:2;
+    }
+}
 .c-grid--3x1{
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap:clamp(24px,2.9282576867vw,40px);
 }
+
+.c-grid--span{
+    display:grid;
+    grid-gap:clamp(24px,2.9282576867vw,40px);
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: auto;
+}
+
+.c-grid--span-item-a{
+    grid-column: 1 / 3;
+    grid-row:1 / 3;
+
+}
+
+.c-grid--span-item-b{
+    grid-column:3 / 5;
+    grid-row: 1 / 2;
+
+
+}.c-grid--span-item-c{
+    grid-column:3 / 5;
+    grid-row: 2 / 4;
+
+}
+
+
+  @media screen and (max-width: 600px) {
+    .c-grid--span {
+      grid-template-columns: repeat(1,1fr);
+    }
+    .c-grid--span-item-a {
+        grid-row:1;
+        grid-column: 1 / 3;
+      }
+      .c-grid--span-item-b {
+        grid-row:2;
+        grid-column: 1 / 3;
+      }
+      .c-grid--span-item-c {
+        grid-row:3;
+        grid-column: 1 / 3;
+      }
+
+  }
 
 .zoom-on-hover {
     max-width: 100%;
@@ -179,9 +240,9 @@
 .zoom-on-hover:hover{
     -ms-transform: scale(0.2); /* IE 9 */
     -webkit-transform: scale(0.2); /* Safari 3-8 */
-    transform: scale(1.05);
-    background: white;
-    opacity: 0.8;
+    transform: scale(1.1);
+    /*background: white;
+    opacity: 0.8;*/
     cursor:pointer;
 }
 
@@ -232,6 +293,14 @@
 .strong--m{
     font-size: 18px;
 }
+
+.attachment-company_into{
+    display:inline-block;
+    max-width: 100%;
+    height:auto;
+    vertical-align: middle;
+}
+
 
 
 /* ----- OLD CSS FOR WHY.JS------
