@@ -9,7 +9,7 @@ export default class FeaturedGreenspaces extends Component {
 
   render() {
     let {loading, featuredGreenspaces : greenspaces} = this.context;
-    greenspaces = greenspaces.map(greenspace => {
+    greenspaces = greenspaces.map((greenspace) => {
       return <Greenspace key={greenspace.id} greenspace={greenspace} />
     })
 

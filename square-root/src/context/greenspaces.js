@@ -56,22 +56,11 @@ export default class GreenspaceProvider extends Component {
       let description = item.description
       let image = item.image
       let featured = item.featured
-      let greenspace = { name, description, image, featured, ...tempPlants};
+      let greenspace = { name, description, image, featured, plants: tempPlants};
       return greenspace
     })
     return tempItems
   }
-
-  /*formatData(items) {
-    let tempItems = items.map((item) => {
-      let image = item.metadata.image;
-      let metadata = item.metadata;
-      let plant = { image, ...metadata };
-      console.log(plant)
-      return plant;
-    });
-    return tempItems;
-  }*/
 
   componentDidMount() {
     this.fetchGreenspaces();

@@ -84,8 +84,8 @@
             {
               "authenticationType": "API_KEY",
               "apiKeyConfig": {
-                "apiKeyExpirationDays": 7,
-                "description": "API for guest users on website "
+                "apiKeyExpirationDays": 365,
+                "description": "api for unathenticated users"
               }
             }
           ]

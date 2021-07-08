@@ -94,7 +94,7 @@ export default function SinglePlant({
         className="btn-plant-modal-close"
         alt="Lukk"
       >
-        <i class="fas fa-times fa-lg"></i>
+        <i className="fas fa-times fa-lg"></i>
       </button>
 
       <div className="plant-modal-header">

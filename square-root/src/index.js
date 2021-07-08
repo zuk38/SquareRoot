@@ -11,7 +11,10 @@ import WebFont from "webfontloader";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
 Amplify.configure(config);
+<<<<<<< HEAD
 
+=======
+>>>>>>> 461632717f7c93b264bdc666514b3cee8cb79019
 require("dotenv").config();
 
 WebFont.load({

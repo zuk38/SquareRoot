@@ -17,7 +17,6 @@
   min-height: calc(100vh - var(--nav-size));
   padding: 2rem 1rem;
   text-align: center;
-  text-transform: capitalize;
   background: #474646; /* fallback colour. Make sure this is just one solid colour. */
   background: rgba(54, 54, 54, 0.8);
 }
@@ -43,7 +42,6 @@
   min-height: calc(100vh - var(--nav-size));
   padding: 2rem 1rem;
   text-align: left;
-  text-transform: capitalize;
   background: #474646; /* fallback colour. Make sure this is just one solid colour. */
   background: rgba(54, 54, 54, 0.3);
 }

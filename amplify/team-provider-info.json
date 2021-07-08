@@ -29,36 +29,5 @@
         }
       }
     }
-  },
-  "frontend": {
-    "awscloudformation": {
-      "AuthRoleName": "amplify-squarerootproject-frontend-162557-authRole",
-      "UnauthRoleArn": "arn:aws:iam::387243802874:role/amplify-squarerootproject-frontend-162557-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::387243802874:role/amplify-squarerootproject-frontend-162557-authRole",
-      "Region": "eu-north-1",
-      "DeploymentBucketName": "amplify-squarerootproject-frontend-162557-deployment",
-      "UnauthRoleName": "amplify-squarerootproject-frontend-162557-unauthRole",
-      "StackName": "amplify-squarerootproject-frontend-162557",
-      "StackId": "arn:aws:cloudformation:eu-north-1:387243802874:stack/amplify-squarerootproject-frontend-162557/68aaa770-dff8-11eb-9513-0e0d99c1643e"
-    },
-    "categories": {
-      "auth": {
-        "squarerootprojectfe3d4090": {}
-      },
-      "function": {
-        "addUserToGroup": {
-          "deploymentBucketName": "amplify-squarerootproject-frontend-162557-deployment",
-          "s3Key": "amplify-builds/addUserToGroup-63746f5766426c5a7946-build.zip"
-        },
-        "contactFormFunction": {
-          "deploymentBucketName": "amplify-squarerootproject-frontend-162557-deployment",
-          "s3Key": "amplify-builds/contactFormFunction-6d632f4233684d516a48-build.zip"
-        },
-        "sendEmail": {
-          "deploymentBucketName": "amplify-squarerootproject-frontend-162557-deployment",
-          "s3Key": "amplify-builds/sendEmail-726a6453524733546452-build.zip"
-        }
-      }
-    }
   }
 }

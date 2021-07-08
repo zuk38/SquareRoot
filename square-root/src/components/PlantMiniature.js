@@ -70,7 +70,7 @@ export default function PlantMiniature({
           </div>
           {!showModal && (
             <button
-              class="button is-dark plant-link"
+              className="button is-dark plant-link"
               onClick={() => setShowPlantModal(plant, features)}
             >
               FEATURES
@@ -87,14 +87,8 @@ export default function PlantMiniature({
 
 PlantMiniature.propTypes = {
   plant: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-    norwegian_nursery: PropTypes.bool.isRequired,
-    pollinator_friendly: PropTypes.bool.isRequired,
-    edible: PropTypes.bool.isRequired,
-    pet_kids_friendly: PropTypes.bool.isRequired,
-    air_puryfying: PropTypes.bool.isRequired,
-    sun_seeker: PropTypes.bool.isRequired,
-    native: PropTypes.bool.isRequired,
+    norwegian_name: PropTypes.string.isRequired,
+    latin_name: PropTypes.string.isRequired,
+    image: PropTypes.string.isRequired,
   }),
 };
