@@ -135,47 +135,6 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
-export const listPlants = /* GraphQL */ `
-  query ListPlants(
-    $filter: ModelPlantFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        metadataID
-        createdAt
-        updatedAt
-        metadata {
-          id
-          greenspace_category
-          latin_name
-          norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
-          createdAt
-          updatedAt
-        }
-        greenspaces {
-          nextToken
-        }
-      }
-      nextToken
-    }
-  }
-`;
 export const getPlant = /* GraphQL */ `
   query GetPlant($id: ID!) {
     getPlant(id: $id) {
@@ -219,6 +178,72 @@ export const getPlant = /* GraphQL */ `
     }
   }
 `;
+export const listPlants = /* GraphQL */ `
+  query ListPlants(
+    $filter: ModelPlantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          greenspace_category
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        greenspaces {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const getPlantMetadata = /* GraphQL */ `
+  query GetPlantMetadata($id: ID!) {
+    getPlantMetadata(id: $id) {
+      id
+      greenspace_category
+      latin_name
+      norwegian_name
+      type
+      native
+      norwegian_nursery
+      size_in_cm
+      image
+      featured
+      climate_zone
+      pollinator_friendly
+      edible
+      rain_garden
+      pet_kids_friendly
+      air_puryfying
+      sun_seeker
+      createdAt
+      updatedAt
+    }
+  }
+`;
 export const listPlantMetadatas = /* GraphQL */ `
   query ListPlantMetadatas(
     $filter: ModelPlantMetadataFilterInput
@@ -248,31 +273,6 @@ export const listPlantMetadatas = /* GraphQL */ `
         updatedAt
       }
       nextToken
-    }
-  }
-`;
-export const getPlantMetadata = /* GraphQL */ `
-  query GetPlantMetadata($id: ID!) {
-    getPlantMetadata(id: $id) {
-      id
-      greenspace_category
-      latin_name
-      norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -377,34 +377,6 @@ export const listGreenspacePlants = /* GraphQL */ `
     }
   }
 `;
-export const listGreenspaces = /* GraphQL */ `
-  query ListGreenspaces(
-    $filter: ModelGreenspaceFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listGreenspaces(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        name
-        image
-        featured
-        price
-        description
-        category
-        createdAt
-        updatedAt
-        plants {
-          nextToken
-        }
-        projects {
-          nextToken
-        }
-      }
-      nextToken
-    }
-  }
-`;
 export const getGreenspace = /* GraphQL */ `
   query GetGreenspace($id: ID!) {
     getGreenspace(id: $id) {
@@ -439,6 +411,34 @@ export const getGreenspace = /* GraphQL */ `
         }
         nextToken
       }
+    }
+  }
+`;
+export const listGreenspaces = /* GraphQL */ `
+  query ListGreenspaces(
+    $filter: ModelGreenspaceFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listGreenspaces(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        name
+        image
+        featured
+        price
+        description
+        category
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+        projects {
+          nextToken
+        }
+      }
+      nextToken
     }
   }
 `;
