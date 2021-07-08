@@ -37,12 +37,12 @@ function Dropdown(props) {
   return (
     <div ref={dropdownRef}>
       <button
-        class="button is-white pad"
+        className="button is-white pad"
         onClick={() => setDropdown(!dropdown)}
       >
         <span>{props.auth.user}</span>
-        <span class="icon is-medium">
-          <i class="fas fa-angle-down"></i>
+        <span className="icon is-medium">
+          <i className="fas fa-angle-down"></i>
         </span>
       </button>
       {dropdown && (

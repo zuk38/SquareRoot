@@ -9,7 +9,7 @@ export default class PlantProvider extends Component {
     plants: [],
     sortedPlants: [], //filtered
     featuredPlants: [],
-    loading: false,
+    loading: true,
     //filters
     type: "all",
     greenspace_category: "all",
@@ -17,6 +17,7 @@ export default class PlantProvider extends Component {
     norwegian_nursery: false, //norwegian or external
     native: false, //native or imported
     sun_seeker: false, //shadow lover or sun seeker
+    shadow_lover: false, //shadow lover or sun seeker
     size_in_cm: 0,
     minSize: 0,
     maxSize: 0,
@@ -56,21 +57,34 @@ export default class PlantProvider extends Component {
     return plant;
   };
 
-  handleChange = (event) => {
-    //filtering
-    const target = event.target; //to check if it's a checkbox
-    const value = target.type === "checkbox" ? target.checked : target.value;
-    const name = event.target.name;
+  handleChange = (selection) => {
+    console.log(selection);
+    let id, value;
+    for (let i = 0; i < selection.length; i++) {
+      id = selection[i].id;
+      if (
+        id === "type" ||
+        id === "greenspace_category" ||
+        id === "climate_zone"
+      ) {
+        value = selection[i].value.toLowerCase();
+      } else {
+        value = true;
+      }
+
+      console.log(id + ": " + value);
+    }
 
     this.setState(
       {
-        [name]: value,
+        [id]: value,
       },
-      this.filterPlants
-    ); //filter as a callback depending on state
+      () => {this.filterPlants()} //filter as a callback depending on state
+    );
   };
 
   filterPlants = () => {
+    console.log(this.state);
     //backup all original values
     let {
       plants,
@@ -83,6 +97,7 @@ export default class PlantProvider extends Component {
       maxSize,
       climate_zone,
       sun_seeker,
+      shadow_lover,
       edible,
       pollinator_friendly,
       pet_kids_friendly,
@@ -91,12 +106,38 @@ export default class PlantProvider extends Component {
     } = this.state;
 
     let tempPlants = [...plants];
+    let state = this.state;
+
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
 
     // filter by type
     if (type !== "all") {
       tempPlants = tempPlants.filter((plant) => plant.type === type);
+    }
+
+    //filter by properties
+    ["edible", "pollinator_friendly", "pet_kids_friendly", "air_puryfying"].forEach(function(filterBy) {
+      var filterValue = state[filterBy];
+      console.log(filterBy)
+      console.log(filterValue)
+      if (filterValue) {
+        tempPlants = tempPlants.filter(function(item) {
+          return item[filterBy] === filterValue;
+        });
+      }
+    });
+
+    // filter by type
+    /*if (type !== "all") {
+      tempPlants = tempPlants.filter((plant) => plant.type === type);
+    }
+
+    // filter by climate zone
+    if (climate_zone !== "all") {
+      tempPlants = tempPlants.filter(
+        (plant) => plant.climate_zone === climate_zone
+      );
     }
 
     // filter by size
@@ -120,6 +161,29 @@ export default class PlantProvider extends Component {
     if (sun_seeker) {
       tempPlants = tempPlants.filter((plant) => plant.sun_seeker === true);
     }
+
+    if (shadow_lover) {
+      console.log("shadow");
+      tempPlants = tempPlants.filter((plant) => plant.sun_seeker === false);
+    }
+
+    // filter by properties
+    if (pollinator_friendly) {
+      tempPlants = tempPlants.filter(
+        (plant) => plant.pollinator_friendly === true
+      );
+    }
+    if (edible) {
+      tempPlants = tempPlants.filter((plant) => plant.edible === true);
+    }
+    if (pet_kids_friendly) {
+      tempPlants = tempPlants.filter(
+        (plant) => plant.pet_kids_friendly === true
+      );
+    }
+    if (air_puryfying) {
+      tempPlants = tempPlants.filter((plant) => plant.air_puryfying === true);
+    } */
 
     //change state
     this.setState({

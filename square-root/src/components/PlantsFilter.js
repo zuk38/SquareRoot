@@ -1,200 +1,201 @@
-import React, { useContext } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { PlantContext } from "../context/plants";
 import "../styles/Plants.css";
-import Dropdown from "./Dropdown"
-import {StyleButton} from "../styles/StyledComponents"
-
+import Dropdown from "./Dropdown";
 
 //get all unique values
 const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
+const formatData = (items, index) => {
+  let tempItems = items
+    .filter(function(item) {  //skip nulls
+      if (item) return true;
+      return false;
+    })
+    .map((item) => {
+      let id = index;
+      let value =
+        item
+          .toString()
+          .charAt(0)
+          .toUpperCase() + item.slice(1);
+      
+      let newItem = { id: id, value: value };
+      return newItem;
+    });
+
+  return tempItems;
+};
+
 export default function PlantsFilter({ plants }) {
   const context = useContext(PlantContext);
   const {
     handleChange,
-    type,
-    norwegian_nursery,
-    native,
-    light,
-    greenspace_category,  //dropdown
     minSize,
     maxSize,
-    climateZone,  //dropdown
-    edible, //checkbox
-    pollinator_friendly,  //checkbox
-    pet_kids_friendly,  //checkboox
-    rain_garden,  //checkbox
-    air_puryfying,  //checkbox
   } = context;
+
+  const [selectType, setSelectType] = useState([]);
+  const [selectCategory, setSelectCategory] = useState([]);
+  const [selectZone, setSelectZone] = useState([]);
+  const [selectOrigin, setSelectOrigin] = useState([]);
+  const [selectLight, setSelectLight] = useState([]);
+  const [selectProperties, setSelectProperties] = useState([]);
+
+  useEffect(() => {
+    let filters = [...selectLight, ...selectType, ...selectZone, ...selectCategory, ...selectOrigin, ...selectProperties]
+    handleChange(filters)
+  }, [selectType, selectCategory, selectProperties, selectZone, selectLight, selectOrigin])
 
   //get unique types
   let types = getUnique(plants, "type");
   //add all
-  types = ["all", ...types];
-  //map to jsx
-  types = types.map((item, index) => {
-    return (
-      <option value={item} key={index}>
-        {item}
-      </option>
-    );
-  });
+  //types = ["all", ...types];
+  //format to dropdown
+  types = formatData(types, "type");
 
   //get unique categories
   let categories = getUnique(plants, "greenspace_category");
   //add all
-  categories = ["all", ...categories];
-  //map to jsx
-  categories = categories.map((item, index) => {
-    return (
-      <option value={item} key={index}>
-        {item}
-      </option>
-    );
-  });
+  //categories = ["all", ...categories];
+  //format to dropdown
+  categories = formatData(categories, "greenspace_category");
 
   //get unique climate zones
-  let zones = getUnique(plants, "climateZone");
+  let zones = getUnique(plants, "climate_zone");
   //add all
-  zones = ["all", ...zones];
-  //map to jsx
-  zones = categories.map((item, index) => {
-    return (
-      <option value={item} key={index}>
-        {item}
-      </option>
-    );
-  });
+  //zones = ["all", ...zones];
+  //format to dropdown
+  zones = formatData(zones, "climate_zone");
 
   const items_properties = [
     {
-      name: 'pollinator_friendly',
-      id: 'pollinator_friendly',
-      checked: {pollinator_friendly},
-      value: 'Bievennlig'
+      id: "pollinator_friendly",
+      value: "Bievennlig",
     },
     {
-      name: 'edible',
-      id: 'edible',
-      checked: {edible},
-      value: 'Spiselig'
+      id: "edible",
+      value: "Spiselig",
     },
     {
-      name: 'air_puryfying',
-      id: 'air_puryfying',
-      checked: {air_puryfying},
-      value: "Luftrensende"
+      id: "air_puryfying",
+      value: "Luftrensende",
     },
     {
-      name: 'pet_kids_friendly',
-      id: 'pet_kids_friendly',
-      checked: {pet_kids_friendly},
-      value: "Dyr- og barnevennlig"
-    }
-
-  ];
-
-const items_greenspace = [
-    {
-      name:  'greenspace',
-      id: 'greenspace',
-      value: {categories}
-    }
-  ];
-
-  const items_types = [
-    {
-      name:  'type',
-      id: 'type',
-      value: {types}
-    }
-  ];
-
-  const items_zones = [
-    {
-      name:  'zone',
-      id: 'zone',
-      checked: {zones},
-      value: 'H6',
-    }
+      id: "pet_kids_friendly",
+      value: "Dyr- og barnevennlig",
+    },
   ];
 
   const items_size_inputs = [
     {
-      name:  'minSize',
-      id: 'size_in_cm',
-      value: {minSize},
+      name: "minSize",
+      id: "size_in_cm",
+      value: { minSize },
       type: "number",
-      className: "size-input"
+      className: "size-input",
     },
     {
-      name:  'maxSize',
-      id: 'size_in_cm',
-      value: {maxSize},
+      name: "maxSize",
+      id: "size_in_cm",
+      value: { maxSize },
       type: "number",
-      className: "size-input"
-    }
-
+      className: "size-input",
+    },
   ];
 
   const items_origin = [
     {
-      name:  'norwegian_nursery',
-      id: 'size_in_cm',
-      value: 'Norsk planteskole',
-      checked: {norwegian_nursery}
+      id: "norwegian_nursery",
+      value: "Norsk planteskole",
     },
     {
-      name:  'native',
-      id: 'native',
-      value: 'Norske planter',
-      checked: {native}
-    }
+      id: "native",
+      value: "Norske planter",
+    },
   ];
 
   const items_light = [
     {
-      name:  'sun_seeker',
-      id: 'sun_seeker',
-      value: 'Mest sol',
-      checked: {light}
+      id: "sun_seeker",
+      value: "Mest sol",
     },
     {
-      name:  'shadow_lover', //is this correct since it's not in DB?
-      id: 'shadow_lover',
-      value: 'Mest skygge',
-      checked: {light}
-    }
+      id: "shadow_lover",
+      value: "Mest skygge",
+    },
   ];
 
-
-
   return (
-
     <section className="filter-container">
       <form className="filter-form">
+        {/*Dropdown.js */}
+        {/* Category */}
+        <Dropdown
+          multi={true}
+          selectValues={selectCategory}
+          clearable={true}
+          closeOnSelect={false}
+          options={categories}
+          placeholder="Grøntområde"
+          onChange={(values) => setSelectCategory(values)}
+        />
+        {/*Type */}
+        <Dropdown
+          multi={true}
+          selectValues={selectType}
+          clearable={true}
+          closeOnSelect={false}
+          options={types}
+          placeholder="Type"
+          onChange={(values) => setSelectType(values)}
+        />
+        {/*Zone */}
+        <Dropdown
+          multi={true}
+          selectValues={selectZone}
+          clearable={true}
+          closeOnSelect={false}
+          options={zones}
+          placeholder="Klimasone"
+          onChange={(values) => setSelectZone(values)}
+        />
+        {/*Origin */}
+        <Dropdown
+          multi={true}
+          selectValues={selectOrigin}
+          clearable={true}
+          closeOnSelect={false}
+          options={items_origin}
+          placeholder="Opprinnelse"
+          onChange={(values) => setSelectOrigin(values)}
+        />
+        {/*Light */}
+        <Dropdown
+          multi={false}
+          selectValues={selectLight}
+          clearable={true}
+          closeOnSelect={true}
+          options={items_light}
+          placeholder="Lysforhold"
+          onChange={(values) => setSelectLight(values)}
+        />
+        {/*Light */}
+        <Dropdown
+          multi={true}
+          selectValues={selectProperties}
+          clearable={true}
+          closeOnSelect={false}
+          options={items_properties}
+          placeholder="Egenskaper"
+          onChange={(values) => setSelectProperties(values)}
+        />
+        
 
-    {/*Dropdown.js */}
-    
-      <Dropdown title="Grøntområde" items={items_greenspace}/>
-   
-      <Dropdown title="Type" items={items_types}/>
-
-      <Dropdown title="Klimasone" items={items_zones}/>
-
-      <Dropdown title="Størrelse" items={items_size_inputs}/>
-
-      <Dropdown title="Opprinnelse" items={items_origin} multiSelect/>
-
-      <Dropdown title="Lysforhold" items={items_light}/>
- 
-      <Dropdown title="Egenskaper" items={items_properties} multiSelect/>
-
-    {/* end Dropdown.js */}
+        {/* end Dropdown.js */}
       </form>
     </section>
-
   );
 }

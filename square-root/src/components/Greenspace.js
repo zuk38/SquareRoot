@@ -4,20 +4,22 @@ import { Link } from "react-router-dom";
 export default function Greenspace({ greenspace }) {
   const { name, description, image } = greenspace;
 
+  console.log(greenspace)
+
   return (
     <div className="imagebox">
-      <img classname="image" src={image} alt="single greenspace" />
+      <img className="image" src={image} alt="single greenspace" />
       <span>
         <h1>{name.toUpperCase()}</h1>
         <p>{description}</p>
         <div className="hero-btns">
           <Link to={`/greenspaces/${name}`}>
-            <button class="button is-light">LEARN MORE</button>
+            <button className="button is-light">LEARN MORE</button>
           </Link>
 
-          <button class="button is-dark">
+          <button className="button is-dark">
             ADD TO PROJECT
-            <i class="fas fa-chevron-right" />
+            <i className="fas fa-chevron-right" />
           </button>
         </div>
       </span>
