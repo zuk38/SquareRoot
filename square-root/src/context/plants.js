@@ -58,34 +58,33 @@ export default class PlantProvider extends Component {
   };
 
   handleChange = (selection) => {
-  
-    var values = [];
-    let value;
-    let id;
+    console.log(selection);
+    let id, value;
     for (let i = 0; i < selection.length; i++) {
-      console.log(selection[i])
-      if (selection[i].dbID != null) {
-        id = selection[i].dbID
-        value = selection[i].value;
+      id = selection[i].id;
+      if (
+        id === "type" ||
+        id === "greenspace_category" ||
+        id === "climate_zone"
+      ) {
+        value = selection[i].value.toLowerCase();
       } else {
-        id = selection[i].id;
         value = true;
-      }     
+      }
+
+      console.log(id + ": " + value);
     }
 
-    //filtering
-    if (value != null) {
-      this.setState(
-        {
-          [id]: value,
-        },
-        this.filterPlants() //filter as a callback depending on state
-      )
-    }
+    this.setState(
+      {
+        [id]: value,
+      },
+      () => {this.filterPlants()} //filter as a callback depending on state
+    );
   };
 
   filterPlants = () => {
-    console.log(this.state)
+    console.log(this.state);
     //backup all original values
     let {
       plants,
@@ -107,7 +106,8 @@ export default class PlantProvider extends Component {
     } = this.state;
 
     let tempPlants = [...plants];
-   
+    let state = this.state;
+
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
 
@@ -116,9 +116,28 @@ export default class PlantProvider extends Component {
       tempPlants = tempPlants.filter((plant) => plant.type === type);
     }
 
+    //filter by properties
+    ["edible", "pollinator_friendly", "pet_kids_friendly", "air_puryfying"].forEach(function(filterBy) {
+      var filterValue = state[filterBy];
+      console.log(filterBy)
+      console.log(filterValue)
+      if (filterValue) {
+        tempPlants = tempPlants.filter(function(item) {
+          return item[filterBy] === filterValue;
+        });
+      }
+    });
+
+    // filter by type
+    /*if (type !== "all") {
+      tempPlants = tempPlants.filter((plant) => plant.type === type);
+    }
+
     // filter by climate zone
     if (climate_zone !== "all") {
-      tempPlants = tempPlants.filter((plant) => plant.climate_zone === climate_zone);
+      tempPlants = tempPlants.filter(
+        (plant) => plant.climate_zone === climate_zone
+      );
     }
 
     // filter by size
@@ -142,23 +161,29 @@ export default class PlantProvider extends Component {
     if (sun_seeker) {
       tempPlants = tempPlants.filter((plant) => plant.sun_seeker === true);
     }
+
     if (shadow_lover) {
+      console.log("shadow");
       tempPlants = tempPlants.filter((plant) => plant.sun_seeker === false);
     }
 
     // filter by properties
     if (pollinator_friendly) {
-      tempPlants = tempPlants.filter((plant) => plant.pollinator_friendly === true);
+      tempPlants = tempPlants.filter(
+        (plant) => plant.pollinator_friendly === true
+      );
     }
     if (edible) {
       tempPlants = tempPlants.filter((plant) => plant.edible === true);
     }
     if (pet_kids_friendly) {
-      tempPlants = tempPlants.filter((plant) => plant.pet_kids_friendly === true);
+      tempPlants = tempPlants.filter(
+        (plant) => plant.pet_kids_friendly === true
+      );
     }
     if (air_puryfying) {
       tempPlants = tempPlants.filter((plant) => plant.air_puryfying === true);
-    }
+    } */
 
     //change state
     this.setState({

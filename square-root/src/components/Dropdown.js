@@ -1,108 +1,155 @@
-import React, { useEffect, useRef, useState } from "react";
-import "../styles/Plants.css";
-import "../styles/dropdown.css";
-import useOutsideAlerter from "./hooks/useOutsideAlerter";
+import React, { Component } from "react";
+import Select from "react-dropdown-select";
+import styled from "@emotion/styled";
 
-function Dropdown({ title, items, multiSelect = false, onChange}) {
-  const [open, setOpen] = useState(false);
-  const [selection, setSelection] = useState([]);
-  const toggle = () => setOpen(!open);
-  const closeDropDown = () => setOpen(false);
-  const dropdownRef = useRef(null);
-  useOutsideAlerter(dropdownRef, closeDropDown);
+export default class Dropdown extends Component {
+  constructor(props) {
+    super(props);
 
-  useEffect(() => {
-    console.log(selection)
-    onChange(selection) //update errors every time values change
-  }, [selection]);
-
-  function handleOnClick(item) {
-    if (!selection.some((current) => current.id === item.id)) {
-      if (!multiSelect) {
-        setSelection([item]);
-      } else if (multiSelect) {
-        setSelection([...selection, item]);
-      }
-    } else {
-      let selectionAfterRemoval = selection;
-      selectionAfterRemoval = selectionAfterRemoval.filter(
-        (current) => current.id !== item.id
-      );
-      setSelection([...selectionAfterRemoval]);
-    }
-    
+    this.state = {
+      multi: props.multi,
+      selectValues: props.selectValues,
+      searchBy: "value",
+      clearable: props.clearable,
+      handle: true,
+      labelField: "value",
+      valueField: "value",
+      color: "#222",
+      keepSelectedInList: true,
+      closeOnSelect: props.closeOnSelect,
+      dropdownPosition: "auto",
+      direction: "ltr",
+      dropdownHeight: "200px",
+      separator: true,
+    };
   }
 
-  function isItemInSelection(item) {
-    if (selection.some((current) => current.id === item.id)) {
-      return true;
-    }
-    return false;
-  }
+  noDataRenderer = () => {
+    return (
+      <p style={{ textAlign: "center" }}>
+        <strong>Ooops!</strong> No data found
+      </p>
+    );
+  };
 
-  return (
-    <div className="dd-container" ref={dropdownRef}>
-      <div
-        className={
-          selection[0] && open
-            ? "boldBox-open"
-            : selection[0]
-            ? "boldBox-closed"
-            : open
-            ? "boldBox-open"
-            : "dd-wrapper"
-        }
-      >
-        <div
-          tabIndex={0}
-          className="dd-header"
-          onKeyPress={() => toggle(!open)}
-          onClick={() => toggle(!open)}
-        >
-          <div className="dd-header__title">
-            <p className={selection[0] ? "bold" : "regular"}>{title}</p>
+  render() {
+    return (
+      <div className={this.props.className}>
+        <div>
+          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+            <StyledSelect
+              // handleKeyDownFn={({ event, state, props, methods, setState }) => {
+              //   const { cursor } = state;
+              //   const escape = event.key === 'Escape';
+              //   const enter = event.key === 'Enter';
+              //   const arrowUp = event.key === 'ArrowUp';
+              //   const arrowDown = event.key === 'ArrowDown';
+              //   const tab = event.key === 'Tab' && !event.shiftKey;
+              //   const shiftTab = event.shiftKey && event.key === 'Tab';
+
+              //   if ((arrowDown || tab) && cursor === null) {
+              //     return setState({
+              //       cursor: 0
+              //     });
+              //   }
+
+              //   if (arrowUp || arrowDown || shiftTab || tab) {
+              //     event.preventDefault();
+              //   }
+
+              //   if (escape) {
+              //     this.dropDown('close');
+              //   }
+
+              //   if (enter) {
+              //     const currentItem = methods.searchResults()[cursor];
+              //     if (currentItem && !currentItem.disabled) {
+              //       if (props.create && valueExistInSelected(state.search, state.values, props)) {
+              //         return null;
+              //       }
+
+              //       methods.addItem(currentItem);
+              //     }
+              //   }}
+              placeholder={this.props.placeholder}
+              color={this.state.color}
+              searchBy={this.state.searchBy}
+              separator={this.state.separator}
+              clearable={this.state.clearable}
+              searchable={this.state.searchable}
+              create={this.state.create}
+              keepOpen={this.state.forceOpen}
+              dropdownHandle={this.state.handle}
+              dropdownHeight={this.state.dropdownHeight}
+              direction={this.state.direction}
+              multi={this.state.multi}
+              values={"" || this.props.selectValues}
+              labelField={this.state.labelField}
+              valueField={this.state.valueField}
+              options={this.props.options}
+              dropdownGap={5}
+              keepSelectedInList={this.state.keepSelectedInList}
+              onDropdownOpen={() => undefined}
+              onDropdownClose={() => undefined}
+              onClearAll={() => undefined}
+              onSelectAll={() => undefined}
+              onChange={this.props.onChange}
+              noDataLabel="No matches found"
+              closeOnSelect={this.state.closeOnSelect}
+              noDataRenderer={
+                this.state.noDataRenderer
+                  ? () => this.noDataRenderer()
+                  : undefined
+              }
+              dropdownPosition={this.state.dropdownPosition}
+              itemRenderer={
+                this.state.itemRenderer
+                  ? (item, itemIndex, props, state, methods) =>
+                      this.itemRenderer(item, itemIndex, props, state, methods)
+                  : undefined
+              }
+              inputRenderer={
+                this.state.inputRenderer
+                  ? (props, state, methods) =>
+                      this.inputRenderer(props, state, methods)
+                  : undefined
+              }
+              optionRenderer={
+                this.state.optionRenderer
+                  ? (option, props, state, methods) =>
+                      this.optionRenderer(option, props, state, methods)
+                  : undefined
+              }
+              contentRenderer={
+                this.state.contentRenderer
+                  ? (innerProps, innerState) =>
+                      this.contentRenderer(innerProps, innerState)
+                  : undefined
+              }
+              dropdownRenderer={
+                this.state.dropdownRenderer
+                  ? (innerProps, innerState, innerMethods) =>
+                      this.dropdownRenderer(
+                        innerProps,
+                        innerState,
+                        innerMethods
+                      )
+                  : undefined
+              }
+            />
           </div>
         </div>
-        {open && (
-          <ul
-            className="dd-list"
-            className={open ? "dd-list-bold" : "regularBox"}
-          >
-            <div>
-              <div className="dd-borderBox">
-                <div className="dd-border"></div>
-              </div>
-              {items.map((item) => (
-                <li className="dd-list-item" key={item.id}>
-                  {item.value && (
-                    <button
-                      type="button"
-                      className="dd-button"
-                      onClick={() => handleOnClick(item)}
-                    >
-                      <span>
-                        {isItemInSelection(item) && multiSelect ? (
-                          <i className="far fa-check-square"/>
-                        ) : (
-                          multiSelect && <i className="far fa-square"/>
-                        )}
-                      </span>
-
-                      <span
-                        className={isItemInSelection(item) ? "bold" : "regular"}
-                      >
-                        {item.value.toUpperCase()}
-                      </span>
-                    </button>
-                  )}
-                </li>
-              ))}
-            </div>
-          </ul>
-        )}
       </div>
-    </div>
-  );
+    );
+  }
 }
 
-export default Dropdown;
+const StyledSelect = styled(Select)`
+  ${({ dropdownRenderer }) =>
+    dropdownRenderer &&
+    `
+		.react-dropdown-select-dropdown {
+			overflow: initial;
+		}
+	`}
+`;
