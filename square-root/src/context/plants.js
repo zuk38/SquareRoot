@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { listPlants } from "../api/queries";
+import { getPlant, listPlants } from "../api/queries";
 
 const PlantContext = React.createContext();
 
@@ -26,6 +26,7 @@ export default class PlantProvider extends Component {
     pet_kids_friendly: false,
     rain_garden: false,
     air_puryfying: false,
+    name: "all"
   };
 
   fetchPlants = async () => {
@@ -51,10 +52,10 @@ export default class PlantProvider extends Component {
     }
   };
 
-  getPlant = (name) => {
+  getPlant = (n) => {
     let tempPlants = [...this.state.plants];
-    const plant = tempPlants.find((plant) => plant.norwegian_name === name);
-    return plant;
+    let plant = tempPlants.find((plant) => plant.norwegian_name === n);
+    return plant    
   };
 
   handleChange = (selection) => {
@@ -83,6 +84,16 @@ export default class PlantProvider extends Component {
     );
   };
 
+  searchName = (n) => {
+    console.log(n)
+    this.setState(
+      {
+        name: n,
+      },
+      () => {this.filterPlants()} //filter as a callback depending on state
+    );
+  }
+
   filterPlants = () => {
     console.log(this.state);
     //backup all original values
@@ -103,10 +114,12 @@ export default class PlantProvider extends Component {
       pet_kids_friendly,
       rain_garden,
       air_puryfying,
+      name,
     } = this.state;
 
     let tempPlants = [...plants];
     let state = this.state;
+    let plant = null;
 
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
@@ -116,11 +129,13 @@ export default class PlantProvider extends Component {
       tempPlants = tempPlants.filter((plant) => plant.type === type);
     }
 
+    if (name !== "all") {
+      plant = tempPlants.find((plant) => plant.norwegian_name === name);
+    }
+
     //filter by properties
     ["edible", "pollinator_friendly", "pet_kids_friendly", "air_puryfying"].forEach(function(filterBy) {
       var filterValue = state[filterBy];
-      console.log(filterBy)
-      console.log(filterValue)
       if (filterValue) {
         tempPlants = tempPlants.filter(function(item) {
           return item[filterBy] === filterValue;
@@ -186,9 +201,16 @@ export default class PlantProvider extends Component {
     } */
 
     //change state
+    if (plant) {
+      console.log(plant)
+      this.setState({
+        sortedPlants: plant,
+      });
+    } else {
     this.setState({
       sortedPlants: tempPlants,
     });
+  }
   };
 
   componentDidMount() {
@@ -212,6 +234,7 @@ export default class PlantProvider extends Component {
           ...this.state,
           getPlant: this.getPlant,
           handleChange: this.handleChange,
+          searchName: this.searchName
         }}
       >
         {this.props.children}

@@ -10,7 +10,8 @@ const getUnique = (items, value) => {
 
 const formatData = (items, index) => {
   let tempItems = items
-    .filter(function(item) {  //skip nulls
+    .filter(function(item) {
+      //skip nulls
       if (item) return true;
       return false;
     })
@@ -21,7 +22,7 @@ const formatData = (items, index) => {
           .toString()
           .charAt(0)
           .toUpperCase() + item.slice(1);
-      
+
       let newItem = { id: id, value: value };
       return newItem;
     });
@@ -31,11 +32,7 @@ const formatData = (items, index) => {
 
 export default function PlantsFilter({ plants }) {
   const context = useContext(PlantContext);
-  const {
-    handleChange,
-    minSize,
-    maxSize,
-  } = context;
+  const { handleChange, searchName, minSize, maxSize } = context;
 
   const [selectType, setSelectType] = useState([]);
   const [selectCategory, setSelectCategory] = useState([]);
@@ -43,11 +40,30 @@ export default function PlantsFilter({ plants }) {
   const [selectOrigin, setSelectOrigin] = useState([]);
   const [selectLight, setSelectLight] = useState([]);
   const [selectProperties, setSelectProperties] = useState([]);
+  const[plant, setPlant] = useState("")
 
   useEffect(() => {
-    let filters = [...selectLight, ...selectType, ...selectZone, ...selectCategory, ...selectOrigin, ...selectProperties]
-    handleChange(filters)
-  }, [selectType, selectCategory, selectProperties, selectZone, selectLight, selectOrigin])
+    let filters = [
+      ...selectLight,
+      ...selectType,
+      ...selectZone,
+      ...selectCategory,
+      ...selectOrigin,
+      ...selectProperties,
+    ];
+    handleChange(filters);
+  }, [
+    selectType,
+    selectCategory,
+    selectProperties,
+    selectZone,
+    selectLight,
+    selectOrigin,
+  ]);
+
+  useEffect(() => {
+    if(plant !== "") searchName(plant)
+  }, [plant])
 
   //get unique types
   let types = getUnique(plants, "type");
@@ -128,9 +144,25 @@ export default function PlantsFilter({ plants }) {
     },
   ];
 
+  let ps = plants.map((p) => {
+    let newPlant = { value: p.norwegian_name, image: p.image}
+    return newPlant;
+  })
+
   return (
     <section className="filter-container">
       <form className="filter-form">
+      <Dropdown
+          multi={false}
+          selectValues={plant}
+          clearable={true}
+          closeOnSelect={true}
+          options={ps}
+          placeholder="Search for plant..."
+          onChange={(values) => setPlant(values.value)}
+          itemRenderer={true}
+          searchable={true}
+        />
         {/*Dropdown.js */}
         {/* Category */}
         <Dropdown
@@ -192,7 +224,6 @@ export default function PlantsFilter({ plants }) {
           placeholder="Egenskaper"
           onChange={(values) => setSelectProperties(values)}
         />
-        
 
         {/* end Dropdown.js */}
       </form>

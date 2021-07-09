@@ -9,7 +9,7 @@ export default class Dropdown extends Component {
     this.state = {
       multi: props.multi,
       selectValues: props.selectValues,
-      searchable: false,
+      searchable: true,
       searchBy: "value",
       clearable: props.clearable,
       handle: true,
@@ -22,6 +22,8 @@ export default class Dropdown extends Component {
       direction: "ltr",
       dropdownHeight: "200px",
       separator: true,
+      itemRenderer: props.itemRenderer,
+      searchable: props.searchable
     };
   }
 
@@ -32,6 +34,17 @@ export default class Dropdown extends Component {
       </p>
     );
   };
+
+  itemRenderer = ({ item, itemIndex, props, state, methods }) => (
+    <div key={item[props.valueField]} onClick={() => methods.addItem(item)}>
+      <div style={{ margin: "10px" }}>
+        <span>
+          <img alt="" width="32" height="32" src={item.image} />
+          <span>{item.value}</span>
+        </span>
+      </div>
+    </div>
+  );
 
   render() {
     return (
