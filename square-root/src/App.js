@@ -25,7 +25,6 @@ import Account from "./pages/user-pages/Account";
 import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
 import What from "./pages/frontpages/What";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
-
 import { Auth } from "aws-amplify";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
@@ -109,7 +108,9 @@ class App extends Component {
             <Route
               exact
               path="/greenspaces/:name"
-              render={(props) => <SingleGreenspace {...props} auth={authProps} />}
+              render={(props) => (
+                <SingleGreenspace {...props} auth={authProps} />
+              )}
             />
 
             <Route
@@ -145,7 +146,7 @@ class App extends Component {
               render={(props) => <Partner {...props} auth={authProps} />}
             />
 
-<Route
+            <Route
               exact
               path="/what-we-do"
               render={(props) => <What {...props} auth={authProps} />}
@@ -213,8 +214,6 @@ class App extends Component {
               path="/pn"
               component={PN}
             />
-
-
 
             <Route component={Error} />
           </Switch>
