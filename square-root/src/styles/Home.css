@@ -17,7 +17,6 @@
   min-height: calc(100vh - var(--nav-size));
   padding: 2rem 1rem;
   text-align: center;
-  text-transform: capitalize;
   background: #474646; /* fallback colour. Make sure this is just one solid colour. */
   background: rgba(54, 54, 54, 0.8);
 }
@@ -43,7 +42,6 @@
   min-height: calc(100vh - var(--nav-size));
   padding: 2rem 1rem;
   text-align: left;
-  text-transform: capitalize;
   background: #474646; /* fallback colour. Make sure this is just one solid colour. */
   background: rgba(54, 54, 54, 0.3);
 }
@@ -102,7 +100,7 @@
     padding: 2px;
     width: 100px;
     font-size: x-small;
-  }  
+  }
   .front-btn-2 {
     padding: 2px;
     width: 80%;
@@ -116,11 +114,10 @@
   .front-btn-1 {
     font-size: small;
   }
-  
+
   .front-btn-2 {
     font-size: medium;
   }
-  
 }
 @media screen and (min-width: 992px) {
   .banner {
@@ -132,7 +129,7 @@
   .front-btn-1 {
     font-size: large;
   }
-  
+
   .front-btn-2 {
     font-size: large;
   }
@@ -178,7 +175,6 @@
   font-size: 30px;
 }
 
-
 .bd-notification {
   padding-top: 40px;
   margin: 50px;
@@ -213,4 +209,76 @@
   font-size: 30px;
   color: white;
   width: 40%;
+}
+
+/*----------------------
+Smooth Scroll --------*/
+
+.disable-scrollbars::-webkit-scrollbar {
+  width: 0px;
+  background: transparent; /* Chrome/Safari/Webkit */
+}
+
+.disable-scrollbars {
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE 10+ */
+}
+
+.homepage {
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  height: 100vh;
+}
+
+.front-container {
+  width: 100%;
+  height: 100%;
+  /* CSS Smooth Scroll */
+  scroll-behavior: smooth;
+  scroll-snap-type: y mandatory;
+  overflow-y: auto;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh; /*for all browser sizes*/
+  scroll-snap-align: center;
+}
+
+section h1 {
+  font-size: 4rem;
+}
+
+section p {
+  font-size: 1.5rem;
+}
+
+section#first {
+  background-color: lightpink;
+
+  /*background: :url() no-repeat center center/ cover;*/
+}
+
+section#second {
+  background-color: lightgreen;
+}
+
+section#third {
+  background-color: lightblue;
+}
+
+section#fourth {
+  background-color: lightyellow;
+}
+
+section#fifth {
+  height: 60px;
 }

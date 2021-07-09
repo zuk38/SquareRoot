@@ -3,7 +3,6 @@ import "../styles/Plants.css";
 import Title from "../components/Title";
 import PlantsContainer from "../components/PlantsContainer";
 
-
 export default function Plants() {
   return (
     <>

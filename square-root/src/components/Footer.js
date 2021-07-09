@@ -13,7 +13,7 @@ const Footer = () => (
     </p>
     </div>
     <div className="footer-child2">
-        <p><a href="Home">HOME</a></p>
+        <p><a href="/home.js">HOME</a></p>
         <p><a href="Howitworks">HOW IT WORKS</a></p>
         <p><a href="Why">WHY URBAN GREENSPACES</a></p>
         <p><a href="Partner">BECOME A PARTNER</a></p>

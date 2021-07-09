@@ -7139,6 +7139,8 @@
         "onFragment" : false,
         "onField" : true
       }, {
+<<<<<<< HEAD
+=======
         "name" : "deprecated",
         "description" : null,
         "locations" : [ "FIELD_DEFINITION", "ENUM_VALUE" ],
@@ -7156,6 +7158,7 @@
         "onFragment" : false,
         "onField" : false
       }, {
+>>>>>>> 461632717f7c93b264bdc666514b3cee8cb79019
         "name" : "aws_auth",
         "description" : "Directs the schema to enforce authorization on a field",
         "locations" : [ "FIELD_DEFINITION" ],
@@ -7235,6 +7238,17 @@
         "onFragment" : false,
         "onField" : false
       }, {
+<<<<<<< HEAD
+        "name" : "aws_lambda",
+        "description" : "Tells the service this field/object has access authorized by a Lambda Authorizer.",
+        "locations" : [ "OBJECT", "FIELD_DEFINITION" ],
+        "args" : [ ],
+        "onOperation" : false,
+        "onFragment" : false,
+        "onField" : false
+      }, {
+=======
+>>>>>>> 461632717f7c93b264bdc666514b3cee8cb79019
         "name" : "aws_api_key",
         "description" : "Tells the service this field/object has access authorized by an API key.",
         "locations" : [ "OBJECT", "FIELD_DEFINITION" ],

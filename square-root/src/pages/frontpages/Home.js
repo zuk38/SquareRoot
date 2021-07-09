@@ -1,32 +1,35 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import PartnerContainer from "../../components/PartnerContainer";
+import Grid from "../../components/Grid_2x2";
+import "../../styles/Why.css";
+import Footer from "../../components/Footer";
+import "../../styles/Home.css";
 
 export default function Home(props) {
-  const handleStart = () => {
-    props.history.push({ pathname: "/projects", state: { modalOpen: true } });
-  };
   return (
-    <>
-      <Hero>
-        <Banner img="../images/logo-white.png">
-          <img src="../images/logo-asterisk-white.png" />
+    <div className="homepage">
+      <div className="front-container disable-scrollbars">
+        <section id="first">
+          <h1>Welcome to my site</h1>
+          <p>Lorem ipsum lorem ipsum lorem upsum</p>
+        </section>
+        <section id="second">
+          <h1>First of all</h1>
+          <p>Lorem ipsum lorem ipsum lorem upsum</p>
+        </section>
+        <section id="third">
+          <h1>Second of all</h1>
+          <p>Lorem ipsum lorem ipsum lorem upsum</p>
+        </section>
 
-          <h2>
-            Vi gjør det enklere å velge bærekraftig byutvikling. Planlegg,
-            design og bestill grøntarealer både ute og inne.{" "}
-          </h2>
-
-          <p class="buttons">
-            <button class="button is-light front-btn-1" onClick={handleStart}>START PROSJEKT </button>
-            <button class="button is-dark front-btn-2">LES MER</button>
-          </p>
-        </Banner>
-      </Hero>
-      <FeaturedGreenspaces />
-      <PartnerContainer />
-    </>
+        <section id="fourth">
+          <h1>So stfu</h1>
+          <p>Lorem ipsum lorem ipsum lorem upsum</p>
+        </section>
+      </div>
+    </div>
   );
 }

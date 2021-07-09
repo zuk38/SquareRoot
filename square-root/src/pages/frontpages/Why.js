@@ -6,21 +6,29 @@ import Grid from "../../components/Grid_2x2"
 
 export default function Why(){
 
-    const grid_values = [{
-        title: "Våre verdier og tilnærminger",
-        img_1: "../images/planet-earth.png",
-        img_2: "../images/planet-earth.png",
-        img_3: "../images/planet-earth.png",
-        img_4: "../images/planet-earth.png",
-        subtitle_1: "Naturlige planter",
-        subtitle_2: "Naturlige planter",
-        subtitle_3: "Naturlige planter",
-        subtitle_4: "Naturlige planter",
-        paragraph_1: "Vi har høye standarder til plantene.",
-        paragraph_2: "Vi har høye standarder til plantene.",
-        paragraph_3: "Vi har høye standarder til plantene.",
-        paragraph_4: "Vi har høye standarder til plantene."
-    }];
+    const grid_values = [
+        {
+        img: "../images/planet-earth.png",
+        subtitle: "Naturlige planter",
+        paragraph: "Vi har høye standarder til plantene."
+    },
+    {
+        img: "../images/planet-earth.png",
+        subtitle: "Naturlige planter",
+        paragraph: "Vi har høye standarder til plantene."
+    },
+    {
+        img: "../images/planet-earth.png",
+        subtitle: "Naturlige planter",
+        paragraph: "Vi har høye standarder til plantene."
+    },
+    {
+        img: "../images/planet-earth.png",
+        subtitle: "Naturlige planter",
+        paragraph: "Vi har høye standarder til plantene."
+    },
+];
+
 
     return (
 
@@ -90,71 +98,13 @@ export default function Why(){
 
             </div>
 
-            <Grid></Grid>
-
-
-            {/*OUR VALUES*/}
-            <div className="c-section background-grey">
-                <div className="o-container">
-                    <h2 className="c-txt--sectiontitle c-mrg--bottom">Våre verdier og tilnærminger</h2>
-                    <div className="c-grid--2x2">
-
-                        {/*VALUE 1*/}
-                        <div className="o-card o-card-media c-mrg-bottom/4">
-                            <div className="c-icon">
-                                <img loading="logo" src="../images/planet-earth.png"></img>
-                            </div>
-                            <div>
-                                <h3 className="c-txt--sectionsubtitle c-mrg--bottom/4">Naturlige planter</h3>
-                                <p>Vi har høye standarder til plantene.</p>
-                            </div>
-                        </div>
-                        {/*END VALUE 1*/}
-
-                        {/*VALUE 1*/}
-                        <div className="o-card o-card-media c-mrg-bottom/4">
-                            <div className="c-icon">
-                                <img loading="logo" src="../images/planet-earth.png"></img>
-                            </div>
-                            <div>
-                                <h3 className="c-txt--sectionsubtitle c-mrg--bottom/4">Naturlige planter</h3>
-                                <p>Vi har høye standarder til plantene.</p>
-                            </div>
-                        </div>
-                        {/*END VALUE 1*/}
-
-                        {/*VALUE 1*/}
-                        <div className="o-card o-card-media c-mrg-bottom/4">
-                            <div className="c-icon">
-                                <img loading="logo" src="../images/planet-earth.png"></img>
-                            </div>
-                            <div>
-                                <h3 className="c-txt--sectionsubtitle c-mrg--bottom/4">Naturlige planter</h3>
-                                <p>Vi har høye standarder til plantene.</p>
-                            </div>
-                        </div>
-                        {/*END VALUE 1*/}
-
-                        {/*VALUE 1*/}
-                        <div className="o-card o-card-media c-mrg-bottom/4">
-                            <div className="c-icon">
-                                <img loading="logo" src="../images/planet-earth.png"></img>
-                            </div>
-                            <div>
-                                <h3 className="c-txt--sectionsubtitle c-mrg--bottom/4">Naturlige planter</h3>
-                                <p>Vi har høye standarder til plantene.</p>
-                            </div>
-                        </div>
-                        {/*END VALUE 1*/} </div>
-                </div>
-            </div>
-
+            <Grid title="Våre verdier og tilnærminger" grid_values={grid_values} />
 
             {/* WHY US */}
             <div className="c-section u-mrg--txt2">
                 <div className="o-container ">
-                    <p className="c-txt--punchline--sm ">
-                        <strong className="strong--m">Hvorfor oss? </strong>
+                    <p className="c-txt-punchline--sm">
+                        <strong>Hvorfor oss? </strong>
                         Vi har knyttet alle aktører til samme plattform slik at vi sammen kan gjøre det enklere å velge grønt.
                         <br/><br/>
                         Vi baserer databasen vår på forskningsbaserte resultater for å finne de beste plantene for riktig sted. Dette knyttes til lovgivninger, miljøsertifiseringer og økonomiske insentiver, 

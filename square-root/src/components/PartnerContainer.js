@@ -3,8 +3,8 @@ import { API } from "aws-amplify";
 import Loading from "./Loading";
 import useForm from "./hooks/useForm";
 import validate from "./utility/ContactFormValidation";
-import "../styles/Partner.css";
-import ButtonPrimary from "../styles/StyledComponents";
+import "../styles/Partner.css"
+import ButtonPrimary from "../styles/StyledComponents"
 
 export default function Partner(props) {
   const { values, errors, handleChange, handleSubmit } = useForm(
@@ -41,12 +41,14 @@ export default function Partner(props) {
       {isSending ? (
         <Loading />
       ) : (
-        <div className="form-wrapper">
+ 
+ 
+ <div className="form-wrapper">
           <div className="form-box1">
-            <img src="../images/partner.png"></img>
+          <img src="../images/partner.png"></img>
           </div>
           <div className="form-box2">
-            <h1 className="box2-h1">Samarbeid med oss</h1>
+          <h1 className="box2-h1">Samarbeid med oss</h1>
             <p className="box2-p">
               Er du en landskapsentreprenør eller eier av en Planteskole og
               interessert i SquareRoot? Ta gjerne kontakt!
@@ -95,11 +97,14 @@ export default function Partner(props) {
                 <span class="checkmark" />
               </label>
             </form>
-            <ButtonPrimary float="right" onClick={handleSubmit}>
+            <ButtonPrimary
+              float="right"
+              onClick={handleSubmit}>
               Send
             </ButtonPrimary>
           </div>
         </div>
+       
       )}
     </>
   );
