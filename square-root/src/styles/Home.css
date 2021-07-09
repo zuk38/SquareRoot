@@ -212,3 +212,68 @@
   color: white;
   width: 40%;
 }
+
+
+
+
+/*----------------------
+Smooth Scroll --------*/
+
+.homepage{
+  margin:0;
+  padding:0;
+  line-height: 1.6;
+  height:100vh;
+
+}
+
+.front-container {
+  width:100%;
+  height:100%;
+  /* CSS Smooth Scroll */
+  overflow-y: scroll; 
+  scroll-behavior: smooth;
+  scroll-snap-type:y mandatory;
+}
+
+section {
+  display:flex;
+  flex-direction:column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  width: 100%;
+  height: 100vh; /*for all browser sizes*/
+  scroll-snap-align: center;
+}
+
+section h1{
+  font-size: 4rem;
+}
+
+section p{
+  font-size:1.5rem;
+}
+
+section#first{
+background-color: lightpink;
+
+/*background: :url() no-repeat center center/ cover;*/
+}
+
+section#second{
+  background-color: lightgreen;
+}
+
+section#third{
+  background-color: lightblue;
+}
+
+section#fourth{
+  background-color: lightyellow;
+}
+
+section#fifth{
+  height:60px;
+}
+
