@@ -7,13 +7,13 @@ import Grid from "../../components/Grid_2x2"
 import "../../styles/Why.css";
 import {RemoveScrollBar} from 'react-remove-scroll-bar';
 import Footer from "../../components/Footer";
+import "../../styles/Home.css";
 
 export default function Home(props) {
  
-  <RemoveScrollBar />
   
   return (
-    <div className="homepage">
+   
       
     <div className="front-container">
     
@@ -34,11 +34,11 @@ export default function Home(props) {
         <h1>So stfu</h1>
         <p>Lorem ipsum lorem ipsum lorem upsum</p>
     </section>
+
+    </div> 
     
-     
-    </div>
-   
-    </div>
+
+
 
   );
 }

@@ -219,21 +219,25 @@
 /*----------------------
 Smooth Scroll --------*/
 
-.homepage{
+body{
   margin:0;
   padding:0;
   line-height: 1.6;
   height:100vh;
-
+  overflow:hidden;
 }
 
+
+
 .front-container {
+  
   width:100%;
   height:100%;
   /* CSS Smooth Scroll */
   overflow-y: scroll; 
   scroll-behavior: smooth;
-  scroll-snap-type:y mandatory;
+  scroll-snap-type: y mandatory;
+  
 }
 
 section {
@@ -256,9 +260,8 @@ section p{
 }
 
 section#first{
-background-color: lightpink;
 
-/*background: :url() no-repeat center center/ cover;*/
+background:url("../images/defaultBackground.png") no-repeat center center/ cover;
 }
 
 section#second{
