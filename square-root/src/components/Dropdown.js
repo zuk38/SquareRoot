@@ -23,7 +23,7 @@ export default class Dropdown extends Component {
       dropdownHeight: "200px",
       separator: true,
       itemRenderer: props.itemRenderer,
-      searchable: props.searchable
+      searchable: props.searchable,
     };
   }
 
@@ -105,7 +105,7 @@ export default class Dropdown extends Component {
               keepSelectedInList={this.state.keepSelectedInList}
               onDropdownOpen={() => undefined}
               onDropdownClose={() => undefined}
-              onClearAll={() => undefined}
+              onClearAll={() => console.log("lalala")}
               onSelectAll={() => undefined}
               onChange={this.props.onChange}
               noDataLabel="No matches found"

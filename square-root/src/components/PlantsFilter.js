@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, Component } from "react";
 import { PlantContext } from "../context/plants";
 import "../styles/Plants.css";
 import Dropdown from "./Dropdown";
@@ -30,18 +30,214 @@ const formatData = (items, index) => {
   return tempItems;
 };
 
-export default function PlantsFilter({ plants }) {
-  const context = useContext(PlantContext);
-  const { handleChange, searchName, minSize, maxSize } = context;
+if (!Array.prototype.last) {
+  Array.prototype.last = function() {
+    return this[this.length - 1];
+  };
+}
 
-  const [selectType, setSelectType] = useState([]);
-  const [selectCategory, setSelectCategory] = useState([]);
-  const [selectZone, setSelectZone] = useState([]);
-  const [selectOrigin, setSelectOrigin] = useState([]);
-  const [selectLight, setSelectLight] = useState([]);
-  const [selectProperties, setSelectProperties] = useState([]);
-  const[plant, setPlant] = useState("")
+export default class PlantsFilter2 extends Component {
+  constructor(props) {
+    super(props);
 
+    this.state = {
+      selectType: [],
+      selectCategory: [],
+      selectLight: [],
+      selectOrigin: [],
+      selectZone: [],
+      selectProperties: [],
+      lastSelectType: [],
+      lastSelectCategory: [],
+      lastSelectLight: [],
+      lastSelectOrigin: [],
+      lastSelectZone: [],
+      lastSelectProperties: [],
+    };
+  }
+
+  static contextType = PlantContext;
+
+  getCurrentItem = (orgArray, copyArray) => {
+    let currentItem;
+
+    //console.log(orgArray)
+    //console.log(copyArray)
+
+    if (orgArray.length > copyArray.length) {
+      //element added
+      currentItem = orgArray.last();
+    } else if (orgArray.length < copyArray.length) {
+      //element remnoved
+      currentItem = copyArray.last();
+    }
+    this.context.handleChange(currentItem)
+  };
+
+  setValues = (orgName, values) => {
+    //console.log(values)
+    let tempArray = [...this.state[orgName]];
+    this.setState(
+      {
+        [orgName]: values,
+      },
+      () => {
+        this.getCurrentItem(this.state[orgName], tempArray);
+      }
+    );
+  };
+
+  render() {
+    const { handleChange, searchName, minSize, maxSize } = this.context;
+
+    //get unique types
+    let types = getUnique(this.props.plants, "type");
+    //format to dropdown
+    types = formatData(types, "type");
+
+    //get unique categories
+    let categories = getUnique(this.props.plants, "greenspace_category");
+    //format to dropdown
+    categories = formatData(categories, "greenspace_category");
+
+    //get unique climate zones
+    let zones = getUnique(this.props.plants, "climate_zone");
+    //format to dropdown
+    zones = formatData(zones, "climate_zone");
+
+    const items_properties = [
+      {
+        id: "pollinator_friendly",
+        value: "Bievennlig",
+      },
+      {
+        id: "edible",
+        value: "Spiselig",
+      },
+      {
+        id: "air_puryfying",
+        value: "Luftrensende",
+      },
+      {
+        id: "pet_kids_friendly",
+        value: "Dyr- og barnevennlig",
+      },
+    ];
+
+    const items_size_inputs = [
+      {
+        name: "minSize",
+        id: "size_in_cm",
+        value: { minSize },
+        type: "number",
+        className: "size-input",
+      },
+      {
+        name: "maxSize",
+        id: "size_in_cm",
+        value: { maxSize },
+        type: "number",
+        className: "size-input",
+      },
+    ];
+
+    const items_origin = [
+      {
+        id: "norwegian_nursery",
+        value: "Norsk planteskole",
+      },
+      {
+        id: "native",
+        value: "Norske planter",
+      },
+    ];
+
+    const items_light = [
+      {
+        id: "sun_seeker",
+        value: "Mest sol",
+      },
+      {
+        id: "shadow_lover",
+        value: "Mest skygge",
+      },
+    ];
+
+    return (
+      <section className="filter-container">
+        <form className="filter-form">
+          {/*Dropdown.js */}
+          {/* Category */}
+          <Dropdown
+            multi={true}
+            selectValues={this.state.selectCategory}
+            clearable={true}
+            closeOnSelect={false}
+            options={categories}
+            placeholder="Grøntområde"
+            onChange={(values) =>
+              this.setValues("selectCategory", "latSelectCategory", values)
+            }
+          />
+          {/*Type */}
+          <Dropdown
+            multi={true}
+            selectValues={this.state.selectType}
+            clearable={true}
+            closeOnSelect={false}
+            options={types}
+            placeholder="Type"
+            onChange={(values) => this.setValues("selectType", values)}
+          />
+          {/*Zone */}
+          <Dropdown
+            multi={true}
+            selectValues={this.state.selectZone}
+            clearable={true}
+            closeOnSelect={false}
+            options={zones}
+            placeholder="Klimasone"
+            onChange={(values) => this.setValues("selectZone", values)}
+          />
+          {/* Origin */}
+          <Dropdown
+            multi={true}
+            selectValues={this.state.selectOrigin}
+            clearable={true}
+            closeOnSelect={false}
+            options={items_origin}
+            placeholder="Opprinnelse"
+            onChange={(values) => this.setValues("selectOrigin", values)}
+          />
+          {/*Light */}
+          <Dropdown
+            multi={false}
+            selectValues={this.state.selectLight}
+            clearable={true}
+            closeOnSelect={true}
+            options={items_light}
+            placeholder="Lysforhold"
+            onChange={(values) => this.setValues("selectLight", values)}
+          />
+          {/* Properties */}
+          <Dropdown
+            multi={true}
+            selectValues={this.state.selectProperties}
+            clearable={true}
+            closeOnSelect={false}
+            options={items_properties}
+            placeholder="Egenskaper"
+            onChange={(values) => this.setValues("selectProperties", values)}
+          />
+
+          {/* end Dropdown.js */}
+        </form>
+      </section>
+    );
+  }
+}
+
+/*export default function PlantsFilter({ plants }) {
   useEffect(() => {
     let filters = [
       ...selectLight,
@@ -62,171 +258,12 @@ export default function PlantsFilter({ plants }) {
   ]);
 
   useEffect(() => {
-    if(plant !== "") searchName(plant)
-  }, [plant])
-
-  //get unique types
-  let types = getUnique(plants, "type");
-  //add all
-  //types = ["all", ...types];
-  //format to dropdown
-  types = formatData(types, "type");
-
-  //get unique categories
-  let categories = getUnique(plants, "greenspace_category");
-  //add all
-  //categories = ["all", ...categories];
-  //format to dropdown
-  categories = formatData(categories, "greenspace_category");
-
-  //get unique climate zones
-  let zones = getUnique(plants, "climate_zone");
-  //add all
-  //zones = ["all", ...zones];
-  //format to dropdown
-  zones = formatData(zones, "climate_zone");
-
-  const items_properties = [
-    {
-      id: "pollinator_friendly",
-      value: "Bievennlig",
-    },
-    {
-      id: "edible",
-      value: "Spiselig",
-    },
-    {
-      id: "air_puryfying",
-      value: "Luftrensende",
-    },
-    {
-      id: "pet_kids_friendly",
-      value: "Dyr- og barnevennlig",
-    },
-  ];
-
-  const items_size_inputs = [
-    {
-      name: "minSize",
-      id: "size_in_cm",
-      value: { minSize },
-      type: "number",
-      className: "size-input",
-    },
-    {
-      name: "maxSize",
-      id: "size_in_cm",
-      value: { maxSize },
-      type: "number",
-      className: "size-input",
-    },
-  ];
-
-  const items_origin = [
-    {
-      id: "norwegian_nursery",
-      value: "Norsk planteskole",
-    },
-    {
-      id: "native",
-      value: "Norske planter",
-    },
-  ];
-
-  const items_light = [
-    {
-      id: "sun_seeker",
-      value: "Mest sol",
-    },
-    {
-      id: "shadow_lover",
-      value: "Mest skygge",
-    },
-  ];
+    if (plant !== "") searchName(plant);
+  }, [plant]);
 
   let ps = plants.map((p) => {
-    let newPlant = { value: p.norwegian_name, image: p.image}
+    let newPlant = { value: p.norwegian_name, image: p.image };
     return newPlant;
-  })
+  });
 
-  return (
-    <section className="filter-container">
-      <form className="filter-form">
-      <Dropdown
-          multi={false}
-          selectValues={plant}
-          clearable={true}
-          closeOnSelect={true}
-          options={ps}
-          placeholder="Search for plant..."
-          onChange={(values) => setPlant(values.value)}
-          itemRenderer={true}
-          searchable={true}
-        />
-        {/*Dropdown.js */}
-        {/* Category */}
-        <Dropdown
-          multi={true}
-          selectValues={selectCategory}
-          clearable={true}
-          closeOnSelect={false}
-          options={categories}
-          placeholder="Grøntområde"
-          onChange={(values) => setSelectCategory(values)}
-        />
-        {/*Type */}
-        <Dropdown
-          multi={true}
-          selectValues={selectType}
-          clearable={true}
-          closeOnSelect={false}
-          options={types}
-          placeholder="Type"
-          onChange={(values) => setSelectType(values)}
-        />
-        {/*Zone */}
-        <Dropdown
-          multi={true}
-          selectValues={selectZone}
-          clearable={true}
-          closeOnSelect={false}
-          options={zones}
-          placeholder="Klimasone"
-          onChange={(values) => setSelectZone(values)}
-        />
-        {/*Origin */}
-        <Dropdown
-          multi={true}
-          selectValues={selectOrigin}
-          clearable={true}
-          closeOnSelect={false}
-          options={items_origin}
-          placeholder="Opprinnelse"
-          onChange={(values) => setSelectOrigin(values)}
-        />
-        {/*Light */}
-        <Dropdown
-          multi={false}
-          selectValues={selectLight}
-          clearable={true}
-          closeOnSelect={true}
-          options={items_light}
-          placeholder="Lysforhold"
-          onChange={(values) => setSelectLight(values)}
-        />
-        {/*Light */}
-        <Dropdown
-          multi={true}
-          selectValues={selectProperties}
-          clearable={true}
-          closeOnSelect={false}
-          options={items_properties}
-          placeholder="Egenskaper"
-          onChange={(values) => setSelectProperties(values)}
-        />
-
-        {/* end Dropdown.js */}
-      </form>
-    </section>
-  );
-}
+  */
