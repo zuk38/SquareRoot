@@ -89,13 +89,6 @@ export const onCreateProject = /* GraphQL */ `
   subscription OnCreateProject($owner: String!) {
     onCreateProject(owner: $owner) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
@@ -121,13 +114,6 @@ export const onUpdateProject = /* GraphQL */ `
   subscription OnUpdateProject($owner: String!) {
     onUpdateProject(owner: $owner) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
@@ -153,13 +139,6 @@ export const onDeleteProject = /* GraphQL */ `
   subscription OnDeleteProject($owner: String!) {
     onDeleteProject(owner: $owner) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city

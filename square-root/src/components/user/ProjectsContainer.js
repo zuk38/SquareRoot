@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { CSSTransitionGroup } from "react-transition-group";
 import { withProjectConsumer } from "../../context/projects";
@@ -24,28 +24,28 @@ function ProjectsContainer({ context }) {
           <th className="p-th">ADRESSE</th>
           <th className="p-th">OPPRETTET</th>
         </tr>
-        <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-          transitionAppearTimeout={500}
-          transitionAppear={true}
-          component="tr"
-        >
-          {projects.map(
-            ({ id, name, address, city, postalCode, createdAt }) => (
-              <tr key={id}>
-                <td className="p-td">{name}</td>
-                <td className="p-td">
-                  {address}, {postalCode} {city}
-                </td>
-                <td className="p-td">{createdAt.split("T")[0]}</td>
-              </tr>
-            )
-          )}
-        </ReactCSSTransitionGroup>
+        {projects.map(({ id, name, address, city, postalCode, createdAt }) => (
+          <tr key={id}>
+            <Td className="p-td" to={`/dashboard/${name}`}>{name}</Td>
+            <Td className="p-td" to={`/dashboard/${name}`}>
+              {address}, {postalCode} {city}
+            </Td>
+            <Td className="p-td" to={`/dashboard/${name}`}>{createdAt.split("T")[0]}</Td>
+          </tr>
+        ))}
       </tbody>
     </table>
+  );
+}
+
+function Td({ children, to, className }) {
+  // Conditionally wrapping content into a link
+  const ContentTag = to ? Link : "div";
+
+  return (
+    <td>
+      <ContentTag className={className} to={to}>{children}</ContentTag>
+    </td>
   );
 }
 

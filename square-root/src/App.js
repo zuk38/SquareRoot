@@ -162,7 +162,7 @@ class App extends Component {
             <PrivateRoute
               authed={this.state.isAuthenticated}
               auth={authProps}
-              path="/dashboard"
+              path="/dashboard/:name"
               component={Dashboard}
             />
 
