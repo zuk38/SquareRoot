@@ -1,4 +1,4 @@
-import React, { useContext, Component } from "react";
+import React, { Component } from "react";
 import { PlantContext } from "../context/plants";
 import "../styles/Plants.css";
 import Dropdown from "./Dropdown";
@@ -36,7 +36,7 @@ if (!Array.prototype.last) {
   };
 }
 
-export default class PlantsFilter2 extends Component {
+export default class PlantsFilter extends Component {
   constructor(props) {
     super(props);
 

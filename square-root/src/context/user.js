@@ -21,14 +21,28 @@ export default class UserProvider extends Component {
   };
 
   setUser = (user) => {
+    let name, email, phone, role;
+    if (!user) {
+        console.log("tralalala")
+        name = null;
+        email = null;
+        phone = null;
+        role = null;
+    } else {
+        name = user.name;
+        email = user.email;
+        phone = user.phone_number;
+        role = user["custom:role"];
+    }
     //set the name if logged in
-    let role = user["custom:role"];
+
     this.setState({
-      user: user.name,
-      email: user.email,
-      phone_number: user.phone_number,
+      user: name,
+      email: email,
+      phone_number: phone,
       role: role
-    });
+    }, () => { console.log(this.state) });
+    
   };
 
   fetchUser = async () => {
@@ -39,9 +53,7 @@ export default class UserProvider extends Component {
       console.log(session);
       this.setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
-      console.log(user);
       const { attributes } = user;
-      console.log(attributes);
       this.setUser(attributes);
     } catch (error) {
       console.log(error);
@@ -56,7 +68,6 @@ export default class UserProvider extends Component {
         username: values.email,
         password: values.password,
       });
-      console.log(user);
     } catch (error) {
       console.log("error loging in", error);
       let err = null;
@@ -71,13 +82,10 @@ export default class UserProvider extends Component {
         Auth.signOut();
         this.setAuthStatus(false);
         this.setUser(null);
-        this.fetchUser()
       } catch (error) {
         console.log(error.message);
       }
   }
-
-  getUserName = () => {};
 
   componentDidMount() {
     this.fetchUser();

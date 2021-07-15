@@ -16,18 +16,14 @@ export function Login(props) {
   );
 
   async function callback() {
-    try {
-      await fetchUser()
-      setRedirectToRefferer(true);
-    } catch (error) {
-      console.log("error loging in", error);
-    }
+    await fetchUser();
+    setRedirectToRefferer(true);
   }
 
   async function log() {
     //form validated
     //cognito integration here, may detect cognito errors
-    await login(values)
+    await login(values);
   }
 
   const { from } = props.location.state || { from: { pathname: "/" } };

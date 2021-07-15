@@ -7,7 +7,6 @@ import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
 
 function Dropdown(props) {
-  console.log(props)
   const [dropdown, setDropdown] = useState(false);
   const closeDropDown = () => setDropdown(false);
   const dropdownRef = useRef(null);
