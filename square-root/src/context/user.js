@@ -7,7 +7,10 @@ export default class UserProvider extends Component {
   state = {
     isAuthenticated: false,
     isAuthenticating: true, //assume that we are uthenticating untill componentDidM finishes
-    user: [],
+    user: null,
+    email: null,
+    phone_number: null,
+    role: null
   };
 
   setAuthStatus = (auuthenticated) => {
@@ -19,8 +22,12 @@ export default class UserProvider extends Component {
 
   setUser = (user) => {
     //set the name if logged in
+    let role = user["custom:role"];
     this.setState({
-      user: user,
+      user: user.name,
+      email: user.email,
+      phone_number: user.phone_number,
+      role: role
     });
   };
 
@@ -32,9 +39,10 @@ export default class UserProvider extends Component {
       console.log(session);
       this.setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
+      console.log(user);
       const { attributes } = user;
       console.log(attributes);
-      this.setUser(attributes.name);
+      this.setUser(attributes);
     } catch (error) {
       console.log(error);
     }
