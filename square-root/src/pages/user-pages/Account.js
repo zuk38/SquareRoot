@@ -10,22 +10,18 @@ export default class Account extends Component {
  
     let role_options = [
       {
-        value: "RED",
         dbValue: "Real Estate Developer",
         displayValue: "Eiendomsutvikler",
       },
       {
-        value: "LARK",
         dbValue: "Landscape Architect",
         displayValue: "Landskapsarkitekt",
       },
       {
-        value: "LENT",
         dbValue: "Landscape Entrepreneur",
         displayValue: "Landskapsentreprenør",
       },
       {
-        value: "PN",
         dbValue: "Plant Nursery",
         displayValue: "Planteskole",
       },
