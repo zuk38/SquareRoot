@@ -155,7 +155,7 @@ function All_Projects(props) {
           opprett et nytt prosjekt.
         </h2>
 
-        <ProjectsContainer />
+        <ProjectsContainer {...props}/>
       </div>
     </>
   );

@@ -115,17 +115,20 @@
   font-weight: 500;
 }
 
-.p-tr {
-  width: 100%;
+.p-td {
+  padding: 15px;
+  font-weight: 400;
 }
 
-.p-td {
-  position: absolute;
+.p-tr {
   background-color: #ffffff;
-  padding: 15px;
   color: var(--mainBlack);
-  font-weight: 400;
-  width: 100%;
+}
+
+.p-tr:hover {
+  background-color: var(--bg);
+  color: var(--offWhite);
+  cursor: pointer;
 }
 
 .fade-enter {
