@@ -1,19 +1,17 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import { CSSTransitionGroup } from "react-transition-group";
 import { withProjectConsumer } from "../../context/projects";
 import { useHistory } from "react-router-dom";
-
-var ReactCSSTransitionGroup = require("react-transition-group");
+import Loading from "../Loading";
 
 function ProjectsContainer({ context }) {
   const { projects, loading } = context;
   const history = useHistory();
 
-
   const openProjectDashboard = (name) => {
     history.push(`/dashboard/${name}`);
-  }
+  };
+
+  if (loading) return <Loading />;
 
   if (!projects.length || !projects) {
     return (
@@ -32,7 +30,11 @@ function ProjectsContainer({ context }) {
           <th className="p-th">OPPRETTET</th>
         </tr>
         {projects.map(({ id, name, address, city, postalCode, createdAt }) => (
-          <tr key={id} className="p-tr" onClick={() => openProjectDashboard(name)}>
+          <tr
+            key={id}
+            className="p-tr"
+            onClick={() => openProjectDashboard(name)}
+          >
             <td className="p-td">{name}</td>
             <td className="p-td">
               {address}, {postalCode} {city}
