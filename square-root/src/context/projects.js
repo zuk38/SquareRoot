@@ -1,6 +1,5 @@
 import React, { Component } from "react";
-import { API, graphqlOperation } from "aws-amplify";
-import { v4 as uuidv4 } from "uuid";
+import { API } from "aws-amplify";
 import { listProjects } from "../api/queries";
 
 const ProjectContext = React.createContext();

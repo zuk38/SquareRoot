@@ -1,3 +1,4 @@
+import React, { Component } from "react";
 import "./App.css";
 import "./App.sass";
 import { Route, Switch, withRouter } from "react-router-dom";
@@ -25,61 +26,29 @@ import Account from "./pages/user-pages/Account";
 import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
 import What from "./pages/frontpages/What";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
-import { Auth } from "aws-amplify";
+import { withUserConsumer } from "./context/user";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
-import { Component } from "react";
 library.add(faEdit);
 
 class App extends Component {
-  //global state to know if the user is signed in
-  state = {
-    isAuthenticated: false,
-    isAuthenticating: true, //assume that we are uthenticating untill componentDidM finishes
-    user: null,
-  };
-
-  setAuthStatus = (auuthenticated) => {
-    //bool is passed
-    this.setState({
-      isAuthenticated: auuthenticated,
-    });
-  };
-
-  setUser = (user) => {
-    //set the name if logged in
-    this.setState({
-      user: user,
-    });
-  };
-
-  async componentDidMount() {
-    //used for session persistance - remembering logged in user
-    //load session object from local storage
-    try {
-      const session = await Auth.currentSession();
-      this.setAuthStatus(true);
-      console.log(session);
-      const user = await Auth.currentAuthenticatedUser();
-      const { attributes } = user;
-      this.setUser(attributes.name);
-    } catch (error) {
-      console.log(error);
-    }
-
-    this.setState({ isAuthenticating: false });
-  }
-
   render() {
+    
+    const {
+      isAuthenticated,
+      isAuthenticating,
+      user,
+      logout
+    } = this.props.context;
+
     const authProps = {
-      isAuthenticated: this.state.isAuthenticated,
-      user: this.state.user,
-      setAuthStatus: this.setAuthStatus,
-      setUser: this.setUser,
+      isAuthenticated: isAuthenticated,
+      user: user,
+      logout: logout
     };
 
     return (
-      !this.state.isAuthenticating && (
+      !isAuthenticating && (
         <>
           {this.props.location.pathname != "/customize" &&
             this.props.location.pathname != "/forgotpassword" &&
@@ -91,7 +60,13 @@ class App extends Component {
             <Route
               exact
               path="/login"
-              render={(props) => <LoginPage {...props} auth={authProps} />}
+              render={(props) => (
+                <LoginPage
+                  {...props}
+                  auth={authProps}
+                  context={this.props.context}
+                />
+              )}
             />
             <Route
               exact
@@ -100,116 +75,108 @@ class App extends Component {
                 <ForgotPasswordPage {...props} auth={authProps} />
               )}
             />
-            <Route
-              exact
-              path="/"
-              render={(props) => <Home {...props} auth={authProps} />}
-            />
+            <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route
               exact
               path="/greenspaces/:name"
-              render={(props) => (
-                <SingleGreenspace {...props} auth={authProps} />
-              )}
+              render={(props) => <SingleGreenspace {...props} />}
             />
 
             <Route
               exact
               path="/indoor"
-              render={(props) => <IndoorExample {...props} auth={authProps} />}
+              render={(props) => <IndoorExample {...props} />}
             />
 
             <Route
               exact
               path="/plants"
-              render={(props) => <Plants {...props} auth={authProps} />}
+              render={(props) => <Plants {...props} />}
             />
 
             <Route
               exact
               path="/how-it-works"
-              render={(props) => <Howitworks {...props} auth={authProps} />}
+              render={(props) => <Howitworks {...props} />}
             />
             <Route
               exact
               path="/Why-us"
-              render={(props) => <Why {...props} auth={authProps} />}
+              render={(props) => <Why {...props} />}
             />
             <Route
               exact
               path="/about-us"
-              render={(props) => <About {...props} auth={authProps} />}
+              render={(props) => <About {...props} />}
             />
             <Route
               exact
               path="/become-a-partner"
-              render={(props) => <Partner {...props} auth={authProps} />}
+              render={(props) => <Partner {...props} />}
             />
 
             <Route
               exact
               path="/what-we-do"
-              render={(props) => <What {...props} auth={authProps} />}
+              render={(props) => <What {...props} />}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/projects"
               component={All_Projects}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/dashboard/:name"
               component={Dashboard}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
-              auth={authProps}
+              authed={isAuthenticated}
               path="/greenspace"
               component={Greenspace}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
-              auth={authProps}
+              authed={isAuthenticated}
               path="/members"
               component={Members}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/orders"
               component={Orders}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/account"
               component={Account}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/settings"
               component={Settings}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/customize"
               component={Customize}
             />
 
             <PrivateRoute
-              authed={this.state.isAuthenticated}
+              authed={isAuthenticated}
               auth={authProps}
               path="/pn"
               component={PN}
@@ -218,13 +185,11 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
           {this.props.location.pathname != "/login" &&
-            this.props.location.pathname != "/forgotpassword" && (
-              <Footer auth={authProps} />
-            )}
+            this.props.location.pathname != "/forgotpassword" && <Footer />}
         </>
       )
     );
   }
 }
 
-export default withRouter(App);
+export default withRouter(withUserConsumer(App));
