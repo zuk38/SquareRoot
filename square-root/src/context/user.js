@@ -87,6 +87,13 @@ export default class UserProvider extends Component {
       }
   }
 
+  updateUser = async (attribute, value) => {
+    const user = await Auth.currentAuthenticatedUser();
+    await Auth.updateUserAttributes(user, {
+      [attribute]: value
+    });
+  }
+
   componentDidMount() {
     this.fetchUser();
   }
