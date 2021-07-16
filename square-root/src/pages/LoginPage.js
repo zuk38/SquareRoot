@@ -48,8 +48,8 @@ export default class LoginPage extends Component {
     const current = isLoginActive ? "Register" : "Login";
     return (
       <>
-        <a href="/" class="btn-back" style={{background: "transparent"}}>
-          <i class="fas fa-chevron-left" />
+        <a href="/" className="btn-back" style={{background: "transparent"}}>
+          <i className="fas fa-chevron-left" />
           HOME
         </a>
         <div className="login">

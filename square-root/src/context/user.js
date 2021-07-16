@@ -23,7 +23,6 @@ export default class UserProvider extends Component {
   setUser = (user) => {
     let name, email, phone, role;
     if (!user) {
-        console.log("tralalala")
         name = null;
         email = null;
         phone = null;
@@ -89,9 +88,12 @@ export default class UserProvider extends Component {
 
   updateUser = async (attribute, value) => {
     const user = await Auth.currentAuthenticatedUser();
+    if (attribute === "role") attribute = "custom:role"
     await Auth.updateUserAttributes(user, {
       [attribute]: value
     });
+    
+    console.log(user)
   }
 
   componentDidMount() {
@@ -106,6 +108,7 @@ export default class UserProvider extends Component {
           fetchUser: this.fetchUser,
           login: this.login,
           logout: this.logout,
+          updateUser: this.updateUser,
         }}
       >
         {this.props.children}

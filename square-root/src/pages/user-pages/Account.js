@@ -1,95 +1,101 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import "./projects.css";
-import { UserContext } from "../../context/user";
+import { UserContext, withUserConsumer } from "../../context/user";
+import EditableTextField from "../../components/EditableTextField";
 
-export default class Account extends Component {
-  static contextType = UserContext;
+function Account({ context }) {
+  const { user, email, phone_number, role } = context;
+  const [userAttributes, setUSerAttributes] = useState({
+    user: user,
+    email: email,
+    phone_number: phone_number,
+    role: role,
+  });
 
-  render() {
-    const { user, email, phone_number, role } = this.context;
- 
-    let role_options = [
-      {
-        dbValue: "Real Estate Developer",
-        displayValue: "Eiendomsutvikler",
-      },
-      {
-        dbValue: "Landscape Architect",
-        displayValue: "Landskapsarkitekt",
-      },
-      {
-        dbValue: "Landscape Entrepreneur",
-        displayValue: "Landskapsentreprenør",
-      },
-      {
-        dbValue: "Plant Nursery",
-        displayValue: "Planteskole",
-      },
-    ];
+  let role_options = [
+    {
+      dbValue: "Real Estate Developer",
+      displayValue: "Eiendomsutvikler",
+    },
+    {
+      dbValue: "Landscape Architect",
+      displayValue: "Landskapsarkitekt",
+    },
+    {
+      dbValue: "Landscape Entrepreneur",
+      displayValue: "Landskapsentreprenør",
+    },
+    {
+      dbValue: "Plant Nursery",
+      displayValue: "Planteskole",
+    },
+  ];
 
-    let currentRole;
-    role_options = role_options.map((item, index) => {
-      if (item.dbValue === role) currentRole = item.displayValue
-      return (
-        <option key={index}>
-          {item.displayValue}
-        </option>
-      );
-    });
+  let currentRole;
+  role_options = role_options.map((item, index) => {
+    if (item.dbValue === role) currentRole = item.displayValue;
+    return <option key={index}>{item.displayValue}</option>;
+  });
 
-    return (
-      <>
-        <div className="acc-container">
-          <div className="acc-title">
-            <h1 className="p-h1">Administrer Konto</h1>
-          </div>
-          <form>
-            <fieldset>
-              <p className="settings-p">Navn</p>
-              <div className="p-flex">
-                <div className="p-classFlex">
-                  <input
-                    type="text"
-                    placeholder="Fornavn..."
-                    className="p-input-inline"
-                    pattern="[0-4]*"
-                    defaultValue={user}
-                  />
-                </div>
-              </div>
+  return (
+    <div className="acc-container">
+      <div className="acc-title">
+        <h1>Administrer Konto</h1>
+      </div>
+      <form>
+        <p className="settings-p">Navn</p>
+        <EditableTextField value={userAttributes.user || ""} name="user" />
 
-              <label className="settings-lbl"></label>
-              <p className="settings-p">E-post</p>
-              <input
-                name="email"
-                placeholder="navn@firma.no"
-                type="text"
-                defaultValue={email}
-              />
+        {/*
+    <input
+      id="name"
+      type="text"
+      name="user"
+      placeholder="Navn..."
+      value={this.state.user || ""}
+      onMouseEnter={this.handleMouseOver}
+      onMouseLeave={this.handleMouseOut}
+      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
+    />*/}
 
-              <label className="settings-lbl"></label>
-              <p className="settings-p">Mobil</p>
-              <input
-                name="p-input-inline"
-                placeholder="+47"
-                type="text"
-                defaultValue={phone_number}
-              />
+        <label className="settings-lbl"></label>
+        <p className="settings-p">E-post</p>
+        <EditableTextField value={userAttributes.email || ""} name="email" />
+        {/*<input
+      id="email"
+      name="email"
+      placeholder="navn@firma.no"
+      type="text"
+      value={email || ""}
+      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
+    />*/}
 
-              <label className="settings-lbl"></label>
-              <p className="settings-p">Rolle</p>
+        <label className="settings-lbl"></label>
+        <p className="settings-p">Mobil</p>
+        <EditableTextField
+          value={userAttributes.phone_number || ""}
+          name="phone_number"
+        />
+        {/*<input
+      name="phone_number"
+      placeholder="+47"
+      type="text"
+      value={phone_number || ""}
+      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
+    />*/}
 
-              <select name="role" id="role" defaultValue={currentRole}>
-                {role_options}
-              </select>
-            </fieldset>
-            <br />
-            <button type="submit" name="btn-account">
-              Lagre endringer
-            </button>
-          </form>
-        </div>
-      </>
-    );
-  }
+        <label className="settings-lbl"></label>
+        <p className="settings-p">Rolle</p>
+
+        <select name="role" id="role" defaultValue={currentRole}>
+          {role_options}
+        </select>
+      </form>
+      <button type="submit" name="btn-account">
+        Lagre endringer
+      </button>
+    </div>
+  );
 }
+
+export default withUserConsumer(Account);
