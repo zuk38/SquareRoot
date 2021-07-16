@@ -10,7 +10,7 @@ export default class UserProvider extends Component {
     user: null,
     email: null,
     phone_number: null,
-    role: null
+    role: null,
   };
 
   setAuthStatus = (auuthenticated) => {
@@ -23,25 +23,29 @@ export default class UserProvider extends Component {
   setUser = (user) => {
     let name, email, phone, role;
     if (!user) {
-        name = null;
-        email = null;
-        phone = null;
-        role = null;
+      name = null;
+      email = null;
+      phone = null;
+      role = null;
     } else {
-        name = user.name;
-        email = user.email;
-        phone = user.phone_number;
-        role = user["custom:role"];
+      name = user.name;
+      email = user.email;
+      phone = user.phone_number;
+      role = user["custom:role"];
     }
     //set the name if logged in
 
-    this.setState({
-      user: name,
-      email: email,
-      phone_number: phone,
-      role: role
-    }, () => { console.log(this.state) });
-    
+    this.setState(
+      {
+        user: name,
+        email: email,
+        phone_number: phone,
+        role: role,
+      },
+      () => {
+        console.log(this.state);
+      }
+    );
   };
 
   fetchUser = async () => {
@@ -61,6 +65,28 @@ export default class UserProvider extends Component {
     this.setState({ isAuthenticating: false });
   };
 
+  register = async (values) => {
+    const { email, password, name, phone, role } = values;
+
+    try {
+      const user = await Auth.signUp({
+        username: email,
+        password: password,
+        attributes: {
+          email: email,
+          name: name,
+          phone_number: phone,
+          "custom:role": role,
+        },
+      });
+    } catch (error) {
+      console.log("error signing up:", error);
+      let err = null;
+      !error.message ? (err = { message: error }) : (err = error);
+      values.cognito = err;
+    }
+  };
+
   login = async (values) => {
     try {
       const user = await Auth.signIn({
@@ -78,23 +104,23 @@ export default class UserProvider extends Component {
 
   logout = async () => {
     try {
-        Auth.signOut();
-        this.setAuthStatus(false);
-        this.setUser(null);
-      } catch (error) {
-        console.log(error.message);
-      }
-  }
+      Auth.signOut();
+      this.setAuthStatus(false);
+      this.setUser(null);
+    } catch (error) {
+      console.log(error.message);
+    }
+  };
 
   updateUser = async (attribute, value) => {
     const user = await Auth.currentAuthenticatedUser();
-    if (attribute === "role") attribute = "custom:role"
+    if (attribute === "role") attribute = "custom:role";
     await Auth.updateUserAttributes(user, {
-      [attribute]: value
+      [attribute]: value,
     });
-    
-    console.log(user)
-  }
+
+    console.log(user);
+  };
 
   componentDidMount() {
     this.fetchUser();

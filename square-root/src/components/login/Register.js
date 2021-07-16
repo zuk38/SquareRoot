@@ -26,16 +26,13 @@ export function Register(props) {
   } = useForm(callback, validate, register);
 
   function callback() {
-    console.log("yay");
     openModal();
   }
 
   async function register() {
     //form validated
     //cognito integration here, may detect cognito errors
-    console.log(values);
     const { email, password, name, phone, role } = values;
-    console.log(email);
 
     try {
       const user = await Auth.signUp({
