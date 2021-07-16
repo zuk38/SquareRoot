@@ -2,7 +2,6 @@ import React, { useState } from "react";
 import Title from "../Title";
 import useForm from "../hooks/useForm";
 import validate from "../utility/RegistrationFormValidation";
-import { Auth } from "aws-amplify";
 import AuthModal from "./AuthModal";
 
 export function Register(props) {

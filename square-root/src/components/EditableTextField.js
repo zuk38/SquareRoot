@@ -5,7 +5,7 @@ import FormControl from "@material-ui/core/FormControl";
 import Edit from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import useOutsideAlerter from "./hooks/useOutsideAlerter";
+import MuiPhoneNumber from "material-ui-phone-number";
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -15,27 +15,21 @@ const useStyles = makeStyles((theme) => ({
 
 export default function EditableTextField(props) {
   const classes = useStyles();
-  const [editMode, setEditMode] = useState(false);
-  const fieldRef = useRef(null);
-  useOutsideAlerter(fieldRef, () => setEditMode(false));
-
-  console.log(props)
 
   return (
     <FormControl fullWidth className={classes.margin} variant="outlined">
       <OutlinedInput
-        ref={fieldRef}
         name={props.name}
         defaultValue={props.value}
         type="text"
-        disabled={!editMode}
+        disabled={!props.editMode}
         variant="outilned"
-        onChange={props.handleChange}
+        onChange={(e) => props.onChange(e)}
         endAdornment={
           <InputAdornment position="end">
             <IconButton
               aria-label="edit field"
-              onClick={() => setEditMode(true)}
+              onClick={() => props.setEditMode(true)}
             >
               <Edit />
             </IconButton>

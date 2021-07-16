@@ -1,16 +1,41 @@
-import React, { useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import "./projects.css";
-import { UserContext, withUserConsumer } from "../../context/user";
+import { withUserConsumer } from "../../context/user";
 import EditableTextField from "../../components/EditableTextField";
+import useForm from "../../components/hooks/useForm";
+import validate from "../../components/utility/EditAccountValidation";
+import AuthModal from "../../components/login/AuthModal";
 
 function Account({ context }) {
-  const { user, email, phone_number, role } = context;
-  const [userAttributes, setUSerAttributes] = useState({
-    user: user,
-    email: email,
-    phone_number: phone_number,
-    role: role,
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    callback,
+    validate,
+    log
+  );
+
+  const [showModal, setShowModal] = useState(false);
+  const [editMode, setEditMode] = useState({
+    emailMode: false,
+    nameMode: false,
+    phoneMode: false,
   });
+  const { user, email, phone_number, role, updateUser } = context;
+
+  function callback() {
+    setShowModal(true);
+    setEditMode({
+      emailMode: false,
+      nameMode: false,
+      phoneMode: false,
+    });
+  }
+
+  async function log() {
+    //form validated
+    //cognito integration here, may detect cognito errors
+    console.log(values);
+    await updateUser(values);
+  }
 
   let role_options = [
     {
@@ -31,70 +56,76 @@ function Account({ context }) {
     },
   ];
 
-  let currentRole;
   role_options = role_options.map((item, index) => {
-    if (item.dbValue === role) currentRole = item.displayValue;
+    if (item.dbValue === role) values.role = item.displayValue;
     return <option key={index}>{item.displayValue}</option>;
   });
 
   return (
-    <div className="acc-container">
-      <div className="acc-title">
-        <h1>Administrer Konto</h1>
-      </div>
-      <form>
-        <p className="settings-p">Navn</p>
-        <EditableTextField value={userAttributes.user || ""} name="user" />
-
-        {/*
-    <input
-      id="name"
-      type="text"
-      name="user"
-      placeholder="Navn..."
-      value={this.state.user || ""}
-      onMouseEnter={this.handleMouseOver}
-      onMouseLeave={this.handleMouseOut}
-      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
-    />*/}
-
-        <label className="settings-lbl"></label>
-        <p className="settings-p">E-post</p>
-        <EditableTextField value={userAttributes.email || ""} name="email" />
-        {/*<input
-      id="email"
-      name="email"
-      placeholder="navn@firma.no"
-      type="text"
-      value={email || ""}
-      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
-    />*/}
-
-        <label className="settings-lbl"></label>
-        <p className="settings-p">Mobil</p>
-        <EditableTextField
-          value={userAttributes.phone_number || ""}
-          name="phone_number"
+    <>
+      {showModal && (
+        <AuthModal
+          title="Account Updated!"
+          showModal={() => setShowModal(true)}
+          setShowWelcomeModal={() => setShowModal(false)}
         />
-        {/*<input
-      name="phone_number"
-      placeholder="+47"
-      type="text"
-      value={phone_number || ""}
-      onChange={(e) => this.handleChange(e.target.name, e.target.value)}
-    />*/}
+      )}
+      <div className="acc-container">
+        <div className="acc-title">
+          <h1>Administrer Konto</h1>
+        </div>
+        <form>
+          <p className="settings-p">Navn</p>
+          <EditableTextField
+            value={values.name || user}
+            name="name"
+            editMode={editMode.nameMode}
+            setEditMode={() => setEditMode({ nameMode: true })}
+            onChange={(e) => handleChange(e, editMode)}
+          />
+          {errors.name && <p className="help is-danger">{errors.name}</p>}
 
-        <label className="settings-lbl"></label>
-        <p className="settings-p">Rolle</p>
+          <label className="settings-lbl"></label>
+          <p className="settings-p">E-post</p>
+          <EditableTextField
+            value={values.email || email}
+            name="email"
+            editMode={editMode.emailMode}
+            setEditMode={() => setEditMode({ emailMode: true })}
+            onChange={(e) => handleChange(e, editMode)}
+          />
+          {errors.email && <p className="help is-danger">{errors.email}</p>}
 
-        <select name="role" id="role" defaultValue={currentRole}>
-          {role_options}
-        </select>
-      </form>
-      <button type="submit" name="btn-account">
-        Lagre endringer
-      </button>
-    </div>
+          <label className="settings-lbl"></label>
+          <p className="settings-p">Mobil</p>
+          <EditableTextField
+            value={values.phone || phone_number}
+            name="phone"
+            editMode={editMode.phoneMode}
+            setEditMode={() => setEditMode({ phoneMode: true })}
+            onChange={(e) => handleChange(e, editMode)}
+          />
+          {errors.phone && <p className="help is-danger">{errors.phone}</p>}
+
+          <label className="settings-lbl"></label>
+          <p className="settings-p">Rolle</p>
+
+          <select name="role" id="role" defaultValue={values.role}>
+            {role_options}
+          </select>
+        </form>
+        <button
+          type="submit"
+          name="btn-account"
+          onClick={(e) => handleSubmit(e, editMode)}
+          disabled={
+            !editMode.nameMode && !editMode.emailMode && !editMode.phoneMode
+          }
+        >
+          Lagre endringer
+        </button>
+      </div>
+    </>
   );
 }
 

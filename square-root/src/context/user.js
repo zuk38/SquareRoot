@@ -112,14 +112,37 @@ export default class UserProvider extends Component {
     }
   };
 
-  updateUser = async (attribute, value) => {
-    const user = await Auth.currentAuthenticatedUser();
-    if (attribute === "role") attribute = "custom:role";
-    await Auth.updateUserAttributes(user, {
-      [attribute]: value,
+  removeEmpty = (obj) => {
+    let newObj = {};
+    Object.keys(obj).forEach((key) => {
+      if (obj[key] === Object(obj[key]))
+        newObj[key] = this.removeEmpty(obj[key]);
+      else if (obj[key] !== undefined) newObj[key] = obj[key];
     });
+    return newObj;
+  };
 
-    console.log(user);
+  updateUser = async (values) => {
+    const user = await Auth.currentAuthenticatedUser();
+    let attributes = {
+      name: values.name,
+      email: values.email,
+      phone_number: values.phone,
+      "custom:role": values.role,
+    };
+
+    this.removeEmpty(attributes);
+    console.log(attributes);
+    try {
+      await Auth.updateUserAttributes(user, attributes);
+      this.fetchUser();
+    } catch (error) {
+      console.log("error loging in", error);
+      let err = null;
+      !error.message ? (err = { message: error }) : (err = error);
+      values.cognito = err;
+      console.log(values.cognito);
+    }
   };
 
   componentDidMount() {
@@ -135,7 +158,7 @@ export default class UserProvider extends Component {
           login: this.login,
           logout: this.logout,
           updateUser: this.updateUser,
-          registerUser: this.register
+          registerUser: this.register,
         }}
       >
         {this.props.children}

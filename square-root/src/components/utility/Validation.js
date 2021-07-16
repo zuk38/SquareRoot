@@ -29,6 +29,7 @@ function isNumeric(str) {
 }
 
 function validatePhone(phone) {
+  console.log(phone)
   const phoneRegex = /^\+[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
 }
@@ -36,6 +37,7 @@ function validatePhone(phone) {
 //--------------------------------------------------------------------------------------------
 
 function checkEmail(values, errors) {
+  console.log("cheeck")
   if (!values.email) errors.email = "Email address is required";
   else if (!validateRegexString(values.email))
     errors.email = "Email address is invalid";
