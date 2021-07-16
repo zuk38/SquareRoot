@@ -7,6 +7,7 @@ import AuthModal from "./AuthModal";
 
 export function Register(props) {
   const [showModal, setShowModal] = useState(false);
+  const { registerUser } = props.context;
 
   const openModal = () => {
     setShowModal(true);
@@ -32,25 +33,7 @@ export function Register(props) {
   async function register() {
     //form validated
     //cognito integration here, may detect cognito errors
-    const { email, password, name, phone, role } = values;
-
-    try {
-      const user = await Auth.signUp({
-        username: email,
-        password: password,
-        attributes: {
-          email: email,
-          name: name,
-          phone_number: phone,
-          "custom:role": role,
-        },
-      });
-    } catch (error) {
-      console.log("error signing up:", error);
-      let err = null;
-      !error.message ? (err = { message: error }) : (err = error);
-      values.cognito = err;
-    }
+    await registerUser(values)
   }
   return (
     <>

@@ -135,6 +135,7 @@ export default class UserProvider extends Component {
           login: this.login,
           logout: this.logout,
           updateUser: this.updateUser,
+          registerUser: this.register
         }}
       >
         {this.props.children}
