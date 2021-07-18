@@ -1,6 +1,7 @@
 import React, { Component } from "react";
-import { API } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
 import { listProjects } from "../api/queries";
+import { createProject } from "../api/mutations";
 
 const ProjectContext = React.createContext();
 
@@ -29,6 +30,17 @@ export default class ProjectProvider extends Component {
     }
   };
 
+  createNewProject = async (values) => {
+    try {
+      let projectDetails = {name: values.name, postalCode: values.zip, city: values.city, address: values.address};
+      await API.graphql(
+        graphqlOperation(createProject, { input: projectDetails })
+      );
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+  }
+
   componentDidMount() {
     this.fetchProjects();
   }
@@ -38,7 +50,8 @@ export default class ProjectProvider extends Component {
       <ProjectContext.Provider
         value={{
           ...this.state,
-          fetchProjects: this.fetchProjects
+          fetchProjects: this.fetchProjects,
+          createProject: this.createNewProject
         }}
       >
         {this.props.children}

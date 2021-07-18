@@ -5,7 +5,7 @@ const useForm = (callback, validate, action) => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [triedSubmitting, setTriedSubmitting] = useState(false);
-  const[edit, setEdit] = useState({});
+  const [edit, setEdit] = useState({});
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
@@ -22,13 +22,13 @@ const useForm = (callback, validate, action) => {
   }, [errors]);
 
   useEffect(() => {
-    console.log(edit)
+    console.log(errors)
     if (triedSubmitting) setErrors(validate(values, edit)); //update errors every time values change
   }, [values]);
 
   const handleSubmit = async (event, editMode) => {
     if (event) event.preventDefault();
-    setEdit(editMode)
+    setEdit(editMode);
     await action();
     setValues((values) => {
       setErrors(validate(values, editMode)); //update errors
@@ -40,7 +40,7 @@ const useForm = (callback, validate, action) => {
 
   const handleChange = (event) => {
     event.persist();
-    console.log(event.target.name)
+    console.log(event.target.name);
     setValues((values) => ({
       ...values,
       [event.target.name]: event.target.value,
@@ -57,10 +57,19 @@ const useForm = (callback, validate, action) => {
     setValues({ ...values, role: event.target.value }); //update role
   };
 
+  const setCity = (city) => {
+    if (city) {
+      setValues({ ...values, city: city });
+      setErrors({zip: undefined})
+    }
+    else setErrors({ ...errors, zip: "Invalid zip code" });
+  };
+
   return {
     handleChange,
     handleSubmit,
     handleDropDownChange,
+    setCity,
     values,
     errors,
   };
