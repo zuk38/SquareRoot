@@ -42,29 +42,6 @@ function All_Projects(props) {
     await createProject(values);
   }
 
-  /*const handleSubmit = async (e) => {
-    e.preventDefault();
-    console.log(projectDetails);
-    try {
-      if (
-        !projectDetails.name ||
-        !projectDetails.postalCode ||
-        !projectDetails.city ||
-        !projectDetails.address
-      )
-        return;
-      console.log(projectDetails);
-      await API.graphql(
-        graphqlOperation(createProject, { input: projectDetails })
-      );
-      setProjectDetails({ name: "", city: "", postalCode: "", address: "" });
-      fetchProjects();
-      closeModal();
-    } catch (err) {
-      console.log("error creating todo:", err);
-    }
-  };*/
-
   return (
     <>
       <div className="projects-title">

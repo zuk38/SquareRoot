@@ -5,6 +5,7 @@ import icon from "../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../functions/apiCalls";
 import data from "../data.json";
+import LeftMenu from "./LeftMenu";
 export default class All_Projects extends Component {
   /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/
   state = {
@@ -42,26 +43,7 @@ export default class All_Projects extends Component {
     return (
       <div class="p-row">
         {" "}
-        <div class="p-column left">
-          <a href="/projects" class="btn-back">
-            <i class="fas fa-chevron-left"/>Alle Prosjekter
-          </a>
-          <div class="menu-vertical">
-            <a href="#" class="active">
-              <i class="fas fa-columns"/>Dashbord
-            </a>
-            <a href="/Members">
-              <i class="fas fa-users"/>Medlemmer
-            </a>
-            <a href="/Orders">
-              <i class="fas fa-tasks"/>Bestillinger
-            </a>
-            <a href="/Settings">
-              <i class="fas fa-cog"/>Innstillinger
-            </a>
-          </div>
-        </div>
-        ​{" "}
+        <LeftMenu {...this.props} />​{" "}
         <div class="p-column right">
           {" "}
           <div className="title-container-greenspace">
@@ -69,7 +51,7 @@ export default class All_Projects extends Component {
               <img className="project-icon" src={icon} alt="Prosjektikon" />{" "}
               <h1 className="p-h1">Sørengkaia</h1>
             </div>
-            <br/>
+            <br />
 
             <h2 className="p-h2">Rolle: Eiendomsutvikler</h2>
 

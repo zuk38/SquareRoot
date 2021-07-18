@@ -128,7 +128,7 @@ class App extends Component {
               component={All_Projects}
             />
 
-            <PrivateRoute
+            <PrivateRoute 
               authed={isAuthenticated}
               auth={authProps}
               path="/dashboard/:name"
@@ -137,20 +137,22 @@ class App extends Component {
 
             <PrivateRoute
               authed={isAuthenticated}
+              auth={authProps}
               path="/greenspace"
               component={Greenspace}
             />
 
             <PrivateRoute
               authed={isAuthenticated}
-              path="/members"
+              auth={authProps}
+              path="/members/:name"
               component={Members}
             />
 
             <PrivateRoute
               authed={isAuthenticated}
               auth={authProps}
-              path="/orders"
+              path="/orders/:name"
               component={Orders}
             />
 
