@@ -5,7 +5,7 @@ import icon from "../../images/proj_icon.png";
 import Modal from "react-modal";
 import { findCityFromZip } from "../../functions/apiCalls";
 import data from "../data.json";
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../../components/user/LeftMenu";
 export default class All_Projects extends Component {
   /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/
   state = {

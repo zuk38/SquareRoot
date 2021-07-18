@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./projects.css";
 import icon from "../../images/proj_icon.png";
 import data from "../data.json";
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../../components/user/LeftMenu";
 
 export default class Settings extends Component {
   constructor(props) {
@@ -54,6 +54,7 @@ export default class Settings extends Component {
                                           name="project_name"
                                           type="text"
                                           className="p-text-input"
+                                          placeholder="Navn..."
                                         />
                                       </label>
                                       <label className="settings-lbl">

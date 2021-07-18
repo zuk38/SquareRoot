@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import "./projects.css";
 import icon from "../../images/proj_icon.png";
 import data from "../data.json";
-import LeftMenu from "./LeftMenu";
+import LeftMenu from "../../components/user/LeftMenu";
 
 export default class Members extends Component {
   constructor(props) {
