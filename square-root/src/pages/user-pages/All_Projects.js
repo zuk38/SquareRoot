@@ -68,10 +68,10 @@ function All_Projects(props) {
   return (
     <>
       <div className="projects-title">
-        <img class="p-icon-main" src={icon} alt="Prosjektikon" />
+        <img className="p-icon-main" src={icon} alt="Prosjektikon" />
         <h1 className="p-h1">PROSJEKTER</h1>
         <button className="btn-new-project" onClick={() => setModalOpen(true)}>
-          <i class="fas fa-plus" />
+          <i className="fas fa-plus" />
           NYTT PROSJEKT
         </button>
         <Modal
@@ -84,7 +84,7 @@ function All_Projects(props) {
             className="btn-modal-close"
             alt="Lukk"
           >
-            <i class="fas fa-times fa-lg"></i>
+            <i className="fas fa-times fa-lg"></i>
           </button>
           <div className="p-modal-content">
             <h1 className="p-h1">La oss lage et økosystem</h1>
