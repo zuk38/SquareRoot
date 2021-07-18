@@ -105,7 +105,7 @@ function All_Projects(props) {
                 <input
                   type="text"
                   placeholder="Prosjektets navn.."
-                  className="p-inp-text"
+                  className="p-inp-text p-text-input"
                   value={projectDetails.name || ""}
                   onChange={(e) => updateModalState("name", e.target.value)}
                 />
@@ -113,7 +113,7 @@ function All_Projects(props) {
                 <input
                   type="text"
                   placeholder="Prosjektets adresse.."
-                  className="p-inp-text"
+                  className="p-inp-text p-text-input"
                   value={projectDetails.address || ""}
                   onChange={(e) => updateModalState("address", e.target.value)}
                 />
@@ -122,7 +122,7 @@ function All_Projects(props) {
                     <label className="p-lblFlex">PostNr</label>
                     <input
                       type="text"
-                      className="p-input-inline"
+                      className="p-input-inline p-text-input"
                       pattern="[0-9]{4}"
                       value={projectDetails.postalCode || ""}
                       onChange={(e) =>
@@ -135,7 +135,7 @@ function All_Projects(props) {
                     <label className="p-lblFlex">Poststed</label>
                     <input
                       type="text"
-                      className="p-input-inline"
+                      className="p-input-inline p-text-input"
                       value={projectDetails.city || ""}
                       onChange={(e) => updateModalState("city", e.target.value)}
                     />
@@ -143,7 +143,6 @@ function All_Projects(props) {
                 </div>
               </div>
               <div className="p-btn-create">
-                {/*NEED a button onClick -- save in database*/}
                 <button type="button" className="btn-modal-create-p" onClick={handleSubmit}>OPPRETT PROSJEKT</button>
               </div>
             </form>

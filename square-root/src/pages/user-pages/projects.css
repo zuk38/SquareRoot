@@ -297,7 +297,7 @@ a.btn-back:hover {
   color: var(--mainBlack);
 }
 
-/*input[type="text"] {
+.p-text-input {
   padding: 1em;
   background-color: white;
   box-sizing: border-box;
@@ -307,7 +307,7 @@ a.btn-back:hover {
   border-radius: 5px;
   border: 1px solid lightgray;
   font-size: 18px;
-}*/
+}
 
 /*FLEX BOXES (PostNr & PostSted */
 .p-flex /* div PostNr & PostSted */ {
