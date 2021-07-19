@@ -24,7 +24,7 @@ export default class ProjectProvider extends Component {
         projects,
         loading: false,
       });
-      console.log(this.state)
+      console.log(this.state);
     } catch (err) {
       console.log(err);
     }
@@ -32,14 +32,25 @@ export default class ProjectProvider extends Component {
 
   createNewProject = async (values) => {
     try {
-      let projectDetails = {name: values.name, postalCode: values.zip, city: values.city, address: values.address};
+      let projectDetails = {
+        name: values.name,
+        postalCode: values.zip,
+        city: values.city,
+        address: values.address,
+      };
       await API.graphql(
         graphqlOperation(createProject, { input: projectDetails })
       );
     } catch (err) {
       console.log("error creating todo:", err);
     }
-  }
+  };
+
+  getProject = (name) => {
+    let tempProjects = [...this.state.projects];
+    const project = tempProjects.find((project) => project.name === name);
+    return project;
+  };
 
   componentDidMount() {
     this.fetchProjects();
@@ -51,7 +62,7 @@ export default class ProjectProvider extends Component {
         value={{
           ...this.state,
           fetchProjects: this.fetchProjects,
-          createProject: this.createNewProject
+          createProject: this.createNewProject,
         }}
       >
         {this.props.children}
@@ -68,7 +79,7 @@ export function withProjectConsumer(Component) {
   return function ConsumerWrapper(props) {
     return (
       <ProjectConsumer>
-        {value => <Component {...props} context={value} />}
+        {(value) => <Component {...props} context={value} />}
       </ProjectConsumer>
     );
   };
