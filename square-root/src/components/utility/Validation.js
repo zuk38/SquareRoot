@@ -2,6 +2,7 @@
 const PASSLENGTH = 8;
 const NAMELENGTH = 40;
 const CODELENGTH = 6;
+const ZIPLENGTH = 4;
 
 function hasUpperCase(str) {
   return str.toLowerCase() != str;
@@ -29,6 +30,7 @@ function isNumeric(str) {
 }
 
 function validatePhone(phone) {
+  console.log(phone)
   const phoneRegex = /^\+[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
 }
@@ -36,6 +38,7 @@ function validatePhone(phone) {
 //--------------------------------------------------------------------------------------------
 
 function checkEmail(values, errors) {
+  console.log("cheeck")
   if (!values.email) errors.email = "Email address is required";
   else if (!validateRegexString(values.email))
     errors.email = "Email address is invalid";
@@ -84,6 +87,16 @@ function checkCognito(values, errors) {
   return errors.cognito;
 }
 
+function checkZip(values, errors) {
+  if (!values.zip) errors.zip = "Zip code is required";
+  else if (!isNumeric(values.zip) || values.zip.length != ZIPLENGTH)
+    errors.zip = "Invalid zip code";
+}
+
+function checkAddress(values, errors) {
+  if (!values.address) errors.address = "Address is required";
+}
+
 export {
   checkEmail,
   checkPassword,
@@ -92,4 +105,6 @@ export {
   checkCognito,
   checkCode,
   checkPhone,
+  checkAddress,
+  checkZip
 };

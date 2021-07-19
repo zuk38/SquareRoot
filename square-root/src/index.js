@@ -7,6 +7,7 @@ import "@fortawesome/fontawesome-free/css/all.min.css";
 import { ProjectProvider } from "./context/projects";
 import { PlantProvider } from "./context/plants";
 import { GreenspaceProvider } from "./context/greenspaces";
+import { UserProvider } from "./context/user";
 import WebFont from "webfontloader";
 import Amplify from "aws-amplify";
 import config from "./aws-exports";
@@ -23,9 +24,11 @@ ReactDOM.render(
   <GreenspaceProvider>
     <ProjectProvider>
       <PlantProvider>
-        <Router>
-          <App />
-        </Router>
+        <UserProvider>
+          <Router>
+            <App />
+          </Router>
+        </UserProvider>
       </PlantProvider>
     </ProjectProvider>
   </GreenspaceProvider>,

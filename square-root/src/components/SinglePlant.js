@@ -110,8 +110,8 @@ export default function SinglePlant({
         </div>
         <div className="features-container">
           {features &&
-            featureMap.map((feature) => (
-              <div className="feature">
+            featureMap.map((feature, index) => (
+              <div className="feature" key={index}>
                 <div className="feature-name">{feature.featureName}</div>
                 <div className="feature-content">{feature.featureContent}</div>
               </div>

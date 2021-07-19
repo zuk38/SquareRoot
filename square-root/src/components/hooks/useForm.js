@@ -1,33 +1,37 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const useForm = (callback, validate, action) => {
-  const [values, setValues] = useState({role: 'Real Estate Developer'});
+  const [values, setValues] = useState({ role: "Real Estate Developer" });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [triedSubmitting, setTriedSubmitting] = useState(false);
+  const [edit, setEdit] = useState({});
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       callback();
-      setTriedSubmitting(false)
+      setTriedSubmitting(false);
       setValues({
-        name: '',
-        email: '',
-        message: ''
-      })
+        name: undefined,
+        email: undefined,
+        message: undefined,
+        phone: undefined,
+        role: undefined,
+      });
     }
   }, [errors]);
 
   useEffect(() => {
-    if (triedSubmitting) setErrors(validate(values)); //update errors every time values change
+    console.log(errors)
+    if (triedSubmitting) setErrors(validate(values, edit)); //update errors every time values change
   }, [values]);
 
-  const handleSubmit = async (event) => {
+  const handleSubmit = async (event, editMode) => {
     if (event) event.preventDefault();
+    setEdit(editMode);
     await action();
-    console.log(values);
     setValues((values) => {
-      setErrors(validate(values)); //update errors
+      setErrors(validate(values, editMode)); //update errors
       setTriedSubmitting(true);
       setIsSubmitting(true);
       return values;
@@ -36,91 +40,39 @@ const useForm = (callback, validate, action) => {
 
   const handleChange = (event) => {
     event.persist();
-    console.log(values)
-    setValues(values => ({ ...values, [event.target.name]: event.target.value }));
+    console.log(event.target.name);
+    setValues((values) => ({
+      ...values,
+      [event.target.name]: event.target.value,
+    }));
     setValues((values) => ({
       ...values,
       cognito: null,
     })); //update
+    console.log(values);
     setIsSubmitting(false);
   };
 
   const handleDropDownChange = (event) => {
-    setValues({ ...values, role: event.target.value })  //update role
+    setValues({ ...values, role: event.target.value }); //update role
+  };
+
+  const setCity = (city) => {
+    if (city) {
+      setValues({ ...values, city: city });
+      setErrors({zip: undefined})
+    }
+    else setErrors({ ...errors, zip: "Invalid zip code" });
   };
 
   return {
     handleChange,
     handleSubmit,
     handleDropDownChange,
+    setCity,
     values,
     errors,
-  }
+  };
 };
 
 export default useForm;
-
-/*import { useState, useEffect, useCallback } from "react";
-
-const useForm = (callback, validate, action) => {
-  const [values, setValues] = useState({role: 'Real Estate Developer'});
-  /*const setRole = useCallback((newValue) => {
-    setValues({ ...values, role: newValue })
-  }, [values]) // ← this bit ensures that the value is always up to date inside the callback*/
-
-  /*const [errors, setErrors] = useState({});
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  useEffect(() => {
-    if (Object.keys(errors).length === 0 && isSubmitting) {
-      //check if there are no errors and call the callback if not
-      callback();
-    }
-  }, [errors]);
-
-  useEffect(() => {
-    setErrors(validate(values)); //update errors every time values change
-  }, [values]);
-
-  const handleSubmit = async (event) => {
-    if (event) event.preventDefault();
-    console.log(values.role)
-    await action();
-    console.log(values);
-    setValues((values) => {
-      setErrors(validate(values)); //update errors
-      setIsSubmitting(true);
-      return values;
-    });
-
-    console.log(Object.keys(errors).length);
-    console.log(isSubmitting);
-  };
-
-  const handleChange = (event) => {
-    event.persist();
-    setValues((values) => ({
-      ...values,
-      [event.target.id]: event.target.value,
-    })); //update
-    setValues((values) => ({
-      ...values,
-      cognito: null,
-    })); //update
-    setIsSubmitting(false);
-  };
-
-  const handleDropDownChange = (event) => {
-    setValues({ ...values, role: event.target.value })  //update role
-  };
-
-  return {
-    handleChange,
-    handleSubmit,
-    handleDropDownChange,
-    values,
-    errors,
-  };
-};
-
-export default useForm;*/

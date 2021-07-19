@@ -1,6 +1,5 @@
 import React, { useRef, useState } from "react";
-import { Redirect, withRouter } from "react-router-dom";
-import Auth from "@aws-amplify/auth";
+import { withRouter } from "react-router-dom";
 import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
 import { ReactComponent as HelpICon } from "../../icons/question.svg";
 import { ReactComponent as AccountIcon } from "../../icons/user.svg";
@@ -13,12 +12,10 @@ function Dropdown(props) {
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, closeDropDown);
 
-  const handleLogOut = async (event, history) => {
+  const handleLogOut = async (event) => {
     event.preventDefault();
     try {
-      Auth.signOut();
-      props.auth.setAuthStatus(false);
-      props.auth.setUser(null);
+      await props.auth.logout()
       props.history.push("/")
     } catch (error) {
       console.log(error.message);

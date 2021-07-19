@@ -2,10 +2,14 @@ import React, { Component } from "react";
 import "./projects.css";
 import icon from "../../images/proj_icon.png";
 import data from "../data.json";
-import { findCityFromZip } from "../../functions/apiCalls";
+import LeftMenu from "../../components/user/LeftMenu";
 
 export default class Settings extends Component {
+  constructor(props) {
+    super(props)
+  }
   render() {
+    let props = this.props
     return (
       <div>
         {" "}
@@ -21,27 +25,7 @@ export default class Settings extends Component {
                           {
                             <div class="p-row">
                               {" "}
-                              <div class="p-column left">
-                                <a href="/Projects" class="btn-back">
-                                  <i class="fas fa-chevron-left"></i>Alle
-                                  Prosjekter
-                                </a>
-                                <div class="menu-vertical">
-                                  <a href="/Dashboard">
-                                    <i class="fas fa-columns"></i>Dashbord
-                                  </a>
-                                  <a href="/Members">
-                                    <i class="fas fa-users"></i>Medlemmer
-                                  </a>
-                                  <a href="/Orders">
-                                    <i class="fas fa-tasks"></i>Bestillinger
-                                  </a>
-                                  <a href="/#" class="active">
-                                    <i class="fas fa-cog"></i>Innstillinger
-                                  </a>
-                                </div>
-                              </div>
-                              ​{" "}
+                              <LeftMenu {...props} />
                               <div class="p-column right">
                                 {" "}
                                 <div className="p-title">
@@ -69,6 +53,8 @@ export default class Settings extends Component {
                                         <input
                                           name="project_name"
                                           type="text"
+                                          className="p-text-input"
+                                          placeholder="Navn..."
                                         />
                                       </label>
                                       <label className="settings-lbl">
@@ -77,6 +63,7 @@ export default class Settings extends Component {
                                           name="project_name"
                                           type="text"
                                           placeholder="Gatenavn..."
+                                          className="p-text-input"
                                         />
                                       </label>
 
@@ -87,7 +74,7 @@ export default class Settings extends Component {
                                             <input
                                               placeholder="Postnr..."
                                               type="text"
-                                              className="p-input-inline"
+                                              className="p-input-inline p-text-input"
                                               pattern="[0-4]*"
                                             />
                                           </label>
@@ -100,7 +87,7 @@ export default class Settings extends Component {
                                             <input
                                               placeholder="Poststed..."
                                               type="text"
-                                              className="p-input-inline"
+                                              className="p-input-inline p-text-input"
                                             />
                                           </label>
                                         </div>

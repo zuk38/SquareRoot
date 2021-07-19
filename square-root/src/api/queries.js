@@ -75,13 +75,6 @@ export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
       id
-      projectgroup_ID
-      project_group {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
       name
       address
       city
@@ -112,13 +105,6 @@ export const listProjects = /* GraphQL */ `
     listProjects(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        projectgroup_ID
-        project_group {
-          id
-          owner
-          createdAt
-          updatedAt
-        }
         name
         address
         city

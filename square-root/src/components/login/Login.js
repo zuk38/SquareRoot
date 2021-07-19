@@ -4,49 +4,26 @@ import Title from "../Title";
 import "./LoginStyle.scss";
 import useForm from "../hooks/useForm";
 import validate from "../utility/LoginFormValidation";
-import { Auth } from "aws-amplify";
 
 export function Login(props) {
   const [redirectToRefferer, setRedirectToRefferer] = useState(false);
+  const { fetchUser, login } = props.context;
 
   const { values, errors, handleChange, handleSubmit } = useForm(
     callback,
     validate,
-    login
+    log
   );
 
   async function callback() {
-    try {
-      let user = await Auth.currentAuthenticatedUser();
-      const { attributes } = user;
-      //set user in the navbar
-      props.auth.setAuthStatus(true);
-      console.log(attributes.name);
-      props.auth.setUser(attributes.name);
-      setRedirectToRefferer(true);
-      //props.history.goBack(); //access last page viewed
-    } catch (error) {
-      console.log("error loging in", error);
-    }
+    await fetchUser();
+    setRedirectToRefferer(true);
   }
 
-  async function login() {
+  async function log() {
     //form validated
     //cognito integration here, may detect cognito errors
-    const { email, password } = values;
-    try {
-      const user = await Auth.signIn({
-        username: email,
-        password: password,
-      });
-      console.log(user);
-    } catch (error) {
-      console.log("error loging in", error);
-      let err = null;
-      !error.message ? (err = { message: error }) : (err = error);
-      values.cognito = err;
-      console.log(values.cognito);
-    }
+    await login(values);
   }
 
   const { from } = props.location.state || { from: { pathname: "/" } };

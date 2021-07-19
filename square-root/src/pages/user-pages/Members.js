@@ -2,10 +2,16 @@ import React, { Component } from "react";
 import "./projects.css";
 import icon from "../../images/proj_icon.png";
 import data from "../data.json";
+import LeftMenu from "../../components/user/LeftMenu";
 
 export default class Members extends Component {
+  constructor(props) {
+    super(props)
+  };
+  
   render() {
-    return (
+    let props = this.props
+        return (
       <div>
         {" "}
         {data.Projects.map((projects, i) => {
@@ -19,27 +25,8 @@ export default class Members extends Component {
                         <div key={i}>
                           {
                             <div class="p-row">
-                              <div class="p-column left">
-                                <a href="/Projects" class="btn-back">
-                                  <i class="fas fa-chevron-left"></i>Alle
-                                  Prosjekter
-                                </a>
-                                <div class="menu-vertical">
-                                  <a href="/Dashboard">
-                                    <i class="fas fa-columns"></i>Dashbord
-                                  </a>
-                                  <a href="/#" class="active">
-                                    <i class="fas fa-users"></i>Medlemmer
-                                  </a>
-                                  <a href="/Orders">
-                                    <i class="fas fa-tasks"></i>Bestillinger
-                                  </a>
-                                  <a href="/Settings">
-                                    <i class="fas fa-cog"></i>Innstillinger
-                                  </a>
-                                </div>
-                              </div>
-                              ​
+                              {" "}
+                              <LeftMenu {...props}/>​ ​
                               <div class="p-column right">
                                 <div className="p-title">
                                   <img

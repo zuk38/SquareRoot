@@ -1,7 +1,4 @@
 export const findCityFromZip = async (zipCode) => {
-  console.log(zipCode);
-  console.log(process.env.REACT_APP_MYBRING_API);
-
   const response = await fetch(
     new URL(
       "https://api.bring.com/pickuppoint/api/postalCode/NO/getCityAndType/" +
@@ -39,10 +36,3 @@ export const findCityFromZip = async (zipCode) => {
   }
   return null;
 };
-
-function handleErrors(response) {
-  if (!response.ok) {
-    throw Error(response.statusText);
-  }
-  return response;
-}

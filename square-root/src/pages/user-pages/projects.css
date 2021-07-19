@@ -116,10 +116,19 @@
 }
 
 .p-td {
-  background-color: #ffffff;
   padding: 15px;
-  color: var(--mainBlack);
   font-weight: 400;
+}
+
+.p-tr {
+  background-color: #ffffff;
+  color: var(--mainBlack);
+}
+
+.p-tr:hover {
+  background-color: var(--bg);
+  color: var(--offWhite);
+  cursor: pointer;
 }
 
 .fade-enter {
@@ -146,7 +155,7 @@
 
 .fade-appear.fade-appear-active {
   opacity: 1;
-  transition: opacity .5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 /* end of TABLE */
 /* BUTTON : NEW PROJECT*/
@@ -288,7 +297,7 @@ a.btn-back:hover {
   color: var(--mainBlack);
 }
 
-input[type="text"] {
+.p-text-input {
   padding: 1em;
   background-color: white;
   box-sizing: border-box;
@@ -520,10 +529,6 @@ img[src*="plus"] {
 }
 
 /*SETTINGS*/
-.settings-container {
-  margin-top: 5%;
-  width: 60%;
-}
 
 button[type="submit"] {
   width: 100%;
@@ -537,6 +542,7 @@ button[type="submit"] {
   font-size: 15px;
   font-weight: 550;
 }
+
 button[type="submit"]:hover {
   background-color: #6ba3fa;
 }
@@ -553,22 +559,32 @@ button[type="submit"]:hover {
 /*ACCOUNT*/
 
 .acc-container {
-  margin-top: 5%;
+  margin-top: 2%;
   width: 50%;
   margin-left: 10%;
 }
 
 .acc-title {
-  padding-top: 5%;
-  padding-bottom: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
   width: 100%;
   height: 100%;
   color: var(--mainBlack);
 }
 
-.acc-container input[type="number"],
-select {
-  width: 38%;
+.acc-title h1 {
+  display: inline;
+  font-weight: 400;
+  font-size: x-large;
+  color: var(--mainBlack);
+}
+
+.acc-container form {
+  margin: 0% 0 4% 0;
+}
+
+.acc-container select {
+  width: 60%;
   background-color: white;
   border-radius: 5px;
   border: 1px solid lightgray;
@@ -578,9 +594,8 @@ select {
   box-sizing: border-box;
   font-weight: 400px;
   margin: auto;
-}
-.acc-container input[name="email"] {
-  width: 60%;
+  color: gray;
+  -webkit-appearance: none;
 }
 
 button[name="btn-account"] {
@@ -591,9 +606,4 @@ input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-select {
-  color: gray;
-  -webkit-appearance: none;
 }

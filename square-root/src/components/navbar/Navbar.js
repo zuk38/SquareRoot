@@ -44,15 +44,14 @@ const Navbar = (props) => {
         <ul className="navbar-nav">
           {/* user */}
           {!props.auth.isAuthenticated ? (
-            <a href="/login" class="button is-white pad">
+            <a href="/login" className="button is-white pad">
               <span>Sign in</span>
-              <span class="icon is-small">
-                <i class="fas fa-user"></i>
+              <span className="icon is-small">
+                <i className="fas fa-user"></i>
               </span>
             </a>
           ) : (
             <>
-              
               <Dropdown {...props} />
             </>
           )}

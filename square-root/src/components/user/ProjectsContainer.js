@@ -1,12 +1,17 @@
-import React, { useContext, useEffect, useRef } from "react";
-import { Link } from "react-router-dom";
-import { CSSTransitionGroup } from "react-transition-group";
+import React from "react";
 import { withProjectConsumer } from "../../context/projects";
-
-var ReactCSSTransitionGroup = require("react-transition-group");
+import { useHistory } from "react-router-dom";
+import Loading from "../Loading";
 
 function ProjectsContainer({ context }) {
   const { projects, loading } = context;
+  const history = useHistory();
+
+  const openProjectDashboard = (name) => {
+    history.push(`/dashboard/${name}`);
+  };
+
+  if (loading) return <Loading />;
 
   if (!projects.length || !projects) {
     return (
@@ -19,31 +24,24 @@ function ProjectsContainer({ context }) {
   return (
     <table className="p-table">
       <tbody>
-        <tr className="p-tr">
+        <tr>
           <th className="p-th">PROSJEKTNAVN</th>
           <th className="p-th">ADRESSE</th>
           <th className="p-th">OPPRETTET</th>
         </tr>
-        <ReactCSSTransitionGroup
-          transitionName="fade"
-          transitionEnterTimeout={500}
-          transitionLeaveTimeout={300}
-          transitionAppearTimeout={500}
-          transitionAppear={true}
-          component="tr"
-        >
-          {projects.map(
-            ({ id, name, address, city, postalCode, createdAt }) => (
-              <tr key={id}>
-                <td className="p-td">{name}</td>
-                <td className="p-td">
-                  {address}, {postalCode} {city}
-                </td>
-                <td className="p-td">{createdAt.split("T")[0]}</td>
-              </tr>
-            )
-          )}
-        </ReactCSSTransitionGroup>
+        {projects.map(({ id, name, address, city, postalCode, createdAt }) => (
+          <tr
+            key={id}
+            className="p-tr"
+            onClick={() => openProjectDashboard(name)}
+          >
+            <td className="p-td">{name}</td>
+            <td className="p-td">
+              {address}, {postalCode} {city}
+            </td>
+            <td className="p-td">{createdAt.split("T")[0]}</td>
+          </tr>
+        ))}
       </tbody>
     </table>
   );

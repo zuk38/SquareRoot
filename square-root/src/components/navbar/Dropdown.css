@@ -35,9 +35,11 @@ a {
   box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
   z-index: 200;
 }
+
 .menu {
   width: 100%;
 }
+
 .my-dropdown-item {
   height: 50px;
   display: flex;
@@ -55,6 +57,7 @@ a {
 .my-dropdown-item .icon-button:hover {
   filter: none;
 }
+
 .my-dropdown-item:hover {
   background-color: var(--bg);
   color: var(--offWhite);

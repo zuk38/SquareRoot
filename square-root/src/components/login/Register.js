@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Title from "../Title";
 import useForm from "../hooks/useForm";
 import validate from "../utility/RegistrationFormValidation";
-import { Auth } from "aws-amplify";
 import AuthModal from "./AuthModal";
 
 export function Register(props) {
   const [showModal, setShowModal] = useState(false);
+  const { registerUser } = props.context;
 
   const openModal = () => {
     setShowModal(true);
@@ -26,34 +26,13 @@ export function Register(props) {
   } = useForm(callback, validate, register);
 
   function callback() {
-    console.log("yay");
     openModal();
   }
 
   async function register() {
     //form validated
     //cognito integration here, may detect cognito errors
-    console.log(values);
-    const { email, password, name, phone, role } = values;
-    console.log(email);
-
-    try {
-      const user = await Auth.signUp({
-        username: email,
-        password: password,
-        attributes: {
-          email: email,
-          name: name,
-          phone_number: phone,
-          "custom:role": role,
-        },
-      });
-    } catch (error) {
-      console.log("error signing up:", error);
-      let err = null;
-      !error.message ? (err = { message: error }) : (err = error);
-      values.cognito = err;
-    }
+    await registerUser(values)
   }
   return (
     <>
