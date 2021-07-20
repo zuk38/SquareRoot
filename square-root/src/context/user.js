@@ -33,7 +33,6 @@ export default class UserProvider extends Component {
       phone = user.phone_number;
       role = user["custom:role"];
     }
-    //set the name if logged in
 
     this.setState(
       {
@@ -56,6 +55,7 @@ export default class UserProvider extends Component {
       console.log(session);
       this.setAuthStatus(true);
       const user = await Auth.currentAuthenticatedUser();
+      console.log(user)
       const { attributes } = user;
       this.setUser(attributes);
     } catch (error) {

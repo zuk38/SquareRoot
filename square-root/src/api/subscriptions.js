@@ -1,87 +1,285 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateProjectTeam = /* GraphQL */ `
-  subscription OnCreateProjectTeam {
-    onCreateProjectTeam {
+export const onCreateConceptCategory = /* GraphQL */ `
+  subscription OnCreateConceptCategory {
+    onCreateConceptCategory {
       id
-      member_ID
-      projectGroup_ID
-      project {
+      concept_ID
+      category_ID
+      category {
         id
-        owner
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
         createdAt
         updatedAt
       }
       createdAt
       updatedAt
-      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const onUpdateProjectTeam = /* GraphQL */ `
-  subscription OnUpdateProjectTeam {
-    onUpdateProjectTeam {
+export const onUpdateConceptCategory = /* GraphQL */ `
+  subscription OnUpdateConceptCategory {
+    onUpdateConceptCategory {
       id
-      member_ID
-      projectGroup_ID
-      project {
+      concept_ID
+      category_ID
+      category {
         id
-        owner
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
         createdAt
         updatedAt
       }
       createdAt
       updatedAt
-      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const onDeleteProjectTeam = /* GraphQL */ `
-  subscription OnDeleteProjectTeam {
-    onDeleteProjectTeam {
+export const onDeleteConceptCategory = /* GraphQL */ `
+  subscription OnDeleteConceptCategory {
+    onDeleteConceptCategory {
       id
-      member_ID
-      projectGroup_ID
-      project {
+      concept_ID
+      category_ID
+      category {
         id
-        owner
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
         createdAt
         updatedAt
       }
       createdAt
       updatedAt
-      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const onCreateProjectGroup = /* GraphQL */ `
-  subscription OnCreateProjectGroup {
-    onCreateProjectGroup {
+export const onCreatePlantCategory = /* GraphQL */ `
+  subscription OnCreatePlantCategory {
+    onCreatePlantCategory {
       id
-      owner
+      plant_ID
+      category_ID
+      category {
+        id
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const onUpdateProjectGroup = /* GraphQL */ `
-  subscription OnUpdateProjectGroup {
-    onUpdateProjectGroup {
+export const onUpdatePlantCategory = /* GraphQL */ `
+  subscription OnUpdatePlantCategory {
+    onUpdatePlantCategory {
       id
-      owner
+      plant_ID
+      category_ID
+      category {
+        id
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
     }
   }
 `;
-export const onDeleteProjectGroup = /* GraphQL */ `
-  subscription OnDeleteProjectGroup {
-    onDeleteProjectGroup {
+export const onDeletePlantCategory = /* GraphQL */ `
+  subscription OnDeletePlantCategory {
+    onDeletePlantCategory {
       id
-      owner
+      plant_ID
+      category_ID
+      category {
+        id
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
       createdAt
       updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
     }
   }
 `;
@@ -95,13 +293,25 @@ export const onCreateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
         items {
           id
-          projectID
-          greenspaceID
+          project_ID
+          name
+          description
+          owner
           createdAt
           updatedAt
         }
@@ -120,13 +330,25 @@ export const onUpdateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
         items {
           id
-          projectID
-          greenspaceID
+          project_ID
+          name
+          description
+          owner
           createdAt
           updatedAt
         }
@@ -145,17 +367,389 @@ export const onDeleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
         items {
           id
-          projectID
-          greenspaceID
+          project_ID
+          name
+          description
+          owner
           createdAt
           updatedAt
         }
         nextToken
+      }
+    }
+  }
+`;
+export const onCreateProjectMember = /* GraphQL */ `
+  subscription OnCreateProjectMember {
+    onCreateProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateProjectMember = /* GraphQL */ `
+  subscription OnUpdateProjectMember {
+    onUpdateProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteProjectMember = /* GraphQL */ `
+  subscription OnDeleteProjectMember {
+    onDeleteProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateMember = /* GraphQL */ `
+  subscription OnCreateMember {
+    onCreateMember {
+      id
+      username
+      role
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateMember = /* GraphQL */ `
+  subscription OnUpdateMember {
+    onUpdateMember {
+      id
+      username
+      role
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteMember = /* GraphQL */ `
+  subscription OnDeleteMember {
+    onDeleteMember {
+      id
+      username
+      role
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateConceptPlant = /* GraphQL */ `
+  subscription OnCreateConceptPlant {
+    onCreateConceptPlant {
+      id
+      plant_id
+      concept_id
+      quantity
+      createdAt
+      updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
+      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const onUpdateConceptPlant = /* GraphQL */ `
+  subscription OnUpdateConceptPlant {
+    onUpdateConceptPlant {
+      id
+      plant_id
+      concept_id
+      quantity
+      createdAt
+      updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
+      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
+      }
+    }
+  }
+`;
+export const onDeleteConceptPlant = /* GraphQL */ `
+  subscription OnDeleteConceptPlant {
+    onDeleteConceptPlant {
+      id
+      plant_id
+      concept_id
+      quantity
+      createdAt
+      updatedAt
+      plant {
+        id
+        metadataID
+        createdAt
+        updatedAt
+        metadata {
+          id
+          latin_name
+          norwegian_name
+          type
+          native
+          norwegian_nursery
+          size_in_cm
+          image
+          featured
+          climate_zone
+          pollinator_friendly
+          edible
+          rain_garden
+          pet_kids_friendly
+          air_puryfying
+          sun_seeker
+          createdAt
+          updatedAt
+        }
+        concepts {
+          nextToken
+        }
+      }
+      owner
+      concept {
+        id
+        greenspace_id
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }

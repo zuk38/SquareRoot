@@ -249,7 +249,7 @@ they should navigate through the menu, rather than us setting up another route f
                     </table>
                   </div>
                   <div className="modal-btns-footer">
-                    <a href="/Customize">
+                    <a href="/customize">
                       <button
                         className="orders-btn-close"
                         onClick={this.closeModal}

@@ -1,69 +1,52 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getProjectTeam = /* GraphQL */ `
-  query GetProjectTeam($id: ID!) {
-    getProjectTeam(id: $id) {
+export const getCategory = /* GraphQL */ `
+  query GetCategory($id: ID!) {
+    getCategory(id: $id) {
       id
-      member_ID
-      projectGroup_ID
-      project {
-        id
-        owner
-        createdAt
-        updatedAt
-      }
-      createdAt
-      updatedAt
-      owner
-    }
-  }
-`;
-export const listProjectTeams = /* GraphQL */ `
-  query ListProjectTeams(
-    $filter: ModelProjectTeamFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listProjectTeams(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        member_ID
-        projectGroup_ID
-        project {
+      category_name
+      plants {
+        items {
           id
-          owner
+          plant_ID
+          category_ID
           createdAt
           updatedAt
         }
-        createdAt
-        updatedAt
-        owner
+        nextToken
       }
-      nextToken
-    }
-  }
-`;
-export const getProjectGroup = /* GraphQL */ `
-  query GetProjectGroup($id: ID!) {
-    getProjectGroup(id: $id) {
-      id
-      owner
+      concepts {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
     }
   }
 `;
-export const listProjectGroups = /* GraphQL */ `
-  query ListProjectGroups(
-    $filter: ModelProjectGroupFilterInput
+export const listCategorys = /* GraphQL */ `
+  query ListCategorys(
+    $filter: ModelCategoryFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listProjectGroups(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        owner
+        category_name
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
         createdAt
         updatedAt
       }
@@ -81,13 +64,25 @@ export const getProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
         items {
           id
-          projectID
-          greenspaceID
+          project_ID
+          name
+          description
+          owner
           createdAt
           updatedAt
         }
@@ -111,6 +106,9 @@ export const listProjects = /* GraphQL */ `
         postalCode
         end_date
         owner
+        members {
+          nextToken
+        }
         createdAt
         updatedAt
         greenspaces {
@@ -121,85 +119,43 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
-export const getPlant = /* GraphQL */ `
-  query GetPlant($id: ID!) {
-    getPlant(id: $id) {
+export const getMember = /* GraphQL */ `
+  query GetMember($id: ID!) {
+    getMember(id: $id) {
       id
-      metadataID
-      createdAt
-      updatedAt
-      metadata {
-        id
-        greenspace_category
-        latin_name
-        norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
-        createdAt
-        updatedAt
-      }
-      greenspaces {
+      username
+      role
+      projects {
         items {
           id
-          plant_id
-          greenspace_id
-          quantity
+          project_ID
+          member_ID
           createdAt
           updatedAt
-          owner
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
-export const listPlants = /* GraphQL */ `
-  query ListPlants(
-    $filter: ModelPlantFilterInput
+export const listMembers = /* GraphQL */ `
+  query ListMembers(
+    $filter: ModelMemberFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        metadataID
-        createdAt
-        updatedAt
-        metadata {
-          id
-          greenspace_category
-          latin_name
-          norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
-          createdAt
-          updatedAt
-        }
-        greenspaces {
+        username
+        role
+        projects {
           nextToken
         }
+        createdAt
+        updatedAt
       }
       nextToken
     }
@@ -209,7 +165,16 @@ export const getPlantMetadata = /* GraphQL */ `
   query GetPlantMetadata($id: ID!) {
     getPlantMetadata(id: $id) {
       id
-      greenspace_category
+      category {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       latin_name
       norwegian_name
       type
@@ -239,7 +204,9 @@ export const listPlantMetadatas = /* GraphQL */ `
     listPlantMetadatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        greenspace_category
+        category {
+          nextToken
+        }
         latin_name
         norwegian_name
         type
@@ -262,23 +229,65 @@ export const listPlantMetadatas = /* GraphQL */ `
     }
   }
 `;
-export const getGreenspacePlant = /* GraphQL */ `
-  query GetGreenspacePlant($id: ID!) {
-    getGreenspacePlant(id: $id) {
+export const getPlant = /* GraphQL */ `
+  query GetPlant($id: ID!) {
+    getPlant(id: $id) {
       id
-      plant_id
-      greenspace_id
-      quantity
+      metadataID
       createdAt
       updatedAt
-      plant {
+      metadata {
+        id
+        category {
+          nextToken
+        }
+        latin_name
+        norwegian_name
+        type
+        native
+        norwegian_nursery
+        size_in_cm
+        image
+        featured
+        climate_zone
+        pollinator_friendly
+        edible
+        rain_garden
+        pet_kids_friendly
+        air_puryfying
+        sun_seeker
+        createdAt
+        updatedAt
+      }
+      concepts {
+        items {
+          id
+          plant_id
+          concept_id
+          quantity
+          createdAt
+          updatedAt
+          owner
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const listPlants = /* GraphQL */ `
+  query ListPlants(
+    $filter: ModelPlantFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
         id
         metadataID
         createdAt
         updatedAt
         metadata {
           id
-          greenspace_category
           latin_name
           norwegian_name
           type
@@ -297,66 +306,77 @@ export const getGreenspacePlant = /* GraphQL */ `
           createdAt
           updatedAt
         }
-        greenspaces {
+        concepts {
           nextToken
         }
       }
+      nextToken
+    }
+  }
+`;
+export const getConcept = /* GraphQL */ `
+  query GetConcept($id: ID!) {
+    getConcept(id: $id) {
+      id
+      greenspace_id
+      name
       owner
-      greenspace {
-        id
-        name
-        image
-        featured
-        price
-        description
-        category
-        createdAt
-        updatedAt
-        plants {
-          nextToken
+      userDefined
+      image
+      featured
+      price
+      description
+      categories {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
         }
-        projects {
-          nextToken
+        nextToken
+      }
+      createdAt
+      updatedAt
+      plants {
+        items {
+          id
+          plant_id
+          concept_id
+          quantity
+          createdAt
+          updatedAt
+          owner
         }
+        nextToken
       }
     }
   }
 `;
-export const listGreenspacePlants = /* GraphQL */ `
-  query ListGreenspacePlants(
-    $filter: ModelGreenspacePlantFilterInput
+export const listConcepts = /* GraphQL */ `
+  query ListConcepts(
+    $filter: ModelConceptFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listGreenspacePlants(
-      filter: $filter
-      limit: $limit
-      nextToken: $nextToken
-    ) {
+    listConcepts(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        plant_id
         greenspace_id
-        quantity
+        name
+        owner
+        userDefined
+        image
+        featured
+        price
+        description
+        categories {
+          nextToken
+        }
         createdAt
         updatedAt
-        plant {
-          id
-          metadataID
-          createdAt
-          updatedAt
-        }
-        owner
-        greenspace {
-          id
-          name
-          image
-          featured
-          price
-          description
-          category
-          createdAt
-          updatedAt
+        plants {
+          nextToken
         }
       }
       nextToken
@@ -367,31 +387,23 @@ export const getGreenspace = /* GraphQL */ `
   query GetGreenspace($id: ID!) {
     getGreenspace(id: $id) {
       id
+      project_ID
       name
-      image
-      featured
-      price
       description
-      category
+      owner
       createdAt
       updatedAt
-      plants {
+      concepts {
         items {
           id
-          plant_id
           greenspace_id
-          quantity
-          createdAt
-          updatedAt
+          name
           owner
-        }
-        nextToken
-      }
-      projects {
-        items {
-          id
-          projectID
-          greenspaceID
+          userDefined
+          image
+          featured
+          price
+          description
           createdAt
           updatedAt
         }
@@ -409,18 +421,13 @@ export const listGreenspaces = /* GraphQL */ `
     listGreenspaces(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
+        project_ID
         name
-        image
-        featured
-        price
         description
-        category
+        owner
         createdAt
         updatedAt
-        plants {
-          nextToken
-        }
-        projects {
+        concepts {
           nextToken
         }
       }
