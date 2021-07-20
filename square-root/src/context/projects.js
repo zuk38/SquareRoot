@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import { Auth, API, graphqlOperation } from "aws-amplify";
 import { listProjects, listMembers } from "../api/queries";
-import { createProject } from "../api/mutations";
 import { v4 as uuidv4 } from "uuid";
-import { createMember } from "../api/mutations";
+import { createProject, createMember, createProjectMember } from "../api/mutations";
 
 const ProjectContext = React.createContext();
 
 export default class ProjectProvider extends Component {
   state = {
     projects: [],
+    currentMember: null,
     loading: true,
   };
 
@@ -26,7 +26,6 @@ export default class ProjectProvider extends Component {
         projects,
         loading: false,
       });
-      console.log(this.state);
     } catch (err) {
       console.log(err);
     }
@@ -34,7 +33,9 @@ export default class ProjectProvider extends Component {
 
   createNewProject = async (values) => {
     try {
+      let project_ID = uuidv4()
       let projectDetails = {
+        id: project_ID,
         name: values.name,
         postalCode: values.zip,
         city: values.city,
@@ -42,6 +43,9 @@ export default class ProjectProvider extends Component {
       };
       await API.graphql(
         graphqlOperation(createProject, { input: projectDetails })
+      );
+      await API.graphql(
+        graphqlOperation(createProjectMember, { input: {id: uuidv4(), project_ID: project_ID, member_ID: this.state.currentMember} })
       );
     } catch (err) {
       console.log("error creating todo:", err);
@@ -57,25 +61,28 @@ export default class ProjectProvider extends Component {
   createMember = async () => {
     let members;
     const user = await Auth.currentAuthenticatedUser();
-    console.log(user.username);
     try {
       const { data } = await API.graphql({
         query: listMembers,
       });
       members = data.listMembers.items;
-      console.log(members);
     } catch (err) {
       console.log(err);
     }
-    const found = members.some((el) => el.username === user.username);
-    if (found) return;
+    const found = members.find((el) => el.username === user.username);
+    if (found) {
+      this.setState({currentMember: found.id})
+      return;
+    }
 
     try {
+      let member = {id: uuidv4(), username: user.username, role: user.attributes["custom:role"]}
       await API.graphql(
         graphqlOperation(createMember, {
-          input: { id: uuidv4(), username: user.username, role: user.attributes["custom:role"] },
+          input: member,
         })
       );
+      this.setState({currentMember: member.id})
     } catch (err) {
       console.log("error creating todo:", err);
     }
