@@ -1,7 +1,9 @@
 import React, { Component } from "react";
-import { API, graphqlOperation } from "aws-amplify";
-import { listProjects } from "../api/queries";
+import { Auth, API, graphqlOperation } from "aws-amplify";
+import { listProjects, listMembers } from "../api/queries";
 import { createProject } from "../api/mutations";
+import { v4 as uuidv4 } from "uuid";
+import { createMember } from "../api/mutations";
 
 const ProjectContext = React.createContext();
 
@@ -52,8 +54,36 @@ export default class ProjectProvider extends Component {
     return project;
   };
 
+  createMember = async () => {
+    let members;
+    const user = await Auth.currentAuthenticatedUser();
+    console.log(user.username);
+    try {
+      const { data } = await API.graphql({
+        query: listMembers,
+      });
+      members = data.listMembers.items;
+      console.log(members);
+    } catch (err) {
+      console.log(err);
+    }
+    const found = members.some((el) => el.username === user.username);
+    if (found) return;
+
+    try {
+      await API.graphql(
+        graphqlOperation(createMember, {
+          input: { id: uuidv4(), username: user.username, role: user.attributes["custom:role"] },
+        })
+      );
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+  };
+
   componentDidMount() {
     this.fetchProjects();
+    this.createMember();
   }
 
   render() {
