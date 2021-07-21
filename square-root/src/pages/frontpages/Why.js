@@ -1,6 +1,6 @@
 import React from "react";
 import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
-import "../../styles/Why.css";
+import "../../styles/frontpages.css";
 import ButtonPrimary from "../../styles/StyledComponents";
 import Grid from "../../components/Grid_2x2"
 
