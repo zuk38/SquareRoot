@@ -1,18 +1,17 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { listGreenspaces } from "../api/greenspaceQueries";
 
-const GreenspaceContext = React.createContext();
+const ConceptContext = React.createContext();
 
-export default class GreenspaceProvider extends Component {
+export default class ConceptProvider extends Component {
   state = {
     greenspaces: [],
     featuredGreenspaces: [],
     loading: false,
   };
 
-  fetchGreenspaces = async () => {
-    try {
+  fetchConcepts = async () => {
+    /*try {
       const { data } = await API.graphql({
         query: listGreenspaces,
         authMode: "API_KEY",
@@ -31,20 +30,20 @@ export default class GreenspaceProvider extends Component {
       console.log(data);
     } catch (error) {
       console.log(error);
-    }
+    }*/
   };
 
-  getGreenspace = (name) => {
-    let tempGreenspaces = [...this.state.greenspaces];
+  getConcept = (name) => {
+    /*let tempGreenspaces = [...this.state.greenspaces];
     const greenspace = tempGreenspaces.find(
       (greenspace) => greenspace.name === name
     );
-    return greenspace;
+    return greenspace;*/
   };
 
   formatData(items) {
     console.log(items)
-    let tempItems = items.map((item) => {
+    /*let tempItems = items.map((item) => {
       let tempPlants = item.plants.items.map((p) => {
         let metadata = p.plant.metadata;
         let id = p.plant.id
@@ -59,27 +58,26 @@ export default class GreenspaceProvider extends Component {
       let greenspace = { name, description, image, featured, plants: tempPlants};
       return greenspace
     })
-    return tempItems
+    return tempItems*/
   }
 
   componentDidMount() {
-    this.fetchGreenspaces();
+    this.fetchConcepts();
   }
 
   render() {
     return (
-      <GreenspaceContext.Provider
+      <ConceptContext.Provider
         value={{
           ...this.state,
-          getGreenspace: this.getGreenspace,
         }}
       >
         {this.props.children}
-      </GreenspaceContext.Provider>
+      </ConceptContext.Provider>
     );
   }
 }
 
-const GreenspaceConsumer = GreenspaceContext.Consumer;
+const ConceptConsumer = ConceptContext.Consumer;
 
-export { GreenspaceProvider, GreenspaceConsumer, GreenspaceContext };
+export { ConceptProvider, ConceptConsumer, ConceptContext };

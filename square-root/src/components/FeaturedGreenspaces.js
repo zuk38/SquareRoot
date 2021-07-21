@@ -1,20 +1,20 @@
 import React, { Component } from "react";
-import { GreenspaceContext } from "../context/greenspaces";
+import { ConceptContext } from "../context/concepts";
 import Greenspace from "./Greenspace"
 import Loading from "./Loading"
 
 export default class FeaturedGreenspaces extends Component {
-  static contextType = GreenspaceContext;
+  static contextType = ConceptContext;
 
   render() {
-    let {loading, featuredGreenspaces : greenspaces} = this.context;
+    /*let {loading, featuredGreenspaces : greenspaces} = this.context;
     greenspaces = greenspaces.map((greenspace) => {
       return <Greenspace key={greenspace.id} greenspace={greenspace} />
-    })
+    })*/
 
     return <section className="featured-greenspaces">
       <div className="featured-rooms-center">
-        {loading ? <Loading/> : greenspaces}
+        {/*loading ? <Loading/> : greenspaces*/}
       </div>
     </section>;
   }
