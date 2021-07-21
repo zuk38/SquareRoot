@@ -1,6 +1,5 @@
 import React from 'react';
 import "../../styles/frontpages.css";
-import Display_Greenspace from "../../components/Display_Greenspace";
 
 
 
@@ -49,7 +48,27 @@ export default function Categories_Content() {
 
     return (
         <div>
-           <Display_Greenspace insert_values={insert_values}/>
+            <div className="c-section background-grey">
+                
+              
+                   <div className="o-container">
+                    <h2 className="c-txt--sectiontitle c-mrg--bottom">{insert_values[0].header}</h2>
+                    <h3 className="c-txt--sectiontitle c-mrg--bottom">{insert_values[0].subheader}</h3>
+
+                    <div className="c-grid--1x">
+                    <ul className="no-scroll-grid">
+                               <img src={insert_values[0].img} />
+        
+                                <p>{insert_values[0].descr}</p>
+                         
+                            </ul>
+                        </div>
+                        </div>
+                    
+            </div>
+
+            
+
         </div>
 
     )

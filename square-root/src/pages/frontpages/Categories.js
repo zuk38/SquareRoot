@@ -10,30 +10,30 @@ export default function Categories() {
             name:"rooftop",
             img:"../images/portrait--rooftop.jpg",
             header:"Takterrasse",
-            href:`/category/rooftop`
+            href:`/categories/rooftop`
         },
         {   name:"biodiversity",
             img:"../images/portrait--outdoor-bio.jpg",
             header:"Biomangfold",
-            href:`/category/boidiversity`
+            href:`/categories/biodiversity`
         },
         {   
             name:"rainbed",
             img:"../images/rainbed.jpg",
             header:"Regnseng",
-            href:`/category/rainbed`
+            href:`/categories/rainbed`
         },
         {   
             name:"green-walls",
             img:"../images/portrait--indoor-wall.jpg",
             header:"Grønne vegger",
-            href:`/category/green-walls`
+            href:`/categories/green-walls`
         },
         {   
             name:"indoor-plants",
             img:"../images/portrait--indoor-green.jpg",
             header:"Innendørs",
-            href:`/category/indoor-plants`
+            href:`/categories/indoor-plants`
         }
     ];
 

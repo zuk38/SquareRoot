@@ -1,7 +1,13 @@
 import React from "react";
 import "../styles/frontpages.css"
+import { useHistory } from "react-router-dom";
 
 export default function ScrollGrid({title, insert_values}){
+
+    const history = useHistory();
+    const redirectToGreenspace = (href) => {
+      history.push(href);
+    };
 
 
     return (
@@ -16,7 +22,7 @@ export default function ScrollGrid({title, insert_values}){
                         {insert_values.map((insert_values) => (
                             
                         
-                            <button className="item-portrait zoom-on-hover" href={insert_values.href}>
+                            <button className="item-portrait zoom-on-hover" onClick={() => redirectToGreenspace(insert_values.href)}>
                                 <img src={insert_values.img} />
         
                                 <p>{insert_values.header}</p>
