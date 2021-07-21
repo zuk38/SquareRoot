@@ -1,13 +1,36 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
+import { listCategorys } from "../api/queries"
 
 const ConceptContext = React.createContext();
 
 export default class ConceptProvider extends Component {
   state = {
-    greenspaces: [],
-    featuredGreenspaces: [],
+    concepts: [],
+    featuredConcepts: [],
+    categories: [],
+    loadingCat: true,
     loading: false,
+  };
+
+  fetchCategories = async () => {
+    try {
+      const { data } = await API.graphql({
+        query: listCategorys,
+        authMode: "API_KEY",
+      });
+
+      let categories = data.listCategorys.items;      
+      
+      this.setState({
+        categories,
+        loadingCat: false,
+      });
+
+      console.log(data);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   fetchConcepts = async () => {
@@ -62,6 +85,7 @@ export default class ConceptProvider extends Component {
   }
 
   componentDidMount() {
+    this.fetchCategories();
     this.fetchConcepts();
   }
 
