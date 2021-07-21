@@ -4,7 +4,7 @@ import Banner from "../../components/Banner";
 import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import PartnerContainer from "../../components/PartnerContainer";
 import Grid from "../../components/Grid_2x2";
-import "../../styles/Why.css";
+import "../../styles/frontpages.css";
 import Footer from "../../components/Footer";
 import "../../styles/Home.css";
 

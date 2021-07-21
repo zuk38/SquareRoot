@@ -19,6 +19,8 @@ import Settings from "./pages/user-pages/Settings";
 import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
+import Categories from "./pages/frontpages/Categories";
+import Categories_Content from "./pages/frontpages/Categories_Content";
 import Footer from "./components/Footer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
@@ -29,6 +31,7 @@ import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { faEdit } from "@fortawesome/free-solid-svg-icons";
+
 library.add(faEdit);
 
 class App extends Component {
@@ -119,6 +122,18 @@ class App extends Component {
               exact
               path="/what-we-do"
               render={(props) => <What {...props} />}
+            />
+
+            <Route
+              exact
+              path="/categories"
+              render={(props) => <Categories {...props} />}
+            />
+
+            <Route
+              exact
+              path="/categories/:name"
+              render={(props) => <Categories_Content {...props} />}
             />
 
             <PrivateRoute
