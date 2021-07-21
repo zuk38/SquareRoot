@@ -582,6 +582,9 @@ export const createCategory = /* GraphQL */ `
     createCategory(input: $input, condition: $condition) {
       id
       category_name
+      header
+      subheader
+      image
       plants {
         items {
           id
@@ -615,6 +618,9 @@ export const updateCategory = /* GraphQL */ `
     updateCategory(input: $input, condition: $condition) {
       id
       category_name
+      header
+      subheader
+      image
       plants {
         items {
           id
@@ -648,6 +654,9 @@ export const deleteCategory = /* GraphQL */ `
     deleteCategory(input: $input, condition: $condition) {
       id
       category_name
+      header
+      subheader
+      image
       plants {
         items {
           id
@@ -685,6 +694,9 @@ export const createConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
@@ -730,6 +742,9 @@ export const updateConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
@@ -775,6 +790,9 @@ export const deleteConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
@@ -820,6 +838,9 @@ export const createPlantCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
@@ -875,6 +896,9 @@ export const updatePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
@@ -930,6 +954,9 @@ export const deletePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }

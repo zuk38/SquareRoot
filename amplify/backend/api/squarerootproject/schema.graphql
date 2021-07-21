@@ -104,6 +104,9 @@ type Category #rooftop, rainbed, etc.
   @model(subscriptions: null) {
   id: ID!
   category_name: String!
+  header: String
+  subheader: String
+  image: String
   plants: [PlantCategory] @connection(keyName: "byCategory", fields: ["id"])
   concepts: [ConceptCategory] @connection(keyName: "byCategory", fields: ["id"])
 }

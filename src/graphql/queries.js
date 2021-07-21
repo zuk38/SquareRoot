@@ -6,6 +6,9 @@ export const getCategory = /* GraphQL */ `
     getCategory(id: $id) {
       id
       category_name
+      header
+      subheader
+      image
       plants {
         items {
           id
@@ -41,6 +44,9 @@ export const listCategorys = /* GraphQL */ `
       items {
         id
         category_name
+        header
+        subheader
+        image
         plants {
           nextToken
         }
