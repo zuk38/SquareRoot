@@ -8,16 +8,6 @@ export const createPlantMetadata = /* GraphQL */ `
   ) {
     createPlantMetadata(input: $input, condition: $condition) {
       id
-      category {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       latin_name
       norwegian_name
       type
@@ -35,6 +25,16 @@ export const createPlantMetadata = /* GraphQL */ `
       sun_seeker
       createdAt
       updatedAt
+      category {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -45,16 +45,6 @@ export const updatePlantMetadata = /* GraphQL */ `
   ) {
     updatePlantMetadata(input: $input, condition: $condition) {
       id
-      category {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       latin_name
       norwegian_name
       type
@@ -72,6 +62,16 @@ export const updatePlantMetadata = /* GraphQL */ `
       sun_seeker
       createdAt
       updatedAt
+      category {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -82,16 +82,6 @@ export const deletePlantMetadata = /* GraphQL */ `
   ) {
     deletePlantMetadata(input: $input, condition: $condition) {
       id
-      category {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       latin_name
       norwegian_name
       type
@@ -109,6 +99,16 @@ export const deletePlantMetadata = /* GraphQL */ `
       sun_seeker
       createdAt
       updatedAt
+      category {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -124,9 +124,6 @@ export const createPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        category {
-          nextToken
-        }
         latin_name
         norwegian_name
         type
@@ -144,6 +141,9 @@ export const createPlant = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
+        category {
+          nextToken
+        }
       }
       concepts {
         items {
@@ -172,9 +172,6 @@ export const updatePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        category {
-          nextToken
-        }
         latin_name
         norwegian_name
         type
@@ -192,6 +189,9 @@ export const updatePlant = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
+        category {
+          nextToken
+        }
       }
       concepts {
         items {
@@ -220,9 +220,6 @@ export const deletePlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        category {
-          nextToken
-        }
         latin_name
         norwegian_name
         type
@@ -240,6 +237,9 @@ export const deletePlant = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
+        category {
+          nextToken
+        }
       }
       concepts {
         items {
@@ -308,12 +308,12 @@ export const createConceptPlant = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
@@ -372,12 +372,12 @@ export const updateConceptPlant = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
@@ -436,12 +436,12 @@ export const deleteConceptPlant = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
@@ -463,16 +463,6 @@ export const createConcept = /* GraphQL */ `
       featured
       price
       description
-      categories {
-        items {
-          id
-          concept_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -484,6 +474,16 @@ export const createConcept = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
         }
         nextToken
       }
@@ -505,16 +505,6 @@ export const updateConcept = /* GraphQL */ `
       featured
       price
       description
-      categories {
-        items {
-          id
-          concept_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -526,6 +516,16 @@ export const updateConcept = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
         }
         nextToken
       }
@@ -547,16 +547,6 @@ export const deleteConcept = /* GraphQL */ `
       featured
       price
       description
-      categories {
-        items {
-          id
-          concept_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -571,6 +561,16 @@ export const deleteConcept = /* GraphQL */ `
         }
         nextToken
       }
+      categories {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -582,18 +582,10 @@ export const createCategory = /* GraphQL */ `
     createCategory(input: $input, condition: $condition) {
       id
       category_name
-      header
       subheader
-      plants {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      description
+      createdAt
+      updatedAt
       concepts {
         items {
           id
@@ -604,8 +596,16 @@ export const createCategory = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
+      plants {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -617,18 +617,10 @@ export const updateCategory = /* GraphQL */ `
     updateCategory(input: $input, condition: $condition) {
       id
       category_name
-      header
       subheader
-      plants {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      description
+      createdAt
+      updatedAt
       concepts {
         items {
           id
@@ -639,8 +631,16 @@ export const updateCategory = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
+      plants {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -652,18 +652,10 @@ export const deleteCategory = /* GraphQL */ `
     deleteCategory(input: $input, condition: $condition) {
       id
       category_name
-      header
       subheader
-      plants {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      description
+      createdAt
+      updatedAt
       concepts {
         items {
           id
@@ -674,8 +666,16 @@ export const deleteCategory = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
+      plants {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -700,28 +700,28 @@ export const createConceptCategory = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -747,28 +747,28 @@ export const updateConceptCategory = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -794,28 +794,28 @@ export const deleteConceptCategory = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -863,16 +863,16 @@ export const createPlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -920,16 +920,16 @@ export const updatePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -977,16 +977,16 @@ export const deletePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
     }
   }
@@ -1100,16 +1100,6 @@ export const createProject = /* GraphQL */ `
       postalCode
       end_date
       owner
-      members {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       greenspaces {
@@ -1119,6 +1109,16 @@ export const createProject = /* GraphQL */ `
           name
           description
           owner
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      members {
+        items {
+          id
+          project_ID
+          member_ID
           createdAt
           updatedAt
         }
@@ -1140,16 +1140,6 @@ export const updateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
-      members {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       greenspaces {
@@ -1159,6 +1149,16 @@ export const updateProject = /* GraphQL */ `
           name
           description
           owner
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      members {
+        items {
+          id
+          project_ID
+          member_ID
           createdAt
           updatedAt
         }
@@ -1180,16 +1180,6 @@ export const deleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
-      members {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       greenspaces {
@@ -1199,6 +1189,16 @@ export const deleteProject = /* GraphQL */ `
           name
           description
           owner
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      members {
+        items {
+          id
+          project_ID
+          member_ID
           createdAt
           updatedAt
         }
@@ -1224,27 +1224,27 @@ export const createProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
-        members {
-          nextToken
-        }
         createdAt
         updatedAt
         greenspaces {
           nextToken
         }
+        members {
+          nextToken
+        }
       }
+      createdAt
+      updatedAt
       member {
         id
         username
         role
+        createdAt
+        updatedAt
         projects {
           nextToken
         }
-        createdAt
-        updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1265,27 +1265,27 @@ export const updateProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
-        members {
-          nextToken
-        }
         createdAt
         updatedAt
         greenspaces {
           nextToken
         }
+        members {
+          nextToken
+        }
       }
+      createdAt
+      updatedAt
       member {
         id
         username
         role
+        createdAt
+        updatedAt
         projects {
           nextToken
         }
-        createdAt
-        updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1306,27 +1306,27 @@ export const deleteProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
-        members {
-          nextToken
-        }
         createdAt
         updatedAt
         greenspaces {
           nextToken
         }
+        members {
+          nextToken
+        }
       }
+      createdAt
+      updatedAt
       member {
         id
         username
         role
+        createdAt
+        updatedAt
         projects {
           nextToken
         }
-        createdAt
-        updatedAt
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1339,6 +1339,8 @@ export const createMember = /* GraphQL */ `
       id
       username
       role
+      createdAt
+      updatedAt
       projects {
         items {
           id
@@ -1349,8 +1351,6 @@ export const createMember = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1363,6 +1363,8 @@ export const updateMember = /* GraphQL */ `
       id
       username
       role
+      createdAt
+      updatedAt
       projects {
         items {
           id
@@ -1373,8 +1375,6 @@ export const updateMember = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;
@@ -1387,6 +1387,8 @@ export const deleteMember = /* GraphQL */ `
       id
       username
       role
+      createdAt
+      updatedAt
       projects {
         items {
           id
@@ -1397,8 +1399,6 @@ export const deleteMember = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
     }
   }
 `;

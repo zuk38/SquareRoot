@@ -16,8 +16,9 @@ export default function ScrollGrid({ title, categories }) {
 
           <div className="c-grid--1x">
             <ul className="no-scroll-grid">
-              {categories.map((category) => (
+              {categories.map((category, index) => (
                 <button
+                  key={index}
                   className="item-portrait zoom-on-hover"
                   onClick={() => redirectToGreenspace(category.category_name)}
                 >

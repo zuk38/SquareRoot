@@ -11,16 +11,6 @@ export const getProject = /* GraphQL */ `
       postalCode
       end_date
       owner
-      members {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       greenspaces {
@@ -30,6 +20,16 @@ export const getProject = /* GraphQL */ `
           name
           description
           owner
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      members {
+        items {
+          id
+          project_ID
+          member_ID
           createdAt
           updatedAt
         }
@@ -53,56 +53,14 @@ export const listProjects = /* GraphQL */ `
         postalCode
         end_date
         owner
-        members {
-          nextToken
-        }
         createdAt
         updatedAt
         greenspaces {
           nextToken
         }
-      }
-      nextToken
-    }
-  }
-`;
-export const getMember = /* GraphQL */ `
-  query GetMember($id: ID!) {
-    getMember(id: $id) {
-      id
-      username
-      role
-      projects {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listMembers = /* GraphQL */ `
-  query ListMembers(
-    $filter: ModelMemberFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        username
-        role
-        projects {
+        members {
           nextToken
         }
-        createdAt
-        updatedAt
       }
       nextToken
     }
@@ -112,16 +70,6 @@ export const getPlantMetadata = /* GraphQL */ `
   query GetPlantMetadata($id: ID!) {
     getPlantMetadata(id: $id) {
       id
-      category {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       latin_name
       norwegian_name
       type
@@ -139,6 +87,16 @@ export const getPlantMetadata = /* GraphQL */ `
       sun_seeker
       createdAt
       updatedAt
+      category {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -151,9 +109,6 @@ export const listPlantMetadatas = /* GraphQL */ `
     listPlantMetadatas(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        category {
-          nextToken
-        }
         latin_name
         norwegian_name
         type
@@ -171,6 +126,9 @@ export const listPlantMetadatas = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
+        category {
+          nextToken
+        }
       }
       nextToken
     }
@@ -185,9 +143,6 @@ export const getPlant = /* GraphQL */ `
       updatedAt
       metadata {
         id
-        category {
-          nextToken
-        }
         latin_name
         norwegian_name
         type
@@ -205,6 +160,9 @@ export const getPlant = /* GraphQL */ `
         sun_seeker
         createdAt
         updatedAt
+        category {
+          nextToken
+        }
       }
       concepts {
         items {
@@ -273,16 +231,6 @@ export const getConcept = /* GraphQL */ `
       featured
       price
       description
-      categories {
-        items {
-          id
-          concept_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
       createdAt
       updatedAt
       plants {
@@ -294,6 +242,16 @@ export const getConcept = /* GraphQL */ `
           createdAt
           updatedAt
           owner
+        }
+        nextToken
+      }
+      categories {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
         }
         nextToken
       }
@@ -317,12 +275,12 @@ export const listConcepts = /* GraphQL */ `
         featured
         price
         description
-        categories {
-          nextToken
-        }
         createdAt
         updatedAt
         plants {
+          nextToken
+        }
+        categories {
           nextToken
         }
       }
@@ -335,18 +293,10 @@ export const getCategory = /* GraphQL */ `
     getCategory(id: $id) {
       id
       category_name
-      header
       subheader
-      plants {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
+      description
+      createdAt
+      updatedAt
       concepts {
         items {
           id
@@ -357,8 +307,16 @@ export const getCategory = /* GraphQL */ `
         }
         nextToken
       }
-      createdAt
-      updatedAt
+      plants {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
     }
   }
 `;
@@ -372,16 +330,16 @@ export const listCategorys = /* GraphQL */ `
       items {
         id
         category_name
-        header
         subheader
-        plants {
-          nextToken
-        }
+        description
+        createdAt
+        updatedAt
         concepts {
           nextToken
         }
-        createdAt
-        updatedAt
+        plants {
+          nextToken
+        }
       }
       nextToken
     }
@@ -432,6 +390,48 @@ export const listGreenspaces = /* GraphQL */ `
         createdAt
         updatedAt
         concepts {
+          nextToken
+        }
+      }
+      nextToken
+    }
+  }
+`;
+export const getMember = /* GraphQL */ `
+  query GetMember($id: ID!) {
+    getMember(id: $id) {
+      id
+      username
+      role
+      createdAt
+      updatedAt
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+    }
+  }
+`;
+export const listMembers = /* GraphQL */ `
+  query ListMembers(
+    $filter: ModelMemberFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        username
+        role
+        createdAt
+        updatedAt
+        projects {
           nextToken
         }
       }
