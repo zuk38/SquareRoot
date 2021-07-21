@@ -12,7 +12,6 @@ export const onCreateConceptCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
@@ -57,7 +56,6 @@ export const onUpdateConceptCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
@@ -102,7 +100,6 @@ export const onDeleteConceptCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
@@ -147,7 +144,6 @@ export const onCreatePlantCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
@@ -202,7 +198,6 @@ export const onUpdatePlantCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
@@ -257,7 +252,6 @@ export const onDeletePlantCategory = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }

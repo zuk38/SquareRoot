@@ -8,7 +8,6 @@ export const getCategory = /* GraphQL */ `
       category_name
       header
       subheader
-      image
       plants {
         items {
           id
@@ -46,7 +45,6 @@ export const listCategorys = /* GraphQL */ `
         category_name
         header
         subheader
-        image
         plants {
           nextToken
         }
