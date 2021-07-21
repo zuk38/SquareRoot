@@ -105,3 +105,13 @@ export default class ConceptProvider extends Component {
 const ConceptConsumer = ConceptContext.Consumer;
 
 export { ConceptProvider, ConceptConsumer, ConceptContext };
+
+export function withConceptConsumer(Component) {
+  return function ConsumerWrapper(props) {
+    return (
+      <ConceptConsumer>
+        {(value) => <Component {...props} context={value} />}
+      </ConceptConsumer>
+    );
+  };
+}

@@ -1,63 +1,6 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getCategory = /* GraphQL */ `
-  query GetCategory($id: ID!) {
-    getCategory(id: $id) {
-      id
-      category_name
-      header
-      subheader
-      plants {
-        items {
-          id
-          plant_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      concepts {
-        items {
-          id
-          concept_ID
-          category_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listCategorys = /* GraphQL */ `
-  query ListCategorys(
-    $filter: ModelCategoryFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
-      nextToken
-    }
-  }
-`;
 export const getProject = /* GraphQL */ `
   query GetProject($id: ID!) {
     getProject(id: $id) {
@@ -382,6 +325,63 @@ export const listConcepts = /* GraphQL */ `
         plants {
           nextToken
         }
+      }
+      nextToken
+    }
+  }
+`;
+export const getCategory = /* GraphQL */ `
+  query GetCategory($id: ID!) {
+    getCategory(id: $id) {
+      id
+      category_name
+      header
+      subheader
+      plants {
+        items {
+          id
+          plant_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      concepts {
+        items {
+          id
+          concept_ID
+          category_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listCategorys = /* GraphQL */ `
+  query ListCategorys(
+    $filter: ModelCategoryFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listCategorys(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
       nextToken
     }

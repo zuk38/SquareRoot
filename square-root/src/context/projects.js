@@ -66,13 +66,13 @@ export default class ProjectProvider extends Component {
         query: listMembers,
       });
       members = data.listMembers.items;
-    } catch (err) {
-      console.log(err);
-    }
-    const found = members.find((el) => el.username === user.username);
+      const found = members.find((el) => el.username === user.username);
     if (found) {
       this.setState({currentMember: found.id})
       return;
+    }
+    } catch (err) {
+      console.log(err);
     }
 
     try {

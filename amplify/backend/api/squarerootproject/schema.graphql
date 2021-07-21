@@ -101,7 +101,17 @@ type Concept
 }
 
 type Category #rooftop, rainbed, etc.
-  @model(subscriptions: null) {
+  @model(subscriptions: null)
+  @auth(
+    rules: [
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read] }
+    ]
+  ) {
   id: ID!
   category_name: String!
   header: String
@@ -112,6 +122,16 @@ type Category #rooftop, rainbed, etc.
 
 type ConceptCategory  
   @model(queries: null)
+  @auth(
+    rules: [
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read] }
+    ]
+  )
   @key(name: "byConcept", fields: ["concept_ID", "category_ID"])
   @key(name: "byCategory", fields: ["category_ID", "concept_ID"]) {
   id: ID!
@@ -123,6 +143,16 @@ type ConceptCategory
 
 type PlantCategory  
   @model(queries: null)
+  @auth(
+    rules: [
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read] }
+    ]
+  )
   @key(name: "byPlant", fields: ["plant_ID", "category_ID"])
   @key(name: "byCategory", fields: ["category_ID", "plant_ID"]) {
   id: ID!
@@ -176,6 +206,16 @@ type Project
 
 type ProjectMember
 @model(queries: null)
+@auth(
+    rules: [
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read] }
+    ]
+  )
 @key(name: "byProject", fields: ["project_ID", "member_ID"])  
 @key(name: "byMember", fields: ["member_ID", "project_ID"]) {
   id: ID!
@@ -186,6 +226,16 @@ type ProjectMember
 }
 
 type Member
+  @auth(
+    rules: [
+      # allow admins to create, update and delete
+      { allow: groups, groups: ["Admin"] }
+      # allow all authenticated users to view
+      { allow: private, operations: [read] }
+      # allow all guest users (not authenticated) to view
+      { allow: public, operations: [read] }
+    ]
+  )
   @model {
   id: ID!
   username: String! #cognito ID

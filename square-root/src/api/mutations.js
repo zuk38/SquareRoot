@@ -688,20 +688,6 @@ export const createConceptCategory = /* GraphQL */ `
       id
       concept_ID
       category_ID
-      category {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
       concept {
@@ -722,6 +708,20 @@ export const createConceptCategory = /* GraphQL */ `
         plants {
           nextToken
         }
+      }
+      category {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -735,20 +735,6 @@ export const updateConceptCategory = /* GraphQL */ `
       id
       concept_ID
       category_ID
-      category {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
       concept {
@@ -769,6 +755,20 @@ export const updateConceptCategory = /* GraphQL */ `
         plants {
           nextToken
         }
+      }
+      category {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -782,20 +782,6 @@ export const deleteConceptCategory = /* GraphQL */ `
       id
       concept_ID
       category_ID
-      category {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
       concept {
@@ -817,18 +803,6 @@ export const deleteConceptCategory = /* GraphQL */ `
           nextToken
         }
       }
-    }
-  }
-`;
-export const createPlantCategory = /* GraphQL */ `
-  mutation CreatePlantCategory(
-    $input: CreatePlantCategoryInput!
-    $condition: ModelPlantCategoryConditionInput
-  ) {
-    createPlantCategory(input: $input, condition: $condition) {
-      id
-      plant_ID
-      category_ID
       category {
         id
         category_name
@@ -843,6 +817,18 @@ export const createPlantCategory = /* GraphQL */ `
         createdAt
         updatedAt
       }
+    }
+  }
+`;
+export const createPlantCategory = /* GraphQL */ `
+  mutation CreatePlantCategory(
+    $input: CreatePlantCategoryInput!
+    $condition: ModelPlantCategoryConditionInput
+  ) {
+    createPlantCategory(input: $input, condition: $condition) {
+      id
+      plant_ID
+      category_ID
       createdAt
       updatedAt
       plant {
@@ -873,6 +859,20 @@ export const createPlantCategory = /* GraphQL */ `
         concepts {
           nextToken
         }
+      }
+      category {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -886,20 +886,6 @@ export const updatePlantCategory = /* GraphQL */ `
       id
       plant_ID
       category_ID
-      category {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
       plant {
@@ -930,6 +916,20 @@ export const updatePlantCategory = /* GraphQL */ `
         concepts {
           nextToken
         }
+      }
+      category {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -943,20 +943,6 @@ export const deletePlantCategory = /* GraphQL */ `
       id
       plant_ID
       category_ID
-      category {
-        id
-        category_name
-        header
-        subheader
-        plants {
-          nextToken
-        }
-        concepts {
-          nextToken
-        }
-        createdAt
-        updatedAt
-      }
       createdAt
       updatedAt
       plant {
@@ -987,6 +973,20 @@ export const deletePlantCategory = /* GraphQL */ `
         concepts {
           nextToken
         }
+      }
+      category {
+        id
+        category_name
+        header
+        subheader
+        plants {
+          nextToken
+        }
+        concepts {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
