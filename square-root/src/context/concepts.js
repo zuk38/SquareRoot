@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { listCategorys } from "../api/conceptQueries"
+import { listCategorys, listConcepts } from "../api/conceptQueries"
 
 const ConceptContext = React.createContext();
 
@@ -34,26 +34,26 @@ export default class ConceptProvider extends Component {
   };
 
   fetchConcepts = async () => {
-    /*try {
+    console.log("lalalalaa")
+    try {
       const { data } = await API.graphql({
-        query: listGreenspaces,
+        query: listConcepts,
         authMode: "API_KEY",
       });
 
-      let greenspaces = this.formatData(data.listGreenspaces.items);
-      console.log(greenspaces)
-      let featuredGreenspaces = greenspaces.filter((greenspace) => greenspace.featured === true);
+      let concepts = data.listConcepts.items;
+      console.log(concepts)
+      /*let featuredGreenspaces = greenspaces.filter((greenspace) => greenspace.featured === true);
       
       this.setState({
         greenspaces,
         featuredGreenspaces,
         loading: false,
-      });
+      });*/
 
-      console.log(data);
     } catch (error) {
       console.log(error);
-    }*/
+    }
   };
 
   getCategory = (name) => {
