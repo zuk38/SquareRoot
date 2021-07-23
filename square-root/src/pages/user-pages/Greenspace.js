@@ -26,7 +26,7 @@ export default class Greenspace extends Component {
                             <div className="greensp-page">
                               <div class="p-header">
                                 <div class="p-column left">
-                                  <a href="/Dashboard" class="btn-back">
+                                  <a href="/dashboard" class="btn-back">
                                     <i class="fas fa-chevron-left"></i>
                                     {project.project_name}
                                   </a>

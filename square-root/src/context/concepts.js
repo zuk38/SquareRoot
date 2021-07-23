@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { getCategory, listCategorys } from "../api/queries"
+import { listCategorys } from "../api/conceptQueries"
 
 const ConceptContext = React.createContext();
 

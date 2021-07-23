@@ -88,7 +88,7 @@ type Concept
     ]
   ) {
   id: ID!
-  greenspace_id: ID!
+  greenspace_id: ID
   name: String!
   owner: String
   userDefined: Boolean

@@ -584,6 +584,7 @@ export const createCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -619,6 +620,7 @@ export const updateCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -654,6 +656,7 @@ export const deleteCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -714,6 +717,7 @@ export const createConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -761,6 +765,7 @@ export const updateConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -808,6 +813,7 @@ export const deleteConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -865,6 +871,7 @@ export const createPlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -922,6 +929,7 @@ export const updatePlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -979,6 +987,7 @@ export const deletePlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {

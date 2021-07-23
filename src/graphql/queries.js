@@ -295,6 +295,7 @@ export const getCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -332,6 +333,7 @@ export const listCategorys = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
