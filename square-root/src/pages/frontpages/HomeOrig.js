@@ -1,10 +1,10 @@
 import React from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
-import FeaturedGreenspaces from "../../components/FeaturedGreenspaces";
 import PartnerContainer from "../../components/PartnerContainer";
 import Grid from "../../components/Grid_2x2"
 import "../../styles/frontpages.css";
+import FeaturedConcepts from "../../components/FeturedConcepts";
 
 export default function Home(props) {
   const handleStart = () => {
@@ -51,7 +51,7 @@ export default function Home(props) {
 
       <Grid title="Trender og insentiver for urbane grøntområder"
                 grid_values={grid_values}/>
-      <FeaturedGreenspaces />
+      <FeaturedConcepts />
       <PartnerContainer />
     </div>
   );

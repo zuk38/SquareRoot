@@ -1,20 +1,20 @@
 import React, { Component } from "react";
 import { ConceptContext } from "../context/concepts";
-import Greenspace from "./Greenspace"
+import Concept from "./Concept"
 import Loading from "./Loading"
 
-export default class FeaturedGreenspaces extends Component {
+export default class FeaturedConcepts extends Component {
   static contextType = ConceptContext;
 
   render() {
-    /*let {loading, featuredGreenspaces : greenspaces} = this.context;
-    greenspaces = greenspaces.map((greenspace) => {
-      return <Greenspace key={greenspace.id} greenspace={greenspace} />
-    })*/
+    let {loading, featuredConcepts : concepts} = this.context;
+    concepts = concepts.map((concept) => {
+      return <Concept key={concept.id} concept={concept} />
+    })
 
     return <section className="featured-greenspaces">
       <div className="featured-rooms-center">
-        {/*loading ? <Loading/> : greenspaces*/}
+        {loading ? <Loading/> : concepts}
       </div>
     </section>;
   }

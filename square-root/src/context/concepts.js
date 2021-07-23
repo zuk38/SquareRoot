@@ -10,7 +10,7 @@ export default class ConceptProvider extends Component {
     featuredConcepts: [],
     categories: [],
     loadingCat: true,
-    loading: false,
+    loading: true,
   };
 
   fetchCategories = async () => {
@@ -34,7 +34,6 @@ export default class ConceptProvider extends Component {
   };
 
   fetchConcepts = async () => {
-    console.log("lalalalaa")
     try {
       const { data } = await API.graphql({
         query: listConcepts,
@@ -42,14 +41,12 @@ export default class ConceptProvider extends Component {
       });
 
       let concepts = data.listConcepts.items;
-      console.log(concepts)
-      /*let featuredGreenspaces = greenspaces.filter((greenspace) => greenspace.featured === true);
-      
+      let featuredConcepts = concepts.filter((concept) => concept.featured)
       this.setState({
-        greenspaces,
-        featuredGreenspaces,
-        loading: false,
-      });*/
+        concepts, 
+        featuredConcepts,
+        loading: false
+      })
 
     } catch (error) {
       console.log(error);
