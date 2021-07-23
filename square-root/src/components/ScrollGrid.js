@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom";
 export default function ScrollGrid({ title, categories }) {
   const history = useHistory();
   const redirectToGreenspace = (name) => {
-    history.push(`/categories${name.toLowerCase()}`);
+    history.push(`/categories/${name.toLowerCase()}`);
   };
 
   return (

@@ -59,6 +59,7 @@ export default class ConceptProvider extends Component {
   getCategory = (name) => {
     let tempCategories = [...this.state.categories]
     const category = tempCategories.find((category) => category.category_name === name);
+    console.log(category)
     return category;
   };
 
