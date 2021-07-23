@@ -18,7 +18,7 @@ export default class Categories_Content extends Component {
     let name = this.state.name;
     name = name.charAt(0).toUpperCase() + name.slice(1);
     const category = getCategory(name);
-    console.log(category);
+
     if (!category) {
       return (
         <div className="error">
