@@ -3,7 +3,7 @@ import "../../styles/frontpages.css";
 import { ConceptContext } from "../../context/concepts";
 import { Link } from "react-router-dom";
 
-export default class Categories_Content extends Component {
+export default class SingleCategory extends Component {
   constructor(props) {
     super(props);
     this.state = {

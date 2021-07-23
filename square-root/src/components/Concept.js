@@ -14,7 +14,7 @@ export default function Concept({ concept }) {
         <h1>{name.toUpperCase()}</h1>
         <p>{description}</p>
         <div className="hero-btns">
-          <Link to={`/greenspaces/${name}`}>
+          <Link to={`/concepts/${name}`}>
             <button className="button is-light">LEARN MORE</button>
           </Link>
 

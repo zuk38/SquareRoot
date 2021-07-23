@@ -4,6 +4,7 @@ import Banner from "../../components/Banner";
 import PartnerContainer from "../../components/PartnerContainer";
 import Grid from "../../components/Grid_2x2"
 import "../../styles/frontpages.css";
+import "../../styles/Home.css";
 import FeaturedConcepts from "../../components/FeturedConcepts";
 
 export default function Home(props) {

@@ -20,12 +20,12 @@ import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
 import Categories from "./pages/frontpages/Categories";
-import Categories_Content from "./pages/frontpages/Categories_Content";
+import SingleCategory from "./pages/frontpages/SingleCategory";
 import Footer from "./components/Footer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
-import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
+import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
@@ -81,8 +81,8 @@ class App extends Component {
             <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route
               exact
-              path="/greenspaces/:name"
-              render={(props) => <SingleGreenspace {...props} />}
+              path="/concepts/:name"
+              render={(props) => <SingleConcept {...props} />}
             />
 
             <Route
@@ -133,7 +133,7 @@ class App extends Component {
             <Route
               exact
               path="/categories/:name"
-              render={(props) => <Categories_Content {...props} />}
+              render={(props) => <SingleCategory {...props} />}
             />
 
             <PrivateRoute
