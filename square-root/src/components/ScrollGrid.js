@@ -23,7 +23,6 @@ export default function ScrollGrid({ title, categories }) {
                   onClick={() => redirectToGreenspace(category.category_name)}
                 >
                   <img src={category.image} />
-
                   <p>{category.category_name}</p>
                 </button>
               ))}

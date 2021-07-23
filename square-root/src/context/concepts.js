@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { listCategorys } from "../api/queries"
+import { getCategory, listCategorys } from "../api/queries"
 
 const ConceptContext = React.createContext();
 
@@ -56,12 +56,16 @@ export default class ConceptProvider extends Component {
     }*/
   };
 
+  getCategory = (name) => {
+    let tempCategories = [...this.state.categories]
+    const category = tempCategories.find((category) => category.category_name === name);
+    return category;
+  };
+
   getConcept = (name) => {
-    /*let tempGreenspaces = [...this.state.greenspaces];
-    const greenspace = tempGreenspaces.find(
-      (greenspace) => greenspace.name === name
-    );
-    return greenspace;*/
+    let tempConcepts = [...this.state.concepts]
+    const concept = tempConcepts.find((concept) => concept.name === name);
+    return concept;
   };
 
   formatData(items) {
@@ -94,6 +98,8 @@ export default class ConceptProvider extends Component {
       <ConceptContext.Provider
         value={{
           ...this.state,
+          getConcept: this.getConcept,
+          getCategory: this.getCategory
         }}
       >
         {this.props.children}

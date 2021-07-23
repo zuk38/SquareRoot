@@ -116,6 +116,7 @@ type Category #rooftop, rainbed, etc.
   category_name: String!
   subheader: String
   description: String
+  image: String
   plants: [PlantCategory] @connection(keyName: "byCategory", fields: ["id"])
   concepts: [ConceptCategory] @connection(keyName: "byCategory", fields: ["id"])
 }
