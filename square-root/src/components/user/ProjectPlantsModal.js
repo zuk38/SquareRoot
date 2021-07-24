@@ -16,7 +16,7 @@ export default function ProjectPlantsModal(props) {
     <Modal
       isOpen={props.modalOpen}
       onRequestClose={() => props.setModalOpen(false)}
-      className={"modal-orders"}
+      className={props.className}
     >
       <div className="o-modal-content">
         <h1 className="o-h1">
