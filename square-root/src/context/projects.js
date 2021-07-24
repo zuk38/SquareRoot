@@ -16,6 +16,7 @@ export default class ProjectProvider extends Component {
     projects: [],
     currentMember: null,
     loading: true,
+    members: [],
   };
 
   fetchProjects = async () => {
@@ -25,7 +26,7 @@ export default class ProjectProvider extends Component {
         query: listProjects,
         authMode: "AMAZON_COGNITO_USER_POOLS",
       });
-      const projects = data.listProjects.items;
+      const projects = this.formatData(data.listProjects.items);
       console.log(projects);
       this.setState({
         projects,
@@ -73,7 +74,7 @@ export default class ProjectProvider extends Component {
     let members, user;
     try {
       user = await Auth.currentAuthenticatedUser();
-      console.log(user)
+      console.log(user);
       const { data } = await API.graphql({
         query: listMembers,
       });
@@ -92,7 +93,7 @@ export default class ProjectProvider extends Component {
         id: uuidv4(),
         username: user.username,
         role: user.attributes["custom:role"],
-        name: user.attributes.name
+        name: user.attributes.name,
       };
       await API.graphql(
         graphqlOperation(createMember, {
@@ -103,6 +104,22 @@ export default class ProjectProvider extends Component {
     } catch (err) {
       console.log("error creating todo:", err);
     }
+  };
+
+  formatData = (items) => {
+    let tempItems = items.map((item) => {
+      let members = item.members.items.map((member) => {
+        let name = member.member.name;
+        let role = member.member.role;
+        let username = member.member.username;
+        let m = { name, username, role };
+        return m;
+      });
+      let greenspaces = item.greenspaces.items;
+      let project = { ...item, members, greenspaces };
+      return project;
+    });
+    return tempItems;
   };
 
   componentDidMount() {
