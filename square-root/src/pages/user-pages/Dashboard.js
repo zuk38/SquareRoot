@@ -1,14 +1,68 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import "./projects.css";
 import "../../styles/Customize.css";
 import icon from "../../images/proj_icon.png";
-import Modal from "react-modal";
-import { findCityFromZip } from "../../functions/apiCalls";
-import data from "../data.json";
 import LeftMenu from "../../components/user/LeftMenu";
-export default class All_Projects extends Component {
+import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
+import { ProjectContext } from "../../context/projects";
+
+export default class Dashboard extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      modalOpen: false,
+      projectName: this.props.match.params.name,
+    };
+  }
+
+  setModalOpen = (state) => {
+    this.setState({ modalOpen: state});
+  }
+
+  static contextType = ProjectContext;
+
+  render() {
+    const { getProject } = this.context;
+    const currentMember = this.context.currentMember;
+    console.log(currentMember);
+    const project = getProject(this.state.projectName);
+
+    if (!project || !currentMember) {
+      return (
+        <div className="error">
+          <h3> no such project could be found...</h3>
+          <Link to="/projects" className="btn-primary">
+            back to projects
+          </Link>
+        </div>
+      );
+    }
+
+    const { name } = project;
+
+    return (
+      <div className="p-row">
+        <LeftMenu {...this.props} />
+        <div className=".p-column right">
+          <div className="title-container-greenspace">
+            <div className="p-title">
+              <img className="project-icon" src={icon} alt="Prosjektikon" />
+              <h1 className="p-h1">{name}</h1>
+            </div>
+            <br />
+            <h2 className="p-h2">Rolle: {currentMember.role}</h2>
+          </div>
+        </div>
+      </div>
+    );
+  }
+}
+
+/*export default class All_Projects extends Component {
   /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/
-  state = {
+/*state = {
     modalOpen: false,
     name: "",
     description: "",
@@ -18,24 +72,8 @@ export default class All_Projects extends Component {
     error: "",
   };
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
-  };
-
-  closeModal = () => {
-    console.log(this.state);
-    this.setState({
-      modalOpen: false,
-      name: "",
-      description: "",
-      postalCode: "",
-      address: "",
-      city: "",
-    });
-  };
-
-  componentWillMount() {
-    Modal.setAppElement("body");
+  setModalOpen = (state) => {
+    this.setState({ modalOpen: state});
   }
 
   render() {
@@ -66,9 +104,8 @@ they should navigate through the menu, rather than us setting up another route f
 
         <br/>
 
-        */}
+        
             <div className="green-container">
-              {/*EVERY GREEN ITEM SHOULD BE A BUTTON*/}
               <button onClick={this.openModal} className="btn-dash-greenspace">
                 <div className="green-item">
                   <img
@@ -121,7 +158,7 @@ they should navigate through the menu, rather than us setting up another route f
                 </div>
               </button>
 
-              <button onClick={this.openModal} className="btn-dash-greenspace">
+              <button onClick={() => this.setModalOpen(true)} className="btn-dash-greenspace">
                 <div className="green-item">
                   <img
                     src={"../../../images/musa.png"}
@@ -133,145 +170,11 @@ they should navigate through the menu, rather than us setting up another route f
                   </div>
                 </div>
               </button>
-
-              <Modal
-                isOpen={this.state.modalOpen}
-                onRequestClose={this.closeModal}
-                className={"modal-dashboard"}
-              >
-                <button
-                  onClick={this.closeModal}
-                  className="btn-modal-close"
-                  alt="Lukk"
-                >
-                  <i class="fas fa-times fa-lg"></i>
-                </button>
-                <div className="d-modal-content">
-                  <h1 className="p-h1">Oslo Takterrasse</h1>{" "}
-                  {/*greenspace_name*/}
-                  <br />
-                  <div className="d-modal-container">
-                    <table className="d-table">
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-lucifer.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Crocosmia Lucifer</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-falcatum.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Cyrtomium Falcatum</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">6 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-belladonna.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Delpinium Belladonna</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-tomatosoup.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Echinacea 'Tomato Soup'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-purpurea.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">
-                          Echinacea Purpurea 'tiki torch'
-                        </td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">2 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-bremen.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Gaillardia 'Bremen'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">7 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-woblitz.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Galium Odoratum 'Woblitz'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">1 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-thomson.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Geranium 'Anne Thomson'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">4 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-helenium.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">
-                          Helenium 'Sahins Early Flowerer'
-                        </td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                    </table>
-                  </div>
-                  <div className="modal-btns-footer">
-                    <a href="/customize">
-                      <button
-                        className="orders-btn-close"
-                        onClick={this.closeModal}
-                        alt="Lukk"
-                      >
-                        TILPASS
-                      </button>
-                    </a>
-                    <button
-                      className="orders-btn-save"
-                      onClick={this.closeModal}
-                      alt="Lagre"
-                    >
-                      BESTILL
-                    </button>
-                  </div>
-                </div>
-              </Modal>
+              <ProjectPlantsModal modalOpen={this.state.modalOpen} setModalOpen={(value) => this.setModalOpen(value)} />
             </div>
           </div>
         </div>
       </div>
     );
   }
-}
+}*/

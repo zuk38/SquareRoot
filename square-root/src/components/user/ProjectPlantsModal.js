@@ -1,11 +1,16 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
 
-export default function ProjectPlantsModal({ props, plants }) {
+export default function ProjectPlantsModal(props) {
 
   useEffect(() => {
     Modal.setAppElement("body");
   }, [])
+
+  let plantsNumber;
+
+  if (!props.plants || !props.plants.length) plantsNumber = 0
+  else plantsNumber = props.plants.length
 
   return (
     <Modal
@@ -15,12 +20,12 @@ export default function ProjectPlantsModal({ props, plants }) {
     >
       <div className="o-modal-content">
         <h1 className="o-h1">
-          Det er <strong>12</strong> {/*GET ITEM NUMBERS*/}planter i Oslo
-          Takterrasse{/*GET GREENSPACE NAME*/}{" "}
+          Det er <strong>{plantsNumber}</strong> {/*GET ITEM NUMBERS*/}planter i {props.name}{" "}
         </h1>
         <div className="o-modal-container">
           <table className="modal-list">
-            {plants.map((plant) => (
+            {props.plants ? 
+            props.plants.map((plant) => (
               <tr>
                 <td className="o-modal-img">
                   <img src={plant.image} alt={plant.name} />
@@ -30,7 +35,7 @@ export default function ProjectPlantsModal({ props, plants }) {
                   <i class="fas fa-times fa-lg" />
                 </td>
               </tr>
-            ))}
+            )) : <td>No plants</td>}
           </table>
         </div>
 
