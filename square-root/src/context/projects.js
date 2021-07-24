@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { Auth, API, graphqlOperation } from "aws-amplify";
-import { listMembers, listProjects } from "../api/queries";
-//import { listProjects } from "../api/projectQueries";
+import { listMembers } from "../api/queries";
+import { listProjects } from "../api/projectQueries";
 import { v4 as uuidv4 } from "uuid";
 import { createProject, createMember, createProjectMember } from "../api/mutations";
 
