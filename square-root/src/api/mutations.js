@@ -584,6 +584,7 @@ export const createCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -619,6 +620,7 @@ export const updateCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -654,6 +656,7 @@ export const deleteCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -714,6 +717,7 @@ export const createConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -761,6 +765,7 @@ export const updateConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -808,6 +813,7 @@ export const deleteConceptCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -865,6 +871,7 @@ export const createPlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -922,6 +929,7 @@ export const updatePlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -979,6 +987,7 @@ export const deletePlantCategory = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -1100,6 +1109,16 @@ export const createProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -1109,16 +1128,6 @@ export const createProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -1140,6 +1149,16 @@ export const updateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -1149,16 +1168,6 @@ export const updateProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -1180,6 +1189,16 @@ export const deleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -1189,16 +1208,6 @@ export const deleteProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -1224,12 +1233,12 @@ export const createProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
+        members {
+          nextToken
+        }
         createdAt
         updatedAt
         greenspaces {
-          nextToken
-        }
-        members {
           nextToken
         }
       }
@@ -1239,11 +1248,11 @@ export const createProjectMember = /* GraphQL */ `
         id
         username
         role
-        createdAt
-        updatedAt
         projects {
           nextToken
         }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -1265,12 +1274,12 @@ export const updateProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
+        members {
+          nextToken
+        }
         createdAt
         updatedAt
         greenspaces {
-          nextToken
-        }
-        members {
           nextToken
         }
       }
@@ -1280,11 +1289,11 @@ export const updateProjectMember = /* GraphQL */ `
         id
         username
         role
-        createdAt
-        updatedAt
         projects {
           nextToken
         }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -1306,12 +1315,12 @@ export const deleteProjectMember = /* GraphQL */ `
         postalCode
         end_date
         owner
+        members {
+          nextToken
+        }
         createdAt
         updatedAt
         greenspaces {
-          nextToken
-        }
-        members {
           nextToken
         }
       }
@@ -1321,11 +1330,11 @@ export const deleteProjectMember = /* GraphQL */ `
         id
         username
         role
-        createdAt
-        updatedAt
         projects {
           nextToken
         }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -1339,8 +1348,6 @@ export const createMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -1351,6 +1358,8 @@ export const createMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1363,8 +1372,6 @@ export const updateMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -1375,6 +1382,8 @@ export const updateMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1387,8 +1396,6 @@ export const deleteMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -1399,6 +1406,8 @@ export const deleteMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;

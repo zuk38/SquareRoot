@@ -192,6 +192,8 @@ type Project
     rules: [
       # allow owners of the project to create, update and delete their projects
       { allow: owner }
+      # allow members
+      { allow: groups, groupsField: "members", operations: [read, update]}
     ]
   ) {
   id: ID!
@@ -212,9 +214,7 @@ type ProjectMember
       # allow admins to create, update and delete
       { allow: groups, groups: ["Admin"] }
       # allow all authenticated users to view
-      { allow: private, operations: [read] }
-      # allow all guest users (not authenticated) to view
-      { allow: public, operations: [read] }
+      { allow: private }
     ]
   )
 @key(name: "byProject", fields: ["project_ID", "member_ID"])  

@@ -11,6 +11,16 @@ export const onCreateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -20,16 +30,6 @@ export const onCreateProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -48,6 +48,16 @@ export const onUpdateProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -57,16 +67,6 @@ export const onUpdateProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -85,6 +85,16 @@ export const onDeleteProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -99,15 +109,119 @@ export const onDeleteProject = /* GraphQL */ `
         }
         nextToken
       }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
+    }
+  }
+`;
+export const onCreateProjectMember = /* GraphQL */ `
+  subscription OnCreateProjectMember {
+    onCreateProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
         }
-        nextToken
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      createdAt
+      updatedAt
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+export const onUpdateProjectMember = /* GraphQL */ `
+  subscription OnUpdateProjectMember {
+    onUpdateProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      createdAt
+      updatedAt
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+    }
+  }
+`;
+export const onDeleteProjectMember = /* GraphQL */ `
+  subscription OnDeleteProjectMember {
+    onDeleteProjectMember {
+      id
+      project_ID
+      member_ID
+      project {
+        id
+        name
+        address
+        city
+        postalCode
+        end_date
+        owner
+        members {
+          nextToken
+        }
+        createdAt
+        updatedAt
+        greenspaces {
+          nextToken
+        }
+      }
+      createdAt
+      updatedAt
+      member {
+        id
+        username
+        role
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
       }
     }
   }
@@ -595,128 +709,12 @@ export const onDeletePlantCategory = /* GraphQL */ `
     }
   }
 `;
-export const onCreateProjectMember = /* GraphQL */ `
-  subscription OnCreateProjectMember {
-    onCreateProjectMember {
-      id
-      project_ID
-      member_ID
-      project {
-        id
-        name
-        address
-        city
-        postalCode
-        end_date
-        owner
-        createdAt
-        updatedAt
-        greenspaces {
-          nextToken
-        }
-        members {
-          nextToken
-        }
-      }
-      createdAt
-      updatedAt
-      member {
-        id
-        username
-        role
-        createdAt
-        updatedAt
-        projects {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const onUpdateProjectMember = /* GraphQL */ `
-  subscription OnUpdateProjectMember {
-    onUpdateProjectMember {
-      id
-      project_ID
-      member_ID
-      project {
-        id
-        name
-        address
-        city
-        postalCode
-        end_date
-        owner
-        createdAt
-        updatedAt
-        greenspaces {
-          nextToken
-        }
-        members {
-          nextToken
-        }
-      }
-      createdAt
-      updatedAt
-      member {
-        id
-        username
-        role
-        createdAt
-        updatedAt
-        projects {
-          nextToken
-        }
-      }
-    }
-  }
-`;
-export const onDeleteProjectMember = /* GraphQL */ `
-  subscription OnDeleteProjectMember {
-    onDeleteProjectMember {
-      id
-      project_ID
-      member_ID
-      project {
-        id
-        name
-        address
-        city
-        postalCode
-        end_date
-        owner
-        createdAt
-        updatedAt
-        greenspaces {
-          nextToken
-        }
-        members {
-          nextToken
-        }
-      }
-      createdAt
-      updatedAt
-      member {
-        id
-        username
-        role
-        createdAt
-        updatedAt
-        projects {
-          nextToken
-        }
-      }
-    }
-  }
-`;
 export const onCreateMember = /* GraphQL */ `
   subscription OnCreateMember {
     onCreateMember {
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -727,6 +725,8 @@ export const onCreateMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -736,8 +736,6 @@ export const onUpdateMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -748,6 +746,8 @@ export const onUpdateMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -757,8 +757,6 @@ export const onDeleteMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -769,6 +767,8 @@ export const onDeleteMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;

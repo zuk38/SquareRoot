@@ -11,6 +11,16 @@ export const getProject = /* GraphQL */ `
       postalCode
       end_date
       owner
+      members {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
       createdAt
       updatedAt
       greenspaces {
@@ -20,16 +30,6 @@ export const getProject = /* GraphQL */ `
           name
           description
           owner
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      members {
-        items {
-          id
-          project_ID
-          member_ID
           createdAt
           updatedAt
         }
@@ -53,12 +53,12 @@ export const listProjects = /* GraphQL */ `
         postalCode
         end_date
         owner
+        members {
+          nextToken
+        }
         createdAt
         updatedAt
         greenspaces {
-          nextToken
-        }
-        members {
           nextToken
         }
       }
@@ -295,6 +295,7 @@ export const getCategory = /* GraphQL */ `
       category_name
       subheader
       description
+      image
       createdAt
       updatedAt
       concepts {
@@ -332,6 +333,7 @@ export const listCategorys = /* GraphQL */ `
         category_name
         subheader
         description
+        image
         createdAt
         updatedAt
         concepts {
@@ -403,8 +405,6 @@ export const getMember = /* GraphQL */ `
       id
       username
       role
-      createdAt
-      updatedAt
       projects {
         items {
           id
@@ -415,6 +415,8 @@ export const getMember = /* GraphQL */ `
         }
         nextToken
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -429,11 +431,11 @@ export const listMembers = /* GraphQL */ `
         id
         username
         role
-        createdAt
-        updatedAt
         projects {
           nextToken
         }
+        createdAt
+        updatedAt
       }
       nextToken
     }
