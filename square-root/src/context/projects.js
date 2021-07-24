@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { Auth, API, graphqlOperation } from "aws-amplify";
-import { listProjects, listMembers } from "../api/queries";
+import { listMembers, listProjects } from "../api/queries";
+//import { listProjects } from "../api/projectQueries";
 import { v4 as uuidv4 } from "uuid";
 import { createProject, createMember, createProjectMember } from "../api/mutations";
 
@@ -59,9 +60,9 @@ export default class ProjectProvider extends Component {
   };
 
   createMember = async () => {
-    let members;
-    const user = await Auth.currentAuthenticatedUser();
+    let members, user;
     try {
+      user = await Auth.currentAuthenticatedUser();
       const { data } = await API.graphql({
         query: listMembers,
       });
