@@ -1,7 +1,12 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Modal from "react-modal";
 
 export default function ProjectPlantsModal({ props, plants }) {
+
+  useEffect(() => {
+    Modal.setAppElement("body");
+  }, [])
+
   return (
     <Modal
       isOpen={props.modalOpen}

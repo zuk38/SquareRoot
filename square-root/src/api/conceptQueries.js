@@ -108,6 +108,7 @@ export const listConcepts = /* GraphQL */ `
         updatedAt
         plants {
           items {
+            quantity
             plant {
               metadata {
                 norwegian_name

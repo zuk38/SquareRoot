@@ -35,8 +35,6 @@ class IndoorExample extends Component {
   }
 
   render() {
-    const { items } = this.state;
-
     return (
       <div>
         <div className="greenspace">
@@ -125,7 +123,7 @@ class IndoorExample extends Component {
                     return (
                       <div key={i}>
                         <div className="desc">
-                          <h4 className="h4">{desc.name}</h4>
+                          <h4 className="h4">Description</h4>
                           <div className="desc_info">{desc.info} </div>
                         </div>
                       </div>
