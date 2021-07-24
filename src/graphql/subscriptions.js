@@ -135,18 +135,19 @@ export const onCreateProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -173,18 +174,19 @@ export const onUpdateProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -211,18 +213,85 @@ export const onDeleteProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onCreateMember = /* GraphQL */ `
+  subscription OnCreateMember {
+    onCreateMember {
+      id
+      username
+      role
+      name
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onUpdateMember = /* GraphQL */ `
+  subscription OnUpdateMember {
+    onUpdateMember {
+      id
+      username
+      role
+      name
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const onDeleteMember = /* GraphQL */ `
+  subscription OnDeleteMember {
+    onDeleteMember {
+      id
+      username
+      role
+      name
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -706,69 +775,6 @@ export const onDeletePlantCategory = /* GraphQL */ `
           nextToken
         }
       }
-    }
-  }
-`;
-export const onCreateMember = /* GraphQL */ `
-  subscription OnCreateMember {
-    onCreateMember {
-      id
-      username
-      role
-      projects {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onUpdateMember = /* GraphQL */ `
-  subscription OnUpdateMember {
-    onUpdateMember {
-      id
-      username
-      role
-      projects {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const onDeleteMember = /* GraphQL */ `
-  subscription OnDeleteMember {
-    onDeleteMember {
-      id
-      username
-      role
-      projects {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
     }
   }
 `;

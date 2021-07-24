@@ -1242,18 +1242,19 @@ export const createProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1283,18 +1284,19 @@ export const updateProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1324,18 +1326,19 @@ export const deleteProjectMember = /* GraphQL */ `
           nextToken
         }
       }
-      createdAt
-      updatedAt
       member {
         id
         username
         role
+        name
         projects {
           nextToken
         }
         createdAt
         updatedAt
       }
+      createdAt
+      updatedAt
     }
   }
 `;
@@ -1348,6 +1351,7 @@ export const createMember = /* GraphQL */ `
       id
       username
       role
+      name
       projects {
         items {
           id
@@ -1372,6 +1376,7 @@ export const updateMember = /* GraphQL */ `
       id
       username
       role
+      name
       projects {
         items {
           id
@@ -1396,6 +1401,7 @@ export const deleteMember = /* GraphQL */ `
       id
       username
       role
+      name
       projects {
         items {
           id

@@ -31,6 +31,7 @@ export const listProjects = /* GraphQL */ `
             member {
               username
               role
+              name
             }
           }
         }

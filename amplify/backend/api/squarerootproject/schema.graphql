@@ -231,16 +231,15 @@ type Member
     rules: [
       # allow admins to create, update and delete
       { allow: groups, groups: ["Admin"] }
-      # allow all authenticated users to view
-      { allow: private, operations: [read] }
-      # allow all guest users (not authenticated) to view
-      { allow: public, operations: [read] }
+      # allow all authenticated users
+      { allow: private }
     ]
   )
   @model {
   id: ID!
   username: String! #cognito ID
   role: String! #cognito custom:role
+  name: String!
   projects: [ProjectMember] @connection(keyName: "byMember", fields: ["id"])
 }
 

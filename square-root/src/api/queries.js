@@ -66,6 +66,50 @@ export const listProjects = /* GraphQL */ `
     }
   }
 `;
+export const getMember = /* GraphQL */ `
+  query GetMember($id: ID!) {
+    getMember(id: $id) {
+      id
+      username
+      role
+      name
+      projects {
+        items {
+          id
+          project_ID
+          member_ID
+          createdAt
+          updatedAt
+        }
+        nextToken
+      }
+      createdAt
+      updatedAt
+    }
+  }
+`;
+export const listMembers = /* GraphQL */ `
+  query ListMembers(
+    $filter: ModelMemberFilterInput
+    $limit: Int
+    $nextToken: String
+  ) {
+    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
+      items {
+        id
+        username
+        role
+        name
+        projects {
+          nextToken
+        }
+        createdAt
+        updatedAt
+      }
+      nextToken
+    }
+  }
+`;
 export const getPlantMetadata = /* GraphQL */ `
   query GetPlantMetadata($id: ID!) {
     getPlantMetadata(id: $id) {
@@ -394,48 +438,6 @@ export const listGreenspaces = /* GraphQL */ `
         concepts {
           nextToken
         }
-      }
-      nextToken
-    }
-  }
-`;
-export const getMember = /* GraphQL */ `
-  query GetMember($id: ID!) {
-    getMember(id: $id) {
-      id
-      username
-      role
-      projects {
-        items {
-          id
-          project_ID
-          member_ID
-          createdAt
-          updatedAt
-        }
-        nextToken
-      }
-      createdAt
-      updatedAt
-    }
-  }
-`;
-export const listMembers = /* GraphQL */ `
-  query ListMembers(
-    $filter: ModelMemberFilterInput
-    $limit: Int
-    $nextToken: String
-  ) {
-    listMembers(filter: $filter, limit: $limit, nextToken: $nextToken) {
-      items {
-        id
-        username
-        role
-        projects {
-          nextToken
-        }
-        createdAt
-        updatedAt
       }
       nextToken
     }
