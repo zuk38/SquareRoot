@@ -13,7 +13,6 @@ import Error from "./pages/Error";
 import All_Projects from "./pages/user-pages/All_Projects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
-import Members from "./pages/user-pages/Members";
 import Orders from "./pages/user-pages/Orders";
 import Settings from "./pages/user-pages/Settings";
 import Customize from "./pages/greenspaces/Customize";
@@ -155,20 +154,6 @@ class App extends Component {
               auth={authProps}
               path="/greenspace"
               component={Greenspace}
-            />
-
-            <PrivateRoute
-              authed={isAuthenticated}
-              auth={authProps}
-              path="/members/:name"
-              component={Members}
-            />
-
-            <PrivateRoute
-              authed={isAuthenticated}
-              auth={authProps}
-              path="/orders/:name"
-              component={Orders}
             />
 
             <PrivateRoute

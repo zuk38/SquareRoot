@@ -214,7 +214,7 @@ a.btn-back:hover {
   margin-top: 20%;
 }
 
-.menu-vertical a {
+.menu-vertical p {
   color: black; /* Black text color */
   display: block; /* Make the links appear below each other */
   padding: 12px; /* Add some padding */
@@ -222,12 +222,13 @@ a.btn-back:hover {
   border-radius: 5px;
 }
 
-.menu-vertical a:hover {
+.menu-vertical p:hover {
   background-color: #e0e0e0; /* Dark grey background on mouse-over */
   font-weight: 500;
+  cursor: pointer;
 }
 
-.menu-vertical a.active {
+.menu-vertical p.active {
   background-color: var(--mainGreen);
   font-weight: 500;
 }

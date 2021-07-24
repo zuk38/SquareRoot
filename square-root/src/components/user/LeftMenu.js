@@ -39,14 +39,14 @@ export default function LeftMenu(props) {
         </a>
         <div className="menu-vertical">
           {locations.map((location, index) => (
-            <NavLink
+            <p
               key={index}
-              to={location.pahtname + resultAfter}
-              exact={true}
+              className={props.currentPage === location.pahtname ? "active" : ""}
+              onClick={() => props.setCurrentPage(location.pahtname)}
             >
               <i className={location.icon} />
               {location.display}
-            </NavLink>
+            </p>
           ))}
         </div>
       </div>
