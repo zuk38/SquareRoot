@@ -10,7 +10,7 @@ import Home from "./pages/frontpages/HomeOrig";
 import Plants from "./pages/Plants";
 import PN from "./pages/PN";
 import Error from "./pages/Error";
-import All_Projects from "./pages/user-pages/All_Projects";
+import AllProjects from "./pages/user-pages/AllProjects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
 import Orders from "./pages/user-pages/Orders";
@@ -139,7 +139,7 @@ class App extends Component {
               authed={isAuthenticated}
               auth={authProps}
               path="/projects"
-              component={All_Projects}
+              component={AllProjects}
             />
 
             <PrivateRoute 

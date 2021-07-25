@@ -287,6 +287,7 @@ a.btn-back:hover {
   width: 80%;
   margin: auto;
 }
+
 .p-lbl {
   float: left;
   font-weight: 400px;
@@ -342,6 +343,15 @@ a.btn-back:hover {
   border: none;
   padding: 10px 10px;
   cursor: pointer;
+}
+
+.project-modal-btn {
+  width: 60%;
+}
+
+.p-btn-create {
+  width: 100%;
+  margin-top: 20px
 }
 
 /* DASHBOARD */
@@ -546,15 +556,6 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background-color: #6ba3fa;
-}
-
-.settings-lbl {
-  padding: 10px;
-}
-
-.settings-p {
-  padding: 2px;
-  font-size: 20px;
 }
 
 /*ACCOUNT*/

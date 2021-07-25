@@ -7,6 +7,7 @@ import {
   createProject,
   createMember,
   createProjectMember,
+  updateProject,
 } from "../api/mutations";
 
 const ProjectContext = React.createContext();
@@ -61,6 +62,39 @@ export default class ProjectProvider extends Component {
       );
     } catch (err) {
       console.log("error creating todo:", err);
+    }
+  };
+
+  removeEmpty = (obj) => {
+    let newObj = {};
+    Object.keys(obj).forEach((key) => {
+      if (obj[key] === Object(obj[key]))
+        newObj[key] = this.removeEmpty(obj[key]);
+      else if (obj[key] !== undefined) newObj[key] = obj[key];
+    });
+    return newObj;
+  };
+
+  updateProject = async (project_id, values) => {
+    console.log(values);
+    try {
+      let projectDetails = {
+        name: values.name,
+        postalCode: values.zip,
+        city: values.city,
+        address: values.address,
+      };
+
+      this.removeEmpty(projectDetails);
+
+      await API.graphql(
+        graphqlOperation(updateProject, {
+          input: { id: project_id, ...projectDetails },
+        })
+      );
+      
+    } catch (err) {
+      console.log("error updating todo:", err);
     }
   };
 
@@ -135,6 +169,7 @@ export default class ProjectProvider extends Component {
           fetchProjects: this.fetchProjects,
           createProject: this.createNewProject,
           getProject: this.getProject,
+          updateProject: this.updateProject,
         }}
       >
         {this.props.children}

@@ -4,7 +4,7 @@ import { useHistory } from "react-router-dom";
 
 export default function ScrollGrid({ title, categories }) {
   const history = useHistory();
-  const redirectToGreenspace = (name) => {
+  const redirectToCategory = (name) => {
     history.push(`/categories/${name.toLowerCase()}`);
   };
 
@@ -20,7 +20,7 @@ export default function ScrollGrid({ title, categories }) {
                 <button
                   key={index}
                   className="item-portrait zoom-on-hover"
-                  onClick={() => redirectToGreenspace(category.category_name)}
+                  onClick={() => redirectToCategory(category.category_name)}
                 >
                   <img src={category.image} />
                   <p>{category.category_name}</p>

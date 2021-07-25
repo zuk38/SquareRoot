@@ -7,8 +7,9 @@ import ProjectsContainer from "../../components/user/ProjectsContainer";
 import { withProjectConsumer } from "../../context/projects";
 import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/CreateProjectValidation";
+import ProjectForm from "../../components/user/ProjectForm";
 
-function All_Projects(props) {
+function AllProjects(props) {
   useEffect(() => {
     if (props.location.state && props.location.state.modalOpen)
       setModalOpen(true);
@@ -67,67 +68,7 @@ function All_Projects(props) {
             <h1 className="p-h1">La oss lage et økosystem</h1>
             <br />
             <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
-            <form>
-              <div className="p-inputBox">
-                <label className="p-lbl">Navn</label>
-                <input
-                  type="text"
-                  name="name"
-                  placeholder="Prosjektets navn.."
-                  className="p-inp-text p-text-input"
-                  value={values.name || ""}
-                  onChange={handleChange}
-                />
-                {errors.name && <p className="help is-danger">{errors.name}</p>}
-                <label className="p-lbl">Adresse</label>
-                <input
-                  type="text"
-                  name="address"
-                  placeholder="Prosjektets adresse.."
-                  className="p-inp-text p-text-input"
-                  value={values.address || ""}
-                  onChange={handleChange}
-                />
-                {errors.address && (
-                  <p className="help is-danger">{errors.address}</p>
-                )}
-                <div className="p-flex">
-                  <div className="p-classFlex">
-                    <label className="p-lblFlex">PostNr</label>
-                    <input
-                      type="text"
-                      name="zip"
-                      className="p-input-inline p-text-input"
-                      pattern="[0-9]{4}"
-                      value={values.zip || ""}
-                      onChange={handleChange}
-                    />
-                    {errors.zip && (
-                      <p className="help is-danger">{errors.zip}</p>
-                    )}
-                  </div>
-                  <div className="p-classFlex">
-                    <label className="p-lblFlex">Poststed</label>
-                    <input
-                      type="text"
-                      className="p-input-inline p-text-input"
-                      value={values.city || ""}
-                      disabled
-                      onChange={handleChange}
-                    />
-                  </div>
-                </div>
-              </div>
-              <div className="p-btn-create">
-                <button
-                  type="button"
-                  className="btn-modal-create-p"
-                  onClick={handleSubmit}
-                >
-                  OPPRETT PROSJEKT
-                </button>
-              </div>
-            </form>
+            <ProjectForm handleChange={handleChange} handleSubmit={handleSubmit} values={values} errors={errors} />
           </div>
         </Modal>
         <br></br>
@@ -142,4 +83,4 @@ function All_Projects(props) {
   );
 }
 
-export default withProjectConsumer(All_Projects);
+export default withProjectConsumer(AllProjects);

@@ -22,7 +22,6 @@ const useForm = (callback, validate, action) => {
   }, [errors]);
 
   useEffect(() => {
-    console.log(errors)
     if (triedSubmitting) setErrors(validate(values, edit)); //update errors every time values change
   }, [values]);
 
@@ -40,7 +39,6 @@ const useForm = (callback, validate, action) => {
 
   const handleChange = (event) => {
     event.persist();
-    console.log(event.target.name);
     setValues((values) => ({
       ...values,
       [event.target.name]: event.target.value,
@@ -49,7 +47,6 @@ const useForm = (callback, validate, action) => {
       ...values,
       cognito: null,
     })); //update
-    console.log(values);
     setIsSubmitting(false);
   };
 

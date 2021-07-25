@@ -1,168 +1,198 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./projects.css";
 import "../../styles/Customize.css";
 import LeftMenu from "../../components/user/LeftMenu";
 import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
-import { ProjectContext } from "../../context/projects";
 import GreenspaceMiniature from "../../components/user/GreenspaceMiniature";
 import icon from "../../images/proj_icon.png";
+import { findCityFromZip } from "../../functions/apiCalls";
+import { withProjectConsumer } from "../../context/projects";
+import useForm from "../../components/hooks/useForm";
+import validate from "../../components/utility/EditAccountValidation";
+import ProjectForm from "../../components/user/ProjectForm";
+import AuthModal from "../../components/login/AuthModal";
+import { useHistory } from "react-router-dom";
 
-export default class Dashboard extends Component {
-  constructor(props) {
-    super(props);
+function Dashboard(props) {
+  const history = useHistory();
+  const projectName = props.match.params.name;
+  const [currentPage, setCurrentPage] = useState("/dashboard");
+  const { getProject, updateProject } = props.context;
+  const currentMember = props.context.currentMember;
+  const project = getProject(projectName);
+  const [showModal, setShowModal] = useState(false);
+  const [nameChanged, setNameChanged] = useState(false)
 
-    this.state = {
-      modalOpen: false,
-      projectName: this.props.match.params.name,
-      currentPage: "/dashboard",
-    };
+  const { values, errors, handleChange, handleSubmit, setCity } = useForm(
+    callback,
+    validate,
+    update
+  );
+
+  const [editMode, setEditMode] = useState({
+    zipMode: false,
+    nameMode: false,
+    addressMode: false,
+  });
+
+  useEffect(() => {
+    if (!values.zip || values.zip === "") return;
+    if (values.zip.length == 4) {
+      findCityFromZip(values.zip).then((response) => {
+        setCity(response);
+      });
+    }
+  }, [values.zip]);
+
+  function callback() {
+    setShowModal(true);
+    if (editMode.nameMode) setNameChanged(true);
+    setEditMode({
+      zipMode: false,
+      nameMode: false,
+      addressMode: false,
+    });
   }
 
-  setModalOpen = (state) => {
-    this.setState({ modalOpen: state });
-  };
+  async function update() {
+    //form validated
+    await updateProject(project.id, values);
+  }
 
-  setCurrentPage = (page) => {
-    this.setState({ currentPage: page });
-  };
+  const closeModal = () => {
+    setShowModal(false);
+    console.log(nameChanged)
 
-  static contextType = ProjectContext;
-
-  render() {
-    const { getProject } = this.context;
-    const currentMember = this.context.currentMember;
-    const project = getProject(this.state.projectName);
-    console.log(project);
-
-    if (!project || !currentMember) {
-      return (
-        <div className="error">
-          <h3> no such project could be found...</h3>
-          <Link to="/projects" className="btn-primary">
-            back to projects
-          </Link>
-        </div>
-      );
+    if (nameChanged) {
+      console.log(values.name)
+     window.open("/projects", "_self")
     }
+  }
 
-    const { name, greenspaces, members } = project;
-
+  if (!project || !currentMember) {
     return (
-      <div className="p-row">
-        <LeftMenu
-          {...this.props}
-          currentPage={this.state.currentPage}
-          setCurrentPage={this.setCurrentPage}
-        />
-        <div className=".p-column right">
-          <div className="title-container-greenspace">
-            <div className="p-title">
-              <img className="project-icon" src={icon} alt="Prosjektikon" />
-              <h1 className="p-h1">{name}</h1>
-            </div>
-            <br />
-            <h2 className="p-h2">Rolle: {currentMember.role}</h2>
-            {/* --- REMOVING "ADD GREENSPACE" BUTTON ---
-B/c: The user should understand that in order to add greenspace/plant, 
-they should navigate through the menu, rather than us setting up another route for them to take.
-           
-<button className="btn-new-greenspace">
-                <i class="fas fa-plus"></i>Legg til grøntområde
-            </button>
-    </div>*/}
-          </div>
-          <br />
-          {
-            {
-              "/dashboard": greenspaces.map((greenspace) => (
-                <>
-                  <GreenspaceMiniature
-                    greenspace={greenspace}
-                    openModal={() => this.setModalOpen(true)}
-                  />
-                  <ProjectPlantsModal
-                    modalOpen={this.state.modalOpen}
-                    setModalOpen={(value) => this.setModalOpen(value)}
-                    className="modal-dashboard"
-                    name={greenspace.name}
-                  />
-                </>
-              )),
-              "/members": (
-                <>
-                  <div className="p-container">
-                    <button className="btn-p-invite">
-                      <i className="fas fa-user-plus"></i>Inviter medlemmer
-                    </button>
-                  </div>
-                  <table className="p-table">
-                    <tbody>
-                      {members.map((member) => (
-                        <tr>
-                          <td className="p-td">{member.name}</td>
-                          <td className="p-td">{member.role}</td>
-                        </tr>
-                      ))}
-                    </tbody>
-                  </table>
-                </>
-              ),
-              "/settings": (
-                <div className="settings-container">
-                  <form>
-                    <fieldset>
-                      <label className="settings-lbl">
-                        <p className="settings-p">Prosjektnavn</p>
-                        <input
-                          name="project_name"
-                          type="text"
-                          className="p-text-input"
-                          placeholder="Navn..."
-                        />
-                      </label>
-                      <label className="settings-lbl">
-                        <p className="settings-p">Adresse</p>
-                        <input
-                          name="project_name"
-                          type="text"
-                          placeholder="Gatenavn..."
-                          className="p-text-input"
-                        />
-                      </label>
-
-                      <div className="p-flex">
-                        <div className="p-classFlex">
-                          <label className="settings-lbl">
-                            <p className="settings-p">Postnr</p>
-                            <input
-                              placeholder="Postnr..."
-                              type="text"
-                              className="p-input-inline p-text-input"
-                              pattern="[0-4]*"
-                            />
-                          </label>
-                        </div>
-                        <div className="p-classFlex">
-                          <label className="settings-lbl">
-                            <p className="settings-p">Poststed</p>
-                            <input
-                              placeholder="Poststed..."
-                              type="text"
-                              className="p-input-inline p-text-input"
-                            />
-                          </label>
-                        </div>
-                      </div>
-                    </fieldset>
-                    <button type="submit">Lagre endringer</button>
-                  </form>
-                </div>
-              ),
-            }[this.state.currentPage]
-          }
-        </div>
+      <div className="error">
+        <h3> no such project could be found...</h3>
+        <Link to="/projects" className="btn-primary">
+          back to projects
+        </Link>
       </div>
     );
   }
+
+  const { name, greenspaces, members } = project;
+
+  const renderSwitch = (param) => {
+    switch (param) {
+      case "/dashboard":
+        return (
+          <div className="green-container">
+            {greenspaces.map((greenspace) => (
+              <DashboardContent greenspace={greenspace} />
+            ))}
+          </div>
+        );
+      case "/members":
+        return <MembersContent members={members} />;
+      case "/orders":
+        return "bar";
+      case "/settings":
+        return (
+          <ProjectForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            values={values}
+            errors={errors}
+            page="settings"
+            editMode={editMode}
+            setEditMode={(mode, value) => setEditMode({ [mode]: value })}
+            project={project}
+          />
+        );
+      default:
+        return greenspaces.map((greenspace) => (
+          <DashboardContent greenspace={greenspace} />
+        ));
+    }
+  };
+
+  return (
+    <div className="p-row">
+      {showModal && (
+        <AuthModal
+          title="Project Updated!"
+          showModal={() => setShowModal(true)}
+          setShowWelcomeModal={() => closeModal()}
+        />
+      )}
+      <LeftMenu
+        {...props}
+        currentPage={currentPage}
+        setCurrentPage={(page) => setCurrentPage(page)}
+      />
+      <div className=".p-column right">
+        <div className="title-container-greenspace">
+          <div className="p-title">
+            <img className="project-icon" src={icon} alt="Prosjektikon" />
+            <h1 className="p-h1">{name}</h1>
+          </div>
+          <br />
+          <h2 className="p-h2">Rolle: {currentMember.role}</h2>
+
+          {/* --- REMOVING "ADD GREENSPACE" BUTTON ---
+B/c: The user should understand that in order to add greenspace/plant, 
+they should navigate through the menu, rather than us setting up another route for them to take.
+     
+<button className="btn-new-greenspace">
+          <i class="fas fa-plus"></i>Legg til grøntområde
+      </button>
+</div>
+  </div>*/}
+          {renderSwitch(currentPage)}
+        </div>
+      </div>
+    </div>
+  );
+}
+export default withProjectConsumer(Dashboard);
+
+function DashboardContent(props) {
+  const [modalOpen, setModalOpen] = useState(false);
+  return (
+    <>
+      <GreenspaceMiniature
+        greenspace={props.greenspace}
+        openModal={() => setModalOpen(true)}
+      />
+      <ProjectPlantsModal
+        modalOpen={modalOpen}
+        setModalOpen={(value) => setModalOpen(value)}
+        className="modal-dashboard"
+        name={props.greenspace.name}
+      />
+    </>
+  );
+}
+
+function MembersContent(props) {
+  return (
+    <>
+      <div className="p-container">
+        <button className="btn-p-invite">
+          <i className="fas fa-user-plus"></i>Inviter medlemmer
+        </button>
+      </div>
+      <table className="p-table">
+        <tbody>
+          {props.members.map((member) => (
+            <tr>
+              <td className="p-td">{member.name}</td>
+              <td className="p-td">{member.role}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
 }
