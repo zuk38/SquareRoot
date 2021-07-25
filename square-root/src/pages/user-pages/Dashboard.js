@@ -12,19 +12,17 @@ import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/EditAccountValidation";
 import ProjectForm from "../../components/user/ProjectForm";
 import AuthModal from "../../components/login/AuthModal";
-import { useHistory } from "react-router-dom";
 
 function Dashboard(props) {
-  const history = useHistory();
   const projectName = props.match.params.name;
   const [currentPage, setCurrentPage] = useState("/dashboard");
-  const { getProject, updateProject } = props.context;
+  const { getProject, updateProject, projects } = props.context;
   const currentMember = props.context.currentMember;
   const project = getProject(projectName);
   const [showModal, setShowModal] = useState(false);
-  const [nameChanged, setNameChanged] = useState(false)
+  const [nameChanged, setNameChanged] = useState(false);
 
-  const { values, errors, handleChange, handleSubmit, setCity } = useForm(
+  const { values, errors, handleChange, handleSubmit, setCity, setProjectExistsErrors } = useForm(
     callback,
     validate,
     update
@@ -45,6 +43,12 @@ function Dashboard(props) {
     }
   }, [values.zip]);
 
+  useEffect(() => {
+    if (!values.name || values.name === "" || !projects.length) return;
+    let found = projects.find((project) => project.name === values.name);
+    setProjectExistsErrors(found)
+  }, [values.name]);
+
   function callback() {
     setShowModal(true);
     if (editMode.nameMode) setNameChanged(true);
@@ -62,13 +66,13 @@ function Dashboard(props) {
 
   const closeModal = () => {
     setShowModal(false);
-    console.log(nameChanged)
+    console.log(nameChanged);
 
     if (nameChanged) {
-      console.log(values.name)
-     window.open("/projects", "_self")
+      console.log(values.name);
+      window.open("/projects", "_self");
     }
-  }
+  };
 
   if (!project || !currentMember) {
     return (
