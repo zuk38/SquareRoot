@@ -159,7 +159,7 @@ type PlantCategory
   id: ID!
   plant_ID: ID!
   category_ID: ID!
-  plant: Plant! @connection(fields: ["plant_ID"])
+  plant: PlantMetadata! @connection(fields: ["plant_ID"])
   category: Category! @connection(fields: ["category_ID"])
 }
 

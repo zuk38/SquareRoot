@@ -75,9 +75,7 @@ export const listCategorys = /* GraphQL */ `
         plants {
           items {
             plant {
-              metadata {
-                norwegian_name
-              }
+              norwegian_name
             }
           }
         }
@@ -115,7 +113,7 @@ export const listConcepts = /* GraphQL */ `
               }
             }
           }
-        }       
+        }
       }
       nextToken
     }
