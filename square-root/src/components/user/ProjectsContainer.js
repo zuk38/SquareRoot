@@ -1,10 +1,8 @@
 import React from "react";
-import { withProjectConsumer } from "../../context/projects";
 import { useHistory } from "react-router-dom";
 import Loading from "../Loading";
 
-function ProjectsContainer({ context }) {
-  const { projects, loading } = context;
+function ProjectsContainer({ projects, loading }) {
   const history = useHistory();
 
   const openProjectDashboard = (name) => {
@@ -47,4 +45,4 @@ function ProjectsContainer({ context }) {
   );
 }
 
-export default withProjectConsumer(ProjectsContainer);
+export default ProjectsContainer;

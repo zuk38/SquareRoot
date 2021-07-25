@@ -16,22 +16,28 @@ function AllProjects(props) {
     Modal.setAppElement("body");
   }, []);
 
-  const { fetchProjects, createProject } = props.context;
+  const { fetchProjects, createProject, projects, loading } = props.context;
   const [modalOpen, setModalOpen] = useState(false);
-  const { values, errors, handleChange, handleSubmit, setCity } = useForm(
+  const { values, errors, handleChange, handleSubmit, setCity, setProjectExistsErrors } = useForm(
     callback,
     validate,
     createNewProject
   );
 
   useEffect(() => {
-    if (!values.zip || values.zip === '') return
+    if (!values.zip || values.zip === "") return;
     if (values.zip.length == 4) {
       findCityFromZip(values.zip).then((response) => {
         setCity(response);
       });
     }
   }, [values.zip]);
+
+  useEffect(() => {
+    if (!values.name || values.name === "" || !projects.length) return;
+    let found = projects.find((project) => project.name === values.name);
+    setProjectExistsErrors(found)
+  }, [values.name]);
 
   async function callback() {
     fetchProjects();
@@ -68,7 +74,12 @@ function AllProjects(props) {
             <h1 className="p-h1">La oss lage et økosystem</h1>
             <br />
             <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
-            <ProjectForm handleChange={handleChange} handleSubmit={handleSubmit} values={values} errors={errors} />
+            <ProjectForm
+              handleChange={handleChange}
+              handleSubmit={handleSubmit}
+              values={values}
+              errors={errors}
+            />
           </div>
         </Modal>
         <br></br>
@@ -77,7 +88,7 @@ function AllProjects(props) {
           opprett et nytt prosjekt.
         </h2>
 
-        <ProjectsContainer {...props} />
+        <ProjectsContainer {...props} projects={projects} loading={loading}/>
       </div>
     </>
   );

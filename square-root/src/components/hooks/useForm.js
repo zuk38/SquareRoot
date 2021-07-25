@@ -62,11 +62,17 @@ const useForm = (callback, validate, action) => {
     else setErrors({ ...errors, zip: "Invalid zip code" });
   };
 
+  const setProjectExistsErrors = (exist) => {
+    if(exist) setErrors({...errors, name: "Project with that name already exists!"})
+    else setErrors({...errors, name: ""})
+  }
+
   return {
     handleChange,
     handleSubmit,
     handleDropDownChange,
     setCity,
+    setProjectExistsErrors,
     values,
     errors,
   };
