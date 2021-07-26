@@ -11,6 +11,7 @@ export default class UserProvider extends Component {
     email: null,
     phone_number: null,
     role: null,
+    sub: null
   };
 
   setAuthStatus = (auuthenticated) => {
@@ -21,22 +22,24 @@ export default class UserProvider extends Component {
   };
 
   setUser = (user) => {
-    let name, email, phone, role;
+    let name, email, phone, role, sub;
     if (!user) {
       name = null;
       email = null;
       phone = null;
       role = null;
+      sub = null;
     } else {
+      sub = user.sub
       name = user.name;
       email = user.email;
       phone = user.phone_number;
       role = user["custom:role"];
     }
-    //set the name if logged in
 
     this.setState(
       {
+        sub: sub,
         user: name,
         email: email,
         phone_number: phone,
@@ -55,7 +58,8 @@ export default class UserProvider extends Component {
       const session = await Auth.currentSession();
       console.log(session);
       this.setAuthStatus(true);
-      const user = await Auth.currentAuthenticatedUser();
+      const user = await Auth.currentAuthenticatedUser()
+      console.log(user);
       const { attributes } = user;
       this.setUser(attributes);
     } catch (error) {

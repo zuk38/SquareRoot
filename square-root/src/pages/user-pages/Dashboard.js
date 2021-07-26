@@ -1,277 +1,202 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import "./projects.css";
 import "../../styles/Customize.css";
-import icon from "../../images/proj_icon.png";
-import Modal from "react-modal";
-import { findCityFromZip } from "../../functions/apiCalls";
-import data from "../data.json";
 import LeftMenu from "../../components/user/LeftMenu";
-export default class All_Projects extends Component {
-  /*THIS NEEDS TO BE ADJUSTED TO PLANT LIST*/
-  state = {
-    modalOpen: false,
-    name: "",
-    description: "",
-    address: "",
-    postalCode: "",
-    city: "",
-    error: "",
-  };
+import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
+import GreenspaceMiniature from "../../components/user/GreenspaceMiniature";
+import icon from "../../images/proj_icon.png";
+import { findCityFromZip } from "../../functions/apiCalls";
+import { withProjectConsumer } from "../../context/projects";
+import useForm from "../../components/hooks/useForm";
+import validate from "../../components/utility/EditAccountValidation";
+import ProjectForm from "../../components/user/ProjectForm";
+import AuthModal from "../../components/login/AuthModal";
 
-  openModal = () => {
-    this.setState({ modalOpen: true });
-  };
+function Dashboard(props) {
+  const projectName = props.match.params.name;
+  const [currentPage, setCurrentPage] = useState("/dashboard");
+  const { getProject, updateProject, projects } = props.context;
+  const currentMember = props.context.currentMember;
+  const project = getProject(projectName);
+  const [showModal, setShowModal] = useState(false);
+  const [nameChanged, setNameChanged] = useState(false);
 
-  closeModal = () => {
-    console.log(this.state);
-    this.setState({
-      modalOpen: false,
-      name: "",
-      description: "",
-      postalCode: "",
-      address: "",
-      city: "",
+  const { values, errors, handleChange, handleSubmit, setCity, setProjectExistsErrors } = useForm(
+    callback,
+    validate,
+    update
+  );
+
+  const [editMode, setEditMode] = useState({
+    zipMode: false,
+    nameMode: false,
+    addressMode: false,
+  });
+
+  useEffect(() => {
+    if (!values.zip || values.zip === "") return;
+    if (values.zip.length == 4) {
+      findCityFromZip(values.zip).then((response) => {
+        setCity(response);
+      });
+    }
+  }, [values.zip]);
+
+  useEffect(() => {
+    if (!values.name || values.name === "" || !projects.length) return;
+    let found = projects.find((project) => project.name === values.name);
+    setProjectExistsErrors(found)
+  }, [values.name]);
+
+  function callback() {
+    setShowModal(true);
+    if (editMode.nameMode) setNameChanged(true);
+    setEditMode({
+      zipMode: false,
+      nameMode: false,
+      addressMode: false,
     });
-  };
-
-  componentWillMount() {
-    Modal.setAppElement("body");
   }
 
-  render() {
-    const { items } = this.state;
+  async function update() {
+    //form validated
+    await updateProject(project.id, values);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
+    console.log(nameChanged);
+
+    if (nameChanged) {
+      console.log(values.name);
+      window.open("/projects", "_self");
+    }
+  };
+
+  if (!project || !currentMember) {
     return (
-      <div class="p-row">
-        {" "}
-        <LeftMenu {...this.props} />​{" "}
-        <div class="p-column right">
-          {" "}
-          <div className="title-container-greenspace">
-            <div className="p-title">
-              <img className="project-icon" src={icon} alt="Prosjektikon" />{" "}
-              <h1 className="p-h1">Sørengkaia</h1>
-            </div>
-            <br />
-
-            <h2 className="p-h2">Rolle: Eiendomsutvikler</h2>
-
-            {/* --- REMOVING "ADD GREENSPACE" BUTTON ---
-B/c: The user should understand that in order to add greenspace/plant, 
-they should navigate through the menu, rather than us setting up another route for them to take.
-           
-<button className="btn-new-greenspace">
-                <i class="fas fa-plus"></i>Legg til grøntområde
-            </button>
-        </div>
-
-        <br/>
-
-        */}
-            <div className="green-container">
-              {/*EVERY GREEN ITEM SHOULD BE A BUTTON*/}
-              <button onClick={this.openModal} className="btn-dash-greenspace">
-                <div className="green-item">
-                  <img
-                    src={"../../../images/rooftop.png"}
-                    className="project_img"
-                  />
-                  <div className="green-info">
-                    <h3 className="p-h3">Oslo Takterrasse</h3>
-                    <h4 className="p-h4">Vestre del</h4>
-                  </div>
-                </div>
-              </button>
-
-              <button onClick={this.openModal} className="btn-dash-greenspace">
-                <div className="green-item">
-                  <img
-                    src={"../../../images/greenWall.png"}
-                    className="project_img"
-                  />
-                  <div className="green-info">
-                    <h3 className="p-h3">Grønn vegg</h3>
-                    <h4 className="p-h4">2. etg</h4>
-                  </div>
-                </div>
-              </button>
-
-              <button onClick={this.openModal} className="btn-dash-greenspace">
-                <div className="green-item">
-                  <img
-                    src={"../../../images/biodiversity.png"}
-                    className="project_img"
-                  />
-                  <div className="green-info">
-                    <h3 className="p-h3">Biomangfoldig hage</h3>
-                    <h4 className="p-h4">Uteomårde 4. etg</h4>
-                  </div>
-                </div>
-              </button>
-
-              <button onClick={this.openModal} className="btn-dash-greenspace">
-                <div className="green-item">
-                  <img
-                    src={"../../../images/plant-img1.png"}
-                    className="project_img"
-                  />
-                  <div className="green-info">
-                    <h3 className="p-h3">Kjøkkenhage</h3>
-                    <h4 className="p-h4">2. etg vestover</h4>
-                  </div>
-                </div>
-              </button>
-
-              <button onClick={this.openModal} className="btn-dash-greenspace">
-                <div className="green-item">
-                  <img
-                    src={"../../../images/musa.png"}
-                    className="project_img"
-                  />
-                  <div className="green-info">
-                    <h3 className="p-h3">Planter</h3>
-                    <h4 className="p-h4">Inneplanter</h4>
-                  </div>
-                </div>
-              </button>
-
-              <Modal
-                isOpen={this.state.modalOpen}
-                onRequestClose={this.closeModal}
-                className={"modal-dashboard"}
-              >
-                <button
-                  onClick={this.closeModal}
-                  className="btn-modal-close"
-                  alt="Lukk"
-                >
-                  <i class="fas fa-times fa-lg"></i>
-                </button>
-                <div className="d-modal-content">
-                  <h1 className="p-h1">Oslo Takterrasse</h1>{" "}
-                  {/*greenspace_name*/}
-                  <br />
-                  <div className="d-modal-container">
-                    <table className="d-table">
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-lucifer.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Crocosmia Lucifer</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-falcatum.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Cyrtomium Falcatum</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">6 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-belladonna.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Delpinium Belladonna</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-tomatosoup.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Echinacea 'Tomato Soup'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-purpurea.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">
-                          Echinacea Purpurea 'tiki torch'
-                        </td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">2 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-bremen.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Gaillardia 'Bremen'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">7 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-woblitz.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Galium Odoratum 'Woblitz'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">1 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-thomson.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">Geranium 'Anne Thomson'</td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">4 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                      <tr>
-                        <td className="d-modal-img">
-                          <img src="../../../images/r-helenium.jpg"></img>
-                        </td>{" "}
-                        {/*greenspace_img*/}
-                        <td className="d-td">
-                          Helenium 'Sahins Early Flowerer'
-                        </td>{" "}
-                        {/*greenspace_name*/}
-                        <td className="d-td">3 stk</td>{" "}
-                        {/*number of one plant in greenspace*/}
-                      </tr>
-                    </table>
-                  </div>
-                  <div className="modal-btns-footer">
-                    <a href="/Customize">
-                      <button
-                        className="orders-btn-close"
-                        onClick={this.closeModal}
-                        alt="Lukk"
-                      >
-                        TILPASS
-                      </button>
-                    </a>
-                    <button
-                      className="orders-btn-save"
-                      onClick={this.closeModal}
-                      alt="Lagre"
-                    >
-                      BESTILL
-                    </button>
-                  </div>
-                </div>
-              </Modal>
-            </div>
-          </div>
-        </div>
+      <div className="error">
+        <h3> no such project could be found...</h3>
+        <Link to="/projects" className="btn-primary">
+          back to projects
+        </Link>
       </div>
     );
   }
+
+  const { name, greenspaces, members } = project;
+
+  const renderSwitch = (param) => {
+    switch (param) {
+      case "/dashboard":
+        return (
+          <div className="green-container">
+            {greenspaces.map((greenspace) => (
+              <DashboardContent greenspace={greenspace} />
+            ))}
+          </div>
+        );
+      case "/members":
+        return <MembersContent members={members} />;
+      case "/orders":
+        return "bar";
+      case "/settings":
+        return (
+          <ProjectForm
+            handleChange={handleChange}
+            handleSubmit={handleSubmit}
+            values={values}
+            errors={errors}
+            page="settings"
+            editMode={editMode}
+            setEditMode={(mode, value) => setEditMode({ [mode]: value })}
+            project={project}
+          />
+        );
+      default:
+        return greenspaces.map((greenspace) => (
+          <DashboardContent greenspace={greenspace} />
+        ));
+    }
+  };
+
+  return (
+    <div className="p-row">
+      {showModal && (
+        <AuthModal
+          title="Project Updated!"
+          showModal={() => setShowModal(true)}
+          setShowWelcomeModal={() => closeModal()}
+        />
+      )}
+      <LeftMenu
+        {...props}
+        currentPage={currentPage}
+        setCurrentPage={(page) => setCurrentPage(page)}
+      />
+      <div className=".p-column right">
+        <div className="title-container-greenspace">
+          <div className="p-title">
+            <img className="project-icon" src={icon} alt="Prosjektikon" />
+            <h1 className="p-h1">{name}</h1>
+          </div>
+          <br />
+          <h2 className="p-h2">Rolle: {currentMember.role}</h2>
+
+          {/* --- REMOVING "ADD GREENSPACE" BUTTON ---
+B/c: The user should understand that in order to add greenspace/plant, 
+they should navigate through the menu, rather than us setting up another route for them to take.
+     
+<button className="btn-new-greenspace">
+          <i class="fas fa-plus"></i>Legg til grøntområde
+      </button>
+</div>
+  </div>*/}
+          {renderSwitch(currentPage)}
+        </div>
+      </div>
+    </div>
+  );
+}
+export default withProjectConsumer(Dashboard);
+
+function DashboardContent(props) {
+  const [modalOpen, setModalOpen] = useState(false);
+  return (
+    <>
+      <GreenspaceMiniature
+        greenspace={props.greenspace}
+        openModal={() => setModalOpen(true)}
+      />
+      <ProjectPlantsModal
+        modalOpen={modalOpen}
+        setModalOpen={(value) => setModalOpen(value)}
+        className="modal-dashboard"
+        name={props.greenspace.name}
+      />
+    </>
+  );
+}
+
+function MembersContent(props) {
+  return (
+    <>
+      <div className="p-container">
+        <button className="btn-p-invite">
+          <i className="fas fa-user-plus"></i>Inviter medlemmer
+        </button>
+      </div>
+      <table className="p-table">
+        <tbody>
+          {props.members.map((member) => (
+            <tr>
+              <td className="p-td">{member.name}</td>
+              <td className="p-td">{member.role}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </>
+  );
 }

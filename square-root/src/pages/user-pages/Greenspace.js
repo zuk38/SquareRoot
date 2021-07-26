@@ -1,11 +1,5 @@
 import React, { Component } from "react";
 import "./projects.css";
-import icon from "../../images/proj_icon.png";
-import { Menu } from "semantic-ui-react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import All_Projects from "./All_Projects";
 import data from "../data.json";
 
 export default class Greenspace extends Component {
@@ -26,7 +20,7 @@ export default class Greenspace extends Component {
                             <div className="greensp-page">
                               <div class="p-header">
                                 <div class="p-column left">
-                                  <a href="/Dashboard" class="btn-back">
+                                  <a href="/dashboard" class="btn-back">
                                     <i class="fas fa-chevron-left"></i>
                                     {project.project_name}
                                   </a>

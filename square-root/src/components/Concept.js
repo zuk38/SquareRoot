@@ -1,19 +1,20 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import "../styles/Customize.css"
 
-export default function Greenspace({ greenspace }) {
-  const { name, description, image } = greenspace;
+export default function Concept({ concept }) {
+  const { name, description, image } = concept;
 
-  console.log(greenspace)
+  console.log(concept)
 
   return (
     <div className="imagebox">
-      <img className="image" src={image} alt="single greenspace" />
+      <img className="image" src={image} alt={name} />
       <span>
         <h1>{name.toUpperCase()}</h1>
         <p>{description}</p>
         <div className="hero-btns">
-          <Link to={`/greenspaces/${name}`}>
+          <Link to={`/concepts/${name}`}>
             <button className="button is-light">LEARN MORE</button>
           </Link>
 

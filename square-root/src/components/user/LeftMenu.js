@@ -1,5 +1,4 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
 
 export default function LeftMenu(props) {
   let currentLocation = props.location.pathname,
@@ -32,21 +31,21 @@ export default function LeftMenu(props) {
 
   return (
     <>
-      <div class="p-column left">
-        <a href="/projects" class="btn-back">
-          <i class="fas fa-chevron-left" />
+      <div className="p-column left">
+        <a href="/projects" className="btn-back">
+          <i className="fas fa-chevron-left" />
           Alle Prosjekter
         </a>
         <div className="menu-vertical">
           {locations.map((location, index) => (
-            <NavLink
+            <p
               key={index}
-              to={location.pahtname + resultAfter}
-              exact={true}
+              className={props.currentPage === location.pahtname ? "active" : ""}
+              onClick={() => props.setCurrentPage(location.pahtname)}
             >
               <i className={location.icon} />
               {location.display}
-            </NavLink>
+            </p>
           ))}
         </div>
       </div>
