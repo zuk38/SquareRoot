@@ -17,16 +17,9 @@ ul {
   padding: 0;
 }
 
-a {
-  color: var(--text-color);
-  text-decoration: none;
-}
-
 .my-dropdown {
   position: absolute;
-  top: calc(var(--nav-size) * 0.8);
   width: 250px;
-  transform: translateX(-50%);
   background-color: var(--navbarBack);
   border-radius: var(--border-radius);
   padding: 1rem;
@@ -34,6 +27,9 @@ a {
   transition: height var(--speed) ease;
   box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
   z-index: 200;
+  list-style: none;
+  top: calc(var(--nav-size) * 0.8);
+  transform: translateX(-250px);
 }
 
 .menu {
@@ -89,4 +85,39 @@ a {
   margin-right: 16px;
   outline: none;
   text-decoration: none;
+}
+
+/* NavbarDropdown */
+.d-menu {
+  width: 200px;
+  position: absolute;
+  top: 80px;
+  list-style: none;
+  text-align: start;
+  background-color: var(--navbarBack);
+  padding: 1rem;
+  overflow: hidden;
+  box-shadow: 1px 0px 7px 1px rgba(0, 0, 0, 0.5);
+  transition: height var(--speed) ease;
+  z-index: 200;
+}
+
+.d-link {
+  cursor: pointer;
+  display: block;
+  align-items: center;
+  padding: 0.5rem;
+  text-decoration: none;
+  color: var(--bg);
+  width: 100%;
+  height: 100%;
+}
+
+.d-link:hover {
+  color: var(--offWhite);
+  background: var(--bg)
+}
+
+.d-menu.clicked {
+  display: none;
 }

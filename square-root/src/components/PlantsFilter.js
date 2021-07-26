@@ -61,9 +61,6 @@ export default class PlantsFilter extends Component {
   getCurrentItem = (orgArray, copyArray) => {
     let currentItem;
 
-    //console.log(orgArray)
-    //console.log(copyArray)
-
     if (orgArray.length > copyArray.length) {
       //element added
       currentItem = orgArray.last();
@@ -92,13 +89,15 @@ export default class PlantsFilter extends Component {
 
     //get unique types
     let types = getUnique(this.props.plants, "type");
+    console.log(types)
     //format to dropdown
     types = formatData(types, "type");
 
     //get unique categories
-    let categories = getUnique(this.props.plants, "greenspace_category");
+    let categories = getUnique(this.props.plants, "category");
+    console.log(categories)
     //format to dropdown
-    categories = formatData(categories, "greenspace_category");
+    categories = formatData(categories, "category");
 
     //get unique climate zones
     let zones = getUnique(this.props.plants, "climate_zone");

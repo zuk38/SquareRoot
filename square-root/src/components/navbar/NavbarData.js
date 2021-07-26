@@ -1,12 +1,70 @@
 export const NavbarData = [
   {
+    title: "GREENSPACES",
+    path: "/categories",
+    className: "sidebar-text",
+    dropdown: "dropdownGreenspaces",
+    subtitle: [
+      {
+        title: "ROOFTOP",
+        path: "/categories/takterrasse",
+        className: "d-link",
+      },
+      {
+        title: "RAINBED",
+        path: "/categories/rainbed",
+        className: "d-link",
+      },
+      {
+        title: "INDOOR",
+        path: "/categories/indoor",
+        className: "d-link",
+      },
+      {
+        title: "BIODIVERSITY",
+        path: "/categories/biodiversity",
+        className: "d-link",
+      },
+    ],
+  },
+  {
+    title: "ABOUT",
+    path: "/about-us",
+    className: "sidebar-text",
+    dropdown: "dropdownAbout",
+    subtitle: [
+      { title: "WHAT WE DO", path: "/what-we-do", className: "d-link" },
+      {
+        title: "HOW IT WORKS",
+        path: "/how-it-works",
+        className: "d-link",
+      },
+      {
+        title: "WHY US",
+        path: "/why-us",
+        className: "d-link",
+      },
+    ],
+  },
+  {
+    title: "PARTNER",
+    path: "/become-a-partner",
+    className: "sidebar-text",
+  },
+  {
+    title: "CONTACT",
+    path: "/contact",
+    className: "sidebar-text",
+  },
+];
+
+/*export const NavbarData = [
+  {
     title: "HOME",
     path: "/",
-    className: "sidebar-text"
+    className: "sidebar-text",
   },
-  {title: "WHAT WE DO",
-  path: "/what-we-do",
-  className: "sidebar-text"},
+  { title: "WHAT WE DO", path: "/what-we-do", className: "sidebar-text" },
   {
     title: "HOW IT WORKS",
     path: "/how-it-works",
@@ -36,7 +94,7 @@ export const NavbarData = [
     title: "ROOFTOP",
     path: "/rooftop",
     className: "sidebar-text",
-    fontWeight: "bold" 
+    fontWeight: "bold",
   },
   {
     title: "RAINBED",
@@ -54,3 +112,4 @@ export const NavbarData = [
     className: "sidebar-text",
   },
 ];
+*/
