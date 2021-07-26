@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { getPlant, listPlants } from "../api/queries";
+import { listPlants } from "../api/plantsQueries";
 
 const PlantContext = React.createContext();
 
@@ -37,6 +37,7 @@ export default class PlantProvider extends Component {
         authMode: "API_KEY",
       });
       let plants = this.formatData(data.listPlants.items);
+      console.log(plants)
       let featuredPlants = plants.filter((plant) => plant.featured === true);
       let maxSize = Math.max(...plants.map((item) => item.size_in_cm)); //find the max size from the data
       this.setState({
@@ -197,7 +198,12 @@ export default class PlantProvider extends Component {
     let tempItems = items.map((item) => {
       let image = item.metadata.image;
       let metadata = item.metadata;
-      let plant = { image, ...metadata };
+      let category = item.metadata.category.items.map((item) => {
+        let c = item.category;
+        let newItem = { ...c };
+        return newItem;
+      });
+      let plant = { image, ...metadata, category: category };
       return plant;
     });
     return tempItems;
