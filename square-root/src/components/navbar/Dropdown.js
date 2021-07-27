@@ -31,16 +31,16 @@ function Dropdown(props) {
         <div className="my-dropdown">
           <div className="menu">
             <DropdownItem leftIcon={<ProjectIcon />} path="/projects">
-              MINE PROSJEKTER
+              Mine Prosjekter
             </DropdownItem>
             <DropdownItem leftIcon={<AccountIcon />} path="/account">
-              KONTOINNSTILLINGER
+              Kontoinnstillinger
             </DropdownItem>
             {/*<DropdownItem leftIcon={<HelpICon />} path="/help">
               Hjelp
       </DropdownItem>*/}
             <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
-              LOGG UT
+              Logg Ut
             </DropdownItem>
           </div>
         </div>
