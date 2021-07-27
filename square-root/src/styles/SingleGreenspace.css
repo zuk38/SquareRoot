@@ -47,12 +47,17 @@
 }
 
 .func_icon {
-  height: 30px;
-  width: 30px;
   padding-right: 2%;
-
   padding-top: 2%;
 }
+
+.func_icon svg {
+  width: 30px;
+  height: 30px;
+  padding-right: 2%;
+  padding-top: 2%;
+}
+
 .func {
   display: grid;
   grid-template-columns: 0.5fr 0.5fr;

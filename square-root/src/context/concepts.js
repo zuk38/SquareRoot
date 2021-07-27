@@ -41,7 +41,7 @@ export default class ConceptProvider extends Component {
       });
 
       let concepts = this.formatData(data.listConcepts.items);
-      console.log(concepts)
+      console.log(concepts);
       let featuredConcepts = concepts.filter((concept) => concept.featured);
       this.setState({
         concepts,
@@ -68,33 +68,64 @@ export default class ConceptProvider extends Component {
     return concept;
   };
 
+  truthyObjLoop = (user) => {
+    for (var key in user) {
+      if (user.hasOwnProperty(key) && !user[key]) delete user[key];
+    }
+    return user;
+  };
+
+  highest = (arr) =>
+    (arr || []).reduce(
+      (acc, el) => {
+        acc.k[el] = acc.k[el] ? acc.k[el] + 1 : 1;
+        acc.max = acc.max ? (acc.max < acc.k[el] ? el : acc.max) : el;
+        return acc;
+      },
+      { k: {} }
+    ).max;
+
   formatData(items) {
+    let maintenance = items.map((item) => {
+      let tempItems = item.plants.items.map((p) => {
+        return p.plant.metadata.sun_seeker;
+      });
+      return tempItems;
+    });
+    console.log(maintenance);
+    let m = this.highest(maintenance[0]);
     let tempItems = items.map((item) => {
+      let benefits;
+
       let tempPlants = item.plants.items.map((p) => {
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
         let plant = { quantity, ...metadata };
+        const {
+          pollinator_friendly,
+          edible,
+          pet_kids_friendly,
+          air_puryfying,
+        } = metadata;
+
+        benefits = {
+          pollinator_friendly: pollinator_friendly,
+          edible: edible,
+          pet_kids_friendly: pet_kids_friendly,
+          air_puryfying: air_puryfying,
+        };
+        this.truthyObjLoop(benefits);
         return plant;
       });
-      let concept = {...item, plants: tempPlants}
+      let concept = {
+        ...item,
+        plants: tempPlants,
+        benefits: benefits,
+        maintenance: m,
+      };
       return concept;
     });
-    /*let tempItems = items.map((item) => {
-      let tempPlants = item.plants.items.map((p) => {
-        let metadata = p.plant.metadata;
-        let id = p.plant.id
-        let plant = { id, ...metadata}
-        console.log(plant)
-        return plant;
-      })
-      let name = item.name
-      let description = item.description
-      let image = item.image
-      let featured = item.featured
-      let greenspace = { name, description, image, featured, plants: tempPlants};
-      return greenspace
-    })*/
-    return tempItems
+    return tempItems;
   }
 
   componentDidMount() {
