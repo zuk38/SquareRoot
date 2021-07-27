@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
 import { listCategorys, listConcepts } from "../api/conceptQueries";
+import { PlantContext } from "./plants";
 
 const ConceptContext = React.createContext();
 
@@ -12,6 +13,8 @@ export default class ConceptProvider extends Component {
     loadingCat: true,
     loading: true,
   };
+
+  static contextType = PlantContext;
 
   fetchCategories = async () => {
     try {

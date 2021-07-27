@@ -3,134 +3,37 @@ import "../../styles/Customize.css";
 import Title from "../../components/Title";
 import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
 
-const plantList = [
-  {
-    Id: "1001",
-    name: "Musa",
-    img: "../../../images/musa.png",
-    "Water Management": "Low",
-    "Functional Requirements": ["Stormwater Management", "Pollinator Friendly"],
-    Origin: "Local",
-  },
-  {
-    Id: "1002",
-    name: "Pertusem",
-    img: "../../../images/pertusem.png",
-    "Water Management": "Medium",
-    "Functional Requirements": ["Edible", "Pollinator Friendly"],
-    Origin: "Norwegian Nursery",
-  },
-  {
-    Id: "1003",
-    name: "Philodendron",
-    img: "../../../images/philodendron.png",
-    "Water Management": "High",
-    "Functional Requirements": [
-      "Stormwater Management",
-      "Edible",
-      "Pollinator Friendly",
-    ],
-    Origin: "Local",
-  },
-  {
-    Id: "1001",
-    name: "Musa",
-    img: "../../../images/musa.png",
-    "Water Management": "Low",
-    "Functional Requirements": ["Stormwater Management", "Pollinator Friendly"],
-    Origin: "Local",
-  },
-  {
-    Id: "1002",
-    name: "Pertusem",
-    img: "../../../images/pertusem.png",
-    "Water Management": "Medium",
-    "Functional Requirements": ["Edible", "Pollinator Friendly"],
-    Origin: "Norwegian Nursery",
-  },
-  {
-    Id: "1003",
-    name: "Philodendron",
-    img: "../../../images/philodendron.png",
-    "Water Management": "High",
-    "Functional Requirements": [
-      "Stormwater Management",
-      "Edible",
-      "Pollinator Friendly",
-    ],
-    Origin: "Local",
-  },
-];
-
-const plantFilters = {
-  "Functional Requirements": ["Rain Garden", "Pollinator Friendly", "Edible"],
-  Type: ["Flower", "Grass", "Buss & Berry"],
-  Origin: ["Native", "Norwegian Nursery"],
-  "Sun Light": ["Sun Seekers", "Shaddow lovers"],
-};
-
-function PlantPage() {
-  const [plantFilter, setPlantFilter] = React.useState({
-    "Functional Requirements": [],
-    Type: [],
-    Origin: [],
-    "Sun Light": [],
-  });
-
-  const [plants, setPlants] = React.useState([]);
-  const [filteredPlants, setFilteredPlants] = React.useState([]);
-
-  // Runs at load
-  React.useEffect(() => {
-    setPlants(plantList);
-    setFilteredPlants(plantList);
-  }, []);
+export default function Customize(props) {
+  const conceptName = props.match.params.conceptName;
+  let plantsNumber;
+  props.plants ? plantsNumber = props.plants.length : plantsNumber = 0;
 
   const [modalOpen, setModalOpen] = React.useState(false);
-  const [items, setItems] = React.useState([]);
 
-  // Runs when plantFilter is changed
-  React.useEffect(() => {
-    let newPlantList = [];
-    let tempPlants = plants;
+  return (
+    <div className="customize">
+      <a href={`/concepts/${conceptName}`} class="btn-back btn-white">
+        <i class="fas fa-chevron-left" />
+        Tilbake til {conceptName}
+      </a>
+      <h5 className="customize-header">Tilpass {conceptName}</h5>
 
-    tempPlants.map((plant) => {
-      let matchesFilter = false;
+      <button className="btn-orders" onClick={() => setModalOpen(true)}>
+          <i className="fas fa-tasks fa-2x"/>
+          <div className="order-items">
+            {plantsNumber}
+            <i className="fas fa-chevron-left" />
+          </div>
+        </button>
+        <ProjectPlantsModal modalOpen={modalOpen} setModalOpen={setModalOpen} name={conceptName} />
+    </div>
+  );
+}
 
-      Object.keys(plantFilter).map((pf) => {
-        plantFilter[pf].map((pfAlternative) => {
-          if (Array.isArray(plant[pf]) && plant[pf].includes(pfAlternative))
-            matchesFilter = true;
-          else if (plant[pf] == pfAlternative) {
-            matchesFilter = true;
-          }
-        });
-      });
+/*function PlantPage() {  
 
-      if (matchesFilter) {
-        newPlantList.push(plant);
-      }
-    });
+  const [modalOpen, setModalOpen] = React.useState(false);
 
-    if (newPlantList.length <= 0) newPlantList = plantList;
-
-    setFilteredPlants(newPlantList);
-  }, [plantFilter]);
-
-  // onClick handler for the filter checkboxes
-  const handleFilterChange = (event, pf, pfAlternative) => {
-    let currentFilter = plantFilter;
-
-    if (event.target.checked) {
-      currentFilter[pf].push(pfAlternative);
-    } else {
-      currentFilter[pf].splice(currentFilter[pf].indexOf(pfAlternative), 1);
-    }
-
-    setPlantFilter({
-      ...currentFilter,
-    });
-  };
 
   return (
     <>
@@ -142,18 +45,18 @@ function PlantPage() {
 
         <h5 className="customize-header">Tilpass Takterasse</h5>
 
-        {/*BUTTON OPEN MODAL*/}
+        {/*BUTTON OPEN MODAL
 
         <button className="btn-orders" onClick={() => setModalOpen(true)}>
           <i className="fas fa-tasks fa-2x"></i>
           <div className="order-items">
-            12{/*GET NUMBER OF ITEMS*/}
+            12{/*GET NUMBER OF ITEMS
             <i className="fas fa-chevron-left" />
           </div>
         </button>
       </div>
 
-      {/*MODAL*/}
+      {/*MODAL
       <ProjectPlantsModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
       <div className="customize-content">
@@ -212,4 +115,4 @@ function PlantPage() {
   );
 }
 
-export default PlantPage;
+export default PlantPage;*/
