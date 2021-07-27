@@ -199,9 +199,8 @@ export default class PlantProvider extends Component {
       let image = item.metadata.image;
       let metadata = item.metadata;
       let category = item.metadata.category.items.map((item) => {
-        let c = item.category;
-        let newItem = { ...c };
-        return newItem;
+        let c = item.category.category_name; 
+        return c;
       });
       let plant = { image, ...metadata, category: category };
       return plant;
