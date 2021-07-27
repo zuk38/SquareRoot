@@ -1,15 +1,11 @@
-import React, { useRef, useState } from "react";
+import React from "react";
 import { withRouter } from "react-router-dom";
 import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
 import { ReactComponent as HelpICon } from "../../icons/question.svg";
 import { ReactComponent as AccountIcon } from "../../icons/user.svg";
 import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
-import useOutsideAlerter from "../hooks/useOutsideAlerter";
 
 function Dropdown(props) {
-  const dropdownRef = useRef(null);
-  useOutsideAlerter(dropdownRef, () => props.setDropdown(false));
-
   const handleLogOut = async (event) => {
     event.preventDefault();
     try {
@@ -30,7 +26,7 @@ function Dropdown(props) {
   }
 
   return (
-    <div ref={dropdownRef}>
+    <div>
       {props.dropdown && (
         <div className="my-dropdown">
           <div className="menu">

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import logo from "../../images/logo-dark.png";
 import { Link, NavLink } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
@@ -8,9 +8,11 @@ import Dropdown from "./Dropdown";
 import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 import NavbarDropdown from "./NavbarDropdown";
-import { Backdrop } from "@material-ui/core";
+import useOutsideAlerter from "../hooks/useOutsideAlerter";
 
 export default function Navbar(props) {
+  const dropdownRef = useRef(null);
+  useOutsideAlerter(dropdownRef, () => setDropdown(false));
   const [dropdown, setDropdown] = useState(false);
   const [click, setClick] = useState(false);
   const [navDropdown, setNavDropdown] = useState({
@@ -121,7 +123,7 @@ export default function Navbar(props) {
               </span>
             </a>
           ) : (
-            <>
+            <div ref={dropdownRef}>
               <button
                 className="button is-white pad"
                 onClick={() => setDropdown(!dropdown)}
@@ -136,19 +138,12 @@ export default function Navbar(props) {
                 dropdown={dropdown}
                 setDropdown={(value) => setDropdown(value)}
               />
-            </>
+            </div>
           )}
 
           {/*sidebar*/}
           <div className="sidebar-bars" onClick={handleClick}>
-            {!click ? (
-              <MenuIcon />
-            ) : (
-              <>
-                {" "}
-                <Backdrop /> <CloseIcon />{" "}
-              </>
-            )}
+            {!click ? <MenuIcon /> : <CloseIcon />}
           </div>
         </ul>
       </nav>
