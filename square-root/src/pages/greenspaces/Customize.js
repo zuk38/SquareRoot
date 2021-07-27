@@ -1,7 +1,7 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../styles/Customize.css";
-import Modal from "react-modal";
 import Title from "../../components/Title";
+import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
 
 const plantList = [
   {
@@ -154,93 +154,7 @@ function PlantPage() {
       </div>
 
       {/*MODAL*/}
-      <Modal
-        isOpen={modalOpen}
-        onRequestClose={() => setModalOpen(false)}
-        className={"modal-orders"}
-      >
-        <div className="o-modal-content">
-          <h1 className="o-h1">
-            Det er <strong>12</strong> {/*GET ITEM NUMBERS*/}planter i Oslo
-            Takterrasse{/*GET GREENSPACE NAME*/}{" "}
-          </h1>
-          <div className="o-modal-container">
-            <table className="modal-list">
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-              <tr>
-                <td className="o-modal-img">
-                  <img src="../../../images/pertusem.png"></img>
-                </td>
-                <td className="o-modal-name">Pertusem</td>
-                <td className="o-modal-remove" alt="Fjern plante">
-                  <i class="fas fa-times fa-lg"></i>
-                </td>
-              </tr>
-            </table>
-          </div>
-
-          <div className="modal-btns-footer">
-            <button
-              className="orders-btn-close"
-              onClick={() => setModalOpen(false)}
-              alt="Lukk"
-            >
-              LUKK
-            </button>
-            <button
-              className="orders-btn-save"
-              onClick={() => setModalOpen(false)}
-              alt="Lagre"
-            >
-              LAGRE
-            </button>
-          </div>
-        </div>
-      </Modal>
+      <ProjectPlantsModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
       <div className="customize-content">
         <div className="cust-concept-title">

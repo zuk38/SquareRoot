@@ -85,7 +85,7 @@
               "authenticationType": "API_KEY",
               "apiKeyConfig": {
                 "apiKeyExpirationDays": 365,
-                "description": "api for unathenticated users"
+                "description": "api for unathorised users"
               }
             }
           ]

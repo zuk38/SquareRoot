@@ -1,44 +1,35 @@
 import React from "react";
-import "../styles/frontpages.css"
+import "../styles/frontpages.css";
 import { useHistory } from "react-router-dom";
 
-export default function ScrollGrid({title, insert_values}){
+export default function ScrollGrid({ title, categories }) {
+  const history = useHistory();
+  const redirectToCategory = (name) => {
+    history.push(`/categories/${name.toLowerCase()}`);
+  };
 
-    const history = useHistory();
-    const redirectToGreenspace = (href) => {
-      history.push(href);
-    };
+  return (
+    <div>
+      <div className="c-section background-grey">
+        <div className="o-container">
+          <h2 className="c-txt--sectiontitle c-mrg--bottom">{title}</h2>
 
-
-    return (
-        <div>
-            <div className="c-section background-grey">
-                <div className="o-container">
-                    <h2 className="c-txt--sectiontitle c-mrg--bottom">{title}</h2>
-
-
-                    <div className="c-grid--1x">
-                    <ul className="no-scroll-grid">
-                        {insert_values.map((insert_values) => (
-                            
-                        
-                            <button className="item-portrait zoom-on-hover" onClick={() => redirectToGreenspace(insert_values.href)}>
-                                <img src={insert_values.img} />
-        
-                                <p>{insert_values.header}</p>
-                            </button>
-                        
-                       
-                        ))}
-                         </ul>
-                        </div>
-                </div>
-
-    
-            </div>
-
-            
-
+          <div className="c-grid--1x">
+            <ul className="no-scroll-grid">
+              {categories.map((category, index) => (
+                <button
+                  key={index}
+                  className="item-portrait zoom-on-hover"
+                  onClick={() => redirectToCategory(category.category_name)}
+                >
+                  <img src={category.image} />
+                  <p>{category.category_name}</p>
+                </button>
+              ))}
+            </ul>
+          </div>
         </div>
-    )
+      </div>
+    </div>
+  );
 }

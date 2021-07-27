@@ -80,62 +80,80 @@ body {
 /* Navbar */
 .navbar {
   height: var(--nav-size);
-  background-color: var(--navbarBack);
-  position: fixed;
-  padding: 0.75 2rem;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+  background: var(--navbarBack);
   font-size: 1.2rem;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.nav-header {
+  padding: 0.7rem;
+  display: flex;
+  justify-content: space-between;
+}
+
 .navbar-nav {
   max-width: 100%;
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 15px;
   padding: 5px;
   align-items: center;
+  margin-left: auto;
 }
-.nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-}
-.nav-header {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.nav-links {
+
+.nav-menu {
   height: 0;
   overflow: hidden;
   transition: var(--mainTransition);
   list-style-type: none;
-  /*additional stuff*/
   text-decoration: none;
   list-style-type: none;
   align-items: center;
   display: flex;
-}
-.nav-links a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem 0;
-  color: var(--bg);
-  transition: var(--mainTransition);
-  text-align: center;
+  width: 50vw;
   font-size: 1rem;
-  letter-spacing: var(--mainSpacing);
+  padding: 0;
 }
-.nav-links a:hover {
+
+.nav-item {
+  display: flex;
+  align-items: center;
+  height: 80px;
+}
+
+.nav-links {
+  color: var(--bg);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: var(--mainTransition);
+  display: block;
+}
+
+.nav-links-no-hover {
+  color: var(--bg);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: var(--mainTransition);
+  display: block;
+}
+
+.nav-links:hover {
   border-bottom: 4px solid var(--bg);
   transition: all 0.2s ease-out;
+}
+
+.nav-links-no-hover:hover {
+  background-color: var(--bg);
+  color: var(--offWhite);
+  transition: all 0.2s ease-out;
+}
+
+.sidebar-bars {
+  display: none;
 }
 
 @media screen and (min-width: 1190px) {
@@ -145,19 +163,100 @@ body {
     display: flex;
     padding-right: 20rem;
   }
-  .nav-links {
+  .nav-menu {
     height: auto;
     display: flex;
-    margin-left: 4rem;
+    margin-left: 6rem;
   }
-  .nav-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 0;
+}
+
+@media screen and (max-width: 1190px) {
+  .nav-menu {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 500vh;
+    position: fixed;
+    top: 80px;
+    left: -100%;
+    opacity: 1;
+    transition: all 0.5s ease;
+    position: absolute;
+  }
+
+  .nav-menu.active {
+    background: var(--navbarBack);
+    left: 0;
+    opacity: 1;
+    transition: all 0.5s ease;
+    z-index: 990;
+    position: absolute;
+  }
+
+  .fa-caret-down {
+    display: none;
+  }
+
+  .nav-links {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: var(--mainTransition);
+    display: block;
+  }
+
+  .nav-links-no-hover {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: var(--mainTransition);
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    margin: 0.5rem;
+  }
+
+  .sub-item {
+    align-items: center;
+    text-align: center;
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+    font-size: 16px;
+  }
+
+  .nav-links:hover,
+  .nav-links-no-hover:hover,
+  .sub-item:hover {
+    background-color: var(--bg);
+    color: var(--offWhite);
+    transition: all 0.2s ease-out;
+  }
+
+  .sidebar-bars {
+    --button-size: calc(var(--nav-size) * 0.3);
+    width: var(--button-size);
+    height: var(--button-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 86ms;
+    cursor: pointer;
+  }
+  .sidebar-bars:hover {
+    filter: brightness(5.2);
+  }
+  .sidebar-bars svg {
+    fill: var(--bg);
   }
 }
 /* end of navbar */
 /*sidebar */
-.sidebar-bars {
+/*.sidebar-bars {
   --button-size: calc(var(--nav-size) * 0.3);
   width: var(--button-size);
   height: var(--button-size);
@@ -172,7 +271,7 @@ body {
 }
 .sidebar-bars svg {
   fill: var(--bg);
-}
+} */
 .side-menu {
   background-color: var(--navbarBack);
   width: 500px;

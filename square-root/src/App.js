@@ -6,26 +6,25 @@ import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
-import Home from "./pages/frontpages/Home";
+import Home from "./pages/frontpages/HomeOrig";
 import Plants from "./pages/Plants";
 import PN from "./pages/PN";
 import Error from "./pages/Error";
-import All_Projects from "./pages/user-pages/All_Projects";
+import AllProjects from "./pages/user-pages/AllProjects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
-import Members from "./pages/user-pages/Members";
 import Orders from "./pages/user-pages/Orders";
 import Settings from "./pages/user-pages/Settings";
 import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
 import Categories from "./pages/frontpages/Categories";
-import Categories_Content from "./pages/frontpages/Categories_Content";
+import SingleCategory from "./pages/frontpages/SingleCategory";
 import Footer from "./components/Footer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
-import SingleGreenspace from "./pages/greenspaces/SingleGreenspace";
+import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
@@ -81,8 +80,8 @@ class App extends Component {
             <Route exact path="/" render={(props) => <Home {...props} />} />
             <Route
               exact
-              path="/greenspaces/:name"
-              render={(props) => <SingleGreenspace {...props} />}
+              path="/concepts/:name"
+              render={(props) => <SingleConcept {...props} />}
             />
 
             <Route
@@ -133,14 +132,14 @@ class App extends Component {
             <Route
               exact
               path="/categories/:name"
-              render={(props) => <Categories_Content {...props} />}
+              render={(props) => <SingleCategory {...props} />}
             />
 
             <PrivateRoute
               authed={isAuthenticated}
               auth={authProps}
               path="/projects"
-              component={All_Projects}
+              component={AllProjects}
             />
 
             <PrivateRoute 
@@ -155,20 +154,6 @@ class App extends Component {
               auth={authProps}
               path="/greenspace"
               component={Greenspace}
-            />
-
-            <PrivateRoute
-              authed={isAuthenticated}
-              auth={authProps}
-              path="/members/:name"
-              component={Members}
-            />
-
-            <PrivateRoute
-              authed={isAuthenticated}
-              auth={authProps}
-              path="/orders/:name"
-              component={Orders}
             />
 
             <PrivateRoute

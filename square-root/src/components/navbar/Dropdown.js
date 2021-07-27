@@ -7,10 +7,8 @@ import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
 
 function Dropdown(props) {
-  const [dropdown, setDropdown] = useState(false);
-  const closeDropDown = () => setDropdown(false);
   const dropdownRef = useRef(null);
-  useOutsideAlerter(dropdownRef, closeDropDown);
+  useOutsideAlerter(dropdownRef, () => props.setDropdown(false));
 
   const handleLogOut = async (event) => {
     event.preventDefault();
@@ -33,16 +31,7 @@ function Dropdown(props) {
 
   return (
     <div ref={dropdownRef}>
-      <button
-        className="button is-white pad"
-        onClick={() => setDropdown(!dropdown)}
-      >
-        <span>{props.auth.user}</span>
-        <span className="icon is-medium">
-          <i className="fas fa-angle-down"></i>
-        </span>
-      </button>
-      {dropdown && (
+      {props.dropdown && (
         <div className="my-dropdown">
           <div className="menu">
             <DropdownItem leftIcon={<ProjectIcon />} path="/projects">
