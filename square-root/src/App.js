@@ -52,7 +52,7 @@ class App extends Component {
     return (
       !isAuthenticating && (
         <>
-          {this.props.match.params.conceptName &&
+          {this.props.location.pathname.indexOf("/customize") <= -1 &&
             this.props.location.pathname != "/forgotpassword" &&
             this.props.location.pathname != "/login" && (
               <Navbar auth={authProps} />
