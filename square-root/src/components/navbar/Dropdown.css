@@ -19,7 +19,7 @@ ul {
 
 .my-dropdown {
   position: absolute;
-  width: 250px;
+  width: 220px;
   background-color: var(--navbarBack);
   padding: 1rem;
   overflow: hidden;
@@ -28,7 +28,8 @@ ul {
   z-index: 200;
   list-style: none;
   top: calc(var(--nav-size) * 0.8);
-  right: 39px
+  right: 39px;
+  text-align: start;
 }
 
 .menu {

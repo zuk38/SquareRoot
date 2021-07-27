@@ -19,7 +19,7 @@ function Dropdown(props) {
   function DropdownItem({ leftIcon, children, onItemClick, path }) {
     return (
       <a href={path} className="my-dropdown-item" onClick={onItemClick}>
-        <span className="icon-button">{leftIcon}</span>
+        {/*<span className="icon-button">{leftIcon}</span>*/}
         {children}
       </a>
     );
