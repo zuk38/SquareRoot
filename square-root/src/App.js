@@ -52,7 +52,7 @@ class App extends Component {
     return (
       !isAuthenticating && (
         <>
-          {this.props.location.pathname != "/customize" &&
+          {this.props.match.params.conceptName &&
             this.props.location.pathname != "/forgotpassword" &&
             this.props.location.pathname != "/login" && (
               <Navbar auth={authProps} />
@@ -173,7 +173,7 @@ class App extends Component {
             <PrivateRoute
               authed={isAuthenticated}
               auth={authProps}
-              path="/customize"
+              path="/customize/:conceptName"
               component={Customize}
             />
 
