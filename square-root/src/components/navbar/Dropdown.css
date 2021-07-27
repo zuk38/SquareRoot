@@ -21,7 +21,6 @@ ul {
   position: absolute;
   width: 250px;
   background-color: var(--navbarBack);
-  border-radius: var(--border-radius);
   padding: 1rem;
   overflow: hidden;
   transition: height var(--speed) ease;
@@ -29,7 +28,7 @@ ul {
   z-index: 200;
   list-style: none;
   top: calc(var(--nav-size) * 0.8);
-  transform: translateX(-250px);
+  right: 39px
 }
 
 .menu {
@@ -40,7 +39,6 @@ ul {
   height: 50px;
   display: flex;
   align-items: center;
-  border-radius: var(--border-radius);
   padding: 0.5rem;
   color: var(--mainBlack);
 }
