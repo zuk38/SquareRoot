@@ -1,5 +1,6 @@
 .customize {
-  padding-top: 0;
+  top: 0;
+  left: 0;
 }
 
 /*PLANTS FILTER*/
@@ -27,14 +28,14 @@ label {
 }
 
 .customize-header {
-  top: 13%;
+  top: 3%;
   left: 45%;
   position: absolute;
 }
 .btn-white {
   background-color: white;
   position: absolute;
-  top: 13%;
+  top: 3%;
 }
 
 .btn-orders {
@@ -46,7 +47,7 @@ label {
   float: right;
   display: inline-flex;
   position: absolute;
-  top: 13%;
+  top: 3%;
   right: 0;
 }
 
