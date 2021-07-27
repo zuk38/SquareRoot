@@ -264,23 +264,51 @@ section p {
 }
 
 section#first {
-  background-color: lightpink;
+  background-color: lightgreen;
+  position:relative;
 
   /*background: :url() no-repeat center center/ cover;*/
 }
 
 section#second {
-  background-color: lightgreen;
+  background-image: url("../images/landscape--rooftop.jpg");
+  background-size: cover;
+  position:relative;
 }
 
 section#third {
-  background-color: lightblue;
+  background-image: url("../images/landscape--rainbed.jpg");
+  background-size: cover;
+  position:relative;
 }
 
 section#fourth {
-  background-color: lightyellow;
+  background-image: url("../images/landscape--biodiversity.jpeg");
+  background-size: cover;
+  position:relative;
 }
 
 section#fifth {
-  height: 60px;
+  background-image: url("../images/landscape--indoor.jpg");
+  background-size: cover;
+  position:relative;
+}
+
+.front-btn{
+  color:white;
+  background:none;
+  border:none;
+  position:absolute;
+  bottom: 15%;
+  top: 65%;
+  left: 60%;
+  right:10%;
+  height: 15%;
+  width: 40%;
+}
+
+.front-btn h1{
+  font-size:60px;
+  font-weight: 700px;
+  
 }

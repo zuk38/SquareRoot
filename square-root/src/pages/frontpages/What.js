@@ -22,7 +22,7 @@ export default function What() {
                             Vi har et sterkt fokus på "de beste plantene for det rikige stedet" for prosjekter med urbane grøntområder med mange krav. 
                                                                                                                                                             Vårt utvalg av planter er forskningsbasert, og i samarbeid med arkitekturselskapene
                                                                                                                                                             &nbsp;<a href="https://www.asplanviak.no">
-                                Aslpan Viak
+                                Asplan Viak
                             </a>&nbsp;og
                                                                             &nbsp;<a href="https://edit.land/home">
                                 Edit Atelier</a>. Sammen utarbeider vi konsepter bestående av ulike plantearter som passer sammen i et gitt grøntareale, for eksempel på en takterrasse, eller for ønsket funksjonalitet, som overvannshåndtering.
