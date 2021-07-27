@@ -2,7 +2,7 @@ import React from "react";
 import "../../styles/frontpages.css";
 import ButtonPrimary from "../../styles/StyledComponents";
 import Grid from "../../components/Grid_2x2";
-import FeaturedConcepts from "../../components/FeturedConcepts";
+import FeaturedConcepts from "../../components/FeaturedConcepts";
 
 export default function Why() {
   const grid_values = [

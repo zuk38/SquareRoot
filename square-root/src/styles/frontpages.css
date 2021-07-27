@@ -461,6 +461,14 @@ color:white;
     float: none;
 }
 
+.float-right{
+    float:right;
+}
+
+.float-left{
+    float:left;
+}
+
 .strong--m{
     font-size: 18px;
 }
