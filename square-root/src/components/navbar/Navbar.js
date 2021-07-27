@@ -8,6 +8,7 @@ import Dropdown from "./Dropdown";
 import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 import NavbarDropdown from "./NavbarDropdown";
+import { Backdrop } from "@material-ui/core";
 
 export default function Navbar(props) {
   const [dropdown, setDropdown] = useState(false);
@@ -41,77 +42,75 @@ export default function Navbar(props) {
   return (
     <>
       <nav className="navbar">
-        <div className="nav-center">
-          <div className="nav-header">
-            <Link to="/">
-              <img src={logo} alt="SQUAREROOT" />
-            </Link>
-          </div>
-          {click ? (
-            <ul className="nav-menu active">
-              {NavbarData.map((item, index) => (
-                <>
+        <div className="nav-header">
+          <Link to="/">
+            <img src={logo} alt="SQUAREROOT" />
+          </Link>
+        </div>
+        {click ? (
+          <ul className="nav-menu active">
+            {NavbarData.map((item, index) => (
+              <>
+                <NavLink
+                  to={item.path}
+                  key={index}
+                  className="nav-links-no-hover"
+                >
+                  {item.title}
+                </NavLink>
+                {item.subtitle &&
+                  item.subtitle.map((item, index) => (
+                    <NavLink to={item.path} key={index} className="sub-item">
+                      {item.title}
+                    </NavLink>
+                  ))}
+              </>
+            ))}
+          </ul>
+        ) : (
+          <ul className="nav-menu">
+            {NavbarData.map((item, index) =>
+              item.title === "GREENSPACES" || item.title === "ABOUT" ? (
+                <li
+                  key={index}
+                  className="nav-item"
+                  onMouseEnter={() => onMouseEnter(item.dropdown)}
+                  onMouseLeave={onMouseLeave}
+                >
                   <NavLink
                     to={item.path}
-                    key={index}
+                    exact={true}
                     className="nav-links-no-hover"
+                    activeStyle={{ fontWeight: "bold" }}
+                    onClick={closeMobileMenu}
+                  >
+                    {item.title}
+                    <i className="fas fa-caret-down" />
+                  </NavLink>
+                  {item.title === "GREENSPACES"
+                    ? navDropdown.dropdownGreenspaces && (
+                        <NavbarDropdown item={item} />
+                      )
+                    : navDropdown.dropdownAbout && (
+                        <NavbarDropdown item={item} />
+                      )}
+                </li>
+              ) : (
+                <li key={index} className="nav-item">
+                  <NavLink
+                    to={item.path}
+                    exact={true}
+                    className={click ? "nav-links-no-hover" : "nav-links"}
+                    activeStyle={{ fontWeight: "bold" }}
+                    onClick={closeMobileMenu}
                   >
                     {item.title}
                   </NavLink>
-                  {item.subtitle &&
-                    item.subtitle.map((item, index) => (
-                      <NavLink to={item.path} key={index} className="sub-item">
-                        {item.title}
-                      </NavLink>
-                    ))}
-                </>
-              ))}
-            </ul>
-          ) : (
-            <ul className="nav-menu">
-              {NavbarData.map((item, index) =>
-                item.title === "GREENSPACES" || item.title === "ABOUT" ? (
-                  <li
-                    key={index}
-                    className="nav-item"
-                    onMouseEnter={() => onMouseEnter(item.dropdown)}
-                    onMouseLeave={onMouseLeave}
-                  >
-                    <NavLink
-                      to={item.path}
-                      exact={true}
-                      className="nav-links-no-hover"
-                      activeStyle={{ fontWeight: "bold" }}
-                      onClick={closeMobileMenu}
-                    >
-                      {item.title}
-                      <i className="fas fa-caret-down" />
-                    </NavLink>
-                    {item.title === "GREENSPACES"
-                      ? navDropdown.dropdownGreenspaces && (
-                          <NavbarDropdown item={item} />
-                        )
-                      : navDropdown.dropdownAbout && (
-                          <NavbarDropdown item={item} />
-                        )}
-                  </li>
-                ) : (
-                  <li key={index} className="nav-item">
-                    <NavLink
-                      to={item.path}
-                      exact={true}
-                      className={click ? "nav-links-no-hover" : "nav-links"}
-                      activeStyle={{ fontWeight: "bold" }}
-                      onClick={closeMobileMenu}
-                    >
-                      {item.title}
-                    </NavLink>
-                  </li>
-                )
-              )}
-            </ul>
-          )}
-        </div>
+                </li>
+              )
+            )}
+          </ul>
+        )}
         <ul className="navbar-nav">
           {/* user */}
           {!props.auth.isAuthenticated ? (
@@ -142,7 +141,14 @@ export default function Navbar(props) {
 
           {/*sidebar*/}
           <div className="sidebar-bars" onClick={handleClick}>
-            {!click ? <MenuIcon /> : <CloseIcon />}
+            {!click ? (
+              <MenuIcon />
+            ) : (
+              <>
+                {" "}
+                <Backdrop /> <CloseIcon />{" "}
+              </>
+            )}
           </div>
         </ul>
       </nav>

@@ -78,110 +78,17 @@ body {
 }
 /* end of globals */
 /* Navbar */
-/*.navbar {
-  height: var(--nav-size);
-  background-color: var(--navbarBack);
-  position: fixed;
-  padding: 0.75 2rem;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
-  font-size: 1.2rem;
-  z-index: 1;
-}
-.navbar-nav {
-  max-width: 100%;
-  height: 100%;
-  display: flex;
-  justify-content: flex-end;
-  margin-right: 15px;
-  padding: 5px;
-  align-items: center;
-}
-.nav-item {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 5px;
-}
-.nav-header {
-  padding: 1rem;
-  display: flex;
-  justify-content: space-between;
-}
-.nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--mainTransition);
-  list-style-type: none;
-  text-decoration: none;
-  list-style-type: none;
-  align-items: center;
-  display: flex;
-}
-.nav-links a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem 0;
-  color: var(--bg);
-  transition: var(--mainTransition);
-  text-align: center;
-  font-size: 1rem;
-  letter-spacing: var(--mainSpacing);
-}
-.nav-links a:hover {
-  border-bottom: 4px solid var(--bg);
-  transition: all 0.2s ease-out;
-}
-
-@media screen and (min-width: 1190px) {
-  .nav-center {
-    max-width: 1170px;
-    margin: 0 auto;
-    display: flex;
-    padding-right: 20rem;
-  }
-  .nav-links {
-    height: auto;
-    display: flex;
-    margin-left: 4rem;
-  }
-  .nav-links a {
-    margin: 0 1rem;
-    padding: 0.5rem 0;
-  }
-}
-/* end of navbar */
-/*new nav */
-/*.navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
-  height: 80px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: 1.2rem;
-}*/
-
 .navbar {
   height: var(--nav-size);
-  background-color: var(--navbarBack);
-  position: fixed;
-  padding: 0.75 2rem;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  width: 100%;
+  background: var(--navbarBack);
   font-size: 1.2rem;
-  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .nav-header {
-  padding: 1rem;
+  padding: 0.7rem;
   display: flex;
   justify-content: space-between;
 }
@@ -191,21 +98,10 @@ body {
   height: 100%;
   display: flex;
   justify-content: flex-end;
-  margin-right: 15px;
   padding: 5px;
   align-items: center;
+  margin-left: auto;
 }
-
-/*.nav-links {
-  height: 0;
-  overflow: hidden;
-  transition: var(--mainTransition);
-  list-style-type: none;
-  text-decoration: none;
-  list-style-type: none;
-  align-items: center;
-  display: flex;
-}*/
 
 .nav-menu {
   height: 0;
@@ -219,17 +115,6 @@ body {
   width: 50vw;
   font-size: 1rem;
   padding: 0;
-
-  /*display: grid;
-  grid-template-columns: repeat(5, auto);
-  grid-gap: 10px;
-  list-style: none;
-  text-align: center;
-  width: 70vw;
-  justify-content: start;
-  transition: var(--mainTransition);
-  text-decoration: none;
-  align-items: center;*/
 }
 
 .nav-item {
@@ -237,21 +122,6 @@ body {
   align-items: center;
   height: 80px;
 }
-
-/*.nav-links a {
-  display: block;
-  text-decoration: none;
-  padding: 1rem 0;
-  color: var(--bg);
-  transition: var(--mainTransition);
-  text-align: center;
-  font-size: 1rem;
-  letter-spacing: var(--mainSpacing);
-}
-.nav-links a:hover {
-  border-bottom: 4px solid var(--bg);
-  transition: all 0.2s ease-out;
-}*/
 
 .nav-links {
   color: var(--bg);
@@ -288,7 +158,7 @@ body {
 
 @media screen and (min-width: 1190px) {
   .nav-center {
-    max-width: 1190px;
+    max-width: 1170px;
     margin: 0 auto;
     display: flex;
     padding-right: 20rem;
@@ -305,12 +175,13 @@ body {
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 100vh;
+    height: 500vh;
     position: fixed;
     top: 80px;
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
+    position: absolute;
   }
 
   .nav-menu.active {
@@ -319,6 +190,7 @@ body {
     opacity: 1;
     transition: all 0.5s ease;
     z-index: 990;
+    position: absolute;
   }
 
   .fa-caret-down {
@@ -382,6 +254,7 @@ body {
     fill: var(--bg);
   }
 }
+/* end of navbar */
 /*sidebar */
 /*.sidebar-bars {
   --button-size: calc(var(--nav-size) * 0.3);
