@@ -1,7 +1,3 @@
-.img-greenspace {
-  height: 600px;
-}
-
 .greenspace {
   position: relative;
   left: 3%;
@@ -13,7 +9,12 @@
   grid-gap: 3%;
   padding-top: 2%;
 }
-h5 {
+
+.greenspaceinfo img {
+  height: 500px;
+}
+
+.greenspaceinfo h5 {
   font-size: 30px;
 }
 
@@ -24,15 +25,11 @@ h5 {
   padding-right: 3%;
   padding-left: 3%;
 }
+
 .city {
   padding-top: 1%;
   padding-left: 3%;
 }
- /*p {
-  padding-bottom: 5%;
-  padding-top: 2%;
-}
-*/
 
 .options {
   position: absolute;
@@ -40,6 +37,7 @@ h5 {
   width: 42%;
   height: 52.7%;
 }
+
 .tilpass {
   padding-bottom: 20px;
 }
@@ -64,7 +62,7 @@ h5 {
   padding-left: 1%;
   padding-bottom: 1%;
 }
-.h4 {
+.func h4 {
   font-weight: 700;
   padding-top: 2%;
 }

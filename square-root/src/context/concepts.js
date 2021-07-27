@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
-import { listCategorys, listConcepts } from "../api/conceptQueries"
+import { listCategorys, listConcepts } from "../api/conceptQueries";
 
 const ConceptContext = React.createContext();
 
@@ -20,8 +20,8 @@ export default class ConceptProvider extends Component {
         authMode: "API_KEY",
       });
 
-      let categories = data.listCategorys.items;      
-      
+      let categories = data.listCategorys.items;
+
       this.setState({
         categories,
         loadingCat: false,
@@ -40,34 +40,45 @@ export default class ConceptProvider extends Component {
         authMode: "API_KEY",
       });
 
-      let concepts = data.listConcepts.items;
-      let featuredConcepts = concepts.filter((concept) => concept.featured)
+      let concepts = this.formatData(data.listConcepts.items);
+      console.log(concepts)
+      let featuredConcepts = concepts.filter((concept) => concept.featured);
       this.setState({
-        concepts, 
+        concepts,
         featuredConcepts,
-        loading: false
-      })
-
+        loading: false,
+      });
     } catch (error) {
       console.log(error);
     }
   };
 
   getCategory = (name) => {
-    let tempCategories = [...this.state.categories]
-    const category = tempCategories.find((category) => category.category_name === name);
-    console.log(category)
+    let tempCategories = [...this.state.categories];
+    const category = tempCategories.find(
+      (category) => category.category_name === name
+    );
+    console.log(category);
     return category;
   };
 
   getConcept = (name) => {
-    let tempConcepts = [...this.state.concepts]
+    let tempConcepts = [...this.state.concepts];
     const concept = tempConcepts.find((concept) => concept.name === name);
     return concept;
   };
 
   formatData(items) {
-    console.log(items)
+    let tempItems = items.map((item) => {
+      let tempPlants = item.plants.items.map((p) => {
+        let metadata = p.plant.metadata;
+        let quantity = p.quantity;
+        let plant = { quantity, ...metadata };
+        return plant;
+      });
+      let concept = {...item, plants: tempPlants}
+      return concept;
+    });
     /*let tempItems = items.map((item) => {
       let tempPlants = item.plants.items.map((p) => {
         let metadata = p.plant.metadata;
@@ -82,8 +93,8 @@ export default class ConceptProvider extends Component {
       let featured = item.featured
       let greenspace = { name, description, image, featured, plants: tempPlants};
       return greenspace
-    })
-    return tempItems*/
+    })*/
+    return tempItems
   }
 
   componentDidMount() {
@@ -97,7 +108,7 @@ export default class ConceptProvider extends Component {
         value={{
           ...this.state,
           getConcept: this.getConcept,
-          getCategory: this.getCategory
+          getCategory: this.getCategory,
         }}
       >
         {this.props.children}

@@ -19,7 +19,7 @@ function Dropdown(props) {
   function DropdownItem({ leftIcon, children, onItemClick, path }) {
     return (
       <a href={path} className="my-dropdown-item" onClick={onItemClick}>
-        <span className="icon-button">{leftIcon}</span>
+        {/*<span className="icon-button">{leftIcon}</span>*/}
         {children}
       </a>
     );
@@ -31,16 +31,16 @@ function Dropdown(props) {
         <div className="my-dropdown">
           <div className="menu">
             <DropdownItem leftIcon={<ProjectIcon />} path="/projects">
-              Mine Prosjekter
+              MINE PROSJEKTER
             </DropdownItem>
             <DropdownItem leftIcon={<AccountIcon />} path="/account">
-              Kontoinnstillinger
+              KONTOINNSTILLINGER
             </DropdownItem>
             {/*<DropdownItem leftIcon={<HelpICon />} path="/help">
               Hjelp
       </DropdownItem>*/}
             <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
-              Logg Ut
+              LOGG UT
             </DropdownItem>
           </div>
         </div>
