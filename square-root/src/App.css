@@ -87,6 +87,12 @@ body {
   align-items: center;
 }
 
+.no-navbar {
+  background-color: transparent;
+  margin-top: -800px;
+  background: transparent;
+}
+
 .nav-header {
   padding: 0.7rem;
   display: flex;
@@ -589,9 +595,8 @@ body {
 /* customize */
 .cust-concept-title {
   position: relative;
-  left: 5%;
   width: 100%;
-  margin-top: 8%;
+  margin-top: 30px;
 }
 
 .cust-concept-title h1 {

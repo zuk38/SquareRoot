@@ -4,7 +4,7 @@ import Loading from "./Loading";
 import PlantsFilter from "./PlantsFilter";
 import PlantsList from "./PlantsList";
 
-function PlantsContainer({ context }) {
+function PlantsContainer({ context, conceptPlants }) {
   const { loading, sortedPlants, plants } = context;
 
   if (loading) return <Loading />;
@@ -12,7 +12,7 @@ function PlantsContainer({ context }) {
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} />
+      <PlantsList plants={sortedPlants} conceptPlants={conceptPlants}/>
     </>
   );
 }
