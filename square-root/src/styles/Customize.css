@@ -1,198 +1,37 @@
-.customize {
-  padding-top: 0;
+.customize-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-/*PLANTS FILTER*/
-.pf {
-  display: block;
+.customize-header div {
+  align-items: center;
+  display: flex;
+  width: 100%;
+  text-align: center;
+  justify-content: flex;
+  margin: auto;
 }
 
-.filters {
-  height: auto;
-  width: 18%;
-  z-index: 1;
-  top: 50%;
-  left: 0%;
-  padding-left: 2.5%;
-  background-color: var(--offWhite);
-  position: absolute;
-  padding-top: 20px;
+.customize-header h5 {
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  margin: auto;
 }
-
-/*END FILTERS*/
-
 
 label {
   display: block;
 }
 
-.customize-header {
-  top: 13%;
-  left: 45%;
-  position: absolute;
-}
-.btn-white {
-  background-color: white;
-  position: absolute;
-  top: 13%;
-}
-
 .btn-orders {
-  background-color: white;
+  background-color: var(--offWhite);
   border: none;
   padding: 10px;
   border-radius: 5px;
   cursor: pointer;
-  float: right;
   display: inline-flex;
-  position: absolute;
-  top: 13%;
-  right: 0;
-}
-
-
-
-/*input {
-  margin: 2%;
-} */
-
-.pn {
-  display: flex;
-  flex-wrap: wrap;
-  width: 80%;
-  margin-left: 20%;
-  align-items: center;
-}
-.plants {
-  /* Same as the width of the sidebar */
-  padding: 40px;
-  height: 30%;
-  flex-wrap: wrap;
-}
-.plant {
-  height: 200px;
-}
-.name {
-  padding-left: 27%;
-  align-items: center;
-}
-
-/*CHECKBOXES*/
-.checkbox-container-float-right {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 15px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  float: right;
-}
-
-.checkbox-container-float-right input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-}
-
-.checkbox-container-float-right:hover {
-  background-color: purple;
-}
-
-.checkmark-is-round {
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  height: 40px;
-  width: 40px;
-  border: 1px solid #799779;
-}
-
-.checkmark-is-round:after {
-  content: "";
-  position: absolute;
-  display: none;
-}
-
-.checkbox-container-float-right input:checked ~ .checkmark-is-round:after {
-  display: block;
-}
-
-.checkbox-container-float-right .checkmark-is-round:after {
-  left: 15px;
-  top: 9px;
-  width: 8px;
-  height: 20px;
-  border: 3px solid #799779;
-  border-width: 0 3px 3px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
-}
-
-/*END OF CHECKBOXES*/
-
-.orders {
-  position: absolute;
-  top: 18%;
-  right: 5%;
-  font-size: 20px;
-}
-
-.order-items {
-  font-weight: 600;
-  font-size: 15px;
-}
-
-/*MODAL*/
-/* !THIS CHANGES ALL MODALS! */
-.ReactModal__Overlay--after-open {
-  background: rgba(0, 0, 0, 0.5) !important;
-  z-index: 1000;
-  position: fixed;
-  transition: 0.2s ease;
-  -webkit-transition: 0.2s ease;
-}
-
-body.ReactModal__Body--open {
-  overflow: hidden;
-  position: fixed;
-  width: 100%;
-  height: 100%;
-}
-
-/* ORDER MODAL */
-.modal-orders {
-  background: white;
-  display: block;
-  margin: auto;
-  width: 30%;
-  height: 80%;
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  overflow: auto;
-}
-
-.o-modal-content {
-  color: black;
-}
-
-.o-h1 {
-  font-size: 20px;
-  padding: 30px;
-}
-
-.o-modal-container {
-  padding: 5%;
-  margin: auto;
-  position: relative;
+  margin-left: auto;
 }
 
 /*TABLE IN MODAL */

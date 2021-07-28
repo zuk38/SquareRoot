@@ -110,6 +110,20 @@ export const listConcepts = /* GraphQL */ `
             plant {
               metadata {
                 norwegian_name
+                latin_name
+                type
+                native
+                norwegian_nursery
+                size_in_cm
+                image
+                featured
+                climate_zone
+                pollinator_friendly
+                edible
+                rain_garden
+                pet_kids_friendly
+                air_puryfying
+                sun_seeker
               }
             }
           }

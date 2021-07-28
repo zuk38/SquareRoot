@@ -25,15 +25,17 @@ export default function ProjectPlantsModal(props) {
           <table className="modal-list">
             {props.plants ? 
             props.plants.map((plant) => (
+              <tbody>
               <tr>
                 <td className="o-modal-img">
-                  <img src={plant.image} alt={plant.name} />
+                  <img src={plant.image} alt={plant.norwegian_name} />
                 </td>
-                <td className="o-modal-name">{plant.name}</td>
-                <td className="o-modal-remove" alt={plant.name}>
+                <td className="o-modal-name">{plant.norwegian_name}</td>
+                <td className="o-modal-remove" alt={plant.norwegian_name}>
                   <i class="fas fa-times fa-lg" />
                 </td>
               </tr>
+              </tbody>
             )) : <td>No plants</td>}
           </table>
         </div>

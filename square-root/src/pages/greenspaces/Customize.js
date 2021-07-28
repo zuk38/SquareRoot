@@ -1,136 +1,90 @@
-import React from "react";
+import React, { Component } from "react";
 import "../../styles/Customize.css";
 import Title from "../../components/Title";
 import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
+import PlantsContainer from "../../components/PlantsContainer";
+import { ConceptContext } from "../../context/concepts";
+import { Link } from "react-router-dom";
 
-const plantList = [
-  {
-    Id: "1001",
-    name: "Musa",
-    img: "../../../images/musa.png",
-    "Water Management": "Low",
-    "Functional Requirements": ["Stormwater Management", "Pollinator Friendly"],
-    Origin: "Local",
-  },
-  {
-    Id: "1002",
-    name: "Pertusem",
-    img: "../../../images/pertusem.png",
-    "Water Management": "Medium",
-    "Functional Requirements": ["Edible", "Pollinator Friendly"],
-    Origin: "Norwegian Nursery",
-  },
-  {
-    Id: "1003",
-    name: "Philodendron",
-    img: "../../../images/philodendron.png",
-    "Water Management": "High",
-    "Functional Requirements": [
-      "Stormwater Management",
-      "Edible",
-      "Pollinator Friendly",
-    ],
-    Origin: "Local",
-  },
-  {
-    Id: "1001",
-    name: "Musa",
-    img: "../../../images/musa.png",
-    "Water Management": "Low",
-    "Functional Requirements": ["Stormwater Management", "Pollinator Friendly"],
-    Origin: "Local",
-  },
-  {
-    Id: "1002",
-    name: "Pertusem",
-    img: "../../../images/pertusem.png",
-    "Water Management": "Medium",
-    "Functional Requirements": ["Edible", "Pollinator Friendly"],
-    Origin: "Norwegian Nursery",
-  },
-  {
-    Id: "1003",
-    name: "Philodendron",
-    img: "../../../images/philodendron.png",
-    "Water Management": "High",
-    "Functional Requirements": [
-      "Stormwater Management",
-      "Edible",
-      "Pollinator Friendly",
-    ],
-    Origin: "Local",
-  },
-];
+export default class Customize extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      modalOpen: false,
+      conceptName: this.props.match.params.conceptName,
+    };
+  }
 
-const plantFilters = {
-  "Functional Requirements": ["Rain Garden", "Pollinator Friendly", "Edible"],
-  Type: ["Flower", "Grass", "Buss & Berry"],
-  Origin: ["Native", "Norwegian Nursery"],
-  "Sun Light": ["Sun Seekers", "Shaddow lovers"],
-};
+  static contextType = ConceptContext;
 
-function PlantPage() {
-  const [plantFilter, setPlantFilter] = React.useState({
-    "Functional Requirements": [],
-    Type: [],
-    Origin: [],
-    "Sun Light": [],
-  });
+  render() {
+    const { getConcept } = this.context;
+    const concept = getConcept(this.state.conceptName);
 
-  const [plants, setPlants] = React.useState([]);
-  const [filteredPlants, setFilteredPlants] = React.useState([]);
-
-  // Runs at load
-  React.useEffect(() => {
-    setPlants(plantList);
-    setFilteredPlants(plantList);
-  }, []);
-
-  const [modalOpen, setModalOpen] = React.useState(false);
-  const [items, setItems] = React.useState([]);
-
-  // Runs when plantFilter is changed
-  React.useEffect(() => {
-    let newPlantList = [];
-    let tempPlants = plants;
-
-    tempPlants.map((plant) => {
-      let matchesFilter = false;
-
-      Object.keys(plantFilter).map((pf) => {
-        plantFilter[pf].map((pfAlternative) => {
-          if (Array.isArray(plant[pf]) && plant[pf].includes(pfAlternative))
-            matchesFilter = true;
-          else if (plant[pf] == pfAlternative) {
-            matchesFilter = true;
-          }
-        });
-      });
-
-      if (matchesFilter) {
-        newPlantList.push(plant);
-      }
-    });
-
-    if (newPlantList.length <= 0) newPlantList = plantList;
-
-    setFilteredPlants(newPlantList);
-  }, [plantFilter]);
-
-  // onClick handler for the filter checkboxes
-  const handleFilterChange = (event, pf, pfAlternative) => {
-    let currentFilter = plantFilter;
-
-    if (event.target.checked) {
-      currentFilter[pf].push(pfAlternative);
-    } else {
-      currentFilter[pf].splice(currentFilter[pf].indexOf(pfAlternative), 1);
+    if (!concept) {
+      return (
+        <div className="error">
+          <h3> no such concept could be found...</h3>
+          <Link to="/" className="btn-primary">
+            back home
+          </Link>
+        </div>
+      );
     }
 
-    setPlantFilter({
-      ...currentFilter,
-    });
-  };
+    const { plants } = concept;
+
+    let plantsNumber;
+    plants ? (plantsNumber = plants.length) : (plantsNumber = 0);
+
+    return (
+      <>
+        <div className="customize-header">
+          <div>
+            <a href={`/concepts/${this.state.conceptName}`} class="btn-back btn-white">
+              <i class="fas fa-chevron-left" />
+              Tilbake til {this.state.conceptName}
+            </a>
+          </div>
+          <div>
+            <h5>Tilpass {this.state.conceptName}</h5>
+          </div>
+          <div>
+            <button className="btn-orders" onClick={() => this.setState({modalOpen: true})}>
+              <i className="fas fa-tasks fa-2x" />
+              <div className="order-items">
+                {plantsNumber}
+                <i className="fas fa-chevron-left" />
+              </div>
+            </button>
+          </div>
+        </div>
+  
+        <ProjectPlantsModal
+          modalOpen={this.state.modalOpen}
+          setModalOpen={(value) => this.setState({modalOpen: value})}
+          name={this.state.conceptName}
+          plants={plants}
+        />
+        <div className="cust-concept-title">
+          <Title
+            title="Oslo"
+            subtitle="I Oslo anbefales det med biologisk mangfoldige planter og
+                temperaturregulerende planter. Vi kan skrive mer her for å gi mer
+                informasjon."
+            style="plants-title"
+          />
+        </div>
+        <PlantsContainer conceptPlants={plants} />
+      </>
+    );
+  }
+}
+
+/*function PlantPage() {  
+
+  const [modalOpen, setModalOpen] = React.useState(false);
+
 
   return (
     <>
@@ -142,18 +96,18 @@ function PlantPage() {
 
         <h5 className="customize-header">Tilpass Takterasse</h5>
 
-        {/*BUTTON OPEN MODAL*/}
+        {/*BUTTON OPEN MODAL
 
         <button className="btn-orders" onClick={() => setModalOpen(true)}>
           <i className="fas fa-tasks fa-2x"></i>
           <div className="order-items">
-            12{/*GET NUMBER OF ITEMS*/}
+            12{/*GET NUMBER OF ITEMS
             <i className="fas fa-chevron-left" />
           </div>
         </button>
       </div>
 
-      {/*MODAL*/}
+      {/*MODAL
       <ProjectPlantsModal modalOpen={modalOpen} setModalOpen={setModalOpen} />
 
       <div className="customize-content">
@@ -212,4 +166,4 @@ function PlantPage() {
   );
 }
 
-export default PlantPage;
+export default PlantPage;*/

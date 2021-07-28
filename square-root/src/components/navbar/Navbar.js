@@ -56,13 +56,14 @@ export default function Navbar(props) {
                 <NavLink
                   to={item.path}
                   key={index}
+                  exact={true}
                   className="nav-links-no-hover"
                 >
                   {item.title}
                 </NavLink>
                 {item.subtitle &&
                   item.subtitle.map((item, index) => (
-                    <NavLink to={item.path} key={index} className="sub-item">
+                    <NavLink to={item.path} key={index} exact={true} className="sub-item">
                       {item.title}
                     </NavLink>
                   ))}

@@ -3,7 +3,7 @@ import "../styles/Plants.css";
 import PlantMiniature from "./PlantMiniature";
 import SinglePlant from "./SinglePlant";
 
-export default function PlantsList({ plants }) {
+export default function PlantsList({ plants, conceptPlants }) {
   const [showPlantModal, setShowPlantModal] = useState(false);
   const [activePlant, setActivePlant] = useState(null);
   const [features, setFeatures] = useState([]);
