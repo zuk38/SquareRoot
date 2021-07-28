@@ -6,7 +6,7 @@ import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
 export default function Customize(props) {
   const conceptName = props.match.params.conceptName;
   let plantsNumber;
-  props.plants ? plantsNumber = props.plants.length : plantsNumber = 0;
+  props.plants ? (plantsNumber = props.plants.length) : (plantsNumber = 0);
 
   const [modalOpen, setModalOpen] = React.useState(false);
 
@@ -19,13 +19,28 @@ export default function Customize(props) {
       <h5 className="customize-header">Tilpass {conceptName}</h5>
 
       <button className="btn-orders" onClick={() => setModalOpen(true)}>
-          <i className="fas fa-tasks fa-2x"/>
-          <div className="order-items">
-            {plantsNumber}
-            <i className="fas fa-chevron-left" />
-          </div>
-        </button>
-        <ProjectPlantsModal modalOpen={modalOpen} setModalOpen={setModalOpen} name={conceptName} />
+        <i className="fas fa-tasks fa-2x" />
+        <div className="order-items">
+          {plantsNumber}
+          <i className="fas fa-chevron-left" />
+        </div>
+      </button>
+      <ProjectPlantsModal
+        modalOpen={modalOpen}
+        setModalOpen={setModalOpen}
+        name={conceptName}
+      />
+      <div className="customize-content">
+        <div className="cust-concept-title">
+          <Title
+            title="Oslo"
+            subtitle="I Oslo anbefales det med biologisk mangfoldige planter og
+              temperaturregulerende planter. Vi kan skrive mer her for å gi mer
+              informasjon."
+            style="plants-title"
+          />
+        </div>
+      </div>
     </div>
   );
 }

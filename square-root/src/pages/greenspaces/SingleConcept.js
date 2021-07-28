@@ -8,7 +8,6 @@ import { ReactComponent as PetKidsIcon } from "../../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../../icons/sun.svg";
 import { ReactComponent as ShadowIcon } from "../../icons/shadow.svg";
-import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
 import Modal from "react-modal";
 
 export default class SingleConcept extends Component {
