@@ -20,7 +20,7 @@ export default function PlantsList({ plants, conceptPlants }) {
     setFeatures([]);
   };
 
-  if (plants.length === 0) {
+  if (plants.length === 0 || !plants) {
     return (
       <div className="empty-search">
         <h3>unfortunately no plants matched your search parameters</h3>

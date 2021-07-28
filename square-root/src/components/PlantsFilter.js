@@ -8,10 +8,6 @@ const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
-const getUniqueCat = (items, value) => {
-  return [...new Set(items.flatMap(({ value }) => value))].sort();
-};
-
 const formatData = (items, index) => {
   let tempItems = items
     .filter(function(item) {
@@ -67,10 +63,10 @@ export default class PlantsFilter extends Component {
 
     if (orgArray.length > copyArray.length) {
       //element added
-      currentItem = orgArray.last();
+      currentItem = orgArray.filter((el) => !copyArray.includes(el));
     } else if (orgArray.length < copyArray.length) {
       //element remnoved
-      currentItem = copyArray.last();
+      currentItem = copyArray.filter((el) => !orgArray.includes(el));
     }
     this.context.handleChange(currentItem);
   };
@@ -101,6 +97,7 @@ export default class PlantsFilter extends Component {
     let categories = [
       ...new Set(this.props.plants.flatMap(({ category }) => category)),
     ].sort();
+    console.log(categories);
     categories = formatData(categories, "category");
 
     //get unique climate zones

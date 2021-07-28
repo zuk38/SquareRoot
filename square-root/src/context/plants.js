@@ -12,7 +12,7 @@ export default class PlantProvider extends Component {
     loading: true,
     //filters
     type: "",
-    greenspace_category: [],
+    category: [],
     climate_zone: "",
     norwegian_nursery: false, //norwegian or external
     native: false, //native or imported
@@ -37,7 +37,7 @@ export default class PlantProvider extends Component {
         authMode: "API_KEY",
       });
       let plants = this.formatData(data.listPlants.items);
-      console.log(plants)
+      console.log(plants);
       let featuredPlants = plants.filter((plant) => plant.featured === true);
       let maxSize = Math.max(...plants.map((item) => item.size_in_cm)); //find the max size from the data
       this.setState({
@@ -61,35 +61,34 @@ export default class PlantProvider extends Component {
 
   handleChange = (selection) => {
     if (selection === undefined) return;
+    console.log(selection)
 
-    let id = selection.id,
-      value = selection.value;
+    let id = selection[0].id,
+      value = selection[0].value;
 
     console.log(id);
     console.log(value);
     console.log(this.state[id]);
 
-    if (
-      id === "type" ||
-      id === "category" ||
-      id === "climate_zone"
-    ) {
-      if (this.state[id] != value) {
+    if (id === "type" || id === "category" || id === "climate_zone") {
+      if (!this.state[id].includes(value)) {
         this.setState(
           {
-            //[id]: [...this.state[id], value],
-            [id]: value,
+            [id]: this.state[id].concat([value]),
           },
-          () => this.filterPlants()
+          () => console.log(this.state.category)
         );
       } else {
-        //let newArray = this.state[id].splice(this.state[id].indexOf(value), 1);
+        let newArray = [...this.state[id]];
+        console.log(newArray)
+        newArray.splice(newArray.indexOf(value), 1);
+        console.log(newArray);
         this.setState(
           {
-            //[id]: newArray,
-            [id]: "",
+            [id]: newArray,
+            //[id]: "",
           },
-          () => this.filterPlants()
+          () => console.log(this.state.category)
         );
       }
     } else {
@@ -132,6 +131,7 @@ export default class PlantProvider extends Component {
 
     let tempPlants = [...plants];
     let state = this.state;
+    console.log(state);
     let plant = null;
 
     //transform value from string
@@ -159,21 +159,32 @@ export default class PlantProvider extends Component {
 
       if (filterBy === "type" && type != "")
         filterValue = state[filterBy].toLowerCase();
-      else if ((filterBy === "climate_zone" && climate_zone != "") || (filterBy === "category" && category != ""))
+      else if (
+        (filterBy === "climate_zone" && climate_zone != "") ||
+        (filterBy === "category" && category != "")
+      ) {
         filterValue = state[filterBy];
-      else filterValue = state[filterBy];
+        filterValue = filterValue[filterValue.length - 1];
+        category.includes(filterValue)
+          ? category.splice(category.indexOf(filterValue))
+          : category.push(filterValue);
+        console.log(category);
+      } else filterValue = state[filterBy];
 
       console.log(filterValue);
 
       if (filterValue) {
         if (filterBy === "shadow_lover" && shadow_lover) {
           tempPlants = tempPlants.filter(function(item) {
-            return item["sun_seeker"] === !filterValue;
+            return item["sun_seeker"] === !filterValue[0];
+          });
+        } else if (filterBy === "category" && category) {
+          tempPlants = tempPlants.filter((plant) => {
+            return plant.category.some((r) => category.indexOf(r) >= 0);
           });
         } else if (filterBy != "shadow_lover") {
-          console.log(filterBy + " " + filterValue);
           tempPlants = tempPlants.filter(function(item) {
-            return item[filterBy] === filterValue;
+            return item[filterBy] === filterValue[0];
           });
         }
       }
@@ -200,7 +211,7 @@ export default class PlantProvider extends Component {
       let image = item.metadata.image;
       let metadata = item.metadata;
       let category = item.metadata.category.items.map((item) => {
-        let c = item.category.category_name; 
+        let c = item.category.category_name;
         return c;
       });
       let plant = { image, ...metadata, category: category };
