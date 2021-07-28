@@ -9,6 +9,7 @@ import { ReactComponent as AirIcon } from "../../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../../icons/sun.svg";
 import { ReactComponent as ShadowIcon } from "../../icons/shadow.svg";
 import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
+import Modal from "react-modal";
 
 export default class SingleConcept extends Component {
   constructor(props) {
@@ -149,12 +150,40 @@ export default class SingleConcept extends Component {
             <i class="fas fa-chevron-right" />
           </button>
           {/*MODAL*/}
-          <ProjectPlantsModal
-            modalOpen={this.state.modalOpen}
-            setModalOpen={(value) => this.setState({ modalOpen: value })}
-            plants={plants}
-            name={this.state.name}
-          />
+          <Modal
+            isOpen={this.state.modalOpen}
+            onRequestClose={() => this.setState({ modalOpen: false })}
+            className={"modal-dashboard"}
+          >
+            <button
+              onClick={() => this.setState({ modalOpen: false })}
+              className="btn-modal-close"
+              alt="Lukk"
+            >
+              <i class="fas fa-times fa-lg"/>
+            </button>
+            <div className="d-modal-content">
+              <h1 className="p-h1">{this.state.name}</h1>
+              <br />
+              <div className="d-modal-container">
+                <table className="d-table">
+                  <tbody>
+                    {plants.map((plant) => (
+                      <tr>
+                        <td className="d-modal-img">
+                          <img src={plant.image} alt={plant.norwegian_name}/>
+                        </td>
+                        {/*greenspace_img*/}
+                        <td className="d-td">{plant.norwegian_name}</td>
+                        {/*greenspace_name*/}
+                        <td className="d-td">{plant.quantity}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </Modal>
         </div>
       </div>
     );
