@@ -233,8 +233,6 @@ Smooth Scroll --------*/
   height: 100vh;
 }
 
-
-
 .front-container {
   width: 100%;
   height: 100%;
@@ -242,12 +240,6 @@ Smooth Scroll --------*/
   scroll-behavior: smooth;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
-}
-
-.front-container section {
-  width: 100%;
-  height: 100vh; /*for all browser sizes*/
-  scroll-snap-align: center;
 }
 
 section h1{
@@ -261,59 +253,50 @@ section h1{
   background: none;
   border: none;
   color: white;
-  font-size:20px;
+  font-size:25px;
   font-weight: 700px;
   font-style: italic;
   padding-right:5%;
   margin-left: auto;
-  left:0;
+  right:0;
   position: absolute;
+  margin-top:5%;
+  margin-right:5%;
+  background-color: rgba(54, 54, 54, 0.3);
+  padding: 2%;
 }
 
 .cat-descr{
   color: white;
   font-style: italic;
-  line-height:2em;
-}
-
-.item1--2x2{
-  grid-column: 1;
-  grid-row:1;
-  
-}
-
-.item2--2x2{
-  grid-column:1;
-  grid-row:2;
-  max-width:80%;
-  word-break: break-word;
-}
-
-.item3--2x2 {
-  grid-column:1;
-  grid-row:3;
-}
-
-.item4--2x2 {
-  grid-column:2;
-  grid-row:1;
+  line-height:1.2em;
 }
 
 .top-container{
   position:absolute;
-  top:2%;
+  bottom:5%;
 }
 
 
+/* SECTIONS FRONT PAGE*/
+
+.front-container section {
+  width: 100%;
+  height: 100vh; /*for all browser sizes*/
+  scroll-snap-align: center;
+}
 
 section p {
-  font-size: 1.5rem;
+  font-size: 1rem;
 }
 
-section#first {
-  background-color: lightgreen;
-  position:relative;
 
+section#first {
+  background-image: url("../images/mainBackground.jpeg");
+  
+  background-color: rgba(54, 54, 54, 0.3);
+  position:relative;
+  background-size: cover;
   /*background: :url() no-repeat center center/ cover;*/
 }
 
@@ -341,9 +324,55 @@ section#fifth {
   position:relative;
 }
 
+/*END SECTIONS */
+
 
 .flex-items{
   display:flex;
 }
 
+.logo-large {
+  width:40%;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
 
+
+.hero-f-container{
+  width: 50%;
+  margin-left: 3%;
+  margin-right: auto;
+  color:white;
+}
+
+.hero-f-subcontainer p{
+  font-size: 0.9rem;
+  color:white;
+  font-weight: 500;
+}
+
+.hero-f-subheader{
+  font-size: 25px;
+  word-break:break-word;
+}
+
+.hero-f-subcontainer{
+  color: white;
+  margin-left:3%;
+  margin-right:auto;
+  margin-top:4%;
+}
+
+.hero-f-subcontainer button {
+  font-size: 0.8rem;
+  padding-right:2%;
+  padding-left:2%;
+  padding-top:0.5%;
+  padding-bottom:0.5%;
+  font-weight:300;
+  border-radius: 5px;
+  background: none;
+  border: 0.2px solid white;
+  color: white;
+}

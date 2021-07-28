@@ -15,23 +15,42 @@ export default function Home(props) {
 
 
                 <section id="first">
-                    <h1>Welcome to my site</h1>
-                    <p>Lorem ipsum lorem ipsum lorem upsum</p>
+                    <img src="../images/logo-white.png" className="logo-large"></img>
+                    <div className="hero-f-container">
+                        <h1 className="hero-f-subheader">Planlegg, design og bestill grøntområder inne, ute og på toppen av bygninger - alt på ett sted.
+                    </h1>
+                            <p>
+                            </p></div>
+
+                    <div className="hero-f-subcontainer c-mrg--top">
+
+                        <p className="u-mrg--txt3">Ny hos SquareRoot?</p>
+                        <button className="front-btn u-mrg--txt3">Forespør Demo</button>
+
+                        <p className="u-mrg--txt3">ELLER</p>
+
+                        <p className="u-mrg--txt3">Har du allerede en konto?</p>
+                        <button className="front-btn u-mrg--txt3">Gå til Beta</button>
+
+                    </div>
                 </section>
 
-        
 
                 <section id="second">
-                    <div className="c-grid--2x2 padding-sm bottom-container">
+                    <div className="c-grid--2x2 padding-sm top-container">
+
+
+                        <div className="item1--2x2 cat-descr">
+                            Sett sammen en takhage med forhåndsutvalgte planter<br/>
+                            Spar tid og penger på å finne plantene som passer i området
+                            <br/>
+                            Vi utvikler skreddersydde tilbud for riktige planter til riktig sted og konsepter som takhager for å øke biologisk mangfold og regnsenger for å håndtere kraftig nedbør og planter.
                         
-                        <h1 className="item1--2x2">Takterrasse</h1>
-                        <div className="item2--2x2 cat-descr">
-                            Sett sammen en takehage med forhåndsutvalgte planter<br/>
-                            Spar tid og penger på å finne plantene som passer i området <br/>
-                            
-                        
+
+
                         </div>
-                        <button className="item3--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
+                        <h1 className="item2--2x2">Takterrasse</h1>
+                        <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
 
@@ -40,28 +59,29 @@ export default function Home(props) {
                 </section>
 
                 <section id="third">
-                    <div className="c-grid--3x2 padding-sm top-container">
-                        <h1 className="item1--2x2">Regnseng</h1>
-                        <button className="item3--2x2 action-btn zoom-on-hover float-left">Les mer<i class="fas fa-angle-double-right"></i>
-                        </button>
-                        <div className="item2--2x2 cat-descr">
+                    <div className="c-grid--2x2 padding-sm top-container">
+                        <h1 className="item2--2x2">Regnseng</h1>
+
+                        <div className="item1--2x2 cat-descr">
                             Overvannshåndtering
                             <br/>
                             Filtrerer vannet<br/>
                             Beskytter dammer og kystlinjer<br/>
-                            Øker bestanden av gunstige insekter som eliminerer skadedyr
+                            Øker bestanden av gunstige insekter
                             <br/>
                             Reduserer sjansen for flom i bygningen
                             <br/>
                             Øker verdien av eiendommen
                         </div>
+                        <button className="item4--2x2 action-btn zoom-on-hover float-left">Les mer<i class="fas fa-angle-double-right"></i>
+                        </button>
                     </div>
 
                 </section>
 
 
                 <section id="fourth">
-                    <div className="c-grid--2x2 padding-sm bottom-container">
+                    <div className="c-grid--2x2 padding-sm top-container">
                         <div className="item1--2x2 cat-descr">
                             Overvannshåndtering
                             <br/>
@@ -74,16 +94,16 @@ export default function Home(props) {
                             Øker verdien av eiendommen
                         </div>
                         <h1 className="item2--2x2">Biomangfold</h1>
-                        <button className="item3--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
+                        <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
 
                     </div>
 
                 </section>
-           
+
                 <section id="fifth">
-                    <div className="c-grid--2x2 padding-sm bottom-container">
+                    <div className="c-grid--2x2 padding-sm top-container">
                         <div className="item1--2x2 cat-descr">
                             Overvannshåndtering
                             <br/>
@@ -96,7 +116,7 @@ export default function Home(props) {
                             Øker verdien av eiendommen
                         </div>
                         <h1 className="item2--2x2">Innendørs</h1>
-                        <button className="item3--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
+                        <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
 
