@@ -255,28 +255,56 @@ section h1{
   font-size:80px;
   font-weight: 700px;
   font-style: italic;
-  padding-left:5%;
 }
 
 .action-btn{
   background: none;
   border: none;
   color: white;
-  font-size:30px;
+  font-size:20px;
   font-weight: 700px;
   font-style: italic;
-  padding-left:5%;
+  padding-right:5%;
+  margin-left: auto;
+  left:0;
+  position: absolute;
 }
 
-.flex-container{
-  display:flex;
-  float:right;
-  flex-direction:row;
-  position: absolute;
-  bottom: 15%;
-  width: 100%;
-  padding:2%;
+.cat-descr{
+  color: white;
+  font-style: italic;
+  line-height:2em;
 }
+
+.item1--2x2{
+  grid-column: 1;
+  grid-row:1;
+  
+}
+
+.item2--2x2{
+  grid-column:1;
+  grid-row:2;
+  max-width:80%;
+  word-break: break-word;
+}
+
+.item3--2x2 {
+  grid-column:1;
+  grid-row:3;
+}
+
+.item4--2x2 {
+  grid-column:2;
+  grid-row:1;
+}
+
+.top-container{
+  position:absolute;
+  top:2%;
+}
+
+
 
 section p {
   font-size: 1.5rem;
@@ -296,7 +324,7 @@ section#second {
 }
 
 section#third {
-  background-image: url("../images/landscape--rainbed.jpg");
+  background-image: url("../images/landscape--rainbed2.jpg");
   background-size: cover;
   position:relative;
 }
@@ -308,10 +336,14 @@ section#fourth {
 }
 
 section#fifth {
-  background-image: url("../images/landscape--indoor2.jpg");
+  background-image: url("../images/portrait--indoor2.jpg");
   background-size: cover;
   position:relative;
 }
 
+
+.flex-items{
+  display:flex;
+}
 
 

@@ -321,7 +321,6 @@ display: inline-block;
 }
 .c-grid--2x2{
     display:grid;
-    grid-gap:clamp(24px,2.9282576867vw,40px);
 }
 
 @media (min-width:768px){
@@ -336,6 +335,14 @@ display: inline-block;
     display:grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap:clamp(24px,2.9282576867vw,40px);
+}
+
+.c-grid--3x2{
+    display:grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:clamp(24px,2.9282576867vw,40px);
+    height:fit-content;
 }
 
 .c-grid--span{
