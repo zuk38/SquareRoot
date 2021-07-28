@@ -55,7 +55,7 @@ class App extends Component {
           {this.props.location.pathname.indexOf("/customize") <= -1 &&
             this.props.location.pathname != "/forgotpassword" &&
             this.props.location.pathname != "/login" && (
-              <Navbar auth={authProps} />
+              <Navbar {...this.props} auth={authProps} />
             )}
 
           <Switch>
