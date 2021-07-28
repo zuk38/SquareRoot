@@ -71,7 +71,7 @@ export default class PlantProvider extends Component {
 
     if (
       id === "type" ||
-      id === "greenspace_category" ||
+      id === "category" ||
       id === "climate_zone"
     ) {
       if (this.state[id] != value) {
@@ -120,7 +120,7 @@ export default class PlantProvider extends Component {
     let {
       plants,
       type,
-      greenspace_category,
+      category,
       size_in_cm,
       minSize,
       maxSize,
@@ -153,12 +153,13 @@ export default class PlantProvider extends Component {
       "norwegian_nursery",
       "type",
       "climate_zone",
+      "category",
     ].forEach(function(filterBy) {
       var filterValue;
 
       if (filterBy === "type" && type != "")
         filterValue = state[filterBy].toLowerCase();
-      else if (filterBy === "climate_zone" && climate_zone != "")
+      else if ((filterBy === "climate_zone" && climate_zone != "") || (filterBy === "category" && category != ""))
         filterValue = state[filterBy];
       else filterValue = state[filterBy];
 
