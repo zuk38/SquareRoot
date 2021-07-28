@@ -233,8 +233,6 @@ Smooth Scroll --------*/
   height: 100vh;
 }
 
-
-
 .front-container {
   width: 100%;
   height: 100%;
@@ -244,43 +242,147 @@ Smooth Scroll --------*/
   overflow-y: auto;
 }
 
+section h1{
+  color:white;
+  font-size:80px;
+  font-weight: 700px;
+  font-style: italic;
+}
+
+.action-btn{
+  background: none;
+  border: none;
+  color: white;
+  font-size:25px;
+  font-weight: 700px;
+  font-style: italic;
+  padding-right:5%;
+  margin-left: auto;
+  right:0;
+  position: absolute;
+  margin-top:5%;
+  margin-right:5%;
+  background-color: rgba(54, 54, 54, 0.3);
+  padding: 2%;
+}
+
+.cat-descr{
+  color: white;
+  font-style: italic;
+  line-height:1.2em;
+}
+
+.top-container{
+  position:absolute;
+  bottom:5%;
+}
+
+
+/* SECTIONS FRONT PAGE*/
+
 .front-container section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   width: 100%;
   height: 100vh; /*for all browser sizes*/
   scroll-snap-align: center;
 }
 
-section h1 {
-  font-size: 4rem;
+section p {
+  font-size: 1rem;
 }
 
-section p {
-  font-size: 1.5rem;
-}
 
 section#first {
-  background-color: lightpink;
-
+  background-image: url("../images/mainBackground.jpeg");
+  
+  background-color: rgba(54, 54, 54, 0.3);
+  position:relative;
+  background-size: cover;
   /*background: :url() no-repeat center center/ cover;*/
 }
 
 section#second {
-  background-color: lightgreen;
+  background-image: url("../images/landscape--rooftop.jpg");
+  background-size: cover;
+  position:relative;
 }
 
 section#third {
-  background-color: lightblue;
+  background-image: url("../images/landscape--rainbed2.jpg");
+  background-size: cover;
+  position:relative;
 }
 
 section#fourth {
-  background-color: lightyellow;
+  background-image: url("../images/landscape--biodiversity.jpeg");
+  background-size: cover;
+  position:relative;
 }
 
 section#fifth {
-  height: 60px;
+  background-image: url("../images/portrait--indoor2.jpg");
+  background-size: cover;
+  position:relative;
+}
+
+/*END SECTIONS */
+
+
+.flex-items{
+  display:flex;
+}
+
+.logo-large {
+  width:40%;
+  display: block;
+  margin-left: 0;
+  margin-right: auto;
+}
+
+
+.hero-f-container{
+  width: 50%;
+  margin-left: 3%;
+  margin-right: auto;
+  color:white;
+}
+
+.hero-f-subcontainer p{
+  font-size: 0.9rem;
+  color:white;
+  font-weight: 500;
+}
+
+.hero-f-subheader{
+  font-size: 25px;
+  word-break:break-word;
+}
+
+.hero-f-subcontainer{
+  color: white;
+  margin-left:3%;
+  margin-right:auto;
+  margin-top:4%;
+}
+
+.hero-f-subcontainer button {
+  font-size: 0.8rem;
+  padding-right:2%;
+  padding-left:2%;
+  padding-top:0.5%;
+  padding-bottom:0.5%;
+  font-weight:300;
+  border-radius: 5px;
+  background: none;
+  border: 0.2px solid white;
+  color: white;
+}
+
+.arrowDown {
+  width:3%;
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+  position:absolute;
+  bottom:15%;
+  left:50%;
 }

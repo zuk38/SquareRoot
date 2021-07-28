@@ -1,5 +1,10 @@
 export const NavbarData = [
   {
+    title: "HOME",
+    path: "/",
+    className: "sidebar-text",
+  },
+  {
     title: "GREENSPACES",
     path: "/categories",
     className: "sidebar-text",
@@ -47,14 +52,22 @@ export const NavbarData = [
     ],
   },
   {
-    title: "PARTNER",
-    path: "/become-a-partner",
-    className: "sidebar-text",
-  },
-  {
     title: "CONTACT",
     path: "/contact",
     className: "sidebar-text",
+    dropdown: "dropdownContact",
+    subtitle: [
+      {
+        title: "CONTACT US",
+        path: "/contact",
+        className: "d-link",
+      },
+      {
+        title: "BECOME A PARTNER",
+        path: "/become-a-partner",
+        className: "d-link",
+      },
+    ],
   },
 ];
 
