@@ -18,6 +18,7 @@
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --navbarBack: #f9f9f9;
+  --navbarBack_op:rgba(249, 249, 249, 0.5);
   --bg: #242526;
   --bg-accent: #d3d3d3;
   --text-color: var(--mainBlack);
@@ -80,7 +81,7 @@ body {
 /* Navbar */
 .navbar {
   height: var(--nav-size);
-  background: var(--navbarBack);
+  background: var(--navbarBack_op);
   font-size: 1.2rem;
   display: flex;
   justify-content: center;
@@ -97,6 +98,10 @@ body {
   padding: 0.7rem;
   display: flex;
   justify-content: space-between;
+  width:60px;
+  margin-top: 0.5%;
+  margin-left:1.5%;
+  
 }
 
 .navbar-nav {

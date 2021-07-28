@@ -376,3 +376,13 @@ section#fifth {
   border: 0.2px solid white;
   color: white;
 }
+
+.arrowDown {
+  width:3%;
+  display:block;
+  margin-right: auto;
+  margin-left: auto;
+  position:absolute;
+  bottom:15%;
+  left:50%;
+}

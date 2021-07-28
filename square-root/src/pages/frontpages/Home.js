@@ -6,6 +6,8 @@ import Grid from "../../components/Grid_2x2";
 import "../../styles/frontpages.css";
 import Footer from "../../components/Footer";
 import "../../styles/Home.css";
+import logo from "../../images/logo-white-green.png"
+import arrowDown from "../../icons/down-arrow.svg"
 
 
 export default function Home(props) {
@@ -15,7 +17,7 @@ export default function Home(props) {
 
 
                 <section id="first">
-                    <img src="../images/logo-white.png" className="logo-large"></img>
+                    <img src={logo} className="logo-large"></img>
                     <div className="hero-f-container">
                         <h1 className="hero-f-subheader">Planlegg, design og bestill grøntområder inne, ute og på toppen av bygninger - alt på ett sted.
                     </h1>
@@ -33,6 +35,8 @@ export default function Home(props) {
                         <button className="front-btn u-mrg--txt3">Gå til Beta</button>
 
                     </div>
+
+                    <a href="#second"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
                 </section>
 
 
@@ -52,7 +56,7 @@ export default function Home(props) {
                         <h1 className="item2--2x2">Takterrasse</h1>
                         <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
-
+                        <a href="#third"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
 
                     </div>
 
@@ -77,6 +81,8 @@ export default function Home(props) {
                         </button>
                     </div>
 
+                    <a href="#fourth"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
+
                 </section>
 
 
@@ -97,7 +103,7 @@ export default function Home(props) {
                         <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
-
+                        <a href="#fifth"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
                     </div>
 
                 </section>
@@ -118,7 +124,6 @@ export default function Home(props) {
                         <h1 className="item2--2x2">Innendørs</h1>
                         <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
-
 
                     </div>
 
