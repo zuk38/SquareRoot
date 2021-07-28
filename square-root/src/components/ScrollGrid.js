@@ -22,7 +22,7 @@ export default function ScrollGrid({ title, categories }) {
                   className="item-portrait zoom-on-hover"
                   onClick={() => redirectToCategory(category.category_name)}
                 >
-                  <img src={category.image} />
+                  <img src={category.image} alt={category.category_name}/>
                   <p>{category.category_name}</p>
                 </button>
               ))}

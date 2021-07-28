@@ -8,6 +8,7 @@ const ConceptContext = React.createContext();
 export default class ConceptProvider extends Component {
   state = {
     concepts: [],
+    tempConcepts: [],
     featuredConcepts: [],
     categories: [],
     loadingCat: true,
@@ -43,11 +44,13 @@ export default class ConceptProvider extends Component {
         authMode: "API_KEY",
       });
 
+      let tempConcepts = data.listConcepts.items;
       let concepts = this.formatData(data.listConcepts.items);
       console.log(concepts);
       let featuredConcepts = concepts.filter((concept) => concept.featured);
       this.setState({
         concepts,
+        tempConcepts,
         featuredConcepts,
         loading: false,
       });
@@ -70,6 +73,8 @@ export default class ConceptProvider extends Component {
     const concept = tempConcepts.find((concept) => concept.name === name);
     return concept;
   };
+
+  //saveCustomisedConcept()
 
   truthyObjLoop = (user) => {
     for (var key in user) {
