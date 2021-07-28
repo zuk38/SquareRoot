@@ -8,6 +8,10 @@ const getUnique = (items, value) => {
   return [...new Set(items.map((item) => item[value]))];
 };
 
+const getUniqueCat = (items, value) => {
+  return [...new Set(items.flatMap(({ value }) => value))].sort();
+};
+
 const formatData = (items, index) => {
   let tempItems = items
     .filter(function(item) {
@@ -68,7 +72,7 @@ export default class PlantsFilter extends Component {
       //element remnoved
       currentItem = copyArray.last();
     }
-    this.context.handleChange(currentItem)
+    this.context.handleChange(currentItem);
   };
 
   setValues = (orgName, values) => {
@@ -89,14 +93,14 @@ export default class PlantsFilter extends Component {
 
     //get unique types
     let types = getUnique(this.props.plants, "type");
-    console.log(types)
+    console.log(types);
     //format to dropdown
     types = formatData(types, "type");
 
     //get unique categories
-    let categories = getUnique(this.props.plants, "category");
-    console.log(categories)
-    //format to dropdown
+    let categories = [
+      ...new Set(this.props.plants.flatMap(({ category }) => category)),
+    ].sort();
     categories = formatData(categories, "category");
 
     //get unique climate zones
@@ -174,9 +178,7 @@ export default class PlantsFilter extends Component {
             closeOnSelect={false}
             options={categories}
             placeholder="Grøntområde"
-            onChange={(values) =>
-              this.setValues("selectCategory", "latSelectCategory", values)
-            }
+            onChange={(values) => this.setValues("selectCategory", values)}
           />
           {/*Type */}
           <Dropdown
