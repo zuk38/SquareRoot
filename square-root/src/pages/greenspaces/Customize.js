@@ -38,7 +38,7 @@ export default function Customize(props) {
 
   const handleChangeInPlants = (plant) => {
     console.log(plant);
-    if (!conceptPlants.includes(plant)) {
+    /*if (!conceptPlants.includes(plant)) {
       setConceptPlants(conceptPlants.concat[plant]);
       setPlantsNumber(conceptPlants.length + 1);
     } else {
@@ -46,7 +46,7 @@ export default function Customize(props) {
       newArray.splice(newArray.indexOf(plant), 1);
       setConceptPlants(newArray);
       setPlantsNumber(newArray.length);
-    }
+    }*/
   };
 
   return (
@@ -88,7 +88,7 @@ export default function Customize(props) {
             style="plants-title"
           />
         </div>
-        <PlantsContainer conceptPlants={conceptPlants} />
+        <PlantsContainer conceptPlants={conceptPlants} handleChangeInPlants={handleChangeInPlants}/>
       </>
     </ConceptProvider>
   );

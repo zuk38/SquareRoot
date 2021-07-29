@@ -9,10 +9,15 @@ function PlantsContainer(props) {
 
   if (loading) return <Loading />;
 
+  const handleChangeInPlants = (...args) => {
+    console.log("lalala")
+    props.handleChangeInPlants(...args);
+  }
+
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} />
+      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} handleChangeInPlants={handleChangeInPlants} />
     </>
   );
 }

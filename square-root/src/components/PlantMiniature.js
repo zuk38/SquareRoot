@@ -9,22 +9,11 @@ import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
 import { ReactComponent as AddIcon } from "../icons/add.svg";
 
-export default function PlantMiniature({
-  plant,
-  customising,
-  conceptPlant,
-  showModal,
-  setShowPlantModal,
-}) {
-  const [checkPlant, setCheckPlant] = useState(conceptPlant);
+export default function PlantMiniature(props) {
+  const [checkPlant, setCheckPlant] = useState(props.conceptPlant);
   const setCheckedPlant = () => {
-    console.log(plant);
     setCheckPlant(!checkPlant);
-    /*if (typeof handleChangeInPlant === "function") {
-      console.log(plant)
-      // safe to use the function
-      handleChangeInPlant(plant);
-    }*/
+    props.handleChange(props.plant)
   };
 
   const iconMap = {
@@ -47,7 +36,7 @@ export default function PlantMiniature({
     air_puryfying,
     sun_seeker,
     native,
-  } = plant;
+  } = props.plant;
 
   let tempFeatures = {
     pollinator_friendly,
@@ -68,12 +57,12 @@ export default function PlantMiniature({
         <div className="plant-img-container">
           <img src={image} alt={norwegian_name} />
 
-          {norwegian_nursery && !customising && (
+          {norwegian_nursery && !props.customising && (
             <div className="badge-top">
               <img src={QualityBadge} />
             </div>
           )}
-          {customising ? (
+          {props.customising ? (
             <div className="add-button" onClick={() => setCheckedPlant()}>
               <span>{checkPlant ? <AddIcon /> : <></>}</span>
             </div>
@@ -89,10 +78,10 @@ export default function PlantMiniature({
             </div>
           )}
 
-          {!showModal && (
+          {!props.showModal && (
             <button
               className="button is-dark plant-link"
-              onClick={() => setShowPlantModal(plant, features)}
+              onClick={() => props.setShowPlantModal(props.plant, features)}
             >
               FEATURES
             </button>

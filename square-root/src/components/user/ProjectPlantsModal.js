@@ -32,7 +32,7 @@ export default function ProjectPlantsModal(props) {
                 </td>
                 <td className="o-modal-name">{plant.norwegian_name}</td>
                 <td className="o-modal-remove" alt={plant.norwegian_name}>
-                  <i class="fas fa-times fa-lg" />
+                  <i className="fas fa-times fa-lg" />
                 </td>
               </tr>
               </tbody>
