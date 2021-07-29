@@ -105,3 +105,27 @@
   opacity: 0;
   transform: translateX(-100px);
 }
+
+.add-button {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: var(--icon-gray);
+  border-radius: 50%;
+  border-width: 1px;
+  border-color: var(--bg);
+  padding: 5px;
+  margin: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: filter 300ms;
+}
+.add-button:hover {
+  filter: brightness(1.2);
+}
+.add-button svg {
+  fill: var(--bg);
+  width: 20px;
+  height: 20px;
+}

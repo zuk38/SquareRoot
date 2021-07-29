@@ -11,6 +11,7 @@ import PropTypes from "prop-types";
 
 export default function PlantMiniature({
   plant,
+  conceptPlant,
   showModal,
   setShowPlantModal,
 }) {
@@ -54,7 +55,8 @@ export default function PlantMiniature({
       <article className="plant">
         <div className="plant-img-container">
           <img src={image} alt={norwegian_name} />
-          {norwegian_nursery && (
+
+          {norwegian_nursery && conceptPlant === null && (
             <div className="badge-top">
               <img src={QualityBadge} />
             </div>

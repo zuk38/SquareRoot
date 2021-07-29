@@ -41,8 +41,8 @@ export default class Customize extends Component {
       <>
         <div className="customize-header">
           <div>
-            <a href={`/concepts/${this.state.conceptName}`} class="btn-back btn-white">
-              <i class="fas fa-chevron-left" />
+            <a href={`/concepts/${this.state.conceptName}`} className="btn-back btn-white">
+              <i className="fas fa-chevron-left" />
               Tilbake til {this.state.conceptName}
             </a>
           </div>

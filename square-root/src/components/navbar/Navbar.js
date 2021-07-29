@@ -18,6 +18,7 @@ export default function Navbar(props) {
   const [navDropdown, setNavDropdown] = useState({
     dropdownAbout: false,
     dropdownGreenspaces: false,
+    dropdownContact: false,
   });
 
   let width = useWindowDimensions();
@@ -35,6 +36,7 @@ export default function Navbar(props) {
     } else {
       setNavDropdown({ [dropdown]: true });
     }
+    console.log(dropdown)
   };
 
   const onMouseLeave = () => {
@@ -54,16 +56,23 @@ export default function Navbar(props) {
             {NavbarData.map((item, index) => (
               <>
                 <NavLink
-                  to={item.path}
+                  to={item.title === "HOME" ? item.path : props.location.pathname}
                   key={index}
                   exact={true}
                   className="nav-links-no-hover"
+                  onClick={closeMobileMenu}
                 >
                   {item.title}
                 </NavLink>
                 {item.subtitle &&
                   item.subtitle.map((item, index) => (
-                    <NavLink to={item.path} key={index} exact={true} className="sub-item">
+                    <NavLink
+                      to={item.path}
+                      key={index}
+                      exact={true}
+                      className="sub-item"
+                      onClick={closeMobileMenu}
+                    >
                       {item.title}
                     </NavLink>
                   ))}
@@ -73,7 +82,9 @@ export default function Navbar(props) {
         ) : (
           <ul className="nav-menu">
             {NavbarData.map((item, index) =>
-              item.title === "GREENSPACES" || item.title === "ABOUT" ? (
+              item.title === "GREENSPACES" ||
+              item.title === "ABOUT" ||
+              item.title === "CONTACT" ? (
                 <li
                   key={index}
                   className="nav-item"
@@ -81,30 +92,35 @@ export default function Navbar(props) {
                   onMouseLeave={onMouseLeave}
                 >
                   <NavLink
-                    to={item.path}
+                    to={props.location.pathname}
                     exact={true}
                     className="nav-links-no-hover"
-                    activeStyle={{ fontWeight: "bold" }}
                     onClick={closeMobileMenu}
                   >
                     {item.title}
                     <i className="fas fa-caret-down" />
                   </NavLink>
-                  {item.title === "GREENSPACES"
-                    ? navDropdown.dropdownGreenspaces && (
+                  {
+                    {
+                      "GREENSPACES": navDropdown.dropdownGreenspaces && (
                         <NavbarDropdown item={item} />
-                      )
-                    : navDropdown.dropdownAbout && (
+                      ),
+                      "ABOUT": navDropdown.dropdownAbout && (
                         <NavbarDropdown item={item} />
-                      )}
+                      ),
+                      "CONTACT": navDropdown.dropdownContact && (
+                        <NavbarDropdown item={item} />
+                      ),
+                    }[item.title]
+                  }
                 </li>
               ) : (
                 <li key={index} className="nav-item">
                   <NavLink
-                    to={item.path}
+                    to={item.title === "HOME" ? item.path : props.location.pathname}
                     exact={true}
                     className={click ? "nav-links-no-hover" : "nav-links"}
-                    activeStyle={{ fontWeight: "bold" }}
+                    
                     onClick={closeMobileMenu}
                   >
                     {item.title}

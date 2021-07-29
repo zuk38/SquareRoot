@@ -24,9 +24,9 @@ export default function ProjectPlantsModal(props) {
         <div className="o-modal-container">
           <table className="modal-list">
             {props.plants ? 
-            props.plants.map((plant) => (
+            props.plants.map((plant, index) => (
               <tbody>
-              <tr>
+              <tr key={index}>
                 <td className="o-modal-img">
                   <img src={plant.image} alt={plant.norwegian_name} />
                 </td>
