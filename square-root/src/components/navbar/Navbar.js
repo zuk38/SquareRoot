@@ -60,6 +60,7 @@ export default function Navbar(props) {
                   key={index}
                   exact={true}
                   className="nav-links-no-hover"
+                  onClick={closeMobileMenu}
                 >
                   {item.title}
                 </NavLink>
@@ -70,6 +71,7 @@ export default function Navbar(props) {
                       key={index}
                       exact={true}
                       className="sub-item"
+                      onClick={closeMobileMenu}
                     >
                       {item.title}
                     </NavLink>
