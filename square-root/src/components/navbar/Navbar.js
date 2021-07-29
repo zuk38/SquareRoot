@@ -56,7 +56,7 @@ export default function Navbar(props) {
             {NavbarData.map((item, index) => (
               <>
                 <NavLink
-                  to={item.path}
+                  to={item.title === "HOME" ? item.path : props.location.pathname}
                   key={index}
                   exact={true}
                   className="nav-links-no-hover"
@@ -92,10 +92,9 @@ export default function Navbar(props) {
                   onMouseLeave={onMouseLeave}
                 >
                   <NavLink
-                    to={item.path && item.path}
+                    to={props.location.pathname}
                     exact={true}
                     className="nav-links-no-hover"
-                    activeStyle={{ fontWeight: "bold" }}
                     onClick={closeMobileMenu}
                   >
                     {item.title}
@@ -118,10 +117,10 @@ export default function Navbar(props) {
               ) : (
                 <li key={index} className="nav-item">
                   <NavLink
-                    to={item.path && item.path}
+                    to={item.title === "HOME" ? item.path : props.location.pathname}
                     exact={true}
                     className={click ? "nav-links-no-hover" : "nav-links"}
-                    activeStyle={{ fontWeight: "bold" }}
+                    
                     onClick={closeMobileMenu}
                   >
                     {item.title}
