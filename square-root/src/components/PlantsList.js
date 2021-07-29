@@ -20,7 +20,7 @@ export default function PlantsList({ plants, conceptPlants }) {
     setFeatures([]);
   };
 
-  if (plants.length === 0 || !plants) {
+  if (plants.length === 0) {
     return (
       <div className="empty-search">
         <h3>unfortunately no plants matched your search parameters</h3>
@@ -28,11 +28,18 @@ export default function PlantsList({ plants, conceptPlants }) {
     );
   }
 
+  let cP = [];
   plants = plants.map((plant) => {
+    let found = false;
+    conceptPlants && conceptPlants.map((p) => {
+      if (p.norwegian_name === plant.norwegian_name) found = true;
+    })
+    
     return (
       <PlantMiniature
         key={plant.id}
         plant={plant}
+        conceptPlant={found}
         showModal={showPlantModal}
         setShowPlantModal={openModal}
       />
