@@ -150,7 +150,7 @@ export default class SingleConcept extends Component {
             onClick={() => this.setState({ modalOpen: true })}
           >
             Se hele plantelisten
-            <i class="fas fa-chevron-right" />
+            <i className="fas fa-chevron-right" />
           </button>
           {/*MODAL*/}
           <Modal
@@ -163,7 +163,7 @@ export default class SingleConcept extends Component {
               className="btn-modal-close"
               alt="Lukk"
             >
-              <i class="fas fa-times fa-lg"/>
+              <i className="fas fa-times fa-lg"/>
             </button>
             <div className="d-modal-content">
               <h1 className="p-h1">{this.state.name}</h1>
@@ -176,9 +176,7 @@ export default class SingleConcept extends Component {
                         <td className="d-modal-img">
                           <img src={plant.image} alt={plant.norwegian_name}/>
                         </td>
-                        {/*greenspace_img*/}
                         <td className="d-td">{plant.norwegian_name}</td>
-                        {/*greenspace_name*/}
                         <td className="d-td">{plant.quantity}</td>
                       </tr>
                     ))}

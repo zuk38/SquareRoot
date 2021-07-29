@@ -4,15 +4,15 @@ import Loading from "./Loading";
 import PlantsFilter from "./PlantsFilter";
 import PlantsList from "./PlantsList";
 
-function PlantsContainer({ context, conceptPlants }) {
-  const { loading, sortedPlants, plants } = context;
+function PlantsContainer(props) {
+  const { loading, sortedPlants, plants } = props.context;
 
   if (loading) return <Loading />;
 
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} conceptPlants={conceptPlants}/>
+      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} />
     </>
   );
 }

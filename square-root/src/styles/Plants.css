@@ -73,6 +73,43 @@ label {
   transition: all 0.3s linear;
 }
 
+.add-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 2px;
+}
+
+.add-button span {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+  background-color: white;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 3px;
+  border-color: var(--bg);
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  transition: filter 300ms;
+  margin-left: auto;
+}
+
+.add-button span svg {
+  --button-size: calc(var(--nav-size) * 0.5);
+  width: var(--button-size);
+  height: var(--button-size);
+}
+
+.add-button span:hover {
+  cursor: pointer;
+}
+
+.add-button span svg:hover {
+  filter: brightness(1.2);
+}
+
 .plant-link {
   position: absolute;
   bottom: 10px;
@@ -117,7 +154,7 @@ label {
   opacity: 0.4;
 }
 
-.plant-img-container:hover .plant-link {
+.plant-img-container:hover .plant-link, .featureList, .add-button {
   opacity: 1;
 }
 
