@@ -2,12 +2,12 @@ import React, { useState } from "react";
 import "../styles/Plants.css";
 import PlantMiniature from "./PlantMiniature";
 import SinglePlant from "./SinglePlant";
-import { useLocation } from 'react-router-dom'
+import { useLocation } from "react-router-dom";
 
 export default function PlantsList(props) {
   const location = useLocation();
   let isCustomising;
-  if(location.pathname.indexOf("/customize") <= -1) {
+  if (location.pathname.indexOf("/customize") <= -1) {
     isCustomising = false;
   } else {
     isCustomising = true;
@@ -29,9 +29,9 @@ export default function PlantsList(props) {
   };
 
   const handleChange = (plant) => {
-    console.log(plant)
-    props.handleChangeInPlants(plant)
-  }
+    console.log(plant);
+    props.handleChangeInPlants(plant);
+  };
 
   if (props.plants.length === 0) {
     return (

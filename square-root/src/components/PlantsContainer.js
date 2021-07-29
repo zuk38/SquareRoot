@@ -10,7 +10,6 @@ function PlantsContainer(props) {
   if (loading) return <Loading />;
 
   const handleChangeInPlants = (...args) => {
-    console.log("lalala")
     props.handleChangeInPlants(...args);
   }
 

@@ -25,6 +25,10 @@ export default function Customize(props) {
     }
   }, [concept]);
 
+  useEffect(() => {
+    setPlantsNumber(conceptPlants.length)
+  }, [conceptPlants])
+
   if (!concept) {
     return (
       <div className="error">
@@ -38,15 +42,19 @@ export default function Customize(props) {
 
   const handleChangeInPlants = (plant) => {
     console.log(plant);
-    /*if (!conceptPlants.includes(plant)) {
-      setConceptPlants(conceptPlants.concat[plant]);
-      setPlantsNumber(conceptPlants.length + 1);
+    console.log(conceptPlants)
+    
+    if (!conceptPlants.some(p => p.norwegian_name === plant.norwegian_name)) {
+      console.log("Add")
+      setConceptPlants(oldArray => [...oldArray, plant]);
+      
     } else {
+      console.log("Remove")
       let newArray = [...conceptPlants];
-      newArray.splice(newArray.indexOf(plant), 1);
+      newArray.splice(newArray.findIndex(p => p.norwegian_name === plant.norwegian_name), 1);
       setConceptPlants(newArray);
-      setPlantsNumber(newArray.length);
-    }*/
+    }
+    console.log(conceptPlants)
   };
 
   return (
