@@ -6,7 +6,7 @@ import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
 import PrivateRoute from "./components/PrivateRoute";
-import Home from "./pages/frontpages/Home";
+import Home from "./pages/frontpages/HomeOrig";
 import Plants from "./pages/Plants";
 import PN from "./pages/PN";
 import Error from "./pages/Error";
