@@ -153,6 +153,26 @@ body {
   display: block;
 }
 
+.nav-links-title {
+  color: var(--bg);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: var(--mainTransition);
+  display: block;
+  cursor: default;
+}
+
+.nav-links-no-hover-title {
+  color: var(--bg);
+  text-decoration: none;
+  padding: 0.5rem 1rem;
+  text-align: center;
+  transition: var(--mainTransition);
+  display: block;
+  cursor: default;
+}
+
 .nav-links:hover {
   border-bottom: 4px solid var(--bg);
   transition: all 0.2s ease-out;
@@ -230,6 +250,31 @@ body {
     list-style: none;
     font-size: 20px;
     margin: 0.5rem;
+  }
+
+  .nav-links-title {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: var(--mainTransition);
+    display: block;
+    cursor: default;
+  }
+
+  .nav-links-no-hover-title {
+    color: var(--bg);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    transition: var(--mainTransition);
+    display: block;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    font-size: 20px;
+    margin: 0.5rem;
+    cursor: default;
   }
 
   .sub-item {
