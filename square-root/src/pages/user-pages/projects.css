@@ -1,3 +1,12 @@
+/* ProjectHeader */
+
+.p-main-header {
+  width: 100%;
+}
+
+
+
+
 /* COLUMNS */
 .p-row {
   padding-top: 5%;
@@ -16,13 +25,7 @@
   padding-left: 5%;
 }
 
-.right {
-  width: 75%;
-  float: right;
-  background: var(--offWhite);
-  padding-right: 5%;
-  padding-left: 5%;
-}
+
 
 .row:after {
   content: "";
@@ -433,8 +436,21 @@ td.d-modal-img {
 }
 /*GREENSPACES*/
 /* BUTTON : NEW GREENSPACE*/
-.btn-new-greenspace {
-  float: right;
+
+
+/* GRID GREENSPACES*/
+.green-container {
+  padding-top: 5%;
+  display: grid;
+  max-width: 1200px;
+  margin: 0 auto;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.item1-btn-large {
+  grid-column: 1;
+  grid-row:1;
   padding: 15px 10px;
   font-weight: 500;
   border: 1px solid var(--mainGreen);
@@ -451,15 +467,6 @@ td.d-modal-img {
   color: var(--mainBlack);
 }
 
-/* GRID GREENSPACES*/
-.green-container {
-  padding-top: 5%;
-  display: grid;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
 
 .green-item {
   padding: 1rem;

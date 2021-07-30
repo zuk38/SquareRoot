@@ -92,10 +92,13 @@ function Dashboard(props) {
       case "/dashboard":
         return (
           <div className="green-container">
-            {greenspaces.map((greenspace) => (
+            <button className="item1-btn-large">
+          <i class="fas fa-plus"></i>Legg til grøntområde
+      </button>
+      <div className="item2-user-greenspaces">{greenspaces.map((greenspace) => (
               <DashboardContent greenspace={greenspace} />
             ))}
-          </div>
+          </div></div>
         );
       case "/members":
         return <MembersContent members={members} />;
@@ -135,7 +138,7 @@ function Dashboard(props) {
         currentPage={currentPage}
         setCurrentPage={(page) => setCurrentPage(page)}
       />
-      <div className=".p-column right">
+      <div className="p-main-header">
         <div className="title-container-greenspace">
           <div className="p-title">
             <img className="project-icon" src={icon} alt="Prosjektikon" />
@@ -145,16 +148,10 @@ function Dashboard(props) {
           <h2 className="p-h2">Rolle: {currentMember.role}</h2>
           </div>
   </div>
-          {/* --- REMOVING "ADD GREENSPACE" BUTTON ---
-B/c: The user should understand that in order to add greenspace/plant, 
-they should navigate through the menu, rather than us setting up another route for them to take.
-     */}
-<button className="btn-new-greenspace">
-          <i class="fas fa-plus"></i>Legg til grøntområde
-      </button>
+        
 
           {renderSwitch(currentPage)}
-        </div>
+        </div> 
   );
 }
 export default withProjectConsumer(Dashboard);
