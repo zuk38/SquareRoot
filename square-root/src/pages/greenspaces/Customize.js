@@ -26,8 +26,8 @@ export default function Customize(props) {
   }, [concept]);
 
   useEffect(() => {
-    setPlantsNumber(conceptPlants.length)
-  }, [conceptPlants])
+    setPlantsNumber(conceptPlants.length);
+  }, [conceptPlants]);
 
   if (!concept) {
     return (
@@ -40,7 +40,44 @@ export default function Customize(props) {
     );
   }
 
-  const handleChangeInPlants = (plant) => {
+  const onAdd = (plant) => {
+    console.log(plant)
+    const exist = conceptPlants.find(
+      (x) => x.norwegian_name === plant.norwegian_name
+    );
+    if (!exist) {
+      setConceptPlants([...conceptPlants, { ...plant, quantity: 1 }]);
+    } else {
+      setConceptPlants(
+        conceptPlants.map((x) =>
+          x.norwegian_name === plant.norwegian_name
+            ? { ...exist, quantity: exist.quantity + 1 }
+            : x
+        )
+      );
+    }
+  };
+
+  const onRemove = (plant) => {
+    const exist = conceptPlants.find((x) => x.norwegian_name === plant.norwegian_name);
+    if (exist.quantity === 1) {
+      onRemoveCompletely(plant)
+    } else {
+      setConceptPlants(
+        conceptPlants.map((x) =>
+          x.norwegian_name === plant.norwegian_name
+            ? { ...exist, quantity: exist.quantity - 1 }
+            : x
+        )
+      );
+    }
+  }
+
+  const onRemoveCompletely = (plant) => {
+    setConceptPlants(conceptPlants.filter((x) => x.norwegian_name !== plant.norwegian_name));
+  }
+
+  /*const handleChangeInPlants = (plant) => {
     console.log(plant);
     console.log(conceptPlants)
     
@@ -55,9 +92,7 @@ export default function Customize(props) {
       setConceptPlants(newArray);
     }
     console.log(conceptPlants)
-  };
-
-
+  };*/
 
   return (
     <ConceptProvider>
@@ -88,6 +123,10 @@ export default function Customize(props) {
           setModalOpen={(value) => setModalOpen(value)}
           name={conceptName}
           plants={conceptPlants}
+          plantsNumber={plantsNumber}
+          onAdd={onAdd}
+          onRemove={onRemove}
+          onRemoveCompletely={onRemoveCompletely}
         />
         <div className="cust-concept-title">
           <Title
@@ -98,7 +137,7 @@ export default function Customize(props) {
             style="plants-title"
           />
         </div>
-        <PlantsContainer conceptPlants={conceptPlants} handleChangeInPlants={handleChangeInPlants} saveNewConcept={saveModifiedConcept}/>
+        <PlantsContainer onAdd={onAdd} onRemove={onRemove} conceptPlants={conceptPlants} />
       </>
     </ConceptProvider>
   );

@@ -28,9 +28,14 @@ export default function PlantsList(props) {
     setFeatures([]);
   };
 
-  const handleChange = (plant) => {
+  const onAdd = (plant) => {
     console.log(plant);
-    props.handleChangeInPlants(plant);
+    props.onAdd(plant);
+  };
+
+  const onRemove = (plant) => {
+    console.log(plant);
+    props.onRemove(plant);
   };
 
   if (props.plants.length === 0) {
@@ -61,7 +66,8 @@ export default function PlantsList(props) {
         customising={isCustomising}
         showModal={showPlantModal}
         setShowPlantModal={openModal}
-        handleChange={(plant) => handleChange(plant)}
+        onAdd={(plant) => onAdd(plant)}
+        onRemove={(plant) => onRemove(plant)}
       />
     );
   });

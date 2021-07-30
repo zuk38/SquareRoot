@@ -8,27 +8,41 @@ export default function ProjectPlantsModal(props) {
     Modal.setAppElement("body");
   }, []);
 
-  let plantsNumber;
+  const {
+    plants,
+    plantsNumber,
+    modalOpen,
+    name,
+    setModalOpen,
+    onAdd,
+    onRemove,
+    onRemoveCompletely
+  } = props;
 
-  if (!props.plants || !props.plants.length) plantsNumber = 0;
-  else plantsNumber = props.plants.length;
+  const onAddHandler = (...args) => {
+    onAdd(...args);
+  };
+
+  const onRemoveHandler = (...args) => {
+    onRemove(...args);
+  };
 
   return (
     <Modal
-      isOpen={props.modalOpen}
-      onRequestClose={() => props.setModalOpen(false)}
+      isOpen={modalOpen}
+      onRequestClose={() => setModalOpen(false)}
       className="project-plants-modal"
     >
       <div className="project-plants-modal-content">
         <h1>
-          Det er <strong>{plantsNumber}</strong> planter i {props.name}
+          Det er <strong>{plantsNumber}</strong> planter i {name}
         </h1>
-        {props.plants ? (
-          props.plants.map((plant) => (
-            <div className="item">
+        {plants && plants.length != 0 ? (
+          plants.map((plant) => (
+            <div className="item" key={plant.norwegian_name}>
               <div class="buttons">
                 <span class="delete-btn">
-                  <DeleteIcon />
+                  <DeleteIcon onClick={() => onRemoveCompletely(plant)}/>
                 </span>
               </div>
               <div class="plant-img">
@@ -41,7 +55,7 @@ export default function ProjectPlantsModal(props) {
                   <span>{c}</span>
                 ))*/}
               </div>
-              <ModifyPlantsQuantity />
+              <ModifyPlantsQuantity plant={plant} onAdd={onAddHandler} onRemove={onRemoveHandler} />
             </div>
           ))
         ) : (
@@ -51,7 +65,7 @@ export default function ProjectPlantsModal(props) {
       <div className="modal-btns-footer">
         <button
           className="orders-btn-close"
-          onClick={() => props.setModalOpen(false)}
+          onClick={() => setModalOpen(false)}
           alt="Lukk"
         >
           LUKK

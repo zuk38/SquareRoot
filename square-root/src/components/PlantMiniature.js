@@ -10,10 +10,19 @@ import { ReactComponent as SunIcon } from "../icons/sun.svg";
 import ModifyPlantsQuantity from "./user/ModifyPlantsQuantity";
 
 export default function PlantMiniature(props) {
-  const [checkPlant, setCheckPlant] = useState(props.conceptPlant);
-  const [quantity, setQuantity] = useState(props.quantity);
+  const [checked, setCheckPlant] = useState(props.conceptPlant);
+  const setCheckedPlant = () => {
+    setCheckPlant(!checked)
+    props.onAdd(props.plant)
+  }
 
   useEffect(() => {
+    if (props.quantity === 0) setCheckPlant(false)
+  }, [props.quantity])
+
+  //const [quantity, setQuantity] = useState(props.quantity);
+
+  /*useEffect(() => {
     let confirm = document.getElementById(props.plant.id);
     if (confirm != undefined) confirm.value = quantity
   }, [quantity]);
@@ -58,7 +67,7 @@ export default function PlantMiniature(props) {
     console.log(value)
     setQuantity(value)
     document.getElementById(props.plant.id).value = value;
-  };
+  };*/
 
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
@@ -130,10 +139,10 @@ export default function PlantMiniature(props) {
             <p>{latin_name.toUpperCase()}</p>
           </div>
           <div className="add-button-container">
-            {props.customising && checkPlant ? (
+            {props.customising && checked ? (
               <>
                 <button className="add-button-added">Added</button>
-                <ModifyPlantsQuantity subtractQuantity={subtractQuantity} quantity={quantity} id={props.plant.id} addQuantity={addQuantity} handleQuantityInput={handleQuantityInput} />
+                <ModifyPlantsQuantity plant={props.plant} quantity={props.quantity} onAdd={props.onAdd} onRemove={props.onRemove}/>
               </>
             ) : (
               <button className="add-btn" onClick={() => setCheckedPlant()}>

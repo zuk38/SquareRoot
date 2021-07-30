@@ -9,14 +9,18 @@ function PlantsContainer(props) {
 
   if (loading) return <Loading />;
 
-  const handleChangeInPlants = (...args) => {
-    props.handleChangeInPlants(...args);
+  const onAdd = (...args) => {
+    props.onAdd(...args);
+  }
+
+  const onRemove = (...args) => {
+    props.onRemove(...args);
   }
 
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} handleChangeInPlants={handleChangeInPlants} />
+      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} onAdd={onAdd} onRemove={onRemove} />
     </>
   );
 }
