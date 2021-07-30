@@ -7,8 +7,7 @@ import { ReactComponent as NativeIcon } from "../icons/norway.svg";
 import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
-import { ReactComponent as PlusIcon } from "../icons/plus.svg";
-import { ReactComponent as MinusIcon } from "../icons/minus.svg";
+import ModifyPlantsQuantity from "./user/ModifyPlantsQuantity";
 
 export default function PlantMiniature(props) {
   const [checkPlant, setCheckPlant] = useState(props.conceptPlant);
@@ -60,10 +59,6 @@ export default function PlantMiniature(props) {
     setQuantity(value)
     document.getElementById(props.plant.id).value = value;
   };
-
-  const clearField = () => {
-    document.getElementById(props.plant.id).value = ""
-  } 
 
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
@@ -138,33 +133,7 @@ export default function PlantMiniature(props) {
             {props.customising && checkPlant ? (
               <>
                 <button className="add-button-added">Added</button>
-                <div class="quantity">
-                  <button
-                    className="minus-btn"
-                    type="button"
-                    name="button"
-                    onClick={subtractQuantity}
-                  >
-                    <MinusIcon />
-                  </button>
-
-                  <input
-                    id={props.plant.id}
-                    type="text"
-                    name="name"
-                    defaultValue={quantity || 0}
-                    onFocus={() => clearField()}
-                    onBlur={(e) => handleQuantityInput(e)}
-                  />
-                  <button
-                    className="plus-btn"
-                    type="button"
-                    name="button"
-                    onClick={addQuantity}
-                  >
-                    <PlusIcon />
-                  </button>
-                </div>
+                <ModifyPlantsQuantity subtractQuantity={subtractQuantity} quantity={quantity} id={props.plant.id} addQuantity={addQuantity} handleQuantityInput={handleQuantityInput} />
               </>
             ) : (
               <button className="add-btn" onClick={() => setCheckedPlant()}>
