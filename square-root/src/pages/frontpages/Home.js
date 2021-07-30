@@ -44,7 +44,7 @@ export default function Home(props) {
                     <div className="c-grid--2x2 padding-sm top-container">
 
 
-                        <div className="item1--2x2 cat-descr">
+                        <div className="grid-item1 cat-descr">
                             Sett sammen en takhage med forhåndsutvalgte planter<br/>
                             Spar tid og penger på å finne plantene som passer i området
                             <br/>
@@ -53,7 +53,7 @@ export default function Home(props) {
 
 
                         </div>
-                        <h1 className="item2--2x2">Takterrasse</h1>
+                        <h1 className="grid-item2">Takterrasse</h1>
                         <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
                         <a href="#third"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
@@ -64,9 +64,9 @@ export default function Home(props) {
 
                 <section id="third">
                     <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="item2--2x2">Regnseng</h1>
+                        <h1 className="grid-item2">Regnseng</h1>
 
-                        <div className="item1--2x2 cat-descr">
+                        <div className="grid-item1 cat-descr">
                             Overvannshåndtering
                             <br/>
                             Filtrerer vannet<br/>
@@ -77,7 +77,7 @@ export default function Home(props) {
                             <br/>
                             Øker verdien av eiendommen
                         </div>
-                        <button className="item4--2x2 action-btn zoom-on-hover float-left">Les mer<i class="fas fa-angle-double-right"></i>
+                        <button className="grid-item4--2x2 action-btn zoom-on-hover float-left">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
                     </div>
 
@@ -88,7 +88,7 @@ export default function Home(props) {
 
                 <section id="fourth">
                     <div className="c-grid--2x2 padding-sm top-container">
-                        <div className="item1--2x2 cat-descr">
+                        <div className="grid-item1 cat-descr">
                             Overvannshåndtering
                             <br/>
                             Filtrerer vannet<br/>
@@ -99,8 +99,8 @@ export default function Home(props) {
                             <br/>
                             Øker verdien av eiendommen
                         </div>
-                        <h1 className="item2--2x2">Biomangfold</h1>
-                        <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
+                        <h1 className="grid-item2">Biomangfold</h1>
+                        <button className="grid-item4 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
                         <a href="#fifth"><img className="arrowDown zoom-on-hover" src={arrowDown}></img></a>
@@ -110,7 +110,7 @@ export default function Home(props) {
 
                 <section id="fifth">
                     <div className="c-grid--2x2 padding-sm top-container">
-                        <div className="item1--2x2 cat-descr">
+                        <div className="grid-item1 cat-descr">
                             Overvannshåndtering
                             <br/>
                             Filtrerer vannet<br/>
@@ -121,8 +121,8 @@ export default function Home(props) {
                             <br/>
                             Øker verdien av eiendommen
                         </div>
-                        <h1 className="item2--2x2">Innendørs</h1>
-                        <button className="item4--2x2 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
+                        <h1 className="grid-item2">Innendørs</h1>
+                        <button className="grid-item4 action-btn zoom-on-hover">Les mer<i class="fas fa-angle-double-right"></i>
                         </button>
 
                     </div>
