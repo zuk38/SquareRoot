@@ -7,13 +7,33 @@ import { ReactComponent as NativeIcon } from "../icons/norway.svg";
 import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
-import { ReactComponent as AddIcon } from "../icons/add.svg";
+import { ReactComponent as PlusIcon } from "../icons/plus.svg";
+import { ReactComponent as MinusIcon } from "../icons/minus.svg";
 
 export default function PlantMiniature(props) {
   const [checkPlant, setCheckPlant] = useState(props.conceptPlant);
+  const [quantity, setQuantity] = useState(props.quantity);
   const setCheckedPlant = () => {
     setCheckPlant(!checkPlant);
-    props.handleChange(props.plant)
+    if (quantity === 0) {
+      setQuantity(1);
+    }
+    props.handleChange(props.plant);
+  };
+
+  const addQuantity = (e) => {
+    e.preventDefault();
+    setQuantity(quantity + 1);
+  };
+
+  const subtractQuantity = (e) => {
+    e.preventDefault();
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    } else {
+      setQuantity(0);
+      setCheckedPlant(false)
+    }
   };
 
   const iconMap = {
@@ -62,11 +82,7 @@ export default function PlantMiniature(props) {
               <img src={QualityBadge} />
             </div>
           )}
-          {props.customising ? (
-            <div className="add-button" onClick={() => setCheckedPlant()}>
-              <span>{checkPlant ? <AddIcon /> : <></>}</span>
-            </div>
-          ) : (
+          {!props.customising && (
             <div className="featureList">
               <div className="featureList-center">
                 {features.map((icon, index) => (
@@ -88,6 +104,27 @@ export default function PlantMiniature(props) {
           )}
           <div className="plant-name">
             <p>{latin_name.toUpperCase()}</p>
+          </div>
+          <div className="add-button-container">
+            {props.customising && checkPlant ? (
+              <>
+                <button className="add-button-added">Added</button>
+                <div class="quantity">
+                  <button className="minus-btn" type="button" name="button" onClick={subtractQuantity}>
+                    <MinusIcon />
+                  </button>
+
+                  <input type="text" name="name" value={quantity} />
+                  <button className="plus-btn" type="button" name="button" onClick={addQuantity}>
+                    <PlusIcon />
+                  </button>
+                </div>
+              </>
+            ) : (
+              <button className="add-btn" onClick={() => setCheckedPlant()}>
+                Add to greenspace
+              </button>
+            )}
           </div>
         </div>
       </article>

@@ -76,7 +76,7 @@ export default class PlantProvider extends Component {
           {
             [id]: this.state[id].concat([value]),
           },
-          () => console.log(this.state.category)
+          () => this.filterPlants()
         );
       } else {
         let newArray = [...this.state[id]];
@@ -88,7 +88,7 @@ export default class PlantProvider extends Component {
             [id]: newArray,
             //[id]: "",
           },
-          () => console.log(this.state.category)
+          () => this.filterPlants()
         );
       }
     } else {
@@ -164,7 +164,7 @@ export default class PlantProvider extends Component {
         (filterBy === "category" && category != "")
       ) {
         filterValue = state[filterBy];
-        filterValue = filterValue[filterValue.length - 1];
+        //filterValue = filterValue[filterValue.length - 1];
         category.includes(filterValue)
           ? category.splice(category.indexOf(filterValue))
           : category.push(filterValue);

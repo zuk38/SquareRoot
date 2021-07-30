@@ -44,16 +44,20 @@ export default function PlantsList(props) {
   let plants = props.plants;
 
   plants = plants.map((plant) => {
-    let found = false;
+    let found = false, quantity = 0;
     props.conceptPlants &&
       props.conceptPlants.map((p) => {
-        if (p.norwegian_name === plant.norwegian_name) found = true;
+        if (p.norwegian_name === plant.norwegian_name) {
+          found = true;
+          quantity = p.quantity
+        }
       });
     return (
       <PlantMiniature
         key={plant.id}
         plant={plant}
         conceptPlant={found}
+        quantity={quantity}
         customising={isCustomising}
         showModal={showPlantModal}
         setShowPlantModal={openModal}
@@ -65,7 +69,7 @@ export default function PlantsList(props) {
   return (
     <>
       <div className="plantList">
-        <div className="plantList-center">{plants}</div>
+        <div className={isCustomising ? "plantList-center-customise" : "plantList-center"}>{plants}</div>
       </div>
       {activePlant && (
         <SinglePlant

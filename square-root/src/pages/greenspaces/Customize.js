@@ -9,7 +9,7 @@ import { Link } from "react-router-dom";
 export default function Customize(props) {
   const conceptName = props.match.params.conceptName;
   const context = useContext(ConceptContext);
-  const { getConcept } = context;
+  const { getConcept, saveModifiedConcept } = context;
   const concept = getConcept(conceptName);
   const [modalOpen, setModalOpen] = useState(false);
   const [plantsNumber, setPlantsNumber] = useState(0);
@@ -57,6 +57,8 @@ export default function Customize(props) {
     console.log(conceptPlants)
   };
 
+
+
   return (
     <ConceptProvider>
       <>
@@ -96,7 +98,7 @@ export default function Customize(props) {
             style="plants-title"
           />
         </div>
-        <PlantsContainer conceptPlants={conceptPlants} handleChangeInPlants={handleChangeInPlants}/>
+        <PlantsContainer conceptPlants={conceptPlants} handleChangeInPlants={handleChangeInPlants} saveNewConcept={saveModifiedConcept}/>
       </>
     </ConceptProvider>
   );

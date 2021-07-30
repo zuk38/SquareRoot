@@ -44,6 +44,75 @@ label {
   position: relative;
 }
 
+.add-button-container {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 100%;
+  padding: 0;
+  margin-top: 20px;
+  height: 60px;
+  background-color: #eaeaea;
+}
+
+.add-btn {
+  background-color: #c9e8c9;
+  font-weight: 600;
+  color: #1f521f;
+  border: none;
+  font-size: 16px;
+  width: 100%;
+}
+
+.add-button-added {
+  background-color: transparent;
+  color: var(--bg);
+  width: 50%;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  cursor: default;
+}
+
+.quantity {
+  padding: auto;
+  width: 50%;
+  margin: auto;
+  text-align: center;
+}
+
+.quantity input {
+  -webkit-appearance: none;
+  border: none;
+  text-align: center;
+  background-color: var(--offWhite);
+  width: 32px;
+  font-size: 16px;
+  color: var(--bg);
+  font-weight: 600;
+  background-color: transparent;
+}
+
+.minus-btn,
+.plus-btn {
+  border: none;
+  cursor: pointer;
+  border-radius: 6px;
+  width: 30px;
+  height: 30px;
+  background-color: var(--bg);
+}
+
+.minus-btn svg {
+  margin-bottom: 4px;
+}
+.plus-btn svg {
+  margin-top: 2px;
+}
+
+.plant-img-container button:hover {
+  cursor: pointer;
+}
+
 .plant-img-container img {
   height: 100%;
   width: 60%;
@@ -73,7 +142,7 @@ label {
   transition: all 0.3s linear;
 }
 
-.add-button {
+/*.add-button {
   position: absolute;
   top: 0;
   right: 0;
@@ -108,7 +177,7 @@ label {
 
 .add-button span svg:hover {
   filter: brightness(1.2);
-}
+}*/
 
 .plant-link {
   position: absolute;
@@ -146,7 +215,7 @@ label {
   background: rgba(255, 255, 255, 0.4);
 }
 
-.plant-img-container:hover .plant-name{
+.plant-img-container:hover .plant-name {
   box-shadow: var(--darkShadow);
 }
 
@@ -154,7 +223,7 @@ label {
   opacity: 0.4;
 }
 
-.plant-img-container:hover .plant-link, .featureList, .add-button {
+.plant-img-container:hover .plant-link {
   opacity: 1;
 }
 
@@ -172,7 +241,7 @@ label {
 }
 .plantList-center {
   width: 80vw;
-  margin: 0 auto 0 20%;
+  margin: 0 auto 0 auto;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
   grid-row-gap: 5rem;
@@ -181,6 +250,19 @@ label {
   height: 30%;
   flex-wrap: wrap;
 }
+
+.plantList-center-customise {
+  width: 80vw;
+  margin: 0 auto 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-row-gap: 10rem;
+  grid-column-gap: 40px;
+  padding: 40px;
+  height: 30%;
+  flex-wrap: wrap;
+}
+
 @media screen and (max-width: 812px) {
   .plant {
     width: 300px;
@@ -216,7 +298,7 @@ label {
 */
 
 .filter-container {
-  margin:0 0 2em;
+  margin: 0 0 2em;
   min-width: 0;
   display: flex;
 }
@@ -225,16 +307,14 @@ label {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   grid-row-gap: 1rem;
-  margin:1rem 0 0 5%;
-  align-items:flex-start;
+  margin: 1rem 0 0 5%;
+  align-items: flex-start;
   min-width: 180px;
   width: 100%;
-
 }
 
 .form-group {
   text-transform: capitalize;
-
 }
 .form-group label {
   display: block;
@@ -255,7 +335,6 @@ label {
   border: 1px solid lightgray;
   border-radius: 0.3rem;
   margin-right: 0.3rem;
-  
 }
 
 .single-extra label {
@@ -267,7 +346,6 @@ label {
 @media screen and (min-width: 776px) {
   .filter-form {
     width: 70vw;
-
   }
 }
 @media screen and (min-width: 992px) {
@@ -276,13 +354,10 @@ label {
     grid-template-columns: repeat(4, 1fr);
   }
 }
-.form-group-container label{
+.form-group-container label {
   margin-bottom: 8px;
 }
-.filter-checkbox{
+.filter-checkbox {
   width: 20px;
   height: 20px;
 }
-
-
-

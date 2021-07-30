@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { API } from "aws-amplify";
 import { listCategorys, listConcepts } from "../api/conceptQueries";
+import { createConceptPlant, createConceptCategory, createConcept } from "../api/conceptQueries";
 
 const ConceptContext = React.createContext();
 
@@ -71,11 +72,11 @@ export default class ConceptProvider extends Component {
     return concept;
   };
 
-  modifyConceptPlants = (plants) => {
+  saveModifiedConcept = (concept, conceptPlants) => {
+    console.log(concept)
+    console.log(conceptPlants)
   }
-
-  //saveCustomisedConcept()
-
+ 
   truthyObjLoop = (user) => {
     for (var key in user) {
       if (user.hasOwnProperty(key) && !user[key]) delete user[key];
