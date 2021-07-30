@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../styles/Plants.css";
 import QualityBadge from "../images/quality.png";
 import { ReactComponent as BeeIcon } from "../icons/bee.svg";
@@ -13,6 +13,12 @@ import { ReactComponent as MinusIcon } from "../icons/minus.svg";
 export default function PlantMiniature(props) {
   const [checkPlant, setCheckPlant] = useState(props.conceptPlant);
   const [quantity, setQuantity] = useState(props.quantity);
+
+  useEffect(() => {
+    let confirm = document.getElementById(props.plant.id);
+    if (confirm != undefined) confirm.value = quantity
+  }, [quantity]);
+
   const setCheckedPlant = () => {
     setCheckPlant(!checkPlant);
     if (quantity === 0) {
@@ -24,6 +30,7 @@ export default function PlantMiniature(props) {
   const addQuantity = (e) => {
     e.preventDefault();
     setQuantity(quantity + 1);
+    document.getElementById(props.plant.id).value = quantity;
   };
 
   const subtractQuantity = (e) => {
@@ -34,22 +41,29 @@ export default function PlantMiniature(props) {
       setQuantity(0);
       setCheckedPlant(false);
     }
+    document.getElementById(props.plant.id).value = quantity;
   };
 
   const handleQuantityInput = (e) => {
     e.preventDefault();
     let value = parseInt(e.target.value);
-    console.log(value);
-    if (value < 0 || !Number.isInteger(value)) {
-      console.log("lalalala");
-      document.getElementById("quantityInput").value = null;
-      return;
-    } else {
-      if (value === 0) setCheckedPlant(false);
+    console.log(value)
+    if (value === 0 || !Number.isInteger(value)) {
+      value = 0;
+      setCheckedPlant(false);
       setQuantity(value);
-      document.getElementById("quantityInput").value = quantity;
+      return
+    } else if (value < 0) {
+      value = quantity
     }
+    console.log(value)
+    setQuantity(value)
+    document.getElementById(props.plant.id).value = value;
   };
+
+  const clearField = () => {
+    document.getElementById(props.plant.id).value = ""
+  } 
 
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
@@ -135,11 +149,12 @@ export default function PlantMiniature(props) {
                   </button>
 
                   <input
-                    id="quantityInput"
-                    type="number"
+                    id={props.plant.id}
+                    type="text"
                     name="name"
-                    value={quantity || 0}
-                    onChange={(e) => handleQuantityInput(e)}
+                    defaultValue={quantity || 0}
+                    onFocus={() => clearField()}
+                    onBlur={(e) => handleQuantityInput(e)}
                   />
                   <button
                     className="plus-btn"
