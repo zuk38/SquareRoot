@@ -26,13 +26,13 @@ export default function ProjectPlantsModal(props) {
             {props.plants ? 
             props.plants.map((plant, index) => (
               <tbody>
-              <tr key={index}>
-                <td className="o-modal-img">
+              <tr>
+                <td className="o-modal-img" key={index}>
                   <img src={plant.image} alt={plant.norwegian_name} />
                 </td>
-                <td className="o-modal-name">{plant.norwegian_name}</td>
-                <td className="o-modal-remove" alt={plant.norwegian_name}>
-                  <i class="fas fa-times fa-lg" />
+                <td className="o-modal-name" key={index + 1}>{plant.norwegian_name}</td>
+                <td className="o-modal-remove" key={index + 2} alt={plant.norwegian_name}>
+                  <i className="fas fa-times fa-lg" />
                 </td>
               </tr>
               </tbody>
