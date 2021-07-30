@@ -32,7 +32,22 @@ export default function PlantMiniature(props) {
       setQuantity(quantity - 1);
     } else {
       setQuantity(0);
-      setCheckedPlant(false)
+      setCheckedPlant(false);
+    }
+  };
+
+  const handleQuantityInput = (e) => {
+    e.preventDefault();
+    let value = parseInt(e.target.value);
+    console.log(value);
+    if (value < 0 || !Number.isInteger(value)) {
+      console.log("lalalala");
+      document.getElementById("quantityInput").value = null;
+      return;
+    } else {
+      if (value === 0) setCheckedPlant(false);
+      setQuantity(value);
+      document.getElementById("quantityInput").value = quantity;
     }
   };
 
@@ -110,12 +125,28 @@ export default function PlantMiniature(props) {
               <>
                 <button className="add-button-added">Added</button>
                 <div class="quantity">
-                  <button className="minus-btn" type="button" name="button" onClick={subtractQuantity}>
+                  <button
+                    className="minus-btn"
+                    type="button"
+                    name="button"
+                    onClick={subtractQuantity}
+                  >
                     <MinusIcon />
                   </button>
 
-                  <input type="text" name="name" value={quantity} />
-                  <button className="plus-btn" type="button" name="button" onClick={addQuantity}>
+                  <input
+                    id="quantityInput"
+                    type="number"
+                    name="name"
+                    value={quantity || 0}
+                    onChange={(e) => handleQuantityInput(e)}
+                  />
+                  <button
+                    className="plus-btn"
+                    type="button"
+                    name="button"
+                    onClick={addQuantity}
+                  >
                     <PlusIcon />
                   </button>
                 </div>
