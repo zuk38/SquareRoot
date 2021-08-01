@@ -2,8 +2,6 @@ import React, { useEffect } from "react";
 import Modal from "react-modal";
 import { ReactComponent as DeleteIcon } from "../../icons/delete.svg";
 import ModifyPlantsQuantity from "./ModifyPlantsQuantity";
-import { ReactComponent as PlusIcon } from "../../icons/plus.svg";
-import { ReactComponent as MinusIcon } from "../../icons/minus.svg";
 
 export default function ProjectPlantsModal(props) {
   useEffect(() => {
@@ -16,10 +14,20 @@ export default function ProjectPlantsModal(props) {
     modalOpen,
     name,
     setModalOpen,
-    onAdd,
-    onRemove,
-    onRemoveCompletely,
+    onRemoveCompletely
   } = props;
+
+  const onAdd = (...args) => {
+    props.onAdd(...args);
+  };
+
+  const onRemove = (...args) => {
+    props.onRemove(...args);
+  };
+
+  const handleQuantityInput = (...args) => {
+    props.handleQuantityInput(...args);
+  };
 
   return (
     <Modal
@@ -49,33 +57,13 @@ export default function ProjectPlantsModal(props) {
                   <span>{c}</span>
                 ))*/}
               </div>
-              <div className="quantity">
-                <button
-                  className="minus-btn"
-                  type="button"
-                  name="button"
-                  onClick={() => onRemove(plant)}
-                >
-                  <MinusIcon />
-                </button>
-
-                <input
-                  id={plant.latin_name}
-                  type="text"
-                  name="name"
-                  defaultValue={plant.quantity || 0}
-                  onBlur={(e) => props.handleQuantityInput(e, plant)}
-                />
-
-                <button
-                  className="plus-btn"
-                  type="button"
-                  name="button"
-                  onClick={() => onAdd(plant)}
-                >
-                  <PlusIcon />
-                </button>
-              </div>
+              <ModifyPlantsQuantity
+                onAdd={() => onAdd(plant)}
+                onRemove={() => onRemove(plant)}
+                id={plant.latin_name}
+                quantity={plant.quantity}
+                handleQuantityInput={(e) => handleQuantityInput(e, plant)}
+              />
             </div>
           ))
         ) : (

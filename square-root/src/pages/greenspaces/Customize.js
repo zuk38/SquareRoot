@@ -32,15 +32,11 @@ export default function Customize(props) {
   }, [conceptPlants]);
 
   useEffect(() => {
-    console.log(quantity)
     if (!currentPlant) return
     const nP = document.getElementById(currentPlant.norwegian_name);
     const lP = document.getElementById(currentPlant.latin_name);
 
-    if (nP) {
-      nP.value = quantity;
-      console.log("lalala")
-    }
+    if (nP) nP.value = quantity;
     if (lP) lP.value = quantity;
   }, [quantity]);
 
@@ -109,7 +105,6 @@ export default function Customize(props) {
       (x) => x.norwegian_name === plant.norwegian_name
     );
     let value = parseInt(e.target.value);
-    console.log(value)
     if (value === 0 || !Number.isInteger(value)) {
       value = 0;
       onRemoveCompletely(plant)
