@@ -24,7 +24,7 @@ function PlantsContainer(props) {
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} onAdd={onAdd} onRemove={onRemove} handleQuantityInput={handleQuantityInput} />
+      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} onAdd={onAdd} onRemove={onRemove} handleQuantityInput={handleQuantityInput} isCustomising={props.isCustomising} />
     </>
   );
 }

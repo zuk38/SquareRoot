@@ -14,7 +14,8 @@ export default function ProjectPlantsModal(props) {
     modalOpen,
     name,
     setModalOpen,
-    onRemoveCompletely
+    onRemoveCompletely,
+    saveModifiedConcept,
   } = props;
 
   const onAdd = (...args) => {
@@ -27,6 +28,11 @@ export default function ProjectPlantsModal(props) {
 
   const handleQuantityInput = (...args) => {
     props.handleQuantityInput(...args);
+  };
+
+  const saveConcept = async () => {
+    setModalOpen(false)
+    await saveModifiedConcept()
   };
 
   return (
@@ -80,7 +86,7 @@ export default function ProjectPlantsModal(props) {
         </button>
         <button
           className="orders-btn-save"
-          onClick={() => props.setModalOpen(false)}
+          onClick={saveConcept}
           alt="Lagre"
         >
           LAGRE

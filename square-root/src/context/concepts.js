@@ -1,11 +1,8 @@
 import React, { Component } from "react";
-import { API } from "aws-amplify";
-import { listCategorys, listConcepts } from "../api/conceptQueries";
-import {
-  createConceptPlant,
-  createConceptCategory,
-  createConcept,
-} from "../api/conceptQueries";
+import { API, Auth, graphqlOperation } from "aws-amplify";
+import { listCategorys, listConcepts, createConceptPlant } from "../api/conceptQueries";
+import { v4 as uuidv4 } from "uuid";
+import { createConcept } from "../api/mutations";
 
 const ConceptContext = React.createContext();
 
@@ -26,7 +23,7 @@ export default class ConceptProvider extends Component {
         authMode: "API_KEY",
       });
       let categories = this.formatData(data.listCategorys.items);
-      console.log(categories)
+      console.log(categories);
       this.setState({
         categories,
         loadingCat: false,
@@ -75,9 +72,53 @@ export default class ConceptProvider extends Component {
     return concept;
   };
 
-  saveModifiedConcept = (concept, conceptPlants) => {
+  saveModifiedConcept = async (concept, conceptPlants) => {
     console.log(concept);
     console.log(conceptPlants);
+
+    let user = await Auth.currentAuthenticatedUser();
+
+    let conceptID = uuidv4();
+    let owner = user.username;
+    let conceptDetails = {
+      id: conceptID,
+      name: concept["name"] + uuidv4(),
+      owner: owner,
+      userDefined: true,
+      image: concept.image,
+      featured: false,
+      /*price: concept.price,
+      description: concept.description,*/
+    };
+
+    try {
+      await API.graphql(
+        graphqlOperation(createConcept, {
+          input: conceptDetails,
+        })
+      );
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+
+    try {
+      for (var i = 0, l = conceptPlants.length; i < l; i++) {
+        let conceptPlantDetails = {
+          id: uuidv4(),
+          concept_id: conceptID,
+          plant_id: conceptPlants[i].metadataID,
+          quantity: conceptPlants[i].quantity,
+        };
+        console.log(conceptPlantDetails)
+        await API.graphql(
+          graphqlOperation(createConceptPlant, {
+            input: conceptPlantDetails,
+          })
+        );
+      }
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
   };
 
   truthyObjLoop = (user) => {
@@ -110,9 +151,10 @@ export default class ConceptProvider extends Component {
       let benefits;
 
       let tempPlants = item.plants.items.map((p) => {
+        let metadataID = p.plant.metadataID;
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
-        let plant = { quantity, ...metadata };
+        let plant = { metadataID, quantity, ...metadata };
         const {
           pollinator_friendly,
           edible,
@@ -148,7 +190,7 @@ export default class ConceptProvider extends Component {
         let p = { norwegian_name, latin_name };
         return p;
       });
-      let category = {...item, plants: tempPlants}
+      let category = { ...item, plants: tempPlants };
       return category;
     });
     return categorys;
@@ -166,6 +208,7 @@ export default class ConceptProvider extends Component {
           ...this.state,
           getConcept: this.getConcept,
           getCategory: this.getCategory,
+          saveModifiedConcept: this.saveModifiedConcept,
         }}
       >
         {this.props.children}

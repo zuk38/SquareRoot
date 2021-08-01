@@ -68,7 +68,7 @@ export default function PlantMiniature(props) {
               <img src={QualityBadge} />
             </div>
           )}
-          {!props.customising && (
+          {!props.isCustomising && (
             <div className="featureList">
               <div className="featureList-center">
                 {features.map((icon, index) => (
@@ -91,26 +91,28 @@ export default function PlantMiniature(props) {
           <div className="plant-name">
             <p>{latin_name.toUpperCase()}</p>
           </div>
-          <div className="add-button-container">
-            {props.customising && checked ? (
-              <>
-                <button className="add-button-added">Added</button>
-                <ModifyPlantsQuantity
-                  onAdd={() => props.onAdd(props.plant)}
-                  onRemove={() => props.onRemove(props.plant)}
-                  id={props.plant.norwegian_name}
-                  quantity={props.quantity}
-                  handleQuantityInput={(e) =>
-                    props.handleQuantityInput(e, props.plant)
-                  }
-                />
-              </>
-            ) : (
-              <button className="add-btn" onClick={() => setCheckedPlant()}>
-                Add to greenspace
-              </button>
-            )}
-          </div>
+          {props.isCustomising && (
+            <div className="add-button-container">
+              {checked ? (
+                <>
+                  <button className="add-button-added">Added</button>
+                  <ModifyPlantsQuantity
+                    onAdd={() => props.onAdd(props.plant)}
+                    onRemove={() => props.onRemove(props.plant)}
+                    id={props.plant.norwegian_name}
+                    quantity={props.quantity}
+                    handleQuantityInput={(e) =>
+                      props.handleQuantityInput(e, props.plant)
+                    }
+                  />
+                </>
+              ) : (
+                <button className="add-btn" onClick={() => setCheckedPlant()}>
+                  Add to greenspace
+                </button>
+              )}
+            </div>
+          )}
         </div>
       </article>
     </>

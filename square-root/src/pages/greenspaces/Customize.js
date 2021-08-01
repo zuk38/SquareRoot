@@ -156,6 +156,7 @@ export default function Customize(props) {
           onRemove={onRemove}
           onRemoveCompletely={onRemoveCompletely}
           handleQuantityInput={handleQuantityInput}
+          saveModifiedConcept={() => saveModifiedConcept(concept, conceptPlants)}
         />
         <div className="cust-concept-title">
           <Title
@@ -171,6 +172,7 @@ export default function Customize(props) {
           onRemove={onRemove}
           conceptPlants={conceptPlants}
           handleQuantityInput={handleQuantityInput}
+          isCustomising={true}
         />
       </>
     </ConceptProvider>

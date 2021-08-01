@@ -71,6 +71,7 @@ export default function PlantsList(props) {
         onAdd={(plant) => onAdd(plant)}
         onRemove={(plant) => onRemove(plant)}
         handleQuantityInput={(e, plant) => handleQuantityInput(e, plant)}
+        isCustomising={props.isCustomising}
       />
     );
   });
@@ -78,7 +79,7 @@ export default function PlantsList(props) {
   return (
     <>
       <div className="plantList">
-        <div className={isCustomising ? "plantList-center-customise" : "plantList-center"}>{plants}</div>
+        <div className={props.isCustomising ? "plantList-center-customise" : "plantList-center"}>{plants}</div>
       </div>
       {activePlant && (
         <SinglePlant
