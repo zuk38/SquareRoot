@@ -17,10 +17,14 @@ function PlantsContainer(props) {
     props.onRemove(...args);
   }
 
+  const handleQuantityInput = (...args) => {
+    props.handleQuantityInput(...args);
+  }
+
   return (
     <>
       <PlantsFilter plants={plants} />
-      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} onAdd={onAdd} onRemove={onRemove} />
+      <PlantsList plants={sortedPlants} conceptPlants={props.conceptPlants} onAdd={onAdd} onRemove={onRemove} handleQuantityInput={handleQuantityInput} />
     </>
   );
 }

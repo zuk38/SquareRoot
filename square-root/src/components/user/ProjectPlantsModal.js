@@ -2,6 +2,8 @@ import React, { useEffect } from "react";
 import Modal from "react-modal";
 import { ReactComponent as DeleteIcon } from "../../icons/delete.svg";
 import ModifyPlantsQuantity from "./ModifyPlantsQuantity";
+import { ReactComponent as PlusIcon } from "../../icons/plus.svg";
+import { ReactComponent as MinusIcon } from "../../icons/minus.svg";
 
 export default function ProjectPlantsModal(props) {
   useEffect(() => {
@@ -16,16 +18,8 @@ export default function ProjectPlantsModal(props) {
     setModalOpen,
     onAdd,
     onRemove,
-    onRemoveCompletely
+    onRemoveCompletely,
   } = props;
-
-  const onAddHandler = (...args) => {
-    onAdd(...args);
-  };
-
-  const onRemoveHandler = (...args) => {
-    onRemove(...args);
-  };
 
   return (
     <Modal
@@ -40,22 +34,48 @@ export default function ProjectPlantsModal(props) {
         {plants && plants.length != 0 ? (
           plants.map((plant) => (
             <div className="item" key={plant.norwegian_name}>
-              <div class="buttons">
-                <span class="delete-btn">
-                  <DeleteIcon onClick={() => onRemoveCompletely(plant)}/>
+              <div className="buttons">
+                <span className="delete-btn">
+                  <DeleteIcon onClick={() => onRemoveCompletely(plant)} />
                 </span>
               </div>
-              <div class="plant-img">
+              <div className="plant-img">
                 <img src={plant.image} alt={plant.norwegian_name} />
               </div>
-              <div class="description">
+              <div className="description">
                 <span>{plant.norwegian_name}</span>
                 <span>{plant.latin_name}</span>
                 {/*plant.categories.map((c) => (
                   <span>{c}</span>
                 ))*/}
               </div>
-              <ModifyPlantsQuantity plant={plant} onAdd={onAddHandler} onRemove={onRemoveHandler} />
+              <div className="quantity">
+                <button
+                  className="minus-btn"
+                  type="button"
+                  name="button"
+                  onClick={() => onRemove(plant)}
+                >
+                  <MinusIcon />
+                </button>
+
+                <input
+                  id={plant.latin_name}
+                  type="text"
+                  name="name"
+                  defaultValue={plant.quantity || 0}
+                  onBlur={(e) => props.handleQuantityInput(e, plant)}
+                />
+
+                <button
+                  className="plus-btn"
+                  type="button"
+                  name="button"
+                  onClick={() => onAdd(plant)}
+                >
+                  <PlusIcon />
+                </button>
+              </div>
             </div>
           ))
         ) : (

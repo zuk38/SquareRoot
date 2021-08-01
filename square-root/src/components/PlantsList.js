@@ -29,13 +29,15 @@ export default function PlantsList(props) {
   };
 
   const onAdd = (plant) => {
-    console.log(plant);
     props.onAdd(plant);
   };
 
   const onRemove = (plant) => {
-    console.log(plant);
     props.onRemove(plant);
+  };
+
+  const handleQuantityInput = (...args) => {
+    props.handleQuantityInput(...args);
   };
 
   if (props.plants.length === 0) {
@@ -68,6 +70,7 @@ export default function PlantsList(props) {
         setShowPlantModal={openModal}
         onAdd={(plant) => onAdd(plant)}
         onRemove={(plant) => onRemove(plant)}
+        handleQuantityInput={(e, plant) => handleQuantityInput(e, plant)}
       />
     );
   });

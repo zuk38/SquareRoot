@@ -8,66 +8,21 @@ import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
 import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../icons/sun.svg";
 import ModifyPlantsQuantity from "./user/ModifyPlantsQuantity";
+import { ReactComponent as PlusIcon } from "../icons/plus.svg";
+import { ReactComponent as MinusIcon } from "../icons/minus.svg";
 
 export default function PlantMiniature(props) {
   const [checked, setCheckPlant] = useState(props.conceptPlant);
   const setCheckedPlant = () => {
-    setCheckPlant(!checked)
-    props.onAdd(props.plant)
-  }
+    setCheckPlant(!checked);
+    props.onAdd(props.plant);
+  };
 
   useEffect(() => {
-    if (props.quantity === 0) setCheckPlant(false)
-  }, [props.quantity])
-
-  //const [quantity, setQuantity] = useState(props.quantity);
-
-  /*useEffect(() => {
-    let confirm = document.getElementById(props.plant.id);
-    if (confirm != undefined) confirm.value = quantity
-  }, [quantity]);
-
-  const setCheckedPlant = () => {
-    setCheckPlant(!checkPlant);
-    if (quantity === 0) {
-      setQuantity(1);
-    }
-    props.handleChange(props.plant);
-  };
-
-  const addQuantity = (e) => {
-    e.preventDefault();
-    setQuantity(quantity + 1);
-    document.getElementById(props.plant.id).value = quantity;
-  };
-
-  const subtractQuantity = (e) => {
-    e.preventDefault();
-    if (quantity > 1) {
-      setQuantity(quantity - 1);
-    } else {
-      setQuantity(0);
-      setCheckedPlant(false);
-    }
-    document.getElementById(props.plant.id).value = quantity;
-  };
-
-  const handleQuantityInput = (e) => {
-    e.preventDefault();
-    let value = parseInt(e.target.value);
-    console.log(value)
-    if (value === 0 || !Number.isInteger(value)) {
-      value = 0;
-      setCheckedPlant(false);
-      setQuantity(value);
-      return
-    } else if (value < 0) {
-      value = quantity
-    }
-    console.log(value)
-    setQuantity(value)
-    document.getElementById(props.plant.id).value = value;
-  };*/
+    if (props.quantity === 0) setCheckPlant(false);
+    const inputField = document.getElementById(props.plant.norwegian_name);
+    if (inputField) inputField.value = props.quantity 
+  }, [props.quantity]);
 
   const iconMap = {
     pollinator_friendly: <BeeIcon />,
@@ -142,7 +97,33 @@ export default function PlantMiniature(props) {
             {props.customising && checked ? (
               <>
                 <button className="add-button-added">Added</button>
-                <ModifyPlantsQuantity plant={props.plant} quantity={props.quantity} onAdd={props.onAdd} onRemove={props.onRemove}/>
+                <div class="quantity">
+                  <button
+                    className="minus-btn"
+                    type="button"
+                    name="button"
+                    onClick={() => props.onRemove(props.plant)}
+                  >
+                    <MinusIcon />
+                  </button>
+
+                  <input
+                    id={props.plant.norwegian_name}
+                    type="text"
+                    name="name"
+                    defaultValue={props.quantity || 0}
+                    onBlur={(e) => props.handleQuantityInput(e, props.plant)}
+                  />
+
+                  <button
+                    className="plus-btn"
+                    type="button"
+                    name="button"
+                    onClick={() => props.onAdd(props.plant)}
+                  >
+                    <PlusIcon />
+                  </button>
+                </div>
               </>
             ) : (
               <button className="add-btn" onClick={() => setCheckedPlant()}>
