@@ -76,6 +76,7 @@ export const listCategorys = /* GraphQL */ `
           items {
             plant {
               norwegian_name
+              latin_name
             }
           }
         }
