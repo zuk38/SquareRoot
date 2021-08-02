@@ -101,11 +101,11 @@ export default class SingleConcept extends Component {
             <h4>Functional Requirements:</h4>
             <h4>Maintenance Needs:</h4>
             <div className="func_info">
-              {iconMap.map((icon) =>
+              {iconMap.map((icon, index) =>
                 Object.keys(benefits).map(
                   (key) =>
                     key === icon.feature && (
-                      <div className="req_info">
+                      <div className="req_info" key={index}>
                         <i className="func_icon">{icon.icon}</i>
                         {icon.name}
                       </div>
@@ -171,8 +171,8 @@ export default class SingleConcept extends Component {
               <div className="d-modal-container">
                 <table className="d-table">
                   <tbody>
-                    {plants.map((plant) => (
-                      <tr>
+                    {plants.map((plant, index) => (
+                      <tr key={index}>
                         <td className="d-modal-img">
                           <img src={plant.image} alt={plant.norwegian_name}/>
                         </td>
