@@ -76,7 +76,7 @@ export default class PlantProvider extends Component {
           {
             [id]: this.state[id].concat([value]),
           },
-          () => console.log(this.state.category)
+          () => this.filterPlants()
         );
       } else {
         let newArray = [...this.state[id]];
@@ -88,7 +88,7 @@ export default class PlantProvider extends Component {
             [id]: newArray,
             //[id]: "",
           },
-          () => console.log(this.state.category)
+          () => this.filterPlants()
         );
       }
     } else {
@@ -164,7 +164,7 @@ export default class PlantProvider extends Component {
         (filterBy === "category" && category != "")
       ) {
         filterValue = state[filterBy];
-        filterValue = filterValue[filterValue.length - 1];
+        //filterValue = filterValue[filterValue.length - 1];
         category.includes(filterValue)
           ? category.splice(category.indexOf(filterValue))
           : category.push(filterValue);
@@ -209,12 +209,13 @@ export default class PlantProvider extends Component {
   formatData(items) {
     let tempItems = items.map((item) => {
       let image = item.metadata.image;
+      let metadataID = item.metadataID;
       let metadata = item.metadata;
       let category = item.metadata.category.items.map((item) => {
         let c = item.category.category_name;
         return c;
       });
-      let plant = { image, ...metadata, category: category };
+      let plant = { image, metadataID, ...metadata, category: category };
       return plant;
     });
     return tempItems;

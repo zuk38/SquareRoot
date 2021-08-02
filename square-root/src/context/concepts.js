@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-import { API } from "aws-amplify";
-import { listCategorys, listConcepts } from "../api/conceptQueries";
+import { API, Auth, graphqlOperation } from "aws-amplify";
+import { listCategorys, listConcepts, createConceptPlant } from "../api/conceptQueries";
+import { v4 as uuidv4 } from "uuid";
+import { createConcept } from "../api/mutations";
 
 const ConceptContext = React.createContext();
 
@@ -20,9 +22,8 @@ export default class ConceptProvider extends Component {
         query: listCategorys,
         authMode: "API_KEY",
       });
-
-      let categories = data.listCategorys.items;
-
+      let categories = this.formatData(data.listCategorys.items);
+      console.log(categories);
       this.setState({
         categories,
         loadingCat: false,
@@ -41,8 +42,8 @@ export default class ConceptProvider extends Component {
         authMode: "API_KEY",
       });
 
-      let tempConcepts = data.listConcepts.items;
-      let concepts = this.formatData(data.listConcepts.items);
+      let tempConcepts = this.formatData(data.listConcepts.items);
+      let concepts = this.formatConceptData(data.listConcepts.items);
       console.log(concepts);
       let featuredConcepts = concepts.filter((concept) => concept.featured);
       this.setState({
@@ -71,10 +72,54 @@ export default class ConceptProvider extends Component {
     return concept;
   };
 
-  modifyConceptPlants = (plants) => {
-  }
+  saveModifiedConcept = async (concept, conceptPlants) => {
+    console.log(concept);
+    console.log(conceptPlants);
 
-  //saveCustomisedConcept()
+    let user = await Auth.currentAuthenticatedUser();
+
+    let conceptID = uuidv4();
+    let owner = user.username;
+    let conceptDetails = {
+      id: conceptID,
+      name: concept["name"] + uuidv4(),
+      owner: owner,
+      userDefined: true,
+      image: concept.image,
+      featured: false,
+      /*price: concept.price,
+      description: concept.description,*/
+    };
+
+    try {
+      await API.graphql(
+        graphqlOperation(createConcept, {
+          input: conceptDetails,
+        })
+      );
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+
+    try {
+      for (var i = 0, l = conceptPlants.length; i < l; i++) {
+        let conceptPlantDetails = {
+          id: uuidv4(),
+          concept_id: conceptID,
+          plant_id: conceptPlants[i].metadataID,
+          quantity: conceptPlants[i].quantity,
+        };
+        console.log(conceptPlantDetails)
+        await API.graphql(
+          graphqlOperation(createConceptPlant, {
+            input: conceptPlantDetails,
+          })
+        );
+      }
+    } catch (err) {
+      console.log("error creating todo:", err);
+    }
+  };
 
   truthyObjLoop = (user) => {
     for (var key in user) {
@@ -93,7 +138,7 @@ export default class ConceptProvider extends Component {
       { k: {} }
     ).max;
 
-  formatData(items) {
+  formatConceptData(items) {
     let maintenance = items.map((item) => {
       let tempItems = item.plants.items.map((p) => {
         return p.plant.metadata.sun_seeker;
@@ -106,9 +151,10 @@ export default class ConceptProvider extends Component {
       let benefits;
 
       let tempPlants = item.plants.items.map((p) => {
+        let metadataID = p.plant.metadataID;
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
-        let plant = { quantity, ...metadata };
+        let plant = { metadataID, quantity, ...metadata };
         const {
           pollinator_friendly,
           edible,
@@ -136,6 +182,20 @@ export default class ConceptProvider extends Component {
     return tempItems;
   }
 
+  formatData(items) {
+    let categorys = items.map((item) => {
+      let tempPlants = item.plants.items.map((plant) => {
+        let norwegian_name = plant.plant.norwegian_name;
+        let latin_name = plant.plant.latin_name;
+        let p = { norwegian_name, latin_name };
+        return p;
+      });
+      let category = { ...item, plants: tempPlants };
+      return category;
+    });
+    return categorys;
+  }
+
   componentDidMount() {
     this.fetchCategories();
     this.fetchConcepts();
@@ -148,6 +208,7 @@ export default class ConceptProvider extends Component {
           ...this.state,
           getConcept: this.getConcept,
           getCategory: this.getCategory,
+          saveModifiedConcept: this.saveModifiedConcept,
         }}
       >
         {this.props.children}

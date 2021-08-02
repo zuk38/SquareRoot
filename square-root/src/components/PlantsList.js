@@ -28,9 +28,16 @@ export default function PlantsList(props) {
     setFeatures([]);
   };
 
-  const handleChange = (plant) => {
-    console.log(plant);
-    props.handleChangeInPlants(plant);
+  const onAdd = (plant) => {
+    props.onAdd(plant);
+  };
+
+  const onRemove = (plant) => {
+    props.onRemove(plant);
+  };
+
+  const handleQuantityInput = (...args) => {
+    props.handleQuantityInput(...args);
   };
 
   if (props.plants.length === 0) {
@@ -44,20 +51,27 @@ export default function PlantsList(props) {
   let plants = props.plants;
 
   plants = plants.map((plant) => {
-    let found = false;
+    let found = false, quantity = 0;
     props.conceptPlants &&
       props.conceptPlants.map((p) => {
-        if (p.norwegian_name === plant.norwegian_name) found = true;
+        if (p.norwegian_name === plant.norwegian_name) {
+          found = true;
+          quantity = p.quantity
+        }
       });
     return (
       <PlantMiniature
         key={plant.id}
         plant={plant}
         conceptPlant={found}
+        quantity={quantity}
         customising={isCustomising}
         showModal={showPlantModal}
         setShowPlantModal={openModal}
-        handleChange={(plant) => handleChange(plant)}
+        onAdd={(plant) => onAdd(plant)}
+        onRemove={(plant) => onRemove(plant)}
+        handleQuantityInput={(e, plant) => handleQuantityInput(e, plant)}
+        isCustomising={props.isCustomising}
       />
     );
   });
@@ -65,7 +79,7 @@ export default function PlantsList(props) {
   return (
     <>
       <div className="plantList">
-        <div className="plantList-center">{plants}</div>
+        <div className={props.isCustomising ? "plantList-center-customise" : "plantList-center"}>{plants}</div>
       </div>
       {activePlant && (
         <SinglePlant

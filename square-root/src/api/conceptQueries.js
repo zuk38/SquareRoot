@@ -76,6 +76,7 @@ export const listCategorys = /* GraphQL */ `
           items {
             plant {
               norwegian_name
+              latin_name
             }
           }
         }
@@ -108,6 +109,7 @@ export const listConcepts = /* GraphQL */ `
           items {
             quantity
             plant {
+              metadataID
               metadata {
                 norwegian_name
                 latin_name
@@ -130,6 +132,22 @@ export const listConcepts = /* GraphQL */ `
         }
       }
       nextToken
+    }
+  }
+`;
+export const createConceptPlant = /* GraphQL */ `
+  mutation CreateConceptPlant(
+    $input: CreateConceptPlantInput!
+    $condition: ModelConceptPlantConditionInput
+  ) {
+    createConceptPlant(input: $input, condition: $condition) {
+      id
+      plant_id
+      concept_id
+      quantity
+      createdAt
+      updatedAt
+      owner
     }
   }
 `;
