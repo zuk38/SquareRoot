@@ -38,7 +38,7 @@ export default function Partner(props) {
             isSending ? (
                 <Loading/>) : (
 
-                <div>
+                <div className="o-container">
                     <div className="c-hero">
                         <h1 className="c-txt--hero">
                             Interessert i SquareRoot?

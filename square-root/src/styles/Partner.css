@@ -39,17 +39,35 @@ padding: 5%;
 }
 
 .partner-field input{
+  padding-left:2%;
   height:8vh;
+  width:90%;
+  font-size: 18px;
 }
 
-a[href="terms-and-conditions"] {
+
+.checkbox-container {
+  float:left;
+  display:flex;
+  align-items: center;
+}
+
+.checkbox-container input {
+  width:20px;
+  height:20px;
+  margin-right:10px;
+  
+}
+
+.checkbox-container a{
   color: var(--mainGrey);
-  vertical-align: middle;
-  font-size: 15px;
-  font-weight:bold;
+  font-size: 12px;
+  font-weight: 300;
 }
 
-/* The checkbox container */
+
+
+/* The checkbox container 
 .checkbox-container {
   position: relative;
   padding-left: 40px;
@@ -69,6 +87,7 @@ a[href="terms-and-conditions"] {
   height: 0;
   width: 0;
 }
+
 
 .checkmark {
   position: absolute;
@@ -104,6 +123,8 @@ a[href="terms-and-conditions"] {
   transform: rotate(45deg);
   
 }
+
+*/
 
 .box2-btn {
   width: 20%;

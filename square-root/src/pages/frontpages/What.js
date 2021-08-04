@@ -3,8 +3,10 @@ import "../../styles/frontpages.css";
 
 export default function What() {
   return (
+
     <div>
-      <div className="background-grey">
+    <div className="background-grey">
+      <div className="o-container">
         <div className="c-hero">
           <h1 className="c-txt--hero">Hva vi gjør</h1>
           <p className="c-txt--hero-p">
@@ -17,7 +19,7 @@ export default function What() {
               stedet" for prosjekter med urbane grøntområder med mange krav.
               Vårt utvalg av planter er forskningsbasert, og i samarbeid med
               arkitekturselskapene &nbsp;
-              <a href="https://www.asplanviak.no">Aslpan Viak</a>&nbsp;og &nbsp;
+              <a href="https://www.asplanviak.no">Asplan Viak</a>&nbsp;og &nbsp;
               <a href="https://edit.land/home">Edit Atelier</a>. Sammen
               utarbeider vi konsepter bestående av ulike plantearter som passer
               sammen i et gitt grøntareale, for eksempel på en takterrasse,
@@ -51,12 +53,13 @@ export default function What() {
           </p>
         </div>
       </div>
+      </div>
 
-      <div className="c-section o-container u-mrg--reset">
-        <h2 className="c-txt--sectiontitle">Hva vi tilbyr</h2>
+      <div className="c-section o-container background-white">
+        <h2 className="c-txt--sectiontitle u-mrg--txt4">Hva vi tilbyr</h2>
         <div className="c-mrg--top"></div>
         <div className="o-container">
-          <div className="c-grid-2x1 is-centered">
+          <div className="c-grid--2x1 is-centered">
             <div className="is-right">
               <h3 className="c-txt-sectiontitle--sm">Sømløs kommunikasjon</h3>
               <div className="u-mrg--reset c-mrg--top">
@@ -74,7 +77,7 @@ export default function What() {
 
         <div className="c-section--padding-top-24"></div>
         <div className="o-container">
-          <div className="c-grid-2x1 is-centered">
+          <div className="c-grid--2x1 is-centered">
             <div>
               <h3 className="c-txt-sectiontitle--sm">
                 Enkel og rask tilgang til de riktige plantene
@@ -92,7 +95,7 @@ export default function What() {
           </div>
         </div>
         <div className="o-container">
-          <div className="c-grid-2x1 is-centered">
+          <div className="c-grid--2x1 is-centered">
             <div className="is-right">
               <h3 className="c-txt-sectiontitle--sm">
                 Tilpass etter dine behov
@@ -110,9 +113,8 @@ export default function What() {
           </div>
         </div>
       </div>
-
       <div className="c-section background-grey">
-        <div className="o-container ">
+        <div className="o-container u-mrg--txt4">
           <p className="c-txt--punchline">
             Det skal være enkelt å velge grønt.
           </p>
@@ -134,6 +136,8 @@ export default function What() {
           kontinuerlige endre og oppdatere prosjektet ditt.
         </div>
       </div>
+    
     </div>
+    
   );
 }
