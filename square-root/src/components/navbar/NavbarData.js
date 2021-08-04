@@ -59,7 +59,7 @@ export const NavbarData = [
     subtitle: [
       {
         title: "CONTACT US",
-        path: "/contact",
+        path: "/contact-us",
         className: "d-link",
       },
       {
