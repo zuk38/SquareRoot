@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import "../../styles/Home.css";
 import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
+import arrowDownWhite from "../../icons/down-arrow-white.png";
 
 export default function Home(props) {
   return (
@@ -31,16 +32,18 @@ export default function Home(props) {
 
             <p className="u-mrg--txt3">Har du allerede en konto?</p>
             <button className="front-btn u-mrg--txt3">Gå til Beta</button>
-          </div>
 
-          <a href="#second">
-            <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-          </a>
+            <button className="btn-scroll-down-large bounce zoom-on-hover is-white" href="#third">
+            Se mer<img className="arrowDown" src={arrowDownWhite} />
+            </button>
+          </div>
+       
+          
         </section>
 
         <section id="second">
           <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item1">Takterrasse</h1>
+          <h1 className="grid-item0">Takterrasse</h1>
           <img className="grid-item2" src="../images/landscape--rooftop.jpg"></img>
             <div className="grid-item4 cat-descr">
               Sett sammen en takhage med forhåndsutvalgte planter
@@ -55,17 +58,17 @@ export default function Home(props) {
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
             </div>
- 
-            
-            <a href="#third">
-              <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-            </a>
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Regnseng
+            </button>
           </div>
+
+          
         </section>
 
         <section id="third">
           <div className="c-grid--2x2 padding-sm top-container">
-            <h1 className="grid-item1">Regnseng</h1>
+            <h1 className="grid-item0">Regnseng</h1>
             <img className="grid-item2" src="../images/landscape--rainbed2.jpg"></img>
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
@@ -85,16 +88,15 @@ export default function Home(props) {
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
             </div>
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Biomangfold
+            </button>
           </div>
-
-          <a href="#fourth">
-            <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-          </a>
         </section>
 
         <section id="fourth">
           <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item1">Biomangfold</h1>
+          <h1 className="grid-item0">Biomangfold</h1>
           <img className="grid-item2" src="../images/landscape--biodiversity.jpeg"></img>
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
@@ -113,19 +115,18 @@ export default function Home(props) {
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
             </div>
-            
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Innendørsplanter
+            </button>
             </div>
 
-            <a href="#fifth">
-              <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-            </a>
          
         </section>
 
         <section id="fifth">
           <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item1">Innendørs</h1>
-          <img className="grid-item2" src="../images/portrait--indoor2.jpg"></img>
+          <h1 className="grid-item0">Innendørsplanter</h1>
+          <img className="grid-item2" src="../images/landscape--indoor3.jpeg"></img>
           
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
@@ -144,14 +145,16 @@ export default function Home(props) {
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
             </div>
-            
-           
+        
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Grønne vegger
+            </button>
           </div>
         </section>
 
         <section id="sixth">
           <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item1">Grønne Vegger</h1>
+          <h1 className="grid-item0">Grønne Vegger</h1>
           <img className="grid-item2" src="../images/landscape--indoor2.jpg"></img>
           
             <div className="grid-item4 cat-descr">
