@@ -1,4 +1,4 @@
-export default function InputForm(props) {
+export default function ContactForm(props) {
     return (
         <>
 

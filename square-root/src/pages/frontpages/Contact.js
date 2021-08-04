@@ -1,6 +1,6 @@
 import React from "react";
 import { CommentAction } from "semantic-ui-react";
-import InputForm from "../../components/InputForm";
+import ContactForm from "../../components/ContactForm";
 
 export default function Contact(){
   
@@ -52,7 +52,7 @@ export default function Contact(){
     </div>
   </div>
   <div className="o-container u-mrg--reset">
-    <InputForm />
+    <ContactForm />
       </div>
 </div>
 
