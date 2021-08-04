@@ -146,6 +146,7 @@
 }
 /* end of banner */
 
+/* CONCEPT container
 .imagebox {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -168,12 +169,13 @@
   padding-left: 6%;
 }
 
-.imagebox h1 {
+.imagebox-h1 {
   color: rgb(0, 0, 0);
   display: flex;
   align-items: center;
   font-size: 30px;
 }
+*/
 
 .bd-notification {
   padding-top: 40px;
@@ -273,8 +275,6 @@ section h1{
 }
 
 .top-container{
-  position:relative;
-  bottom:0%;
   height:100vh;
 }
 
