@@ -170,7 +170,7 @@ export default function Why() {
             Ta kontakt og fortell oss hva du ønsker.
           </h3>
 
-          <ButtonPrimary float="none">Start prosjekt</ButtonPrimary>
+          <a href="/start-project" class="o-btn c-mrg--top/3">Start prosjekt</a>
         </div>
       </div>
       {/*
