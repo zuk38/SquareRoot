@@ -6,7 +6,7 @@ export default function Contact(){
   
     return(
 
-        <div>
+        <div className="c-section">
 <div className="o-container">
     <div className="c-hero">
         <h1 className="c-txt--hero">Kontakt oss</h1>

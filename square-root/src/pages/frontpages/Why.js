@@ -29,7 +29,10 @@ export default function Why() {
   ];
 
   return (
-    <div>
+
+    <>
+    <div className="c-section background-grey">
+    <div className="o-container">
       <div className="c-hero">
         <h1 className="c-txt--hero">Hvorfor oss</h1>
         <p className="c-txt--hero-p">
@@ -113,9 +116,19 @@ export default function Why() {
           </div>
         </div>
       </div>
+      
+      </div>
+      </div>
+
+<div className="c-section">
+      <div className="o-container">
       <Grid title="Våre verdier og tilnærminger" grid_values={grid_values} />
+      </div>
+      </div>
+
+
       {/* WHY US */}
-      <div className="c-section u-mrg--txt2">
+      <div className="c-section background-grey">
         <div className="o-container ">
           <p className="c-txt-punchline--sm">
             <strong>Hvorfor oss? </strong>
@@ -139,15 +152,16 @@ export default function Why() {
         </div>
       </div>
       {/* 'ROOT PROJECTS */}
-      <div className="c-section background-grey">
-        <div className="o-container">
-          <h2 className="c-txt--sectiontitle u-mrg--x0">'Root-prosjekter</h2>
+
+      <div className="c-section">
+      <div className="o-container">
+          <h2 className="c-txt--sectiontitle">'Root-prosjekter</h2>
           <p className="c-txt--punchline">Sammen utvikler vi grønne byrom.</p>
           <FeaturedConcepts />
         </div>
       </div>
       {/* CONTACT FOR PROJECT*/}
-      <div className="c-section c-section--cta">
+      <div className="c-section c-section--cta background-grey">
         <div className="o-container">
           <h2 className="c-txt-sectiontitle--sm u-txt--center">
             Vi vil gjerne være en del av landskapsplanleggingen din!
@@ -224,6 +238,7 @@ export default function Why() {
                 </div>
             </div>
              */}{" "}
-    </div>
+    
+    </>
   );
 }

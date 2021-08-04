@@ -33,10 +33,6 @@
 
 
 .c-container {
-  padding: clamp(25px, 5.7349926794vw, 25px);
-  padding-bottom: 1px;
-  margin: auto;
-  max-width: calc(1100px + 2 * 20px);
   text-align: inherit;
 }
 
@@ -48,8 +44,10 @@
 }
 
 .c-section {
-  padding-bottom: clamp(24px, 8.78477306vw, 120px);
+  padding-top: 50px;
+  padding-bottom: 50px;
   overflow: hidden;
+  width: 100%;
 }
 
 .u-mrg--reset > :first-child,
@@ -140,8 +138,7 @@ dt:first-child {
 }
 
 .c-section--cta {
-  padding-bottom: clamp(24px, 8.1991215227vw, 112px);
-  padding-bottom: clamp(24px, 8.1991215227vw, 112px);
+  padding-top: clamp(24px, 8.1991215227vw, 112px);
   text-align: center;
 }
 
@@ -566,7 +563,7 @@ html {
   border:1.5px solid lightgrey;
   font-size: 17px;
   font-family: inherit;
-  font-weight: 200;
+  font-weight: 300;
   padding:14px;
   line-height: normal;
 }
@@ -581,7 +578,7 @@ html {
   -webkit-border-radius: 0px;
     -moz-border-radius: 0px;
     border-radius: 0px;
-    font-weight:300;
+    font-weight:400;
     font-family: inherit;
 }
 

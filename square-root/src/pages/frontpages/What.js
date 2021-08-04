@@ -5,7 +5,7 @@ export default function What() {
   return (
 
     <div>
-    <div className="background-grey">
+    <div className="c-section background-grey">
       <div className="o-container">
         <div className="c-hero">
           <h1 className="c-txt--hero">Hva vi gjør</h1>

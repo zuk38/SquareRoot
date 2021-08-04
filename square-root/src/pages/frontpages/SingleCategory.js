@@ -41,6 +41,8 @@ export default class SingleCategory extends Component {
     } = category;
 
     return (
+
+      <div className="o-container">
       <div className="c-hero">
         <div className="c-grid--2x2">
           <div className="grid-item3 margin-left">
@@ -175,6 +177,7 @@ export default class SingleCategory extends Component {
           leveransetid, og legger til slutt din bestilling inn hos
           planteskolene.
         </h2>
+      </div>
       </div>
     );
   }
