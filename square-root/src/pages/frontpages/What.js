@@ -28,13 +28,13 @@ export default function What() {
                             <br/>
                             <div className="c-grid--span">
                                 <div className="c-grid--span-item-a">
-                                    <img className="zoom-on-hover" src="../images/portrait--indoor-wall.jpg"/>
+                                    <img className="zoom-on-hover" src="../images/leaf_redigert.jpg"/>
                                 </div>
                                 <div className="c-grid--span-item-b">
-                                    <img className="zoom-on-hover" src="../images/rainbeds.png"/>
+                                    <img className="zoom-on-hover" src="../images/pollinators.jpg"/>
                                 </div>
                                 <div className="c-grid--span-item-c">
-                                    <img className="zoom-on-hover" src="../images/netflix-hq.jpg"/>
+                                    <img className="zoom-on-hover" src="../images/boots.jpg"/>
                                 </div>
                             </div>
                             <h2 className="c-txt-punchline--sm c-mrg--top">

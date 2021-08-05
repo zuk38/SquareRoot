@@ -244,12 +244,6 @@ Smooth Scroll --------*/
   overflow-y: auto;
 }
 
-section h1{
-  color:white;
-  font-size:80px;
-  font-weight: 700px;
-  font-style: italic;
-}
 
 .action-btn{
   background: none;
@@ -297,39 +291,33 @@ section p {
 
 
 section#first {
-  background-image: url("../images/mainBackground.jpeg");
+  background-image: linear-gradient(rgba(62, 61, 61, 0.4), rgba(140, 165, 140, 0.2)), url("../images/hands-rooftop.png");
   background-color: rgba(54, 54, 54, 0.3);
-  position:relative;
   background-size: cover;
   /*background: :url() no-repeat center center/ cover;*/
 }
 
 section#second {
-  background-image: url();
   background-size: cover;
   position:relative;
 }
 
 section#third {
-  background-image: url();
   background-size: cover;
   position:relative;
 }
 
 section#fourth {
-  background-image: url();
   background-size: cover;
   position:relative;
 }
 
 section#fifth {
-  background-image: url();
   background-size: cover;
   position:relative;
 }
 
 section#sixth {
-  background-image: url();
   background-size: cover;
   position:relative;
 }
@@ -342,36 +330,33 @@ section#sixth {
 }
 
 .logo-large {
-  width:40%;
-  display: block;
+  width:70%;
   margin-left: 0;
-  margin-right: auto;
+  left:-5%;
+  top:-3%;
 }
 
 
-.hero-f-container{
-  width: 50%;
-  margin-left: 3%;
-  margin-right: auto;
+.hero-f-punchline{
+  width: 100%;
+  padding-bottom:20%;
+}
+
+.hero-f-punchline h1{
+  font-size: 35px;
+  font-weight: 600;
   color:white;
 }
 
-.hero-f-subcontainer p{
+.hero-f-signup{
+  color: white;
+  margin-left:10%;
+}
+
+.hero-f-signup p{
   font-size: 0.9rem;
   color:white;
   font-weight: 500;
-}
-
-.hero-f-subheader{
-  font-size: 25px;
-  word-break:break-word;
-}
-
-.hero-f-subcontainer{
-  color: white;
-  margin-left:3%;
-  margin-right:auto;
-  margin-top:4%;
 }
 
 .front-btn {
@@ -396,20 +381,15 @@ section#sixth {
 }
 
 .btn-scroll-down-large{
-  position:absolute;
-  bottom:20%;
-  left:50%;
+  width:20%;
   font-size: 20px;
   font-weight: 600;
-  background-color: rgba(0, 0, 0, 0.3);
   padding:1%;
-  display:inline-flex;
-  align-items: center;
-  justify-content: center;
+  
 }
 
 .arrowDown{
-  width:30%;
+  width:25%;
   padding-left:15%;
   float:right;
 }
