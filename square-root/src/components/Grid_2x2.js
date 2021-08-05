@@ -5,7 +5,7 @@ export default function Grid_2x2({ title, grid_values }) {
     <div>
       {" "}
       {/*OUR VALUES*/}
-      <div className="c-section background-grey">
+      <div className="c-section">
         <div className="o-container">
           <h2 className="c-txt--sectiontitle c-mrg--bottom">{title}</h2>
           <div className="c-grid--2x2">

@@ -1,29 +1,37 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import {Link} from "react-router-dom";
 import "../styles/Customize.css"
 
-export default function Concept({ concept }) {
-  const { name, description, image } = concept;
+export default function Concept({concept}) {
+    const {name, description, image} = concept;
 
-  console.log(concept)
+    console.log(concept)
 
-  return (
-    <div className="imagebox">
-      <img className="image" src={image} alt={name} />
-      <span>
-        <h1>{name.toUpperCase()}</h1>
-        <p>{description}</p>
-        <div className="hero-btns">
-          <Link to={`/concepts/${name}`}>
-            <button className="button is-light">LEARN MORE</button>
-          </Link>
+    return (
+        <div className="c-grid--2x1">
+            <div className="grid-item1">
+                <img className="featured-concept--img"
+                    src={image}
+                    alt={name}/>
 
-          <button className="button is-dark">
-            ADD TO PROJECT
-            <i className="fas fa-chevron-right" />
-          </button>
+            </div>
+
+            <div className="grid-item3 position-relative">
+              <div className="move-to-bottom">
+                <h1 className="featured-concept--h1">{
+                    name.toUpperCase()
+                }</h1>
+                <p className="c-mrg--top-sm">{description}</p>
+
+                <div className="c-mrg--top-sm">
+                    <Link to={
+                        `/concepts/${name}`
+                    }>
+                        <button className="o-btn">Se konsept</button>
+                    </Link>
+                </div>
+                </div>
+            </div>
         </div>
-      </span>
-    </div>
-  );
+    );
 }

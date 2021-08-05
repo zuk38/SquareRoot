@@ -26,6 +26,7 @@ import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
 import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
+import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
 import { library } from "@fortawesome/fontawesome-svg-core";
@@ -122,6 +123,12 @@ class App extends Component {
               path="/what-we-do"
               render={(props) => <What {...props} />}
             />
+
+            <Route
+              exact
+              path="/contact-us"
+              render={(props) => <Contact {...props} />}
+            />  
 
             <Route
               exact

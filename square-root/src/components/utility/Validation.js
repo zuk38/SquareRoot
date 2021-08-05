@@ -39,13 +39,13 @@ function validatePhone(phone) {
 
 function checkEmail(values, errors) {
   console.log("cheeck")
-  if (!values.email) errors.email = "Email address is required";
+  if (!values.email) errors.email = "E-postadresse er påkrevd";
   else if (!validateRegexString(values.email))
-    errors.email = "Email address is invalid";
+    errors.email = "E-postadresse er ugyldig";
 }
 
 function checkPassword(values, errors) {
-  if (!values.password) errors.password = "Password is required";
+  if (!values.password) errors.password = "Passord er påkrevd";
   else if (values.password.length < PASSLENGTH)
     errors.password = "Password must be 8 or more characters";
   else if (!hasLowerCase(values.password))

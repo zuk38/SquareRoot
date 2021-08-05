@@ -8,6 +8,7 @@ import Footer from "../../components/Footer";
 import "../../styles/Home.css";
 import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
+import arrowDownWhite from "../../icons/down-arrow-white.png";
 
 export default function Home(props) {
   return (
@@ -31,16 +32,20 @@ export default function Home(props) {
 
             <p className="u-mrg--txt3">Har du allerede en konto?</p>
             <button className="front-btn u-mrg--txt3">Gå til Beta</button>
-          </div>
 
-          <a href="#second">
-            <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-          </a>
+            <button className="btn-scroll-down-large bounce zoom-on-hover is-white" href="#third">
+            Se mer<img className="arrowDown" src={arrowDownWhite} />
+            </button>
+          </div>
+       
+          
         </section>
 
         <section id="second">
           <div className="c-grid--2x2 padding-sm top-container">
-            <div className="item1--2x2 cat-descr">
+          <h1 className="grid-item0">Takterrasse</h1>
+          <img className="grid-item2" src="../images/landscape--rooftop.jpg"></img>
+            <div className="grid-item4 cat-descr">
               Sett sammen en takhage med forhåndsutvalgte planter
               <br />
               Spar tid og penger på å finne plantene som passer i området
@@ -48,22 +53,24 @@ export default function Home(props) {
               Vi utvikler skreddersydde tilbud for riktige planter til riktig
               sted og konsepter som takhager for å øke biologisk mangfold og
               regnsenger for å håndtere kraftig nedbør og planter.
-            </div>
-            <h1 className="item2--2x2">Takterrasse</h1>
-            <button className="item4--2x2 action-btn zoom-on-hover">
+              <br />
+              <button className="action-btn zoom-on-hover">
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
-            <a href="#third">
-              <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-            </a>
+            </div>
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Regnseng
+            </button>
           </div>
+
+          
         </section>
 
         <section id="third">
           <div className="c-grid--2x2 padding-sm top-container">
-            <h1 className="item2--2x2">Regnseng</h1>
-
-            <div className="item1--2x2 cat-descr">
+            <h1 className="grid-item0">Regnseng</h1>
+            <img className="grid-item2" src="../images/landscape--rainbed2.jpg"></img>
+            <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
               Filtrerer vannet
@@ -75,20 +82,23 @@ export default function Home(props) {
               Reduserer sjansen for flom i bygningen
               <br />
               Øker verdien av eiendommen
-            </div>
-            <button className="item4--2x2 action-btn zoom-on-hover float-left">
+              <br />
+            
+            <button className="action-btn zoom-on-hover float-left">
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
+            </div>
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Biomangfold
+            </button>
           </div>
-
-          <a href="#fourth">
-            <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-          </a>
         </section>
 
         <section id="fourth">
           <div className="c-grid--2x2 padding-sm top-container">
-            <div className="item1--2x2 cat-descr">
+          <h1 className="grid-item0">Biomangfold</h1>
+          <img className="grid-item2" src="../images/landscape--biodiversity.jpeg"></img>
+            <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
               Filtrerer vannet
@@ -100,21 +110,25 @@ export default function Home(props) {
               Reduserer sjansen for flom i bygningen
               <br />
               Øker verdien av eiendommen
-            </div>
-            <h1 className="item2--2x2">Biomangfold</h1>
-            <button className="item4--2x2 action-btn zoom-on-hover">
+              <br />
+              <button className="action-btn zoom-on-hover">
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
+            </div>
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Innendørsplanter
+            </button>
+            </div>
 
-            <a href="#fifth">
-              <img className="arrowDown zoom-on-hover" src={arrowDown}></img>
-            </a>
-          </div>
+         
         </section>
 
         <section id="fifth">
           <div className="c-grid--2x2 padding-sm top-container">
-            <div className="item1--2x2 cat-descr">
+          <h1 className="grid-item0">Innendørsplanter</h1>
+          <img className="grid-item2" src="../images/landscape--indoor3.jpeg"></img>
+          
+            <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
               Filtrerer vannet
@@ -126,11 +140,42 @@ export default function Home(props) {
               Reduserer sjansen for flom i bygningen
               <br />
               Øker verdien av eiendommen
-            </div>
-            <h1 className="item2--2x2">Innendørs</h1>
-            <button className="item4--2x2 action-btn zoom-on-hover">
+              <br />
+              <button className="action-btn zoom-on-hover">
               Les mer<i className="fas fa-angle-double-right"></i>
             </button>
+            </div>
+        
+            <button className="btn-scroll-down zoom-on-hover" href="#third">
+            <i class="fas fa-angle-double-down"></i>Grønne vegger
+            </button>
+          </div>
+        </section>
+
+        <section id="sixth">
+          <div className="c-grid--2x2 padding-sm top-container">
+          <h1 className="grid-item0">Grønne Vegger</h1>
+          <img className="grid-item2" src="../images/landscape--indoor2.jpg"></img>
+          
+            <div className="grid-item4 cat-descr">
+              Overvannshåndtering
+              <br />
+              Filtrerer vannet
+              <br />
+              Beskytter dammer og kystlinjer
+              <br />
+              Øker bestanden av gunstige insekter som eliminerer skadedyr
+              <br />
+              Reduserer sjansen for flom i bygningen
+              <br />
+              Øker verdien av eiendommen
+              <br />
+              <button className="action-btn zoom-on-hover">
+              Les mer<i className="fas fa-angle-double-right"></i>
+            </button>
+            </div>
+            
+           
           </div>
         </section>
       </div>

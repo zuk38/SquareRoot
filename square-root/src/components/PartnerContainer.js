@@ -86,15 +86,15 @@ export default function Partner(props) {
                 />
               </div>
               <label className="checkbox-container">
-                <a href="terms-and-conditions">
-                  Jeg godtar vilkår og betingelser
-                </a>
+                
                 <input
                   type="checkbox"
                   onChange={handleChange}
                   value={values.conditions}
                 />
-                <span class="checkmark" />
+                <a href="terms-and-conditions">
+                  Jeg godtar vilkår og betingelser
+                </a>
               </label>
             </form>
             <ButtonPrimary
