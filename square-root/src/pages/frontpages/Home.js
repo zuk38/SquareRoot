@@ -7,7 +7,7 @@ import "../../styles/frontpages.css";
 import Footer from "../../components/Footer";
 import "../../styles/Home.css";
 import logo from "../../images/logo-white.png";
-import logoIcon from "../../images/logo-asterisk-white.png";
+import logoIcon from "../../images/logo-asterisk-white.jpeg";
 import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
 
@@ -17,15 +17,15 @@ export default function Home(props) {
             <div className="front-container disable-scrollbars">
                 <section id="first">
 
-                    <div className="c-grid--3x2 hero-grid">
-
+                    <div className="c-grid--3x2">
                         <div className="grid-item0--hero">
-                            <div>
-                                <img src={logo}
-                                    className="logo-large"></img>
-                            </div>
-                        </div>
 
+                            <img src={logo}
+                                className="logo-large"></img>
+
+                        </div>
+                    
+            
 
                         <div className="grid-item1--hero">
 
@@ -39,19 +39,21 @@ export default function Home(props) {
                                 <button className="front-btn u-mrg--txt3">Gå til Beta</button>
                             </div>
                         </div>
+               
+
 
                         <div className="grid-item2--hero">
                             <div className="hero-f-punchline">
                                 <span className="list-item">
-                                    {logoIcon}
-                                    <span className="list-item-label">
-                                        <h1>
-                                            Planlegg, design og bestill grøntområder inne, ute og på toppen av
-                                                                                                                                                  bygninger
-                                            <br/>-
-                                            <i className="ibm-italic">alt på ett sted</i>.
-                                        </h1>
-                                    </span>
+                                <h1> <img src="../images/logo-asterisk-white.png" className="list-item-icon"/>
+
+                                    
+                                        Planlegg, design og bestill grøntområder inne, ute og på toppen av
+                                                                                                                                                                                                                                                                                  bygninger
+                                        <br/>-
+                                        <i className="ibm-italic">alt på ett sted</i>.
+                                    </h1>
+
                                 </span>
 
                             </div>
@@ -59,12 +61,13 @@ export default function Home(props) {
                         </div>
 
                         <div className="grid-item3--hero">
-                        <button className="btn-scroll-down-large bounce zoom-on-hover is-white" href="#third">
-                            Se mer<img className="arrowDown"
-                                src={arrowDownWhite}/>
-                        </button>
+                            <button className="btn-scroll-down-large bounce zoom-on-hover is-white" href="#third">
+                                Se mer<img className="arrowDown"
+                                    src={arrowDownWhite}/>
+                            </button>
                         </div>
                     </div>
+
 
                 </section>
 
@@ -78,8 +81,8 @@ export default function Home(props) {
                             Spar tid og penger på å finne plantene som passer i området
                             <br/>
                             Vi utvikler skreddersydde tilbud for riktige planter til riktig
-                                                                                                  sted og konsepter som takhager for å øke biologisk mangfold og
-                                                                                                  regnsenger for å håndtere kraftig nedbør og planter.
+                                                                                                                                                                                      sted og konsepter som takhager for å øke biologisk mangfold og
+                                                                                                                                                                                      regnsenger for å håndtere kraftig nedbør og planter.
                             <br/>
                             <button className="action-btn zoom-on-hover">
                                 Les mer<i className="fas fa-angle-double-right"></i>

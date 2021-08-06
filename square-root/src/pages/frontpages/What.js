@@ -31,7 +31,7 @@ export default function What() {
                                     <img className="zoom-on-hover" src="../images/leaf_redigert.jpg"/>
                                 </div>
                                 <div className="c-grid--span-item-b">
-                                    <img className="zoom-on-hover" src="../images/pollinators.jpg"/>
+                                    <img className="zoom-on-hover" src="../images/landscape--biodiversity2.jpg"/>
                                 </div>
                                 <div className="c-grid--span-item-c">
                                     <img className="zoom-on-hover" src="../images/boots.jpg"/>

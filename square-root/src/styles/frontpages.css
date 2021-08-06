@@ -447,25 +447,7 @@ html {
   grid-gap: clamp(24px, 2.9282576867vw, 40px);
 }
 
-.c-grid--3x2{
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-gap: fit-content;
 
-}
-
-/*
-@media (min-width: 768px) {
-  .c-grid--3x2 {
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 0px;
-  }
-  .c-grid--3x2 > div.is-right {
-    -webkit-box-ordinal-group: 3;
-    order: 2;
-  }
-}
-*/
 
 .c-grid--3x3fixed{
   display:grid;
@@ -540,37 +522,7 @@ html {
 }
 
 
-/*GRID HERO */
-.grid-item0--hero{
-  grid-column:1 / 4;
-  grid-row:1;
-  min-height: 30vh;
-  overflow:hidden;
-}
 
-.grid-item1--hero{
-  grid-column:1;
-  grid-row:2;
-  min-height: 20vh;
-  max-height: 30vh;
-  overflow:hidden;
-}
-
-.grid-item2--hero{
-  grid-column: 2 / 4;
-  grid-row:2;
-  min-height: 20vh;
-  max-height: 30vh;
-  overflow:hidden;
-}
-
-.grid-item3--hero{
-  grid-column: 1 / 4;
-  grid-row:3;
-  min-height: 5vh;
-  min-height: 10vh;
-  overflow:hidden;
-}
 
 
 /*END OF GRID */
@@ -704,7 +656,7 @@ html {
   margin-top: 10px;
 }
 
-.gdpr-contact-consent label [type=checkbox], .subscribe-contact label [type=checkbox]{
+.gdpr-contact-consent label [type=checkbox], .subscribe-contact label [type=checkbox] {
   position: absolute;
   top:0;
   left:0;
