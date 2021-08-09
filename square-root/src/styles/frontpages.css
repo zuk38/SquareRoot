@@ -447,6 +447,8 @@ html {
   grid-gap: clamp(24px, 2.9282576867vw, 40px);
 }
 
+
+
 .c-grid--3x3fixed{
   display:grid;
   grid-gap:clamp(24px,2.9282576867vw,40px);
@@ -477,6 +479,7 @@ html {
   grid-column: 1 / 3;
   grid-row:1;
 }
+
 
 .grid-item1 {
   grid-column: 1;
@@ -517,6 +520,10 @@ html {
   grid-column: 2;
   grid-row: 4;
 }
+
+
+
+
 
 /*END OF GRID */
 
@@ -649,7 +656,7 @@ html {
   margin-top: 10px;
 }
 
-.gdpr-contact-consent label [type=checkbox], .subscribe-contact label [type=checkbox]{
+.gdpr-contact-consent label [type=checkbox], .subscribe-contact label [type=checkbox] {
   position: absolute;
   top:0;
   left:0;
@@ -835,7 +842,7 @@ color:white;
 }
 
 .padding-section {
-  padding: 1% 5% 5% 5%;
+  padding: 1% 5% 1% 5%;
 }
 
 .right {
@@ -852,6 +859,10 @@ color:white;
 }
 .is-white{
   color:white;
+}
+
+.ibm-italic {
+  font-family: 'IBM Plex Serif', serif;
 }
 
 /* END SPECIFIC STYLING */

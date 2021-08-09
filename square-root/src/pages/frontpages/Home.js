@@ -22,31 +22,49 @@ export default function Home(props) {
     <div className="homepage">
       <div className="front-container disable-scrollbars">
         <section id="first">
-          <img src={logo} className="logo-large"></img>
-          <div className="hero-f-container">
-            <h1 className="hero-f-subheader">
-              Planlegg, design og bestill grøntområder inne, ute og på toppen av
-              bygninger - alt på ett sted.
-            </h1>
-            <p></p>
-          </div>
+          <div className="c-grid--3x2">
+            <div className="grid-item0--hero">
+              <img src={logo} className="logo-large"></img>
+            </div>
 
-          <div className="hero-f-subcontainer c-mrg--top">
-            <p className="u-mrg--txt3">Ny hos SquareRoot?</p>
-            <button className="front-btn u-mrg--txt3">Forespør Demo</button>
+            <div className="grid-item1--hero">
+              <div className="hero-f-signup c-mrg--top">
+                <p className="u-mrg--txt3">Ny hos SquareRoot?</p>
+                <button className="front-btn u-mrg--txt3">Forespør Demo</button>
 
-            <p className="u-mrg--txt3">ELLER</p>
+                <p className="u-mrg--txt3">ELLER</p>
 
-            <p className="u-mrg--txt3">Har du allerede en konto?</p>
-            <button className="front-btn u-mrg--txt3">Gå til Beta</button>
+                <p className="u-mrg--txt3">Har du allerede en konto?</p>
+                <button className="front-btn u-mrg--txt3">Gå til Beta</button>
+              </div>
+            </div>
 
-            <button
-              className="btn-scroll-down-large bounce zoom-on-hover is-white"
-              href="#third"
-            >
-              Se mer
-              <img className="arrowDown" src={arrowDownWhite} />
-            </button>
+            <div className="grid-item2--hero">
+              <div className="hero-f-punchline">
+                <span className="list-item">
+                  <h1>
+                    {" "}
+                    <img
+                      src="../images/logo-asterisk-white.png"
+                      className="list-item-icon"
+                    />
+                    Planlegg, design og bestill grøntområder inne, ute og på
+                    toppen av bygninger
+                    <br />-<i className="ibm-italic">alt på ett sted</i>.
+                  </h1>
+                </span>
+              </div>
+            </div>
+
+            <div className="grid-item3--hero">
+              <button
+                className="btn-scroll-down-large bounce zoom-on-hover is-white"
+                href="#third"
+              >
+                Se mer
+                <img className="arrowDown" src={arrowDownWhite} />
+              </button>
+            </div>
           </div>
         </section>
 
@@ -55,7 +73,7 @@ export default function Home(props) {
             <h1 className="grid-item0">Takterrasse</h1>
             <img
               className="grid-item2"
-              src="../images/landscape--rooftop.jpg"
+              src="../images/landscape--rooftop_redigert.png"
             ></img>
             <div className="grid-item4 cat-descr">
               Sett sammen en takhage med forhåndsutvalgte planter
@@ -85,7 +103,7 @@ export default function Home(props) {
             <h1 className="grid-item0">Regnseng</h1>
             <img
               className="grid-item2"
-              src="../images/landscape--rainbed2.jpg"
+              src="../images/landscape--rainbed_redigert.jpg"
             ></img>
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
@@ -119,7 +137,7 @@ export default function Home(props) {
             <h1 className="grid-item0">Biomangfold</h1>
             <img
               className="grid-item2"
-              src="../images/landscape--biodiversity.jpeg"
+              src="../images/landscape--biodiversity2.jpg"
             />
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
@@ -189,7 +207,7 @@ export default function Home(props) {
             <h1 className="grid-item0">Grønne Vegger</h1>
             <img
               className="grid-item2"
-              src="../images/landscape--indoor2.jpg"
+              src="../images/landscape--indoor_redigert.jpg"
             ></img>
 
             <div className="grid-item4 cat-descr">
@@ -209,7 +227,8 @@ export default function Home(props) {
                 className="action-btn zoom-on-hover"
                 onClick={() => routeChange("/categories/grønne%20vegger")}
               >
-                Les mer<i className="fas fa-angle-double-right"/>
+                Les mer
+                <i className="fas fa-angle-double-right" />
               </button>
             </div>
           </div>
