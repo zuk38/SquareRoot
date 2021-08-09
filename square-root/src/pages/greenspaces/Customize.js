@@ -167,13 +167,14 @@ export default function Customize(props) {
             style="plants-title"
           />
         </div>
+        {/*
         <PlantsContainer
           onAdd={onAdd}
           onRemove={onRemove}
           conceptPlants={conceptPlants}
           handleQuantityInput={handleQuantityInput}
           isCustomising={true}
-        />
+        />*/}
       </>
     </ConceptProvider>
   );

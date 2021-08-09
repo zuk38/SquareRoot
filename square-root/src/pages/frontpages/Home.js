@@ -9,8 +9,15 @@ import "../../styles/Home.css";
 import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
+import { useHistory } from "react-router-dom";
 
 export default function Home(props) {
+  const history = useHistory();
+
+  const routeChange = (path) => {
+    history.push(path);
+  };
+
   return (
     <div className="homepage">
       <div className="front-container disable-scrollbars">
@@ -33,18 +40,23 @@ export default function Home(props) {
             <p className="u-mrg--txt3">Har du allerede en konto?</p>
             <button className="front-btn u-mrg--txt3">Gå til Beta</button>
 
-            <button className="btn-scroll-down-large bounce zoom-on-hover is-white" href="#third">
-            Se mer<img className="arrowDown" src={arrowDownWhite} />
+            <button
+              className="btn-scroll-down-large bounce zoom-on-hover is-white"
+              href="#third"
+            >
+              Se mer
+              <img className="arrowDown" src={arrowDownWhite} />
             </button>
           </div>
-       
-          
         </section>
 
         <section id="second">
-          <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item0">Takterrasse</h1>
-          <img className="grid-item2" src="../images/landscape--rooftop.jpg"></img>
+          <div className="c-grid--2x2 padding-section top-container">
+            <h1 className="grid-item0">Takterrasse</h1>
+            <img
+              className="grid-item2"
+              src="../images/landscape--rooftop.jpg"
+            ></img>
             <div className="grid-item4 cat-descr">
               Sett sammen en takhage med forhåndsutvalgte planter
               <br />
@@ -54,22 +66,27 @@ export default function Home(props) {
               sted og konsepter som takhager for å øke biologisk mangfold og
               regnsenger for å håndtere kraftig nedbør og planter.
               <br />
-              <button className="action-btn zoom-on-hover">
-              Les mer<i className="fas fa-angle-double-right"></i>
-            </button>
+              <button
+                className="action-btn zoom-on-hover"
+                onClick={() => routeChange("/categories/takterrasse")}
+              >
+                Les mer
+                <i className="fas fa-angle-double-right" />
+              </button>
             </div>
             <button className="btn-scroll-down zoom-on-hover" href="#third">
-            <i class="fas fa-angle-double-down"></i>Regnseng
+              <i class="fas fa-angle-double-down"></i>Regnseng
             </button>
           </div>
-
-          
         </section>
 
         <section id="third">
-          <div className="c-grid--2x2 padding-sm top-container">
+          <div className="c-grid--2x2 padding-section top-container">
             <h1 className="grid-item0">Regnseng</h1>
-            <img className="grid-item2" src="../images/landscape--rainbed2.jpg"></img>
+            <img
+              className="grid-item2"
+              src="../images/landscape--rainbed2.jpg"
+            ></img>
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
@@ -83,21 +100,27 @@ export default function Home(props) {
               <br />
               Øker verdien av eiendommen
               <br />
-            
-            <button className="action-btn zoom-on-hover float-left">
-              Les mer<i className="fas fa-angle-double-right"></i>
-            </button>
+              <button
+                className="action-btn zoom-on-hover float-left"
+                onClick={() => routeChange("/categories/regnseng")}
+              >
+                Les mer
+                <i className="fas fa-angle-double-right" />
+              </button>
             </div>
             <button className="btn-scroll-down zoom-on-hover" href="#third">
-            <i class="fas fa-angle-double-down"></i>Biomangfold
+              <i class="fas fa-angle-double-down"></i>Biomangfold
             </button>
           </div>
         </section>
 
         <section id="fourth">
-          <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item0">Biomangfold</h1>
-          <img className="grid-item2" src="../images/landscape--biodiversity.jpeg"></img>
+          <div className="c-grid--2x2 padding-section top-container">
+            <h1 className="grid-item0">Biomangfold</h1>
+            <img
+              className="grid-item2"
+              src="../images/landscape--biodiversity.jpeg"
+            />
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
@@ -111,23 +134,28 @@ export default function Home(props) {
               <br />
               Øker verdien av eiendommen
               <br />
-              <button className="action-btn zoom-on-hover">
-              Les mer<i className="fas fa-angle-double-right"></i>
-            </button>
+              <button
+                className="action-btn zoom-on-hover"
+                onClick={() => routeChange("/categories/biomangfold")}
+              >
+                Les mer
+                <i className="fas fa-angle-double-right" />
+              </button>
             </div>
             <button className="btn-scroll-down zoom-on-hover" href="#third">
-            <i class="fas fa-angle-double-down"></i>Innendørsplanter
+              <i class="fas fa-angle-double-down"></i>Innendørsplanter
             </button>
-            </div>
-
-         
+          </div>
         </section>
 
         <section id="fifth">
-          <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item0">Innendørsplanter</h1>
-          <img className="grid-item2" src="../images/landscape--indoor3.jpeg"></img>
-          
+          <div className="c-grid--2x2 padding-section top-container">
+            <h1 className="grid-item0">Innendørsplanter</h1>
+            <img
+              className="grid-item2"
+              src="../images/landscape--indoor3.jpeg"
+            ></img>
+
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
@@ -141,22 +169,29 @@ export default function Home(props) {
               <br />
               Øker verdien av eiendommen
               <br />
-              <button className="action-btn zoom-on-hover">
-              Les mer<i className="fas fa-angle-double-right"></i>
-            </button>
+              <button
+                className="action-btn zoom-on-hover"
+                onClick={() => routeChange("/categories/innendørsplanter")}
+              >
+                Les mer
+                <i className="fas fa-angle-double-right" />
+              </button>
             </div>
-        
+
             <button className="btn-scroll-down zoom-on-hover" href="#third">
-            <i class="fas fa-angle-double-down"></i>Grønne vegger
+              <i class="fas fa-angle-double-down"></i>Grønne vegger
             </button>
           </div>
         </section>
 
         <section id="sixth">
-          <div className="c-grid--2x2 padding-sm top-container">
-          <h1 className="grid-item0">Grønne Vegger</h1>
-          <img className="grid-item2" src="../images/landscape--indoor2.jpg"></img>
-          
+          <div className="c-grid--2x2 padding-section top-container">
+            <h1 className="grid-item0">Grønne Vegger</h1>
+            <img
+              className="grid-item2"
+              src="../images/landscape--indoor2.jpg"
+            ></img>
+
             <div className="grid-item4 cat-descr">
               Overvannshåndtering
               <br />
@@ -170,12 +205,13 @@ export default function Home(props) {
               <br />
               Øker verdien av eiendommen
               <br />
-              <button className="action-btn zoom-on-hover">
-              Les mer<i className="fas fa-angle-double-right"></i>
-            </button>
+              <button
+                className="action-btn zoom-on-hover"
+                onClick={() => routeChange("/categories/grønne%20vegger")}
+              >
+                Les mer<i className="fas fa-angle-double-right"/>
+              </button>
             </div>
-            
-           
           </div>
         </section>
       </div>

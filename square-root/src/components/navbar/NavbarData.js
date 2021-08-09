@@ -17,19 +17,24 @@ export const NavbarData = [
       },
       {
         title: "RAINBED",
-        path: "/categories/rainbed",
+        path: "/categories/regnseng",
         className: "d-link",
       },
       {
         title: "INDOOR",
-        path: "/categories/indoor",
+        path: "/categories/innendørsplanter",
         className: "d-link",
       },
       {
         title: "BIODIVERSITY",
-        path: "/categories/biodiversity",
+        path: "/categories/biomangfold",
         className: "d-link",
       },
+      {
+        title: "GREEN WALLS",
+        path: "/categories/grønne%20vegger",
+        className: "d-link",
+      }
     ],
   },
   {

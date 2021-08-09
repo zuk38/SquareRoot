@@ -1,6 +1,6 @@
 import React, { useEffect, useState, useRef } from "react";
 import logo from "../../images/logo-asterisk-dark.png";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useHistory } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
@@ -11,6 +11,7 @@ import NavbarDropdown from "./NavbarDropdown";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
 
 export default function Navbar(props) {
+  let history = useHistory();
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, () => setDropdown(false));
   const [dropdown, setDropdown] = useState(false);
@@ -28,7 +29,12 @@ export default function Navbar(props) {
   }, [width]);
 
   const handleClick = () => setClick(!click);
-  const closeMobileMenu = () => setClick(false);
+  const closeMobileMenu = (path) => {
+    setClick(false);
+    if (!path) return;
+    if(path.indexOf("/categories") > -1) history.go(0);
+    else history.push(path);
+  };
 
   const onMouseEnter = (dropdown) => {
     if (window.innerWidth < 1190) {
@@ -55,22 +61,25 @@ export default function Navbar(props) {
           <ul className="nav-menu active">
             {NavbarData.map((item, index) => (
               <>
-               {item.title === "HOME" ?
-                <NavLink
-                  to={item.path}
-                  key={index}
-                  exact={true}
-                  className="nav-links-no-hover"
-                  onClick={closeMobileMenu}
-                >
-                  {item.title}
-                </NavLink> : <div
-                  key={index}
-                  className="nav-links-no-hover-title"
-                  onClick={closeMobileMenu}
-                >
-                  {item.title}
-                </div>}
+                {item.title === "HOME" ? (
+                  <NavLink
+                    to={item.path}
+                    key={index}
+                    exact={true}
+                    className="nav-links-no-hover"
+                    onClick={() => closeMobileMenu(item.path)}
+                  >
+                    {item.title}
+                  </NavLink>
+                ) : (
+                  <div
+                    key={index}
+                    className="nav-links-no-hover-title"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.title}
+                  </div>
+                )}
                 {item.subtitle &&
                   item.subtitle.map((item, index) => (
                     <NavLink
@@ -78,7 +87,7 @@ export default function Navbar(props) {
                       key={index}
                       exact={true}
                       className="sub-item"
-                      onClick={closeMobileMenu}
+                      onClick={() => closeMobileMenu(item.path)}
                     >
                       {item.title}
                     </NavLink>
@@ -108,13 +117,13 @@ export default function Navbar(props) {
                   {
                     {
                       GREENSPACES: navDropdown.dropdownGreenspaces && (
-                        <NavbarDropdown item={item} />
+                        <NavbarDropdown {...props} item={item} />
                       ),
                       ABOUT: navDropdown.dropdownAbout && (
-                        <NavbarDropdown item={item} />
+                        <NavbarDropdown {...props} item={item} />
                       ),
                       CONTACT: navDropdown.dropdownContact && (
-                        <NavbarDropdown item={item} />
+                        <NavbarDropdown {...props} item={item} />
                       ),
                     }[item.title]
                   }
@@ -126,14 +135,16 @@ export default function Navbar(props) {
                       to={item.path}
                       exact={true}
                       className={click ? "nav-links-no-hover" : "nav-links"}
-                      onClick={closeMobileMenu}
+                      onClick={() => closeMobileMenu(item.path)}
                     >
                       {item.title}
                     </NavLink>
                   ) : (
                     <div
                       exact={true}
-                      className={click ? "nav-links-no-hover-title" : "nav-links-title"}
+                      className={
+                        click ? "nav-links-no-hover-title" : "nav-links-title"
+                      }
                       onClick={closeMobileMenu}
                     >
                       {item.title}
