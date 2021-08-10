@@ -1,4 +1,4 @@
-import React, { Component, useState, useContext, useEffect } from "react";
+import React, { useState, useContext, useEffect } from "react";
 import "../../styles/Customize.css";
 import Title from "../../components/Title";
 import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
@@ -18,6 +18,18 @@ export default function Customize(props) {
   const [currentPlant, setCurrentPlant] = useState(null);
 
   useEffect(() => {
+    window.addEventListener("beforeunload", alertUser);
+    return () => {
+      window.removeEventListener("beforeunload", alertUser);
+    };
+  }, []);
+
+  const alertUser = (e) => {
+    e.preventDefault();
+    e.returnValue = "";
+  };
+
+  useEffect(() => {
     if (concept) {
       const { plants } = concept;
       if (plants) {
@@ -32,7 +44,7 @@ export default function Customize(props) {
   }, [conceptPlants]);
 
   useEffect(() => {
-    if (!currentPlant) return
+    if (!currentPlant) return;
     const nP = document.getElementById(currentPlant.norwegian_name);
     const lP = document.getElementById(currentPlant.latin_name);
 
@@ -52,13 +64,13 @@ export default function Customize(props) {
   }
 
   const onAdd = (plant) => {
-    setCurrentPlant(plant)
+    setCurrentPlant(plant);
     const exist = conceptPlants.find(
       (x) => x.norwegian_name === plant.norwegian_name
     );
     if (!exist) {
       setConceptPlants([...conceptPlants, { ...plant, quantity: 1 }]);
-      setQuantity(1)
+      setQuantity(1);
     } else {
       setConceptPlants(
         conceptPlants.map((x) =>
@@ -67,18 +79,18 @@ export default function Customize(props) {
             : x
         )
       );
-      setQuantity(exist.quantity + 1)
+      setQuantity(exist.quantity + 1);
     }
   };
 
   const onRemove = (plant) => {
-    setCurrentPlant(plant)
+    setCurrentPlant(plant);
     const exist = conceptPlants.find(
       (x) => x.norwegian_name === plant.norwegian_name
     );
     if (exist.quantity === 1) {
       onRemoveCompletely(plant);
-      setQuantity(0)
+      setQuantity(0);
     } else {
       setConceptPlants(
         conceptPlants.map((x) =>
@@ -87,9 +99,8 @@ export default function Customize(props) {
             : x
         )
       );
-      setQuantity(exist.quantity - 1)
+      setQuantity(exist.quantity - 1);
     }
-    
   };
 
   const onRemoveCompletely = (plant) => {
@@ -100,17 +111,17 @@ export default function Customize(props) {
 
   const handleQuantityInput = (e, plant) => {
     e.preventDefault();
-    setCurrentPlant(plant)
+    setCurrentPlant(plant);
     const exist = conceptPlants.find(
       (x) => x.norwegian_name === plant.norwegian_name
     );
     let value = parseInt(e.target.value);
     if (value === 0 || !Number.isInteger(value)) {
       value = 0;
-      onRemoveCompletely(plant)
-      return
+      onRemoveCompletely(plant);
+      return;
     } else if (value < 0) {
-      value = quantity
+      value = quantity;
     }
     setConceptPlants(
       conceptPlants.map((x) =>
@@ -119,7 +130,7 @@ export default function Customize(props) {
           : x
       )
     );
-    setQuantity(value)
+    setQuantity(value);
   };
 
   return (
@@ -156,7 +167,9 @@ export default function Customize(props) {
           onRemove={onRemove}
           onRemoveCompletely={onRemoveCompletely}
           handleQuantityInput={handleQuantityInput}
-          saveModifiedConcept={() => saveModifiedConcept(concept, conceptPlants)}
+          saveModifiedConcept={() =>
+            saveModifiedConcept(concept, conceptPlants)
+          }
         />
         <div className="cust-concept-title">
           <Title
