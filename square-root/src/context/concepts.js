@@ -43,7 +43,7 @@ export default class ConceptProvider extends Component {
         query: listConcepts,
         authMode: "API_KEY",
       });
-
+      console.log(data)
       let tempConcepts = this.formatData(data.listConcepts.items);
       let concepts = this.formatConceptData(data.listConcepts.items);
       console.log(concepts);
@@ -108,7 +108,7 @@ export default class ConceptProvider extends Component {
         let conceptPlantDetails = {
           id: uuidv4(),
           concept_id: conceptID,
-          plant_id: conceptPlants[i].metadataID,
+          plant_id: conceptPlants[i].id,
           quantity: conceptPlants[i].quantity,
         };
         console.log(conceptPlantDetails);
@@ -152,10 +152,11 @@ export default class ConceptProvider extends Component {
       let benefits;
 
       let tempPlants = item.plants.items.map((p) => {
-        let metadataID = p.plant.metadataID;
+        let id = p.plant.id;
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
-        let plant = { metadataID, quantity, ...metadata };
+        let plant = { id, quantity, ...metadata };
+        console.log(plant)
         const {
           pollinator_friendly,
           edible,

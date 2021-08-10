@@ -67,8 +67,8 @@ type ConceptPlant
   ) {
   plant_id: ID!
   concept_id: ID!
-  plant: Plant! @connection(fields: ["plant_id"])
-  concept: Concept! @connection(fields: ["concept_id"])
+  plant: Plant @connection(fields: ["plant_id"])
+  concept: Concept @connection(fields: ["concept_id"])
   quantity: Float
 }
 
