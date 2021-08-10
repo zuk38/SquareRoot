@@ -89,7 +89,6 @@ export default class PlantsFilter extends Component {
 
     //get unique types
     let types = getUnique(this.props.plants, "type");
-    console.log(types);
     //format to dropdown
     types = formatData(types, "type");
 
@@ -97,7 +96,6 @@ export default class PlantsFilter extends Component {
     let categories = [
       ...new Set(this.props.plants.flatMap(({ category }) => category)),
     ].sort();
-    console.log(categories);
     categories = formatData(categories, "category");
 
     //get unique climate zones

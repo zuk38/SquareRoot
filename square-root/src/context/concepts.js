@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { API, Auth, graphqlOperation } from "aws-amplify";
-import { listCategorys, listConcepts, createConceptPlant } from "../api/conceptQueries";
+import {
+  listCategorys,
+  listConcepts,
+  createConceptPlant,
+} from "../api/conceptQueries";
 import { v4 as uuidv4 } from "uuid";
 import { createConcept } from "../api/mutations";
 
@@ -28,8 +32,6 @@ export default class ConceptProvider extends Component {
         categories,
         loadingCat: false,
       });
-
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -109,7 +111,7 @@ export default class ConceptProvider extends Component {
           plant_id: conceptPlants[i].metadataID,
           quantity: conceptPlants[i].quantity,
         };
-        console.log(conceptPlantDetails)
+        console.log(conceptPlantDetails);
         await API.graphql(
           graphqlOperation(createConceptPlant, {
             input: conceptPlantDetails,
@@ -145,7 +147,6 @@ export default class ConceptProvider extends Component {
       });
       return tempItems;
     });
-    console.log(maintenance);
     let m = this.highest(maintenance[0]);
     let tempItems = items.map((item) => {
       let benefits;

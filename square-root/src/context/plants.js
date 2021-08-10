@@ -11,9 +11,9 @@ export default class PlantProvider extends Component {
     featuredPlants: [],
     loading: true,
     //filters
-    type: "",
+    type: [],
     category: [],
-    climate_zone: "",
+    climate_zone: [],
     norwegian_nursery: false, //norwegian or external
     native: false, //native or imported
     sun_seeker: false, //shadow lover or sun seeker
@@ -61,7 +61,7 @@ export default class PlantProvider extends Component {
 
   handleChange = (selection) => {
     if (selection === undefined) return;
-    console.log(selection)
+    console.log(selection);
 
     let id = selection[0].id,
       value = selection[0].value;
@@ -74,13 +74,14 @@ export default class PlantProvider extends Component {
       if (!this.state[id].includes(value)) {
         this.setState(
           {
-            [id]: this.state[id].concat([value]),
+            [id]: [...this.state[id], value],
+            //[id]: this.state[id].concat(value),
           },
           () => this.filterPlants()
         );
       } else {
         let newArray = [...this.state[id]];
-        console.log(newArray)
+        console.log(newArray);
         newArray.splice(newArray.indexOf(value), 1);
         console.log(newArray);
         this.setState(
@@ -131,8 +132,8 @@ export default class PlantProvider extends Component {
 
     let tempPlants = [...plants];
     let state = this.state;
-    console.log(state);
-    let plant = null;
+    //console.log(state);
+    //let plant = null;
 
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
@@ -155,36 +156,40 @@ export default class PlantProvider extends Component {
       "climate_zone",
       "category",
     ].forEach(function(filterBy) {
-      var filterValue;
+      var filterValue = state[filterBy];
 
-      if (filterBy === "type" && type != "")
+      /*if (filterBy === "type" && type != "")
         filterValue = state[filterBy].toLowerCase();
       else if (
         (filterBy === "climate_zone" && climate_zone != "") ||
         (filterBy === "category" && category != "")
       ) {
         filterValue = state[filterBy];
-        //filterValue = filterValue[filterValue.length - 1];
-        category.includes(filterValue)
-          ? category.splice(category.indexOf(filterValue))
-          : category.push(filterValue);
-        console.log(category);
-      } else filterValue = state[filterBy];
+      } else filterValue = state[filterBy];*/
 
-      console.log(filterValue);
-
-      if (filterValue) {
+      if (filterValue && !Array.isArray(filterValue)) {
         if (filterBy === "shadow_lover" && shadow_lover) {
           tempPlants = tempPlants.filter(function(item) {
-            return item["sun_seeker"] === !filterValue[0];
-          });
-        } else if (filterBy === "category" && category) {
-          tempPlants = tempPlants.filter((plant) => {
-            return plant.category.some((r) => category.indexOf(r) >= 0);
+            return item["sun_seeker"] === !filterValue;
           });
         } else if (filterBy != "shadow_lover") {
           tempPlants = tempPlants.filter(function(item) {
-            return item[filterBy] === filterValue[0];
+            return item[filterBy] === filterValue;
+          });
+        }
+      } else if (Array.isArray(filterValue)) {
+        if (filterBy === "category" && !category.length == 0) {
+          tempPlants = tempPlants.filter((plant) => {
+            return plant.category.some((r) => filterValue.indexOf(r) >= 0);
+          });
+        } else if (filterBy === "type" && !type.length == 0) {
+          filterValue = filterValue.map(fV => fV.toLowerCase());
+          tempPlants = tempPlants.filter((plant) => {
+            return filterValue.indexOf(plant.type) !== -1;
+          });
+        } else if (filterBy === "climate_zone" && !climate_zone.length == 0) {
+          tempPlants = tempPlants.filter((plant) => {
+            return filterValue.indexOf(plant.climate_zone) !== -1;
           });
         }
       }

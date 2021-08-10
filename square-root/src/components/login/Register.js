@@ -3,6 +3,7 @@ import Title from "../Title";
 import useForm from "../hooks/useForm";
 import validate from "../utility/RegistrationFormValidation";
 import AuthModal from "./AuthModal";
+import "./LoginStyle.scss"
 
 export function Register(props) {
   const [showModal, setShowModal] = useState(false);
@@ -26,6 +27,7 @@ export function Register(props) {
   } = useForm(callback, validate, register);
 
   function callback() {
+    console.log("kakaksdn")
     openModal();
   }
 
@@ -33,6 +35,7 @@ export function Register(props) {
     //form validated
     //cognito integration here, may detect cognito errors
     await registerUser(values)
+    console.log("lalala")
   }
   return (
     <>
