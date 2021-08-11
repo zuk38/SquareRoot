@@ -26,7 +26,7 @@ export default class PlantProvider extends Component {
     pet_kids_friendly: false,
     rain_garden: false,
     air_puryfying: false,
-    name: "all",
+    name: "",
   };
 
   fetchPlants = async () => {
@@ -37,7 +37,7 @@ export default class PlantProvider extends Component {
         authMode: "API_KEY",
       });
       let plants = this.formatData(data.listPlants.items);
-      console.log(plants);
+      //console.log(plants);
       let featuredPlants = plants.filter((plant) => plant.featured === true);
       let maxSize = Math.max(...plants.map((item) => item.size_in_cm)); //find the max size from the data
       this.setState({
@@ -70,6 +70,22 @@ export default class PlantProvider extends Component {
     console.log(value);
     console.log(this.state[id]);
 
+    /*if (!id && value && !this.state[id]) {
+      this.setState(
+        {
+          name: value,
+        },
+        () => this.filterPlants()
+      );
+    } else if (this.state[id]) {
+      this.setState(
+        {
+          name: "",
+        },
+        () => this.filterPlants()
+      );
+    }*/
+
     if (id === "type" || id === "category" || id === "climate_zone") {
       if (!this.state[id].includes(value)) {
         this.setState(
@@ -81,9 +97,7 @@ export default class PlantProvider extends Component {
         );
       } else {
         let newArray = [...this.state[id]];
-        console.log(newArray);
         newArray.splice(newArray.indexOf(value), 1);
-        console.log(newArray);
         this.setState(
           {
             [id]: newArray,
@@ -102,20 +116,7 @@ export default class PlantProvider extends Component {
     }
   };
 
-  searchName = (n) => {
-    console.log(n);
-    this.setState(
-      {
-        name: n,
-      },
-      () => {
-        this.filterPlants();
-      } //filter as a callback depending on state
-    );
-  };
-
   filterPlants = () => {
-    console.log(this.state);
     //backup all original values
     let {
       plants,
@@ -132,15 +133,10 @@ export default class PlantProvider extends Component {
 
     let tempPlants = [...plants];
     let state = this.state;
-    //console.log(state);
     //let plant = null;
 
     //transform value from string
     size_in_cm = parseInt(size_in_cm);
-
-    /*if (name !== "all") {
-      plant = tempPlants.find((plant) => plant.norwegian_name === name);
-    }*/
 
     //filter by properties
     [
@@ -155,35 +151,32 @@ export default class PlantProvider extends Component {
       "type",
       "climate_zone",
       "category",
+      "name",
     ].forEach(function(filterBy) {
       var filterValue = state[filterBy];
-
-      /*if (filterBy === "type" && type != "")
-        filterValue = state[filterBy].toLowerCase();
-      else if (
-        (filterBy === "climate_zone" && climate_zone != "") ||
-        (filterBy === "category" && category != "")
-      ) {
-        filterValue = state[filterBy];
-      } else filterValue = state[filterBy];*/
 
       if (filterValue && !Array.isArray(filterValue)) {
         if (filterBy === "shadow_lover" && shadow_lover) {
           tempPlants = tempPlants.filter(function(item) {
             return item["sun_seeker"] === !filterValue;
           });
-        } else if (filterBy != "shadow_lover") {
+        } else if (filterBy != "shadow_lover" && filterBy != "name") {
           tempPlants = tempPlants.filter(function(item) {
             return item[filterBy] === filterValue;
           });
-        }
+        } /*else if (filterBy === "name" && name != "") {
+          //console.log(tempPlants[3].norwegian_name)
+          tempPlants = tempPlants.filter(
+            (plant) => plant.norwegian_name === filterValue
+          );
+        }*/
       } else if (Array.isArray(filterValue)) {
         if (filterBy === "category" && !category.length == 0) {
           tempPlants = tempPlants.filter((plant) => {
             return plant.category.some((r) => filterValue.indexOf(r) >= 0);
           });
         } else if (filterBy === "type" && !type.length == 0) {
-          filterValue = filterValue.map(fV => fV.toLowerCase());
+          filterValue = filterValue.map((fV) => fV.toLowerCase());
           tempPlants = tempPlants.filter((plant) => {
             return filterValue.indexOf(plant.type) !== -1;
           });

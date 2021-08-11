@@ -41,12 +41,14 @@ export default class PlantsFilter extends Component {
     super(props);
 
     this.state = {
+      selectPlant: [],
       selectType: [],
       selectCategory: [],
       selectLight: [],
       selectOrigin: [],
       selectZone: [],
       selectProperties: [],
+      lastSelectPlant: [],
       lastSelectType: [],
       lastSelectCategory: [],
       lastSelectLight: [],
@@ -161,10 +163,26 @@ export default class PlantsFilter extends Component {
       },
     ];
 
+    let ps = this.props.plants.map((p) => {
+      let newPlant = { value: p.norwegian_name, image: p.image };
+      return newPlant;
+    });
+
     return (
       <section className="filter-container">
         <form className="filter-form">
           {/*Dropdown.js */}
+          <Dropdown
+            multi={false}
+            selectValues={this.state.selectPlant}
+            clearable={true}
+            closeOnSelect={true}
+            options={ps}
+            placeholder="Search for plant..."
+            onChange={(values) => this.setValues("selectPlant", values)}
+            itemRenderer={true}
+            searchable={true}
+          />
           {/* Category */}
           <Dropdown
             multi={true}
@@ -257,9 +275,6 @@ export default class PlantsFilter extends Component {
     if (plant !== "") searchName(plant);
   }, [plant]);
 
-  let ps = plants.map((p) => {
-    let newPlant = { value: p.norwegian_name, image: p.image };
-    return newPlant;
-  });
+  
 
   */
