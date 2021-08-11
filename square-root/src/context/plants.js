@@ -62,15 +62,20 @@ export default class PlantProvider extends Component {
   handleChange = (selection) => {
     if (selection === undefined) return;
     console.log(selection);
-    let id,
-      value,
-      state = this.state;
+    let id, value;
     if (!Array.isArray(selection)) {
-      id = selection.id;
+      if (!selection.value) id = selection.id;
+      else {
+        id = selection.id;
+        value = selection.value;
+      }
     } else {
       id = selection[0].id;
       value = selection[0].value;
     }
+
+    console.log(id);
+    console.log(value);
 
     if (id === "type" || id === "category" || id === "climate_zone") {
       //all cleared
@@ -101,46 +106,76 @@ export default class PlantProvider extends Component {
         );
       }
     } else {
-      //boolean filters
-      if (!value) {
-        this.setState(
-          {
-            [id]: false,
-          },
-          () => this.filterPlants()
-        );
+      //name filter
+      if (id === "name") {
+        if (!value || this.state[id] === value) {
+          //cleared
+          this.setState(
+            {
+              [id]: "",
+            },
+            () => this.filterPlants()
+          );
+        } else {
+          //new name
+          this.setState(
+            {
+              [id]: value,
+            },
+            () => this.filterPlants()
+          );
+        }
       } else {
-        this.setState(
-          (prevState) => ({
-            [id]: !prevState[id],
-          }),
-          () => this.filterPlants()
-        );
+        //boolean filters
+        if (value === undefined) {
+          if (id === "norwegian_nursery" || id === "native") {
+            //all cleared in native and nursery
+            this.setState(
+              {
+                norwegian_nursery: false,
+                native: false,
+              },
+              () => this.filterPlants()
+            );
+          } else if (id === "shadow_lover" || id === "sun_seeker") {
+            //all cleared in light
+            this.setState(
+              {
+                shadow_lover: false,
+                sun_seeker: false,
+              },
+              () => this.filterPlants()
+            );
+          }
+        } else {
+          console.log(id);
+          if (id === "shadow_lover") {
+            this.setState(
+              (prevState) => ({
+                [id]: !prevState[id],
+                sun_seeker: false,
+              }),
+              () => this.filterPlants()
+            );
+          } else if (id === "sun_seeker") {
+            this.setState(
+              (prevState) => ({
+                [id]: !prevState[id],
+                shadow_lover: false,
+              }),
+              () => this.filterPlants()
+            );
+          } else {
+            this.setState(
+              (prevState) => ({
+                [id]: !prevState[id],
+              }),
+              () => this.filterPlants()
+            );
+          }
+        }
       }
     }
-
-    /*let id = selection[0].id,
-      value = selection[0].value;
-
-    console.log(id);
-    console.log(value);
-    console.log(this.state[id]);
-
-    /*if (!id && value && !this.state[id]) {
-      this.setState(
-        {
-          name: value,
-        },
-        () => this.filterPlants()
-      );
-    } else if (this.state[id]) {
-      this.setState(
-        {
-          name: "",
-        },
-        () => this.filterPlants()
-      );
-    }*/
   };
 
   filterPlants = () => {
@@ -191,12 +226,12 @@ export default class PlantProvider extends Component {
           tempPlants = tempPlants.filter(function(item) {
             return item[filterBy] === filterValue;
           });
-        } /*else if (filterBy === "name" && name != "") {
+        } else if (filterBy === "name" && name != "") {
           //console.log(tempPlants[3].norwegian_name)
           tempPlants = tempPlants.filter(
             (plant) => plant.norwegian_name === filterValue
           );
-        }*/
+        }
       } else if (Array.isArray(filterValue)) {
         if (filterBy === "category" && !category.length == 0) {
           tempPlants = tempPlants.filter((plant) => {
@@ -214,12 +249,6 @@ export default class PlantProvider extends Component {
         }
       }
     });
-
-    // filter by size
-    /*tempPlants = tempPlants.filter(
-      (plant) => plant.size_in_cm >= minSize && plant.size_in_cm <= maxSize
-    );
-     */
 
     //change state
     this.setState({
@@ -253,7 +282,6 @@ export default class PlantProvider extends Component {
           ...this.state,
           getPlant: this.getPlant,
           handleChange: this.handleChange,
-          searchName: this.searchName,
         }}
       >
         {this.props.children}

@@ -60,7 +60,23 @@ export default class PlantsFilter extends Component {
 
   static contextType = PlantContext;
 
+  //to check if user clicked the same filter twice
+  objectsAreSame = (x, y) => {
+    if (x === undefined || y === undefined) return false
+    var objectsAreSame = true;
+    for (var propertyName in x) {
+      if (x[propertyName] !== y[propertyName]) {
+        objectsAreSame = false;
+        break;
+      }
+    }
+    return objectsAreSame;
+  };
+
   getCurrentItem = (orgArray, copyArray, id) => {
+    console.log(orgArray);
+    console.log(copyArray);
+    if (this.objectsAreSame(orgArray[0], copyArray[0])) return;
     let currentItem;
 
     //all cleared
@@ -74,26 +90,27 @@ export default class PlantsFilter extends Component {
       } else if (orgArray.length < copyArray.length) {
         //element remnoved
         currentItem = copyArray.filter((el) => !orgArray.includes(el));
+      } else if (orgArray.length === copyArray.length) {
+        //flipping light
+        currentItem = orgArray[0];
       }
     }
+    console.log(currentItem);
     this.context.handleChange(currentItem);
   };
 
   setValues = (orgName, values) => {
     console.log(values);
     let tempArray = [...this.state[orgName]];
+    console.log(tempArray);
     this.setState(
       {
         [orgName]: values,
       },
       () => {
-        if (
-          Array.isArray(values) &&
-          values.length === 0 &&
-          tempArray.length != 0
-        )
+        if (values.length === 0 && tempArray.length != 0) {
           this.getCurrentItem(this.state[orgName], tempArray, tempArray[0].id);
-        else this.getCurrentItem(this.state[orgName], tempArray);
+        } else this.getCurrentItem(this.state[orgName], tempArray);
       }
     );
   };
@@ -176,7 +193,7 @@ export default class PlantsFilter extends Component {
     ];
 
     let ps = this.props.plants.map((p) => {
-      let newPlant = { value: p.norwegian_name, image: p.image };
+      let newPlant = { id: "name", value: p.norwegian_name, image: p.image };
       return newPlant;
     });
 
