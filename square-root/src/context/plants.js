@@ -62,8 +62,64 @@ export default class PlantProvider extends Component {
   handleChange = (selection) => {
     if (selection === undefined) return;
     console.log(selection);
+    let id,
+      value,
+      state = this.state;
+    if (!Array.isArray(selection)) {
+      id = selection.id;
+    } else {
+      id = selection[0].id;
+      value = selection[0].value;
+    }
 
-    let id = selection[0].id,
+    if (id === "type" || id === "category" || id === "climate_zone") {
+      //all cleared
+      if (!value) {
+        this.setState(
+          {
+            [id]: [],
+          },
+          () => this.filterPlants()
+        );
+      } else if (!this.state[id].includes(value)) {
+        //filter option added
+        this.setState(
+          {
+            [id]: [...this.state[id], value],
+          },
+          () => this.filterPlants()
+        );
+      } else {
+        //filter option removed
+        let newArray = [...this.state[id]];
+        newArray.splice(newArray.indexOf(value), 1);
+        this.setState(
+          {
+            [id]: newArray,
+          },
+          () => this.filterPlants()
+        );
+      }
+    } else {
+      //boolean filters
+      if (!value) {
+        this.setState(
+          {
+            [id]: false,
+          },
+          () => this.filterPlants()
+        );
+      } else {
+        this.setState(
+          (prevState) => ({
+            [id]: !prevState[id],
+          }),
+          () => this.filterPlants()
+        );
+      }
+    }
+
+    /*let id = selection[0].id,
       value = selection[0].value;
 
     console.log(id);
@@ -85,35 +141,6 @@ export default class PlantProvider extends Component {
         () => this.filterPlants()
       );
     }*/
-
-    if (id === "type" || id === "category" || id === "climate_zone") {
-      if (!this.state[id].includes(value)) {
-        this.setState(
-          {
-            [id]: [...this.state[id], value],
-            //[id]: this.state[id].concat(value),
-          },
-          () => this.filterPlants()
-        );
-      } else {
-        let newArray = [...this.state[id]];
-        newArray.splice(newArray.indexOf(value), 1);
-        this.setState(
-          {
-            [id]: newArray,
-            //[id]: "",
-          },
-          () => this.filterPlants()
-        );
-      }
-    } else {
-      this.setState(
-        (prevState) => ({
-          [id]: !prevState[id],
-        }),
-        () => this.filterPlants()
-      );
-    }
   };
 
   filterPlants = () => {

@@ -60,28 +60,40 @@ export default class PlantsFilter extends Component {
 
   static contextType = PlantContext;
 
-  getCurrentItem = (orgArray, copyArray) => {
+  getCurrentItem = (orgArray, copyArray, id) => {
     let currentItem;
 
-    if (orgArray.length > copyArray.length) {
-      //element added
-      currentItem = orgArray.filter((el) => !copyArray.includes(el));
-    } else if (orgArray.length < copyArray.length) {
-      //element remnoved
-      currentItem = copyArray.filter((el) => !orgArray.includes(el));
+    //all cleared
+    if (orgArray.length === 0 && id) {
+      console.log(orgArray);
+      currentItem = { id: id };
+    } else {
+      if (orgArray.length > copyArray.length) {
+        //element added
+        currentItem = orgArray.filter((el) => !copyArray.includes(el));
+      } else if (orgArray.length < copyArray.length) {
+        //element remnoved
+        currentItem = copyArray.filter((el) => !orgArray.includes(el));
+      }
     }
     this.context.handleChange(currentItem);
   };
 
   setValues = (orgName, values) => {
-    //console.log(values)
+    console.log(values);
     let tempArray = [...this.state[orgName]];
     this.setState(
       {
         [orgName]: values,
       },
       () => {
-        this.getCurrentItem(this.state[orgName], tempArray);
+        if (
+          Array.isArray(values) &&
+          values.length === 0 &&
+          tempArray.length != 0
+        )
+          this.getCurrentItem(this.state[orgName], tempArray, tempArray[0].id);
+        else this.getCurrentItem(this.state[orgName], tempArray);
       }
     );
   };
