@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import PartnerContainer from "../../components/PartnerContainer";
@@ -10,18 +10,31 @@ import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
 import { useHistory } from "react-router-dom";
+import { homeData } from "./HomeData";
 
 export default function Home(props) {
-  const history = useHistory();
+  const [clicked, setClicked] = useState(false);
 
-  const routeChange = (path) => {
-    history.push(path);
+  const upRef = useState(null);
+  const tRef = useRef(null);
+  const rRef = useRef(null);
+  const bRef = useRef(null);
+  const iRef = useRef(null);
+  const gRef = useRef(null);
+
+  window.onscroll = function(e) {
+    setClicked(false);
+  };
+
+  const executeScroll = (myRef) => {
+    setClicked(true);
+    myRef.current.scrollIntoView();
   };
 
   return (
     <div className="homepage">
-      <div className="front-container disable-scrollbars">
-        <section id="first">
+      <div id="front-container" className="front-container disable-scrollbars">
+        <section id="first" ref={upRef}>
           <div className="c-grid--3x2">
             <div className="grid-item0--hero">
               <img src={logo} className="logo-large"></img>
@@ -59,7 +72,7 @@ export default function Home(props) {
             <div className="grid-item3--hero">
               <button
                 className="btn-scroll-down-large bounce zoom-on-hover is-white"
-                href="#third"
+                onClick={() => executeScroll(tRef)}
               >
                 Se mer
                 <img className="arrowDown" src={arrowDownWhite} />
@@ -68,172 +81,94 @@ export default function Home(props) {
           </div>
         </section>
 
-        <section id="second">
-          <div className="c-grid--2x2 padding-section top-container">
-            <h1 className="grid-item0">Takterrasse</h1>
-            <img
-              className="grid-item2"
-              src="../images/landscape--rooftop_redigert.png"
-            ></img>
-            <div className="grid-item4 cat-descr">
-              Sett sammen en takhage med forhåndsutvalgte planter
-              <br />
-              Spar tid og penger på å finne plantene som passer i området
-              <br />
-              Vi utvikler skreddersydde tilbud for riktige planter til riktig
-              sted og konsepter som takhager for å øke biologisk mangfold og
-              regnsenger for å håndtere kraftig nedbør og planter.
-              <br />
-              <button
-                className="action-btn zoom-on-hover"
-                onClick={() => routeChange("/categories/takterrasse")}
-              >
-                Les mer
-                <i className="fas fa-angle-double-right" />
-              </button>
-            </div>
-            <button className="btn-scroll-down zoom-on-hover" href="#third">
-              <i class="fas fa-angle-double-down"></i>Regnseng
-            </button>
-          </div>
-        </section>
-
-        <section id="third">
-          <div className="c-grid--2x2 padding-section top-container">
-            <h1 className="grid-item0">Regnseng</h1>
-            <img
-              className="grid-item2"
-              src="../images/landscape--rainbed_redigert.jpg"
-            ></img>
-            <div className="grid-item4 cat-descr">
-              Overvannshåndtering
-              <br />
-              Filtrerer vannet
-              <br />
-              Beskytter dammer og kystlinjer
-              <br />
-              Øker bestanden av gunstige insekter
-              <br />
-              Reduserer sjansen for flom i bygningen
-              <br />
-              Øker verdien av eiendommen
-              <br />
-              <button
-                className="action-btn zoom-on-hover float-left"
-                onClick={() => routeChange("/categories/regnseng")}
-              >
-                Les mer
-                <i className="fas fa-angle-double-right" />
-              </button>
-            </div>
-            <button className="btn-scroll-down zoom-on-hover" href="#third">
-              <i class="fas fa-angle-double-down"></i>Biomangfold
-            </button>
-          </div>
-        </section>
-
-        <section id="fourth">
-          <div className="c-grid--2x2 padding-section top-container">
-            <h1 className="grid-item0">Biomangfold</h1>
-            <img
-              className="grid-item2"
-              src="../images/landscape--biodiversity2.jpg"
-            />
-            <div className="grid-item4 cat-descr">
-              Overvannshåndtering
-              <br />
-              Filtrerer vannet
-              <br />
-              Beskytter dammer og kystlinjer
-              <br />
-              Øker bestanden av gunstige insekter som eliminerer skadedyr
-              <br />
-              Reduserer sjansen for flom i bygningen
-              <br />
-              Øker verdien av eiendommen
-              <br />
-              <button
-                className="action-btn zoom-on-hover"
-                onClick={() => routeChange("/categories/biomangfold")}
-              >
-                Les mer
-                <i className="fas fa-angle-double-right" />
-              </button>
-            </div>
-            <button className="btn-scroll-down zoom-on-hover" href="#third">
-              <i class="fas fa-angle-double-down"></i>Innendørsplanter
-            </button>
-          </div>
-        </section>
-
-        <section id="fifth">
-          <div className="c-grid--2x2 padding-section top-container">
-            <h1 className="grid-item0">Innendørsplanter</h1>
-            <img
-              className="grid-item2"
-              src="../images/landscape--indoor3.jpeg"
-            ></img>
-
-            <div className="grid-item4 cat-descr">
-              Overvannshåndtering
-              <br />
-              Filtrerer vannet
-              <br />
-              Beskytter dammer og kystlinjer
-              <br />
-              Øker bestanden av gunstige insekter som eliminerer skadedyr
-              <br />
-              Reduserer sjansen for flom i bygningen
-              <br />
-              Øker verdien av eiendommen
-              <br />
-              <button
-                className="action-btn zoom-on-hover"
-                onClick={() => routeChange("/categories/innendørsplanter")}
-              >
-                Les mer
-                <i className="fas fa-angle-double-right" />
-              </button>
-            </div>
-
-            <button className="btn-scroll-down zoom-on-hover" href="#third">
-              <i class="fas fa-angle-double-down"></i>Grønne vegger
-            </button>
-          </div>
-        </section>
-
-        <section id="sixth">
-          <div className="c-grid--2x2 padding-section top-container">
-            <h1 className="grid-item0">Grønne Vegger</h1>
-            <img
-              className="grid-item2"
-              src="../images/landscape--indoor_redigert.jpg"
-            ></img>
-
-            <div className="grid-item4 cat-descr">
-              Overvannshåndtering
-              <br />
-              Filtrerer vannet
-              <br />
-              Beskytter dammer og kystlinjer
-              <br />
-              Øker bestanden av gunstige insekter som eliminerer skadedyr
-              <br />
-              Reduserer sjansen for flom i bygningen
-              <br />
-              Øker verdien av eiendommen
-              <br />
-              <button
-                className="action-btn zoom-on-hover"
-                onClick={() => routeChange("/categories/grønne%20vegger")}
-              >
-                Les mer
-                <i className="fas fa-angle-double-right" />
-              </button>
-            </div>
-          </div>
-        </section>
+        <HomeSection
+          data={homeData[0]}
+          currentRef={tRef}
+          nextRef={rRef}
+          executeScroll={executeScroll}
+          clicked={clicked}
+        />
+        <HomeSection
+          data={homeData[1]}
+          currentRef={rRef}
+          nextRef={bRef}
+          executeScroll={executeScroll}
+          clicked={clicked}
+        />
+        <HomeSection
+          data={homeData[2]}
+          currentRef={bRef}
+          nextRef={iRef}
+          executeScroll={executeScroll}
+          clicked={clicked}
+        />
+        <HomeSection
+          data={homeData[3]}
+          currentRef={iRef}
+          nextRef={gRef}
+          executeScroll={executeScroll}
+          clicked={clicked}
+        />
+        <HomeSection
+          data={homeData[4]}
+          currentRef={gRef}
+          executeScroll={executeScroll}
+          clicked={clicked}
+          upRef={upRef}
+        />
       </div>
     </div>
+  );
+}
+
+function HomeSection({ data, executeScroll, currentRef, nextRef, upRef }) {
+  const history = useHistory();
+
+  const routeChange = (path) => {
+    history.push(path);
+  };
+
+  return (
+    <>
+      <section ref={currentRef}>
+        <div className="c-grid--2x2 padding-section top-container">
+          <h1 className="grid-item0">{data.headline}</h1>
+          <img className="grid-item2" src={data.img} />
+
+          <div className="grid-item4 cat-descr">
+            {data.descriptionItems.map((item) => (
+              <>
+                {item.text} <br />
+              </>
+            ))}
+
+            <button
+              className="action-btn zoom-on-hover"
+              onClick={() => routeChange(data.path)}
+            >
+              Les mer
+              <i className="fas fa-angle-double-right" />
+            </button>
+          </div>
+          {data.nextId ? (
+            <button
+              className="btn-scroll-down zoom-on-hover"
+              onClick={() => executeScroll(nextRef)}
+            >
+              <i class="fas fa-angle-double-down" />
+              {data.nextName}
+            </button>
+          ) : (
+            <button
+              className="btn-scroll-up zoom-on-hover"
+              onClick={() => executeScroll(upRef)}
+            >
+              <i class="fas fa-angle-double-up" />
+              Go Back
+            </button>
+          )}
+        </div>
+      </section>
+    </>
   );
 }

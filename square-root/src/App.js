@@ -78,7 +78,7 @@ class App extends Component {
                 <ForgotPasswordPage {...props} auth={authProps} />
               )}
             />
-            <Route exact path="/" render={(props) => <Home {...props} />} />
+            <Route exact path="/" render={(props) => <Home {...props} auth={authProps} />} />
             <Route
               exact
               path="/concepts/:name"
@@ -194,6 +194,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
           {this.props.location.pathname != "/login" &&
+          this.props.location.pathname != "/" &&
             this.props.location.pathname != "/forgotpassword" && <Footer />}
         </>
       )
