@@ -13,28 +13,18 @@ import { useHistory } from "react-router-dom";
 import { homeData } from "./HomeData";
 
 export default function Home(props) {
-  const [clicked, setClicked] = useState(false);
-
-  const upRef = useState(null);
-  const tRef = useRef(null);
-  const rRef = useRef(null);
-  const bRef = useRef(null);
-  const iRef = useRef(null);
-  const gRef = useRef(null);
-
-  window.onscroll = function(e) {
-    setClicked(false);
-  };
 
   const executeScroll = (myRef) => {
-    setClicked(true);
-    myRef.current.scrollIntoView();
+    let element;
+    if (!myRef) element = document.getElementById("first")
+    else element = document.getElementById(myRef)
+    element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
   };
 
   return (
     <div className="homepage">
       <div id="front-container" className="front-container disable-scrollbars">
-        <section id="first" ref={upRef}>
+        <section id="first">
           <div className="c-grid--3x2">
             <div className="grid-item0--hero">
               <img src={logo} className="logo-large"></img>
@@ -56,7 +46,6 @@ export default function Home(props) {
               <div className="hero-f-punchline">
                 <span className="list-item">
                   <h1>
-                    {" "}
                     <img
                       src="../images/logo-asterisk-white.png"
                       className="list-item-icon"
@@ -72,7 +61,7 @@ export default function Home(props) {
             <div className="grid-item3--hero">
               <button
                 className="btn-scroll-down-large bounce zoom-on-hover is-white"
-                onClick={() => executeScroll(tRef)}
+                onClick={() => executeScroll(homeData[0].id)}
               >
                 Se mer
                 <img className="arrowDown" src={arrowDownWhite} />
@@ -81,47 +70,16 @@ export default function Home(props) {
           </div>
         </section>
 
-        <HomeSection
-          data={homeData[0]}
-          currentRef={tRef}
-          nextRef={rRef}
-          executeScroll={executeScroll}
-          clicked={clicked}
-        />
-        <HomeSection
-          data={homeData[1]}
-          currentRef={rRef}
-          nextRef={bRef}
-          executeScroll={executeScroll}
-          clicked={clicked}
-        />
-        <HomeSection
-          data={homeData[2]}
-          currentRef={bRef}
-          nextRef={iRef}
-          executeScroll={executeScroll}
-          clicked={clicked}
-        />
-        <HomeSection
-          data={homeData[3]}
-          currentRef={iRef}
-          nextRef={gRef}
-          executeScroll={executeScroll}
-          clicked={clicked}
-        />
-        <HomeSection
-          data={homeData[4]}
-          currentRef={gRef}
-          executeScroll={executeScroll}
-          clicked={clicked}
-          upRef={upRef}
-        />
+        {homeData.map((data) => (
+          <HomeSection data={data} executeScroll={executeScroll}/>
+        ))}
+
       </div>
     </div>
   );
 }
 
-function HomeSection({ data, executeScroll, currentRef, nextRef, upRef }) {
+function HomeSection({ data, executeScroll }) {
   const history = useHistory();
 
   const routeChange = (path) => {
@@ -130,7 +88,7 @@ function HomeSection({ data, executeScroll, currentRef, nextRef, upRef }) {
 
   return (
     <>
-      <section ref={currentRef}>
+      <section id={data.id}>
         <div className="c-grid--2x2 padding-section top-container">
           <h1 className="grid-item0">{data.headline}</h1>
           <img className="grid-item2" src={data.img} />
@@ -153,7 +111,7 @@ function HomeSection({ data, executeScroll, currentRef, nextRef, upRef }) {
           {data.nextId ? (
             <button
               className="btn-scroll-down zoom-on-hover"
-              onClick={() => executeScroll(nextRef)}
+              onClick={() => executeScroll(data.nextId)}
             >
               <i class="fas fa-angle-double-down" />
               {data.nextName}
@@ -161,7 +119,7 @@ function HomeSection({ data, executeScroll, currentRef, nextRef, upRef }) {
           ) : (
             <button
               className="btn-scroll-up zoom-on-hover"
-              onClick={() => executeScroll(upRef)}
+              onClick={() => executeScroll()}
             >
               <i class="fas fa-angle-double-up" />
               Go Back
