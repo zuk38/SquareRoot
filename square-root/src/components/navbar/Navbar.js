@@ -31,9 +31,7 @@ export default function Navbar(props) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = (path) => {
     setClick(false);
-    if (!path) return;
-    if(path.indexOf("/categories") > -1) history.go(0);
-    else history.push(path);
+    history.push(path);
   };
 
   const onMouseEnter = (dropdown) => {
