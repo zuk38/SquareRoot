@@ -86,7 +86,7 @@
   height: auto;
 }
 
-.ReactModalPortal > div {
+/*.ReactModalPortal > div {
   opacity: 0;
 }
 
@@ -104,4 +104,4 @@
 .ReactModalPortal .ReactModal__Overlay--before-close {
   opacity: 0;
   transform: translateX(-100px);
-}
+}*/

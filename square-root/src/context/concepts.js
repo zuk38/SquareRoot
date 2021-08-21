@@ -1,6 +1,10 @@
 import React, { Component } from "react";
 import { API, Auth, graphqlOperation } from "aws-amplify";
-import { listCategorys, listConcepts, createConceptPlant } from "../api/conceptQueries";
+import {
+  listCategorys,
+  listConcepts,
+  createConceptPlant,
+} from "../api/conceptQueries";
 import { v4 as uuidv4 } from "uuid";
 import { createConcept } from "../api/mutations";
 
@@ -28,8 +32,6 @@ export default class ConceptProvider extends Component {
         categories,
         loadingCat: false,
       });
-
-      console.log(data);
     } catch (error) {
       console.log(error);
     }
@@ -41,7 +43,7 @@ export default class ConceptProvider extends Component {
         query: listConcepts,
         authMode: "API_KEY",
       });
-
+      console.log(data)
       let tempConcepts = this.formatData(data.listConcepts.items);
       let concepts = this.formatConceptData(data.listConcepts.items);
       console.log(concepts);
@@ -106,10 +108,10 @@ export default class ConceptProvider extends Component {
         let conceptPlantDetails = {
           id: uuidv4(),
           concept_id: conceptID,
-          plant_id: conceptPlants[i].metadataID,
+          plant_id: conceptPlants[i].id,
           quantity: conceptPlants[i].quantity,
         };
-        console.log(conceptPlantDetails)
+        console.log(conceptPlantDetails);
         await API.graphql(
           graphqlOperation(createConceptPlant, {
             input: conceptPlantDetails,
@@ -145,16 +147,16 @@ export default class ConceptProvider extends Component {
       });
       return tempItems;
     });
-    console.log(maintenance);
     let m = this.highest(maintenance[0]);
     let tempItems = items.map((item) => {
       let benefits;
 
       let tempPlants = item.plants.items.map((p) => {
-        let metadataID = p.plant.metadataID;
+        let id = p.plant.id;
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
-        let plant = { metadataID, quantity, ...metadata };
+        let plant = { id, quantity, ...metadata };
+        console.log(plant)
         const {
           pollinator_friendly,
           edible,

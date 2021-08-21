@@ -8,13 +8,13 @@ exports.handler = function afterConfirmationTrigger(event, context, callback) {
   // using it as a flag. Depending on its value, add to a specified group.
 
   let groupName = event.request.userAttributes["custom:role"];
-  if (groupName === "Real Estate Developer") {
+  if (groupName === "Real Estate Developer" || groupName === "Eiendomsutvikler") {
     groupName = "REDs";
-  } else if (groupName === "Landscape Architect") {
+  } else if (groupName === "Landscape Architect" || groupName === "Landskapsarkitekt") {
     groupName = "LARKs";
-  } else if (groupName === "Landscape Entrepreneur") {
+  } else if (groupName === "Landscape Entrepreneur" || groupName === "Landskapsentreprenør") {
     groupName = "LENTs";
-  } else if (groupName === "Plant Nursery") {
+  } else if (groupName === "Plant Nursery" || groupName === "Planteskole") {
     groupName = "PNs";
   }
 

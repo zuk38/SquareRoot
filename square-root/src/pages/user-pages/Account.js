@@ -7,7 +7,7 @@ import validate from "../../components/utility/EditAccountValidation";
 import AuthModal from "../../components/login/AuthModal";
 
 function Account({ context }) {
-  const { values, errors, handleChange, handleSubmit } = useForm(
+  const { values, errors, handleChange, handleSubmit, handleDropDownChange } = useForm(
     callback,
     validate,
     log
@@ -18,6 +18,7 @@ function Account({ context }) {
     emailMode: false,
     nameMode: false,
     phoneMode: false,
+    roleMode: false,
   });
   const { user, email, phone_number, role, updateUser } = context;
 
@@ -27,6 +28,7 @@ function Account({ context }) {
       emailMode: false,
       nameMode: false,
       phoneMode: false,
+      roleMode: false,
     });
   }
 
@@ -60,6 +62,11 @@ function Account({ context }) {
     if (item.dbValue === role) values.role = item.displayValue;
     return <option key={index}>{item.displayValue}</option>;
   });
+
+  const handleDropdown = (e) => {
+    setEditMode({roleMode: true})
+    handleDropDownChange(e)
+  }
 
   return (
     <>
@@ -110,7 +117,7 @@ function Account({ context }) {
           <label className="settings-lbl"></label>
           <p className="settings-p">Rolle</p>
 
-          <select name="role" id="role" defaultValue={values.role}>
+          <select name="role" id="role" defaultValue={values.role} onChange={(e) => handleDropdown(e)}>
             {role_options}
           </select>
         </form>
@@ -119,7 +126,7 @@ function Account({ context }) {
           name="btn-account"
           onClick={(e) => handleSubmit(e, editMode)}
           disabled={
-            !editMode.nameMode && !editMode.emailMode && !editMode.phoneMode
+            !editMode.nameMode && !editMode.emailMode && !editMode.phoneMode && !editMode.roleMode
           }
         >
           Lagre endringer

@@ -105,7 +105,7 @@ export default class Dropdown extends Component {
               keepSelectedInList={this.state.keepSelectedInList}
               onDropdownOpen={() => undefined}
               onDropdownClose={() => undefined}
-              onClearAll={() => console.log("lalala")}
+              onClearAll={() => undefined}
               onSelectAll={() => undefined}
               onChange={this.props.onChange}
               noDataLabel="No matches found"

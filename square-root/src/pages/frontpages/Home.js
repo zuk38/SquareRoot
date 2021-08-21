@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, { useEffect, useState, useRef } from "react";
 import Hero from "../../components/Hero";
 import Banner from "../../components/Banner";
 import PartnerContainer from "../../components/PartnerContainer";
@@ -6,12 +6,20 @@ import Grid from "../../components/Grid_2x2";
 import "../../styles/frontpages.css";
 import Footer from "../../components/Footer";
 import "../../styles/Home.css";
-import logo from "../../images/logo-white.png";
-import logoIcon from "../../images/logo-asterisk-white.jpeg";
+import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
+import { useHistory } from "react-router-dom";
+import { homeData } from "./HomeData";
 
 export default function Home(props) {
+    const executeScroll = (myRef) => {
+        let element;
+        if (!myRef) element = document.getElementById("first")
+        else element = document.getElementById(myRef)
+        element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+      };
+      
     return (
         <div className="homepage">
             <div className="front-container disable-scrollbars">
@@ -160,19 +168,9 @@ export default function Home(props) {
                             <img src={logo} />
                         </div>
                         </div>
+                        </section>
 
-                </section>
-
-                <section id="fifth">
-                    
-                </section>
-
-                <section id="sixth">
-                    
-            
-                  
-                </section>
-            </div>
         </div>
-    );
+    </div>
+  );
 }

@@ -41,12 +41,14 @@ export default class PlantsFilter extends Component {
     super(props);
 
     this.state = {
+      selectPlant: [],
       selectType: [],
       selectCategory: [],
       selectLight: [],
       selectOrigin: [],
       selectZone: [],
       selectProperties: [],
+      lastSelectPlant: [],
       lastSelectType: [],
       lastSelectCategory: [],
       lastSelectLight: [],
@@ -58,28 +60,57 @@ export default class PlantsFilter extends Component {
 
   static contextType = PlantContext;
 
-  getCurrentItem = (orgArray, copyArray) => {
+  //to check if user clicked the same filter twice
+  objectsAreSame = (x, y) => {
+    if (x === undefined || y === undefined) return false
+    var objectsAreSame = true;
+    for (var propertyName in x) {
+      if (x[propertyName] !== y[propertyName]) {
+        objectsAreSame = false;
+        break;
+      }
+    }
+    return objectsAreSame;
+  };
+
+  getCurrentItem = (orgArray, copyArray, id) => {
+    console.log(orgArray);
+    console.log(copyArray);
+    if (this.objectsAreSame(orgArray[0], copyArray[0])) return;
     let currentItem;
 
-    if (orgArray.length > copyArray.length) {
-      //element added
-      currentItem = orgArray.filter((el) => !copyArray.includes(el));
-    } else if (orgArray.length < copyArray.length) {
-      //element remnoved
-      currentItem = copyArray.filter((el) => !orgArray.includes(el));
+    //all cleared
+    if (orgArray.length === 0 && id) {
+      console.log(orgArray);
+      currentItem = { id: id };
+    } else {
+      if (orgArray.length > copyArray.length) {
+        //element added
+        currentItem = orgArray.filter((el) => !copyArray.includes(el));
+      } else if (orgArray.length < copyArray.length) {
+        //element remnoved
+        currentItem = copyArray.filter((el) => !orgArray.includes(el));
+      } else if (orgArray.length === copyArray.length) {
+        //flipping light
+        currentItem = orgArray[0];
+      }
     }
+    console.log(currentItem);
     this.context.handleChange(currentItem);
   };
 
   setValues = (orgName, values) => {
-    //console.log(values)
+    console.log(values);
     let tempArray = [...this.state[orgName]];
+    console.log(tempArray);
     this.setState(
       {
         [orgName]: values,
       },
       () => {
-        this.getCurrentItem(this.state[orgName], tempArray);
+        if (values.length === 0 && tempArray.length != 0) {
+          this.getCurrentItem(this.state[orgName], tempArray, tempArray[0].id);
+        } else this.getCurrentItem(this.state[orgName], tempArray);
       }
     );
   };
@@ -89,7 +120,6 @@ export default class PlantsFilter extends Component {
 
     //get unique types
     let types = getUnique(this.props.plants, "type");
-    console.log(types);
     //format to dropdown
     types = formatData(types, "type");
 
@@ -97,7 +127,6 @@ export default class PlantsFilter extends Component {
     let categories = [
       ...new Set(this.props.plants.flatMap(({ category }) => category)),
     ].sort();
-    console.log(categories);
     categories = formatData(categories, "category");
 
     //get unique climate zones
@@ -163,10 +192,26 @@ export default class PlantsFilter extends Component {
       },
     ];
 
+    let ps = this.props.plants.map((p) => {
+      let newPlant = { id: "name", value: p.norwegian_name, image: p.image };
+      return newPlant;
+    });
+
     return (
       <section className="filter-container">
         <form className="filter-form">
           {/*Dropdown.js */}
+          <Dropdown
+            multi={false}
+            selectValues={this.state.selectPlant}
+            clearable={true}
+            closeOnSelect={true}
+            options={ps}
+            placeholder="Search for plant..."
+            onChange={(values) => this.setValues("selectPlant", values)}
+            itemRenderer={true}
+            searchable={true}
+          />
           {/* Category */}
           <Dropdown
             multi={true}
@@ -259,9 +304,6 @@ export default class PlantsFilter extends Component {
     if (plant !== "") searchName(plant);
   }, [plant]);
 
-  let ps = plants.map((p) => {
-    let newPlant = { value: p.norwegian_name, image: p.image };
-    return newPlant;
-  });
+  
 
   */

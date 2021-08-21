@@ -888,6 +888,10 @@ color:white;
   padding: 5%;
 }
 
+.padding-section {
+  padding: 1% 5% 1% 5%;
+}
+
 .right {
   position: absolute;
   right: 10%;

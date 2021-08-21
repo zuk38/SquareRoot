@@ -116,7 +116,7 @@ export default class UserProvider extends Component {
     }
   };
 
-  removeEmpty = (obj) => {
+  /*removeEmpty = (obj) => {
     let newObj = {};
     Object.keys(obj).forEach((key) => {
       if (obj[key] === Object(obj[key]))
@@ -124,7 +124,7 @@ export default class UserProvider extends Component {
       else if (obj[key] !== undefined) newObj[key] = obj[key];
     });
     return newObj;
-  };
+  };*/
 
   updateUser = async (values) => {
     const user = await Auth.currentAuthenticatedUser();
@@ -134,8 +134,8 @@ export default class UserProvider extends Component {
       phone_number: values.phone,
       "custom:role": values.role,
     };
-
-    this.removeEmpty(attributes);
+    Object.keys(attributes).forEach(key => attributes[key] === undefined ? delete attributes[key] : {});
+    //this.removeEmpty(attributes);
     console.log(attributes);
     try {
       await Auth.updateUserAttributes(user, attributes);

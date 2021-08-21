@@ -109,7 +109,7 @@ export const listConcepts = /* GraphQL */ `
           items {
             quantity
             plant {
-              metadataID
+              id
               metadata {
                 norwegian_name
                 latin_name

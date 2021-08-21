@@ -7,11 +7,7 @@ export const listPlants = /* GraphQL */ `
     listPlants(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
-        metadataID
-        createdAt
-        updatedAt
         metadata {
-          id
           latin_name
           norwegian_name
           type
