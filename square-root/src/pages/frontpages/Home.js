@@ -72,141 +72,105 @@ export default function Home(props) {
                 </section>
 
                 <section id="second">
-                    <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="grid-item0">Takterrasse</h1>
-                        <img className="grid-item2" src="../images/landscape--rooftop_redigert.png"></img>
-                        <div className="grid-item4 cat-descr">
+                    <div className="c-grid--2x1-equal padding-sm ">
+                        <div className="grid-item2--equal top-container">
+                            <h1>WHY</h1>
+                            <div className="cat-descr">
                             Sett sammen en takhage med forhåndsutvalgte planter
                             <br/>
                             Spar tid og penger på å finne plantene som passer i området
                             <br/>
                             Vi utvikler skreddersydde tilbud for riktige planter til riktig
-                                                                                                                                                                                      sted og konsepter som takhager for å øke biologisk mangfold og
-                                                                                                                                                                                      regnsenger for å håndtere kraftig nedbør og planter.
-                            <br/>
-                            <button className="action-btn zoom-on-hover">
-                                Les mer<i className="fas fa-angle-double-right"></i>
-                            </button>
+                             <br/>
+                        
                         </div>
+                        </div>
+
+                        <img className="grid-item1--equal" src="../images/landscape--rooftop_redigert.png"></img>
+                       {/*  
                         <button className="btn-scroll-down zoom-on-hover" href="#third">
                             <i class="fas fa-angle-double-down"></i>Regnseng
                         </button>
+                        */}   
                     </div>
 
+                    <div className="c-section quote">
+                        new info
+                    </div>
 
                 </section>
 
                 <section id="third">
-                    <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="grid-item0">Regnseng</h1>
-                        <img className="grid-item2" src="../images/landscape--rainbed_redigert.jpg"></img>
-                        <div className="grid-item4 cat-descr">
-                            Overvannshåndtering
+                <div className="c-grid--2x1-equal padding-sm">
+                        <div className="grid-item1--equal top-container">
+                            <h1>WHAT and HOW</h1>
+                            <div className="cat-descr">
+                            Sett sammen en takhage med forhåndsutvalgte planter
                             <br/>
-                            Filtrerer vannet
+                            Spar tid og penger på å finne plantene som passer i området
                             <br/>
-                            Beskytter dammer og kystlinjer
-                            <br/>
-                            Øker bestanden av gunstige insekter
-                            <br/>
-                            Reduserer sjansen for flom i bygningen
-                            <br/>
-                            Øker verdien av eiendommen
-                            <br/>
-
-                            <button className="action-btn zoom-on-hover float-left">
-                                Les mer<i className="fas fa-angle-double-right"></i>
-                            </button>
+                            Vi utvikler skreddersydde tilbud for riktige planter til riktig
+                             <br/>
+                        
                         </div>
+                        </div>
+
+                        <img className="grid-item2--equal" src="../images/landscape--rooftop_redigert.png"></img>
+                       {/*  
                         <button className="btn-scroll-down zoom-on-hover" href="#third">
-                            <i class="fas fa-angle-double-down"></i>Biomangfold
+                            <i class="fas fa-angle-double-down"></i>Regnseng
                         </button>
+                        */}   
+                    </div>
+
+                    <div className="c-section u-txt--center quote c-grid--3x3fixed">
+                        <div>
+                            <img src="logo" />
+                            <h1>Takhage</h1>
+                            <p>description</p>
+                        </div>
+                        <div>
+                        <img src="logo" />
+                            <h1>Regnbed</h1>
+                            <p>description</p>
+                        </div>
+                        <div>
+                        <img src="logo" />
+                            <h1>Innendørs</h1>
+                            <p>description</p>
+                        </div>
+                    
                     </div>
                 </section>
 
                 <section id="fourth">
-                    <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="grid-item0">Biomangfold</h1>
-                        <img className="grid-item2" src="../images/landscape--biodiversity2.jpg"></img>
-                        <div className="grid-item4 cat-descr">
-                            Overvannshåndtering
-                            <br/>
-                            Filtrerer vannet
-                            <br/>
-                            Beskytter dammer og kystlinjer
-                            <br/>
-                            Øker bestanden av gunstige insekter som eliminerer skadedyr
-                            <br/>
-                            Reduserer sjansen for flom i bygningen
-                            <br/>
-                            Øker verdien av eiendommen
-                            <br/>
-                            <button className="action-btn zoom-on-hover">
-                                Les mer<i className="fas fa-angle-double-right"></i>
-                            </button>
+               <div className="padding-sm">
+                        <div className="top-container">
+                            <h1>I samarbeid med</h1>
                         </div>
-                        <button className="btn-scroll-down zoom-on-hover" href="#third">
-                            <i class="fas fa-angle-double-down"></i>Innendørsplanter
-                        </button>
-                    </div>
-
+                        
+                        <div className="c-section c-grid--span">
+                            <img src="../images/nibio_logo.jpeg" />
+                            <img src="../images/edit_logo.jpeg" />
+                            <img src="../images/teknologi-formidling_logo.png" />
+                            
+                            <img src={logo} />
+                            <img src={logo} />
+                            <img src={logo} />
+                            <img src={logo} />
+                        </div>
+                        </div>
 
                 </section>
 
                 <section id="fifth">
-                    <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="grid-item0">Innendørsplanter</h1>
-                        <img className="grid-item2" src="../images/landscape--indoor3.jpeg"></img>
-
-                        <div className="grid-item4 cat-descr">
-                            Overvannshåndtering
-                            <br/>
-                            Filtrerer vannet
-                            <br/>
-                            Beskytter dammer og kystlinjer
-                            <br/>
-                            Øker bestanden av gunstige insekter som eliminerer skadedyr
-                            <br/>
-                            Reduserer sjansen for flom i bygningen
-                            <br/>
-                            Øker verdien av eiendommen
-                            <br/>
-                            <button className="action-btn zoom-on-hover">
-                                Les mer<i className="fas fa-angle-double-right"></i>
-                            </button>
-                        </div>
-
-                        <button className="btn-scroll-down zoom-on-hover" href="#third">
-                            <i class="fas fa-angle-double-down"></i>Grønne vegger
-                        </button>
-                    </div>
+                    
                 </section>
 
                 <section id="sixth">
-                    <div className="c-grid--2x2 padding-sm top-container">
-                        <h1 className="grid-item0">Grønne Vegger</h1>
-                        <img className="grid-item2" src="../images/landscape--indoor_redigert.jpg"></img>
-
-                        <div className="grid-item4 cat-descr">
-                            Overvannshåndtering
-                            <br/>
-                            Filtrerer vannet
-                            <br/>
-                            Beskytter dammer og kystlinjer
-                            <br/>
-                            Øker bestanden av gunstige insekter som eliminerer skadedyr
-                            <br/>
-                            Reduserer sjansen for flom i bygningen
-                            <br/>
-                            Øker verdien av eiendommen
-                            <br/>
-                            <button className="action-btn zoom-on-hover">
-                                Les mer<i className="fas fa-angle-double-right"></i>
-                            </button>
-                        </div>
-
-
-                    </div>
+                    
+            
+                  
                 </section>
             </div>
         </div>
