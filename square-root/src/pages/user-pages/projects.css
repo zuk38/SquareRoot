@@ -4,9 +4,6 @@
   width: 100%;
 }
 
-
-
-
 /* COLUMNS */
 .p-row {
   padding-top: 5%;
@@ -24,8 +21,6 @@
   background: var(--offWhite);
   padding-left: 5%;
 }
-
-
 
 .row:after {
   content: "";
@@ -354,7 +349,7 @@ a.btn-back:hover {
 
 .p-btn-create {
   width: 100%;
-  margin-top: 20px
+  margin-top: 20px;
 }
 
 /* DASHBOARD */
@@ -437,7 +432,6 @@ td.d-modal-img {
 /*GREENSPACES*/
 /* BUTTON : NEW GREENSPACE*/
 
-
 /* GRID GREENSPACES*/
 .green-container {
   padding-top: 5%;
@@ -450,7 +444,7 @@ td.d-modal-img {
 
 .item1-btn-large {
   grid-column: 1;
-  grid-row:1;
+  grid-row: 1;
   padding: 15px 10px;
   font-weight: 500;
   border: 1px solid var(--mainGreen);
@@ -466,7 +460,6 @@ td.d-modal-img {
   font-size: 12px;
   color: var(--mainBlack);
 }
-
 
 .green-item {
   padding: 1rem;
@@ -656,32 +649,29 @@ input::-webkit-inner-spin-button {
   border: 1px dashed var(--darkGrey);
   color: black;
   padding: 10px 24px;
-  cursor: pointer; 
-  width: 100%; 
-  display: block; 
+  cursor: pointer;
+  width: 100%;
+  display: block;
   margin-bottom: 10px;
 }
 
-.btn-group button {
+.btn-group-button {
   background-color: var(--navbarBack);
-  border: none;
   color: black;
   padding: 10px 24px;
-  cursor: pointer; 
-  width: 100%; 
-  display: block; 
+  cursor: pointer;
+  width: 100%;
+  display: block;
   margin-bottom: 10px;
+  outline: none;
+  border:none;
 }
 
-.btn-group-clicked button {
+.selected {
   border: 3px solid #3a82f7;
 }
 
-.btn-group button:first-child:hover {
-  background-color: transparent;
-}
-
-.btn-group button:hover {
+.btn-group button:not(:first-child):hover {
   background-color: var(--darkGrey);
   transition: all 0.2s ease-in-out;
 }
