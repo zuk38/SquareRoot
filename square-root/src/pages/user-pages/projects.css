@@ -387,7 +387,7 @@ a.btn-back:hover {
   width: 60%;
   height: 80%;
   padding-top: 3%;
-  overflow: scroll;
+  overflow-y: auto;
 }
 
 .d-modal-content {
@@ -616,3 +616,88 @@ input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+
+/* add to project modal */
+
+.add-to-project-modal {
+  top: 50%;
+  left: 50%;
+  right: auto;
+  bottom: auto;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  position: absolute;
+  background-color: white;
+  border-radius: 10px;
+  height: 400px;
+  width: 650px;
+}
+
+.add-to-project-modal h1 {
+  justify-content: center;
+  font-size: 1rem;
+  color: black;
+  padding: 2% 5%;
+  pointer-events: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  font-weight: bold;
+}
+
+.add-to-project-modal div {
+  padding: 0.2% 10%;
+  overflow-y: auto;
+}
+
+.btn-group button:first-child {
+  background-color: transparent;
+  border: 1px dashed var(--darkGrey);
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer; 
+  width: 100%; 
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.btn-group button {
+  background-color: var(--navbarBack);
+  border: none;
+  color: black;
+  padding: 10px 24px;
+  cursor: pointer; 
+  width: 100%; 
+  display: block; 
+  margin-bottom: 10px;
+}
+
+.btn-group-clicked button {
+  border: 3px solid #3a82f7;
+}
+
+.btn-group button:first-child:hover {
+  background-color: transparent;
+}
+
+.btn-group button:hover {
+  background-color: var(--darkGrey);
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-continue {
+  background: #3a82f7;
+  white-space: nowrap;
+  padding: 12px 20px;
+  color: white;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  float: right;
+  transition: all 0.2s ease-in-out;
+  justify-content: center;
+  margin: 20px 10% 0 0;
+}
+
+/* end add to project */
