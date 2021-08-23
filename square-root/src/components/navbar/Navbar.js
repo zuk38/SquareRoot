@@ -49,7 +49,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="nav">
         <div className="nav-header">
           <Link to="/">
             <img src={logo} alt="SQUAREROOT" />
