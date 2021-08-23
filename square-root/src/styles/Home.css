@@ -262,13 +262,14 @@ Smooth Scroll --------*/
 .cat-descr {
   color: var(--mainGrey);
   font-style: italic;
-  line-height: 1.8em;
-  width: 80%;
-  padding-left: 10%;
+  line-height:1.8em;
+
 }
 
-.top-container {
-  height: 100vh;
+.top-container{
+  padding-top:5%;
+  padding-left:10%;
+
 }
 
 .top-container h1 {
@@ -385,8 +386,27 @@ section#sixth {
   margin-bottom: 20%;
 }
 
-.flex-items {
-  display: flex;
+/*FRONT PAGE CONTENT */
+
+.grid-item1--front {
+  grid-column:1;
+  grid-row:1;
+}
+
+.grid-item2--front {
+  grid-column:1;
+  grid-row:2;
+}
+
+.grid-item3--front {
+  grid-column:2;
+  grid-row:1 / 3;
+}
+
+
+/*END */
+.flex-items{
+  display:flex;
 }
 
 .logo-large {

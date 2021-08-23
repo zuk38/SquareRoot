@@ -8,7 +8,7 @@ export default function Concepts() {
     const greenspace_values = [
         {
             img:"../images/portrait--rooftop.jpg",
-            header:"Takterrasse"
+            header:"Takhage"
         },
         {
             img:"../images/portrait--outdoor-bio.jpg",

@@ -94,10 +94,10 @@ function HomeSection({ data, executeScroll }) {
           <img className="grid-item2" src={data.img} />
 
           <div className="grid-item4 cat-descr">
-            {data.descriptionItems.map((item) => (
-              <>
+            {data.descriptionItems.map((item, index) => (
+              <div key={index}>
                 {item.text} <br />
-              </>
+              </div>
             ))}
 
             <button
@@ -113,7 +113,7 @@ function HomeSection({ data, executeScroll }) {
               className="btn-scroll-down zoom-on-hover"
               onClick={() => executeScroll(data.nextId)}
             >
-              <i class="fas fa-angle-double-down" />
+              <i className="fas fa-angle-double-down" />
               {data.nextName}
             </button>
           ) : (
@@ -121,7 +121,7 @@ function HomeSection({ data, executeScroll }) {
               className="btn-scroll-up zoom-on-hover"
               onClick={() => executeScroll()}
             >
-              <i class="fas fa-angle-double-up" />
+              <i className="fas fa-angle-double-up" />
               Go Back
             </button>
           )}
