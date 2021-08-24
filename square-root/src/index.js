@@ -10,14 +10,18 @@ import { ConceptProvider } from "./context/concepts";
 import { UserProvider } from "./context/user";
 import WebFont from "webfontloader";
 import Amplify from "aws-amplify";
+import "./components/utility/i18n";
 import config from "./aws-exports";
 Amplify.configure(config);
 require("dotenv").config();
 
 WebFont.load({
   google: {
-    families: ["Poppins Web:100,200,300,400,500,600,700,800", "sans-serif", "IBM Plex Serif: 700"],
-
+    families: [
+      "Poppins Web:100,200,300,400,500,600,700,800",
+      "sans-serif",
+      "IBM Plex Serif: 700",
+    ],
   },
 });
 
