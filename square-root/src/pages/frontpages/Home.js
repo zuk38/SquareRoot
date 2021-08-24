@@ -11,14 +11,21 @@ import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
 import { useHistory } from "react-router-dom";
 import { homeData } from "./HomeData";
+import { useTranslation, Trans } from "react-i18next";
 
 export default function Home(props) {
+  const { t } = useTranslation();
 
   const executeScroll = (myRef) => {
     let element;
-    if (!myRef) element = document.getElementById("first")
-    else element = document.getElementById(myRef)
-    element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+    if (!myRef) element = document.getElementById("first");
+    else element = document.getElementById(myRef);
+    element &&
+      element.scrollIntoView({
+        block: "start",
+        inline: "nearest",
+        behavior: "smooth",
+      });
   };
 
   return (
@@ -33,12 +40,12 @@ export default function Home(props) {
             <div className="grid-item1--hero">
               <div className="hero-f-signup c-mrg--top">
                 <p className="u-mrg--txt3">Ny hos SquareRoot?</p>
-                <button className="front-btn u-mrg--txt3">Forespør Demo</button>
+                <button className="front-btn u-mrg--txt3">{t("demo")}</button>
 
-                <p className="u-mrg--txt3">ELLER</p>
+                <p className="u-mrg--txt3">{t("or")}</p>
 
-                <p className="u-mrg--txt3">Har du allerede en konto?</p>
-                <button className="front-btn u-mrg--txt3">Gå til Beta</button>
+                <p className="u-mrg--txt3">{t("hero_account")}</p>
+                <button className="front-btn u-mrg--txt3">{t("beta")}</button>
               </div>
             </div>
 
@@ -50,9 +57,8 @@ export default function Home(props) {
                       src="../images/logo-asterisk-white.png"
                       className="list-item-icon"
                     />
-                    Planlegg, design og bestill grøntområder inne, ute og på
-                    toppen av bygninger
-                    <br />-<i className="ibm-italic">alt på ett sted</i>.
+                    {t("hero_main1")}
+                    <br />-<i className="ibm-italic">{t("hero_main2")}</i>
                   </h1>
                 </span>
               </div>
@@ -63,7 +69,7 @@ export default function Home(props) {
                 className="btn-scroll-down-large bounce zoom-on-hover is-white"
                 onClick={() => executeScroll(homeData[0].id)}
               >
-                Se mer
+                {t("see_more")}
                 <img className="arrowDown" src={arrowDownWhite} />
               </button>
             </div>
@@ -71,15 +77,15 @@ export default function Home(props) {
         </section>
 
         {homeData.map((data) => (
-          <HomeSection data={data} executeScroll={executeScroll}/>
+          <HomeSection data={data} executeScroll={executeScroll} />
         ))}
-
       </div>
     </div>
   );
 }
 
 function HomeSection({ data, executeScroll }) {
+  const { t } = useTranslation();
   const history = useHistory();
 
   const routeChange = (path) => {
@@ -90,7 +96,10 @@ function HomeSection({ data, executeScroll }) {
     <>
       <section id={data.id}>
         <div className="c-grid--2x2 padding-section top-container">
-          <h1 className="grid-item0">{data.headline}</h1>
+          <h1 className="grid-item0">
+            <Trans i18nKey={data.i18nKey}>{data.headline}</Trans>
+          </h1>
+
           <img className="grid-item2" src={data.img} />
 
           <div className="grid-item4 cat-descr">
@@ -104,7 +113,7 @@ function HomeSection({ data, executeScroll }) {
               className="action-btn zoom-on-hover"
               onClick={() => routeChange(data.path)}
             >
-              Les mer
+              {t("read_more")}
               <i className="fas fa-angle-double-right" />
             </button>
           </div>
@@ -114,7 +123,7 @@ function HomeSection({ data, executeScroll }) {
               onClick={() => executeScroll(data.nextId)}
             >
               <i className="fas fa-angle-double-down" />
-              {data.nextName}
+              <Trans i18nKey={data.nextI18nKey}>{data.nextName}</Trans>
             </button>
           ) : (
             <button

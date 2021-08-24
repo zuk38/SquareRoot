@@ -4,6 +4,9 @@
     "rooftop": "ROOFTOP",
     "rainbed": "RAINBED",
     "indoor": "INDOOR",
+    "rooftop2": "Rooftop",
+    "rainbed2": "Rainbed",
+    "indoor2": "Indoor",
     "about": "ABOUT",
     "what": "WHAT WE DO",
     "why": "WHY US",
@@ -11,5 +14,13 @@
     "contact": "CONTACT",
     "contactU": "CONTACT US",
     "partner": "BECOME A PARTNER",
-    "signIn": "Sign in"
+    "signIn": "Sign in",
+    "hero_main1": "Plan, design and order greenspaces inside, outside and on top of buildings",
+    "hero_main2": " all in one place.",
+    "hero_account": "Do you have an account?",
+    "see_more": "See more",
+    "read_more": "Read more",
+    "beta": "View Beta",
+    "demo": "Request Demo",
+    "or": "OR"
 }

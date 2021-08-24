@@ -2,6 +2,7 @@ export const homeData = [
   {
     id: "takterrasse",
     headline: "Takterrasse",
+    i18nKey: "rooftop2",
     img: "../images/landscape--rooftop_redigert.png",
     descriptionItems: [
       {
@@ -16,11 +17,13 @@ export const homeData = [
       },
     ],
     path: "/categories/takterrasse",
+    nextI18nKey: "rainbed2",
     nextId: "regnseng",
     nextName: "Regnseng",
   },
   {
     id: "regnseng",
+    i18nKey: "rainbed2",
     headline: "Regnseng",
     img: "../images/landscape--rainbed_redigert.jpg",
     descriptionItems: [
@@ -69,11 +72,13 @@ export const homeData = [
       },
     ],
     path: "/categories/biomangfold",
+    nextI18nKey: "indoor2",
     nextId: "innendørsplanter",
     nextName: "Innendørsplanter",
   },
   {
     id: "innendørsplanter",
+    i18nKey: "indoor2",
     headline: "Innendørsplanter",
     img: "../images/landscape--indoor3.jpeg",
     descriptionItems: [
