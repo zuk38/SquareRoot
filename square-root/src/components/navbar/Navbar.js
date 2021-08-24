@@ -96,9 +96,7 @@ export default function Navbar(props) {
         ) : (
           <ul className="nav-menu">
             {NavbarData.map((item, index) =>
-              item.title === "GREENSPACES" ||
-              item.title === "ABOUT" ||
-              item.title === "CONTACT" ? (
+              item.dropdown  ? (
                 <li
                   key={index}
                   className="nav-item"
@@ -114,21 +112,21 @@ export default function Navbar(props) {
                   </div>
                   {
                     {
-                      GREENSPACES: navDropdown.dropdownGreenspaces && (
+                      dropdownGreenspaces: navDropdown.dropdownGreenspaces && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                      ABOUT: navDropdown.dropdownAbout && (
+                      dropdownAbout: navDropdown.dropdownAbout && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                      CONTACT: navDropdown.dropdownContact && (
+                      dropdownContact: navDropdown.dropdownContact && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                    }[item.title]
+                    }[item.dropdown]
                   }
                 </li>
               ) : (
                 <li key={index} className="nav-item">
-                  {item.title === "HOME" ? (
+                  {!item.dropdown ? (
                     <NavLink
                       to={item.path}
                       exact={true}

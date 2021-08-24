@@ -642,6 +642,7 @@ input::-webkit-inner-spin-button {
 .add-to-project-modal div {
   padding: 0.2% 10%;
   overflow-y: auto;
+  height: 150px;
 }
 
 .btn-group button:first-child {
