@@ -36,18 +36,17 @@ library.add(faEdit);
 
 class App extends Component {
   render() {
-    
     const {
       isAuthenticated,
       isAuthenticating,
       user,
-      logout
+      logout,
     } = this.props.context;
 
     const authProps = {
       isAuthenticated: isAuthenticated,
       user: user,
-      logout: logout
+      logout: logout,
     };
 
     return (
@@ -78,7 +77,21 @@ class App extends Component {
                 <ForgotPasswordPage {...props} auth={authProps} />
               )}
             />
-            <Route exact path="/" render={(props) => <Home {...props} auth={authProps} />} />
+            <Route
+              exact
+              path="/"
+              render={(props) => <Home {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/en"
+              render={(props) => <Home {...props} auth={authProps} />}
+            />
+            <Route
+              exact
+              path="/no"
+              render={(props) => <Home {...props} auth={authProps} />}
+            />
             <Route
               exact
               path="/concepts/:name"
@@ -128,7 +141,7 @@ class App extends Component {
               exact
               path="/contact-us"
               render={(props) => <Contact {...props} />}
-            />  
+            />
 
             <Route
               exact
@@ -149,7 +162,7 @@ class App extends Component {
               component={AllProjects}
             />
 
-            <PrivateRoute 
+            <PrivateRoute
               authed={isAuthenticated}
               auth={authProps}
               path="/dashboard/:name"
@@ -194,7 +207,7 @@ class App extends Component {
             <Route component={Error} />
           </Switch>
           {this.props.location.pathname != "/login" &&
-          this.props.location.pathname != "/" &&
+            this.props.location.pathname != "/" &&
             this.props.location.pathname != "/forgotpassword" && <Footer />}
         </>
       )
