@@ -68,7 +68,7 @@ function AddToProjectModal(props) {
               onClick={() => setProject(project)}
               className="btn-group-button"
             >
-              {project.name}
+              {project.name}{", "}{project.address}{" "}{project.city}
             </button>
           ))}
         </div>
