@@ -17,7 +17,7 @@ export default function ProjectForm(props) {
     <form>
       {page ? (
         <>
-          <div>
+          <div style={{width: "80%"}}>
             <label className="p-lbl">Navn</label>
             <EditableTextField
               value={values.name || project.name}

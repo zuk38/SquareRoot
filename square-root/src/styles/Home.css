@@ -103,7 +103,7 @@ section#first .signup {
 }
 
 section#first .signup p:not(:first-child),
-button {
+.signup button {
   margin-top: 15px;
 }
 

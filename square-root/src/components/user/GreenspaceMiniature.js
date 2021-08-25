@@ -2,7 +2,7 @@ import React from "react";
 
 export default function GreenspaceMiniature(props) {
   return (
-    <button onClick={props.openModal} className="btn-dash-greenspace">
+    <button onClick={props.openModal}>
       <div className="green-item">
         <img src={props.greenspace.image} className="project_img" />
         <div className="green-info">

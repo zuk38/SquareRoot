@@ -31,7 +31,7 @@ export default function LeftMenu(props) {
 
   return (
     <>
-      <div className="p-column left">
+      <div className="left-menu">
         <a href="/projects" className="btn-back">
           <i className="fas fa-chevron-left" />
           Alle Prosjekter

@@ -22,11 +22,14 @@ function Dashboard(props) {
   const [showModal, setShowModal] = useState(false);
   const [nameChanged, setNameChanged] = useState(false);
 
-  const { values, errors, handleChange, handleSubmit, setCity, setProjectExistsErrors } = useForm(
-    callback,
-    validate,
-    update
-  );
+  const {
+    values,
+    errors,
+    handleChange,
+    handleSubmit,
+    setCity,
+    setProjectExistsErrors,
+  } = useForm(callback, validate, update);
 
   const [editMode, setEditMode] = useState({
     zipMode: false,
@@ -46,7 +49,7 @@ function Dashboard(props) {
   useEffect(() => {
     if (!values.name || values.name === "" || !projects.length) return;
     let found = projects.find((project) => project.name === values.name);
-    setProjectExistsErrors(found)
+    setProjectExistsErrors(found);
   }, [values.name]);
 
   function callback() {
@@ -92,18 +95,18 @@ function Dashboard(props) {
       case "/dashboard":
         return (
           <div className="green-container">
-            <button className="item1-btn-large">
-          <i class="fas fa-plus"></i>Legg til grøntområde
-      </button>
-      <div className="item2-user-greenspaces">{greenspaces.map((greenspace) => (
+            <button>
+              <i class="fas fa-plus"></i>Legg til grøntområde
+            </button>
+            {greenspaces.map((greenspace) => (
               <DashboardContent greenspace={greenspace} />
             ))}
-          </div></div>
+          </div>
         );
       case "/members":
         return <MembersContent members={members} />;
       case "/orders":
-        return "bar";
+        return <div></div>;
       case "/settings":
         return (
           <ProjectForm
@@ -125,7 +128,7 @@ function Dashboard(props) {
   };
 
   return (
-    <div className="p-row">
+    <div className="dashboard">
       {showModal && (
         <AuthModal
           title="Project Updated!"
@@ -139,19 +142,16 @@ function Dashboard(props) {
         setCurrentPage={(page) => setCurrentPage(page)}
       />
       <div className="p-main-header">
-        <div className="title-container-greenspace">
-          <div className="p-title">
-            <img className="project-icon" src={icon} alt="Prosjektikon" />
-            <h1 className="p-h1">{name}</h1>
-          </div>
-          <br />
-          <h2 className="p-h2">Rolle: {currentMember.role}</h2>
-          </div>
-  </div>
-        
+        <div>
+          <img className="project-icon" src={icon} alt="Prosjektikon" />
+          <h1 className="p-h1">{name}</h1>
+        </div>
+        <br />
+        <h2 className="p-h2">Rolle: {currentMember.role}</h2>
+      </div>
 
-          {renderSwitch(currentPage)}
-        </div> 
+      <div className="d-content">{renderSwitch(currentPage)}</div>
+    </div>
   );
 }
 export default withProjectConsumer(Dashboard);
@@ -177,11 +177,9 @@ function DashboardContent(props) {
 function MembersContent(props) {
   return (
     <>
-      <div className="p-container">
-        <button className="btn-p-invite">
-          <i className="fas fa-user-plus"></i>Inviter medlemmer
-        </button>
-      </div>
+      <button className="btn-p-invite">
+        <i className="fas fa-user-plus"></i>Inviter medlemmer
+      </button>
       <table className="p-table">
         <tbody>
           {props.members.map((member) => (
