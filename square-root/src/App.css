@@ -81,7 +81,7 @@ body {
 }
 /* end of globals */
 /* Navbar */
-.navbar {
+.nav {
   height: var(--nav-size);
   background: var(--navbarBack_op);
   font-size: 1.2rem;

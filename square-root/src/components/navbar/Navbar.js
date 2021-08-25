@@ -9,9 +9,12 @@ import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 import NavbarDropdown from "./NavbarDropdown";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
+import { Trans, useTranslation } from 'react-i18next';
+import LanguageSelect from "./LanguageSelect";
 
 export default function Navbar(props) {
   let history = useHistory();
+  const { t } = useTranslation();
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, () => setDropdown(false));
   const [dropdown, setDropdown] = useState(false);
@@ -49,7 +52,7 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className="navbar">
+      <nav className="nav">
         <div className="nav-header">
           <Link to="/">
             <img src={logo} alt="SQUAREROOT" />
@@ -59,7 +62,7 @@ export default function Navbar(props) {
           <ul className="nav-menu active">
             {NavbarData.map((item, index) => (
               <>
-                {item.title === "HOME" ? (
+                {!item.dropdown ? (
                   <NavLink
                     to={item.path}
                     key={index}
@@ -67,7 +70,7 @@ export default function Navbar(props) {
                     className="nav-links-no-hover"
                     onClick={() => closeMobileMenu(item.path)}
                   >
-                    {item.title}
+                    <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                   </NavLink>
                 ) : (
                   <div
@@ -75,7 +78,7 @@ export default function Navbar(props) {
                     className="nav-links-no-hover-title"
                     onClick={closeMobileMenu}
                   >
-                    {item.title}
+                    <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                   </div>
                 )}
                 {item.subtitle &&
@@ -87,7 +90,7 @@ export default function Navbar(props) {
                       className="sub-item"
                       onClick={() => closeMobileMenu(item.path)}
                     >
-                      {item.title}
+                      <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     </NavLink>
                   ))}
               </>
@@ -96,9 +99,7 @@ export default function Navbar(props) {
         ) : (
           <ul className="nav-menu">
             {NavbarData.map((item, index) =>
-              item.title === "GREENSPACES" ||
-              item.title === "ABOUT" ||
-              item.title === "CONTACT" ? (
+              item.dropdown  ? (
                 <li
                   key={index}
                   className="nav-item"
@@ -109,33 +110,33 @@ export default function Navbar(props) {
                     className="nav-links-no-hover-title"
                     onClick={closeMobileMenu}
                   >
-                    {item.title}
+                    <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     <i className="fas fa-caret-down" />
                   </div>
                   {
                     {
-                      GREENSPACES: navDropdown.dropdownGreenspaces && (
+                      dropdownGreenspaces: navDropdown.dropdownGreenspaces && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                      ABOUT: navDropdown.dropdownAbout && (
+                      dropdownAbout: navDropdown.dropdownAbout && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                      CONTACT: navDropdown.dropdownContact && (
+                      dropdownContact: navDropdown.dropdownContact && (
                         <NavbarDropdown {...props} item={item} />
                       ),
-                    }[item.title]
+                    }[item.dropdown]
                   }
                 </li>
               ) : (
                 <li key={index} className="nav-item">
-                  {item.title === "HOME" ? (
+                  {!item.dropdown ? (
                     <NavLink
                       to={item.path}
                       exact={true}
                       className={click ? "nav-links-no-hover" : "nav-links"}
                       onClick={() => closeMobileMenu(item.path)}
                     >
-                      {item.title}
+                      <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     </NavLink>
                   ) : (
                     <div
@@ -145,7 +146,7 @@ export default function Navbar(props) {
                       }
                       onClick={closeMobileMenu}
                     >
-                      {item.title}
+                      <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     </div>
                   )}
                 </li>
@@ -154,12 +155,14 @@ export default function Navbar(props) {
           </ul>
         )}
         <ul className="navbar-nav">
+          {/*language */}
+          <LanguageSelect />
           {/* user */}
           {!props.auth.isAuthenticated ? (
             <a href="/login" className="button is-white pad">
-              <span>Sign in</span>
+              <span><Trans i18nKey="signIn">Sign in</Trans></span>
               <span className="icon is-small">
-                <i className="fas fa-user"></i>
+                <i className="fas fa-user"/>
               </span>
             </a>
           ) : (

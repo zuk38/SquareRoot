@@ -9,18 +9,20 @@ import { ReactComponent as AirIcon } from "../../icons/air-purifier.svg";
 import { ReactComponent as SunIcon } from "../../icons/sun.svg";
 import { ReactComponent as ShadowIcon } from "../../icons/shadow.svg";
 import Modal from "react-modal";
+import AddToProjectModal from "../../components/user/AddToProjectModal";
 
 export default class SingleConcept extends Component {
   constructor(props) {
     super(props);
     this.state = {
       name: this.props.match.params.name,
-      modalOpen: false,
+      plantsModalOpen: false,
+      projectModalOpen: false,
     };
   }
 
   componentDidMount() {
-    window.scrollTo(0,0)
+    window.scrollTo(0, 0);
   }
 
   static contextType = ConceptContext;
@@ -89,7 +91,10 @@ export default class SingleConcept extends Component {
                 Tilpass
               </a>
             </div>
-            <button className="button is-medium is-dark is-fullwidth">
+            <button
+              className="button is-medium is-dark is-fullwidth"
+              onClick={() => this.setState({ projectModalOpen: true })}
+            >
               Legg til i prosjekt
               <i className="fas fa-chevron-right" />
             </button>
@@ -147,23 +152,23 @@ export default class SingleConcept extends Component {
 
           <button
             className="button is-medium is-light is-fullwidth"
-            onClick={() => this.setState({ modalOpen: true })}
+            onClick={() => this.setState({ plantsModalOpen: true })}
           >
             Se hele plantelisten
             <i className="fas fa-chevron-right" />
           </button>
           {/*MODAL*/}
           <Modal
-            isOpen={this.state.modalOpen}
-            onRequestClose={() => this.setState({ modalOpen: false })}
+            isOpen={this.state.plantsModalOpen}
+            onRequestClose={() => this.setState({ plantsModalOpen: false })}
             className={"modal-dashboard"}
           >
             <button
-              onClick={() => this.setState({ modalOpen: false })}
+              onClick={() => this.setState({ plantsModalOpen: false })}
               className="btn-modal-close"
               alt="Lukk"
             >
-              <i className="fas fa-times fa-lg"/>
+              <i className="fas fa-times fa-lg" />
             </button>
             <div className="d-modal-content">
               <h1 className="p-h1">{this.state.name}</h1>
@@ -174,7 +179,7 @@ export default class SingleConcept extends Component {
                     {plants.map((plant, index) => (
                       <tr key={index}>
                         <td className="d-modal-img">
-                          <img src={plant.image} alt={plant.norwegian_name}/>
+                          <img src={plant.image} alt={plant.norwegian_name} />
                         </td>
                         <td className="d-td">{plant.norwegian_name}</td>
                         <td className="d-td">{plant.quantity}</td>
@@ -186,6 +191,14 @@ export default class SingleConcept extends Component {
             </div>
           </Modal>
         </div>
+        {/* add to project modal */}
+        {this.state.projectModalOpen && (
+          <AddToProjectModal
+            isOpen={this.state.projectModalOpen}
+            openModal={() => this.setState({ projectModalOpen: true })}
+            closeModal={() => this.setState({ projectModalOpen: false })}
+          />
+        )}
       </div>
     );
   }

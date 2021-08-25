@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { NavbarData } from "./NavbarData";
 import "./Dropdown.css";
 import { Link, useHistory } from "react-router-dom";
+import { Trans } from "react-i18next";
 
 export default function NavbarDropdown(props) {
   let history = useHistory();
@@ -30,7 +31,7 @@ export default function NavbarDropdown(props) {
                   to={subtitle.path}
                   onClick={() => openLink(subtitle.path)}
                 >
-                  {subtitle.title}
+                  <Trans i18nKey={subtitle.i18nKey}>{subtitle.title}</Trans>
                 </Link>
               </li>
             ))

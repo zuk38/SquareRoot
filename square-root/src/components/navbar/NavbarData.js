@@ -3,54 +3,52 @@ export const NavbarData = [
     title: "HOME",
     path: "/",
     className: "sidebar-text",
+    i18nKey: "home"
   },
   {
     title: "GREENSPACES",
     path: "/categories",
     className: "sidebar-text",
+    i18nKey: "greenspaces",
     dropdown: "dropdownGreenspaces",
     subtitle: [
       {
         title: "ROOFTOP",
+        i18nKey: "rooftop",
         path: "/categories/takterrasse",
         className: "d-link",
       },
       {
         title: "RAINBED",
+        i18nKey: "rainbed",
         path: "/categories/regnseng",
         className: "d-link",
       },
       {
         title: "INDOOR",
+        i18nKey: "indoor",
         path: "/categories/innendørsplanter",
         className: "d-link",
       },
-      {
-        title: "BIODIVERSITY",
-        path: "/categories/biomangfold",
-        className: "d-link",
-      },
-      {
-        title: "GREEN WALLS",
-        path: "/categories/grønne%20vegger",
-        className: "d-link",
-      }
     ],
   },
   {
     title: "ABOUT",
+    i18nKey: "about",
     path: "/about-us",
     className: "sidebar-text",
     dropdown: "dropdownAbout",
     subtitle: [
-      { title: "WHAT WE DO", path: "/what-we-do", className: "d-link" },
+      { title: "WHAT WE DO", path: "/what-we-do", i18nKey: "what", className: "d-link" },
       {
         title: "HOW IT WORKS",
+        i18nKey: "how",
         path: "/how-it-works",
         className: "d-link",
       },
       {
         title: "WHY US",
+        i18nKey: "why",
         path: "/why-us",
         className: "d-link",
       },
@@ -59,75 +57,22 @@ export const NavbarData = [
   {
     title: "CONTACT",
     path: "/contact",
+    i18nKey: "contact",
     className: "sidebar-text",
     dropdown: "dropdownContact",
     subtitle: [
       {
         title: "CONTACT US",
+        i18nKey: "contactU",
         path: "/contact-us",
         className: "d-link",
       },
       {
         title: "BECOME A PARTNER",
+        i18nKey: "partner",
         path: "/become-a-partner",
         className: "d-link",
       },
     ],
   },
 ];
-
-/*export const NavbarData = [
-  {
-    title: "HOME",
-    path: "/",
-    className: "sidebar-text",
-  },
-  { title: "WHAT WE DO", path: "/what-we-do", className: "sidebar-text" },
-  {
-    title: "HOW IT WORKS",
-    path: "/how-it-works",
-    className: "sidebar-text",
-  },
-  {
-    title: "WHY US",
-    path: "/why-us",
-    className: "sidebar-text",
-  },
-  {
-    title: "BECOME A PARTNER",
-    path: "/become-a-partner",
-    className: "sidebar-text",
-  },
-  {
-    title: "ABOUT US",
-    path: "/about-us",
-    className: "sidebar-text",
-  },
-  {
-    title: "CONTACT",
-    path: "/contact",
-    className: "sidebar-text",
-  },
-  {
-    title: "ROOFTOP",
-    path: "/rooftop",
-    className: "sidebar-text",
-    fontWeight: "bold",
-  },
-  {
-    title: "RAINBED",
-    path: "/rainbed",
-    className: "sidebar-text",
-  },
-  {
-    title: "INDOOR",
-    path: "/indoor",
-    className: "sidebar-text",
-  },
-  {
-    title: "OUR PLANTS",
-    path: "/plants",
-    className: "sidebar-text",
-  },
-];
-*/

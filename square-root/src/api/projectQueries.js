@@ -17,6 +17,7 @@ export const listProjects = /* GraphQL */ `
         updatedAt
         greenspaces {
           items {
+            id
             name
             description
             concepts {
