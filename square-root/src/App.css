@@ -80,11 +80,6 @@ body {
   margin-left: 1em;
 }
 
-.vertical-center {
-  margin: 0;
-  top: 50%;
-}
-
 .bounce {
   -moz-animation: bounce 3s infinite;
   -webkit-animation: bounce 3s infinite;

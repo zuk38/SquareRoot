@@ -81,7 +81,7 @@ ul {
 }
 /*user */
 .pad {
-  margin-right: 16px;
+  margin: 0 10px;
   outline: none;
   text-decoration: none;
 }
