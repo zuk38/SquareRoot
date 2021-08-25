@@ -10,7 +10,7 @@ import logo from "../../images/logo-white-green.png";
 import arrowDown from "../../icons/down-arrow.svg";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
 import { useHistory } from "react-router-dom";
-import { homeData } from "./HomeData";
+
 import { useTranslation } from "react-i18next";
 
 export default function Home(props) {
@@ -55,7 +55,7 @@ export default function Home(props) {
           <div className="see-more">
             <button
               className="bounce zoom-on-hover"
-              onClick={() => executeScroll(homeData[0].id)}
+              onClick={() => executeScroll("second")}
             >
               {t("see_more")}
               <img src={arrowDownWhite} />
