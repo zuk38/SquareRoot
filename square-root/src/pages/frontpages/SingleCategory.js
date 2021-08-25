@@ -51,6 +51,7 @@ export default class SingleCategory extends Component {
               src={`../images/${category_name}.jpg`}
               className="c-img"
               alt={category_name}
+              
             />
             <div className="hero-img-overlay">
               <div className="text-overlay">{image_descr}</div>
@@ -120,6 +121,50 @@ export default class SingleCategory extends Component {
 
         {/* END PLANT LIST CONTAINER */}
 
+
+{/*CONNECT TO DATABASE */}
+        <div className="c-section c-grid--2x1-equal">
+        <div className="img-wrap">
+          <img src={`../images/${category_name}.jpg`}/>
+          <div className="img-descr">
+                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
+                  <p>Kort tekst om prosjektet.</p>
+                  <p>Kunde: Tekna</p>
+                  <p>BREEAM poeng: 10</p>
+          </div>
+          </div>
+          <div className="img-wrap">
+          <img src={`../images/${category_name}.jpg`}/>
+          <div className="img-descr">
+                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
+                  <p>Kort tekst om prosjektet.</p>
+                  <p>Kunde: Tekna</p>
+                  <p>BREEAM poeng: 10</p>
+          </div>
+          </div>
+          <div className="img-wrap">
+          <img src={`../images/${category_name}.jpg`}/>
+          <div className="img-descr">
+                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
+                  <p>Kort tekst om prosjektet.</p>
+                  <p>Kunde: Tekna</p>
+                  <p>BREEAM poeng: 10</p>
+          </div>
+          </div>
+          <div className="img-wrap">
+          <img src={`../images/${category_name}.jpg`}/>
+          <div className="img-descr">
+                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
+                  <p>Kort tekst om prosjektet.</p>
+                  <p>Kunde: Tekna</p>
+                  <p>BREEAM poeng: 10</p>
+          </div>
+          </div>
+                           
+        </div>
+
+        {/* ---- REMOVE ???? ------
+
         <h2 className="c-txt-punchline--sm c-mrg--top">{description}</h2>
         <br />
 
@@ -177,8 +222,13 @@ export default class SingleCategory extends Component {
           leveransetid, og legger til slutt din bestilling inn hos
           planteskolene.
         </h2>
+         */}
+
+
       </div>
+      
       </div>
+     
     );
   }
 }
