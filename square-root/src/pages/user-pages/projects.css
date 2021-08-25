@@ -150,12 +150,16 @@ a.btn-back:hover {
 
 .green-item img {
   transition: 0.4s;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
 }
 
 img[src*="plus"] {
   width: 20%;
   text-align: center;
 }
+
 .green-item:hover {
   transform: scale(1.02);
   cursor: pointer;
@@ -460,24 +464,6 @@ img[src*="plus"] {
   margin-top: 20px;
 }
 
-/* DASHBOARD */
-
-.p-title {
-  display: inline-block;
-}
-
-.project_img {
-  border-radius: 10px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn-dash-greenspace {
-  border: none;
-  background-color: var(--offWhite);
-  padding: 0px;
-}
-
 /*DASHBOARD MODAL */
 .modal-dashboard {
   background: var(--offWhite);
@@ -504,7 +490,7 @@ img[src*="plus"] {
 }
 
 /* TABLE */
-.d-table {
+/*.d-table {
   border-collapse: separate;
   color: var(--mainBlack);
   border-spacing: 0 10px;
@@ -536,8 +522,7 @@ td.d-modal-img {
   width: 20%;
   height: auto;
   margin: 0;
-}
-
+}*/
 
 /* GREENSPACE */
 .greensp-page {
