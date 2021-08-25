@@ -4,13 +4,15 @@ import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
 import { ReactComponent as HelpICon } from "../../icons/question.svg";
 import { ReactComponent as AccountIcon } from "../../icons/user.svg";
 import { ReactComponent as ProjectIcon } from "../../icons/project.svg";
+import { useTranslation } from "react-i18next";
 
 function Dropdown(props) {
+  const { t } = useTranslation();
   const handleLogOut = async (event) => {
     event.preventDefault();
     try {
-      await props.auth.logout()
-      props.history.push("/")
+      await props.auth.logout();
+      props.history.push("/");
     } catch (error) {
       console.log(error.message);
     }
@@ -31,16 +33,16 @@ function Dropdown(props) {
         <div className="my-dropdown">
           <div className="menu">
             <DropdownItem leftIcon={<ProjectIcon />} path="/projects">
-              Mine Prosjekter
+              {t("my_projects")}
             </DropdownItem>
             <DropdownItem leftIcon={<AccountIcon />} path="/account">
-              Kontoinnstillinger
+              {t("account")}
             </DropdownItem>
             {/*<DropdownItem leftIcon={<HelpICon />} path="/help">
               Hjelp
       </DropdownItem>*/}
             <DropdownItem leftIcon={<LogoutIcon />} onItemClick={handleLogOut}>
-              Logg Ut
+              {t("log_out")}
             </DropdownItem>
           </div>
         </div>
@@ -49,4 +51,4 @@ function Dropdown(props) {
   );
 }
 
-export default withRouter(Dropdown)
+export default withRouter(Dropdown);
