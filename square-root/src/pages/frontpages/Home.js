@@ -32,47 +32,35 @@ export default function Home(props) {
     <div className="homepage">
       <div id="front-container" className="front-container disable-scrollbars">
         <section id="first">
-          <div className="c-grid--3x2">
-            <div className="grid-item0--hero">
-              <img src={logo} className="logo-large"></img>
+          <div className="logo">
+            <img src={logo} />
+          </div>
+          <div className="signup">
+            <p>Ny hos SquareRoot?</p>
+            <button>{t("demo")}</button>
+            <p>{t("or")}</p>
+            <p>{t("hero_account")}</p>
+            <button>{t("beta")}</button>
+          </div>
+          <div className="d">
+            <div className="hero-f-punchline">
+              <span className="list-item">
+                <h1>
+                  <img src="../images/logo-asterisk-white.png" alt="asterisk" />
+                  {t("hero_main1")}
+                  <br />-<i>{t("hero_main2")}</i>
+                </h1>
+              </span>
             </div>
-
-            <div className="grid-item1--hero">
-              <div className="hero-f-signup c-mrg--top">
-                <p className="u-mrg--txt3">Ny hos SquareRoot?</p>
-                <button className="front-btn u-mrg--txt3">{t("demo")}</button>
-
-                <p className="u-mrg--txt3">{t("or")}</p>
-
-                <p className="u-mrg--txt3">{t("hero_account")}</p>
-                <button className="front-btn u-mrg--txt3">{t("beta")}</button>
-              </div>
-            </div>
-
-            <div className="grid-item2--hero">
-              <div className="hero-f-punchline">
-                <span className="list-item">
-                  <h1>
-                    <img
-                      src="../images/logo-asterisk-white.png"
-                      className="list-item-icon"
-                    />
-                    {t("hero_main1")}
-                    <br />-<i className="ibm-italic">{t("hero_main2")}</i>
-                  </h1>
-                </span>
-              </div>
-            </div>
-
-            <div className="grid-item3--hero">
-              <button
-                className="btn-scroll-down-large bounce zoom-on-hover is-white"
-                onClick={() => executeScroll(homeData[0].id)}
-              >
-                {t("see_more")}
-                <img className="arrowDown" src={arrowDownWhite} />
-              </button>
-            </div>
+          </div>
+          <div className="see-more">
+            <button
+              className="bounce zoom-on-hover"
+              onClick={() => executeScroll(homeData[0].id)}
+            >
+              {t("see_more")}
+              <img src={arrowDownWhite} />
+            </button>
           </div>
         </section>
 
@@ -110,7 +98,7 @@ function HomeSection({ data, executeScroll }) {
             ))}
 
             <button
-              className="action-btn zoom-on-hover"
+              className="action-btn"
               onClick={() => routeChange(data.path)}
             >
               {t("read_more")}

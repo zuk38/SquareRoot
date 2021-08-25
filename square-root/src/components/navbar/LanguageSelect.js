@@ -38,7 +38,7 @@ export default function LanguageSelect() {
     <>
       <div ref={dropdownRef}>
         <button
-          className="button is-white pad"
+          className="button is-white vertical-center"
           onClick={() => setDropdown(!dropdown)}
         >
           <span
