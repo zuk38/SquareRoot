@@ -4,13 +4,14 @@ import { Link, NavLink, useHistory } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
-//import Sidebar from "./Sidebar";
 import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
 import { ReactComponent as CloseIcon } from "../../icons/close.svg";
 import NavbarDropdown from "./NavbarDropdown";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
-import { Trans, useTranslation } from 'react-i18next';
+import { Trans, useTranslation } from "react-i18next";
 import LanguageSelect from "./LanguageSelect";
+import { FaAngleDown, FaUser } from "react-icons/fa";
+import { NavButton } from "./NavButton";
 
 export default function Navbar(props) {
   let history = useHistory();
@@ -99,7 +100,7 @@ export default function Navbar(props) {
         ) : (
           <ul className="nav-menu">
             {NavbarData.map((item, index) =>
-              item.dropdown  ? (
+              item.dropdown ? (
                 <li
                   key={index}
                   className="nav-item"
@@ -159,23 +160,20 @@ export default function Navbar(props) {
           <LanguageSelect />
           {/* user */}
           {!props.auth.isAuthenticated ? (
-            <a href="/login" className="button is-white pad">
-              <span><Trans i18nKey="signIn">Sign in</Trans></span>
-              <span className="icon is-small">
-                <i className="fas fa-user"/>
-              </span>
-            </a>
+            <NavButton
+              onClick={() => closeMobileMenu("/login")}
+              endIcon={<FaUser />}
+            >
+              <Trans i18nKey="signIn">Sign in</Trans>
+            </NavButton>
           ) : (
             <div ref={dropdownRef}>
-              <button
-                className="button is-white pad"
+              <NavButton
                 onClick={() => setDropdown(!dropdown)}
+                endIcon={<FaAngleDown />}
               >
-                <span>{props.auth.user}</span>
-                <span className="icon is-medium">
-                  <i className="fas fa-angle-down"></i>
-                </span>
-              </button>
+                {props.auth.user}
+              </NavButton>
               <Dropdown
                 {...props}
                 dropdown={dropdown}
