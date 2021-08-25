@@ -35,6 +35,10 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-decoration: none;
+}
+
 .loading {
   position: fixed;
   padding: 0;
