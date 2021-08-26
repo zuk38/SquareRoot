@@ -383,6 +383,7 @@ html {
 .grid-item2--equal {
   grid-row:1;
   grid-column:2;
+  width:100%;
 }
 
 /*

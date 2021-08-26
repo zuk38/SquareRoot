@@ -1,7 +1,3 @@
-@import "https://cdn.jsdelivr.net/npm/bulma@0.9.1/css/bulma.min.css";
-@import "@fortawesome/fontawesome-free/css/all.min.css";
-@import "./components/navbar/Dropdown.css";
-@import "./components/Footer.css";
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,700&display=swap');
 
@@ -22,22 +18,25 @@
   --navbarBack_op:rgba(249, 249, 249, 0.5);
   --bg: #242526;
   --bg-accent: #d3d3d3;
-  --text-color: var(--mainBlack);
+  --text-color: #dadce1;
   --nav-size: 80px;
   --border: 1px solid #474a4d;
   --border-radius: 8px;
   --speed: 500ms;
-  --italic: 
 }
 
 /* globals */
 body {
-  padding-top: 10px;
-  color: #333 !important;
   background: var(--mainWhite);
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+a {
+  text-decoration: none;
 }
 
 .loading {
@@ -61,10 +60,8 @@ body {
 }
 .empty-search {
   text-align: center;
-  text-transform: capitalize;
   margin: 2rem 0;
   padding: 1rem;
-  letter-spacing: var(--mainSpacing);
 }
 
 .features {
@@ -78,11 +75,6 @@ body {
 
 .buttons {
   margin-left: 1em;
-}
-
-.vertical-center {
-  margin: 0;
-  top: 50%;
 }
 
 .bounce {
@@ -168,13 +160,17 @@ body {
 }
 
 .nav-header {
-  padding: 0.7rem;
   display: flex;
   justify-content: space-between;
-  width:60px;
-  margin-top: 0.5%;
-  margin-left:1.5%;
-  
+  width: 50px;
+  float: right;
+  margin-left: 3rem;
+}
+
+.nav-header img {
+  object-fit: cover;
+  width: 100%;
+  height: 50px;
 }
 
 .navbar-nav {
@@ -259,6 +255,13 @@ body {
 
 .sidebar-bars {
   display: none;
+}
+
+.navbar-btn {
+  background-color: transparent;
+  border: none;
+  height: 40px;
+  color: black;
 }
 
 @media screen and (min-width: 1190px) {
@@ -385,112 +388,50 @@ body {
   }
 }
 /* end of navbar */
-/*sidebar */
-/*.sidebar-bars {
-  --button-size: calc(var(--nav-size) * 0.3);
-  width: var(--button-size);
-  height: var(--button-size);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 86ms;
-  cursor: pointer;
-}
-.sidebar-bars:hover {
-  filter: brightness(5.2);
-}
-.sidebar-bars svg {
-  fill: var(--bg);
-} */
-.side-menu {
-  background-color: var(--navbarBack);
-  width: 500px;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  position: fixed;
-  top: 0;
-  right: -100%;
-  transition: 850ms;
-  z-index: 200;
-}
-.side-menu.active {
-  right: 0;
-  transition: 350ms;
-  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
-  z-index: 200;
-}
-.side-menu-items {
+/* Banner */
+.errorBanner {
+  display: inline-block;
+  color: var(--mainWhite);
   width: 100%;
-}
-.sidebar-text {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 8px 16px 8px 0px;
-  list-style: none;
-  height: 60px;
-  direction: rtl;
-}
-.sidebar-text a {
-  text-decoration: none;
-  color: var(--mainBlack);
-  font-size: 18px;
-  width: 95%;
   height: 100%;
+  min-height: calc(100vh - var(--nav-size));
+  padding: 2rem 1rem;
+  text-align: center;
+  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
+  background: rgba(54, 54, 54, 0.8);
+}
+
+.errorBanner h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin-top: 15rem;
+}
+
+.errorBanner div {
+  width: 10rem;
+  height: 5px;
+  background: var(--mainGreen);
+  margin: 1.7rem auto;
+}
+
+.banner {
   display: flex;
-  align-items: center;
-  padding: 0px 16px;
-  border-radius: 4px;
-}
-.sidebar-text a:hover {
-  background-color: var(--bg);
-  color: var(--offWhite);
-}
-.sidebar-toggle {
-  background-color: var(--navbarBack);
+  color: var(--mainWhite);
   width: 100%;
-  height: 100px;
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  vertical-align: middle;
-  z-index: 200;
-}
-.sidebar-close {
-  margin: 2px 30px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: filter 86ms;
-  cursor: pointer;
-}
-.sidebar-close:hover {
-  filter: brightness(5.2);
-}
-.sidebar-close svg {
-  fill: var(--bg);
-  width: 16px;
-  height: 16px;
-}
-@media screen and (max-height: 1190px) and (max-width: 1190px) {
-  .side-menu.active {
-    overflow: scroll;
-    scroll-behavior: smooth;
-  }
-}
-/*end of sidebar */
-/* backdrop - backround for side menu, modals etc */
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
   height: 100%;
-  width: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 100;
+  min-height: calc(100vh - var(--nav-size));
+  padding: 2rem 1rem;
+  text-align: left;
+  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
+  background: rgba(54, 54, 54, 0.3);
 }
-/*end of backdrop */
+
+.banner h1 {
+  font-size: 3rem;
+  text-align: center;
+  margin: auto;
+}
+/* end of banner */
 /* Titles */
 .plants-title {
   margin: 1rem 0 0 5%;

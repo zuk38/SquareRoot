@@ -1,33 +1,203 @@
-/* ProjectHeader */
-
-.p-main-header {
-  width: 100%;
-}
-
-/* COLUMNS */
-.p-row {
+/* dashboard */
+.dashboard {
+  display: grid; 
+  grid-template-columns: 20% 80%; 
+  grid-template-rows: 15% 85%; 
+  gap: 0px 0px;
   padding-top: 5%;
-  display: flex;
   width: 100%;
   background: var(--offWhite);
-  height: 100%;
   padding-bottom: 10%;
   color: var(--mainBlack);
 }
 
-.left {
-  width: 25%;
+/*left menu */
+/* BUTTON : BACK TO PROJECTS*/
+.btn-back {
+  padding: 15px 10px;
+  background-color: var(--offWhite);
+  font-weight: 400;
+  color: black;
+  border: none;
+  border-radius: 5px;
   float: left;
-  background: var(--offWhite);
-  padding-left: 5%;
+  cursor: pointer;
+  font-size: 13px;
+  grid-column: 1;
+  grid-row: 1;
 }
 
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
+a.btn-back:hover {
+  font-weight: 600;
 }
-/* end of COLUMNS */
+
+.fa-times {
+  width: 30px;
+  height: auto;
+}
+
+/* menu */
+.menu-vertical {
+  grid-row: 2/3;
+  grid-column: 1;
+  float: left;
+  border-radius: 5px;
+  margin: 20% auto 0 0;
+  padding-left: 5%;
+  width: 80%;
+}
+
+.menu-vertical p {
+  color: black;
+  display: block; 
+  padding: 12px;
+  text-decoration: none; 
+  border-radius: 5px;
+}
+
+.menu-vertical p:hover {
+  background-color: #e0e0e0;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.menu-vertical p.active {
+  background-color: var(--mainGreen);
+  font-weight: 500;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-vertical {
+    width: 60%;
+    height: auto;
+    position: relative;
+  }
+}
+
+/* header */
+.p-main-header {
+  width: 100%;
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.p-main-header div {
+  display: inline-block;
+}
+
+/* content */
+.d-content {
+  grid-row: 2 / 3;
+  grid-column: 2;
+}
+
+/*GREENSPACES*/
+/* GRID GREENSPACES*/
+.green-container {
+  padding: 0.5rem 0;
+  display: grid;
+  max-width: 100%;
+  width: 100%;
+  margin: 0 auto;
+  grid-template-columns: repeat(auto-fit, minmax(20px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+  grid-row-gap: 5rem;
+  grid-column-gap: 40px;
+  padding: 40px;
+  height: 30%;
+  flex-wrap: wrap;
+}
+/* GREENSPACE BUTTONS */
+.green-container button {
+  font-weight: 500;
+  cursor: pointer;
+  font-size: 12px;
+  color: var(--mainBlack);
+  width: fit-content;
+  height: 10rem;
+}
+
+/* BUTTON : NEW GREENSPACE*/
+.green-container button:first-child {
+  padding: 15px 10px;
+  border: 1px dashed var(--mainGreen);
+  border-radius: 5px;
+}
+
+.green-container button:first-child:hover {
+  background-color: var(--hoverGreen);
+  font-size: 12px;
+  color: var(--mainBlack);
+}
+
+/* the rest */
+.green-container button:not(:first-child) {
+  background-color: white;
+  padding: 0;
+  border: none;
+}
+
+.green-item {
+  padding: 1rem;
+  background-color: white;
+  min-height: 15rem;
+  width: auto;
+  overflow: hidden;
+  border-radius: 5px;
+  display: block;
+  text-align: center;
+}
+
+.green-item img {
+  transition: 0.4s;
+  border-radius: 10px;
+  padding: 10px;
+  width: 100%;
+}
+
+img[src*="plus"] {
+  width: 20%;
+  text-align: center;
+}
+
+.green-item:hover {
+  transform: scale(1.02);
+  cursor: pointer;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
+}
+
+.green-item:hover .green-info {
+  padding: 20px;
+  margin-top: 10%;
+  transform: scale(1.2);
+  transform-origin: 50% 50%;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+}
+
+.green-item:hover img {
+  transform: scale(1.5);
+  transform-origin: 50% 50%;
+  transition: 0.5s ease;
+  -webkit-transition: 0.5s ease;
+}
+
+.green-info {
+  text-align: center;
+}
+
+.p-h3 {
+  font-size: 20px;
+}
+
+.p-h4 {
+  font-size: 15px;
+}
+
+/* end of dashboard */
+
 /* TITLE */
 .project-icon {
   width: 30px;
@@ -68,6 +238,7 @@
   color: var(--mainBlack);
 }
 /* end of TITLE */
+
 /*CONTAINER OVER TABLE*/
 .p-container {
   position: relative;
@@ -179,65 +350,6 @@
   padding: 0 10px;
 }
 /* end of BUTTON */
-/* BUTTON : BACK TO PROJECTS*/
-.btn-back {
-  padding: 15px 10px;
-  background-color: var(--offWhite);
-
-  font-weight: 400;
-  color: black;
-  border: none;
-  border-radius: 5px;
-  float: left;
-  cursor: pointer;
-  font-size: 13px;
-}
-
-a.btn-back:hover {
-  font-weight: 600;
-}
-/* end of BUTTON */
-
-.fa-times {
-  width: 30px;
-  height: auto;
-}
-
-/* end of BUTTON */
-/* PROJECTS-MENU */
-.menu-vertical {
-  width: 200px;
-  float: left;
-  border-radius: 5px;
-  margin-top: 20%;
-}
-
-.menu-vertical p {
-  color: black; /* Black text color */
-  display: block; /* Make the links appear below each other */
-  padding: 12px; /* Add some padding */
-  text-decoration: none; /* Remove underline from links */
-  border-radius: 5px;
-}
-
-.menu-vertical p:hover {
-  background-color: #e0e0e0; /* Dark grey background on mouse-over */
-  font-weight: 500;
-  cursor: pointer;
-}
-
-.menu-vertical p.active {
-  background-color: var(--mainGreen);
-  font-weight: 500;
-}
-
-@media screen and (max-width: 1000px) {
-  .menu-vertical {
-    width: 100%;
-    height: auto;
-    position: relative;
-  }
-}
 /*MODAL*/
 .modal-project {
   background: var(--offWhite);
@@ -348,26 +460,8 @@ a.btn-back:hover {
 }
 
 .p-btn-create {
-  width: 100%;
+  width: 80%;
   margin-top: 20px;
-}
-
-/* DASHBOARD */
-
-.p-title {
-  display: inline-block;
-}
-
-.project_img {
-  border-radius: 10px;
-  padding: 10px;
-  width: 100%;
-}
-
-.btn-dash-greenspace {
-  border: none;
-  background-color: var(--offWhite);
-  padding: 0px;
 }
 
 /*DASHBOARD MODAL */
@@ -396,7 +490,7 @@ a.btn-back:hover {
 }
 
 /* TABLE */
-.d-table {
+/*.d-table {
   border-collapse: separate;
   color: var(--mainBlack);
   border-spacing: 0 10px;
@@ -428,93 +522,7 @@ td.d-modal-img {
   width: 20%;
   height: auto;
   margin: 0;
-}
-/*GREENSPACES*/
-/* BUTTON : NEW GREENSPACE*/
-
-/* GRID GREENSPACES*/
-.green-container {
-  padding-top: 5%;
-  display: grid;
-  max-width: 1200px;
-  margin: 0 auto;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.item1-btn-large {
-  grid-column: 1;
-  grid-row: 1;
-  padding: 15px 10px;
-  font-weight: 500;
-  border: 1px solid var(--mainGreen);
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 12px;
-  color: var(--mainBlack);
-  vertical-align: middle;
-}
-
-.btn-new-greenspace:hover {
-  background-color: var(--hoverGreen);
-  font-size: 12px;
-  color: var(--mainBlack);
-}
-
-.green-item {
-  padding: 1rem;
-  background-color: white;
-  min-height: 15rem;
-  width: auto;
-  overflow: hidden;
-  border-radius: 5px;
-  display: block;
-  text-align: center;
-}
-
-.green-item img {
-  transition: 0.4s;
-}
-
-img[src*="plus"] {
-  width: 20%;
-  text-align: center;
-}
-.green-item:hover {
-  transform: scale(1.02);
-  cursor: pointer;
-  transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1), 0 2px 6px 0 rgba(0, 0, 0, 0.15);
-}
-
-.green-item:hover .green-info {
-  padding: 20px;
-  margin-top: 10%;
-  transform: scale(1.2);
-  transform-origin: 50% 50%;
-  transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
-}
-
-.green-item:hover img {
-  transform: scale(1.5);
-  transform-origin: 50% 50%;
-  transition: 0.5s ease;
-  -webkit-transition: 0.5s ease;
-}
-
-.green-info {
-  text-align: center;
-}
-
-.p-h3 {
-  font-size: 20px;
-}
-
-.p-h4 {
-  font-size: 15px;
-}
+}*/
 
 /* GREENSPACE */
 .greensp-page {

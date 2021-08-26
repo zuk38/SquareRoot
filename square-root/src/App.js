@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import "./App.css";
-import "./App.sass";
 import { Route, Switch, withRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
@@ -14,7 +13,6 @@ import AllProjects from "./pages/user-pages/AllProjects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
 import Orders from "./pages/user-pages/Orders";
-import Settings from "./pages/user-pages/Settings";
 import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
@@ -29,10 +27,6 @@ import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { faEdit } from "@fortawesome/free-solid-svg-icons";
-
-library.add(faEdit);
 
 class App extends Component {
   render() {
@@ -181,13 +175,6 @@ class App extends Component {
               auth={authProps}
               path="/account"
               component={Account}
-            />
-
-            <PrivateRoute
-              authed={isAuthenticated}
-              auth={authProps}
-              path="/settings"
-              component={Settings}
             />
 
             <PrivateRoute

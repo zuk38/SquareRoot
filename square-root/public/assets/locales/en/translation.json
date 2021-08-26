@@ -22,5 +22,8 @@
     "read_more": "Read more",
     "beta": "View Beta",
     "demo": "Request Demo",
-    "or": "OR"
+    "or": "OR",
+    "my_projects": "My Projects",
+    "account": "Account Settings",
+    "log_out": "Log Out"
 }

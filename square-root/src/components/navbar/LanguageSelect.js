@@ -1,7 +1,9 @@
 import React, { useEffect, useRef, useState } from "react";
 import useOutsideAlerter from "../hooks/useOutsideAlerter";
 import i18next from "i18next";
-import cookies from "js-cookie"
+import cookies from "js-cookie";
+import { NavButton } from "./NavButton";
+import { FaAngleDown } from "react-icons/fa";
 
 const languages = {
   en: {
@@ -21,7 +23,7 @@ export default function LanguageSelect() {
   const [menuAnchor, setMenuAnchor] = useState(null);
 
   useEffect(() => {
-    setMenuAnchor(languages[selected])
+    setMenuAnchor(languages[selected]);
   }, [selected]);
 
   const dropdownRef = useRef(null);
@@ -29,31 +31,36 @@ export default function LanguageSelect() {
   const [dropdown, setDropdown] = useState(false);
 
   const setLang = (language) => {
-    setDropdown(!dropdown)
-    setMenuAnchor(languages[language])
-    i18next.changeLanguage(language)
-  }
+    setDropdown(!dropdown);
+    setMenuAnchor(languages[language]);
+    i18next.changeLanguage(language);
+  };
 
   return (
     <>
       <div ref={dropdownRef}>
-        <button
-          className="button is-white vertical-center"
+        <NavButton
+          endIcon={<FaAngleDown />}
           onClick={() => setDropdown(!dropdown)}
         >
-          <span
-            className={menuAnchor ? `flag-icon flag-icon-${menuAnchor.country_code} mx-2` : `flag-icon flag-icon-${languages[selected].country_code} mx-2`}
+          <span style={{"margin-right": "10px"}}
+            className={
+              menuAnchor
+                ? `flag-icon flag-icon-${menuAnchor.country_code} mx-2`
+                : `flag-icon flag-icon-${languages[selected].country_code} mx-2`
+            }
           />
-          <span>{menuAnchor ? menuAnchor.name : languages[selected].name}</span>
-          <span className="icon is-medium">
-            <i className="fas fa-angle-down"></i>
-          </span>
-        </button>
+          {menuAnchor ? menuAnchor.name : languages[selected].name}
+        </NavButton>
         {dropdown && (
           <ul onClick={() => setDropdown(false)} className="d-language-menu">
             {Object.keys(languages).map((language) => (
               <li key={languages[language].country_code}>
-                <button name={language} className="d-language" onClick={() => setLang(language)}>
+                <button
+                  name={language}
+                  className="d-language"
+                  onClick={() => setLang(language)}
+                >
                   <span
                     className={`flag-icon flag-icon-${languages[language].country_code} mx-2`}
                   />

@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useState } from "react";
 import "./projects.css";
 import { withUserConsumer } from "../../context/user";
 import EditableTextField from "../../components/EditableTextField";

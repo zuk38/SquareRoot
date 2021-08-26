@@ -1,42 +1,24 @@
 /*----------------------
 Smooth Scroll --------*/
-
-.disable-scrollbars::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Chrome/Safari/Webkit */
-}
-
-.disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-
-.homepage {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  height: calc(100vh - var(--nav-size));
-  position: relative;
-}
-
-.front-container {
-  width: 100%;
-  height: 100%;
-  /* CSS Smooth Scroll */
+.front-container {	
+	-webkit-overflow-scrolling: touch;
+	overflow-y: scroll;
   scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
+  height: calc(100vh - var(--nav-size));
+  width: 100%;
 }
 
 /* common for each section */
 .front-container section {
   width: 100%;
-  height: calc(100vh - var(--nav-size)); /*for all browser sizes*/
+  height: calc(100vh - var(--nav-size));
   scroll-snap-align: center;
 }
 
-section p {
+.front-container section p {
   font-size: 1rem;
 }
 
@@ -102,15 +84,16 @@ section#first .signup {
   margin-right: 10%;
 }
 
-section#first .signup p:not(:first-child),
-button {
+section#first .signup p {
+  font-size: 18px;
+}
+
+section#first .signup p:not(:first-child) {
   margin-top: 15px;
 }
 
 section#first .signup button {
-  font-size: 1rem;
-  padding: 0.5% 2%;
-  font-weight: 300;
+  font-size: 0.8rem;
   border-radius: 5px;
   background: none;
   border: 0.2px solid white;
@@ -132,12 +115,25 @@ section#first .d {
   justify-content: end;
 }
 
-.hero-f-punchline {
-  width: 100%;
-  height: 100%;
+section#second{
+  position:relative;
+  height:80vh;
+}
+section#third{
+  position:relative;
+  height:80vh;
 }
 
-.hero-f-punchline h1 {
+section#fourth{
+  position:relative;
+  height:80vh;
+}
+section#fifth{
+  position:relative;
+  height:80vh;
+}
+
+.list-item h1 {
   font-size: 35px;
   font-weight: 600;
   color: white;
@@ -182,8 +178,11 @@ section#first .see-more {
 }
 
 @media screen and (max-width: 768px) {
-  .hero-f-punchline h1 {
+  .list-item h1 {
     font-size: 28px;
+  }
+  section#first .signup p {
+    font-size: 16px;
   }
   .list-item {
     line-height: 2.7em;
@@ -194,143 +193,7 @@ section#first .see-more {
   }
 }
 /* End of Hero */
-/* Banner */
-.errorBanner {
-  display: inline-block;
-  color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
-  padding: 2rem 1rem;
-  text-align: center;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.8);
-}
 
-.errorBanner h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin-top: 15rem;
-}
-
-.errorBanner div {
-  width: 10rem;
-  height: 5px;
-  background: var(--mainGreen);
-  margin: 1.7rem auto;
-}
-
-.banner {
-  display: flex;
-  color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
-  padding: 2rem 1rem;
-  text-align: left;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.3);
-}
-
-.banner h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin: auto;
-}
-
-.top-left {
-  top: 0;
-  left: 0;
-  width: 60%;
-}
-
-.top-left img {
-  max-width: 100%;
-  max-height: 100%;
-}
-
-.bottom-right {
-  position: absolute;
-  left: 40%;
-  top: 60%;
-  width: 61%;
-  padding-right: 7%;
-}
-
-.bottom-right h2 {
-  font-size: 30px;
-  font-weight: bold;
-  text-align: left;
-  margin-left: 10px;
-  margin-bottom: 20px;
-  display: inline;
-}
-
-.bottom-right img {
-  float: left;
-  width: 10px;
-  height: 10px;
-}
-
-@media screen and (min-width: 576px) {
-  .banner {
-    padding: 2rem 3rem;
-  }
-  .bottom-right {
-    margin-top: -80px;
-  }
-  .bottom-right h2 {
-    font-size: 24px;
-  }
-  .front-btn-1 {
-    padding: 2px;
-    width: 100px;
-    font-size: x-small;
-  }
-  .front-btn-2 {
-    padding: 2px;
-    width: 80%;
-    font-size: small;
-  }
-}
-@media screen and (min-width: 676px) {
-  .bottom-right {
-    margin-top: -10px;
-  }
-  .front-btn-1 {
-    font-size: small;
-  }
-
-  .front-btn-2 {
-    font-size: medium;
-  }
-}
-@media screen and (min-width: 992px) {
-  .banner {
-    padding: 2rem 6rem;
-  }
-  .bottom-right h2 {
-    font-size: 30px;
-  }
-  .front-btn-1 {
-    font-size: large;
-  }
-
-  .front-btn-2 {
-    font-size: large;
-  }
-}
-
-.front-btn-1 {
-  padding: 20px;
-  width: 30%;
-}
-
-.front-btn-2 {
-  padding: 20px;
-  width: 30%;
-}
-/* end of banner */
 
 /* CONCEPT container
 .imagebox {
@@ -402,49 +265,6 @@ section#first .see-more {
 /*----------------------
 Smooth Scroll --------*/
 
-.disable-scrollbars::-webkit-scrollbar {
-  width: 0px;
-  background: transparent; /* Chrome/Safari/Webkit */
-}
-
-.disable-scrollbars {
-  scrollbar-width: none; /* Firefox */
-  -ms-overflow-style: none; /* IE 10+ */
-}
-
-.homepage {
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  line-height: 1.6;
-  height: calc(100vh - var(--nav-size));
-  position: relative;
-}
-
-.front-container {
-  width: 100%;
-  height: 100%;
-  /* CSS Smooth Scroll */
-  scroll-behavior: smooth;
-  scroll-snap-type: y mandatory;
-  overflow-y: auto;
-}
-
-.action-btn {
-  background: none;
-  border: none;
-  color: black;
-  font-size: 15px;
-  font-weight: 700px;
-  font-style: italic;
-  padding-top: 5%;
-  width: 40%;
-  height: 15%;
-  float: left;
-  text-align: left;
-  margin: 0;
-}
-
 .cat-descr {
   color: var(--mainGrey);
   font-style: italic;
@@ -462,57 +282,6 @@ Smooth Scroll --------*/
   font-size: 50px;
   font-weight: 500;
 }
-
-/* SECTIONS FRONT PAGE*/
-
-.front-container section {
-  width: 100%;
-  height: calc(100vh - var(--nav-size)); /*for all browser sizes*/
-  scroll-snap-align: center;
-}
-
-section p {
-  font-size: 1rem;
-}
-
-section#first {
-  background-image: linear-gradient(
-      rgba(62, 61, 61, 0.4),
-      rgba(140, 165, 140, 0.2)
-    ),
-    url("../images/hands-rooftop.png");
-  background-color: rgba(54, 54, 54, 0.3);
-  background-size: cover;
-  position: relative;
-  /*background: :url() no-repeat center center/ cover;*/
-}
-
-section#second {
-  background-size: cover;
-  position: relative;
-}
-
-section#third {
-  background-size: cover;
-  position: relative;
-}
-
-section#fourth {
-  background-size: cover;
-  position: relative;
-}
-
-section#fifth {
-  background-size: cover;
-  position: relative;
-}
-
-section#sixth {
-  background-size: cover;
-  position: relative;
-}
-
-/*END SECTIONS */
 
 /*GRID HERO */
 
@@ -594,31 +363,6 @@ section#sixth {
   display:flex;
 }
 
-.logo-large {
-  width: 80%;
-  height: auto;
-}
-
-.hero-f-punchline {
-  width: 100%;
-  height: 100%;
-}
-
-.hero-f-punchline h1 {
-  font-size: 35px;
-  font-weight: 600;
-  color: white;
-}
-
-.list-item {
-  line-height: 3.5em;
-}
-.list-item-icon {
-  height: 10px;
-  width: 10px;
-  margin-bottom: 15px;
-}
-
 .hero-f-signup {
   color: white;
   margin-left: 10%;
@@ -681,7 +425,6 @@ section#sixth {
 
 .s-container {
   height:200px;
-  width:100%;
 }
 
 .s-center {
@@ -691,5 +434,5 @@ section#sixth {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
-  width:80%;
+  width:100%;
 }
