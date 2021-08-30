@@ -265,7 +265,7 @@ section#first .see-more {
 /*----------------------
 Smooth Scroll --------*/
 
-.cat-descr {
+.main-punchline {
   color: var(--mainGrey);
   font-style: italic;
   line-height:1.8em;

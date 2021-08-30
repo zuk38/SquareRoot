@@ -61,7 +61,7 @@ export default function Home(props) {
                 <div className="float-right">
                   <h1>WHY</h1>
 
-                  <div className="cat-descr">
+                  <div className="main-punchline">
                     Sett sammen en takhage med forhåndsutvalgte planter
                     <br />
                     Spar tid og penger på å finne plantene som passer i området
@@ -72,10 +72,7 @@ export default function Home(props) {
                   </div>
                 </div>
               </div>
-               
-                        <button className="btn-scroll-down zoom-on-hover" href="#third">
-                            <i class="fas fa-angle-double-down"></i>Regnseng
-                </button>
+              
             </div>
           </div>
 
@@ -92,7 +89,7 @@ export default function Home(props) {
                   <h1>WHAT and HOW</h1>
                 </div>
 
-                <div className="cat-descr">
+                <div className="main-punchline">
                   Sett sammen en takhage med forhåndsutvalgte planter
                   <br />
                   Spar tid og penger på å finne plantene som passer i området
