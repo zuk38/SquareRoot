@@ -18,7 +18,7 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Why from "./pages/frontpages/Why";
 import Categories from "./pages/frontpages/Categories";
 import SingleCategory from "./pages/frontpages/SingleCategory";
-import Footer from "./components/Footer";
+import {FooterContainer} from "./components/footer/FooterContainer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
@@ -195,7 +195,7 @@ class App extends Component {
           </Switch>
           {this.props.location.pathname != "/login" &&
             this.props.location.pathname != "/" &&
-            this.props.location.pathname != "/forgotpassword" && <Footer />}
+            this.props.location.pathname != "/forgotpassword" && <FooterContainer />}
         </>
       )
     );

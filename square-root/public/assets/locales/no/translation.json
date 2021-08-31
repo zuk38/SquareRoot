@@ -29,6 +29,10 @@
   "footer": {
     "description": "",
     "button": "",
+    "greenspaces": "Grønne Arealer",
+    "rooftop": "Takterrasse",
+    "rainbed": "Regnseng",
+    "indoor": "Innendørsplanter",
     "about": "Om",
     "contact": "Kontakt",
     "what": "Hva vi gjør",
