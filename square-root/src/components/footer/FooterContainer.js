@@ -27,7 +27,7 @@ export function FooterContainer() {
           <Column first>
             <Title primary>SquareRoot</Title>
             <Description>{t("footer.description")}</Description>
-            <Button>{t("footer.button")}</Button>
+            <Button to="/contact-us">{t("footer.button")}</Button>
           </Column>
           <Column>
             <Title>{t("footer.greenspaces")}</Title>
