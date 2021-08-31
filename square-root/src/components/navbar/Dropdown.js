@@ -28,7 +28,7 @@ function Dropdown(props) {
   }
 
   return (
-    <div>
+    <>
       {props.dropdown && (
         <div className="my-dropdown">
           <div className="menu">
@@ -47,7 +47,7 @@ function Dropdown(props) {
           </div>
         </div>
       )}
-    </div>
+    </>
   );
 }
 
