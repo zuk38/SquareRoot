@@ -17,23 +17,26 @@ export default function Contact() {
           <div className="c-grid--2x1">
             <div>
               <div className="c-grid--3x3fixed">
-                <div>
-                  <h3 className="c-txt--h3">Bli partner</h3>
-                  <p className="c-mrg--top-sm">jo@squareroot.cc</p>
-                </div>
 
                 <div>
-                  <h3 className="c-txt--h3">Bli med i teamet vårt</h3>
-                  <p className="c-mrg--top-sm">michel@squareroot.cc</p>
+                  <h3 className="c-txt--h3">E-post</h3>
+                  <p className="c-mrg--top-sm">contact@squareroot.cc</p>
                 </div>
-
+ 
+                <div>
+                 <h3 className="c-txt--h3">Telefon</h3>
+                  <p className="c-mrg--top-sm">925 57 654</p>
+                </div>
+{/*
                 <div>
                   <h3 className="c-txt--h3">Alt annet</h3>
                   <p className="c-mrg--top-sm">contact@squareroot.cc</p>
                 </div>
-              </div>
+                */}
+</div>
+              
 
-              {/*BUTTON OPEN MODAL "CREATE PROJECT"*/}
+             
               <Link
                 to={{ pathname: "/projects", state: { modalOpen: true } }}
                 className="o-btn c-mrg--top/3"
