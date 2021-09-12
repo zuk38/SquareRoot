@@ -4,7 +4,7 @@ import Grid from "../../components/Grid_2x2";
 import FeaturedConcepts from "../../components/FeaturedConcepts";
 import { Link } from "react-router-dom";
 
-export default function Why() {
+export default function Who() {
   const grid_values = [
     {
       img: "../images/planet-earth.png",

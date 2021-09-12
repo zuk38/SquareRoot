@@ -15,7 +15,7 @@ import Greenspace from "./pages/user-pages/Greenspace";
 import Orders from "./pages/user-pages/Orders";
 import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
-import Why from "./pages/frontpages/Why";
+import Who from "./pages/frontpages/Who";
 import Categories from "./pages/frontpages/Categories";
 import SingleCategory from "./pages/frontpages/SingleCategory";
 import Footer from "./components/Footer";
@@ -111,8 +111,8 @@ class App extends Component {
             />
             <Route
               exact
-              path="/Why-us"
-              render={(props) => <Why {...props} />}
+              path="/who-we-are"
+              render={(props) => <Who {...props} />}
             />
             <Route
               exact
