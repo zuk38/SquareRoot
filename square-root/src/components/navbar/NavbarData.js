@@ -6,7 +6,13 @@ export const NavbarData = [
     i18nKey: "home"
   },
   {
-    title: "GREENSPACES",
+    title: "WHO WE ARE",
+    path: "/who-we-are",
+    className: "sidebar-text",
+    i18nKey: "who"
+  },
+  {
+    title: "PROJECTS",
     path: "/categories",
     className: "sidebar-text",
     i18nKey: "greenspaces",
@@ -32,13 +38,14 @@ export const NavbarData = [
       },
     ],
   },
-  {
+  
+  /* {
     title: "ABOUT",
     i18nKey: "about",
     path: "/about-us",
     className: "sidebar-text",
     dropdown: "dropdownAbout",
-    subtitle: [
+   subtitle: [
       { title: "WHAT WE DO", path: "/what-we-do", i18nKey: "what", className: "d-link" },
       {
         title: "HOW IT WORKS",
@@ -53,7 +60,7 @@ export const NavbarData = [
         className: "d-link",
       },
     ],
-  },
+  },*/
   {
     title: "CONTACT",
     path: "/contact",

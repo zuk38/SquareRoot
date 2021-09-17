@@ -7,7 +7,6 @@
 }
 
 .c-txt--hero {
-  word-break: break-word;
   font-size: clamp(32px, calc(1rem + 4.5387994143vw), 80px);
   font-weight: 600;
   max-width: 22ch;
@@ -40,6 +39,13 @@
   display: block;
   width: 100%;
   height: auto;
+  /*vertical-align: middle;*/
+}
+
+.c-img--portrait {
+  display: block;
+  height:40%;
+  width:auto;
   /*vertical-align: middle;*/
 }
 
@@ -110,6 +116,14 @@ dt:first-child {
   margin:auto;
   max-width: calc(1200px + 2 * 20px);
   text-align: inherit;
+}
+
+.o-container--sm{
+  padding-left: 20px;
+  padding-right: 20px;
+  margin:auto;
+  text-align: inherit;
+  width:50%;
 }
 
 @media (min-width: 1024) {
@@ -190,7 +204,8 @@ dt:first-child {
   background: none;
   font-size: 15px;
   border: none;
-  width: 30%;
+  margin-bottom: 10px;
+  margin-top:30px;
 }
 
 .btn-icon {
@@ -198,6 +213,11 @@ dt:first-child {
   margin: auto;
   /*transform:rotate(90deg);*/
   /*other way: transform:rotate(270deg); */
+}
+
+.btn-is-icon{
+  height:20px;
+
 }
 
 .featured-concept--h1 {
@@ -353,18 +373,10 @@ html {
   }
 }
 
-.c-grid--2x1-equal {
-  display: grid;
-  grid-gap: 24px;
-}
 
 @media screen and (min-width:650px){
-  .c-grid--2x1-equal{
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: auto;
-  }
 
-  .grid-item0 {
+  .grid-item1 {
     grid-row: 1;
     grid-column: 1;
   }
@@ -624,6 +636,7 @@ html {
   outline:none !important;
   border:1px solid #0947c1;
   box-shadow: 0 0 10px #0000;
+  text-align: left;
 }
 
 .gdpr-contact-consent, .subscribe-contact {
@@ -634,16 +647,16 @@ html {
 
 .gdpr-contact-consent label, .subscribe-contact label{
   position: relative;
-  padding-left:1.5em;
-  margin-top: 10px;
+  padding-left:2.5em;
+  margin-top: 5px;
+  text-align: left;
 }
 
 .gdpr-contact-consent label [type=checkbox], .subscribe-contact label [type=checkbox] {
   position: absolute;
-  top:0;
   left:0;
-  width:1em;
-  height:1em;
+  width:1.5em;
+  height:1.5em;
 }
 
 
@@ -664,6 +677,8 @@ html {
   background-color: var(--mainGreen);
   color: white;
   font-weight: 600;
+  padding-left:5%;
+  padding-right:5%;
 }
 
 .o-btn:hover{
@@ -710,7 +725,7 @@ html {
   bottom: 0;
   left: 0;
   right: 0;
-  background: rgba(140, 166, 140, 0.6);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   visibility: hidden;
   opacity: 0;
@@ -816,6 +831,10 @@ color:white;
   margin-top: clamp(24px, 5.8565153734vw, 80px);
 }
 
+.u-mrg--txt5 {
+  margin-top: 100px;
+}
+
 .background-grey {
   background-color: var(--offWhite);
 }
@@ -880,6 +899,10 @@ color:white;
   font-family: 'IBM Plex Serif', serif;
 }
 
+.flip-img{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 /* END SPECIFIC STYLING */
 
 /* ----- OLD CSS FOR WHY.JS------

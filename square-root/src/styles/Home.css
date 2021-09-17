@@ -1,12 +1,11 @@
 /*----------------------
 Smooth Scroll --------*/
 .front-container {	
-	-webkit-overflow-scrolling: touch;
-	overflow-y: scroll;
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
+  overflow-x: hidden;
   height: calc(100vh - var(--nav-size));
   width: 100%;
 }
@@ -16,6 +15,7 @@ Smooth Scroll --------*/
   width: 100%;
   height: calc(100vh - var(--nav-size));
   scroll-snap-align: center;
+  position: relative;
 }
 
 .front-container section p {
@@ -115,6 +115,34 @@ section#first .d {
   justify-content: end;
 }
 
+section#second{
+  position:relative;
+  height:100vh;
+}
+section#third{
+  position:relative;
+  height:100vh;
+}
+
+section#fourth{
+  position:relative;
+  height:100vh;
+}
+section#fifth{
+  position:relative;
+  height:100vh;
+}
+
+section#sixth{
+  position:relative;
+  height:70vh;
+}
+
+section#seventh{
+  position:relative;
+  height:100vh;
+}
+
 .list-item h1 {
   font-size: 35px;
   font-weight: 600;
@@ -122,7 +150,7 @@ section#first .d {
 }
 
 .list-item {
-  line-height: 3.5em;
+  line-height: 2.5em;
 }
 
 .list-item i {
@@ -134,6 +162,8 @@ section#first .d {
   width: 10px;
   margin-bottom: 15px;
 }
+
+
 
 section#first .see-more {
   grid-column: 2;
@@ -247,16 +277,27 @@ section#first .see-more {
 /*----------------------
 Smooth Scroll --------*/
 
-.cat-descr {
+.main-punchline {
   color: var(--mainGrey);
-  font-style: italic;
   line-height:1.8em;
+  font-size: 20px;
+  text-align: left;
+  width:80%;
+}
 
+.main-punchline--lrg{
+  font-size:25px;
+}
+.main-punchline strong{
+  font-family: 'PoppinsBold';
+  line-height:2em;
 }
 
 .top-container{
   padding-left:10%;
   display: inline-block;
+  vertical-align: middle;
+  justify-content:center;
 }
 
 .top-container h1 {
@@ -405,17 +446,10 @@ Smooth Scroll --------*/
   color: white;
 }
 
-.s-container {
-  height:200px;
-  width:100%;
+
+em{
+  font-family: 'IBMPlex';
+  font-weight: bold;
+  font-size: 1.3em;
 }
 
-.s-center {
-  margin: 0;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-  width:80%;
-}

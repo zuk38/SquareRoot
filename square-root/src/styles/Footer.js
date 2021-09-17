@@ -59,7 +59,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: ${({ first }) => (first ? "0px 0px 0px 10px" : "0px  0px 0px 80px")};
+  margin: ${({ first }) => (first ? "0px 0px 0px 10px" : "0px  0px 0px 40px")};
   transition: all 0.2s ease-in-out;
 
   @media (max-width: 1200px) {
