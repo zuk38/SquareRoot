@@ -1,12 +1,11 @@
 /*----------------------
 Smooth Scroll --------*/
 .front-container {	
-	-webkit-overflow-scrolling: touch;
-	overflow-y: scroll;
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;
   scroll-snap-type: y mandatory;
   overflow-y: auto;
+  overflow-x: hidden;
   height: calc(100vh - var(--nav-size));
   width: 100%;
 }
@@ -16,6 +15,7 @@ Smooth Scroll --------*/
   width: 100%;
   height: calc(100vh - var(--nav-size));
   scroll-snap-align: center;
+  position: relative;
 }
 
 .front-container section p {
