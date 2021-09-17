@@ -26,6 +26,7 @@ export const Bottom = styled.div`
   bottom: 0px;
   transform: translate(-50%, -50%);
   margin: 0 auto;
+  font-size: 14px;
 
   text-align: justify;
   text-align-last: justify;
@@ -109,6 +110,7 @@ export const Description = styled.p`
 
 export const Button = styled(Link)`
   background: #8ca68c;
+  border-radius: 3px;
   white-space: nowrap;
   padding: 10px 16px;
   color: white;

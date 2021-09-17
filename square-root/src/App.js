@@ -45,13 +45,17 @@ class App extends Component {
     };
 
     return (
+      
       !isAuthenticating && (
         <>
-          {this.props.location.pathname.indexOf("/customize") <= -1 &&
+        {this.props.location.pathname.indexOf("/customize") <= -1 &&
             this.props.location.pathname != "/forgotpassword" &&
             this.props.location.pathname != "/login" && (
               <Navbar {...this.props} auth={authProps} />
             )}
+        <div class="content">
+          <div class="content-inside">
+          
 
           <Switch>
             <Route
@@ -194,12 +198,15 @@ class App extends Component {
 
             <Route component={Error} />
           </Switch>
-          {this.props.location.pathname != "/login" &&
+          
+          </div>
+        </div>
+        {this.props.location.pathname != "/login" &&
             this.props.location.pathname != "/" &&
             this.props.location.pathname != "/forgotpassword" && (
               <FooterContainer />
             )}
-        </>
+          </>
       )
     );
   }
