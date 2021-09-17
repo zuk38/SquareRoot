@@ -19,8 +19,6 @@ function AllProjects(props) {
     setModalOpen(state);
   };
 
-  const { projects, loading } = props.context;
-
   return (
     <>
       <div className="projects-title">
@@ -37,7 +35,7 @@ function AllProjects(props) {
           opprett et nytt prosjekt.
         </h2>
 
-        <ProjectsContainer {...props} projects={projects} loading={loading} />
+        <ProjectsContainer {...props} context={props.context} />
       </div>
     </>
   );

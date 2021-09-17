@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import Modal from "react-modal";
 import { withProjectConsumer } from "../../context/projects";
 import { AiOutlinePlus } from "react-icons/ai";

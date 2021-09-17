@@ -12,6 +12,7 @@ import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/EditAccountValidation";
 import ProjectForm from "../../components/user/ProjectForm";
 import AuthModal from "../../components/login/AuthModal";
+import AddGreenspaceModal from "../../components/user/AddGreenspaceModal";
 
 function Dashboard(props) {
   const projectName = props.match.params.name;
@@ -20,6 +21,7 @@ function Dashboard(props) {
   const currentMember = props.context.currentMember;
   const project = getProject(projectName);
   const [showModal, setShowModal] = useState(false);
+  const[showAddGreenspace, setShowAddGreenspace] = useState(false)
   const [nameChanged, setNameChanged] = useState(false);
 
   const {
@@ -95,12 +97,13 @@ function Dashboard(props) {
       case "/dashboard":
         return (
           <div className="green-container">
-            <button>
-              <i class="fas fa-plus"></i>Legg til grøntområde
+            <button onClick={() => setShowAddGreenspace(true)}>
+              <i class="fas fa-plus"/>Legg til grøntområde
             </button>
             {greenspaces.map((greenspace) => (
               <DashboardContent greenspace={greenspace} />
             ))}
+            <AddGreenspaceModal isOpen={showAddGreenspace} setIsOpen={setShowAddGreenspace}/>
           </div>
         );
       case "/members":
