@@ -59,7 +59,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: ${({ first }) => (first ? "0px 0px 0px 10px" : "0px  0px 0px 40px")};
+  margin: ${({ first }) => (first ? "0px 0px 0px 10px" : "0px  0px 0px 60px")};
   transition: all 0.2s ease-in-out;
 
   @media (max-width: 1200px) {
@@ -78,7 +78,7 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: ${({ primary }) => (primary ? "32px" : "24px")};
+  font-size: ${({ primary }) => (primary ? "32px" : "22px")};
   color: #fff;
   margin-bottom: ${({ primary }) => (primary ? "10px" : "40px")};
   font-weight: bold;
@@ -88,7 +88,7 @@ export const FooterLink = styled.a`
   color: #fff;
   margin-bottom: 20px;
   text-decoration: none;
-  font-size: 18px;
+  font-size: 16px;
 
   &:hover {
     color: #8ca68c;
@@ -110,9 +110,9 @@ export const Description = styled.p`
 export const Button = styled(Link)`
   background: #8ca68c;
   white-space: nowrap;
-  padding: 12px 18px;
+  padding: 10px 16px;
   color: white;
-  font-size: 20px;
+  font-size: 17px;
   outline: none;
   border: none;
   cursor: pointer;
