@@ -1,31 +1,36 @@
 {
-    "home": "HJEM",
-    "greenspaces": "PROSJEKTER",
-    "rooftop": "TAKTERRASSE",
-    "rainbed": "REGNBED",
-    "indoor": "INNENDØRS",
-    "rooftop2": "Takterrasse",
-    "rainbed2": "Regnbed",
-    "indoor2": "Innendørs",
-    "who": "HVEM VI ER",
-    "about": "OM",
-    "what": "HVA VI GJØR",
-    "why": "HVORFOR OSS",
-    "how": "HVORDAN DET FUNGERER",
-    "contact": "KONTAKT",
-    "contactU": "KONTAKT OSS",
-    "partner": "BLI EN PARTNER",
-    "signIn": "Logg inn",
+  "home": "HJEM",
+  "greenspaces": "PROSJEKTER",
+  "rooftop": "TAKTERRASSE",
+  "rainbed": "REGNBED",
+  "indoor": "INNENDØRS",
+  "rooftop2": "Takterrasse",
+  "rainbed2": "Regnbed",
+  "indoor2": "Innendørs",
+  "who": "HVEM VI ER",
+  "about": "OM",
+  "what": "HVA VI GJØR",
+  "why": "HVORFOR OSS",
+  "how": "HVORDAN DET FUNGERER",
+  "contact": "KONTAKT",
+  "contactU": "KONTAKT OSS",
+  "partner": "BLI EN PARTNER",
+  "signIn": "Logg inn",
+  "my_projects": "Mine Prosjekter",
+  "account": "",
+  "log_out": "Logg Ut",
+  "or": "ELLER",
+  "start": "Start prosjekt",
+  "hero": {
     "hero_main1": "Planlegg, design og bestill grøntområder inne, ute og på toppen av bygninger",
     "hero_main2": " alt på ett sted.",
     "hero_account": "Har du allerede en konto?",
+    "hero_new": "Ny hos SquareRoot?",
     "see_more": "Se mer",
     "read_more": "Les mer",
     "beta": "Gå til Beta",
-    "demo": "Forespør Demo",
-    "or": "ELLER",
-    "my_projects": "Mine Prosjekter",
-  "log_out": "Logg Ut",
+    "demo": "Forespør Demo"
+  },
   "footer": {
     "description": "",
     "button": "",
@@ -38,5 +43,99 @@
     "what": "Hva vi gjør",
     "why": "Hvorfor oss",
     "how": "Hvordan det fungerer"
+  },
+  "home_page": {
+    "section_one": {
+      "title": "SquareRoot makes cities green, literally!",
+      "description1": "At SquareRoot, we believe sustainable cities are ",
+      "description_em": "our future",
+      "description2": ". With lots of green spaces inside, outside and top of buildings."
+    },
+    "section_two": {
+      "title": "We want to make it easier to choose nature for your building projects.",
+      "description": "Together with NIBIO, biologists, landscape architects and plant nurseries we have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity."
+    },
+    "section_three": {
+      "title": "Our digital platform makes finding and sourcing plants easy and available everywhere.",
+      "description": "Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time."
+    },
+    "section_four": {
+      "roof": "Roof garden",
+      "roof_d": "Optimise your roof surface with one our concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
+      "rainbed_d": "Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.",
+      "indoor_d": "Our partner Leaf has extensive expertise with indoor plants. Incredible aesthetics are combined with minimal maintenance."
+    },
+    "section_five": {
+      "d1": "By integrating nature in your project, it will help meet the requirements for stormwater management. Using local plants increases biodiversity and thus BREEAM points.",
+      "d2": "Building projects with a high environmental footprint increases the value of your property and keeps our cities healthy."
+    },
+    "section_six": {
+      "title": "In partnership with"
+    }
+  },
+  "who_page": {
+    "title": "Hvorfor oss",
+    "d1": "For å skape bærekraftige byer med grøntområder er det både økonomisk og bærekraftig å velge ut de beste plantene for riktig sted.",
+    "d2": "Vi gjør denne prosessen enkel med et forskningsbasert utvalg av planter.",
+    "founders": {
+      "history": "Vår historie",
+      "p1": "Noen ord fra våre grunnleggere",
+      "ceo": "Grunnlegger og CEO",
+      "jo_1": "",
+      "jo_2": "",
+      "jo_3": "",
+      "coo": "Grunnlegger og COO",
+      "michel_1": "",
+      "michel_2": "",
+      "michel_3": ""
+    },
+    "grid_values": {
+      "1": {
+        "subtitle": "Naturlige planter",
+        "paragraph": "Vi har høye standarder til plantene."
+      },
+      "2": {
+        "subtitle": "Naturlige planter",
+        "paragraph": "Vi har høye standarder til plantene."
+      },
+      "3": {
+        "subtitle": "Naturlige planter",
+        "paragraph": "Vi har høye standarder til plantene."
+      },
+      "4": {
+        "subtitle": "Naturlige planter",
+        "paragraph": "Vi har høye standarder til plantene."
+      }
+    },
+    "why_us": {
+      "d1": "Vi har knyttet alle aktører til samme plattform slik at vi sammen kan gjøre det enklere å velge grønt.",
+      "d2": "Vi baserer databasen vår på forskningsbaserte resultater for å finne de beste plantene for riktig sted. Dette knyttes til lovgivninger, miljøsertifiseringer og økonomiske insentiver, og sørger dermed for at du velger et motstandsyktig, bærekraftig og økonomisk grøntområde. Vi samarbeider med planteskoler slik at forsyningen av planter holder tritt med etterspørselen, slik at din bedrift mottar bestillingen i tide med de rette plantene.",
+      "d3": "Vi forstår at slike prosesser kan innebære endringer grunnet ulike faktorer. For at denne prosessen skal forbli sømløs er det enkelt å kontinuerlige endre og oppdatere prosjektet ditt."
+    },
+    "root_projects": {
+      "title": "'Root-prosjekter",
+      "d": "Sammen utvikler vi grønne byrom."
+    },
+    "project_contact": {
+      "title": "Vi vil gjerne være en del av landskapsplanleggingen din!",
+      "subtitle": "Ta kontakt og fortell oss hva du ønsker."
+    }
+  },
+  "contact_page": {
+    "title": "Kontakt oss",
+    "subtitle": "Hvordan kan vi hjelpe deg?",
+    "email": "E-post",
+    "phone": "Telefon",
+    "or": "eller",
+    "send": "Send oss en melding",
+    "accept1": "",
+    "accept2": "Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud, nyheter og oppdateringer innen grønn byutvikling."
+  },
+  "partner_page": {
+    "title": "Bli partner",
+    "subtitle": "Sammen gjør vi byene våres grønne. Bokstavelig talt.",
+    "d1": "Vi ønsker å samarbeide med alle aktører i planleggingen og gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
+    "d2": "Vi ønsker å samarbeide med alle aktører i planleggingen og utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
+    "contact": "Ta kontakt for en uforpliktende samtale"
   }
 }

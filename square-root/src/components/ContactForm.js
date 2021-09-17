@@ -1,10 +1,13 @@
-export default function ContactForm(props) {
+import { useTranslation } from "react-i18next";
+
+export default function ContactForm() {
+  const { t } = useTranslation();
   return (
     <>
       <form>
         <div className="o-form__group">
           <h3 className="o-form__heading o-form__heading">
-            Send oss en melding
+            {t("contact_page.send")}
           </h3>
           <div className="o-form__matrix-2">
             <span className="form-control-wrap your-name is-required">
@@ -87,8 +90,7 @@ export default function ContactForm(props) {
                 />
 
                 <span className="list-item-label">
-                  Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud,
-                  nyheter og oppdateringer innen grønn byutvikling.
+                  {t("contact_page.accept2")}
                 </span>
               </label>
             </span>

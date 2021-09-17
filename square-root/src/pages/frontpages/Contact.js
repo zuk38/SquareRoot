@@ -1,14 +1,17 @@
 import React from "react";
 import ContactForm from "../../components/ContactForm";
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 export default function Contact() {
+  const { t } = useTranslation();
+
   return (
     <div className="c-section">
       <div className="o-container">
         <div className="c-hero">
-          <h1 className="c-txt--hero">Kontakt oss</h1>
-          <p className="c-txt--hero-p">Hvordan kan vi hjelpe deg?</p>
+          <h1 className="c-txt--hero">{t("contact_page.title")}</h1>
+          <p className="c-txt--hero-p">{t("contact_page.subtitle")}</p>
         </div>
       </div>
 
@@ -18,12 +21,12 @@ export default function Contact() {
             <div>
               <div className="c-grid--3x3fixed">
                 <div>
-                  <h3 className="c-txt--h3">E-post</h3>
+                  <h3 className="c-txt--h3">{t("contact_page.email")}</h3>
                   <p className="c-mrg--top-sm">contact@squareroot.cc</p>
                 </div>
 
                 <div>
-                  <h3 className="c-txt--h3">Telefon</h3>
+                  <h3 className="c-txt--h3">{t("contact_page.phone")}</h3>
                   <p className="c-mrg--top-sm">925 57 654</p>
                 </div>
                 {/*
@@ -38,12 +41,12 @@ export default function Contact() {
                 to={{ pathname: "/projects", state: { modalOpen: true } }}
                 className="o-btn c-mrg--top/3"
               >
-                Start prosjekt
+                {t("start")}
               </Link>
 
               <div className="c-splitlines">
                 <h2 className="c-splitlines--h2">
-                  <span>eller</span>
+                  <span>{t("contact_page.or")}</span>
                 </h2>
               </div>
             </div>
