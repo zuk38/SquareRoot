@@ -6,6 +6,8 @@ import arrowDownWhite from "../../icons/down-arrow-white.png";
 import {useTranslation} from "react-i18next";
 import Button from "@material-ui/core/Button";
 import rightArrow from "../../icons/right-arrow.png";
+import ContactForm from "../../components/ContactForm";
+import RequestDemo from "../../components/RequestDemo";
 
 export default function Home(props) {
     const {t} = useTranslation();
@@ -68,32 +70,42 @@ export default function Home(props) {
 
             <section id="second">
                 <div className="o-container">
-                    <div className="c-hero">
-                        <div className="c-grid--2x2">
-                            <div className="grid-item3">
-                                <img className="c-img" src="../images/eufemia.jpg"></img>
+
+                    <div className="c-grid--3x1">
+                        <div className="grid-item1">
+
+                            <img className="column-img" src="../images/eufemia.jpg"></img>
+                        </div>
+                        <div className="grid-item2">
+                            <img className="column-img" src="../images/eufemia.jpg"></img>
+
+                        </div>
+
+                        <div className="grid-item2-stretch position-relative">
+
+
+                            <div className="main-punchline">
+                                <div className="main-punchline--lrg position-absolute">
+                                    SquareRoot makes cities
+                                    <em className="light-green">&nbsp;green</em>, literally!</div>
                             </div>
 
-                            <div className="grid-item1">
-                                <div className="top-container">
-                                    <div className="float-right">
-                                        <div className="main-punchline--lrg">
-                                            SquareRoot makes cities green, literally!</div>
-                                        <br/><br/>
+                            <div className="short-border position-absolute"></div>
 
-                                        <div className="main-punchline">
-                                            At SquareRoot, we believe sustainable cities are
-                                            <em>
-                                                our future</em>. With lots of green spaces inside, outside and top of buildings.
+                        </div>
 
+                        <div className="grid-item2-stretch2">
 
-                                            <br/>
-                                        </div>
-                                    </div>
+                            <div className="main-punchline">
+                                <div className="main-punchline--p">
+                                    At SquareRoot, we believe sustainable cities are
+                                    <em>
+                                        our future</em>. With lots of green spaces inside, outside and top of buildings.
                                 </div>
                             </div>
 
                         </div>
+
                     </div>
 
 
@@ -104,49 +116,86 @@ export default function Home(props) {
             <section id="third">
 
                 <div className="o-container">
-                    <div className="c-hero">
 
-                        <div className="c-grid--2x2">
+                    <div className="c-grid--3x1">
 
-                            <div className="grid-item3">
-                                <div className="top-container">
-                                    <div className="main-punchline--lrg">
-                                        We want to make it easier to choose
-                                                                           nature
-                                                                            for your building projects.
+                        <div className="grid-item1-stretch position-relative">
+                            <div className="main-punchline">
+                                <div className="main-punchline--lrg position-absolute">
+                                    We want to make it easier to
+                                    <em className="light-green">&nbsp;choose nature&nbsp;
+                                    </em>
+                                    for your building projects.
 
-                                        <br/><br/>
-
-                                        <div className="main-punchline">
-                                            Together with NIBIO, biologists, landscape architects and plant nurseries we 
-                                                                                have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.
-
-                                        </div>
-
-                                        <br/><br/>
-
-                                    </div>
                                 </div>
                             </div>
+                            <div className="short-border position-absolute"></div>
+                        </div>
 
-                            <div className="grid-item1">
-                                <img className="c-img" src="../images/hands-rooftop.jpg"></img>
+                        <div className="grid-item2-stretch1">
+                            <div className="main-punchline">
+                                <div className="main-punchline--p">
+                                    Together with NIBIO, biologists, landscape architects and plant nurseries we 
+                                                                                                                                                        have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.
+
+                                </div>
                             </div>
+                        </div>
+
+                        <div className="grid-item3-vertical">
+                            <img className="c-img" src="../images/leaf_rooftop_redigert.jpg"></img>
                         </div>
 
                     </div>
 
                 </div>
+
+
             </section>
 
             <section id="fourth">
                 <div className="o-container">
+                    <div className="c-grid--3x1">
+
+                        <div className="grid-item1-stretch position-relative">
+                            <div className="main-punchline is-white">
+                                <div className="main-punchline--lrg">
+                                    <em>COMING SOON</em>
+                                    <br />
+                                    <br />
+                                </div>
+                            
+                            </div>
+                            <div className="short-border-white"></div>
+                            
+                            <div className="main-punchline">
+                            <div className="main-punchline--p is-white">
+                            Our digital platform makes finding and sourcing plants
+                                        <em>
+                                            easy and available everywhere</em>.
+                                            <br />
+                                            <br />
+                                            Through our network of local plant nurseries, we help you find the 
+                                                                                                                                                                                                                                                  right plants for the right spot and show what is available to have it delivered in time.
+                                        <br/>
+                                        <br/>
+                                    
+
+                                      </div>
+                            </div>
+                        </div>
+
+                        <div className="grid-item3-vertical">
+                            <RequestDemo />
+                        </div>
+
+                    </div>
+                    {/* 
                     <div className="c-hero">
                         <div className="c-grid--2x2">
 
-                            <div className="grid-item3">
+                            <div className="grid-item3 u-txt--center">
                                 <img className="c-img" src="../images/platform-shot.png"></img>
-
 
                             </div>
 
@@ -156,59 +205,63 @@ export default function Home(props) {
 
 
                                     <div className="main-punchline--lrg">
-                                        Our digital platform makes finding and sourcing plants easy and available everywhere.
+                                        Our digital platform makes finding and sourcing plants
+                                        <em>
+                                            easy and available everywhere</em>.
                                     </div><br/>
-                                        
-                                    
+
+
                                     <div className="main-punchline">
                                         Through our network of local plant nurseries, we help you find the 
-                                                                                                                                                                                                          right plants for the right spot and show what is available to have it delivered in time.
+                                                                                                                                                                                                                                                  right plants for the right spot and show what is available to have it delivered in time.
                                         <br/>
                                         <br/>
+                                        <button className="btn-call2action zoom-on-hover">REQUEST DEMO</button>
+
+
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                    */} </div>
 
             </section>
 
 
             <section id="fifth">
-                <div className="o-container">
+                <div className="grid-container">
                     <div className="c-hero">
-                        <div className="c-section c-grid--3x3fixed u-txt--center">
-                            <div>
-                            <span><h1 className="float-left">Roof garden</h1>
-                            <button className="float-right zoom-on-hover btn-transp"><img src={rightArrow} className="btn-is-icon"/></button></span>
-                         
+                        <div className="c-section c-grid--3x3fixed">
+                            <div className="c-section--container">
+                                <h1>Roof garden</h1>
+
+
                                 <img src="../images/landscape--rooftop_redigert.png"/>
-                                
-                                <p>Optimise your roof surface with one our concepts. Our plants and hardware are chosen and designed to meet your specific needs.
-                                    </p>
+
+                                <p className="c-section--p">Optimise your roof surface with one our concepts. Our plants and hardware are chosen and designed to meet your specific needs.
+                                </p>
 
                             </div>
                             <div>
-                        
-                            <span><h1 className="float-left">Rainbed</h1> <button className="float-right zoom-on-hover btn-transp"><img src={rightArrow} className="btn-is-icon"/></button></span>
-                         
+
+                                <h1>Rainbed</h1>
+
                                 <img src="../images/leaf_rooftop_4_redigert.jpg"/>
-                                
+
                                 <p>
                                     Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.
                                     <br/>
-                                    </p>
+                                </p>
                             </div>
-                            
+
                             <div>
-                            <span><h1 className="float-left">Indoor</h1>
-                            <button className="float-right zoom-on-hover btn-transp"><img src={rightArrow} className="btn-is-icon"/></button></span>
-                         
+                                <h1>Indoor</h1>
+
                                 <img src="../images/landscape--indoor_redigert.jpg"/>
-                                
+
                                 <p>Our partner Leaf has extensive expertise with indoor plants. Incredible aesthetics are combined with minimal maintenance.
-                                   </p>
+                                </p>
                             </div>
                         </div>
                     </div>
@@ -222,16 +275,16 @@ export default function Home(props) {
 
 
                             By integrating nature in your project, it will help
-                                                            meet the requirements
-                                                                for stormwater management.
-                                                                Using local plants increases
-                                                               biodiversity
-                                                                and thus BREEAM points.
+                                                                                                                    meet the requirements
+                                                                                                                        for stormwater management.
+                                                                                                                        Using local plants increases
+                                                                                                                       biodiversity
+                                                                                                                        and thus BREEAM points.
 
                             <br/>
                             <br/>
                             Building projects with a high environmental footprint increases the value of your property and
-                                keeps our cities healthy.
+                                                                                        keeps our cities healthy.
                             <br/>
 
                         </div>
