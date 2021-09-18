@@ -2,12 +2,14 @@ import React from "react";
 import { useHistory } from "react-router-dom";
 import Loading from "../Loading";
 
-function ProjectsContainer({ projects, loading }) {
+function ProjectsContainer({ context }) {
   const history = useHistory();
 
   const openProjectDashboard = (name) => {
     history.push(`/dashboard/${name}`);
   };
+
+  const { projects, loading } = context;
 
   if (loading) return <Loading />;
 

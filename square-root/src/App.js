@@ -18,7 +18,7 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Who from "./pages/frontpages/Who";
 import Categories from "./pages/frontpages/Categories";
 import SingleCategory from "./pages/frontpages/SingleCategory";
-import Footer from "./components/Footer";
+import { FooterContainer } from "./components/footer/FooterContainer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
@@ -27,6 +27,7 @@ import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
+import { BottomRight } from "./styles/Footer";
 
 class App extends Component {
   render() {
@@ -44,13 +45,17 @@ class App extends Component {
     };
 
     return (
+      
       !isAuthenticating && (
         <>
-          {this.props.location.pathname.indexOf("/customize") <= -1 &&
+        {this.props.location.pathname.indexOf("/customize") <= -1 &&
             this.props.location.pathname != "/forgotpassword" &&
             this.props.location.pathname != "/login" && (
               <Navbar {...this.props} auth={authProps} />
             )}
+        <div class="content">
+          <div class="content-inside">
+          
 
           <Switch>
             <Route
@@ -193,10 +198,15 @@ class App extends Component {
 
             <Route component={Error} />
           </Switch>
-          {this.props.location.pathname != "/login" &&
+          
+          </div>
+        </div>
+        {this.props.location.pathname != "/login" &&
             this.props.location.pathname != "/" &&
-            this.props.location.pathname != "/forgotpassword" && <Footer />}
-        </>
+            this.props.location.pathname != "/forgotpassword" && (
+              <FooterContainer />
+            )}
+          </>
       )
     );
   }

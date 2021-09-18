@@ -25,6 +25,18 @@
     "demo": "Forespør Demo",
     "or": "ELLER",
     "my_projects": "Mine Prosjekter",
-    "account": "Kontoinnstillinger",
-    "log_out": "Logg Ut"
+  "log_out": "Logg Ut",
+  "footer": {
+    "description": "",
+    "button": "",
+    "greenspaces": "Grønne Arealer",
+    "rooftop": "Takterrasse",
+    "rainbed": "Regnseng",
+    "indoor": "Innendørsplanter",
+    "about": "Om",
+    "contact": "Kontakt",
+    "what": "Hva vi gjør",
+    "why": "Hvorfor oss",
+    "how": "Hvordan det fungerer"
+  }
 }

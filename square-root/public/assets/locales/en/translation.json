@@ -25,5 +25,18 @@
     "or": "OR",
     "my_projects": "My Projects",
     "account": "Account Settings",
-    "log_out": "Log Out"
+  "log_out": "Log Out",
+  "footer": {
+    "description": "We are the new platform for green spaces",
+    "button": "Tell us about your project",
+    "greenspaces": "Greenspaces",
+    "rooftop": "Rooftop",
+    "rainbed": "Rainbed",
+    "indoor": "Indoor",
+    "about": "About",
+    "contact": "Contact",
+    "what": "What we do",
+    "why": "Why us",
+    "how": "How it works"
+  }
 }

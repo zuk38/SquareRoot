@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=IBM+Plex+Serif:ital,wght@1,700&display=swap");
 
 :root {
   --primaryColor: #af9a7d;
@@ -15,7 +15,7 @@
   --lightShadow: 2px 5px 3px 0px rgba(0, 0, 0, 0.5);
   --darkShadow: 4px 10px 5px 0px rgba(0, 0, 0, 0.5);
   --navbarBack: #f9f9f9;
-  --navbarBack_op:rgba(249, 249, 249, 0.5);
+  --navbarBack_op: rgba(249, 249, 249, 0.5);
   --bg: #242526;
   --bg-accent: #d3d3d3;
   --text-color: #dadce1;
@@ -26,15 +26,26 @@
 }
 
 /* globals */
+html, body {
+  height: 100%;
+  margin: 0;
+}
+.content {
+  min-height: calc(100vh - 70px);
+}
+
 body {
   background: var(--mainWhite);
-  margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   overflow-x: hidden;
+<<<<<<< HEAD
   font-family: 'Poppins', 'IBM Plex Serif';
   color: #3e3d3d;
+=======
+  font-family: "Poppins", "IBM Plex Serif";
+>>>>>>> 36cbac45ee73dd6e067fec96dc3c5f1e22b2653a
 }
 
 a {
@@ -195,7 +206,7 @@ a {
   list-style-type: none;
   align-items: center;
   display: flex;
-  
+
   font-size: 1rem;
   padding: 0;
 }
