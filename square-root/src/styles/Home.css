@@ -144,9 +144,10 @@ section#third{
 }
 
 section#fourth{
-  background: rgba(139, 166, 139);  /* fallback colour. Make sure this is just one solid colour. */
+  /*
+  background: rgba(139, 166, 139); 
   background: -webkit-linear-gradient(rgba(139, 166, 139, 0.8), rgba(139, 166, 139, 0.8));
-  background: linear-gradient(var(--mainGrey), rgba(139, 166, 139, 0.2)); /* The least supported option. */
+  background: linear-gradient(var(--mainGrey), rgba(139, 166, 139, 0.2)), url("../images/landscape--biodiversity2.jpg"); /* The least supported option. */
   background-size: cover;
   position:relative;
   height:100vh;

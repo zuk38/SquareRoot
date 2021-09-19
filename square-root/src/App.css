@@ -40,12 +40,8 @@ body {
   -moz-osx-font-smoothing: grayscale;
   overflow-y: auto;
   overflow-x: hidden;
-<<<<<<< HEAD
   font-family: 'Poppins', 'IBM Plex Serif';
   color: #3e3d3d;
-=======
-  font-family: "Poppins", "IBM Plex Serif";
->>>>>>> 36cbac45ee73dd6e067fec96dc3c5f1e22b2653a
 }
 
 a {
