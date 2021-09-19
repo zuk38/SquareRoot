@@ -39,8 +39,8 @@ export default function ContactForm(props) {
         </div>
 
 
-        <div className="o-form__group-full">
-          <span className="form-control-wrap gdpr-contact-consent">
+        <div className="o-form__group-full ">
+          <span className="form-control-wrap gdpr-contact-consent is-white">
             <span className="list-item is-required">
               <label>
                 <input
@@ -49,7 +49,7 @@ export default function ContactForm(props) {
                   value="1"
                 />
 
-                <span className="list-item-label">
+                <span className="list-item-label is-white">
                   Jeg godtar SquareRoot's
                   <a href="terms-and-conditions">&nbsp;vilkår og betingelser</a>
                   .
@@ -67,7 +67,7 @@ export default function ContactForm(props) {
                   value="1"
                 />
 
-                <span className="list-item-label">
+                <span className="list-item-label is-white">
                   Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud,
                   nyheter og oppdateringer innen grønn byutvikling.
                 </span>
