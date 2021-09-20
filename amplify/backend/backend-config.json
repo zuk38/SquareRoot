@@ -24,7 +24,8 @@
           "resourceName": "contactFormTable",
           "attributes": [
             "Name",
-            "Arn"
+            "Arn",
+            "StreamArn"
           ]
         }
       ]
@@ -45,30 +46,16 @@
     }
   },
   "storage": {
-    "contactFormTable": {
-      "service": "DynamoDB",
-      "providerPlugin": "awscloudformation"
-    },
     "squareRootImages": {
       "service": "S3",
+      "providerPlugin": "awscloudformation"
+    },
+    "contactFormTable": {
+      "service": "DynamoDB",
       "providerPlugin": "awscloudformation"
     }
   },
   "api": {
-    "contactFormApi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [
-        {
-          "category": "function",
-          "resourceName": "contactFormFunction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
-        }
-      ]
-    },
     "squarerootproject": {
       "service": "AppSync",
       "providerPlugin": "awscloudformation",
@@ -91,6 +78,20 @@
           ]
         }
       }
+    },
+    "contactFormApi": {
+      "service": "API Gateway",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [
+        {
+          "category": "function",
+          "resourceName": "contactFormFunction",
+          "attributes": [
+            "Name",
+            "Arn"
+          ]
+        }
+      ]
     }
   },
   "hosting": {
