@@ -37,10 +37,11 @@ export default function ContactForm(props) {
     const apiData = await API.post("contactFormApi", "/contact", data);
     console.log({ apiData });
     setIsSending(false);
+    setSent(true);
   }
 
   function callback() {
-    setSent(true);
+    console.log("success")
   }
 
   return (
@@ -183,7 +184,7 @@ export default function ContactForm(props) {
             <button
               className="submit-form-control submit o-btn"
               onClick={handleSubmit}
-              disabled={errors.conditions || errors.name || errors.email}
+              disabled={errors.conditions || errors.name || errors.email || errors.message}
             >
               Send
             </button>
