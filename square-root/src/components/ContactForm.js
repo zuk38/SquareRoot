@@ -41,7 +41,7 @@ export default function ContactForm(props) {
   }
 
   function callback() {
-    console.log("success")
+    console.log("success");
   }
 
   return (
@@ -64,7 +64,13 @@ export default function ContactForm(props) {
             </Alert>
           )}
           <form>
-            <div className={pathname === "/contact-us" ? "o-form__group" : "o-form__group u-txt--center"}>
+            <div
+              className={
+                pathname === "/contact-us"
+                  ? "o-form__group"
+                  : "o-form__group u-txt--center"
+              }
+            >
               <div className="o-form__matrix-2">
                 <span className="form-control-wrap your-name is-required">
                   <input
@@ -119,7 +125,13 @@ export default function ContactForm(props) {
               </div>
             </div>
 
-            <div className={pathname === "/contact-us" ? "o-form__group" : "o-form__group u-txt--center"}>
+            <div
+              className={
+                pathname === "/contact-us"
+                  ? "o-form__group"
+                  : "o-form__group u-txt--center"
+              }
+            >
               <span className="form-control-wrap message">
                 <textarea
                   name="message"
@@ -137,7 +149,13 @@ export default function ContactForm(props) {
               </span>
             </div>
 
-            <div className={pathname === "/contact-us" ? "o-form__group" : "o-form__group u-txt--center"}>
+            <div
+              className={
+                pathname === "/contact-us"
+                  ? "o-form__group"
+                  : "o-form__group u-txt--center"
+              }
+            >
               <span className="form-control-wrap gdpr-contact-consent">
                 <span className="list-item is-required">
                   <label>
@@ -184,7 +202,12 @@ export default function ContactForm(props) {
             <button
               className="submit-form-control submit o-btn"
               onClick={handleSubmit}
-              disabled={errors.conditions || errors.name || errors.email || errors.message}
+              disabled={
+                errors.conditions ||
+                errors.name ||
+                errors.email ||
+                errors.message
+              }
             >
               Send
             </button>

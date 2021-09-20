@@ -26,7 +26,7 @@
         "sendEmail": {
           "emailAddress": "kmaciejewska14@gmail.com",
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/sendEmail-3442764b38634776464d-build.zip"
+          "s3Key": "amplify-builds/sendEmail-622b4c5268645336664d-build.zip"
         }
       }
     }

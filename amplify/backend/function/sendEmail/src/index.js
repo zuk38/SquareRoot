@@ -38,6 +38,8 @@ exports.handler = event => {
   const dynamodb = event.Records[0].dynamodb;
   console.log(dynamodb);
 
+  if (dynamodb.NewImage.name === undefined || dynamodb.NewImage.email === undefined || dynamodb.NewImage.name === undefined) return
+
   const formData = {
     name: dynamodb.NewImage.name.S,
     email: dynamodb.NewImage.email.S,
