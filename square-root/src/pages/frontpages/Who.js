@@ -30,30 +30,34 @@ export default function Who() {
 
   return (
     <>
+    
       <div className="c-section background-grey">
+
         <div className="o-container">
           <div className="c-hero">
-            <h1 className="c-txt--hero">Hvorfor oss</h1>
-            <p className="c-txt--hero-p">
-              For å skape bærekraftige byer med grøntområder er det både
-              økonomisk og bærekraftig å velge ut de beste plantene for riktig
-              sted.
+          <h1 className="c-txt--hero">Who we are</h1>
+          <div className="short-border position-absolute u-mrg--txt1"></div>
+            <p className="main-punchline--p">
+            Looking for plants to create amazing and resilient urban green areas? 
+            Unsure about compliance and availability of these plants? 
+            SquareRoot is there to solve this for you! 
+            <br /><br />
+            Here you can choose a project type, 
+            pick a look for your space, decide the functionality focus 
+            and customize the plant list we suggest for you. 
+            We make sure the plants fit your requirements and will be available. 
+            
+            <br /><br />
+            Together we will green our cities!
               <br />
-              <br />
-              Vi gjør denne prosessen enkel med et forskningsbasert utvalg av
-              planter.
+              
             </p>
           </div>
-          <div className="c-container">
-            <div className="c-img">
-              <img src="../images/oslo-flowers.png" />
-            </div>
-          </div>
+         
           {/* A WORD FROM FOUNDERS*/}
           <div className="c-section">
             <div className="c-container u-mrg--reset">
-              <h2 className="c-txt--sectiontitle u-mrg--x0">Vår historie</h2>
-              <p className="c-txt--punchline">Noen ord fra våre grunnleggere</p>
+            <p className="c-txt--punchline">The Team</p>
               <div className="c-grid--founders">
                 <div className="u-mrg--reset">
                   <img
@@ -68,7 +72,7 @@ export default function Who() {
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    Jo Deketelaere started his career in international business
+                    <em>Jo</em> started his career in international business
                     development for large energy companies focusing on climate
                     mitigation, environmental policies and investment in low
                     carbon emitting technologies.
@@ -81,7 +85,7 @@ export default function Who() {
                     OrganiCity and SynchroniCity, both under the H2020 umbrella.
                   </p>
                   <p>
-                    Jo lives in Oslo, Norway with his wife and daughter, enjoys
+                    He lives in Oslo, Norway with his wife and daughter, enjoys
                     hiking in local nature and is a happy member of the swimrun
                     community.
                   </p>
@@ -89,7 +93,7 @@ export default function Who() {
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
-                    src="../images/michel-profil.png"
+                    src="../images/michel-profile.jpeg"
                   ></img>
                   <p className="u-mrg-txt1">
                     <strong>Michel Wolfstirn</strong>
@@ -99,7 +103,7 @@ export default function Who() {
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    A lover of nature and the outdoors, Michel is passionate
+                    A lover of nature and the outdoors, <em>Michel</em> is passionate
                     about the environment and contributing to solving climate
                     change.
                   </p>
@@ -123,15 +127,8 @@ export default function Who() {
           </div>
         </div>
       </div>
-      <div className="c-section">
-        <div className="o-container">
-          <Grid
-            title="Våre verdier og tilnærminger"
-            grid_values={grid_values}
-          />
-        </div>
-      </div>
-      {/* WHY US */}
+    
+      {/* WHY US 
       <div className="c-section background-grey">
         <div className="o-container ">
           <p className="c-txt-punchline--sm">
@@ -155,7 +152,8 @@ export default function Who() {
           </p>
         </div>
       </div>
-      {/* 'ROOT PROJECTS */}
+      */}
+      {/* 'ROOT PROJECTS 
       <div className="c-section">
         <div className="o-container">
           <h2 className="c-txt--sectiontitle">'Root-prosjekter</h2>
@@ -163,7 +161,8 @@ export default function Who() {
           <FeaturedConcepts />
         </div>
       </div>
-      {/* CONTACT FOR PROJECT*/}
+      */}
+      {/* CONTACT FOR PROJECT
       <div className="c-section c-section--cta background-grey">
         <div className="o-container">
           <h2 className="c-txt-sectiontitle--sm u-txt--center">
