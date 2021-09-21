@@ -109,18 +109,20 @@ section#first .signup p:not(:first-child) {
   margin-top: 15px;
 }
 
-section#first .signup button {
+section#first .signup-btn button {
   font-size: 0.8rem;
-  border-radius: 5px;
   background: none;
   border: 0.2px solid white;
   color: white;
   cursor: pointer;
+  padding:2%;
 }
 
-section#first .signup button:hover {
-  background: var(--mainGreen);
-  border: 0.2px solid var(--mainGreen);
+section#first .signup-btn button:hover {
+  transition: 0.5s;
+  -webkit-transform: scale(1.2); 
+  font-weight: 400;
+  background-color: rgba(0, 0, 0, 0.4);
 }
 
 section#first .d {
@@ -144,14 +146,8 @@ section#third{
 }
 
 section#fourth{
-  /*
-  background: rgba(139, 166, 139); 
-  background: -webkit-linear-gradient(rgba(139, 166, 139, 0.8), rgba(139, 166, 139, 0.8));
-  background: linear-gradient(var(--mainGrey), rgba(139, 166, 139, 0.2)), url("../images/landscape--biodiversity2.jpg"); /* The least supported option. */
-  background-size: cover;
   position:relative;
   height:100vh;
-  background-color: var(--mainGrey);
 }
 
 
@@ -159,14 +155,28 @@ section#fourth{
 section#fifth{
   position:relative;
   height:100vh;
+  background-image: url("../images/boots.jpg");
+  background-size: cover;
 }
 
 section#sixth{
+  background-size: cover;
+  position:relative;
+  height:100vh;
+  background-color: var(--mainGrey);
+}
+
+section#seventh{
   position:relative;
   height:100vh;
 }
 
-section#seventh{
+section#eight{
+  position:relative;
+  height:100vh;
+}
+
+section#ninth{
   position:relative;
   height:100vh;
 }
@@ -175,6 +185,8 @@ section#seventh{
   font-size: 35px;
   font-weight: 600;
   color: white;
+  line-height: 1.2em;
+  letter-spacing: 0.03;
 }
 
 .list-item {
@@ -192,7 +204,9 @@ section#seventh{
 }
 
 
-
+.container-white{
+  background-color:white;
+}
 
 section#first .see-more {
   grid-column: 2;
@@ -341,7 +355,6 @@ Smooth Scroll --------*/
   border: 3px solid var(--mainGrey);
   width:5%;
   bottom:0;
-  margin-left: 3%;
 }
 
 .short-border-white{

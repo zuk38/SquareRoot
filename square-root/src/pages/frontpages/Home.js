@@ -26,12 +26,11 @@ export default function Home(props) {
                 <div className="logo">
                     <img src={logo}/>
                 </div>
+
+                {/*
                 <div className="signup">
                     <p>Ny hos SquareRoot?</p>
-                    <Button variant="outlined">
-                        {
-                        t("demo")
-                    }</Button>
+                    
                     <p>{
                         t("or")
                     }</p>
@@ -43,6 +42,7 @@ export default function Home(props) {
                         t("beta")
                     }</Button>
                 </div>
+                */}
                 <div className="d">
                     <span className="list-item">
                         <h1>
@@ -54,6 +54,12 @@ export default function Home(props) {
                             }</i>
                         </h1>
                     </span>
+                    <div className="signup-btn">
+                    <Button variant="outlined">
+                        {
+                        t("demo")
+                    }</Button>
+                    </div>
                 </div>
                 <div className="see-more">
                     <button className="bounce zoom-on-hover"
@@ -69,10 +75,10 @@ export default function Home(props) {
             </section>
 
             <section id="second">
-                <div className="o-container">
+                <div className="o-container c-section--pad-vh">
 
                     <div className="c-grid--3x1">
-                        <div className="grid-item1">
+                        <div className="grid-item1 zoom-on-hover">
 
                             <img className="column-img" src="../images/hands-rooftop.png"></img>
                         </div>
@@ -89,9 +95,10 @@ export default function Home(props) {
                                     SquareRoot makes cities
                                     <em className="light-green">&nbsp;green</em>, literally!</div>
                             </div>
+                            <div className="short-border position-absolute left-margin">
 
-                            <div className="short-border position-absolute"></div>
-
+                            </div>
+                            
                         </div>
 
                         <div className="grid-item2-stretch2">
@@ -100,7 +107,7 @@ export default function Home(props) {
                                 <div className="main-punchline--p">
                                     At SquareRoot, we believe sustainable cities are
                                     <em>&nbsp;
-                                                                                                                        our future</em>. With lots of green spaces inside, outside and top of buildings.
+                                                                                                                                                                                                        our future</em>. With lots of green spaces inside, outside and top of buildings.
                                 </div>
                             </div>
 
@@ -114,7 +121,7 @@ export default function Home(props) {
 
             <section id="third">
 
-                <div className="o-container">
+                <div className="o-container c-section--pad-vh">
 
                     <div className="c-grid--3x1">
 
@@ -127,15 +134,16 @@ export default function Home(props) {
                                     for your building projects.
 
                                 </div>
+                                
                             </div>
-                            <div className="short-border position-absolute"></div>
+                            <div className="short-border position-absolute left-margin"></div>
                         </div>
 
                         <div className="grid-item2-stretch1">
                             <div className="main-punchline">
                                 <div className="main-punchline--p">
                                     Together with NIBIO, biologists, landscape architects and plant nurseries we 
-                                                                                                                                                                                                                                                                                                                                                                                                                    have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.
 
                                 </div>
                             </div>
@@ -152,8 +160,9 @@ export default function Home(props) {
 
             </section>
 
-            <section id="fifth">
-                <div className="o-container">
+            <section id="fourth">
+                <div className="o-container c-section--pad-vh">
+                    <br/><br/>
                     <div className="c-grid--3x1">
 
                         <div className="grid-item1">
@@ -221,8 +230,38 @@ export default function Home(props) {
 
             </section>
 
-            <section id="fourth">
-                <div className="o-container">
+            <section id="fifth">
+                <div className="o-container c-section--pad-vh">
+                    <div className="c-grid--3x1">
+                        <div className="grid-item9">
+                            <div className="o-container--sm bckgd-white ">
+                                <div className="main-punchline--p u-txt--center">
+                                    <p>By integrating nature in your project, it helps 
+                                                            meet the requirements for stormwater management 
+                                                            and using local plants increases
+                                    <em>&nbsp;biodiversity&nbsp;</em>
+                                    as 
+                                                            well as
+                                    <em>&nbsp;BREEAM points&nbsp;</em>.
+                                    <br/>
+                                    <br/>
+                                    Building projects with a 
+                                                            high environmental footprint increases the value of 
+                                                            your property and
+                                    <em>&nbsp;keeps our cities healthy</em>.</p>
+
+                                </div>
+
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </section>
+
+            <section id="sixth">
+                <div className="o-container c-section--pad-vh">
                     <div className="c-grid--3x1">
 
                         <div className="grid-item1-stretch position-relative">
@@ -240,15 +279,15 @@ export default function Home(props) {
                                 <div className="main-punchline--p is-white">
                                     Our digital platform makes finding and sourcing plants
                                     <em>&nbsp;
-                                                                                                                        easy and available everywhere</em>.
+                                                                                                                                                                                                        easy and available everywhere</em>.
                                     <br/>
                                     <br/>
                                     Through our network of local plant nurseries, we help you find the 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              right plants for the right spot and show what is available to have it delivered in time.
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      right plants for the right spot and show what is available to have it delivered in time.
                                     <br/>
                                     <br/>
 
-
+                                    Coming fall 2021. Stay updated by subscribing to our newsletter.
                                 </div>
                             </div>
                         </div>
@@ -263,45 +302,29 @@ export default function Home(props) {
             </section>
 
 
-            <section id="sixth">
-                <div className="c-section c-section--cta quote">
-                    <div className="o-container--sm">
-                        <div className="main-punchline u-txt--center">
-
-
-                            By integrating nature in your project, it will help
-                                                                                                                                                                                                                                                                                                                        meet the requirements
-                                                                                                                                                                                                                                                                                                                            for stormwater management.
-                                                                                                                                                                                                                                                                                                                            Using local plants increases
-                                                                                                                                                                                                                                                                                                                           biodiversity
-                                                                                                                                                                                                                                                                                                                            and thus BREEAM points.
-
+            <section id="seventh">
+                <div className="o-container c-section--pad-vh">
+                    <div className="main-punchline">
+                        <div className="main-punchline--lrg">
+                            In collaboration with
                             <br/>
                             <br/>
-                            Building projects with a high environmental footprint increases the value of your property and
-                                                                                                                                                                                                                                                                                            keeps our cities healthy.
-                            <br/>
-
                         </div>
 
                     </div>
-                </div>
-
-            </section>
-
-            <section id="seventh">
-                <div className="o-container">
-                <div className="main-punchline--lrg">
-                    I samarbeid med
-                </div>
+                    <div className="short-border left-margin"></div>
                     <div className="c-grid--fill">
+                        <div><img src="../images/gg-logo.png"/></div>
                         <div><img src="../images/nibio_logo.jpeg"/></div>
                         <div><img src="../images/edit_logo.jpeg"/></div>
                         <div><img src="../images/teknologi-formidling_logo.png"/></div>
-                        <div> <img src="../images/innovasjon-norge-big.png"/></div>
-                        <div> <img src="../images/tekna-logo.jpeg"/></div>
+                        <div>
+                            <img src="../images/innovasjon-norge-big.png"/></div>
                         <div><img src="../images/sin-logo.png"/></div>
-                        <div><img src="../images/gg-logo.png"/></div>
+                        <div>
+                            <img src="../images/tekna-logo.jpeg"/></div>
+
+
                     </div>
                 </div>
             </section>
