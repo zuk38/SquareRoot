@@ -44,8 +44,8 @@ export default class SingleCategory extends Component {
 
       <div className="o-container">
       <div className="c-hero">
-        <div className="c-grid--2x2">
-          <div className="grid-item3 margin-left">
+        <div className="c-grid--2x1">
+          <div className="grid-item4 margin-left">
             {/*change to {image} when done*/}
             <img
               src={`../images/${category_name}.jpg`}
@@ -58,8 +58,10 @@ export default class SingleCategory extends Component {
             </div>
           </div>
 
-          <div className="grid-item1">
+          <div className="grid-item0">
             <h1 className="c-txt--hero">{category_name} </h1>
+            </div>
+            <div className="grid-item2">
             <div className="c-txt-punchline--sm">
               <br></br>
               {description}Contrary to popular belief, Lorem Ipsum is not simply
@@ -71,8 +73,8 @@ export default class SingleCategory extends Component {
               classical literature, discovered the undoubtable source.
             </div>
           </div>
-          <div className="c-mrg--bottom"></div>
         </div>
+        <div className="u-mrg--txt1"></div>
 
         {/* PLANT LIST CONTAINER */}
 
@@ -122,7 +124,7 @@ export default class SingleCategory extends Component {
         {/* END PLANT LIST CONTAINER */}
 
 
-{/*CONNECT TO DATABASE */}
+{/*CONNECT TO DATABASE 
         <div className="c-section c-grid--2x1-equal">
         <div className="img-wrap">
           <img src={`../images/${category_name}.jpg`}/>
@@ -162,6 +164,7 @@ export default class SingleCategory extends Component {
           </div>
                            
         </div>
+        */}
 
         {/* ---- REMOVE ???? ------
 

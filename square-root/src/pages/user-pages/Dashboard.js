@@ -12,7 +12,7 @@ import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/EditAccountValidation";
 import ProjectForm from "../../components/user/ProjectForm";
 import AuthModal from "../../components/login/AuthModal";
-import AddGreenspaceModal from "../../components/user/AddGreenspaceModal";
+
 
 function Dashboard(props) {
   const projectName = props.match.params.name;
@@ -102,8 +102,8 @@ function Dashboard(props) {
             </button>
             {greenspaces.map((greenspace) => (
               <DashboardContent greenspace={greenspace} />
-            ))}
-            <AddGreenspaceModal isOpen={showAddGreenspace} setIsOpen={setShowAddGreenspace}/>
+            ))}{/*
+            <AddGreenspaceModal isOpen={showAddGreenspace} setIsOpen={setShowAddGreenspace}/>*/}
           </div>
         );
       case "/members":
