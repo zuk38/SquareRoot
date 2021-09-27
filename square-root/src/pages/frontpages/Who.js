@@ -1,133 +1,217 @@
 import React from "react";
 import "../../styles/frontpages.css";
-import Grid from "../../components/Grid_2x2";
-import FeaturedConcepts from "../../components/FeaturedConcepts";
-import { Link } from "react-router-dom";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Who() {
-  const grid_values = [
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-  ];
+  const { t } = useTranslation();
 
   return (
     <>
-    
       <div className="c-section background-grey">
-
         <div className="o-container">
           <div className="c-hero">
-          <h1 className="c-txt--hero">Who we are</h1>
-          <div className="short-border position-absolute u-mrg--txt1"></div>
+            <h1 className="c-txt--hero">{t("who_page.title")}</h1>
+            <div className="short-border u-mrg--txt1"></div>
             <p className="main-punchline--p">
-            Looking for plants to create amazing and resilient urban green areas? 
-            Unsure about compliance and availability of these plants? 
-            SquareRoot is there to solve this for you! 
-            <br /><br />
-            Here you can choose a project type, 
-            pick a look for your space, decide the functionality focus 
-            and customize the plant list we suggest for you. 
-            We make sure the plants fit your requirements and will be available. 
-            
-            <br /><br />
-            Together we will green our cities!
-              <br />
-              
+              <Trans i18nKey="who_page.description">
+                Looking for plants to create amazing and resilient urban green
+                areas? Unsure about compliance and availability of these plants?
+                SquareRoot is there to solve this for you!
+                <br />
+                <br />
+                Here you can choose a project type, pick a look for your space,
+                decide the functionality focus and customize the plant list we
+                suggest for you. We make sure the plants fit your requirements
+                and will be available.
+                <br />
+                <br />
+                Together we will green our cities!
+                <br />
+              </Trans>
             </p>
           </div>
-         
+
           {/* A WORD FROM FOUNDERS*/}
           <div className="c-section">
             <div className="c-container u-mrg--reset">
-            <p className="c-txt--punchline">The Team</p>
+              <p className="c-txt--punchline">{t("who_page.team.title")}</p>
               <div className="c-grid--founders">
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
-                    src="../images/jo-profil.png"
-                  ></img>
+                    src="../images/jo-profil.jpeg"
+                    alt="Jo"
+                  />
                   <p className="u-mrg-txt1">
                     <strong>Jo Deketelaere</strong>
                     <br />
-                    Grunnlegger og CEO
+                    {t("who_page.team.jo_img_d")}
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    <em>Jo</em> started his career in international business
-                    development for large energy companies focusing on climate
-                    mitigation, environmental policies and investment in low
-                    carbon emitting technologies.
+                    <Trans i18nKey="who_page.team.jo_d1">
+                      <em>Jo</em>
+                      started his career in international business development
+                      for large energy companies focusing on climate mitigation,
+                      environmental policies and investment in low carbon
+                      emitting technologies.
+                    </Trans>
                   </p>
-                  <p>
-                    He started his own company Greenbeat to develop a smart
-                    blue-green roof combining automated management of urban
-                    vegetation and intelligent control of water reservoirs. This
-                    project called RainBrain has received funding from
-                    OrganiCity and SynchroniCity, both under the H2020 umbrella.
-                  </p>
-                  <p>
-                    He lives in Oslo, Norway with his wife and daughter, enjoys
-                    hiking in local nature and is a happy member of the swimrun
-                    community.
-                  </p>
+                  <p>{t("who_page.team.jo_d2")}</p>
+                  <p>{t("who_page.team.jo_d3")}</p>
                 </div>
+
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
                     src="../images/michel-profile.jpeg"
-                  ></img>
+                    alt="Michel"
+                  />
                   <p className="u-mrg-txt1">
                     <strong>Michel Wolfstirn</strong>
                     <br />
-                    Grunnlegger og COO
+                    {t("who_page.team.michel_img_d")}
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    A lover of nature and the outdoors, <em>Michel</em> is passionate
-                    about the environment and contributing to solving climate
-                    change.
+                    <Trans i18nKey="who_page.team.michel_d1">
+                      A lover of nature and the outdoors,
+                      <em>Michel</em>
+                      is passionate about the environment and contributing to
+                      solving climate change.
+                    </Trans>
                   </p>
-                  <p>
-                    He co-founded BiomimicryNorway, an NGO dedicated to
-                    educating people and companies about sustainable innovation
-                    inspired by nature. He has spent a great deal of energy
-                    helping various startups and initiatives in the past years
-                    using his many skills ranging from design to business
-                    modelling for Circular Economy.
-                  </p>
-                  <p>
-                    Amongst other things he has contributed building for Gruten
-                    the first norwegian urban farm growing mushrooms on coffee
-                    grounds. He is also involved with Pådriv on projects related
-                    to sustainable urban development.
-                  </p>
+                  <p>{t("who_page.team.michel_d2")}</p>
+                  <p>{t("who_page.team.michel_d3")}</p>
                 </div>
+              </div>
+            </div>
+          </div>
+          <div className="c-section">
+            <div className="c-grid--2x2">
+              <div className="grid-item1">
+                <img
+                  className="c-img--portrait"
+                  src="../images/missing-img.jpg"
+                  alt="Karolina"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Karolina Maciejewska</strong>
+                  <br />
+                  {t("who_page.team.karolina_img_d")}
+                </p>
+
+                <p>
+                  <Trans i18nKey="who_page.team.karolina_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Karolina</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
+                    <br />
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
+              </div>
+
+              <div className="grid-item3">
+                <img
+                  className="c-img--portrait"
+                  src="../images/gro-profile.jpeg"
+                  alt="Gro"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Gro Elisabeth Oleivsgard</strong>
+                  <br />
+                  {t("who_page.team.gro_img_d")}
+                </p>
+
+                <p>
+                  <Trans i18nKey="who_page.team.gro_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Gro</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
+                    <br />
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
+              </div>
+
+              <div className="grid-item2">
+                <img
+                  className="u-mrg-img1"
+                  src="../images/kristian-square.jpeg"
+                  alt="Kristian"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Kristian Sørum</strong>
+                  <br />
+                  {t("who_page.team.kristian_img_d")}
+                </p>
+                <p>
+                  <Trans i18nKey="who_page.team.kristian_d">
+                    With us as an intern, <em>Kristian</em> is motivated to make
+                    our platform as user-friendly and self-driven as possible,
+                    which in turn will hopefully make the process of including
+                    green spaces in our cities a simple task.
+                    <br />
+                    <br />
+                    He is an aspiring Software Developer, currently a Computer
+                    Engineering student at OsloMet. <br />
+                    Apart from his studies, he enjoys being in the outdoors year
+                    around, where you can find him far up in the steep
+                    mountains.
+                  </Trans>
+                </p>
+              </div>
+
+              <div className="grid-item4">
+                <img
+                  className="u-mrg-img1"
+                  src="../images/missing-img.jpg"
+                  alt="Sanne"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Sanne Edland</strong>
+                  <br />
+                  {t("who_page.team.sanne_img_d")}
+                </p>
+
+                <p>
+                  <Trans i18nKey="who_page.team.sanne_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Sanne</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
+                    <br />
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
               </div>
             </div>
           </div>
         </div>
       </div>
-    
       {/* WHY US 
       <div className="c-section background-grey">
         <div className="o-container ">

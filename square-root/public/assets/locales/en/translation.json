@@ -67,5 +67,28 @@
     "what": "What we do",
     "why": "Why us",
     "how": "How it works"
+  },
+  "who_page": {
+    "title": "Who we are",
+    "description": "Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you! <1/> <2/>Here you can choose a project type, pick a look for your space, decide the functionality focus and customize the plant list we suggest for you. We make sure the plants fit your requirements and will be available.<4/><5/>Together we will green our cities!<7/>",
+    "team": {
+      "title": "Our Team",
+      "jo_img_d": "Founder and CEO",
+      "jo_d1": "<0>Jo</0> started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.",
+      "jo_d2": "He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella.",
+      "jo_d3": "He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
+      "michel_img_d": "Founder and COO",
+      "michel_d1": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.",
+      "michel_d2": "He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.",
+      "michel_d3": "Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+      "karolina_img_d": "Backend Developer",
+      "karolina_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Karolina</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts.",
+      "gro_img_d": "UX / UI and Frontend Developer",
+      "gro_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Gro</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts.",
+      "kristian_img_d": "Developer Trainee",
+      "kristian_d": "With us as an intern, <1>Kristian</1> is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.<3/><4/> He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. <6/>Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
+      "sanne_img_d": "Developer Trainee",
+      "sanne_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Sanne</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts."
+    }
   }
 }

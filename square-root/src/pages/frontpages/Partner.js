@@ -19,18 +19,18 @@ export default function Partner(props) {
             <div className="grid-item1">
               <div className="c-txt-punchline--sm">
                 <h2 className="c-txt-punchline--sm">
-                  Sammen gjÃ¸r vi byene vÃ¥res grÃ¸nne.
+                  Sammen gjør vi byene våres grønne.
                 </h2>
-                Vi Ã¸nsker Ã¥ samarbeide med alle aktÃ¸rer i planleggingen og
-                utformingen av urbane grÃ¸ntomrÃ¥der. Dette er for at vi kan gjÃ¸re
-                arbeidsprosessen sÃ¸mlÃ¸s slik at du kan lage og vedlikeholde
-                motstandsdyktige grÃ¸ntomrÃ¥der.
+                Vi ønsker å samarbeide med alle aktører i planleggingen og
+                utformingen av urbane grøntområder. Dette er for at vi kan gjøre
+                arbeidsprosessen sømløs slik at du kan lage og vedlikeholde
+                motstandsdyktige grøntområder.
                 <br />
                 <br />
-                Vi Ã¸nsker Ã¥ samarbeide med alle aktÃ¸rer i planleggingen og
-                utformingen av urbane grÃ¸ntomrÃ¥der. Dette er for at vi kan gjÃ¸re
-                arbeidsprosessen sÃ¸mlÃ¸s slik at du kan lage og vedlikeholde
-                motstandsdyktige grÃ¸ntomrÃ¥der.
+                Vi ønsker å samarbeide med alle aktører i planleggingen og
+                utformingen av urbane grøntområder. Dette er for at vi kan gjøre
+                arbeidsprosessen sømløs slik at du kan lage og vedlikeholde
+                motstandsdyktige grøntområder.
               </div>
             </div>
           </div>

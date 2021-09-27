@@ -67,5 +67,28 @@
     "what": "Hva vi gjør",
     "why": "Hvorfor oss",
     "how": "Hvordan det fungerer"
+  },
+  "who_page": {
+    "title": "Hvem vi er",
+    "description": "Ser du etter planter til å skape utmerket og klimarobuste urbane grønne arealer? Usikker på hvilken planter er tilpasset kravene og om de er tilgjengelige? SquareRoot løser dette for deg!<1/> <2/>Her kan du velge prosjekttyper og stil for arealet ditt, bestemme hvilke funksjonaliteter du ønsker å fokusere på og skreddersy plantelistene vi foreslår for deg. Vi sikrer både respekt av kravene og tilgjengeligheten av planten for deg.<4/><5/>Sammen gjør vi byene våre grønnere!<7/>",
+    "team": {
+      "title": "Vårt Team",
+      "jo_img_d": "Grunnlegger og CEO",
+      "jo_d1": "<0>Jo</0> startet sin karriere innen internasjonal forretningsutvikling for store energiselskaper med fokus på klimabegrensning, miljøpolitikk og investeringer i teknologier med lavt karbonutslipp.",
+      "jo_d2": "Han startet sitt eget selskap Greenbeat for å utvikle et smart blågrønt tak som kombinerer automatisert forvaltning av byvegetasjon og intelligent kontroll av vannreservoarer. Dette prosjektet, kalt RainBrain, har mottatt finansiering fra OrganiCity og SynchroniCity, begge under H2020-paraplyen.",
+      "jo_d3": "Han bor i Oslo, Norge med sin kone og barn, liker å vandre i lokal natur og er et engasjert medlem av swimrun-felleskapet.",
+      "michel_img_d": "Grunnlegger og COO",
+      "michel_d1": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.",
+      "michel_d2": "Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.",
+      "michel_d3": "Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+      "karolina_img_d": "Backend Developer",
+      "karolina_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Karolina</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts.",
+      "gro_img_d": "UX / UI and Frontend Developer",
+      "gro_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Gro</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts.",
+      "kristian_img_d": "Developer Trainee",
+      "kristian_d": "With us as an intern, <1>Kristian</1> is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.<3/><4/> He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. <6/>Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
+      "sanne_img_d": "Developer Trainee",
+      "sanne_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Sanne</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts."
+    }
   }
 }
