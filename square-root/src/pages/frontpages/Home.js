@@ -92,8 +92,21 @@ export default function Home(props) {
 
                             <div className="main-punchline">
                                 <div className="main-punchline--lrg position-absolute">
-                                    SquareRoot makes cities
-                                    <em className="light-green">&nbsp;green</em>, literally!</div>
+                                    {
+                                        t("section2_top1")
+                                        /*SquareRoot makes cities*/
+                                    }
+                                    
+                                    <em className="light-green">&nbsp;
+                                    {
+                                        t("section2_outlined1")
+                                        /*green*/
+                                    }</em>
+                                    {
+                                        t("section2_top2")
+                                        /*, literally!*/
+                                    }
+                                    </div>
                             </div>
                             <div className="short-border position-absolute left-margin">
 
@@ -105,9 +118,19 @@ export default function Home(props) {
 
                             <div className="main-punchline">
                                 <div className="main-punchline--p">
-                                    At SquareRoot, we believe sustainable cities are
-                                    <em>&nbsp;
-                                                                                                                                                                                                        our future</em>. With lots of green spaces inside, outside and top of buildings.
+                                    {
+                                        t("section2_bottom1")
+                                        /* At SquareRoot, we believe sustainable cities are */
+                                    }
+                                    <em>&nbsp;{
+                                        t("section2_outlined2")
+                                        /*our future*/
+                                    }
+                                    </em>
+                                    {
+                                        t("section2_bottom2")
+                                        /*With lots of green spaces inside, outside and top of buildings.*/
+                                    }
                                 </div>
                             </div>
 
@@ -117,6 +140,7 @@ export default function Home(props) {
 
 
                 </div>
+                
 
             
             </section>
@@ -130,10 +154,23 @@ export default function Home(props) {
                         <div className="grid-item1-stretch position-relative">
                             <div className="main-punchline">
                                 <div className="main-punchline--lrg position-absolute">
-                                    We want to make it easier to
-                                    <em className="light-green">&nbsp;choose nature&nbsp;
+                                    {
+                                        t("section3_top1")
+                                        /*We want to make it easier to*/
+                                    }
+                                    
+                                    <em className="light-green">&nbsp;
+                                    {
+                                        t("section3_outlined")
+                                        /*choose nature*/
+                                    }
+                                    &nbsp;
                                     </em>
-                                    for your building projects.
+                                    {
+                                        t("section3_top2")
+                                        /*for your building projects.*/
+                                    }
+                                    
 
                                 </div>
                                 
@@ -144,15 +181,21 @@ export default function Home(props) {
                         <div className="grid-item2-stretch1">
                             <div className="main-punchline">
                                 <div className="main-punchline--p">
-                                    Together with NIBIO, biologists, landscape architects and plant nurseries we 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.
+                                    {
+                                        t("section3_bottom")
+                                        /* 
+                                        Together with NIBIO, biologists, landscape architects and plant nurseries we 
+                                    have developed plant lists for urban greening and standard concepts, such as 
+                                    roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.*/
+                                    }
+                                    
 
                                 </div>
                             </div>
                         </div>
 
                         <div className="grid-item3-vertical">
-                            <img className="c-img" src="../images/leaf_rooftop_redigert.jpg"></img>
+                            <img className="c-img" src="../images/portrait--outdoor-bio-redigert.jpg"></img>
                         </div>
 
                     </div>
@@ -170,7 +213,10 @@ export default function Home(props) {
                         <div className="grid-item1">
                             <div className="img-wrap-rooftop">
                                 <div className="u-txt--middle">
-                                    <em>Rooftop</em>
+                                    <em>{
+                                        t("section4_item1")
+                                        /* Rooftop */
+                                        }</em>
                                 </div>
                             </div>
                         </div>
@@ -179,9 +225,23 @@ export default function Home(props) {
                             <div className="main-punchline--p">
                                 <div className="short-border"></div>
 
-                                <p className="c-section--p">Optimise your roof surface with one of our
-                                    <em>&nbsp;rooftop&nbsp;</em>
-                                    concepts. Our plants and hardware are chosen and designed to meet your specific needs.
+                                <p className="c-section--p">
+                                    {
+                                        t("section4_item1_desc1")
+                                        /*Optimise your roof surface with one of our*/
+                                    }
+                                    
+                                    <em>&nbsp;
+                                        {
+                                            t("section4_item1_outlined")
+                                            /*rooftop*/
+                                        }
+                                </em>
+                                    {
+                                        t("section4_item1_desc2")
+                                        /*concepts. Our plants and hardware are chosen and designed to meet your specific needs.*/
+                                    }
+                                    
                                 </p>
 
 
@@ -192,7 +252,12 @@ export default function Home(props) {
                         <div className="grid-item3">
                             <div className="img-wrap-rainbed">
                                 <div className="u-txt--middle">
-                                    <em>Rainbed</em>
+                                    <em>
+                                        {
+                                            t("section4_item2")
+                                            /*Rainbed*/
+                                        }
+                                    </em>
                                 </div>
                             </div>
                         </div>
@@ -201,10 +266,21 @@ export default function Home(props) {
                             <div className="main-punchline--p">
                                 <div className="short-border"></div>
                                 <p>
-                                    Our plants for
-                                    <em>&nbsp;rainbeds&nbsp;</em>
-                                    are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.
-                                    <br/>
+                                    {
+                                        t("section4_item2_desc")
+                                        /*Our plants for*/
+                                    }
+                                    
+                                    <em>&nbsp;
+                                        {
+                                            t("section4_item2_outlined")
+                                            /*rainbeds*/
+                                        }
+                                        &nbsp;</em>
+                                    {
+                                        t("section4_item2_desc2")
+                                        /*are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.*/
+                                    }
                                 </p>
                             </div>
                         </div>
@@ -212,7 +288,12 @@ export default function Home(props) {
                         <div className="grid-item9">
                             <div className="img-wrap-indoor">
                                 <div className="u-txt--middle">
-                                    <em>Indoor</em>
+                                    <em>
+                                        {
+                                            t("section4_item3")
+                                            /*Indoor*/
+                                        }
+                                        </em>
                                 </div>
                             </div>
                         </div>
@@ -221,9 +302,23 @@ export default function Home(props) {
                             <div className="main-punchline--p">
                                 <div className="short-border"></div>
 
-                                <p>Our partner Leaf has extensive expertise with
-                                    <em>&nbsp;indoor&nbsp;</em>
-                                    plants. Incredible aesthetics are combined with minimal maintenance.
+                                <p>
+                                    {
+                                        t("section4_item3_desc")
+                                        /*Our partner Leaf has extensive expertise with*/
+                                    }
+                                    
+                                    <em>&nbsp;
+                                        {
+                                            t("section4_item3_outlined")
+                                            /*indoor*/
+                                        }
+                                        </em>
+                                        {
+                                            t("section4_item3_desc2")
+                                            /*plants. Incredible aesthetics are combined with minimal maintenance.*/
+                                        }
+                                    
                                 </p>
                             </div>
                         </div>
@@ -238,19 +333,46 @@ export default function Home(props) {
                         <div className="grid-item9">
                             <div className="o-container--sm bckgd-white ">
                                 <div className="main-punchline--p u-txt--center">
-                                    <p>By integrating nature in your project, it helps 
+                                    <p>
+                                        {
+                                            t("section5_p1")
+                                            /* By integrating nature in your project, it helps 
                                                             meet the requirements for stormwater management 
-                                                            and using local plants increases
-                                    <em>&nbsp;biodiversity&nbsp;</em>
-                                    as 
-                                                            well as
-                                    <em>&nbsp;BREEAM points&nbsp;</em>.
+                                                            and using local plants increases*/
+                                        }
+                                       
+                                    <em>&nbsp;
+                                        {
+                                            t("section5_outlined1")
+                                            /*biodiversity*/
+                                        }
+                                        &nbsp;</em>
+                                        {
+                                            t("section5_p2")
+                                            /*as well as*/
+                                        }
+                                    <em>&nbsp;
+                                        {
+                                            t("section5_outlined2")
+                                            /*BREEAM points*/
+                                        }
+                                        &nbsp;</em>
                                     <br/>
                                     <br/>
-                                    Building projects with a 
+                                    {
+                                            t("section5_p3")
+                                            /*Building projects with a 
                                                             high environmental footprint increases the value of 
-                                                            your property and
-                                    <em>&nbsp;keeps our cities healthy</em>.</p>
+                                                            your property and*/
+                                    }
+                                    
+                                    <em>&nbsp;
+                                        {
+                                            t("section5_outlined3")
+                                            /*keeps our cities healthy*/
+                                        }
+                                        </em>.
+                                        </p>
 
                                 </div>
 
@@ -269,7 +391,12 @@ export default function Home(props) {
                         <div className="grid-item1-stretch position-relative">
                             <div className="main-punchline is-white">
                                 <div className="main-punchline--lrg">
-                                    <em>COMING SOON</em>
+                                    <em>
+                                        {
+                                            t("section6_top")
+                                            /*COMING SOON*/
+                                        }
+                                        </em>
                                     <br/>
                                     <br/>
                                 </div>
@@ -279,16 +406,30 @@ export default function Home(props) {
 
                             <div className="main-punchline">
                                 <div className="main-punchline--p is-white">
-                                    Our digital platform makes finding and sourcing plants
-                                    <em>&nbsp;easy and available everywhere</em>.
+                                    {
+                                        t("section6_bottom1")
+                                        /*Our digital platform makes finding and sourcing plants*/
+                                    }
+                                    <em>&nbsp;
+                                        {
+                                            t("section6_outlined")
+                                            /* easy and available everywhere*/
+                                        }
+                                        </em>
                                     <br/>
                                     <br/>
-                                    Through our network of local plant nurseries, we help you find the 
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      right plants for the right spot and show what is available to have it delivered in time.
+                                    {
+                                        t("section6_bottom2")
+                                        /*Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.*/
+                                    }
+                                    
                                     <br/>
                                     <br/>
-
-                                    Coming fall 2021. Stay updated by subscribing to our newsletter.
+                                        {
+                                            t("section6_bottom3")
+                                            /*Coming fall 2021. Stay updated by subscribing to our newsletter.*/
+                                        }
+                                    
                                 </div>
                             </div>
                         </div>
@@ -307,7 +448,11 @@ export default function Home(props) {
                 <div className="o-container c-section--pad-vh">
                     <div className="main-punchline">
                         <div className="main-punchline--lrg">
-                            In collaboration with
+                            {
+                                t("section7_top")
+                                /*In collaboration with*/
+                            }
+                            
                             <br/>
                             <br/>
                         </div>

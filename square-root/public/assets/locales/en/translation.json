@@ -25,7 +25,96 @@
     "or": "OR",
     "my_projects": "My Projects",
     "account": "Account Settings",
-  "log_out": "Log Out",
+    "log_out": "Log Out",
+
+    "plantlist":"Plantelist",
+    "show_more":"Show more",
+    "show_less":"Show less",
+    "start_project":"Start project",
+    "or_sm":"or",
+
+    "RED":"Real Estate Developer",
+    "LARK":"Landscape Architect",
+    "LENT":"Landscape Entrepreneur",
+    "PN":"Plant Nursery",
+
+
+
+  "section2_top1": "SquareRoot makes cities",
+  "section2_outlined1": "green",
+  "section2_top2": ", literally!",
+  "section2_bottom1": "At SquareRoot we believe sustainable cities are",
+  "section2_outlined2": "our future",
+  "section2_bottom2": ". With lots of green spaces inside, outside and top of buildings.",
+
+  "section3_top1": "We want to make it easier to",
+  "section3_outlined": "choose nature",
+  "section3_top2": "for your building projects.",
+  "section3_bottom": "Together with NIBIO, biologists, landscape architects and plant nurseries we \n have developed plant lists for urban greening and standard concepts, such as \n roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.",
+
+  "section4_item1": "Roof garden",
+  "section4_item1_desc1": "Optimise your roof surface with one of our",
+  "section4_item1_outlined": "roof garden ",
+  "section4_item1_desc2": "concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
+
+  "section4_item2": "Rainbed",
+  "section4_item2_desc": "Our plants for",
+  "section4_item2_outlined": "rainbeds",
+  "section4_item2_desc2": "are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.",
+
+  "section4_item3": "Indoor",
+  "section4_item3_desc": "Our partner Leaf has extensive expertise with",
+  "section4_item3_outlined": "indoor",
+  "section4_item3_desc2": "plants. Incredible aesthetics are combined with minimal maintenance.",
+
+  "section5_p1":"By integrating nature in your project, it helps meet the requirements for stormwater management and using local plants increases",
+  "section5_outlined1":"biodiversity",
+  "section5_p2":"as well as",
+  "section5_outlined2":"BREEAM points.",
+  "section5_p3":"Building projects with a high environmental footprint increases the value of your property and",
+  "section5_outlined3":"keeps our cities healthy",
+
+  "section6_top":"COMING SOON",
+  "section6_bottom1":"Our digital platform makes finding and sourcing plants",
+  "section6_outlined":"easy and available everywhere.",
+  "section6_bottom2":"Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.",
+  "section6_bottom3":"Coming fall 2021. Stay updated by subscribing to our newsletter.",
+
+  "section7_top":"In collaboration with",
+
+  "who_h1":"Who we are",
+  "who_p1":"Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you!",
+  "who_p2":"Here you can choose a project type, pick a look for your space, decide the functionality focus and customize the plant list we suggest for you. We make sure the plants fit your requirements and will be available.",
+  "who_p3":"Together we will green our cities!",
+  "who_h2":"The Team",
+  "who_img1_desc1":"Jo Deketelaere",
+  "who_img1_desc2":"Founder og CEO",
+  "who_worker1_outlined":"Jo ",
+  "who_worker1_desc1":"started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.",
+  "who_worker1_desc2":"He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella.",
+  "who_worker1_desc3":"He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
+  "who_img2_desc1":"Michel Wolfstirn",
+  "who_img2_desc2":"Founder og COO",
+  "who_worker2_outlined":"Michel ",
+  "who_worker2_desc1":"A lover of nature and the outdoors, ",
+  "who_worker2_desc2":"is passionate about the environment and contributing to solving climate change.", 
+  "who_worker2_desc3":"He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.", 
+  "who_worker2_desc4":"Amongst other things he has contributed building for Gruten the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+
+  "contact_h1":"Contact us",
+  "contact_p1":"How can we help you?",
+  "contact_h3_1":"E-mail",
+  "contact_h3_2":"Phone",
+
+  "partner_h1":"Become a partner",
+  "partner_h2":"Together, we green our cities.",
+  "partner_p1":"We want to collaborate with all stakeholders in the planning and design of urban green areas. This is so that we can make the work process seamless so that you can create and maintain resilient greenspaces.",
+  "partner_RED_desc":"See the concepts that will green you building",
+  "partner_LARK_desc":"See what is available and make your own amazing project",
+  "partner_LENT_desc":"Order the right plant for the right spot on our platform",
+  "partner_PN_desc":"Show and sell your plants on our platform ",
+ 
+  
   "footer": {
     "description": "We are the new platform for green spaces",
     "button": "Tell us about your project",
@@ -38,5 +127,6 @@
     "what": "What we do",
     "why": "Why us",
     "how": "How it works"
+
   }
 }

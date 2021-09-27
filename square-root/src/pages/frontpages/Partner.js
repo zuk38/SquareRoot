@@ -5,8 +5,20 @@ import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/ContactFormValidation";
 import "../../styles/Partner.css";
 import PartnerContainer from "../../components/PartnerContainer";
+import {useTranslation} from "react-i18next";
 
 export default function Partner(props) {
+    const {t} = useTranslation();
+    const executeScroll = (myRef) => {
+        let element;
+        if (!myRef) 
+            element = document.getElementById("first");
+         else 
+            element = document.getElementById(myRef);
+         element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+    };
+
+
     const {values, errors, handleChange, handleSubmit} = useForm(addContact, validate, callback);
 
     const [isSending, setIsSending] = useState(false);
@@ -39,7 +51,11 @@ export default function Partner(props) {
                 <Loading/>) : (
                 <div className="o-container">
                     <div className="c-hero">
-                        <h1 className="c-txt--hero">Bli partner</h1>
+                        <h1 className="c-txt--hero">
+                            {
+                                t("partner_h1")
+                            }
+                        </h1>
 
                         <div className="c-mrg--bottom"></div>
 
@@ -53,17 +69,19 @@ export default function Partner(props) {
 
                                 <div className="c-txt-punchline--sm">
                                     <h2 className="c-txt-punchline--sm">
-                                        Sammen gjør vi byene våres grønne. 
+                                        {
+                                            t("partner_h2")
+                                        }
+                                        
                                     </h2>
-                                    Vi ønsker å samarbeide med alle aktører i planleggingen og
-                                                                                      utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du
-                                                                                      kan lage og vedlikeholde motstandsdyktige grøntområder.
+                                    {
+                                        t("partner_p1")
+                                    }
+                                    
 
                                     <br/>
                                     <br/>
-                                    Vi ønsker å samarbeide med alle aktører i planleggingen og
-                                                                                      utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du
-                                                                                      kan lage og vedlikeholde motstandsdyktige grøntområder.
+                                 
 
 
                                 </div>
@@ -76,34 +94,58 @@ export default function Partner(props) {
 
     <div className="grid-item1">
         
-    <div className="c-txt-punchline--sm">Real Estate Developer</div>
+    <div className="c-txt-punchline--sm">
+        {
+            t("RED")
+        }
+    </div>
     <div className="short-border"></div>
     <p>
-    See the concepts that will green you building
+        {
+            t("partner_RED_desc")
+        }
     </p>
     </div>
 
     <div className="grid-item3">
-    <div className="c-txt-punchline--sm">Landscape Architect</div>
+    <div className="c-txt-punchline--sm">
+        {
+            t("LARK")
+        }
+    </div>
     
     <div className="short-border"></div><p>
-    See what is available and make your own amazing project
+        {
+            t("partner_LARK_desc")
+        }
     </p>
     </div>
 
     <div className="grid-item9">
-    <div className="c-txt-punchline--sm">Landscape Entrepreneur</div>
+    <div className="c-txt-punchline--sm">
+        {
+            t("LENT")
+        }
+    </div>
     <div className="short-border"></div>
     <p>
-    Order the right plant for the right spot on our platform
+        {
+            t("partner_LENT_desc")
+        }
     </p>
     </div>
 
     <div className="grid-item11">
-    <div className="c-txt-punchline--sm">Plant nursery</div>
+    <div className="c-txt-punchline--sm">
+        {
+            t("PN")
+        }
+    </div>
     <div className="short-border"></div>
     <p>
-    Show and sell your plants on our platform 
+    {
+        t("partner_PN_desc")
+    }
     </p>
     </div>
 </div>

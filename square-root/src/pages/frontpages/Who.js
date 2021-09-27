@@ -3,31 +3,19 @@ import "../../styles/frontpages.css";
 import Grid from "../../components/Grid_2x2";
 import FeaturedConcepts from "../../components/FeaturedConcepts";
 import { Link } from "react-router-dom";
+import {useTranslation} from "react-i18next";
 
 export default function Who() {
-  const grid_values = [
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-    {
-      img: "../images/planet-earth.png",
-      subtitle: "Naturlige planter",
-      paragraph: "Vi har høye standarder til plantene.",
-    },
-  ];
-
+  const {t} = useTranslation();
+    const executeScroll = (myRef) => {
+        let element;
+        if (!myRef) 
+            element = document.getElementById("first");
+         else 
+            element = document.getElementById(myRef);
+         element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
+    };
+    
   return (
     <>
     
@@ -35,20 +23,27 @@ export default function Who() {
 
         <div className="o-container">
           <div className="c-hero">
-          <h1 className="c-txt--hero">Who we are</h1>
+          <h1 className="c-txt--hero">
+            {
+              t("who_h1")
+              /*Who we are*/
+            }
+            </h1>
           <div className="short-border u-mrg--txt1"></div>
             <p className="main-punchline--p">
-            Looking for plants to create amazing and resilient urban green areas? 
-            Unsure about compliance and availability of these plants? 
-            SquareRoot is there to solve this for you! 
+              {
+                t("who_p1")
+               
+              }
             <br /><br />
-            Here you can choose a project type, 
-            pick a look for your space, decide the functionality focus 
-            and customize the plant list we suggest for you. 
-            We make sure the plants fit your requirements and will be available. 
+            {
+              t("who_p2")
+            }
             
             <br /><br />
-            Together we will green our cities!
+            {
+              t("who_p3")
+            }
               <br />
               
             </p>
@@ -57,7 +52,12 @@ export default function Who() {
           {/* A WORD FROM FOUNDERS*/}
           <div className="c-section">
             <div className="c-container u-mrg--reset">
-            <p className="c-txt--punchline">The Team</p>
+            <p className="c-txt--punchline">
+              {
+                t("who_h2")
+                /*The Team*/
+              }
+              </p>
               <div className="c-grid--founders">
                 <div className="u-mrg--reset">
                   <img
@@ -65,61 +65,89 @@ export default function Who() {
                     src="../images/jo-profil.png"
                   ></img>
                   <p className="u-mrg-txt1">
-                    <strong>Jo Deketelaere</strong>
+                    <strong>
+                      {
+                        t("who_img1_desc1")
+                        /*Jo Deketelaere */
+                      }
+                      </strong>
                     <br />
-                    Grunnlegger og CEO
+                    {
+                      t("who_img1_desc2")
+                      /* Grunnlegger og CEO */
+                    }
+                    
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    <em>Jo</em> started his career in international business
-                    development for large energy companies focusing on climate
-                    mitigation, environmental policies and investment in low
-                    carbon emitting technologies.
+          
+                    <em>
+                      {
+                        t("who_worker1_outlined")
+                        /*Jo */
+                      }
+                      </em> 
+                      {
+                        t("who_worker1_desc1")
+                      }
                   </p>
                   <p>
-                    He started his own company Greenbeat to develop a smart
-                    blue-green roof combining automated management of urban
-                    vegetation and intelligent control of water reservoirs. This
-                    project called RainBrain has received funding from
-                    OrganiCity and SynchroniCity, both under the H2020 umbrella.
+                    {
+                      t("who_worker1_desc2")
+                    }
                   </p>
                   <p>
-                    He lives in Oslo, Norway with his wife and daughter, enjoys
-                    hiking in local nature and is a happy member of the swimrun
-                    community.
+                    {
+                      t("who_worker1_desc3")
+                    }
                   </p>
                 </div>
+
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
                     src="../images/michel-profile.jpeg"
                   ></img>
                   <p className="u-mrg-txt1">
-                    <strong>Michel Wolfstirn</strong>
+                    <strong>
+                      {
+                        t("who_img2_desc1")
+                        /*Michel Wolfstirn */
+                      }
+                      </strong>
                     <br />
-                    Grunnlegger og COO
+                    {
+                      t("who_img2_desc2")
+                      /*Founder og COO*/
+                    }
+                    
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    A lover of nature and the outdoors, <em>Michel</em> is passionate
-                    about the environment and contributing to solving climate
-                    change.
+                    {
+                      t("who_worker2_desc1")
+                    }
+                    <em>
+                      {
+                        t("who_worker2_outlined")
+                        /* Michel */
+                      }</em> 
+                      {
+                        t("who_worker2_desc2")
+                      }
                   </p>
                   <p>
-                    He co-founded BiomimicryNorway, an NGO dedicated to
-                    educating people and companies about sustainable innovation
-                    inspired by nature. He has spent a great deal of energy
-                    helping various startups and initiatives in the past years
-                    using his many skills ranging from design to business
-                    modelling for Circular Economy.
+                    {
+                      t("who_worker2_desc3")
+                    }
+                
                   </p>
                   <p>
-                    Amongst other things he has contributed building for Gruten
-                    the first norwegian urban farm growing mushrooms on coffee
-                    grounds. He is also involved with Pådriv on projects related
-                    to sustainable urban development.
+                  {
+                      t("who_worker2_desc4")
+                    }
                   </p>
                 </div>
               </div>
