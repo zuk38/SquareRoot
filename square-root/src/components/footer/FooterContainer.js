@@ -60,13 +60,13 @@ export function FooterContainer() {
               <Icon>
                 <HiOutlineMail />
               </Icon>
-              contact@squareroot.cc
+              michel@squareroot.cc
             </FooterLink>
             <FooterLink>
               <Icon>
                 <HiOutlinePhone />
               </Icon>
-              +47 tralala
+              +47 925 57 654
             </FooterLink>
           </Column>
         </Row>

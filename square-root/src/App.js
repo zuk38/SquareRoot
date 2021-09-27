@@ -27,7 +27,6 @@ import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
-import { BottomRight } from "./styles/Footer";
 import ScrollToTop from "./components/utility/ScrollToTop";
 
 class App extends Component {
@@ -44,6 +43,8 @@ class App extends Component {
       user: user,
       logout: logout,
     };
+
+    
 
     return (
       !isAuthenticating && (
