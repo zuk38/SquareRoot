@@ -126,6 +126,10 @@ section#sixth {
   background-color: var(--mainGrey);
 }
 
+section#footer {
+  height: calc(100vh - var(--nav-size));
+}
+
 .list-item h1 {
   font-size: 35px;
   font-weight: 600;

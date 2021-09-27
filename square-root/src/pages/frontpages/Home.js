@@ -6,6 +6,7 @@ import arrowDownWhite from "../../icons/down-arrow-white.png";
 import { useTranslation } from "react-i18next";
 import Button from "@material-ui/core/Button";
 import RequestDemo from "../../components/RequestDemo";
+import { FooterContainer } from "../../components/footer/FooterContainer";
 
 export default function Home(props) {
   const { t } = useTranslation();
@@ -70,7 +71,7 @@ export default function Home(props) {
                   <em className="light-green">&nbsp;green</em>, literally!
                 </div>
               </div>
-              <div className="short-border position-absolute left-margin"/>
+              <div className="short-border position-absolute left-margin" />
             </div>
 
             <div className="grid-item2-stretch2">
@@ -97,7 +98,7 @@ export default function Home(props) {
                   for your building projects.
                 </div>
               </div>
-              <div className="short-border position-absolute left-margin"/>
+              <div className="short-border position-absolute left-margin" />
             </div>
 
             <div className="grid-item2-stretch1">
@@ -136,7 +137,7 @@ export default function Home(props) {
 
             <div className="grid-item2">
               <div className="main-punchline--p">
-                <div className="short-border"/>
+                <div className="short-border" />
 
                 <p className="c-section--p">
                   Optimise your roof surface with one of our
@@ -157,7 +158,7 @@ export default function Home(props) {
 
             <div className="grid-item4">
               <div className="main-punchline--p">
-                <div className="short-border"/>
+                <div className="short-border" />
                 <p>
                   Our plants for
                   <em>&nbsp;rainbeds&nbsp;</em>
@@ -179,7 +180,7 @@ export default function Home(props) {
 
             <div className="grid-item10">
               <div className="main-punchline--p">
-                <div className="short-border"/>
+                <div className="short-border" />
 
                 <p>
                   Our partner Leaf has extensive expertise with
@@ -230,7 +231,7 @@ export default function Home(props) {
                   <br />
                 </div>
               </div>
-              <div className="short-border-white"/>
+              <div className="short-border-white" />
 
               <div className="main-punchline">
                 <div className="main-punchline--p is-white">
@@ -265,30 +266,41 @@ export default function Home(props) {
               <br />
             </div>
           </div>
-          <div className="short-border left-margin"/>
+          <div className="short-border left-margin" />
           <div className="c-grid--fill">
             <div>
-              <img src="../images/gg-logo.png" alt="Simula"/>
+              <img src="../images/gg-logo.png" alt="Simula" />
             </div>
             <div>
-              <img src="../images/nibio_logo.jpeg" alt="Nibio"/>
+              <img src="../images/nibio_logo.jpeg" alt="Nibio" />
             </div>
             <div>
-              <img src="../images/edit_logo.jpeg" alt="Edit"/>
+              <img src="../images/edit_logo.jpeg" alt="Edit" />
             </div>
             <div>
-              <img src="../images/teknologi-formidling_logo.png" alt="Teknologi Formidling"/>
+              <img
+                src="../images/teknologi-formidling_logo.png"
+                alt="Teknologi Formidling"
+              />
             </div>
             <div>
-              <img src="../images/innovasjon-norge-big.png" alt="Innovasjon Norge"/>
+              <img
+                src="../images/innovasjon-norge-big.png"
+                alt="Innovasjon Norge"
+              />
             </div>
             <div>
-              <img src="../images/sin-logo.png" alt="Smart Innovation Norway"/>
+              <img src="../images/sin-logo.png" alt="Smart Innovation Norway" />
             </div>
             <div>
-              <img src="../images/tekna-logo.jpeg" alt="Tekna"/>
+              <img src="../images/tekna-logo.jpeg" alt="Tekna" />
             </div>
           </div>
+        </div>
+      </section>
+      <section id="footer">
+        <div className="c-section--pad-vh">
+          <FooterContainer />
         </div>
       </section>
     </div>

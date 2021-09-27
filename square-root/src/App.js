@@ -200,6 +200,8 @@ class App extends Component {
           </div>
           {this.props.location.pathname != "/login" &&
             this.props.location.pathname != "/" &&
+            this.props.location.pathname != "/en" &&
+            this.props.location.pathname != "/no" &&
             this.props.location.pathname != "/forgotpassword" && (
               <FooterContainer />
             )}
