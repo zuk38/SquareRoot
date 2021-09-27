@@ -1,5 +1,9 @@
 /*----------------------
 Smooth Scroll --------*/
+.no-scroll {
+  overflow-y: hidden;
+}
+
 .front-container {
   scroll-behavior: smooth;
   overscroll-behavior-y: contain;

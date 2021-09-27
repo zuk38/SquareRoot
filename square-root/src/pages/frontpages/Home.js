@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "../../styles/frontpages.css";
 import "../../styles/Home.css";
 import logo from "../../images/logo-white-green.png";
@@ -9,6 +9,14 @@ import RequestDemo from "../../components/RequestDemo";
 import { FooterContainer } from "../../components/footer/FooterContainer";
 
 export default function Home(props) {
+  useEffect(() => {
+    var page = document.body;
+    page.classList.add("no-scroll");
+    return () => {
+      page.classList.remove("no-scroll");
+    };
+  }, []);
+
   const { t } = useTranslation();
   const executeScroll = (myRef) => {
     let element;
@@ -298,6 +306,7 @@ export default function Home(props) {
           </div>
         </div>
       </section>
+
       <section id="footer">
         <div className="c-section--pad-vh">
           <FooterContainer />
