@@ -46,7 +46,7 @@ export const BottomRight = styled.div`
 export const Document = styled.a`
   color: white;
   display: inline-block;
-
+  cursor: pointer;
   transition: 200ms ease-in;
 
   &:nth-child(1) {

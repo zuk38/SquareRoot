@@ -44,6 +44,11 @@ export default function ContactForm(props) {
     console.log("success");
   }
 
+  const openInNewTab = (url) => {
+    const newWindow = window.open(url, "_blank", "noopener,noreferrer");
+    if (newWindow) newWindow.opener = null;
+  };
+
   return (
     <>
       {isSending ? (
@@ -167,11 +172,14 @@ export default function ContactForm(props) {
                     />
 
                     <span className="list-item-label">
-                      Jeg godtar SquareRoot's
-                      <a href="terms-and-conditions">
-                        &nbsp;vilkår og betingelser
+                      Jeg godtar SquareRoots
+                      <a onClick={() => openInNewTab("https://squareroot-as.github.io/SquareRoot/tou.html")}>
+                        &nbsp;vilkår for bruk&nbsp;
                       </a>
-                      .
+                      og
+                      <a onClick={() => openInNewTab("https://squareroot-as.github.io/SquareRoot/privacy.html")}>
+                        &nbsp;personvernerklæring
+                      </a>
                     </span>
                   </label>
                 </span>
