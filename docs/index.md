@@ -1,1 +1,3 @@
-[Contribution guidelines for this project](docs/CONTRIBUTING.md)
+[Privacy Policy](privacy.html)
+
+[Terms of Use](tou.html)
