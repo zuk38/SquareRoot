@@ -61,8 +61,8 @@ export default function Home(props) {
                     }</Button>
                     </div>
                 </div>
-                <div className="see-more">
-                    <button className="bounce zoom-on-hover"
+                <div className="see-more is-white">
+                    <button className="bounce zoom-on-hover is-white"
                         onClick={
                             () => executeScroll("second")
                     }>
@@ -78,7 +78,7 @@ export default function Home(props) {
                 <div className="o-container c-section--pad-vh">
 
                     <div className="c-grid--3x1">
-                        <div className="grid-item1 zoom-on-hover">
+                        <div className="grid-item1">
 
                             <img className="column-img" src="../images/hands-rooftop.png"></img>
                         </div>
@@ -117,6 +117,8 @@ export default function Home(props) {
 
 
                 </div>
+
+            
             </section>
 
             <section id="third">
@@ -278,8 +280,7 @@ export default function Home(props) {
                             <div className="main-punchline">
                                 <div className="main-punchline--p is-white">
                                     Our digital platform makes finding and sourcing plants
-                                    <em>&nbsp;
-                                                                                                                                                                                                        easy and available everywhere</em>.
+                                    <em>&nbsp;easy and available everywhere</em>.
                                     <br/>
                                     <br/>
                                     Through our network of local plant nurseries, we help you find the 

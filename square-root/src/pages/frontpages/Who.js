@@ -36,7 +36,7 @@ export default function Who() {
         <div className="o-container">
           <div className="c-hero">
           <h1 className="c-txt--hero">Who we are</h1>
-          <div className="short-border position-absolute u-mrg--txt1"></div>
+          <div className="short-border u-mrg--txt1"></div>
             <p className="main-punchline--p">
             Looking for plants to create amazing and resilient urban green areas? 
             Unsure about compliance and availability of these plants? 

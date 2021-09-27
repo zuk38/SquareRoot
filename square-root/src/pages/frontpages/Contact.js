@@ -19,7 +19,7 @@ export default function Contact() {
               <div className="c-grid--3x3fixed">
                 <div>
                   <h3 className="c-txt--h3">E-post</h3>
-                  <p className="c-mrg--top-sm">contact@squareroot.cc</p>
+                  <p className="c-mrg--top-sm">michel@squareroot.cc</p>
                 </div>
 
                 <div>
