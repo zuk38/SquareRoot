@@ -211,7 +211,8 @@ export default function Home(props) {
                     <div className="c-grid--3x1">
 
                         <div className="grid-item1">
-                            <div className="img-wrap-rooftop">
+                            {/*ADD LINK TO CORRECT CATEGORY HERE*/}
+                            <a href="SingleCategory.js"><div className="img-wrap-rooftop">
                                 <div className="u-txt--middle">
                                     <em>{
                                         t("section4_item1")
@@ -219,6 +220,7 @@ export default function Home(props) {
                                         }</em>
                                 </div>
                             </div>
+                            </a>
                         </div>
 
                         <div className="grid-item2">
@@ -250,7 +252,7 @@ export default function Home(props) {
 
 
                         <div className="grid-item3">
-                            <div className="img-wrap-rainbed">
+                        <a href="SingleCategory.js"><div className="img-wrap-rainbed">
                                 <div className="u-txt--middle">
                                     <em>
                                         {
@@ -260,6 +262,7 @@ export default function Home(props) {
                                     </em>
                                 </div>
                             </div>
+                            </a>
                         </div>
 
                         <div className="grid-item4">
@@ -286,7 +289,7 @@ export default function Home(props) {
                         </div>
 
                         <div className="grid-item9">
-                            <div className="img-wrap-indoor">
+                        <a href="SingleCategory.js"><div className="img-wrap-indoor">
                                 <div className="u-txt--middle">
                                     <em>
                                         {
@@ -296,6 +299,7 @@ export default function Home(props) {
                                         </em>
                                 </div>
                             </div>
+                            </a>
                         </div>
 
                         <div className="grid-item10">
@@ -474,6 +478,7 @@ export default function Home(props) {
                     </div>
                 </div>
             </section>
+
         </div>
     );
 }
