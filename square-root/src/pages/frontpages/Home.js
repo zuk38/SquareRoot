@@ -3,7 +3,7 @@ import "../../styles/frontpages.css";
 import "../../styles/Home.css";
 import logo from "../../images/logo-white-green.png";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
-import { useTranslation } from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 import Button from "@material-ui/core/Button";
 import RequestDemo from "../../components/RequestDemo";
 import { FooterContainer } from "../../components/footer/FooterContainer";
@@ -40,12 +40,15 @@ export default function Home(props) {
           <span className="list-item">
             <h1>
               <img src="../images/logo-asterisk-white.png" alt="asterisk" />{" "}
-              {t("hero.hero_main1")}
-              <br />-<i>{t("hero.hero_main2")}</i>
+              <Trans i18nKey="home_page.hero.description">
+                Plan, design and order greenspaces inside, outside and on top of
+                buildings
+                <br />- <i>all in one place.</i>
+              </Trans>
             </h1>
           </span>
           <div className="signup-btn">
-            <Button>{t("demo")}</Button>
+            <Button>{t("home_page.hero.demo")}</Button>
           </div>
         </div>
         <div className="see-more">
@@ -53,7 +56,7 @@ export default function Home(props) {
             className="bounce zoom-on-hover"
             onClick={() => executeScroll("second")}
           >
-            {t("see_more")}
+            {t("home_page.hero.see_more")}
             <img src={arrowDownWhite} />
           </button>
         </div>
@@ -66,17 +69,24 @@ export default function Home(props) {
               <img
                 className="column-img"
                 src="../images/hands-rooftop.png"
-              ></img>
+                alt="hands-rooftop"
+              />
             </div>
             <div className="grid-item2">
-              <img className="column-img" src="../images/r-falcatum.jpg"></img>
+              <img
+                className="column-img"
+                src="../images/r-falcatum.jpg"
+                alt="falcatum"
+              />
             </div>
 
             <div className="grid-item2-stretch position-relative">
               <div className="main-punchline">
                 <div className="main-punchline--lrg position-absolute">
-                  SquareRoot makes cities
-                  <em className="light-green">&nbsp;green</em>, literally!
+                  <Trans i18nKey="home_page.section_two.title">
+                    SquareRoot makes cities
+                    <em className="light-green">&nbsp;green</em>, literally!
+                  </Trans>
                 </div>
               </div>
               <div className="short-border position-absolute left-margin" />
@@ -85,9 +95,11 @@ export default function Home(props) {
             <div className="grid-item2-stretch2">
               <div className="main-punchline">
                 <div className="main-punchline--p">
-                  At SquareRoot, we believe sustainable cities are
-                  <em>&nbsp; our future</em>. With lots of green spaces inside,
-                  outside and top of buildings.
+                  <Trans i18nKey="home_page.section_two.description">
+                    At SquareRoot, we believe sustainable cities are
+                    <em>&nbsp; our future</em>. With lots of green spaces
+                    inside, outside and top of buildings.
+                  </Trans>
                 </div>
               </div>
             </div>
@@ -101,9 +113,13 @@ export default function Home(props) {
             <div className="grid-item1-stretch position-relative">
               <div className="main-punchline">
                 <div className="main-punchline--lrg position-absolute">
-                  We want to make it easier to
-                  <em className="light-green">&nbsp;choose nature&nbsp;</em>
-                  for your building projects.
+                  <Trans i18nKey="home_page.section_three.title">
+                    We want to make it easier to
+                    <em className="light-green">
+                      &nbsp;choose nature&nbsp;
+                    </em>{" "}
+                    for your building projects.
+                  </Trans>
                 </div>
               </div>
               <div className="short-border position-absolute left-margin" />
@@ -112,10 +128,7 @@ export default function Home(props) {
             <div className="grid-item2-stretch1">
               <div className="main-punchline">
                 <div className="main-punchline--p">
-                  Together with NIBIO, biologists, landscape architects and
-                  plant nurseries we have developed plant lists for urban
-                  greening and standard concepts, such as roof gardens and rain
-                  beds, to manage heavy rainfall and to increase biodiversity.
+                  {t("home_page.section_three.description")}
                 </div>
               </div>
             </div>
@@ -124,7 +137,8 @@ export default function Home(props) {
               <img
                 className="c-img"
                 src="../images/leaf_rooftop_redigert.jpg"
-              ></img>
+                alt="rooftop"
+              />
             </div>
           </div>
         </div>
@@ -138,7 +152,7 @@ export default function Home(props) {
             <div className="grid-item1">
               <div className="img-wrap-rooftop">
                 <div className="u-txt--middle">
-                  <em>Rooftop</em>
+                  <em>{t("home_page.section_four.rooftop")}</em>
                 </div>
               </div>
             </div>
@@ -146,12 +160,13 @@ export default function Home(props) {
             <div className="grid-item2">
               <div className="main-punchline--p">
                 <div className="short-border" />
-
                 <p className="c-section--p">
-                  Optimise your roof surface with one of our
-                  <em>&nbsp;rooftop&nbsp;</em>
-                  concepts. Our plants and hardware are chosen and designed to
-                  meet your specific needs.
+                  <Trans i18nKey="home_page.section_four.rooftop_description">
+                    Optimise your roof surface with one of our
+                    <em>&nbsp;rooftop&nbsp;</em> concepts. Our plants and
+                    hardware are chosen and designed to meet your specific
+                    needs.
+                  </Trans>
                 </p>
               </div>
             </div>
@@ -159,7 +174,7 @@ export default function Home(props) {
             <div className="grid-item3">
               <div className="img-wrap-rainbed">
                 <div className="u-txt--middle">
-                  <em>Rainbed</em>
+                  <em>{t("rainbed2")}</em>
                 </div>
               </div>
             </div>
@@ -168,12 +183,13 @@ export default function Home(props) {
               <div className="main-punchline--p">
                 <div className="short-border" />
                 <p>
-                  Our plants for
-                  <em>&nbsp;rainbeds&nbsp;</em>
-                  are carefully chosen with plants for the wet-zone, able to
-                  stand up to 48 hours in the water and drought tolerant plants
-                  at the borders, the dry-zone.
-                  <br />
+                  <Trans i18nKey="home_page.section_four.rainbed_description">
+                    Our plants for
+                    <em>&nbsp;rainbeds&nbsp;</em> are carefully chosen with
+                    plants for the wet-zone, able to stand up to 48 hours in the
+                    water and drought tolerant plants at the borders, the
+                    dry-zone.
+                  </Trans>
                 </p>
               </div>
             </div>
@@ -181,7 +197,7 @@ export default function Home(props) {
             <div className="grid-item9">
               <div className="img-wrap-indoor">
                 <div className="u-txt--middle">
-                  <em>Indoor</em>
+                  <em>{t("indoor2")}</em>
                 </div>
               </div>
             </div>
@@ -189,12 +205,12 @@ export default function Home(props) {
             <div className="grid-item10">
               <div className="main-punchline--p">
                 <div className="short-border" />
-
                 <p>
-                  Our partner Leaf has extensive expertise with
-                  <em>&nbsp;indoor&nbsp;</em>
-                  plants. Incredible aesthetics are combined with minimal
-                  maintenance.
+                  <Trans i18nKey="home_page.section_four.indoor_description">
+                    Our partner Leaf has extensive expertise with
+                    <em>&nbsp;indoor&nbsp;</em> plants. Incredible aesthetics
+                    are combined with minimal maintenance.
+                  </Trans>
                 </p>
               </div>
             </div>
@@ -209,17 +225,19 @@ export default function Home(props) {
               <div className="o-container--sm bckgd-white ">
                 <div className="main-punchline--p u-txt--center">
                   <p>
-                    By integrating nature in your project, it helps meet the
-                    requirements for stormwater management and using local
-                    plants increases
-                    <em>&nbsp;biodiversity&nbsp;</em>
-                    as well as
-                    <em>&nbsp;BREEAM points&nbsp;</em>.
-                    <br />
-                    <br />
-                    Building projects with a high environmental footprint
-                    increases the value of your property and
-                    <em>&nbsp;keeps our cities healthy</em>.
+                    <Trans i18nKey="home_page.section_five.description">
+                      By integrating nature in your project, it helps meet the
+                      requirements for stormwater management and using local
+                      plants increases
+                      <em>&nbsp;biodiversity&nbsp;</em>
+                      as well as
+                      <em>&nbsp;BREEAM points&nbsp;</em>.
+                      <br />
+                      <br />
+                      Building projects with a high environmental footprint
+                      increases the value of your property and
+                      <em>&nbsp;keeps our cities healthy</em>.
+                    </Trans>
                   </p>
                 </div>
               </div>
@@ -234,7 +252,7 @@ export default function Home(props) {
             <div className="grid-item1-stretch position-relative">
               <div className="main-punchline is-white">
                 <div className="main-punchline--lrg">
-                  <em>COMING SOON</em>
+                  <em>{t("home_page.section_six.title")}</em>
                   <br />
                   <br />
                 </div>
@@ -243,17 +261,19 @@ export default function Home(props) {
 
               <div className="main-punchline">
                 <div className="main-punchline--p is-white">
-                  Our digital platform makes finding and sourcing plants
-                  <em>&nbsp; easy and available everywhere</em>.
-                  <br />
-                  <br />
-                  Through our network of local plant nurseries, we help you find
-                  the right plants for the right spot and show what is available
-                  to have it delivered in time.
-                  <br />
-                  <br />
-                  Coming fall 2021. Stay updated by subscribing to our
-                  newsletter.
+                  <Trans i18nKey="home_page.section_six.description">
+                    Our digital platform makes finding and sourcing plants
+                    <em>&nbsp; easy and available everywhere</em>.
+                    <br />
+                    <br />
+                    Through our network of local plant nurseries, we help you
+                    find the right plants for the right spot and show what is
+                    available to have it delivered in time.
+                    <br />
+                    <br />
+                    Coming fall 2021. Stay updated by subscribing to our
+                    newsletter.
+                  </Trans>
                 </div>
               </div>
             </div>
@@ -269,7 +289,7 @@ export default function Home(props) {
         <div className="o-container c-section--pad-vh">
           <div className="main-punchline">
             <div className="main-punchline--lrg">
-              In collaboration with
+              {t("home_page.section_seven.title")}
               <br />
               <br />
             </div>
