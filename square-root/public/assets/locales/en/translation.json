@@ -64,7 +64,7 @@
 
   "section4_item3": "Indoor",
   "section4_item3_desc": "Our partner Leaf has extensive expertise with",
-  "section4_item3_outlined": "indoor",
+  "section4_item3_outlined": "indoor ",
   "section4_item3_desc2": "plants. Incredible aesthetics are combined with minimal maintenance.",
 
   "section5_p1":"By integrating nature in your project, it helps meet the requirements for stormwater management and using local plants increases",
@@ -99,26 +99,29 @@
   "michel_desc1":"A lover of nature and the outdoors, ",
   "michel_desc2":"is passionate about the environment and contributing to solving climate change.", 
   "michel_desc3":"He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.", 
-  "michel_desc4":"Amongst other things he has contributed building for Gruten the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+  "michel_desc4":"Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
 
   
   "karolina_img1_desc1":"Karolina Maciejewska",
   "karolina_img1_desc2":"Backend Developer",
   "karolina_outlined":"Karolina",
-  "karolina_desc1":"who is Karolina at SquareRoot?",
-  "karolina_desc2":"is an awesome backend developer",
+  "karolina_desc1":"Motivated to contribute and solve problems of value to people and the earth we live on, \n",
+  "karolina_desc2":"joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.",
+  "karolina_desc3": "She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet. \n She enjoys being active in nature, as well as with yoga and martial arts.",
 
   "gro_img1_desc1":"Gro Elisabeth Oleivsgard",
   "gro_img1_desc2":"UX/UI and Frontend Developer",
   "gro_outlined":"Gro",
-  "gro_desc1":"who is Gro at SquareRoot?",
-  "gro_desc2":"is an awesome frontend developer",
+  "gro_desc1":"Motivated to contribute and solve problems of value to people and the earth we live on, \n",
+  "gro_desc2":"joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.",
+  "gro_desc3": "She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet. \n She enjoys being active in nature, as well as with yoga and martial arts.",
 
   "kristian_img1_desc1":"Kristian Sørum",
-  "kristian_img1_desc2":"Developer Trainee",
+  "kristian_img1_desc2":"Frontend Developer Intern",
   "kristian_outlined":"Kristian",
-  "kristian_desc1":"who is Kristian at SquareRoot?",
-  "kristian_desc2":"is an awesome trainee developer",
+  "kristian_desc1":"With us as an intern, ",
+  "kristian_desc2":"is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.",
+  "kristian_desc3":"He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
 
   "sanne_img1_desc1":"Sanne Edland",
   "sanne_img1_desc2":"Developer Trainee",

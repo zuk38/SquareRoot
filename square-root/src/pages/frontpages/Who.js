@@ -153,42 +153,47 @@ export default function Who() {
               </div>
               </div>
               </div>
-
+<div className="c-section">
               <div className="c-grid--2x2">
                 <div className="grid-item1">
                    {/* Karolina */}
-          
-
-                   <img
-                    className="u-mrg-img1"
+      
+            
+           <img
+                    className="c-img--portrait"
                     src="../images/missing-img.jpg"
                   ></img>
                   <p className="u-mrg-txt1">
                     <strong>
                       {
                         t("karolina_img1_desc1")
-                        /* Karolina Maciejewska */
+                        /* Karolina M */
                       }
                       </strong>
                     <br />
                     {
                       t("karolina_img1_desc2")
-                      /* Backend Developer */
+                      /* Cloud Dev */
                     }
                     
                   </p>
 
-                  <p className="c-txt-punchline--sm">
+                  <p>
                     {
                       t("karolina_desc1")
-                    }&nbsp;
-                    <em>
+                    }
+                    <em>&nbsp;
                       {
                         t("karolina_outlined")
                         /* Karolina */
                       }</em> &nbsp;
                       {
                         t("karolina_desc2")
+                      }
+                      <br />
+                      <br />
+                      {
+                        t("karolina_desc3")
                       }
                   </p>
 
@@ -198,8 +203,8 @@ export default function Who() {
                   {/* Gro */}
             
                   <img
-                    className="u-mrg-img1"
-                    src="../images/missing-img.jpg"
+                    className="c-img--portrait"
+                    src="../images/gro-profile.jpeg"
                   ></img>
                   <p className="u-mrg-txt1">
                     <strong>
@@ -216,7 +221,7 @@ export default function Who() {
                     
                   </p>
 
-                  <p className="c-txt-punchline--sm">
+                  <p>
                     {
                       t("gro_desc1")
                     }
@@ -228,6 +233,11 @@ export default function Who() {
                       {
                         t("gro_desc2")
                       }
+                      <br />
+                      <br />
+                      {
+                        t("gro_desc3")
+                      }
                   </p>
                 </div>
 
@@ -237,7 +247,7 @@ export default function Who() {
 
                   <img
                     className="u-mrg-img1"
-                    src="../images/missing-img.jpg"
+                    src="../images/kristian-square.jpeg"
                   ></img>
                   <p className="u-mrg-txt1">
                     <strong>
@@ -254,11 +264,11 @@ export default function Who() {
                     
                   </p>
 
-                  <p className="c-txt-punchline--sm">
-                    {
+                  <p>
+                  {
                       t("kristian_desc1")
                     }
-                    <em>&nbsp;
+                  <em>&nbsp;
                       {
                         t("kristian_outlined")
                         /* Kristian */
@@ -266,6 +276,14 @@ export default function Who() {
                       {
                         t("kristian_desc2")
                       }
+                    
+                  <br />
+                  <br />
+
+                  {
+                        t("kristian_desc3")
+                      }
+                      
                   </p>
                 </div>
 
@@ -307,45 +325,7 @@ export default function Who() {
 
                 </div>
 
-                <div className="grid-item5">
-                  {/* Rosa */}
-              
-
-                  <img
-                    className="u-mrg-img1"
-                    src="../images/missing-img.jpg"
-                  ></img>
-                  <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("rosa_img1_desc1")
-                        /* Rosa Berg */
-                      }
-                      </strong>
-                    <br />
-                    {
-                      t("rosa_img1_desc2")
-                      /* Developer Trainee */
-                    }
-                    
-                  </p>
-
-                  <p className="c-txt-punchline--sm">
-                    {
-                      t("rosa_desc1")
-                    }
-                    <em>&nbsp;
-                      {
-                        t("rosa_outlined")
-                        /* Rosa */
-                      }</em> &nbsp;
-                      {
-                        t("rosa_desc2")
-                      }
-                  </p>
-
                 </div>
-                
           
           </div>
         </div>

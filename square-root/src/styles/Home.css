@@ -324,14 +324,13 @@ Smooth Scroll --------*/
 }
 .main-punchline {
   color: var(--mainGrey);
-  line-height:1.8em;
   text-align: left;
   margin-left: 5%;
 }
 
 .main-punchline--lrg{
   font-size:3.5em;
-  line-height: 1em;
+  line-height: 1.2em;
   font-weight: 600;
   letter-spacing: 0.02em;
   width:90%;
