@@ -15,7 +15,7 @@ export default function Who() {
             element = document.getElementById(myRef);
          element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
     };
-    
+
   return (
     <>
     
@@ -62,18 +62,18 @@ export default function Who() {
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
-                    src="../images/jo-profil.png"
+                    src="../images/jo-profil.jpeg"
                   ></img>
                   <p className="u-mrg-txt1">
                     <strong>
                       {
-                        t("who_img1_desc1")
+                        t("jo_img1_desc1")
                         /*Jo Deketelaere */
                       }
                       </strong>
                     <br />
                     {
-                      t("who_img1_desc2")
+                      t("jo_img1_desc2")
                       /* Grunnlegger og CEO */
                     }
                     
@@ -84,22 +84,22 @@ export default function Who() {
           
                     <em>
                       {
-                        t("who_worker1_outlined")
+                        t("jo_outlined")
                         /*Jo */
                       }
                       </em> 
                       {
-                        t("who_worker1_desc1")
+                        t("jo_desc1")
                       }
                   </p>
                   <p>
                     {
-                      t("who_worker1_desc2")
+                      t("jo_desc2")
                     }
                   </p>
                   <p>
                     {
-                      t("who_worker1_desc3")
+                      t("jo_desc3")
                     }
                   </p>
                 </div>
@@ -112,13 +112,13 @@ export default function Who() {
                   <p className="u-mrg-txt1">
                     <strong>
                       {
-                        t("who_img2_desc1")
+                        t("michel_img2_desc1")
                         /*Michel Wolfstirn */
                       }
                       </strong>
                     <br />
                     {
-                      t("who_img2_desc2")
+                      t("michel_img2_desc2")
                       /*Founder og COO*/
                     }
                     
@@ -127,31 +127,226 @@ export default function Who() {
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
                     {
-                      t("who_worker2_desc1")
+                      t("michel_desc1")
                     }
                     <em>
                       {
-                        t("who_worker2_outlined")
+                        t("michel_outlined")
                         /* Michel */
                       }</em> 
                       {
-                        t("who_worker2_desc2")
+                        t("michel_desc2")
                       }
                   </p>
                   <p>
                     {
-                      t("who_worker2_desc3")
+                      t("michel_desc3")
                     }
                 
                   </p>
                   <p>
                   {
-                      t("who_worker2_desc4")
+                      t("michel_desc4")
                     }
                   </p>
                 </div>
               </div>
-            </div>
+              </div>
+              </div>
+
+              <div className="c-grid--2x2">
+                <div className="grid-item1">
+                   {/* Karolina */}
+          
+
+                   <img
+                    className="u-mrg-img1"
+                    src="../images/missing-img.jpg"
+                  ></img>
+                  <p className="u-mrg-txt1">
+                    <strong>
+                      {
+                        t("karolina_img1_desc1")
+                        /* Karolina Maciejewska */
+                      }
+                      </strong>
+                    <br />
+                    {
+                      t("karolina_img1_desc2")
+                      /* Backend Developer */
+                    }
+                    
+                  </p>
+
+                  <p className="c-txt-punchline--sm">
+                    {
+                      t("karolina_desc1")
+                    }&nbsp;
+                    <em>
+                      {
+                        t("karolina_outlined")
+                        /* Karolina */
+                      }</em> &nbsp;
+                      {
+                        t("karolina_desc2")
+                      }
+                  </p>
+
+                </div>
+
+                <div className="grid-item3">
+                  {/* Gro */}
+            
+                  <img
+                    className="u-mrg-img1"
+                    src="../images/missing-img.jpg"
+                  ></img>
+                  <p className="u-mrg-txt1">
+                    <strong>
+                      {
+                        t("gro_img1_desc1")
+                        /* Gro Elisabeth Oleivsgard */
+                      }
+                      </strong>
+                    <br />
+                    {
+                      t("gro_img1_desc2")
+                      /* UX / UI and Frontend Developer */
+                    }
+                    
+                  </p>
+
+                  <p className="c-txt-punchline--sm">
+                    {
+                      t("gro_desc1")
+                    }
+                    <em>&nbsp;
+                      {
+                        t("gro_outlined")
+                        /* Gro */
+                      }</em> &nbsp;
+                      {
+                        t("gro_desc2")
+                      }
+                  </p>
+                </div>
+
+                <div className="grid-item2">
+                  {/* Kristian */}
+                 
+
+                  <img
+                    className="u-mrg-img1"
+                    src="../images/missing-img.jpg"
+                  ></img>
+                  <p className="u-mrg-txt1">
+                    <strong>
+                      {
+                        t("kristian_img1_desc1")
+                        /* Kristian Sørum */
+                      }
+                      </strong>
+                    <br />
+                    {
+                      t("kristian_img1_desc2")
+                      /* Developer Trainee */
+                    }
+                    
+                  </p>
+
+                  <p className="c-txt-punchline--sm">
+                    {
+                      t("kristian_desc1")
+                    }
+                    <em>&nbsp;
+                      {
+                        t("kristian_outlined")
+                        /* Kristian */
+                      }</em> &nbsp;
+                      {
+                        t("kristian_desc2")
+                      }
+                  </p>
+                </div>
+
+                <div className="grid-item4">
+                  {/* Sanne */}
+                 
+                  <img
+                    className="u-mrg-img1"
+                    src="../images/missing-img.jpg"
+                  ></img>
+                  <p className="u-mrg-txt1">
+                    <strong>
+                      {
+                        t("sanne_img1_desc1")
+                        /* Sanne Edland*/
+                      }
+                      </strong>
+                    <br />
+                    {
+                      t("sanne_img1_desc2")
+                      /* Developer Trainee */
+                    }
+                    
+                  </p>
+
+                  <p className="c-txt-punchline--sm">
+                    {
+                      t("sanne_desc1")
+                    }
+                    <em>&nbsp;
+                      {
+                        t("sanne_outlined")
+                        /* Sanne */
+                      }</em> &nbsp;
+                      {
+                        t("sanne_desc2")
+                      }
+                  </p>
+
+                </div>
+
+                <div className="grid-item5">
+                  {/* Rosa */}
+              
+
+                  <img
+                    className="u-mrg-img1"
+                    src="../images/missing-img.jpg"
+                  ></img>
+                  <p className="u-mrg-txt1">
+                    <strong>
+                      {
+                        t("rosa_img1_desc1")
+                        /* Rosa Berg */
+                      }
+                      </strong>
+                    <br />
+                    {
+                      t("rosa_img1_desc2")
+                      /* Developer Trainee */
+                    }
+                    
+                  </p>
+
+                  <p className="c-txt-punchline--sm">
+                    {
+                      t("rosa_desc1")
+                    }
+                    <em>&nbsp;
+                      {
+                        t("rosa_outlined")
+                        /* Rosa */
+                      }</em> &nbsp;
+                      {
+                        t("rosa_desc2")
+                      }
+                  </p>
+
+                </div>
+                
+          
           </div>
         </div>
       </div>
