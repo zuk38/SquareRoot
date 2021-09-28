@@ -103,5 +103,15 @@
     "send": "Send",
     "accept1": "I accept SquareRoot's <1>Terms of Use</1> and <3>Privacy Policy</3>",
     "accept2": "I want to occasionally receive newsletters from SquareRoot about offers, news and updates in green urban development"
+  },
+  "partner_page": {
+    "title": "Become a partner",
+    "subtitle": "Together, we green our cities.",
+    "description": "We want to collaborate with all stakeholders in the planning and design of urban green areas. This is so that we can make the work process seamless so that you can create and maintain resilient greenspaces.",
+    "contact": "Ta kontakt for en uforpliktende samtale",
+    "RED_d": "See the concepts that will green you building",
+    "LARK_d": "See what is available and make your own amazing project",
+    "LENT_d": "Order the right plant for the right spot on our platform",
+    "PN_d": "Show and sell your plants on our platform"
   }
 }

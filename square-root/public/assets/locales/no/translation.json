@@ -103,5 +103,15 @@
     "send": "Sende",
     "accept1": "Jeg godtar SquareRoots <1>vilkår for bruk</1> og <3>personvernerklæring</3>",
     "accept2": "Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud, nyheter og oppdateringer innen grønn byutvikling."
+  },
+  "partner_page": {
+    "title": "Bli partner",
+    "subtitle": "Sammen gjør vi byene våres grønne. Bokstavelig talt.",
+    "description": "Vi ønsker å samarbeide med alle aktører i planleggingen og utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
+    "contact": "Ta kontakt for en uforpliktende samtale",
+    "RED_d": "Utforsk konsepter som vil gjøre bygningen din grønnere",
+    "LARK_d": "Se hva som er tilgjengelig og lag ditt eget fantastiske prosjekt",
+    "LENT_d": "Bestill riktige planter til riktig sted på plattformen vår",
+    "PN_d": "Vis og selg plantene dine på plattformen vår"
   }
 }
