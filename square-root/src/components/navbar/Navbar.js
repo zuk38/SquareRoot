@@ -121,13 +121,25 @@ export default function Navbar(props) {
                   {
                     {
                       dropdownGreenspaces: navDropdown.dropdownGreenspaces && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownAbout: navDropdown.dropdownAbout && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownContact: navDropdown.dropdownContact && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                     }[item.dropdown]
                   }
