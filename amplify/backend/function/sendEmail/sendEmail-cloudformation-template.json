@@ -16,6 +16,9 @@
     "s3Key": {
       "Type": "String"
     },
+    "emailAddress": {
+      "Type": "String"
+    },
     "storagecontactFormTableStreamArn": {
       "Type": "String",
       "Default": "storagecontactFormTableStreamArn"
@@ -73,6 +76,9 @@
             },
             "REGION": {
               "Ref": "AWS::Region"
+            },
+            "EMAIL_ADDRESS": {
+              "Ref": "emailAddress"
             }
           }
         },
@@ -93,12 +99,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "squarerootprojectLambdaRole900a1ef3",
+            "squarerootprojectLambdaRole5a4fa08e",
             {
               "Fn::Join": [
                 "",
                 [
-                  "squarerootprojectLambdaRole900a1ef3",
+                  "squarerootprojectLambdaRole5a4fa08e",
                   "-",
                   {
                     "Ref": "env"
@@ -207,7 +213,7 @@
         "LambdaExecutionRole"
       ],
       "Properties": {
-        "BatchSize": 100,
+        "BatchSize": 1,
         "Enabled": true,
         "EventSourceArn": {
           "Ref": "storagecontactFormTableStreamArn"

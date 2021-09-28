@@ -1,125 +1,65 @@
 {
-    "home": "HJEM",
-    "greenspaces": "PROSJEKTER",
-    "rooftop": "TAKTERRASSE",
-    "rainbed": "REGNBED",
-    "indoor": "INNENDØRS",
-    "rooftop2": "Takterrasse",
-    "rainbed2": "Regnbed",
-    "indoor2": "Innendørs",
-    "who": "HVEM VI ER",
-    "about": "OM",
-    "what": "HVA VI GJØR",
-    "why": "HVORFOR OSS",
-    "how": "HVORDAN DET FUNGERER",
-    "contact": "KONTAKT",
-    "contactU": "KONTAKT OSS",
-    "partner": "BLI EN PARTNER",
-    "signIn": "Logg inn",
-    "hero_main1": "Planlegg, design og bestill grøntområder inne, ute og på toppen av bygninger",
-    "hero_main2": " alt på ett sted.",
-    "hero_account": "Har du allerede en konto?",
-    "see_more": "Se mer",
-    "read_more": "Les mer",
-    "beta": "Gå til Beta",
-    "demo": "Forespør Demo",
-    "or": "ELLER",
-    "my_projects": "Mine Prosjekter",
+  "home": "HJEM",
+  "greenspaces": "PROSJEKTER",
+  "rooftop": "TAKHAGE",
+  "rainbed": "REGNBED",
+  "indoor": "INNENDØRS",
+  "rooftop2": "Takhage",
+  "rainbed2": "Regnbed",
+  "indoor2": "Innendørs",
+  "who": "HVEM VI ER",
+  "about": "OM",
+  "what": "HVA VI GJØR",
+  "why": "HVORFOR OSS",
+  "how": "HVORDAN DET FUNGERER",
+  "contact": "KONTAKT",
+  "contactU": "KONTAKT OSS",
+  "partner": "BLI EN PARTNER",
+  "signIn": "Logg inn",
+  "my_projects": "Mine Prosjekter",
+  "account": "Kontoinnstillinger",
   "log_out": "Logg Ut",
-
-    "plantlist":"Planteliste",
-    "show_more":"Vis mer",
-    "show_less":"Vis mindre",
-    "start_project":"Start prosjekt",
-    "or_sm":"eller",
-
-    "RED":"Eiendomsutvikler",
-    "LARK":"Landskapsarkitekt",
-    "LENT":"Landskapsentreprenør",
-    "PN":"Planteskole",
-
-  "section2_top1": "SquareRoot gjør byer",
-  "section2_outlined1": "grønne",
-  "section2_top2": ", bokstavelig talt!",
-  "section2_bottom1": "Her på SquareRoot tror vi på at bærekraftige byer er",
-  "section2_outlined2": "fremtiden vår",
-  "section2_bottom2": ". Med mange grøntarealer inne, ute og på toppen av bygninger.",  
-
-  "section3_top1": "Vi ønsker å gjøre det enklere å",
-  "section3_outlined": "velge natur",
-  "section3_top2": "for dine byggeprosjekter.",
-  "section3_bottom": "Sammen med NIBIO, biologer, landskapsarkitekter og planteskoler har vi utviklet plantelister for urbane grøntområder og standardkonsepter, som takhager og regnbed, for å håndtere store nedbørsmengder samt øke biologisk mangfold.",
-  
-  "section4_item1": "Takhage",
-  "section4_item1_desc1": "Optimaliser taket med et av våre konsepter for",
-  "section4_item1_outlined": "takhage",
-  "section4_item1_desc2": ". Plantene og utstyret (?) er utvalgt og designet for å dekke dine behov.",
-
-  "section4_item2": "Regnbed",
-  "section4_item2_desc": "Plantene for",
-  "section4_item2_outlined": "regnbed",
-  "section4_item2_desc2": "er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen.",
-
-  "section4_item3": "Innendørs",
-  "section4_item3_desc": "Vår partner Leaf har omfattende ekspertise med",
-  "section4_item3_outlined": "innendørsplanter",
-  "section4_item3_desc2": ". Pen estetikk kombineres med minimalt vedlikehold.",
-
-  "section5_p1":"Ved å integrere natur inn i bygningsprosjektet, vil det bidra til å møte kravene for overvannshåndtering. Lokale planter øker også ",
-  "section5_outlined1":"biomangfoldet",
-  "section5_p2":"og dermed også ",
-  "section5_outlined2":"BREEAM-poeng.",
-  "section5_p3":" Å bygge prosjekter med et høyt miljøavtrykk øker verdier av eiendommen din og ",
-  "section5_outlined3":"holder byene våres friske",
-
-  "section6_top":"KOMMER SNART",
-  "section6_bottom1":"Vår digitale plattform gjør det å finne og bestille planter",
-  "section6_outlined":"enkelt og tilgjengelig overalt.",
-  "section6_bottom2":"Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted og vise hvilke som er tilgjengelige slik at det blir levert i tide.",
-  "section6_bottom3":"Kommer høsten 2021. Hold deg oppdatert ved å abonnere på nyhetsbrevet vårt.",
-
-  "section7_top":"I samarbeid med",
-
-  "who_h1":"Hvem vi er",
-  "who_p1":"Ser du etter planter til å skape utmerket og klimarobuste urbane grønne arealer? Usikker på hvilken planter er tilpasset kravene og om de er tilgjengelige? SquareRoot løser dette for deg!",
-  "who_p2":"Her kan du velge prosjekttyper og stil for arealet ditt, bestemme hvilke funksjonaliteter du ønsker å fokusere på og skreddersy plantelistene vi foreslår for deg. Vi sikrer både respekt av kravene og tilgjengeligheten av planten for deg.",
-  "who_p3":"Sammen gjør vi byene våre grønnere!",
-  "who_h2":"Vårt team",
-  "jo_img1_desc1":"Jo Deketelaere",
-  "jo_img1_desc2":"Grunnlegger og CEO",
-  "jo_outlined":"Jo ",
-  "jo_desc1":"startet sin karriere innen internasjonal forretningsutvikling for store energiselskaper med fokus på klimabegrensning, miljøpolitikk og investeringer i teknologier med lavt karbonutslipp.",
-  "jo_desc2":"Han startet sitt eget selskap Greenbeat for å utvikle et smart blågrønt tak som kombinerer automatisert forvaltning av byvegetasjon og intelligent kontroll av vannreservoarer. Dette prosjektet, kalt RainBrain, har mottatt finansiering fra OrganiCity og SynchroniCity, begge under H2020-paraplyen.",
-  "jo_desc3":"Han bor i Oslo, Norge med sin kone og barn, liker å vandre i lokal natur og er et engasjert medlem av swimrun-felleskapet.",
-  "michel_img2_desc1":"Michel Wolfstirn",
-  "michel_img2_desc2":"Grunnlegger og COO",
-  "michel_outlined":"Michel ",
-  "michel_desc1":"Med en forkjærlighet til naturen og friluftsliv, har ",
-  "michel_desc2":"en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer",
-  "michel_desc3":"Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi. ",
-  "michel_desc4":"Michel har også bidratt med å bygge for Gruten, den første norske urbane gården som dyrker sopp på kaffegrut. Han er også involvert med Pådriv i prosjekter knyttet til bærekraftig byutvikling.",
-
-  "contact_h1":"Kontakt oss",
-  "contact_p1":"Hvordan kan vi hjelpe deg?",
-  "contact_h3_1":"E-post",
-  "contact_h3_desc1":"michel@squareroot.cc",
-  "contact_h3_2":"Telefon",
-  "contact_h3_desc2":"925 57 654",
-
-  "partner_h1":"Bli partner",
-  "partner_h2":"Sammen gjør vi byene våres grønne. ",
-  "partner_p1":"Vi ønsker å samarbeide med alle aktører i planleggingen og utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
-  "partner_RED_desc":"Utforsk konsepter som vil gjøre bygningen din grønnere",
-  "partner_LARK_desc":"Se hva som er tilgjengelig og lag ditt eget fantastiske prosjekt",
-  "partner_LENT_desc":"Bestill riktige planter til riktig sted på plattformen vår",
-  "partner_PN_desc":"Vis og selg plantene dine på plattformen vår",
- 
-
+  "or": "ELLER",
+  "start": "Start prosjekt",
+  "home_page": {
+    "hero": {
+      "description": "Planlegg, design og bestill grøntområder inne, ute og på toppen av bygninger<1/>-<3> alt på ett sted.</3>",
+      "hero_account": "Har du allerede en konto?",
+      "hero_new": "Ny hos SquareRoot?",
+      "see_more": "Se mer",
+      "read_more": "Les mer",
+      "demo": "Forespør Demo"
+    },
+    "section_two": {
+      "title": "SquareRoot gjør byer <1>grønne</1>, bokstavelig talt!",
+      "description": "Her på SquareRoot tror vi på at bærekraftige byer er <1>fremtiden vår</1>. Med mange grøntarealer inne, ute og på toppen av bygninger."
+    },
+    "section_three": {
+      "title": "Vi ønsker å gjøre det enklere å <1>velge natur</1> for dine byggeprosjekter.",
+      "description": "Sammen med NIBIO, biologer, landskapsarkitekter og planteskoler har vi utviklet plantelister for urbane grøntområder og standardkonsepter, som takhager og regnbed, for å håndtere store nedbørsmengder samt øke biologisk mangfold."
+    },
+    "section_four": {
+      "rooftop": "Takhage",
+      "rooftop_description": "Optimaliser taket med et av våre konsepter for <1>takhage</1>. Plantene og utstyret (?) er utvalgt og designet for å dekke dine behov.",
+      "rainbed_description": "Plantene for <1>regnbed</1> er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen.",
+      "indoor_description": "Vår partner Leaf har omfattende ekspertise med <1>innendørsplanter</1>. Pen estetikk kombineres med minimalt vedlikehold."
+    },
+    "section_five": {
+      "description": "Ved å integrere natur inn i bygningsprosjektet, vil det bidra til å møte kravene for overvannshåndtering. Lokale planter øker også <1>biomangfoldet</1> og dermed også <3>BREEAM-poeng</3>. <5 /> <6 /> Å bygge prosjekter med et høyt miljøavtrykk øker verdier av eiendommen din og <8>holder byene våres friske</8>."
+    },
+    "section_six": {
+      "title": "KOMMER SNART",
+      "description": "Vår digitale plattform gjør det å finne og bestille planter <1>enkelt og tilgjengelig overalt</1>. <3/> <4/>Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted og vise hvilke som er tilgjengelige slik at det blir levert i tide. <6 /> <7 />Kommer høsten 2021. Hold deg oppdatert ved å abonnere på nyhetsbrevet vårt."
+    },
+    "section_seven": {
+      "title": "I samarbeid med"
+    }
+  },
   "footer": {
     "description": "",
     "button": "",
     "greenspaces": "Grønne Arealer",
-    "rooftop": "Takterrasse",
+    "rooftop": "Takhage",
     "rainbed": "Regnseng",
     "indoor": "Innendørsplanter",
     "about": "Om",
@@ -127,5 +67,51 @@
     "what": "Hva vi gjør",
     "why": "Hvorfor oss",
     "how": "Hvordan det fungerer"
+  },
+  "who_page": {
+    "title": "Hvem vi er",
+    "description": "Ser du etter planter til å skape utmerket og klimarobuste urbane grønne arealer? Usikker på hvilken planter er tilpasset kravene og om de er tilgjengelige? SquareRoot løser dette for deg!<1/> <2/>Her kan du velge prosjekttyper og stil for arealet ditt, bestemme hvilke funksjonaliteter du ønsker å fokusere på og skreddersy plantelistene vi foreslår for deg. Vi sikrer både respekt av kravene og tilgjengeligheten av planten for deg.<4/><5/>Sammen gjør vi byene våre grønnere!<7/>",
+    "team": {
+      "title": "Vårt Team",
+      "jo_img_d": "Grunnlegger og CEO",
+      "jo_d1": "<0>Jo</0> startet sin karriere innen internasjonal forretningsutvikling for store energiselskaper med fokus på klimabegrensning, miljøpolitikk og investeringer i teknologier med lavt karbonutslipp.",
+      "jo_d2": "Han startet sitt eget selskap Greenbeat for å utvikle et smart blågrønt tak som kombinerer automatisert forvaltning av byvegetasjon og intelligent kontroll av vannreservoarer. Dette prosjektet, kalt RainBrain, har mottatt finansiering fra OrganiCity og SynchroniCity, begge under H2020-paraplyen.",
+      "jo_d3": "Han bor i Oslo, Norge med sin kone og barn, liker å vandre i lokal natur og er et engasjert medlem av swimrun-felleskapet.",
+      "michel_img_d": "Grunnlegger og COO",
+      "michel_d1": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.",
+      "michel_d2": "Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.",
+      "michel_d3": "Michel har også bidratt med å bygge for Gruten, den første norske urbane gården som dyrker sopp på kaffegrut. Han er også involvert med Pådriv i prosjekter knyttet til bærekraftig byutvikling.",
+      "karolina_img_d": "Cloud Developer",
+      "karolina_d": "Mangler <1>Karolina</1> norsk oversettelse",
+      "gro_img_d": "UX / UI and Frontend Utvikler",
+      "gro_d": "Inspirert til å bidra med og løse problemer av verdi for mennesker og jorden vi lever på, ble <1>Gro</1> med på SquareRoot motivert til å gjøre implementasjonen av grøntarealer i urbane områder mer tilgjengelig for alle involverte aktører.<3/><4/> Vedsiden av SquareRoot og Dataingeniørstudiet på OsloMet, trives hun med yoga og kampsport, og elsker å utforske nye steder.",
+      "kristian_img_d": "UX/UI and Frontend Praksisstudent",
+      "kristian_d": "Kristian er motivert til å gjøre plattformen vår så brukervennlig og selvdreven som mulig, noe som forhåpentligvis resulterer i å gjøre implementasjonen av grøntområder i byene en enkel prosess. <3/><4/> Han ser frem til å bli en programutvikler etter han fullfører graden sin i Dataingeniør på OsloMet. Vedsiden av studiene, trives Kristian med å være utendørs året rundt, gjerne høyt opp i fjellene.",
+      "sanne_img_d": "UX/UI and Frontend Praksisstudent",
+      "sanne_d": "<1>Sanne</1> har en lidenskap for miljøet og dyrene, og ønsker å utvikle mer bærekraftige måter å leve på. Hun ble en del av SquareRoot for å bidra med en grønnere framtid med vår økologiske løsning. Hun trives med å være i nærheten av havet, i godt selskap og god mat. <3/><4/> Hun fullfører sitt siste år i bachelorgraden Anvendt Datateknologi på OsloMet. "
+    }
+  },
+  "contact_page": {
+    "title": "Kontakt oss",
+    "subtitle": "Hvordan kan vi hjelpe deg?",
+    "email": "E-post",
+    "email_notif_title": "E-post sendt!",
+    "email_notif_text": "Vi vil straks komme tilbake til deg.",
+    "phone": "Telefon",
+    "or": "eller",
+    "send_message": "Send oss en melding",
+    "send": "Send",
+    "accept1": "Jeg godtar SquareRoots <1>vilkår for bruk</1> og <3>personvernerklæring</3>",
+    "accept2": "Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud, nyheter og oppdateringer innen grønn byutvikling."
+  },
+  "partner_page": {
+    "title": "Bli partner",
+    "subtitle": "Sammen gjør vi byene våres grønne.",
+    "description": "Vi ønsker å samarbeide med alle aktører i planleggingen og utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
+    "contact": "Ta kontakt for en uforpliktende samtale",
+    "RED_d": "Utforsk konsepter som vil gjøre bygningen din grønnere",
+    "LARK_d": "Se hva som er tilgjengelig og lag ditt eget fantastiske prosjekt",
+    "LENT_d": "Bestill riktige planter til riktig sted på plattformen vår",
+    "PN_d": "Vis og selg plantene dine på plattformen vår"
   }
 }

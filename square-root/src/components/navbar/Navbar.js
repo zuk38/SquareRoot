@@ -35,7 +35,11 @@ export default function Navbar(props) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = (path) => {
     setClick(false);
-    history.push(path);
+    if (path === undefined) return;
+    else {
+      history.push(path);
+      if (path.indexOf("/categories") > -1) history.go(0);
+    }
   };
 
   const onMouseEnter = (dropdown) => {
@@ -77,7 +81,7 @@ export default function Navbar(props) {
                   <div
                     key={index}
                     className="nav-links-no-hover-title"
-                    onClick={closeMobileMenu}
+                    onClick={() => closeMobileMenu(undefined)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                   </div>
@@ -117,13 +121,25 @@ export default function Navbar(props) {
                   {
                     {
                       dropdownGreenspaces: navDropdown.dropdownGreenspaces && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownAbout: navDropdown.dropdownAbout && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownContact: navDropdown.dropdownContact && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                     }[item.dropdown]
                   }

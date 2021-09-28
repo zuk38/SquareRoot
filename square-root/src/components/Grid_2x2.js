@@ -22,7 +22,6 @@ export default function Grid_2x2({ title, grid_values }) {
                 </div>
               </div>
             ))}
-            ;
           </div>
         </div>
       </div>

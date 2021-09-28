@@ -1,160 +1,65 @@
 {
-    "home": "HOME",
-    "greenspaces": "PROJECTS",
-    "rooftop": "ROOFTOP",
-    "rainbed": "RAINBED",
-    "indoor": "INDOOR",
-    "rooftop2": "Rooftop",
-    "rainbed2": "Rainbed",
-    "indoor2": "Indoor",
-    "about": "ABOUT",
-    "what": "WHAT WE DO",
-    "why": "WHY US",
-    "how": "HOW IT WORKS",
-    "contact": "CONTACT",
-    "contactU": "CONTACT US",
-    "partner": "BECOME A PARTNER",
-    "signIn": "Sign in",
-    "hero_main1": "Plan, design and order greenspaces inside, outside and on top of buildings",
-    "hero_main2": " all in one place.",
-    "hero_account": "Do you have an account?",
-    "see_more": "See more",
-    "read_more": "Read more",
-    "beta": "View Beta",
-    "demo": "Request Demo",
-    "or": "OR",
-    "my_projects": "My Projects",
-    "account": "Account Settings",
-    "log_out": "Log Out",
-
-    "plantlist":"Plantelist",
-    "show_more":"Show more",
-    "show_less":"Show less",
-    "start_project":"Start project",
-    "or_sm":"or",
-
-    "RED":"Real Estate Developer",
-    "LARK":"Landscape Architect",
-    "LENT":"Landscape Entrepreneur",
-    "PN":"Plant Nursery",
-
-
-
-  "section2_top1": "SquareRoot makes cities",
-  "section2_outlined1": "green",
-  "section2_top2": ", literally!",
-  "section2_bottom1": "At SquareRoot we believe sustainable cities are",
-  "section2_outlined2": "our future",
-  "section2_bottom2": ". With lots of green spaces inside, outside and top of buildings.",
-
-  "section3_top1": "We want to make it easier to",
-  "section3_outlined": "choose nature",
-  "section3_top2": "for your building projects.",
-  "section3_bottom": "Together with NIBIO, biologists, landscape architects and plant nurseries we \n have developed plant lists for urban greening and standard concepts, such as \n roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity.",
-
-  "section4_item1": "Roof garden",
-  "section4_item1_desc1": "Optimise your roof surface with one of our",
-  "section4_item1_outlined": "roof garden ",
-  "section4_item1_desc2": "concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
-
-  "section4_item2": "Rainbed",
-  "section4_item2_desc": "Our plants for",
-  "section4_item2_outlined": "rainbeds",
-  "section4_item2_desc2": "are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.",
-
-  "section4_item3": "Indoor",
-  "section4_item3_desc": "Our partner Leaf has extensive expertise with",
-  "section4_item3_outlined": "indoor ",
-  "section4_item3_desc2": "plants. Incredible aesthetics are combined with minimal maintenance.",
-
-  "section5_p1":"By integrating nature in your project, it helps meet the requirements for stormwater management and using local plants increases",
-  "section5_outlined1":"biodiversity",
-  "section5_p2":"as well as",
-  "section5_outlined2":"BREEAM points.",
-  "section5_p3":"Building projects with a high environmental footprint increases the value of your property and",
-  "section5_outlined3":"keeps our cities healthy",
-
-  "section6_top":"COMING SOON",
-  "section6_bottom1":"Our digital platform makes finding and sourcing plants",
-  "section6_outlined":"easy and available everywhere.",
-  "section6_bottom2":"Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.",
-  "section6_bottom3":"Coming fall 2021. Stay updated by subscribing to our newsletter.",
-
-  "section7_top":"In collaboration with",
-
-  "who_h1":"Who we are",
-  "who_p1":"Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you!",
-  "who_p2":"Here you can choose a project type, pick a look for your space, decide the functionality focus and customize the plant list we suggest for you. We make sure the plants fit your requirements and will be available.",
-  "who_p3":"Together we will green our cities!",
-  "who_h2":"The Team",
-  "jo_img1_desc1":"Jo Deketelaere",
-  "jo_img1_desc2":"Founder og CEO",
-  "jo_outlined":"Jo ",
-  "jo_desc1":"started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.",
-  "jo_desc2":"He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella.",
-  "jo_desc3":"He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
-  "michel_img2_desc1":"Michel Wolfstirn",
-  "michel_img2_desc2":"Founder og COO",
-  "michel_outlined":"Michel ",
-  "michel_desc1":"A lover of nature and the outdoors, ",
-  "michel_desc2":"is passionate about the environment and contributing to solving climate change.", 
-  "michel_desc3":"He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.", 
-  "michel_desc4":"Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
-
-  
-  "karolina_img1_desc1":"Karolina Maciejewska",
-  "karolina_img1_desc2":"Backend Developer",
-  "karolina_outlined":"Karolina",
-  "karolina_desc1":"Motivated to contribute and solve problems of value to people and the earth we live on, \n",
-  "karolina_desc2":"joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.",
-  "karolina_desc3": "She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet. \n She enjoys being active in nature, as well as with yoga and martial arts.",
-
-  "gro_img1_desc1":"Gro Elisabeth Oleivsgard",
-  "gro_img1_desc2":"UX/UI and Frontend Developer",
-  "gro_outlined":"Gro",
-  "gro_desc1":"Motivated to contribute and solve problems of value to people and the earth we live on, \n",
-  "gro_desc2":"joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.",
-  "gro_desc3": "She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet. \n She enjoys being active in nature, as well as with yoga and martial arts.",
-
-  "kristian_img1_desc1":"Kristian Sørum",
-  "kristian_img1_desc2":"Frontend Developer Intern",
-  "kristian_outlined":"Kristian",
-  "kristian_desc1":"With us as an intern, ",
-  "kristian_desc2":"is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.",
-  "kristian_desc3":"He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
-
-  "sanne_img1_desc1":"Sanne Edland",
-  "sanne_img1_desc2":"Developer Trainee",
-  "sanne_outlined":"Sanne",
-  "sanne_desc1":"who is Sanne at SquareRoot?",
-  "sanne_desc2":"is an awesome frontend trainee",
-
-  "rosa_img1_desc1":"Rosa Berg",
-  "rosa_img1_desc2":"Developer Trainee",
-  "rosa_outlined":"Rosa",
-  "rosa_desc1":"who is Rosa at SquareRoot?",
-  "rosa_desc2":"is an awesome backend trainee",
-
-
-  "contact_h1":"Contact us",
-  "contact_p1":"How can we help you?",
-  "contact_h3_1":"E-mail",
-  "contact_h3_2":"Phone",
-
-  "partner_h1":"Become a partner",
-  "partner_h2":"Together, we green our cities.",
-  "partner_p1":"We want to collaborate with all stakeholders in the planning and design of urban green areas. This is so that we can make the work process seamless so that you can create and maintain resilient greenspaces.",
-  "partner_RED_desc":"See the concepts that will green you building",
-  "partner_LARK_desc":"See what is available and make your own amazing project",
-  "partner_LENT_desc":"Order the right plant for the right spot on our platform",
-  "partner_PN_desc":"Show and sell your plants on our platform ",
- 
-  
+  "home": "HOME",
+  "greenspaces": "PROJECTS",
+  "rooftop": "ROOFGARDEN",
+  "rainbed": "RAINBED",
+  "indoor": "INDOOR",
+  "rooftop2": "Roofgarden",
+  "rainbed2": "Rainbed",
+  "indoor2": "Indoor",
+  "who": "WHO WE ARE",
+  "about": "ABOUT",
+  "what": "WHAT WE DO",
+  "why": "WHY US",
+  "how": "HOW IT WORKS",
+  "contact": "CONTACT",
+  "contactU": "CONTACT US",
+  "partner": "BECOME A PARTNER",
+  "signIn": "Sign in",
+  "my_projects": "My Projects",
+  "account": "Account Settings",
+  "log_out": "Log Out",
+  "or": "OR",
+  "start": "Start project",
+  "home_page": {
+    "hero": {
+      "description": "Plan, design and order greenspaces inside, outside and on top of buildings<1/>-<3> all in one place.</3>",
+      "hero_account": "Do you have an account?",
+      "hero_new": "New to SquareRoot?",
+      "see_more": "See more",
+      "read_more": "Read more",
+      "demo": "Request Demo"
+    },
+    "section_two": {
+      "title": "SquareRoot makes cities <1>green</1>, literally!",
+      "description": "At SquareRoot, we believe sustainable cities are <1>our future</1>. With lots of green spaces inside, outside and top of buildings."
+    },
+    "section_three": {
+      "title": "We want to make it easier to <1>choose nature</1> for your building projects.",
+      "description": "Together with NIBIO, biologists, landscape architects and plant nurseries we have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity."
+    },
+    "section_four": {
+      "rooftop": "Rooftop",
+      "rooftop_description": "Optimise your roof surface with one of our <1>rooftop</1> concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
+      "rainbed_description": "Our plants for <1>rainbeds</1> are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.",
+      "indoor_description": "Our partner Leaf has extensive expertise with <1>indoor</1> plants. Incredible aesthetics are combined with minimal maintenance."
+    },
+    "section_five": {
+      "description": "By integrating nature in your project, it helps meet the requirements for stormwater management and using local plants increases <1>biodiversity</1> as well as <3>BREEAM points</3>. <5 /> <6 /> Building projects with a high environmental footprint increases the value of your property and <8>keeps our cities healthy</8>."
+    },
+    "section_six": {
+      "title": "COMING SOON",
+      "description": "Our digital platform makes finding and sourcing plants <1>easy and available everywhere</1>. <3/> <4/> Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.<6 /> <7 />Coming fall 2021. Stay updated by subscribing to our newsletter."
+    },
+    "section_seven": {
+      "title": "In collaboration with"
+    }
+  },
   "footer": {
     "description": "We are the new platform for green spaces",
     "button": "Tell us about your project",
     "greenspaces": "Greenspaces",
-    "rooftop": "Rooftop",
+    "rooftop": "Roofgarden",
     "rainbed": "Rainbed",
     "indoor": "Indoor",
     "about": "About",
@@ -162,6 +67,51 @@
     "what": "What we do",
     "why": "Why us",
     "how": "How it works"
-
+  },
+  "who_page": {
+    "title": "Who we are",
+    "description": "Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you! <1/> <2/>Here you can choose a project type, pick a look for your space, decide the functionality focus and customize the plant list we suggest for you. We make sure the plants fit your requirements and will be available.<4/><5/>Together we will green our cities!<7/>",
+    "team": {
+      "title": "Our Team",
+      "jo_img_d": "Founder and CEO",
+      "jo_d1": "<0>Jo</0> started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.",
+      "jo_d2": "He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella.",
+      "jo_d3": "He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
+      "michel_img_d": "Founder and COO",
+      "michel_d1": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.",
+      "michel_d2": "He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.",
+      "michel_d3": "Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+      "karolina_img_d": "Cloud Developer",
+      "karolina_d": "missing, <1>Karolina</1> <3/><4/> english text. <6/>",
+      "gro_img_d": "UX / UI and Frontend Developer",
+      "gro_d": "Inspired to contribute and solve problems of value to people and the planet earth, <1>Gro</> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> Besides SquareRoot and her studies in Computer Engineering at Oslo Metropolitan University, Gro loves to explore new places and enjoys yoga and training with martial arts.",
+      "kristian_img_d": "UX / UI og Frontend Intern",
+      "kristian_d": "With us as an intern, <1>Kristian</1> is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.<3/><4/> He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. <6/>Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
+      "sanne_img_d": "UX / UI og Frontend Intern",
+      "sanne_d": "<1>Sanne<1/> is passionate about the environment and animals and wants to create a more sustainable way of living. She joined Squareroot to contribute to a greener future with our ecological solution. She enjoys being near the ocean with good company and delicious food.<3/><4/> She is finishing her last year of her bachelor degree in Applied Computer Science at Oslo Metropolitan University."
+    }
+  },
+  "contact_page": {
+    "title": "Contact us",
+    "subtitle": "How can we help you?",
+    "email": "E-mail",
+    "email_notif_title": "Email sent!",
+    "email_notif_text": "We will get back to you as soon as possible.",
+    "phone": "Phone",
+    "or": "or",
+    "send_message": "Send us a message",
+    "send": "Send",
+    "accept1": "I accept SquareRoot's <1>Terms of Use</1> and <3>Privacy Policy</3>",
+    "accept2": "I want to occasionally receive newsletters from SquareRoot about offers, news and updates in green urban development"
+  },
+  "partner_page": {
+    "title": "Become a partner",
+    "subtitle": "Together, we green our cities.",
+    "description": "We want to collaborate with all stakeholders in the planning and design of urban green areas. This is so that we can make the work process seamless so that you can create and maintain resilient greenspaces.",
+    "contact": "Ta kontakt for en uforpliktende samtale",
+    "RED_d": "See the concepts that will green you building",
+    "LARK_d": "See what is available and make your own amazing project",
+    "LENT_d": "Order the right plant for the right spot on our platform",
+    "PN_d": "Show and sell your plants on our platform"
   }
 }

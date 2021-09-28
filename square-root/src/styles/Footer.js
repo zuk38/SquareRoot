@@ -43,6 +43,25 @@ export const BottomRight = styled.div`
   }
 `;
 
+export const Document = styled.a`
+  color: white;
+  display: inline-block;
+  cursor: pointer;
+  transition: 200ms ease-in;
+
+  &:nth-child(1) {
+    padding: 0 20px;
+  }
+  &:nth-child(2) {
+    padding-left: 20px;
+  }
+
+  &:hover {
+    color: #8ca68c;
+    transition: 200ms ease-in;
+  }
+`;
+
 export const Separator = styled.hr`
   margin-top: 100px;
   width: 90%;
@@ -90,6 +109,7 @@ export const FooterLink = styled.a`
   margin-bottom: 20px;
   text-decoration: none;
   font-size: 16px;
+  cursor: ${({ mail }) => (mail ? "pointer" : "default")};
 
   &:hover {
     color: #8ca68c;

@@ -21,10 +21,6 @@ export default class SingleConcept extends Component {
     };
   }
 
-  componentDidMount() {
-    window.scrollTo(0, 0);
-  }
-
   static contextType = ConceptContext;
 
   render() {

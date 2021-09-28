@@ -23,6 +23,10 @@
     "storagecontactFormTableArn": {
       "Type": "String",
       "Default": "storagecontactFormTableArn"
+    },
+    "storagecontactFormTableStreamArn": {
+      "Type": "String",
+      "Default": "storagecontactFormTableStreamArn"
     }
   },
   "Conditions": {
@@ -83,6 +87,9 @@
             },
             "STORAGE_CONTACTFORMTABLE_ARN": {
               "Ref": "storagecontactFormTableArn"
+            },
+            "STORAGE_CONTACTFORMTABLE_STREAMARN": {
+              "Ref": "storagecontactFormTableStreamArn"
             }
           }
         },
@@ -103,12 +110,12 @@
         "RoleName": {
           "Fn::If": [
             "ShouldNotCreateEnvResources",
-            "squarerootprojectLambdaRolebbce38d8",
+            "squarerootprojectLambdaRolec85cb946",
             {
               "Fn::Join": [
                 "",
                 [
-                  "squarerootprojectLambdaRolebbce38d8",
+                  "squarerootprojectLambdaRolec85cb946",
                   "-",
                   {
                     "Ref": "env"

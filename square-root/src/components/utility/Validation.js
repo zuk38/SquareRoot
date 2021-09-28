@@ -13,7 +13,6 @@ function hasLowerCase(str) {
 }
 
 function hasNumber(str) {
-  console.log(/\d/.test(str));
   return /\d/.test(str);
 }
 
@@ -30,7 +29,6 @@ function isNumeric(str) {
 }
 
 function validatePhone(phone) {
-  console.log(phone)
   const phoneRegex = /^\+[1-9]\d{4,14}$/;
   return phoneRegex.test(String(phone)); // true|false
 }
@@ -38,7 +36,6 @@ function validatePhone(phone) {
 //--------------------------------------------------------------------------------------------
 
 function checkEmail(values, errors) {
-  console.log("cheeck")
   if (!values.email) errors.email = "E-postadresse er påkrevd";
   else if (!validateRegexString(values.email))
     errors.email = "E-postadresse er ugyldig";
@@ -80,7 +77,6 @@ function checkCode(values, errors) {
 
 function checkCognito(values, errors) {
   if (values.cognito) {
-    console.log("caught cognito errors");
     errors.cognito = values.cognito.message;
   }
 
@@ -97,6 +93,14 @@ function checkAddress(values, errors) {
   if (!values.address) errors.address = "Address is required";
 }
 
+function checkMessage(values, errors) {
+  if (!values.message) errors.message = "Message is required";
+}
+
+function checkConditions(values, errors) {
+  if (values.conditions === false || values.conditions === undefined) errors.conditions = "Field is required";
+}
+
 export {
   checkEmail,
   checkPassword,
@@ -106,5 +110,7 @@ export {
   checkCode,
   checkPhone,
   checkAddress,
-  checkZip
+  checkZip,
+  checkMessage,
+  checkConditions
 };

@@ -1,336 +1,217 @@
 import React from "react";
 import "../../styles/frontpages.css";
-import Grid from "../../components/Grid_2x2";
-import FeaturedConcepts from "../../components/FeaturedConcepts";
-import { Link } from "react-router-dom";
-import {useTranslation} from "react-i18next";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function Who() {
-  const {t} = useTranslation();
-    const executeScroll = (myRef) => {
-        let element;
-        if (!myRef) 
-            element = document.getElementById("first");
-         else 
-            element = document.getElementById(myRef);
-         element && element.scrollIntoView({block: "start", inline: "nearest", behavior: "smooth"});
-    };
+  const { t } = useTranslation();
 
   return (
     <>
-    
       <div className="c-section background-grey">
-
         <div className="o-container">
           <div className="c-hero">
-          <h1 className="c-txt--hero">
-            {
-              t("who_h1")
-              /*Who we are*/
-            }
-            </h1>
-          <div className="short-border u-mrg--txt1"></div>
+            <h1 className="c-txt--hero">{t("who_page.title")}</h1>
+            <div className="short-border u-mrg--txt1"></div>
             <p className="main-punchline--p">
-              {
-                t("who_p1")
-               
-              }
-            <br /><br />
-            {
-              t("who_p2")
-            }
-            
-            <br /><br />
-            {
-              t("who_p3")
-            }
-              <br />
-              
+              <Trans i18nKey="who_page.description">
+                Looking for plants to create amazing and resilient urban green
+                areas? Unsure about compliance and availability of these plants?
+                SquareRoot is there to solve this for you!
+                <br />
+                <br />
+                Here you can choose a project type, pick a look for your space,
+                decide the functionality focus and customize the plant list we
+                suggest for you. We make sure the plants fit your requirements
+                and will be available.
+                <br />
+                <br />
+                Together we will green our cities!
+                <br />
+              </Trans>
             </p>
           </div>
-         
+
           {/* A WORD FROM FOUNDERS*/}
           <div className="c-section">
             <div className="c-container u-mrg--reset">
-            <p className="c-txt--punchline">
-              {
-                t("who_h2")
-                /*The Team*/
-              }
-              </p>
+              <p className="c-txt--punchline">{t("who_page.team.title")}</p>
               <div className="c-grid--founders">
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
                     src="../images/jo-profil.jpeg"
-                  ></img>
+                    alt="Jo"
+                  />
                   <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("jo_img1_desc1")
-                        /*Jo Deketelaere */
-                      }
-                      </strong>
+                    <strong>Jo Deketelaere</strong>
                     <br />
-                    {
-                      t("jo_img1_desc2")
-                      /* Grunnlegger og CEO */
-                    }
-                    
+                    {t("who_page.team.jo_img_d")}
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-          
-                    <em>
-                      {
-                        t("jo_outlined")
-                        /*Jo */
-                      }
-                      </em> 
-                      {
-                        t("jo_desc1")
-                      }
+                    <Trans i18nKey="who_page.team.jo_d1">
+                      <em>Jo</em>
+                      started his career in international business development
+                      for large energy companies focusing on climate mitigation,
+                      environmental policies and investment in low carbon
+                      emitting technologies.
+                    </Trans>
                   </p>
-                  <p>
-                    {
-                      t("jo_desc2")
-                    }
-                  </p>
-                  <p>
-                    {
-                      t("jo_desc3")
-                    }
-                  </p>
+                  <p>{t("who_page.team.jo_d2")}</p>
+                  <p>{t("who_page.team.jo_d3")}</p>
                 </div>
 
                 <div className="u-mrg--reset">
                   <img
                     className="u-mrg-img1"
                     src="../images/michel-profile.jpeg"
-                  ></img>
+                    alt="Michel"
+                  />
                   <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("michel_img2_desc1")
-                        /*Michel Wolfstirn */
-                      }
-                      </strong>
+                    <strong>Michel Wolfstirn</strong>
                     <br />
-                    {
-                      t("michel_img2_desc2")
-                      /*Founder og COO*/
-                    }
-                    
+                    {t("who_page.team.michel_img_d")}
                   </p>
                 </div>
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
-                    {
-                      t("michel_desc1")
-                    }
-                    <em>
-                      {
-                        t("michel_outlined")
-                        /* Michel */
-                      }</em> 
-                      {
-                        t("michel_desc2")
-                      }
+                    <Trans i18nKey="who_page.team.michel_d1">
+                      A lover of nature and the outdoors,
+                      <em>Michel</em>
+                      is passionate about the environment and contributing to
+                      solving climate change.
+                    </Trans>
                   </p>
-                  <p>
-                    {
-                      t("michel_desc3")
-                    }
-                
-                  </p>
-                  <p>
-                  {
-                      t("michel_desc4")
-                    }
-                  </p>
+                  <p>{t("who_page.team.michel_d2")}</p>
+                  <p>{t("who_page.team.michel_d3")}</p>
                 </div>
               </div>
-              </div>
-              </div>
-<div className="c-section">
-              <div className="c-grid--2x2">
-                <div className="grid-item1">
-                   {/* Karolina */}
-      
-            
-           <img
-                    className="c-img--portrait"
-                    src="../images/missing-img.jpg"
-                  ></img>
-                  <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("karolina_img1_desc1")
-                        /* Karolina M */
-                      }
-                      </strong>
-                    <br />
-                    {
-                      t("karolina_img1_desc2")
-                      /* Cloud Dev */
-                    }
-                    
-                  </p>
-
-                  <p>
-                    {
-                      t("karolina_desc1")
-                    }
-                    <em>&nbsp;
-                      {
-                        t("karolina_outlined")
-                        /* Karolina */
-                      }</em> &nbsp;
-                      {
-                        t("karolina_desc2")
-                      }
-                      <br />
-                      <br />
-                      {
-                        t("karolina_desc3")
-                      }
-                  </p>
-
-                </div>
-
-                <div className="grid-item3">
-                  {/* Gro */}
-            
-                  <img
-                    className="c-img--portrait"
-                    src="../images/gro-profile.jpeg"
-                  ></img>
-                  <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("gro_img1_desc1")
-                        /* Gro Elisabeth Oleivsgard */
-                      }
-                      </strong>
-                    <br />
-                    {
-                      t("gro_img1_desc2")
-                      /* UX / UI and Frontend Developer */
-                    }
-                    
-                  </p>
-
-                  <p>
-                    {
-                      t("gro_desc1")
-                    }
-                    <em>&nbsp;
-                      {
-                        t("gro_outlined")
-                        /* Gro */
-                      }</em> &nbsp;
-                      {
-                        t("gro_desc2")
-                      }
-                      <br />
-                      <br />
-                      {
-                        t("gro_desc3")
-                      }
-                  </p>
-                </div>
-
-                <div className="grid-item2">
-                  {/* Kristian */}
-                 
-
-                  <img
-                    className="u-mrg-img1"
-                    src="../images/kristian-square.jpeg"
-                  ></img>
-                  <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("kristian_img1_desc1")
-                        /* Kristian Sørum */
-                      }
-                      </strong>
-                    <br />
-                    {
-                      t("kristian_img1_desc2")
-                      /* Developer Trainee */
-                    }
-                    
-                  </p>
-
-                  <p>
-                  {
-                      t("kristian_desc1")
-                    }
-                  <em>&nbsp;
-                      {
-                        t("kristian_outlined")
-                        /* Kristian */
-                      }</em> &nbsp;
-                      {
-                        t("kristian_desc2")
-                      }
-                    
+            </div>
+          </div>
+          <div className="c-section">
+            <div className="c-grid--2x2">
+              <div className="grid-item1">
+                <img
+                  className="c-img--portrait"
+                  src="../images/missing-img.jpg"
+                  alt="Karolina"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Karolina Maciejewska</strong>
                   <br />
-                  <br />
+                  {t("who_page.team.karolina_img_d")}
+                </p>
 
-                  {
-                        t("kristian_desc3")
-                      }
-                      
-                  </p>
-                </div>
-
-                <div className="grid-item4">
-                  {/* Sanne */}
-                 
-                  <img
-                    className="u-mrg-img1"
-                    src="../images/missing-img.jpg"
-                  ></img>
-                  <p className="u-mrg-txt1">
-                    <strong>
-                      {
-                        t("sanne_img1_desc1")
-                        /* Sanne Edland*/
-                      }
-                      </strong>
+                <p>
+                  <Trans i18nKey="who_page.team.karolina_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Karolina</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
                     <br />
-                    {
-                      t("sanne_img1_desc2")
-                      /* Developer Trainee */
-                    }
-                    
-                  </p>
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
+              </div>
 
-                  <p className="c-txt-punchline--sm">
-                    {
-                      t("sanne_desc1")
-                    }
-                    <em>&nbsp;
-                      {
-                        t("sanne_outlined")
-                        /* Sanne */
-                      }</em> &nbsp;
-                      {
-                        t("sanne_desc2")
-                      }
-                  </p>
+              <div className="grid-item3">
+                <img
+                  className="c-img--portrait"
+                  src="../images/gro-profile.jpeg"
+                  alt="Gro"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Gro Elisabeth Oleivsgard</strong>
+                  <br />
+                  {t("who_page.team.gro_img_d")}
+                </p>
 
-                </div>
+                <p>
+                  <Trans i18nKey="who_page.team.gro_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Gro</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
+                    <br />
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
+              </div>
 
-                </div>
-          
+              <div className="grid-item2">
+                <img
+                  className="u-mrg-img1"
+                  src="../images/kristian-square.jpeg"
+                  alt="Kristian"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Kristian Sørum</strong>
+                  <br />
+                  {t("who_page.team.kristian_img_d")}
+                </p>
+                <p>
+                  <Trans i18nKey="who_page.team.kristian_d">
+                    With us as an intern, <em>Kristian</em> is motivated to make
+                    our platform as user-friendly and self-driven as possible,
+                    which in turn will hopefully make the process of including
+                    green spaces in our cities a simple task.
+                    <br />
+                    <br />
+                    He is an aspiring Software Developer, currently a Computer
+                    Engineering student at OsloMet. <br />
+                    Apart from his studies, he enjoys being in the outdoors year
+                    around, where you can find him far up in the steep
+                    mountains.
+                  </Trans>
+                </p>
+              </div>
+
+              <div className="grid-item4">
+                <img
+                  className="u-mrg-img1"
+                  src="../images/missing-img.jpg"
+                  alt="Sanne"
+                />
+                <p className="u-mrg-txt1">
+                  <strong>Sanne Edland</strong>
+                  <br />
+                  {t("who_page.team.sanne_img_d")}
+                </p>
+
+                <p>
+                  <Trans i18nKey="who_page.team.sanne_d">
+                    Motivated to contribute and solve problems of value to
+                    people and the earth we live on, <em>Sanne</em> joined
+                    SquareRoot with a motivation to make the implementations of
+                    green spaces in urban locations more available to all
+                    stakeholders.
+                    <br />
+                    <br />
+                    She has previously studied Psychology and Applied Computer
+                    Science, and is currently a Computer Engineering student at
+                    OsloMet.
+                    <br /> She enjoys being active in nature, as well as with
+                    yoga and martial arts.
+                  </Trans>
+                </p>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    
       {/* WHY US 
       <div className="c-section background-grey">
         <div className="o-container ">
