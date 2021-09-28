@@ -7,8 +7,10 @@ import "../styles/Partner.css";
 import { useHistory } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
+import { Trans, useTranslation } from "react-i18next";
 
 export default function ContactForm(props) {
+  const { t } = useTranslation();
   const history = useHistory();
   const pathname = history.location.pathname;
 
@@ -63,9 +65,9 @@ export default function ContactForm(props) {
               }}
             >
               <AlertTitle>
-                <strong>Email sent!</strong>
+                <strong>{t("contact_page.email_notif_title")}</strong>
               </AlertTitle>
-              We will get back to you as soon as possible.
+              {t("contact_page.email_notif_text")}
             </Alert>
           )}
           <form>
@@ -172,14 +174,28 @@ export default function ContactForm(props) {
                     />
 
                     <span className="list-item-label">
-                      Jeg godtar SquareRoots
-                      <a onClick={() => openInNewTab("https://squareroot-as.github.io/SquareRoot/tou.html")}>
-                        &nbsp;vilkår for bruk&nbsp;
-                      </a>
-                      og
-                      <a onClick={() => openInNewTab("https://squareroot-as.github.io/SquareRoot/privacy.html")}>
-                        &nbsp;personvernerklæring
-                      </a>
+                      <Trans i18nKey="contact_page.accept1">
+                        I accept SquareRoot's
+                        <a
+                          onClick={() =>
+                            openInNewTab(
+                              "https://squareroot-as.github.io/SquareRoot/tou.html"
+                            )
+                          }
+                        >
+                          &nbsp;Terms of Use&nbsp;
+                        </a>
+                        and
+                        <a
+                          onClick={() =>
+                            openInNewTab(
+                              "https://squareroot-as.github.io/SquareRoot/privacy.html"
+                            )
+                          }
+                        >
+                          &nbsp;Privacy Policy
+                        </a>
+                      </Trans>
                     </span>
                   </label>
                 </span>
@@ -199,8 +215,7 @@ export default function ContactForm(props) {
                     />
 
                     <span className="list-item-label">
-                      Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om
-                      tilbud, nyheter og oppdateringer innen grønn byutvikling.
+                      {t("contact_page.accept2")}
                     </span>
                   </label>
                 </span>
@@ -217,7 +232,7 @@ export default function ContactForm(props) {
                 errors.message
               }
             >
-              Send
+              {t("contact_page.send")}
             </button>
           </form>
         </>

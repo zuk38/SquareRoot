@@ -90,5 +90,18 @@
       "sanne_img_d": "Developer Trainee",
       "sanne_d": "Motivated to contribute and solve problems of value to people and the earth we live on, <1>Sanne</1> joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> She has previously studied Psychology and Applied Computer Science, and is currently a Computer Engineering student at OsloMet.<6/>She enjoys being active in nature, as well as with yoga and martial arts."
     }
+  },
+  "contact_page": {
+    "title": "Contact us",
+    "subtitle": "How can we help you?",
+    "email": "E-mail",
+    "email_notif_title": "Email sent!",
+    "email_notif_text": "We will get back to you as soon as possible.",
+    "phone": "Phone",
+    "or": "or",
+    "send_message": "Send us a message",
+    "send": "Send",
+    "accept1": "I accept SquareRoot's <1>Terms of Use</1> and <3>Privacy Policy</3>",
+    "accept2": "I want to occasionally receive newsletters from SquareRoot about offers, news and updates in green urban development"
   }
 }
