@@ -10,11 +10,8 @@ export default function NavbarDropdown(props) {
   const handleClick = () => setClick(!click);
   const openLink = (path) => {
     setClick(false);
-    if (!path) return;
-    else {
-      history.push(path);
-      history.go(0);
-    }
+    history.push(path);
+    if (path.indexOf("/categories") > -1) history.go(0);
   };
 
   return (
