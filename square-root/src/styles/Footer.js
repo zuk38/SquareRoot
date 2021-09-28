@@ -109,6 +109,7 @@ export const FooterLink = styled.a`
   margin-bottom: 20px;
   text-decoration: none;
   font-size: 16px;
+  cursor: ${({ mail }) => (mail ? "pointer" : "default")};
 
   &:hover {
     color: #8ca68c;

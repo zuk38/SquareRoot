@@ -57,7 +57,7 @@ export function FooterContainer() {
               </Icon>
               Thaulows vei 1B, Oslo
             </FooterLink>
-            <FooterLink>
+            <FooterLink mail onClick={() => window.open('mailto:michel@squareroot.cc')}>
               <Icon>
                 <HiOutlineMail />
               </Icon>
