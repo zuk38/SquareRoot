@@ -94,7 +94,7 @@ export default function Who() {
               <div className="grid-item1">
                 <img
                   className="c-img--portrait"
-                  src="../images/missing-img.jpg"
+                  src="../images/karolina.jpg"
                   alt="Karolina"
                 />
                 <p className="u-mrg-txt1">
@@ -105,18 +105,17 @@ export default function Who() {
 
                 <p>
                   <Trans i18nKey="who_page.team.karolina_d">
-                    Motivated to contribute and solve problems of value to
-                    people and the earth we live on, <em>Karolina</em> joined
-                    SquareRoot with a motivation to make the implementations of
-                    green spaces in urban locations more available to all
-                    stakeholders.
+                    The undefeated champion of shilly-shally, eating veggie
+                    burgers and having too many ideas at once, <em>Karolina</em>
+                    , always aims at perfection. SquareRoot gave her a chance
+                    for following her passion and working towards a meaningful
+                    purpose that starts a positive change in the world we live
+                    in.
                     <br />
                     <br />
-                    She has previously studied Psychology and Applied Computer
-                    Science, and is currently a Computer Engineering student at
-                    OsloMet.
-                    <br /> She enjoys being active in nature, as well as with
-                    yoga and martial arts.
+                    Apart from pursuing an engineering degree in IT and loving
+                    to look through everyone's data she enjoys a good workout -
+                    or a good book - out in the nature.
                   </Trans>
                 </p>
               </div>
@@ -193,18 +192,16 @@ export default function Who() {
 
                 <p>
                   <Trans i18nKey="who_page.team.sanne_d">
-                    Motivated to contribute and solve problems of value to
-                    people and the earth we live on, <em>Sanne</em> joined
-                    SquareRoot with a motivation to make the implementations of
-                    green spaces in urban locations more available to all
-                    stakeholders.
+                    <em>Sanne</em> is passionate about the environment and
+                    animals and wants to create a more sustainable way of
+                    living. She joined Squareroot to contribute to a greener
+                    future with our ecological solution.
                     <br />
                     <br />
-                    She has previously studied Psychology and Applied Computer
-                    Science, and is currently a Computer Engineering student at
-                    OsloMet.
-                    <br /> She enjoys being active in nature, as well as with
-                    yoga and martial arts.
+                    She enjoys being near the ocean with good company and
+                    delicious food. She is finishing her last year of her
+                    bachelor degree in Applied Computer Science at Oslo
+                    Metropolitan University.
                   </Trans>
                 </p>
               </div>
