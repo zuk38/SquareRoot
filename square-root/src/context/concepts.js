@@ -1,4 +1,4 @@
-/*
+
 import React, { Component } from "react";
 import { API, Auth, graphqlOperation } from "aws-amplify";
 import {
@@ -92,7 +92,7 @@ export default class ConceptProvider extends Component {
       featured: false,
       /*price: concept.price,
       description: concept.description,*/
-      /*
+   
     };
 
     try {
@@ -234,4 +234,3 @@ export function withConceptConsumer(Component) {
     );
   };
 }
-*/
