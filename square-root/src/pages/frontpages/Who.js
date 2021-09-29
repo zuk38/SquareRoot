@@ -124,7 +124,7 @@ export default function Who() {
               <div className="grid-item3">
                 <img
                   className="c-img--portrait"
-                  src="../images/gro-profile.jpeg"
+                  src="../images/profile-gro.jpeg"
                   alt="Gro"
                 />
                 <p className="u-mrg-txt1">
@@ -154,7 +154,7 @@ export default function Who() {
               <div className="grid-item2">
                 <img
                   className="u-mrg-img1"
-                  src="../images/kristian-square.jpeg"
+                  src="../images/profile-kristian.jpg"
                   alt="Kristian"
                 />
                 <p className="u-mrg-txt1">
@@ -182,7 +182,7 @@ export default function Who() {
               <div className="grid-item4">
                 <img
                   className="u-mrg-img1"
-                  src="../images/missing-img.jpg"
+                  src="../images/profile-sanne.png"
                   alt="Sanne"
                 />
                 <p className="u-mrg-txt1">
