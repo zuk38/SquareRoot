@@ -725,3 +725,10 @@ a {
   height: 100%;
   padding-top: 2%;
 }
+
+.is-danger {
+  color: #FF6863;
+  font-size: 0.8em;
+  padding-left:2%;
+  text-align: left;
+}

@@ -36,13 +36,13 @@ function validatePhone(phone) {
 //--------------------------------------------------------------------------------------------
 
 function checkEmail(values, errors) {
-  if (!values.email) errors.email = "E-postadresse er påkrevd";
+  if (!values.email) errors.email = "E-mail adress is required";
   else if (!validateRegexString(values.email))
-    errors.email = "E-postadresse er ugyldig";
+    errors.email = "E-mail adress is invalid";
 }
 
 function checkPassword(values, errors) {
-  if (!values.password) errors.password = "Passord er påkrevd";
+  if (!values.password) errors.password = "Password is required";
   else if (values.password.length < PASSLENGTH)
     errors.password = "Password must be 8 or more characters";
   else if (!hasLowerCase(values.password))
@@ -98,7 +98,7 @@ function checkMessage(values, errors) {
 }
 
 function checkConditions(values, errors) {
-  if (values.conditions === false || values.conditions === undefined) errors.conditions = "Field is required";
+  if (values.conditions === false || values.conditions === undefined) errors.conditions = "Please accept our Terms of Use and Privacy Policy to continue";
 }
 
 export {
