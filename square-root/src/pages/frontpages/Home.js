@@ -5,7 +5,7 @@ import logo from "../../images/logo-white-green.png";
 import arrowDownWhite from "../../icons/down-arrow-white.png";
 import { Trans, useTranslation } from "react-i18next";
 import Button from "@material-ui/core/Button";
-import RequestDemo from "../../components/RequestDemo";
+import ContactForm from "../../components/ContactForm";
 import { FooterContainer } from "../../components/footer/FooterContainer";
 
 export default function Home(props) {
@@ -54,7 +54,7 @@ export default function Home(props) {
             </h1>
           </span>
           <div className="signup-btn">
-            <Button>{t("home_page.hero.demo")}</Button>
+            <Button onClick={() => executeScroll("contact")}>{t("home_page.hero.demo")}</Button>
           </div>
         </div>
         <div className="see-more">
@@ -252,7 +252,7 @@ export default function Home(props) {
         </div>
       </section>
 
-      <section id="sixth">
+      <section id="contact">
         <div className="o-container c-section--pad-vh">
           <div className="c-grid--3x1">
             <div className="grid-item1-stretch position-relative">
@@ -285,7 +285,11 @@ export default function Home(props) {
             </div>
 
             <div className="grid-item3-vertical">
-              <RequestDemo />
+            <ContactForm
+                demo={true}
+                title="request_demo"
+                title_classname="o-form__heading is-white"
+              />
             </div>
           </div>
         </div>
