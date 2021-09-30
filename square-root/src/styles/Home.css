@@ -151,7 +151,7 @@ section#seventh {
 }
 
 section#seventh img{
-  width:180px;
+  width:100%;
 }
 
 
@@ -356,7 +356,7 @@ em {
 
   section#fourth{
     scroll-snap-align: start;
-    height:200vh;
+    height:100vh;
   }
   
   .sect-4-item1{
@@ -467,7 +467,14 @@ em {
     grid-row:2;
   }
 
+
+  .c-grid--fill{
+    grid-template-columns: 1fr 1fr;
+  }
  
+  .c-grid--fill img{
+    width:20px;
+  }
 
 }
 
@@ -540,13 +547,13 @@ em {
 
   /*section sixth */
 
-  section#sixth{
+  section#contact{
     scroll-snap-align: start;
     height:200vh;
   }
 
   .sect-6-item1{
-    height:70vh;
+    height:80vh;
     
   }
   .sect-6-item2{
@@ -562,7 +569,13 @@ em {
   .list-item-label {
     font-size:10px;
     line-height: 0px;
+    
   }
   
+  /*section seventh */
+
+  section#seventh img{
+      width:70%;
+  }
 }
 
