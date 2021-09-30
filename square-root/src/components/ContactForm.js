@@ -94,7 +94,7 @@ export default function ContactForm(props) {
                     name="name"
                     value-size="40"
                     className="o-form__control"
-                    placeholder="Navn"
+                    placeholder="Name"
                     value={values.name || ""}
                     onChange={handleChange}
                   />
@@ -108,7 +108,7 @@ export default function ContactForm(props) {
                     name="email"
                     value-size="40"
                     className="o-form__control"
-                    placeholder="E-post"
+                    placeholder="E-mail"
                     value={values.email || ""}
                     onChange={handleChange}
                   />
@@ -124,7 +124,7 @@ export default function ContactForm(props) {
                     value={values.phone || ""}
                     onChange={handleChange}
                     className="o-form__control"
-                    placeholder="Mobilnummer (valgfritt)"
+                    placeholder="Phone number (optional)"
                   />
                 </span>
                 {!props.demo && (
@@ -136,7 +136,7 @@ export default function ContactForm(props) {
                       value={values.location || ""}
                       onChange={handleChange}
                       className="o-form__control"
-                      placeholder="Beliggenhet (valgfritt)"
+                      placeholder="Location (optional)"
                     />
                   </span>
                 )}
@@ -156,7 +156,7 @@ export default function ContactForm(props) {
                     cols="40"
                     rows="6"
                     className="o-form__control textarea is-required o-form__control"
-                    placeholder="Fortell oss hva du jobber med"
+                    placeholder="Tell us what you're working on"
                     type="text"
                     value={values.message || ""}
                     onChange={handleChange}
