@@ -71,14 +71,14 @@ export default function Home(props) {
       <section id="second">
         <div className="o-container c-section--pad-vh">
           <div className="c-grid--3x1">
-            <div className="grid-item1 zoom-on-hover">
+            <div className="grid-item1 sect-2-item1">
               <img
                 className="column-img"
                 src="../images/hands-rooftop.png"
                 alt="hands-rooftop"
               />
             </div>
-            <div className="grid-item2">
+            <div className="grid-item2 sect-2-item2">
               <img
                 className="column-img"
                 src="../images/r-falcatum.jpg"
@@ -86,7 +86,7 @@ export default function Home(props) {
               />
             </div>
 
-            <div className="grid-item2-stretch position-relative">
+            <div className="grid-item2-stretch sect-2-title position-relative">
               <div className="main-punchline">
                 <div className="main-punchline--lrg position-absolute">
                   <Trans i18nKey="home_page.section_two.title">
@@ -98,7 +98,7 @@ export default function Home(props) {
               <div className="short-border position-absolute left-margin" />
             </div>
 
-            <div className="grid-item2-stretch2">
+            <div className="grid-item2-stretch2 sect-2-desc">
               <div className="main-punchline">
                 <div className="main-punchline--p">
                   <Trans i18nKey="home_page.section_two.description">
@@ -165,7 +165,7 @@ export default function Home(props) {
             </div>
          
 
-            <div className="grid-item2">
+            <div className="grid-item2 sect-4-item2">
               <div className="main-punchline--p">
                 <div className="short-border" />
                 <p className="c-section--p">
@@ -175,7 +175,10 @@ export default function Home(props) {
                     hardware are chosen and designed to meet your specific
                     needs.
                   </Trans>
+                  <br />
+                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
                 </p>
+                
               </div>
             </div>
 
@@ -187,7 +190,7 @@ export default function Home(props) {
               </a>
             </div>
 
-            <div className="grid-item4">
+            <div className="grid-item4 sect-4-item4">
               <div className="main-punchline--p">
                 <div className="short-border" />
                 <p>
@@ -198,11 +201,13 @@ export default function Home(props) {
                     water and drought tolerant plants at the borders, the
                     dry-zone.
                   </Trans>
+                  <br />
+                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
                 </p>
               </div>
             </div>
 
-            <div className="grid-item9" onClick={() => openCategory(`categories/innendørsplanter`)}>
+            <div className="grid-item9" onClick={() => openCategory(`categories/innendÃ¸rsplanter`)}>
               <a href="/who-we-are" className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
@@ -210,7 +215,7 @@ export default function Home(props) {
               </a>
             </div>
 
-            <div className="grid-item10">
+            <div className="grid-item10 sect-4-item6">
               <div className="main-punchline--p">
                 <div className="short-border" />
                 <p>
@@ -219,6 +224,8 @@ export default function Home(props) {
                     <em>&nbsp;indoor&nbsp;</em> plants. Incredible aesthetics
                     are combined with minimal maintenance.
                   </Trans>
+                  
+                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
                 </p>
               </div>
             </div>
@@ -229,9 +236,9 @@ export default function Home(props) {
       <section id="fifth">
         <div className="o-container c-section--pad-vh">
           <div className="c-grid--3x1">
-            <div className="grid-item9">
+            <div className="grid-item9 sect-5-item1">
               <div className="o-container--sm bckgd-white ">
-                <div className="main-punchline--p u-txt--center">
+                <div className="main-punchline--p u-txt--center pad-me">
                   <p>
                     <Trans i18nKey="home_page.section_five.description">
                       By integrating nature in your project, it helps meet the
@@ -257,7 +264,7 @@ export default function Home(props) {
       <section id="contact">
         <div className="o-container c-section--pad-vh">
           <div className="c-grid--3x1">
-            <div className="grid-item1-stretch position-relative">
+            <div className="grid-item1-stretch position-relative sect-6-item1">
               <div className="main-punchline is-white">
                 <div className="main-punchline--lrg">
                   <em>{t("home_page.section_six.title")}</em>
@@ -267,6 +274,7 @@ export default function Home(props) {
               </div>
               <div className="short-border-white" />
 
+              <div className="grid-item2-stretch1">
               <div className="main-punchline">
                 <div className="main-punchline--p is-white">
                   <Trans i18nKey="home_page.section_six.description">
@@ -284,9 +292,10 @@ export default function Home(props) {
                   </Trans>
                 </div>
               </div>
+              </div>
             </div>
 
-            <div className="grid-item3-vertical">
+            <div className="grid-item3-vertical sect-6-item2">
             <ContactForm
                 demo={true}
                 title="request_demo"
