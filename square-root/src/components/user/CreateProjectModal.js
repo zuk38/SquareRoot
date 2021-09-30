@@ -72,4 +72,4 @@ function CreateProjectModal(props) {
   );
 }
 
-export default withProjectConsumer(CreateProjectModal)
+export default withProjectConsumer(CreateProjectModal);
