@@ -53,7 +53,7 @@ export default function Contact() {
           </div>
         </div>
         <div className="o-container u-mrg--reset">
-          <ContactForm />
+          <ContactForm title="send_message" title_classname="o-form__heading"/>
         </div>
       </div>
     </div>
