@@ -148,14 +148,18 @@ export default function Home(props) {
         <div className="o-container c-section--pad-vh">
           <br />
           <br />
+          
           <div className="c-grid--3x1">
+
+          
             <div className="grid-item1">
-              <div className="img-wrap-rooftop">
+              <a href="/who-we-are" className="img-wrap-rooftop">
                 <div className="u-txt--middle">
                   <em>{t("home_page.section_four.rooftop")}</em>
                 </div>
-              </div>
+              </a>
             </div>
+         
 
             <div className="grid-item2">
               <div className="main-punchline--p">
@@ -172,11 +176,11 @@ export default function Home(props) {
             </div>
 
             <div className="grid-item3">
-              <div className="img-wrap-rainbed">
+              <a href="/who-we-are"  className="img-wrap-rainbed">
                 <div className="u-txt--middle">
                   <em>{t("rainbed2")}</em>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="grid-item4">
@@ -195,11 +199,11 @@ export default function Home(props) {
             </div>
 
             <div className="grid-item9">
-              <div className="img-wrap-indoor">
+              <a href="/who-we-are" className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
                 </div>
-              </div>
+              </a>
             </div>
 
             <div className="grid-item10">
