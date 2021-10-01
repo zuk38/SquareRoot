@@ -116,6 +116,13 @@ class SingleCategory extends Component {
                   Our plants and hardware are chosen and designed to meet your
                   specific needs.
                 </Trans>
+                <br />
+                <br />
+              </div>
+              <div className="c-txt-punchline--sm">
+              <Trans i18nKey="single_category.general_info">
+              
+            </Trans>̇
               </div>
             </div>
           </div>
