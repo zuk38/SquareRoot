@@ -142,7 +142,7 @@ export default function Home(props) {
             <div className="grid-item3-vertical">
               <img
                 className="c-img"
-                src="../images/leaf_rooftop_redigert.jpg"
+                src="../images/portrait--biodiversity-redigert.jpg"
                 alt="rooftop"
               />
             </div>
@@ -176,7 +176,7 @@ export default function Home(props) {
                     needs.
                   </Trans>
                   <br />
-                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
+                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/takterrasse")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
                 </p>
                 
               </div>
@@ -202,7 +202,7 @@ export default function Home(props) {
                     dry-zone.
                   </Trans>
                   <br />
-                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
+                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/regnseng")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
                 </p>
               </div>
             </div>
@@ -224,8 +224,8 @@ export default function Home(props) {
                     <em>&nbsp;indoor&nbsp;</em> plants. Incredible aesthetics
                     are combined with minimal maintenance.
                   </Trans>
-                  
-                  <button className="btn-transp float-left zoom-on-hover">{t("read_more")}</button>
+                  <br />
+                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/innendørsplanter")}>{t("home_page.hero.read_more")} <i class="fas fa-chevron-right"></i></button>
                 </p>
               </div>
             </div>
@@ -295,7 +295,7 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="grid-item3-vertical sect-6-item2">
+            <div className="grid-item3-vertical sect-6-item2 is-white">
               <ContactForm
                 demo={true}
                 title="request_demo"
