@@ -82,7 +82,7 @@
       "karolina_img_d": "Skyutvikler",
       "karolina_d": "Mesteren i å være ubesluttsom, spise veggisburgere og å ha for mange ideer på en gang, sikter <1>Karolina</1> alltid mot perfeksjon. SquareRoot ga henne muligheten til å følge lidenskapen sin, og jobbe med et meningsfylt formål som kan føre til en positiv endring i verden vi lever i. <3/><4/> Vedsiden av å ta en ingeniørgrad i IT og å elske å se gjennom alles data, setter hun pris på trening – eller en god bok – ute i naturen.",      
       "gro_img_d": "Interaksjonsdesigner og frontend-utvikler",
-      "gro_d": "En wannabe-forsker, men foreløpig bare en nysgjerrig jente med en forkjærlighet for mennesker, naturen og nydelig hjemmelaget mat, elsker <1>Gro</1> å utforske og lære av verden og dets innbyggere. På SquareRoot bryter hun ned vår visjon og setter det sammen til et design vi alle kan jobbe med. På denne måten håper hun at plattformen vil være en drivkraft mot brukervennlige byer, for både mennesker og naturen. <3/><4/>  Vedsiden av bachelor i dataingeniør, praktiserer hun yoga og kampsport. Med dette ønsker hun å kunne håndtere enhver utfordring som møter henne.",
+      "gro_d": "En wannabe-forsker, men foreløpig bare en nysgjerrig jente med en forkjærlighet for mennesker, naturen og nydelig hjemmelaget mat, elsker <1>Gro</1> å utforske og lære av verden og dets innbyggere. På SquareRoot bryter hun ned vår visjon og setter det sammen til et design vi alle kan jobbe med. På denne måten håper hun at plattformen vil være en drivkraft for brukervennlige byer, for både mennesker og naturen. <3/><4/>  Vedsiden av bachelor i dataingeniør, praktiserer hun yoga og kampsport. Med dette ønsker hun å kunne håndtere enhver utfordring som møter henne.",
       "kristian_img_d": "Praksisstudent som utvikler",
       "kristian_d": "<1>Kristian</1> er motivert til å gjøre plattformen vår så brukervennlig og selvdreven som mulig, noe som forhåpentligvis resulterer i å gjøre implementasjonen av grøntområder i byene en enkel prosess. <3/><4/> Han ser frem til å bli en programutvikler etter han fullfører graden sin i Dataingeniør på OsloMet. Vedsiden av studiene, trives Kristian med å være utendørs året rundt, gjerne høyt opp i fjellene.",
       "sanne_img_d": "Praksisstudent som utvikler",
@@ -130,6 +130,8 @@
       "title": "Innendørs",
       "description": "Å utvikle byer som folk elsker å bo og jobbe i, innebærer å inkludere grønt innendørs også. Innendørse planter renser luften og har en positiv effekt på velværen vår. Standarder for bygg og anlegg som WELL fremmer aktivt integrering av planter innendørs. <1/><2/>Vår partner Leaf har omfattende kompetanse innen innendørs planter. Netflix-kontorene i Amsterdam er bare ett av deres fantastiske prosjekter. Pen estetikk kombineres med minimalt med vedlikehold.<4/><5/>Plantene gros i et modulært rektangulært brett direkte i planteskolen, og gjør det enkelt for interiørarkitekten å designe og integrere grønne jungler i bygninger. "
     },
-    "plantlist": "Planteliste"
+    "plantlist": "Planteliste",
+    "general_info":"På plattformen vår vil du kunne sette sammen ulike konsepter til et prosjekt og bestille det hele gjennom oss. <1/><2/> Plantelisten blir kontinuerlig oppdatert."
+
   }
 }
