@@ -143,13 +143,13 @@ export default class ConceptProvider extends Component {
     ).max;
 
   formatConceptData(items) {
-    let maintenance = items.map((item) => {
+    /*let maintenance = items.map((item) => {
       let tempItems = item.plants.items.map((p) => {
         return p.plant.metadata.sun_seeker;
       });
       return tempItems;
     });
-    let m = this.highest(maintenance[0]);
+    let m = this.highest(maintenance[0]);*/
     let tempItems = items.map((item) => {
       let benefits;
 
@@ -159,7 +159,7 @@ export default class ConceptProvider extends Component {
         let quantity = p.quantity;
         let plant = { id, quantity, ...metadata };
         console.log(plant)
-        const {
+        /*const {
           pollinator_friendly,
           edible,
           pet_kids_friendly,
@@ -172,14 +172,14 @@ export default class ConceptProvider extends Component {
           pet_kids_friendly: pet_kids_friendly,
           air_puryfying: air_puryfying,
         };
-        this.truthyObjLoop(benefits);
+        this.truthyObjLoop(benefits);*/
         return plant;
       });
       let concept = {
         ...item,
         plants: tempPlants,
-        benefits: benefits,
-        maintenance: m,
+        //benefits: benefits,
+        //maintenance: m,
       };
       return concept;
     });
@@ -189,8 +189,8 @@ export default class ConceptProvider extends Component {
   formatData(items) {
     let categorys = items.map((item) => {
       let tempPlants = item.plants.items.map((plant) => {
-        let norwegian_name = plant.plant.norwegian_name;
-        let latin_name = plant.plant.latin_name;
+        let norwegian_name = plant.plant.norwegian_name ? plant.plant.norwegian_name : "";
+        let latin_name = plant.plant.latin_name ? plant.plant.latin_name : "";
         let p = { norwegian_name, latin_name };
         return p;
       });

@@ -10,19 +10,6 @@ export const createPlantMetadata = /* GraphQL */ `
       id
       latin_name
       norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
       createdAt
       updatedAt
       category {
@@ -47,19 +34,6 @@ export const updatePlantMetadata = /* GraphQL */ `
       id
       latin_name
       norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
       createdAt
       updatedAt
       category {
@@ -84,19 +58,6 @@ export const deletePlantMetadata = /* GraphQL */ `
       id
       latin_name
       norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
       createdAt
       updatedAt
       category {
@@ -126,19 +87,6 @@ export const createPlant = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -174,19 +122,6 @@ export const updatePlant = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -222,19 +157,6 @@ export const deletePlant = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -277,19 +199,6 @@ export const createConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -341,19 +250,6 @@ export const updateConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -405,19 +301,6 @@ export const deleteConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -829,19 +712,6 @@ export const createPlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -879,19 +749,6 @@ export const updatePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -929,19 +786,6 @@ export const deletePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {

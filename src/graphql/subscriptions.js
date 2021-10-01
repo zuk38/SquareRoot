@@ -313,19 +313,6 @@ export const onCreateConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -374,19 +361,6 @@ export const onUpdateConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -435,19 +409,6 @@ export const onDeleteConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -619,19 +580,6 @@ export const onCreatePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -666,19 +614,6 @@ export const onUpdatePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -713,19 +648,6 @@ export const onDeletePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {

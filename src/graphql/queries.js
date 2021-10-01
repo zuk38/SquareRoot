@@ -116,19 +116,6 @@ export const getPlantMetadata = /* GraphQL */ `
       id
       latin_name
       norwegian_name
-      type
-      native
-      norwegian_nursery
-      size_in_cm
-      image
-      featured
-      climate_zone
-      pollinator_friendly
-      edible
-      rain_garden
-      pet_kids_friendly
-      air_puryfying
-      sun_seeker
       createdAt
       updatedAt
       category {
@@ -155,19 +142,6 @@ export const listPlantMetadatas = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -189,19 +163,6 @@ export const getPlant = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -239,19 +200,6 @@ export const listPlants = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }

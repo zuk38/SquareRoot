@@ -14,20 +14,20 @@ type PlantMetadata
   category: [PlantCategory] @connection(keyName: "byPlant", fields: ["id"])
   latin_name: String
   norwegian_name: String
-  type: String
-  native: Boolean
-  norwegian_nursery: Boolean
-  size_in_cm: Float
-  image: String
-  featured: Boolean
-  climate_zone: String
+  #type: String
+  #native: Boolean
+  #norwegian_nursery: Boolean
+  #size_in_cm: Float
+  #image: String
+  #featured: Boolean
+  #climate_zone: String
   #functional requirements
-  pollinator_friendly: Boolean
-  edible: Boolean
-  rain_garden: Boolean
-  pet_kids_friendly: Boolean
-  air_puryfying: Boolean
-  sun_seeker: Boolean #if false then shadow lover
+  #pollinator_friendly: Boolean
+  #edible: Boolean
+  #rain_garden: Boolean
+  #pet_kids_friendly: Boolean
+  #air_puryfying: Boolean
+  #sun_seeker: Boolean #if false then shadow lover
 }
 
 type Plant
