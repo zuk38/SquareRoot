@@ -158,12 +158,12 @@ export default function Home(props) {
           <br />
           
           <div className="c-grid--3x1">
-            <div className="grid-item1" onClick={() => openCategory(`categories/takhage`)}>
-              <a href="/who-we-are" className="img-wrap-rooftop">
+            <div className="grid-item1 sect-4-item1" onClick={() => openCategory(`categories/takhage`)}>
+              <div className="img-wrap-rooftop">
                 <div className="u-txt--middle">
                   <em>{t("home_page.section_four.rooftop")}</em>
                 </div>
-              </a>
+              </div>
             </div>
          
 
@@ -184,12 +184,12 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="grid-item3" onClick={() => openCategory(`categories/regnbed`)}>
-              <a href="/who-we-are"  className="img-wrap-rainbed">
+            <div className="grid-item3 sect-4-item3" onClick={() => openCategory(`categories/regnbed`)}>
+              <div className="img-wrap-rainbed">
                 <div className="u-txt--middle">
                   <em>{t("rainbed2")}</em>
                 </div>
-              </a>
+              </div>
             </div>
 
             <div className="grid-item4 sect-4-item4">
@@ -209,12 +209,12 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="grid-item9" onClick={() => openCategory(`categories/innendørsplanter`)}>
-              <a href="/who-we-are" className="img-wrap-indoor">
+            <div className="grid-item9 sect-4-item5" onClick={() => openCategory(`categories/innendørsplanter`)}>
+              <div className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
                 </div>
-              </a>
+              </div>
             </div>
 
             <div className="grid-item10 sect-4-item6">
@@ -237,8 +237,8 @@ export default function Home(props) {
 
       <section id="fifth">
         <div className="o-container c-section--pad-vh">
-          <div className="c-grid--3x1">
-            <div className="grid-item9 sect-5-item1">
+          <div className="c-grid--2x2">
+            <div className="grid-item3 sect-5-item1">
               <div className="o-container--sm bckgd-white ">
                 <div className="main-punchline--p u-txt--center pad-me">
                   <p>
@@ -355,6 +355,7 @@ export default function Home(props) {
           <FooterContainer />
         </div>
       </section>
+      <div className="end-here"></div>
     </div>
   );
 }
