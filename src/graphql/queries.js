@@ -337,9 +337,7 @@ export const getCategory = /* GraphQL */ `
     getCategory(id: $id) {
       id
       category_name
-      subheader
       description
-      image
       createdAt
       updatedAt
       concepts {
@@ -375,9 +373,7 @@ export const listCategorys = /* GraphQL */ `
       items {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {

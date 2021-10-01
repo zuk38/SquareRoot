@@ -61,10 +61,6 @@ export const listCategorys = /* GraphQL */ `
       items {
         id
         category_name
-        subheader
-        description
-        createdAt
-        updatedAt
         concepts {
           items {
             concept {
