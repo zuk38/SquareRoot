@@ -69,9 +69,9 @@ export default function Home(props) {
       </section>
 
       <section id="second">
-        <div className="o-container c-section--pad-vh">
+        <div className="o-container pad-me">
           <div className="c-grid--3x1">
-            <div className="grid-item1 zoom-on-hover">
+            <div className="grid-item1">
               <img
                 className="column-img"
                 src="../images/hands-rooftop.png"
@@ -88,13 +88,14 @@ export default function Home(props) {
 
             <div className="grid-item2-stretch position-relative">
               <div className="main-punchline">
-                <div className="main-punchline--lrg position-absolute">
+                <div className="main-punchline--lrg">
                   <Trans i18nKey="home_page.section_two.title">
                     SquareRoot makes cities
                     <em className="light-green">&nbsp;green</em>, literally!
                   </Trans>
                 </div>
               </div>
+              <br />
               <div className="short-border position-absolute left-margin" />
             </div>
 
@@ -114,11 +115,11 @@ export default function Home(props) {
       </section>
 
       <section id="third">
-        <div className="o-container c-section--pad-vh">
+        <div className="o-container pad-me">
           <div className="c-grid--3x1">
-            <div className="grid-item1-stretch position-relative">
+            <div className="grid-item1-stretch position-relative ">
               <div className="main-punchline">
-                <div className="main-punchline--lrg position-absolute">
+                <div className="main-punchline--lrg">
                   <Trans i18nKey="home_page.section_three.title">
                     We want to make it easier to
                     <em className="light-green">
@@ -128,6 +129,7 @@ export default function Home(props) {
                   </Trans>
                 </div>
               </div>
+              <br />
               <div className="short-border position-absolute left-margin" />
             </div>
 
@@ -227,8 +229,8 @@ export default function Home(props) {
       <section id="fifth">
         <div className="o-container c-section--pad-vh">
           <div className="c-grid--3x1">
-            <div className="grid-item9">
-              <div className="o-container--sm bckgd-white ">
+            <div className="grid-item3">
+              <div className="o-container--sm bckgd-white sect-5-item1">
                 <div className="main-punchline--p u-txt--center">
                   <p>
                     <Trans i18nKey="home_page.section_five.description">

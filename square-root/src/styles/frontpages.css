@@ -136,10 +136,9 @@ dt:first-child {
 }
 
 .o-container--sm{
-  padding:2%;
+  margin-top:20%;
+  padding:5%;
   width:100%;
-  margin:auto;
-  height:100%;
 }
 
 .bckgd-white{
