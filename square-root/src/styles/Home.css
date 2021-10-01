@@ -20,6 +20,7 @@ Smooth Scroll --------*/
   width: 100%;
   height: 100vh;
   position: relative;
+  scroll-snap-points-y: 50vh;
 }
 
 
@@ -123,7 +124,14 @@ section#second {
 }
 
 section#third {
+  height: 100vh;
   max-width: fit-content;
+}
+
+section#fourth {
+  height: 100vh;
+  max-width: fit-content;
+<<<<<<< HEAD
   scroll-snap-align: start;
 }
 
@@ -131,6 +139,8 @@ section#fourth {
   height: 100vh;
   max-width: fit-content;
   scroll-snap-align: start;
+=======
+>>>>>>> 291288f235c66f9b9cb5c9afc830ace82b2127ad
   
 }
 
@@ -150,7 +160,10 @@ section#contact {
 
 section#seventh {
   height: 100vh;
+<<<<<<< HEAD
   scroll-snap-align: start;
+=======
+>>>>>>> 291288f235c66f9b9cb5c9afc830ace82b2127ad
 }
 
 section#seventh img{
@@ -162,7 +175,10 @@ section#seventh img{
 
 section#footer {
   height: calc(70vh - var(--nav-size));
+<<<<<<< HEAD
   scroll-snap-align: start;
+=======
+>>>>>>> 291288f235c66f9b9cb5c9afc830ace82b2127ad
 }
 
 .list-item h1 {
@@ -306,10 +322,13 @@ em {
   grid-gap:20px;
 }
 
+<<<<<<< HEAD
 .start-here{
   scroll-snap-align: start;
 }
 
+=======
+>>>>>>> 291288f235c66f9b9cb5c9afc830ace82b2127ad
 @media (max-width: 1025px){
 
   .c-section--pad-vh{
@@ -396,10 +415,18 @@ em {
 
     /*section fifth */
     .sect-5-item1{
+<<<<<<< HEAD
       grid-column:1/3;
       width:80%;
     }
   
+=======
+      padding-top:100px;
+      padding-right:100px;
+      grid-column:2;
+    }
+
+>>>>>>> 291288f235c66f9b9cb5c9afc830ace82b2127ad
     /*section sixth / contact */
     section#contact{
       scroll-snap-align: start;
