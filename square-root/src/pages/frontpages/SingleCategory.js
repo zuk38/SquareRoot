@@ -2,8 +2,9 @@ import React, { Component } from "react";
 import "../../styles/frontpages.css";
 import { ConceptContext } from "../../context/concepts";
 import { Link } from "react-router-dom";
+import { Trans, withTranslation } from "react-i18next";
 
-export default class SingleCategory extends Component {
+class SingleCategory extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,6 +21,8 @@ export default class SingleCategory extends Component {
     name = name.charAt(0).toUpperCase() + name.slice(1);
     const category = getCategory(name);
 
+    const { t, i18n } = this.props;
+
     if (!category) {
       return (
         <div className="error">
@@ -31,100 +34,96 @@ export default class SingleCategory extends Component {
       );
     }
 
-    const {
-      category_name,
-      subheader,
-      image,
-      image_descr,
-      description,
-      plants,
-    } = category;
+    const { category_name, plants } = category;
 
     return (
-
       <div className="o-container">
-      <div className="c-hero">
-        <div className="c-grid--2x1">
-          <div className="grid-item4 margin-left">
-            {/*change to {image} when done*/}
-            <img
-              src={`../images/${category_name}.jpg`}
-              className="c-img"
-              alt={category_name}
-              
-            />
-            <div className="hero-img-overlay">
-              <div className="text-overlay">{image_descr}</div>
+        <div className="c-hero">
+          <div className="c-grid--2x1">
+            <div className="grid-item4 margin-left">
+              <img
+                src={`../images/${category_name}.jpg`}
+                className="c-img"
+                alt={category_name}
+              />
             </div>
-          </div>
 
-          <div className="grid-item0">
-            <h1 className="c-txt--hero">{category_name} </h1>
+            <div className="grid-item0">
+              <h1 className="c-txt--hero">
+                {t(`single_category.${category_name}.title`)}
+              </h1>
             </div>
             <div className="grid-item2">
-            <div className="c-txt-punchline--sm">
-              <br></br>
-              {description}Contrary to popular belief, Lorem Ipsum is not simply
-              random text. It has roots in a piece of classical Latin literature
-              from 45 BC, making it over 2000 years old. Richard McClintock, a
-              Latin professor at Hampden-Sydney College in Virginia, looked up
-              one of the more obscure Latin words, consectetur, from a Lorem
-              Ipsum passage, and going through the cites of the word in
-              classical literature, discovered the undoubtable source.
-            </div>
-          </div>
-        </div>
-        <div className="u-mrg--txt1"></div>
-
-        {/* PLANT LIST CONTAINER */}
-
-        <div className="o-container background-grey padding-sm">
-          <div className="c-txt-punchline--sm">
-            <strong>Planteliste</strong>
-          </div>
-
-          <div className="c-grid--2x2 c-mrg--top">
-            {plants.map((plant, index) => (
-              <div
-                key={index}
-                className={
-                  index % 2 ? "c-grid--2x2" : "c-grid--2x2 margin-left"
-                }
-              >
-                <div className="grid-item1">{plant.norwegian_name}</div>
-                <div className="grid-item3 italic">{plant.latin_name}</div>
+              <div className="c-txt-punchline--sm">
+                <br />
+                <Trans
+                  i18nKey={`single_category.${category_name}.description`}
+                >
+                  Optimize your roof surface with one our concepts. <br />
+                  <br />
+                  Roofs can be used for energy production, stormwater
+                  management, increase biodiversity or to create a space for
+                  people to meet, relax and enjoy. <br />
+                  <br />
+                  Our concepts maximize these benefits and consider weight
+                  restrictions of your roof using light weight rooftop soils.
+                  Our plants and hardware are chosen and designed to meet your
+                  specific needs.
+                </Trans>
               </div>
-            ))}
-
-            {/* BUTTON */}
-            <div className="grid-item4  c-section--padding-top-24">
-              <button
-                className="btn-transp float-right zoom-on-hover"
-                onClick={() =>
-                  this.setState(
-                    (prevState) => ({ isClicked: !prevState.isClicked }),
-                    () => console.log(this.state)
-                  )
-                }
-              >
-                {!this.state.isClicked ? (
-                  <div className="float-left">
-                    Vis mer <i className="fas fa-angle-down btn-icon bounce" />
-                  </div>
-                ) : (
-                  <div className="float-left">
-                    Vis mindre <i className="fas fa-angle-up" />
-                  </div>
-                )}
-              </button>
             </div>
           </div>
-        </div>
+          <div className="u-mrg--txt1"></div>
 
-        {/* END PLANT LIST CONTAINER */}
+          {/* PLANT LIST CONTAINER */}
 
+          <div className="o-container background-grey padding-sm">
+            <div className="c-txt-punchline--sm">
+              <strong>Planteliste</strong>
+            </div>
 
-{/*CONNECT TO DATABASE 
+            <div className="c-grid--2x2 c-mrg--top">
+              {plants.map((plant, index) => (
+                <div
+                  key={index}
+                  className={
+                    index % 2 ? "c-grid--2x2" : "c-grid--2x2 margin-left"
+                  }
+                >
+                  <div className="grid-item1">{plant.norwegian_name}</div>
+                  <div className="grid-item3 italic">{plant.latin_name}</div>
+                </div>
+              ))}
+
+              {/* BUTTON */}
+              <div className="grid-item4  c-section--padding-top-24">
+                <button
+                  className="btn-transp float-right zoom-on-hover"
+                  onClick={() =>
+                    this.setState(
+                      (prevState) => ({ isClicked: !prevState.isClicked }),
+                      () => console.log(this.state)
+                    )
+                  }
+                >
+                  {!this.state.isClicked ? (
+                    <div className="float-left">
+                      Vis mer{" "}
+                      <i className="fas fa-angle-down btn-icon bounce" />
+                    </div>
+                  ) : (
+                    <div className="float-left">
+                      Vis mindre <i className="fas fa-angle-up" />
+                    </div>
+                  )}
+                </button>
+              </div>
+            </div>
+          </div>
+
+          {/* END PLANT LIST CONTAINER */}
+
+          {/*CONNECT TO DATABASE 
         <div className="c-section c-grid--2x1-equal">
         <div className="img-wrap">
           <img src={`../images/${category_name}.jpg`}/>
@@ -166,7 +165,7 @@ export default class SingleCategory extends Component {
         </div>
         */}
 
-        {/* ---- REMOVE ???? ------
+          {/* ---- REMOVE ???? ------
 
         <h2 className="c-txt-punchline--sm c-mrg--top">{description}</h2>
         <br />
@@ -226,12 +225,9 @@ export default class SingleCategory extends Component {
           planteskolene.
         </h2>
          */}
-
-
+        </div>
       </div>
-      
-      </div>
-     
     );
   }
 }
+export default withTranslation()(SingleCategory);

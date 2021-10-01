@@ -1,11 +1,11 @@
 {
   "home": "HOME",
   "greenspaces": "PROJECTS",
-  "rooftop": "ROOFGARDEN",
+  "rooftop": "ROOF GARDEN",
   "rainbed": "RAINBED",
   "indoor": "INDOOR",
-  "rooftop2": "Roofgarden",
-  "rainbed2": "Rainbed",
+  "rooftop2": "Roof garden",
+  "rainbed2": "Rain garden",
   "indoor2": "Indoor",
   "who": "WHO WE ARE",
   "about": "ABOUT",
@@ -59,8 +59,8 @@
     "description": "We are the new platform for green spaces",
     "button": "Tell us about your project",
     "greenspaces": "Greenspaces",
-    "rooftop": "Roofgarden",
-    "rainbed": "Rainbed",
+    "rooftop": "Roof garden",
+    "rainbed": "Rain garden",
     "indoor": "Indoor",
     "about": "About",
     "contact": "Contact",
@@ -114,5 +114,20 @@
     "LARK_d": "See what is available and make your own amazing project",
     "LENT_d": "Order the right plant for the right spot on our platform",
     "PN_d": "Show and sell your plants on our platform"
+  },
+  "single_category": {
+    "Takhage": {
+      "title": "Roof Garden",
+      "description": "Optimize your roof surface with one our concepts. <1/><2/>Roofs can be used for energy production, stormwater management, increase biodiversity or to create a space for people to meet, relax and enjoy.<4/><5/>Our concepts maximize these benefits and consider weight restrictions of your roof using light weight rooftop soils.  Our plants and hardware are chosen and designed to meet your specific needs."
+    },
+    "Regnbed": {
+      "title": "Rain Garden",
+      "description": " A rain garden stores rainwater runoff from roofs and other hard surfaces.   Keeping the water out of the sewage system when it rains hard reduces the risk of floods. <1/><2/>Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.    <4/><5/>It is an efficient tool to manage stormwater, improve biodiversity and the attractiveness of our cities."
+    },
+    "Innendørsplanter": {
+      "title": "Indoor Plants",
+      "description": " Creating cities where people love to live and work means greening inside buildings as well.  Indoor plants clean the air and have a positive effect on our wellbeing.  Building standards like WELL actively promote integrating plants indoor.<1/><2/>Our partner Leaf has extensive expertise with indoor plants.  Netflix’ offices in Amsterdam are just one of their amazing projects.  Incredible aesthetics are combined with minimal maintenance.<4/><5/>Plants are grown in modular rectangular tray directly at the nursery and make it easy for the interior architect to design and integrate green jungles in buildings."
+    },
+    "plantlist": "Plant List"
   }
 }

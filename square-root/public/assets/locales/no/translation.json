@@ -114,5 +114,20 @@
     "LARK_d": "Se hva som er tilgjengelig og lag ditt eget fantastiske prosjekt",
     "LENT_d": "Bestill riktige planter til riktig sted på plattformen vår",
     "PN_d": "Vis og selg plantene dine på plattformen vår"
+  },
+  "single_category": {
+    "Takhage": {
+      "title": "Takhage",
+      "description": "Optimaliser taket med ett av våre konsepter. <1/><2/>Tak kan brukes til energiproduksjon, overvannshåndtering, øke biologisk mangfold eller for å skape et fellesareal hvor man kan, slappe av og nyte plassen i grønne omgivelser.   <4/><5/>Våre konsepter gir deg disse fordelene og tar hensyn til vektbegrensninger på taket ved bruk av lett takjord. Våre planter og utstyr er utvalgt og designet for å møte dine behov. "
+    },
+    "Regnbed": {
+      "title": "Regnbed",
+      "description": "En regnbed lagrer avrenning av regnvann fra tak og andre harde overflater. Å holde vannet ute av kloakkanlegget når det regner hardt reduserer faren for flom.<1/><2/>Plantene våre for dette urbane grøntområdet er nøye utvalgt med planter for våtsonen, som tåler opptil 48 timer i vannet, samt tørketolerante planter ved grensene i tørkesonen.  <4/><5/>Det er et effektivt verktøy for overvannshåndtering, forbedre naturmangfoldet og gjøre byene våres mer attraktive."
+    },
+    "Innendørsplanter": {
+      "title": "Innendørs",
+      "description": "Å utvikle byer som folk elsker å bo og jobbe i, innebærer å inkludere grønt innendørs også. Innendørse planter renser luften og har en positiv effekt på velværen vår. Standarder for bygg og anlegg som WELL fremmer aktivt integrering av planter innendørs. <1/><2/>Vår partner Leaf har omfattende kompetanse innen innendørs planter. Netflix-kontorene i Amsterdam er bare ett av deres fantastiske prosjekter. Pen estetikk kombineres med minimalt med vedlikehold.<4/><5/>Plantene gros i et modulært rektangulært brett direkte i planteskolen, og gjør det enkelt for interiørarkitekten å designe og integrere grønne jungler i bygninger. "
+    },
+    "plantlist": "Planteliste"
   }
 }

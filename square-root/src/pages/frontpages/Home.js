@@ -155,7 +155,7 @@ export default function Home(props) {
           <br />
           <br />
           <div className="c-grid--3x1">
-            <div className="grid-item1" onClick={() => openCategory("categories/takterrasse")}>
+            <div className="grid-item1" onClick={() => openCategory(`categories/takhage`)}>
               <div className="img-wrap-rooftop">
                 <div className="u-txt--middle">
                   <em>{t("home_page.section_four.rooftop")}</em>
@@ -177,7 +177,7 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="grid-item3" onClick={() => openCategory("categories/regnseng")}>
+            <div className="grid-item3" onClick={() => openCategory(`categories/regnbed`)}>
               <div className="img-wrap-rainbed">
                 <div className="u-txt--middle">
                   <em>{t("rainbed2")}</em>
@@ -200,7 +200,7 @@ export default function Home(props) {
               </div>
             </div>
 
-            <div className="grid-item9" onClick={() => openCategory("categories/innendørsplanter")}>
+            <div className="grid-item9" onClick={() => openCategory(`categories/innendørsplanter`)}>
               <div className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
