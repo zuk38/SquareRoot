@@ -154,8 +154,7 @@ export default function Home(props) {
 
       <section id="fourth">
         <div className="o-container c-section--pad-vh">
-          <br />
-          <br />
+      
           
           <div className="c-grid--3x1">
             <div className="grid-item1 sect-4-item1" onClick={() => openCategory(`categories/takhage`)}>

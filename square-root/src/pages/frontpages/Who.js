@@ -34,7 +34,7 @@ export default function Who() {
 
          
 
-            <div className="c-grid--2x2">
+            <div className="c-grid--2x3">
 
               {/*-------------GRID ITEM-------------*/}
                 <div className="grid-item1">
@@ -50,7 +50,7 @@ export default function Who() {
                   </p>
                 
 
-                <div className="u-mrg--reset">
+              
                   <p className="c-txt-punchline--sm">
                     <Trans i18nKey="who_page.team.jo_d1">
                       <em>Jo</em>
@@ -62,7 +62,7 @@ export default function Who() {
                   </p>
                   <p>{t("who_page.team.jo_d2")}</p>
                   <p>{t("who_page.team.jo_d3")}</p>
-                </div>
+            
                 </div>
 
               {/*-------------GRID ITEM-------------*/}
@@ -97,7 +97,7 @@ export default function Who() {
               {/*-------------GRID ITEM-------------*/}
               
               
-              <div className="grid-item2">
+              <div className="grid-item2 karolina-is-3">
          
                 <img
                   className="u-mrg-img1"
@@ -131,7 +131,7 @@ export default function Who() {
             {/*-------------GRID ITEM-------------*/}
 
             
-              <div className="grid-item4">
+              <div className="grid-item4 gro-is-4">
              
           
                 <img
@@ -167,7 +167,7 @@ export default function Who() {
 
               {/*-------------GRID ITEM-------------*/}
               
-              <div className="grid-item5">
+              <div className="grid-item5 kristian-is-5">
          
                 <img
                   className="u-mrg-img1"
@@ -200,7 +200,7 @@ export default function Who() {
 
               {/*-------------GRID ITEM-------------*/}
               
-              <div className="grid-item6">
+              <div className="grid-item6 sanne-is-6">
       
                 <img
                   className="u-mrg-img1"

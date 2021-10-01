@@ -266,9 +266,10 @@ section#footer {
 }
 
 .short-border {
-  border: 3px solid var(--mainGrey);
-  width: 5%;
-  bottom: 0;
+  margin:1em 0;
+  width:10%;
+  border:0;
+  border-top: 7px solid var(--mainGrey);
 }
 
 .short-border-white {
@@ -322,7 +323,7 @@ em {
     display: grid;
     grid-template-columns: 0.3fr 1fr;
     grid-template-rows: 1fr 1fr;
-    height:75vh;
+
   }
 
    /*section# second*/
@@ -467,14 +468,21 @@ em {
 }
 
   /*section# third*/
-  .grid-item3-vertical{
+  
+
+
+  .grid-item2-stretch1{
     grid-column:1;
     grid-row:2;
   }
 
-  .grid-item2-stretch1{
-    grid-column:2;
-    grid-row:2;
+  .grid-item3-vertical{
+    grid-column:1;
+    grid-row:3;
+  }
+  .grid-item3-vertical img{
+    height: 200px;
+    object-fit:cover;
   }
 
 
@@ -488,12 +496,12 @@ em {
 
   /*section contact*/
   section#contact{
-    height:180vh;
+    height:200vh;
   }
 
   .sect-6-item1{
     scroll-snap-align: start;
-    height:80vh;
+    height:30vh;
     
   }
   .sect-6-item2{
@@ -584,12 +592,12 @@ em {
 
   .sect-6-item1{
     scroll-snap-align: start;
-    height:80vh;
+    height:40vh;
     
   }
   .sect-6-item2{
     scroll-snap-align: start;
-    height:80vh;
+    height:100vh;
   }
 
   .o-form__control{
@@ -602,6 +610,9 @@ em {
     line-height: 0px;
 
   }
+
+   
+
   
   /*section seventh */
 
