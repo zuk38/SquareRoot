@@ -9,6 +9,7 @@ export default function Who() {
     <>
       <div className="c-section background-grey">
         <div className="o-container">
+          
           <div className="c-hero">
             <h1 className="c-txt--hero">{t("who_page.title")}</h1>
             <div className="short-border u-mrg--txt1"></div>
@@ -31,12 +32,12 @@ export default function Who() {
             </p>
           </div>
 
-          {/* A WORD FROM FOUNDERS*/}
-          <div className="c-section">
-            <div className="c-container u-mrg--reset">
-              <p className="c-txt--punchline">{t("who_page.team.title")}</p>
-              <div className="c-grid--founders">
-                <div className="u-mrg--reset">
+         
+
+            <div className="c-grid--2x2">
+
+              {/*-------------GRID ITEM-------------*/}
+                <div className="grid-item1">
                   <img
                     className="u-mrg-img1"
                     src="../images/jo-profil.jpeg"
@@ -47,7 +48,8 @@ export default function Who() {
                     <br />
                     {t("who_page.team.jo_img_d")}
                   </p>
-                </div>
+                
+
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
                     <Trans i18nKey="who_page.team.jo_d1">
@@ -61,10 +63,12 @@ export default function Who() {
                   <p>{t("who_page.team.jo_d2")}</p>
                   <p>{t("who_page.team.jo_d3")}</p>
                 </div>
+                </div>
 
-                <div className="u-mrg--reset">
+              {/*-------------GRID ITEM-------------*/}
+                <div className="grid-item3">
                   <img
-                    className="u-mrg-img1"
+                    className="u-mrg-img3"
                     src="../images/michel-profile.jpeg"
                     alt="Michel"
                   />
@@ -73,7 +77,8 @@ export default function Who() {
                     <br />
                     {t("who_page.team.michel_img_d")}
                   </p>
-                </div>
+                
+
                 <div className="u-mrg--reset">
                   <p className="c-txt-punchline--sm">
                     <Trans i18nKey="who_page.team.michel_d1">
@@ -86,14 +91,16 @@ export default function Who() {
                   <p>{t("who_page.team.michel_d2")}</p>
                   <p>{t("who_page.team.michel_d3")}</p>
                 </div>
-              </div>
-            </div>
-          </div>
-          <div className="c-section">
-            <div className="c-grid--2x2">
-              <div className="grid-item1">
+                </div>
+               
+              
+              {/*-------------GRID ITEM-------------*/}
+              
+              
+              <div className="grid-item2">
+         
                 <img
-                  className="c-img--portrait"
+                  className="u-mrg-img1"
                   src="../images/karolina.jpg"
                   alt="Karolina"
                 />
@@ -102,7 +109,6 @@ export default function Who() {
                   <br />
                   {t("who_page.team.karolina_img_d")}
                 </p>
-
                 <p>
                   <Trans i18nKey="who_page.team.karolina_d">
                     The undefeated champion of shilly-shally, eating veggie
@@ -118,11 +124,18 @@ export default function Who() {
                     or a good book - out in the nature.
                   </Trans>
                 </p>
+          
+     
               </div>
 
-              <div className="grid-item3">
+            {/*-------------GRID ITEM-------------*/}
+
+            
+              <div className="grid-item4">
+             
+          
                 <img
-                  className="c-img--portrait"
+                  className="u-mrg-img1"
                   src="../images/profile-gro.jpeg"
                   alt="Gro"
                 />
@@ -148,9 +161,14 @@ export default function Who() {
                     yoga and martial arts.
                   </Trans>
                 </p>
+      
               </div>
 
-              <div className="grid-item2">
+
+              {/*-------------GRID ITEM-------------*/}
+              
+              <div className="grid-item5">
+         
                 <img
                   className="u-mrg-img1"
                   src="../images/profile-kristian.jpg"
@@ -177,8 +195,13 @@ export default function Who() {
                   </Trans>
                 </p>
               </div>
+        
 
-              <div className="grid-item4">
+
+              {/*-------------GRID ITEM-------------*/}
+              
+              <div className="grid-item6">
+      
                 <img
                   className="u-mrg-img1"
                   src="../images/profile-sanne.png"
@@ -205,9 +228,12 @@ export default function Who() {
                   </Trans>
                 </p>
               </div>
-            </div>
-          </div>
-        </div>
+           
+
+              </div>
+
+              </div>
+  
       </div>
       {/* WHY US 
       <div className="c-section background-grey">

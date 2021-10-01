@@ -187,7 +187,7 @@ background-color: white;
 }
 
 .c-section--pad-vh{
-  padding-top: 20vh;
+  padding-top: 10vh;
 }
 
 .u-txt--center {
@@ -232,6 +232,7 @@ background-color: white;
   border: none;
   margin-bottom: 10px;
   margin-top:30px;
+  font-family: inherit;
 }
 
 .btn-icon {
@@ -520,18 +521,17 @@ html {
 /*GRID 2x2 */
 .c-grid--2x2 {
   display: grid;
-  grid-template-rows: max-content max-content;
   grid-template-columns: 1fr 1fr;
-  height: fit-content;
-  width: 100%;
+  grid-template-rows: 1fr auto;
   grid-gap: 110px;
   /*grid-gap:clamp(24px,2.9282576867vw,40px);*/
 }
 
-@media (min-width: 768px) {
+@media only screen and (max-width: 830px) {
   .c-grid--2x2 {
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr auto;
+    padding-top: 10%;
+    grid-template-columns: 1fr;
+    grid-gap: 120px;
   }
 }
 

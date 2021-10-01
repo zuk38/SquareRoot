@@ -40,26 +40,26 @@ export default function Partner(props) {
         <div className="o-container--lrg background-grey">
           <div className="c-grid--4x1">
             <div className="grid-item1">
-              <div className="c-txt-punchline--sm">Real Estate Developers</div>
+              <div className="c-txt-punchline--sm">{t("partner_page.RED")}</div>
               <div className="short-border" />
               <p>{t("partner_page.RED_d")}</p>
             </div>
 
             <div className="grid-item3">
-              <div className="c-txt-punchline--sm">Landscape Architects</div>
+              <div className="c-txt-punchline--sm">{t("partner_page.LARK")}</div>
 
               <div className="short-border" />
               <p>{t("partner_page.LARK_d")}</p>
             </div>
 
             <div className="grid-item9">
-              <div className="c-txt-punchline--sm">Landscape Entrepreneurs</div>
+              <div className="c-txt-punchline--sm">{t("partner_page.LENT")}</div>
               <div className="short-border" />
               <p>{t("partner_page.LENT_d")}</p>
             </div>
 
             <div className="grid-item11">
-              <div className="c-txt-punchline--sm">Plant Nurseries</div>
+              <div className="c-txt-punchline--sm">{t("partner_page.PN")}</div>
               <div className="short-border" />
               <p>{t("partner_page.PN_d")}</p>
             </div>
