@@ -187,7 +187,7 @@ export default function ContactForm(props) {
                       onChange={handleChange}
                     />
 
-                    <span className="list-item-label">
+                    <span className={props.demo ? "list-item-label is-white" : "list-item-label"}>
                       <Trans i18nKey="contact_page.accept1">
                         I accept SquareRoot's
                         <a
@@ -228,7 +228,7 @@ export default function ContactForm(props) {
                       onChange={handleChange}
                     />
 
-                    <span className="list-item-label">
+                    <span className={props.demo ? "list-item-label is-white" : "list-item-label"}>
                       {t("contact_page.accept2")}
                     </span>
                   </label>
