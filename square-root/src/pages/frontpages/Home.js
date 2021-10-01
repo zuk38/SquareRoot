@@ -142,7 +142,7 @@ export default function Home(props) {
             <div className="grid-item3-vertical">
               <img
                 className="c-img"
-                src="../images/leaf_rooftop_redigert.jpg"
+                src="../images/portrait--biodiversity-redigert.jpg"
                 alt="rooftop"
               />
             </div>
