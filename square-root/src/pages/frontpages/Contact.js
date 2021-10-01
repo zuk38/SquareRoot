@@ -22,7 +22,7 @@ export default function Contact() {
               <div className="c-grid--3x3fixed">
                 <div>
                   <h3 className="c-txt--h3">{t("contact_page.email")}</h3>
-                  <p className="c-mrg--top-sm">contact@squareroot.cc</p>
+                  <p className="c-mrg--top-sm">michel@squareroot.cc</p>
                 </div>
 
                 <div>
@@ -36,14 +36,15 @@ export default function Contact() {
                 </div>
                 */}
               </div>
-
+                
+                {/** 
               <Link
                 to={{ pathname: "/projects", state: { modalOpen: true } }}
                 className="o-btn c-mrg--top/3"
               >
                 {t("start")}
               </Link>
-
+*/}
               <div className="c-splitlines">
                 <h2 className="c-splitlines--h2">
                   <span>{t("contact_page.or")}</span>
