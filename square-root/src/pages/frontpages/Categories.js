@@ -29,7 +29,7 @@ function Categories({ context }) {
                 onClick={() => redirectToCategory(category.category_name)}
               >
                 <img
-                  src={`../images/${category.category_name}.jpg`}
+                  src={`../images/${category.category_name.toLowerCase()}.jpg`}
                   alt={category.category_name}
                 />
                 <p>{category.category_name}</p>

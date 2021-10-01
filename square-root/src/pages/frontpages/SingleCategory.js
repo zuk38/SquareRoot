@@ -3,6 +3,15 @@ import "../../styles/frontpages.css";
 import { ConceptContext } from "../../context/concepts";
 import { Link } from "react-router-dom";
 import { Trans, withTranslation } from "react-i18next";
+import Accordion from "@mui/material/Accordion";
+import AccordionSummary from "@mui/material/AccordionSummary";
+import AccordionDetails from "@mui/material/AccordionDetails";
+import Typography from "@mui/material/Typography";
+import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
+import MuiAccordion from "@mui/material/Accordion";
+import MuiAccordionSummary from "@mui/material/AccordionSummary";
+import MuiAccordionDetails from "@mui/material/AccordionDetails";
+import { styled } from "@mui/material/styles";
 
 class SingleCategory extends Component {
   constructor(props) {
@@ -21,7 +30,7 @@ class SingleCategory extends Component {
     name = name.charAt(0).toUpperCase() + name.slice(1);
     const category = getCategory(name);
 
-    const { t, i18n } = this.props;
+    const { t } = this.props;
 
     if (!category) {
       return (
@@ -35,6 +44,45 @@ class SingleCategory extends Component {
     }
 
     const { category_name, plants } = category;
+
+    const Accordion = styled((props) => (
+      <MuiAccordion disableGutters elevation={0} square {...props} />
+    ))(({ theme }) => ({
+      border: `1px solid #f7f7f7`,
+      backgroundColor: "#f7f7f7",
+      "&:not(:last-child)": {
+        borderBottom: 0,
+      },
+      "&:before": {
+        display: "none",
+      },
+    }));
+
+    const AccordionSummary = styled((props) => (
+      <MuiAccordionSummary
+        expandIcon={
+          <ExpandMoreIcon
+            sx={{ fontSize: "0.9rem", color: "#f7f7f7", fontWeight: "bold" }}
+          />
+        }
+        {...props}
+      />
+    ))(({ theme }) => ({
+      color: "#f7f7f7",
+      backgroundColor: "#3e3d3d",
+      flexDirection: "row-reverse",
+      "& .MuiAccordionSummary-expandIconWrapper.Mui-expanded": {
+        transform: "rotate(90deg)",
+      },
+      "& .MuiAccordionSummary-content": {
+        marginLeft: theme.spacing(1),
+      },
+    }));
+
+    const AccordionDetails = styled(MuiAccordionDetails)(({ theme }) => ({
+      padding: theme.spacing(2),
+      borderTop: "1px solid rgba(0, 0, 0, .125)",
+    }));
 
     return (
       <div className="o-container">
@@ -56,9 +104,7 @@ class SingleCategory extends Component {
             <div className="grid-item2">
               <div className="c-txt-punchline--sm">
                 <br />
-                <Trans
-                  i18nKey={`single_category.${category_name}.description`}
-                >
+                <Trans i18nKey={`single_category.${category_name}.description`}>
                   Optimize your roof surface with one our concepts. <br />
                   <br />
                   Roofs can be used for energy production, stormwater
@@ -75,14 +121,42 @@ class SingleCategory extends Component {
           </div>
           <div className="u-mrg--txt1"></div>
 
+          <Accordion>
+            <AccordionSummary
+              aria-controls="panel1d-content"
+              id="panel1d-header"
+            >
+              <div className="c-txt-punchline--sm">
+                <strong>Planteliste</strong>
+              </div>
+            </AccordionSummary>
+            <AccordionDetails>
+            <div className="plantlist c-mrg--top">
+              {plants.map((plant, index) => (
+                <div
+                  key={index}
+                  className={
+                    index % 2 ? "plantlist" : "plantlist margin-left"
+                  }
+                >
+                  {plant.norwegian_name && <div className="grid-item1">{plant.norwegian_name}</div>}
+                  {plant.latin_name && <div className="grid-item1">{plant.latin_name}</div>}
+                </div>
+              ))}
+              </div>
+            </AccordionDetails>
+          </Accordion>
+
           {/* PLANT LIST CONTAINER */}
 
-          <div className="o-container background-grey padding-sm">
+          {/*<div className="o-container background-grey padding-sm">
             <div className="c-txt-punchline--sm">
               <strong>Planteliste</strong>
             </div>
 
-            <div className="c-grid--2x2 c-mrg--top">
+            
+
+           <div className="c-grid--2x2 c-mrg--top">
               {plants.map((plant, index) => (
                 <div
                   key={index}
@@ -90,12 +164,12 @@ class SingleCategory extends Component {
                     index % 2 ? "c-grid--2x2" : "c-grid--2x2 margin-left"
                   }
                 >
-                  <div className="grid-item1">{plant.norwegian_name}</div>
-                  <div className="grid-item3 italic">{plant.latin_name}</div>
+                  {plant.norwegian_name && <div className="grid-item1">{plant.norwegian_name}</div>}
+                  {plant.latin_name && <div className="grid-item1">{plant.latin_name}</div>}
                 </div>
               ))}
 
-              {/* BUTTON */}
+              {/* BUTTON 
               <div className="grid-item4  c-section--padding-top-24">
                 <button
                   className="btn-transp float-right zoom-on-hover"
@@ -118,8 +192,8 @@ class SingleCategory extends Component {
                   )}
                 </button>
               </div>
-            </div>
-          </div>
+                  </div>
+                  </div>*/}
 
           {/* END PLANT LIST CONTAINER */}
 
