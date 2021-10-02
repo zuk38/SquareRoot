@@ -175,6 +175,7 @@ export default function Navbar(props) {
           {/*language */}
           <LanguageSelect />
           {/* user */}
+          {/** 
           {!props.auth.isAuthenticated ? (
             <NavButton
               onClick={() => closeMobileMenu("/login")}
@@ -196,7 +197,7 @@ export default function Navbar(props) {
                 setDropdown={(value) => setDropdown(value)}
               />
             </div>
-          )}
+          )}*/}
 
           {/*sidebar*/}
           <div className="sidebar-bars" onClick={handleClick}>
