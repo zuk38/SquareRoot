@@ -70,7 +70,7 @@ export default function Home(props) {
       </section>
 
       <section id="second">
-        <div className="o-container c-section--pad-vh">
+        <div className="o-container pad-me">
           <div className="c-grid--3x1">
             <div className="grid-item1 sect-2-item1">
               <img
@@ -89,13 +89,14 @@ export default function Home(props) {
 
             <div className="grid-item2-stretch sect-2-title position-relative">
               <div className="main-punchline">
-                <div className="main-punchline--lrg position-absolute">
+                <div className="main-punchline--lrg">
                   <Trans i18nKey="home_page.section_two.title">
                     SquareRoot makes cities
                     <em className="light-green">&nbsp;green</em>, literally!
                   </Trans>
                 </div>
               </div>
+              <br />
               <div className="short-border position-absolute left-margin" />
             </div>
 
@@ -115,11 +116,11 @@ export default function Home(props) {
       </section>
 
       <section id="third">
-        <div className="o-container c-section--pad-vh">
+        <div className="o-container pad-me">
           <div className="c-grid--3x1">
-            <div className="grid-item1-stretch position-relative">
+            <div className="grid-item1-stretch position-relative ">
               <div className="main-punchline">
-                <div className="main-punchline--lrg position-absolute">
+                <div className="main-punchline--lrg">
                   <Trans i18nKey="home_page.section_three.title">
                     We want to make it easier to
                     <em className="light-green">
@@ -129,6 +130,7 @@ export default function Home(props) {
                   </Trans>
                 </div>
               </div>
+              <br />
               <div className="short-border position-absolute left-margin" />
             </div>
 
@@ -153,8 +155,7 @@ export default function Home(props) {
 
       <section id="fourth">
         <div className="o-container c-section--pad-vh">
-          <br />
-          <br />
+      
 
           <div className="c-grid--3x1">
             <div
@@ -261,8 +262,8 @@ export default function Home(props) {
 
       <section id="fifth">
         <div className="o-container c-section--pad-vh">
-          <div className="c-grid--3x1">
-            <div className="grid-item9 sect-5-item1">
+          <div className="c-grid--2x2">
+            <div className="grid-item3 sect-5-item1">
               <div className="o-container--sm bckgd-white ">
                 <div className="main-punchline--p u-txt--center pad-me">
                   <p>
@@ -379,6 +380,7 @@ export default function Home(props) {
           <FooterContainer />
         </div>
       </section>
+      <div className="end-here"></div>
     </div>
   );
 }

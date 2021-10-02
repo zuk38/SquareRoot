@@ -136,10 +136,9 @@ dt:first-child {
 }
 
 .o-container--sm{
-  padding:2%;
-  width:100%;
-  margin:auto;
-  height:100%;
+  margin-top:20%;
+  padding:5%;
+  width:80%;
 }
 
 .bckgd-white{
@@ -441,18 +440,14 @@ html {
 
 .c-grid--2x3{
   display: grid;
-  grid-gap: clamp(24px,2.9282576867vw,40px);
+  grid-gap: 100px;
 }
 
 
-@media (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .c-grid--2x3 {
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 0px;
-  }
-  .c-grid--2x3 > div.is-right {
-    -webkit-box-ordinal-group: 3;
-    order: 2;
+    grid-template-columns: auto;
+    grid-gap: 10px 10px;
   }
 }
 
@@ -527,11 +522,41 @@ html {
   /*grid-gap:clamp(24px,2.9282576867vw,40px);*/
 }
 
-@media only screen and (max-width: 830px) {
+@media (max-width: 830px) {
   .c-grid--2x2 {
     padding-top: 10%;
     grid-template-columns: 1fr;
     grid-gap: 120px;
+  }
+
+  .jo-is-1{
+    grid-column:1;
+    grid-row:1;
+  }
+
+  .michel-is-2{
+    grid-column:1;
+    grid-row:2;
+  }
+
+  .karolina-is-3{
+    grid-column:1;
+    grid-row:3;
+  }
+
+  .gro-is-4{
+    grid-column:1;
+    grid-row:4;
+  }
+
+  .kristian-is-5{
+    grid-column:1;
+    grid-row:5;
+  }
+
+  .sanne-is-6{
+    grid-column:1;
+    grid-row:6;
   }
 }
 
@@ -542,7 +567,7 @@ html {
   grid-template-columns: 1fr 1fr;
   height: fit-content;
   width: 100%;
-  grid-gap: 10px 280px;
+  grid-gap: 10px 00px;
   /*grid-gap:clamp(24px,2.9282576867vw,40px);*/
 }
 
@@ -550,7 +575,7 @@ html {
   .plantlist {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr auto;
-    grid-gap: 10px 200px;
+    grid-gap: 10px;
   }
 }
 
