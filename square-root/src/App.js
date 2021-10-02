@@ -152,7 +152,7 @@ class App extends Component {
                 render={(props) => <SingleCategory {...props} />}
               />
 
-              <PrivateRoute
+              {/*<PrivateRoute
                 authed={isAuthenticated}
                 auth={authProps}
                 path="/projects"
@@ -192,7 +192,7 @@ class App extends Component {
                 auth={authProps}
                 path="/pn"
                 component={PN}
-              />
+              />*/}
 
               <Route component={Error} />
             </Switch>
