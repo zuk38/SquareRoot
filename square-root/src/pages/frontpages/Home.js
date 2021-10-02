@@ -39,7 +39,7 @@ export default function Home(props) {
     <div className="front-container">
       <section id="first">
         <div className="logo">
-          <img src={logo} />
+          <img src={logo} alt="SquareRoot"/>
         </div>
         <div className="d">
           <span className="list-item">
@@ -64,7 +64,7 @@ export default function Home(props) {
             onClick={() => executeScroll("second")}
           >
             {t("home_page.hero.see_more")}
-            <img src={arrowDownWhite} />
+            <img src={arrowDownWhite} alt="arrow down"/>
           </button>
         </div>
       </section>
@@ -185,7 +185,7 @@ export default function Home(props) {
                     onClick={() => openCategory("categories/takhage")}
                   >
                     {t("home_page.hero.read_more")}
-                    <i class="fas fa-chevron-right" />
+                    <i className="fas fa-chevron-right" />
                   </button>
                 </p>
               </div>
@@ -219,7 +219,7 @@ export default function Home(props) {
                     onClick={() => openCategory("categories/regnbed")}
                   >
                     {t("home_page.hero.read_more")}
-                    <i class="fas fa-chevron-right"></i>
+                    <i className="fas fa-chevron-right"></i>
                   </button>
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function Home(props) {
                     onClick={() => openCategory("categories/innendørsplanter")}
                   >
                     {t("home_page.hero.read_more")}{" "}
-                    <i class="fas fa-chevron-right" />
+                    <i className="fas fa-chevron-right" />
                   </button>
                 </p>
               </div>

@@ -1,6 +1,5 @@
 import React from "react";
 import ContactForm from "../../components/ContactForm";
-import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 export default function Contact() {

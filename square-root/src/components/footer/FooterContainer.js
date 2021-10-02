@@ -8,7 +8,6 @@ import {
   Column,
   Row,
   Bottom,
-  Separator,
   Description,
   Button,
   Icon,
