@@ -513,7 +513,9 @@ em {
    /*section 7 / logos*/
    section#seventh {
     padding-top: 20px;
-    grid-template-columns: 1fr 1fr 1fr;
+}
+    section#seventh img{
+    width:40%;
 }
 
 
