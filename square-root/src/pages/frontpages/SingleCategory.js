@@ -3,10 +3,6 @@ import "../../styles/frontpages.css";
 import { ConceptContext } from "../../context/concepts";
 import { Link } from "react-router-dom";
 import { Trans, withTranslation } from "react-i18next";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
@@ -116,10 +112,17 @@ class SingleCategory extends Component {
                   Our plants and hardware are chosen and designed to meet your
                   specific needs.
                 </Trans>
+                <br />
+                <br />
+              </div>
+              <div className="c-txt-punchline--sm">
+              <Trans i18nKey="single_category.general_info">
+              
+            </Trans>
               </div>
             </div>
           </div>
-          <div className="u-mrg--txt1"></div>
+          <div className="u-mrg--txt1"/>
 
           <Accordion>
             <AccordionSummary

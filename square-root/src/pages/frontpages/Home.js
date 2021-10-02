@@ -9,7 +9,6 @@ import ContactForm from "../../components/ContactForm";
 import { FooterContainer } from "../../components/footer/FooterContainer";
 
 export default function Home(props) {
-  console.log(props)
   useEffect(() => {
     var page = document.body;
     page.classList.add("no-scroll");
@@ -54,7 +53,9 @@ export default function Home(props) {
             </h1>
           </span>
           <div className="signup-btn">
-            <Button onClick={() => executeScroll("contact")}>{t("home_page.hero.demo")}</Button>
+            <Button onClick={() => executeScroll("contact")}>
+              {t("home_page.hero.demo")}
+            </Button>
           </div>
         </div>
         <div className="see-more">
@@ -154,16 +155,18 @@ export default function Home(props) {
         <div className="o-container c-section--pad-vh">
           <br />
           <br />
-          
+
           <div className="c-grid--3x1">
-            <div className="grid-item1" onClick={() => openCategory(`categories/takhage`)}>
-              <a href="/who-we-are" className="img-wrap-rooftop">
+            <div
+              className="grid-item1"
+              onClick={() => openCategory(`categories/takhage`)}
+            >
+              <div className="img-wrap-rooftop">
                 <div className="u-txt--middle">
                   <em>{t("home_page.section_four.rooftop")}</em>
                 </div>
-              </a>
+              </div>
             </div>
-         
 
             <div className="grid-item2 sect-4-item2">
               <div className="main-punchline--p">
@@ -176,18 +179,26 @@ export default function Home(props) {
                     needs.
                   </Trans>
                   <br />
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/takterrasse")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
+                  <button
+                    className="btn-transp float-left zoom-on-hover"
+                    onClick={() => openCategory("categories/takhage")}
+                  >
+                    {t("home_page.hero.read_more")}
+                    <i class="fas fa-chevron-right" />
+                  </button>
                 </p>
-                
               </div>
             </div>
 
-            <div className="grid-item3" onClick={() => openCategory(`categories/regnbed`)}>
-              <a href="/who-we-are"  className="img-wrap-rainbed">
+            <div
+              className="grid-item3"
+              onClick={() => openCategory("categories/regnbed")}
+            >
+              <div className="img-wrap-rainbed">
                 <div className="u-txt--middle">
                   <em>{t("rainbed2")}</em>
                 </div>
-              </a>
+              </div>
             </div>
 
             <div className="grid-item4 sect-4-item4">
@@ -202,17 +213,26 @@ export default function Home(props) {
                     dry-zone.
                   </Trans>
                   <br />
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/regnseng")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
+                  <button
+                    className="btn-transp float-left zoom-on-hover"
+                    onClick={() => openCategory("categories/regnbed")}
+                  >
+                    {t("home_page.hero.read_more")}
+                    <i class="fas fa-chevron-right"></i>
+                  </button>
                 </p>
               </div>
             </div>
 
-            <div className="grid-item9" onClick={() => openCategory(`categories/innendørsplanter`)}>
-              <a href="/who-we-are" className="img-wrap-indoor">
+            <div
+              className="grid-item9"
+              onClick={() => openCategory("categories/innendørsplanter")}
+            >
+              <div className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
                 </div>
-              </a>
+              </div>
             </div>
 
             <div className="grid-item10 sect-4-item6">
@@ -225,7 +245,13 @@ export default function Home(props) {
                     are combined with minimal maintenance.
                   </Trans>
                   <br />
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/innendørsplanter")}>{t("home_page.hero.read_more")} <i class="fas fa-chevron-right"></i></button>
+                  <button
+                    className="btn-transp float-left zoom-on-hover"
+                    onClick={() => openCategory("categories/innendørsplanter")}
+                  >
+                    {t("home_page.hero.read_more")}{" "}
+                    <i class="fas fa-chevron-right" />
+                  </button>
                 </p>
               </div>
             </div>
@@ -275,28 +301,28 @@ export default function Home(props) {
               <div className="short-border-white" />
 
               <div className="grid-item2-stretch1">
-              <div className="main-punchline">
-                <div className="main-punchline--p is-white">
-                  <Trans i18nKey="home_page.section_six.description">
-                    Our digital platform makes finding and sourcing plants
-                    <em>&nbsp; easy and available everywhere</em>.
-                    <br />
-                    <br />
-                    Through our network of local plant nurseries, we help you
-                    find the right plants for the right spot and show what is
-                    available to have it delivered in time.
-                    <br />
-                    <br />
-                    Coming fall 2021. Stay updated by subscribing to our
-                    newsletter.
-                  </Trans>
+                <div className="main-punchline">
+                  <div className="main-punchline--p is-white">
+                    <Trans i18nKey="home_page.section_six.description">
+                      Our digital platform makes finding and sourcing plants
+                      <em>&nbsp; easy and available everywhere</em>.
+                      <br />
+                      <br />
+                      Through our network of local plant nurseries, we help you
+                      find the right plants for the right spot and show what is
+                      available to have it delivered in time.
+                      <br />
+                      <br />
+                      Coming fall 2021. Stay updated by subscribing to our
+                      newsletter.
+                    </Trans>
+                  </div>
                 </div>
-              </div>
               </div>
             </div>
 
             <div className="grid-item3-vertical sect-6-item2 is-white">
-            <ContactForm
+              <ContactForm
                 demo={true}
                 title="request_demo"
                 title_classname="o-form__heading is-white"
