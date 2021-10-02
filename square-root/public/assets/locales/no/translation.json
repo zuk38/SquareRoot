@@ -132,5 +132,9 @@
     },
     "plantlist": "Planteliste",
     "general_info": "På plattformen vår vil du kunne sette sammen ulike konsepter til et prosjekt og bestille det hele gjennom oss. <1/><2/> Plantelisten blir kontinuerlig oppdatert."
+  },
+  "error_page": {
+    "title": "Ups ... Vi fant ikke det du lette etter",
+    "return": "Vende Hjem"
   }
 }

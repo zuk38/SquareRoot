@@ -32,7 +32,7 @@ body {
   margin: 0;
 }
 .content {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - var(--nav-size));
 }
 
 body {
@@ -70,6 +70,7 @@ a {
   text-transform: uppercase;
   margin: 2rem 0;
 }
+
 .empty-search {
   text-align: center;
   margin: 2rem 0;
@@ -400,49 +401,78 @@ a {
   }
 }
 /* end of navbar */
+/* Hero */
+.defaultHero {
+  min-height: calc(100vh - var(--nav-size));
+  background: url("./images/background_banner.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* End of Hero */
 /* Banner */
 .errorBanner {
   display: inline-block;
   color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
+  background: rgba(0, 0, 0, 0.5);
   padding: 2rem 1rem;
   text-align: center;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.8);
+  letter-spacing: var(--mainSpacing);
+  width: 100%;
 }
 
 .errorBanner h1 {
   font-size: 3rem;
-  text-align: center;
-  margin-top: 15rem;
 }
 
 .errorBanner div {
   width: 10rem;
   height: 5px;
   background: var(--mainGreen);
-  margin: 1.7rem auto;
+  margin: 1.7rem auto 4rem;
 }
 
-.banner {
-  display: flex;
-  color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
-  padding: 2rem 1rem;
-  text-align: left;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.3);
+.errorBanner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.banner h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin: auto;
+.errorbutton {
+  background: var(--mainGrey);
+  border-radius: 3px;
+  padding: 10px 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
 }
+
+.errorbutton:hover {
+  transition: all 0.2s ease-in-out;
+  background: darkgray;
+}
+
+@media screen and (min-width: 576px) {
+  .banner {
+    padding: 2rem 3rem;
+  }
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner {
+    padding: 2rem 6rem;
+  }
+  .banner h1 {
+    font-size: 4rem;
+  }
+}
+
 /* end of banner */
 /* Titles */
 .plants-title {
@@ -727,8 +757,8 @@ a {
 }
 
 .is-danger {
-  color: #FF6863;
+  color: #ff6863;
   font-size: 0.8em;
-  padding-left:2%;
+  padding-left: 2%;
   text-align: left;
 }
