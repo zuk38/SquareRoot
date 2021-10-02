@@ -132,7 +132,7 @@ class SingleCategory extends Component {
               id="panel1d-header"
             >
               <div className="c-txt-punchline--sm">
-                <strong>Planteliste</strong>
+                <strong>{t("single_category.plant_list")}</strong>
               </div>
             </AccordionSummary>
             <AccordionDetails>
