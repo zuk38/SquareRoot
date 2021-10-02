@@ -3,10 +3,6 @@ import "../../styles/frontpages.css";
 import { ConceptContext } from "../../context/concepts";
 import { Link } from "react-router-dom";
 import { Trans, withTranslation } from "react-i18next";
-import Accordion from "@mui/material/Accordion";
-import AccordionSummary from "@mui/material/AccordionSummary";
-import AccordionDetails from "@mui/material/AccordionDetails";
-import Typography from "@mui/material/Typography";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
 import MuiAccordion from "@mui/material/Accordion";
 import MuiAccordionSummary from "@mui/material/AccordionSummary";
@@ -120,9 +116,11 @@ class SingleCategory extends Component {
                 <br />
               </div>
               <div className="c-txt-punchline--sm">
-              <Trans i18nKey="single_category.general_info">
-              
-            </Trans>̇
+                <Trans i18nKey="single_category.general_info">
+                  On our platform, you will be able to put together concepts in
+                  a project and order it through our website. <br/> <br/>The plantlist is
+                  countinously updated.
+                </Trans>
               </div>
             </div>
           </div>
@@ -138,18 +136,22 @@ class SingleCategory extends Component {
               </div>
             </AccordionSummary>
             <AccordionDetails>
-            <div className="plantlist c-mrg--top">
-              {plants.map((plant, index) => (
-                <div
-                  key={index}
-                  className={
-                    index % 2 ? "plantlist" : "plantlist margin-left"
-                  }
-                >
-                  {plant.norwegian_name && <div className="grid-item1">{plant.norwegian_name}</div>}
-                  {plant.latin_name && <div className="grid-item1">{plant.latin_name}</div>}
-                </div>
-              ))}
+              <div className="plantlist c-mrg--top">
+                {plants.map((plant, index) => (
+                  <div
+                    key={index}
+                    className={
+                      index % 2 ? "plantlist" : "plantlist margin-left"
+                    }
+                  >
+                    {plant.norwegian_name && (
+                      <div className="grid-item1">{plant.norwegian_name}</div>
+                    )}
+                    {plant.latin_name && (
+                      <div className="grid-item1">{plant.latin_name}</div>
+                    )}
+                  </div>
+                ))}
               </div>
             </AccordionDetails>
           </Accordion>
