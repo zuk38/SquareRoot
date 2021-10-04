@@ -183,18 +183,26 @@ export default function Home(props) {
           <div className="o-container c-section--pad-vh">
             <div className="container-desktop">
               {section_fourth_items.map((item) => (
-                <Card item={item} openCategory={openCategory} />
+                <div key={item.name} className="card">
+                  <Card item={item} openCategory={openCategory} />
+                </div>
               ))}
             </div>
           </div>
         ) : (
           <div className="container-desktop">
             <div>
-            <Carousel>
-              {section_fourth_items.map((item) => (
-                <Card item={item} openCategory={openCategory} />
-              ))}
-            </Carousel>
+              <Carousel>
+                {section_fourth_items.map((item) => (
+                  <div
+                    key={item.name}
+                    className="card"
+                    onClick={() => openCategory(item.path)}
+                  >
+                    <Card item={item} openCategory={openCategory} carousel />
+                  </div>
+                ))}
+              </Carousel>
             </div>
           </div>
         )}
@@ -425,25 +433,42 @@ export default function Home(props) {
   );
 }
 
-function Card({ item, openCategory }) {
+function Card({ item, openCategory, carousel }) {
   const { t } = useTranslation();
   return (
-    <div key={item.name} className="card" onClick={() => openCategory(item.path)}>
-      <div
-        className="thumb"
-        style={{
-          background:
-            "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" +
-            item.img_url +
-            ")",
-          backgroundSize: "cover",
-        }}
-        
-      >
-        <div>
-          <em>{item.name}</em>
+    <>
+      {carousel ? (
+        <div
+          className="thumb"
+          style={{
+            background:
+              "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" +
+              item.img_url +
+              ")",
+            backgroundSize: "cover",
+          }}
+        >
+          <div>
+            <em>{item.name}</em>
+          </div>
         </div>
-      </div>
+      ) : (
+        <div
+          className="thumb"
+          style={{
+            background:
+              "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" +
+              item.img_url +
+              ")",
+            backgroundSize: "cover",
+          }}
+          onClick={() => openCategory(item.path)}
+        >
+          <div>
+            <em>{item.name}</em>
+          </div>
+        </div>
+      )}
       <article>
         <p>
           <Trans i18nKey={item.description}>
@@ -457,6 +482,6 @@ function Card({ item, openCategory }) {
           <i className="fas fa-chevron-right" />
         </span>
       </article>
-    </div>
+    </>
   );
 }
