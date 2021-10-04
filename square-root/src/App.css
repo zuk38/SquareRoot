@@ -31,6 +31,7 @@ body {
   height: 100%;
   margin: 0;
 }
+
 .content {
   min-height: calc(100vh - var(--nav-size));
 }
@@ -298,11 +299,14 @@ a {
     width: 100%;
     height: 500vh;
     position: fixed;
-    top: 80px;
+    top: var(--nav-size);
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
     position: absolute;
+
+    padding: 20px 0 0;
+    margin-top: -20px;
   }
 
   .nav-menu.active {
@@ -312,6 +316,8 @@ a {
     transition: all 0.5s ease;
     z-index: 990;
     position: absolute;
+    padding: 20px 0 0;
+    margin-top: -20px;
   }
 
   .fa-caret-down {

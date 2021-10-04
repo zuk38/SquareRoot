@@ -12,6 +12,7 @@ Smooth Scroll --------*/
   overflow-x: hidden;
   height: calc(100vh - var(--nav-size));
   width: 100%;
+  z-index: 1;
 }
 
 /* common for each section */
