@@ -7,6 +7,8 @@ import { Trans, useTranslation } from "react-i18next";
 import Button from "@material-ui/core/Button";
 import ContactForm from "../../components/ContactForm";
 import { FooterContainer } from "../../components/footer/FooterContainer";
+import useWindowDimensions from "../../components/hooks/useWindowDimensions";
+import Carousel from "react-material-ui-carousel";
 
 export default function Home(props) {
   useEffect(() => {
@@ -35,11 +37,34 @@ export default function Home(props) {
     props.history.push(path);
   };
 
+  let width = useWindowDimensions();
+
+  const section_fourth_items = [
+    {
+      name: t("home_page.section_four.rooftop"),
+      description: "home_page.section_four.rooftop_description",
+      path: "categories/takhage",
+      img_url: "../images/landscape--rooftop_redigert.png",
+    },
+    {
+      name: t("rainbed2"),
+      description: "home_page.section_four.rainbed_description",
+      path: "categories/regnbed",
+      img_url: "../images/leaf_rooftop_4_redigert.jpg",
+    },
+    {
+      name: t("indoor2"),
+      description: "home_page.section_four.indoor_description",
+      path: "categories/innendørsplanter",
+      img_url: "../images/landscape--indoor_redigert.jpg",
+    },
+  ];
+
   return (
     <div className="front-container">
       <section id="first">
         <div className="logo">
-          <img src={logo} alt="SquareRoot"/>
+          <img src={logo} alt="SquareRoot" />
         </div>
         <div className="d">
           <span className="list-item">
@@ -64,7 +89,7 @@ export default function Home(props) {
             onClick={() => executeScroll("second")}
           >
             {t("home_page.hero.see_more")}
-            <img src={arrowDownWhite} alt="arrow down"/>
+            <img src={arrowDownWhite} alt="arrow down" />
           </button>
         </div>
       </section>
@@ -154,10 +179,26 @@ export default function Home(props) {
       </section>
 
       <section id="fourth">
-        <div className="o-container c-section--pad-vh">
-      
-
-          <div className="c-grid--3x1">
+        {width >= 768 ? (
+          <div className="o-container c-section--pad-vh">
+            <div className="container-desktop">
+              {section_fourth_items.map((item) => (
+                <Card item={item} openCategory={openCategory} />
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="container-desktop">
+            <div>
+            <Carousel>
+              {section_fourth_items.map((item) => (
+                <Card item={item} openCategory={openCategory} />
+              ))}
+            </Carousel>
+            </div>
+          </div>
+        )}
+        {/*<div className="c-grid--3x1">
             <div
               className="grid-item1"
               onClick={() => openCategory(`categories/takhage`)}
@@ -256,8 +297,7 @@ export default function Home(props) {
                 </p>
               </div>
             </div>
-          </div>
-        </div>
+  </div>*/}
       </section>
 
       <section id="fifth">
@@ -381,6 +421,42 @@ export default function Home(props) {
         </div>
       </section>
       <div className="end-here"></div>
+    </div>
+  );
+}
+
+function Card({ item, openCategory }) {
+  const { t } = useTranslation();
+  return (
+    <div key={item.name} className="card" onClick={() => openCategory(item.path)}>
+      <div
+        className="thumb"
+        style={{
+          background:
+            "linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(" +
+            item.img_url +
+            ")",
+          backgroundSize: "cover",
+        }}
+        
+      >
+        <div>
+          <em>{item.name}</em>
+        </div>
+      </div>
+      <article>
+        <p>
+          <Trans i18nKey={item.description}>
+            Optimise your roof surface with one of our
+            <em>rooftop</em> concepts. Our plants and hardware are chosen and
+            designed to meet your specific needs.
+          </Trans>
+        </p>
+        <span className="zoom-on-hover" onClick={() => openCategory(item.path)}>
+          {t("home_page.hero.read_more")}
+          <i className="fas fa-chevron-right" />
+        </span>
+      </article>
     </div>
   );
 }

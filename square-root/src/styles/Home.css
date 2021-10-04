@@ -20,6 +20,7 @@ Smooth Scroll --------*/
   width: 100%;
   height: 100vh;
   position: relative;
+  scroll-snap-align: start;
 }
 
 .front-container section p {
@@ -41,7 +42,6 @@ section#first {
   grid-template-columns: 1.2fr 0.6fr 1.2fr;
   grid-template-rows: 1.5fr 1.1fr 0.4fr;
   height: calc(100vh - var(--nav-size));
-  scroll-snap-align: start;
 }
 
 section#first .logo {
@@ -216,7 +216,7 @@ section#first .see-more {
   section#first .d {
     grid-column: 1 / 4;
   }
-  
+
   section#first .signup-btn button {
     font-size: 0.8rem;
     margin: 30px 0;
@@ -238,40 +238,134 @@ section#first .see-more {
 }
 
 /* End of Hero */
-
 section#second {
-  height: 100vh;
   max-width: fit-content;
-  scroll-snap-align: start;
 }
 
 section#third {
   max-width: fit-content;
-  scroll-snap-align: start;
 }
 
+/* rooftop, rainbed, indoor */
 section#fourth {
-  height: 100vh;
   max-width: fit-content;
-  scroll-snap-align: start;
 }
+
+section#fourth .container-desktop {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1px 60px;
+}
+
+section#fourth .container-desktop .card {
+  background: white;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  position: relative;
+  top: 0;
+}
+
+.thumb {
+  width: 100%;
+  height: 200px;
+  position: relative;
+  float: left;
+  color: white;
+  font-size: 2em;
+  text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .thumb:hover {
+    -ms-transform: scale(1.05); /* IE 9 */
+    -webkit-transform: scale(1.05); /* Safari 3-8 */
+    transform: scale(1.05);
+    /*background: white;
+    opacity: 0.8;*/
+    cursor: pointer;
+    transition: all 0.5s ease-in;
+  }
+}
+
+.thumb div {
+  position: absolute;
+  bottom: 8px;
+  left: 16px;
+}
+
+.card article {
+  padding-top: 24px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card p {
+  margin: 0;
+  flex: 1;
+  white-space: normal;
+}
+
+.card span {
+  background: none;
+  font-size: 15px;
+  border: none;
+  margin-bottom: 10px;
+  margin-top: 40px;
+  font-family: inherit;
+}
+
+@media screen and (max-width: 767px) {
+  section#fourth .container-desktop {
+    display: flex;
+    padding-top: 10vh;
+  }
+
+  section#fourth .container-desktop .card {
+    margin: auto;
+    width: 70%;
+  }
+
+  section#fourth .container-desktop .card:hover {
+    cursor: pointer;
+  }
+
+  .thumb {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    float: left;
+    color: white;
+    font-size: 2em;
+    text-align: center;
+  }
+
+  .card article {
+    padding-top: 24px;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-bottom: 40px;
+  }
+
+  .card span {
+    display: none;
+  }
+}
+
+/*end of rooftop, rainbed, indoor */
 
 section#fifth {
-  height: 100vh;
   background-image: url("../images/boots.jpg");
   background-size: cover;
-  scroll-snap-align: start;
 }
 
 section#contact {
-  height: 100vh;
   background-color: var(--mainGrey);
-  scroll-snap-align: start;
-}
-
-section#seventh {
-  height: 100vh;
-  scroll-snap-align: start;
 }
 
 section#seventh img {
@@ -280,10 +374,7 @@ section#seventh img {
 
 section#footer {
   height: calc(70vh - var(--nav-size));
-  scroll-snap-align: start;
 }
-
-
 
 .bd-notification {
   padding-top: 40px;
@@ -379,7 +470,7 @@ em {
 
 .pad-me {
   padding: 5%;
-  padding-top: 10%;
+  /*padding-top: 10%;*/
 }
 
 /* RESPONSIVE HOMEPAGE */
