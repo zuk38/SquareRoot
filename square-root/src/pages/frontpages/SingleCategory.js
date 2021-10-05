@@ -90,7 +90,7 @@ class SingleCategory extends Component {
             <div className="c-grid--2x1">
               <div className="grid-item4 margin-left">
                 <img
-                  src={`../images/${category_name}.jpg`}
+                  src={`../images/${category_name.toLowerCase()}.jpg`}
                   className="c-img"
                   alt={category_name}
                 />
