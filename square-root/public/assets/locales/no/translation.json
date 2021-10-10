@@ -40,7 +40,7 @@
     },
     "section_four": {
       "rooftop": "Takhage",
-      "rooftop_description": "Optimaliser taket med et av våre konsepter for <1>takhage</1>. Plantene og utstyret (?) er utvalgt og designet for å dekke dine behov.",
+      "rooftop_description": "Optimaliser taket med et av våre konsepter for <1>takhage</1>. Plantene og utstyret er utvalgt og designet for å dekke dine behov.",
       "rainbed_description": "Plantene for <1>regnbed</1> er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen.",
       "indoor_description": "Vår partner Leaf har omfattende ekspertise med <1>innendørsplanter</1>. Pen estetikk kombineres med minimalt vedlikehold."
     },
@@ -49,7 +49,7 @@
     },
     "section_six": {
       "title": "KOMMER SNART",
-      "description": "Vår digitale plattform gjør det å finne og bestille planter <1>enkelt og tilgjengelig overalt</1>. <3/> <4/>Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted og vise hvilke som er tilgjengelige slik at det blir levert i tide. <6 /> <7 />Kommer høsten 2021. Hold deg oppdatert ved å abonnere på nyhetsbrevet vårt."
+      "description": "Vår digitale plattform gjør det å finne og bestille planter <1>enkelt og tilgjengelig overalt</1>. <3/> <4/>Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted og vise hvilke som er tilgjengelige slik at det blir levert i tide. <6 /> <7 />Kommer høsten 2021. Forespør Demo for å se hva som kommer."
     },
     "section_seven": {
       "title": "I samarbeid med"
@@ -74,20 +74,18 @@
     "team": {
       "title": "Vårt Team",
       "jo_img_d": "Grunnlegger og CEO",
-      "jo_d1": "<0>Jo</0> startet sin karriere innen internasjonal forretningsutvikling for store energiselskaper med fokus på klimabegrensning, miljøpolitikk og investeringer i teknologier med lavt karbonutslipp.",
+      "jo_d": "<0>Jo</0> startet sin karriere innen internasjonal forretningsutvikling for store energiselskaper med fokus på klimabegrensning, miljøpolitikk og investeringer i teknologier med lavt karbonutslipp. <2/><3/>Han startet sitt eget selskap Greenbeat for å utvikle et smart blågrønt tak som kombinerer automatisert forvaltning av byvegetasjon og intelligent kontroll av vannreservoarer. Dette prosjektet, kalt RainBrain, har mottatt finansiering fra OrganiCity og SynchroniCity, begge under H2020-paraplyen.<5/><6/>Han bor i Oslo, Norge med sin kone og barn, liker å vandre i lokal natur og er et engasjert medlem av swimrun-felleskapet.",
       "jo_d2": "Han startet sitt eget selskap Greenbeat for å utvikle et smart blågrønt tak som kombinerer automatisert forvaltning av byvegetasjon og intelligent kontroll av vannreservoarer. Dette prosjektet, kalt RainBrain, har mottatt finansiering fra OrganiCity og SynchroniCity, begge under H2020-paraplyen.",
       "jo_d3": "Han bor i Oslo, Norge med sin kone og barn, liker å vandre i lokal natur og er et engasjert medlem av swimrun-felleskapet.",
       "michel_img_d": "Grunnlegger og COO",
-      "michel_d1": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.",
-      "michel_d2": "Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.",
-      "michel_d3": "Michel har også bidratt med å bygge for Gruten, den første norske urbane gården som dyrker sopp på kaffegrut. Han er også involvert med Pådriv i prosjekter knyttet til bærekraftig byutvikling.",
-      "karolina_img_d": "Cloud Developer",
-      "karolina_d": "The undefeated champion of shilly-shally, eating veggie burgers and having too many ideas at once, <1>Karolina</1>, always aims at perfection. SquareRoot gave her a chance for following her passion and working towards a meaningful purpose that starts a positive change in the world we live in. <3/><4/> Apart from pursuing an engineering degree in IT and loving to look through everyone's data, she enjoys a good workout - or a good book - out in the nature. <6/>",
-      "gro_img_d": "UX / UI and Frontend Utvikler",
-      "gro_d": "Inspirert til å bidra med og løse problemer av verdi for mennesker og jorden vi lever på, ble <1>Gro</1> med på SquareRoot motivert til å gjøre implementasjonen av grøntarealer i urbane områder mer tilgjengelig for alle involverte aktører.<3/><4/> Vedsiden av SquareRoot og Dataingeniørstudiet på OsloMet, trives hun med yoga og kampsport, og elsker å utforske nye steder.",
-      "kristian_img_d": "UX/UI and Frontend Praksisstudent",
-      "kristian_d": "Kristian er motivert til å gjøre plattformen vår så brukervennlig og selvdreven som mulig, noe som forhåpentligvis resulterer i å gjøre implementasjonen av grøntområder i byene en enkel prosess. <3/><4/> Han ser frem til å bli en programutvikler etter han fullfører graden sin i Dataingeniør på OsloMet. Vedsiden av studiene, trives Kristian med å være utendørs året rundt, gjerne høyt opp i fjellene.",
-      "sanne_img_d": "UX/UI and Frontend Praksisstudent",
+      "michel_d": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.<3/><4/>Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.<6/><7/>Michel har også bidratt med å bygge for Gruten, den første norske urbane gården som dyrker sopp på kaffegrut. Han er også involvert med Pådriv i prosjekter knyttet til bærekraftig byutvikling.",
+      "karolina_img_d": "Skyutvikler",
+      "karolina_d": "Mesteren i å være ubesluttsom, spise veggisburgere og å ha for mange ideer på en gang, sikter <1>Karolina</1> alltid mot perfeksjon. SquareRoot ga henne muligheten til å følge lidenskapen sin, og jobbe med et meningsfylt formål som kan føre til en positiv endring i verden vi lever i. <3/><4/> Vedsiden av å ta en ingeniørgrad i IT og å elske å se gjennom alles data, setter hun pris på trening – eller en god bok – ute i naturen.",
+      "gro_img_d": "Interaksjonsdesigner og frontend-utvikler",
+      "gro_d": "En wannabe-forsker, men foreløpig bare en nysgjerrig jente med en forkjærlighet for mennesker, naturen og nydelig hjemmelaget mat, elsker <1>Gro</1> å utforske og lære av verden og dets innbyggere. På SquareRoot bryter hun ned vår visjon og setter det sammen til et design vi alle kan jobbe med. På denne måten håper hun at plattformen vil være en drivkraft for brukervennlige byer, for både mennesker og naturen. <3/><4/>  Vedsiden av bachelor i dataingeniør, praktiserer hun yoga og kampsport. Med dette ønsker hun å kunne håndtere enhver utfordring som møter henne.",
+      "kristian_img_d": "Praksisstudent som utvikler",
+      "kristian_d": "<1>Kristian</1> er motivert til å gjøre plattformen vår så brukervennlig og selvdreven som mulig, noe som forhåpentligvis resulterer i å gjøre implementasjonen av grøntområder i byene en enkel prosess. <3/><4/> Han ser frem til å bli en programutvikler etter han fullfører graden sin i Dataingeniør på OsloMet. Vedsiden av studiene, trives Kristian med å være utendørs året rundt, gjerne høyt opp i fjellene.",
+      "sanne_img_d": "Praksisstudent som utvikler",
       "sanne_d": "<0>Sanne</0> har en lidenskap for miljøet og dyrene, og ønsker å utvikle mer bærekraftige måter å leve på. Hun ble en del av SquareRoot for å bidra med en grønnere framtid med vår økologiske løsning. <2/> <3/> Hun trives med å være i nærheten av havet, i godt selskap og god mat. Hun fullfører sitt siste år i bachelorgraden Anvendt Datateknologi på OsloMet. "
     }
   },
@@ -100,6 +98,7 @@
     "phone": "Telefon",
     "or": "eller",
     "send_message": "Send oss en melding",
+    "request_demo": "Forespør Demo",
     "send": "Send",
     "accept1": "Jeg godtar SquareRoots <1>vilkår for bruk</1> og <3>personvernerklæring</3>",
     "accept2": "Jeg ønsker å iblant motta nyhetsbrev fra SquareRoot om tilbud, nyheter og oppdateringer innen grønn byutvikling."
@@ -109,9 +108,29 @@
     "subtitle": "Sammen gjør vi byene våres grønne.",
     "description": "Vi ønsker å samarbeide med alle aktører i planleggingen og utformingen av urbane grøntområder. Dette er for at vi kan gjøre arbeidsprosessen sømløs slik at du kan lage og vedlikeholde motstandsdyktige grøntområder.",
     "contact": "Ta kontakt for en uforpliktende samtale",
+    "RED": "Eiendomsutviklere",
+    "LARK": "Landskapsarkitekter",
+    "LENT": "Landskapsentreprenører",
+    "PN": "Planteskoler",
     "RED_d": "Utforsk konsepter som vil gjøre bygningen din grønnere",
     "LARK_d": "Se hva som er tilgjengelig og lag ditt eget fantastiske prosjekt",
     "LENT_d": "Bestill riktige planter til riktig sted på plattformen vår",
     "PN_d": "Vis og selg plantene dine på plattformen vår"
+  },
+  "single_category": {
+    "Takhage": {
+      "title": "Takhage",
+      "description": "Optimaliser taket med ett av våre konsepter. <1/><2/>Tak kan brukes til energiproduksjon, overvannshåndtering, øke biologisk mangfold eller for å skape et fellesareal hvor man kan, slappe av og nyte plassen i grønne omgivelser.   <4/><5/>Våre konsepter gir deg disse fordelene og tar hensyn til vektbegrensninger på taket ved bruk av lett takjord. Våre planter og utstyr er utvalgt og designet for å møte dine behov. "
+    },
+    "Regnbed": {
+      "title": "Regnbed",
+      "description": "En regnbed lagrer avrenning av regnvann fra tak og andre harde overflater. Å holde vannet ute av kloakkanlegget når det regner hardt reduserer faren for flom.<1/><2/>Plantene våre for dette urbane grøntområdet er nøye utvalgt med planter for våtsonen, som tåler opptil 48 timer i vannet, samt tørketolerante planter ved grensene i tørkesonen.  <4/><5/>Det er et effektivt verktøy for overvannshåndtering, forbedre naturmangfoldet og gjøre byene våres mer attraktive."
+    },
+    "Innendørsplanter": {
+      "title": "Innendørs",
+      "description": "Å utvikle byer som folk elsker å bo og jobbe i, innebærer å inkludere grønt innendørs også. Innendørse planter renser luften og har en positiv effekt på velværen vår. Standarder for bygg og anlegg som WELL fremmer aktivt integrering av planter innendørs. <1/><2/>Vår partner Leaf har omfattende kompetanse innen innendørs planter. Netflix-kontorene i Amsterdam er bare ett av deres fantastiske prosjekter. Pen estetikk kombineres med minimalt med vedlikehold.<4/><5/>Plantene gros i et modulært rektangulært brett direkte i planteskolen, og gjør det enkelt for interiørarkitekten å designe og integrere grønne jungler i bygninger. "
+    },
+    "plantlist": "Planteliste",
+    "general_info": "På plattformen vår vil du kunne sette sammen ulike konsepter til et prosjekt og bestille det hele gjennom oss. <1/><2/> Plantelisten blir kontinuerlig oppdatert."
   }
 }

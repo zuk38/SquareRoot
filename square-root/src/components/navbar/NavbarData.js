@@ -21,13 +21,13 @@ export const NavbarData = [
       {
         title: "ROOFTOP",
         i18nKey: "rooftop",
-        path: "/categories/takterrasse",
+        path: "/categories/takhage",
         className: "d-link",
       },
       {
         title: "RAINBED",
         i18nKey: "rainbed",
-        path: "/categories/regnseng",
+        path: "/categories/regnbed",
         className: "d-link",
       },
       {
@@ -38,29 +38,6 @@ export const NavbarData = [
       },
     ],
   },
-  
-  /* {
-    title: "ABOUT",
-    i18nKey: "about",
-    path: "/about-us",
-    className: "sidebar-text",
-    dropdown: "dropdownAbout",
-   subtitle: [
-      { title: "WHAT WE DO", path: "/what-we-do", i18nKey: "what", className: "d-link" },
-      {
-        title: "HOW IT WORKS",
-        i18nKey: "how",
-        path: "/how-it-works",
-        className: "d-link",
-      },
-      {
-        title: "WHY US",
-        i18nKey: "why",
-        path: "/why-us",
-        className: "d-link",
-      },
-    ],
-  },*/
   {
     title: "CONTACT",
     path: "/contact",

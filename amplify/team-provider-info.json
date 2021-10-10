@@ -21,12 +21,12 @@
         },
         "contactFormFunction": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/contactFormFunction-59767a723944774e4842-build.zip"
+          "s3Key": "amplify-builds/contactFormFunction-4b316f343345344e3456-build.zip"
         },
         "sendEmail": {
           "emailAddress": "kmaciejewska14@gmail.com",
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/sendEmail-622b4c5268645336664d-build.zip"
+          "s3Key": "amplify-builds/sendEmail-3972556d587563633139-build.zip"
         }
       }
     }

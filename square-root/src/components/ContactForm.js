@@ -24,13 +24,14 @@ export default function ContactForm(props) {
   const [sent, setSent] = useState(false);
 
   async function addContact() {
+    console.log("called add contact")
     setIsSending(true);
     // create request body
     const data = {
       body: {
         name: values.name,
         email: values.email,
-        message: values.message,
+        message: values.message || "This is a demo request",
         phone: values.phone || "",
         location: values.location || "",
       },
@@ -43,7 +44,8 @@ export default function ContactForm(props) {
   }
 
   function callback() {
-    console.log("success");
+    console.log(values.message);
+    console.log(errors.message);
   }
 
   const openInNewTab = (url) => {
@@ -75,9 +77,16 @@ export default function ContactForm(props) {
               className={
                 pathname === "/contact-us"
                   ? "o-form__group"
+                  : pathname === "/"
+                  ? "o-form__group-full"
                   : "o-form__group u-txt--center"
               }
             >
+              {props.title && (
+                <h3 className={props.title_classname}>
+                  {t(`contact_page.${props.title}`)}
+                </h3>
+              )}
               <div className="o-form__matrix-2">
                 <span className="form-control-wrap your-name is-required">
                   <input
@@ -85,7 +94,7 @@ export default function ContactForm(props) {
                     name="name"
                     value-size="40"
                     className="o-form__control"
-                    placeholder="Navn"
+                    placeholder="Name"
                     value={values.name || ""}
                     onChange={handleChange}
                   />
@@ -99,7 +108,7 @@ export default function ContactForm(props) {
                     name="email"
                     value-size="40"
                     className="o-form__control"
-                    placeholder="E-post"
+                    placeholder="E-mail"
                     value={values.email || ""}
                     onChange={handleChange}
                   />
@@ -115,51 +124,56 @@ export default function ContactForm(props) {
                     value={values.phone || ""}
                     onChange={handleChange}
                     className="o-form__control"
-                    placeholder="Mobilnummer (valgfritt)"
+                    placeholder="Phone number (optional)"
                   />
                 </span>
-                <span className="form-control-wrap your-location">
-                  <input
-                    type="text"
-                    name="location"
-                    value-size="40"
-                    value={values.location || ""}
-                    onChange={handleChange}
-                    className="o-form__control"
-                    placeholder="Beliggenhet (valgfritt)"
-                  />
-                </span>
+                {!props.demo && (
+                  <span className="form-control-wrap your-location">
+                    <input
+                      type="text"
+                      name="location"
+                      value-size="40"
+                      value={values.location || ""}
+                      onChange={handleChange}
+                      className="o-form__control"
+                      placeholder="Location (optional)"
+                    />
+                  </span>
+                )}
               </div>
             </div>
+            {!props.demo && (
+              <div
+                className={
+                  pathname === "/contact-us"
+                    ? "o-form__group"
+                    : "o-form__group u-txt--center"
+                }
+              >
+                <span className="form-control-wrap message">
+                  <textarea
+                    name="message"
+                    cols="40"
+                    rows="6"
+                    className="o-form__control textarea is-required o-form__control"
+                    placeholder="Tell us what you're working on"
+                    type="text"
+                    value={values.message || ""}
+                    onChange={handleChange}
+                  />
+                  {errors.message && (
+                    <p className="help is-danger">{errors.message}</p>
+                  )}
+                </span>
+              </div>
+            )}
 
             <div
               className={
                 pathname === "/contact-us"
                   ? "o-form__group"
-                  : "o-form__group u-txt--center"
-              }
-            >
-              <span className="form-control-wrap message">
-                <textarea
-                  name="message"
-                  cols="40"
-                  rows="6"
-                  className="o-form__control textarea is-required o-form__control"
-                  placeholder="Fortell oss hva du jobber med"
-                  type="text"
-                  value={values.message || ""}
-                  onChange={handleChange}
-                />
-                {errors.message && (
-                  <p className="help is-danger">{errors.message}</p>
-                )}
-              </span>
-            </div>
-
-            <div
-              className={
-                pathname === "/contact-us"
-                  ? "o-form__group"
+                  : pathname === "/"
+                  ? "o-form__group-full"
                   : "o-form__group u-txt--center"
               }
             >
@@ -173,7 +187,7 @@ export default function ContactForm(props) {
                       onChange={handleChange}
                     />
 
-                    <span className="list-item-label">
+                    <span className={props.demo ? "list-item-label is-white" : "list-item-label"}>
                       <Trans i18nKey="contact_page.accept1">
                         I accept SquareRoot's
                         <a
@@ -214,26 +228,35 @@ export default function ContactForm(props) {
                       onChange={handleChange}
                     />
 
-                    <span className="list-item-label">
+                    <span className={props.demo ? "list-item-label is-white" : "list-item-label"}>
                       {t("contact_page.accept2")}
                     </span>
                   </label>
                 </span>
               </span>
             </div>
-
-            <button
-              className="submit-form-control submit o-btn"
-              onClick={handleSubmit}
-              disabled={
-                errors.conditions ||
-                errors.name ||
-                errors.email ||
-                errors.message
-              }
-            >
-              {t("contact_page.send")}
-            </button>
+            {props.demo ? (
+              <button
+                className="submit-form-control submit o-btn"
+                onClick={handleSubmit}
+                disabled={errors.conditions || errors.name || errors.email}
+              >
+                {t("contact_page.send")}
+              </button>
+            ) : (
+              <button
+                className="submit-form-control submit o-btn"
+                onClick={handleSubmit}
+                disabled={
+                  errors.conditions ||
+                  errors.name ||
+                  errors.email ||
+                  errors.message
+                }
+              >
+                {t("contact_page.send")}
+              </button>
+            )}
           </form>
         </>
       )}{" "}

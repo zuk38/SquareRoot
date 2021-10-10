@@ -10,19 +10,19 @@ export const listPlants = /* GraphQL */ `
         metadata {
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
+          #type
+          #native
+          #norwegian_nursery
+          #size_in_cm
+          #image
+          #featured
+          #climate_zone
+          #pollinator_friendly
+          #edible
+          #rain_garden
+          #pet_kids_friendly
+          #air_puryfying
+          #sun_seeker
           category {
             items {
               category {

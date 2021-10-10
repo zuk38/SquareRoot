@@ -1,11 +1,11 @@
 {
   "home": "HOME",
   "greenspaces": "PROJECTS",
-  "rooftop": "ROOFGARDEN",
+  "rooftop": "ROOF GARDEN",
   "rainbed": "RAINBED",
   "indoor": "INDOOR",
-  "rooftop2": "Roofgarden",
-  "rainbed2": "Rainbed",
+  "rooftop2": "Roof garden",
+  "rainbed2": "Rain garden",
   "indoor2": "Indoor",
   "who": "WHO WE ARE",
   "about": "ABOUT",
@@ -49,7 +49,7 @@
     },
     "section_six": {
       "title": "COMING SOON",
-      "description": "Our digital platform makes finding and sourcing plants <1>easy and available everywhere</1>. <3/> <4/> Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.<6 /> <7 />Coming fall 2021. Stay updated by subscribing to our newsletter."
+      "description": "Our digital platform makes finding and sourcing plants <1>easy and available everywhere</1>. <3/> <4/> Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.<6 /> <7 />Coming fall 2021. Request a Demo to get a look into what's coming."
     },
     "section_seven": {
       "title": "In collaboration with"
@@ -59,8 +59,8 @@
     "description": "We are the new platform for green spaces",
     "button": "Tell us about your project",
     "greenspaces": "Greenspaces",
-    "rooftop": "Roofgarden",
-    "rainbed": "Rainbed",
+    "rooftop": "Roof garden",
+    "rainbed": "Rain garden",
     "indoor": "Indoor",
     "about": "About",
     "contact": "Contact",
@@ -74,20 +74,16 @@
     "team": {
       "title": "Our Team",
       "jo_img_d": "Founder and CEO",
-      "jo_d1": "<0>Jo</0> started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.",
-      "jo_d2": "He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella.",
-      "jo_d3": "He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
+      "jo_d": "<0>Jo</0> started his career in international business development for large energy companies focusing on climate mitigation, environmental policies and investment in low carbon emitting technologies.<2/><3/>He started his own company Greenbeat to develop a smart blue-green roof combining automated management of urban vegetation and intelligent control of water reservoirs. This project called RainBrain has received funding from OrganiCity and SynchroniCity, both under the H2020 umbrella. <5/><6/>He lives in Oslo, Norway with his wife and daughter, enjoys hiking in local nature and is a happy member of the swimrun community.",
       "michel_img_d": "Founder and COO",
-      "michel_d1": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.",
-      "michel_d2": "He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.",
-      "michel_d3": "Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+      "michel_d": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.<3/><4/>He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.<6/><7/>Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
       "karolina_img_d": "Cloud Developer",
-      "karolina_d": "The undefeated champion of shilly-shally, eating veggie burgers and having too many ideas at once, <1>Karolina</1>, always aims at perfection. SquareRoot gave her a chance for following her passion and working towards a meaningful purpose that starts a positive change in the world we live in. <3/><4/> Apart from pursuing an engineering degree in IT and loving to look through everyone's data, she enjoys a good workout - or a good book - out in the nature. <6/>",
+      "karolina_d": "The undefeated champion of shilly-shally, eating veggie burgers and having too many ideas at once, <1>Karolina</1> always aims at perfection. SquareRoot gave her a chance for following her passion and working towards a meaningful purpose that starts a positive change in the world we live in. <3/><4/> Apart from pursuing an engineering degree in IT and loving to look through everyone's data, she enjoys a good workout - or a good book - out in the nature. <6/>",
       "gro_img_d": "UX / UI and Frontend Developer",
-      "gro_d": "Inspired to contribute and solve problems of value to people and the planet earth, <1>Gro</1>, joined SquareRoot with a motivation to make the implementations of green spaces in urban locations more available to all stakeholders.<3/><4/> Besides SquareRoot and her studies in Computer Engineering at Oslo Metropolitan University, Gro loves to explore new places and enjoys yoga and training with martial arts.",
-      "kristian_img_d": "UX / UI og Frontend Intern",
-      "kristian_d": "With us as an intern, <1>Kristian</1> is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.<3/><4/> He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. <6/>Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
-      "sanne_img_d": "UX / UI og Frontend Intern",
+      "gro_d": "A wannabe scientist, but currently just a curious girl with a heart for people, nature and delicious homemade food, <1>Gro</1> loves to explore and learn from the world and its inhabitants. At SquareRoot, she takes our grand vision, breaks it down to the basics, then puts it back together in a design we all can work on. This way, she hopes that our platform will be a driving force towards user-friendly cities, for both humans and nature. <3/><4/> Aside of her bachelor’s in computer engineering, she practices yoga and martial arts. With this, she aims to face any challenge that may come her way.",
+      "kristian_img_d": "Developer Intern",
+      "kristian_d": "With us as an intern, <1>Kristian</1> is motivated to make our platform as user-friendly and self-driven as possible, which in turn will hopefully make the process of including green spaces in our cities a simple task.<3/><4/> He is an aspiring Software Developer, currently a Computer Engineering student at OsloMet. Apart from his studies, he enjoys being in the outdoors year around, where you can find him far up in the steep mountains.",
+      "sanne_img_d": "Developer Intern",
       "sanne_d": "<0>Sanne</0> is passionate about the environment and animals and wants to create a more sustainable way of living. She joined Squareroot to contribute to a greener future with our ecological solution. <2/> <3/>  She enjoys being near the ocean with good company and delicious food. She is finishing her last year of her bachelor degree in Applied Computer Science at Oslo Metropolitan University."
     }
   },
@@ -100,6 +96,7 @@
     "phone": "Phone",
     "or": "or",
     "send_message": "Send us a message",
+    "request_demo": "Request Demo",
     "send": "Send",
     "accept1": "I accept SquareRoot's <1>Terms of Use</1> and <3>Privacy Policy</3>",
     "accept2": "I want to occasionally receive newsletters from SquareRoot about offers, news and updates in green urban development"
@@ -108,10 +105,31 @@
     "title": "Become a partner",
     "subtitle": "Together, we green our cities.",
     "description": "We want to collaborate with all stakeholders in the planning and design of urban green areas. This is so that we can make the work process seamless so that you can create and maintain resilient greenspaces.",
-    "contact": "Ta kontakt for en uforpliktende samtale",
+    "contact": "Get in touch",
+    "RED": "Real Estate Developers",
+    "LARK": "Landscape Architects",
+    "LENT": "Landscape Entrepreneurs",
+    "PN": "Plant Nurseries",
     "RED_d": "See the concepts that will green you building",
     "LARK_d": "See what is available and make your own amazing project",
     "LENT_d": "Order the right plant for the right spot on our platform",
     "PN_d": "Show and sell your plants on our platform"
+  },
+  "single_category": {
+    "Takhage": {
+      "title": "Roof Garden",
+      "description": "Optimize your roof surface with one our concepts. <1/><2/>Roofs can be used for energy production, stormwater management, increase biodiversity or to create a space for people to meet, relax and enjoy.<4/><5/>Our concepts maximize these benefits and consider weight restrictions of your roof using light weight rooftop soils.  Our plants and hardware are chosen and designed to meet your specific needs."
+    },
+    "Regnbed": {
+      "title": "Rain Garden",
+      "description": " A rain garden stores rainwater runoff from roofs and other hard surfaces.   Keeping the water out of the sewage system when it rains hard reduces the risk of floods. <1/><2/>Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.    <3/><4/>It is an efficient tool to manage stormwater, improve biodiversity and the attractiveness of our cities."
+    },
+    "Innendørsplanter": {
+      "title": "Indoor Plants",
+      "description": " Creating cities where people love to live and work means greening inside buildings as well.  Indoor plants clean the air and have a positive effect on our wellbeing.  Building standards like WELL actively promote integrating plants indoor.  <3/><4/>  Our partner Leaf has extensive expertise with indoor plants.  Netflix’ offices in Amsterdam are just one of their amazing projects.  Incredible aesthetics are combined with minimal maintenance.<5/><6/>Plants are grown in modular rectangular tray directly at the nursery and make it easy for the interior architect to design and integrate green jungles in buildings."
+    },
+
+    "plantlist": "Plant List",
+    "general_info": "On our platform, you will be able to put together concepts in a project and order it through our website.<1/><2/> The plantlist is countinously updated."
   }
 }

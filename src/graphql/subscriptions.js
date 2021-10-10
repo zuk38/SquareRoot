@@ -313,19 +313,6 @@ export const onCreateConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -374,19 +361,6 @@ export const onUpdateConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -435,19 +409,6 @@ export const onDeleteConceptPlant = /* GraphQL */ `
           id
           latin_name
           norwegian_name
-          type
-          native
-          norwegian_nursery
-          size_in_cm
-          image
-          featured
-          climate_zone
-          pollinator_friendly
-          edible
-          rain_garden
-          pet_kids_friendly
-          air_puryfying
-          sun_seeker
           createdAt
           updatedAt
         }
@@ -508,9 +469,7 @@ export const onCreateConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {
@@ -553,9 +512,7 @@ export const onUpdateConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {
@@ -598,9 +555,7 @@ export const onDeleteConceptCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {
@@ -625,19 +580,6 @@ export const onCreatePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -647,9 +589,7 @@ export const onCreatePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {
@@ -674,19 +614,6 @@ export const onUpdatePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -696,9 +623,7 @@ export const onUpdatePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {
@@ -723,19 +648,6 @@ export const onDeletePlantCategory = /* GraphQL */ `
         id
         latin_name
         norwegian_name
-        type
-        native
-        norwegian_nursery
-        size_in_cm
-        image
-        featured
-        climate_zone
-        pollinator_friendly
-        edible
-        rain_garden
-        pet_kids_friendly
-        air_puryfying
-        sun_seeker
         createdAt
         updatedAt
         category {
@@ -745,9 +657,7 @@ export const onDeletePlantCategory = /* GraphQL */ `
       category {
         id
         category_name
-        subheader
         description
-        image
         createdAt
         updatedAt
         concepts {

@@ -263,13 +263,14 @@ export default class PlantProvider extends Component {
   formatData(items) {
     let tempItems = items.map((item) => {
       let id = item.id;
-      let image = item.metadata.image;
+      //let image = item.metadata.image;
       let metadata = item.metadata;
       let category = item.metadata.category.items.map((item) => {
         let c = item.category.category_name;
         return c;
       });
-      let plant = { id, image, ...metadata, category: category };
+      //let plant = { id, image, ...metadata, category: category };
+      let plant = { id, ...metadata, category: category };
       return plant;
     });
     return tempItems;

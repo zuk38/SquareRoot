@@ -136,9 +136,9 @@ dt:first-child {
 }
 
 .o-container--sm{
-  padding:2%;
-  width:100%;
-  margin:auto;
+  margin-top:20%;
+  padding:5%;
+  width:80%;
 }
 
 .bckgd-white{
@@ -152,13 +152,8 @@ background-color: white;
   max-width: calc(1200px + 2 * 20px);
   text-align: inherit;
 }
-@media (min-width: 1024) {
-  .o-container {
-    padding-left: 60px;
-    padding-right: 60px;
-    max-width: calc(1100px + 2 * 60px);
-  }
-}
+
+
 
 .o-card-media {
   -webkit-box-align: start;
@@ -191,7 +186,7 @@ background-color: white;
 }
 
 .c-section--pad-vh{
-  padding-top: 20vh;
+  padding-top: 10vh;
 }
 
 .u-txt--center {
@@ -236,6 +231,7 @@ background-color: white;
   border: none;
   margin-bottom: 10px;
   margin-top:30px;
+  font-family: inherit;
 }
 
 .btn-icon {
@@ -407,7 +403,6 @@ html {
 
 
 
-
 @media screen and (min-width:650px){
 
   .grid-item1 {
@@ -445,47 +440,26 @@ html {
 
 .c-grid--2x3{
   display: grid;
-  grid-gap: clamp(24px,2.9282576867vw,40px);
+  grid-gap: 100px;
 }
 
 
-@media (min-width: 768px) {
+@media only screen and (max-width: 768px) {
   .c-grid--2x3 {
-    grid-template-columns: repeat(2, 1fr);
-    padding-bottom: 0px;
-  }
-  .c-grid--2x3 > div.is-right {
-    -webkit-box-ordinal-group: 3;
-    order: 2;
+    grid-template-columns: auto;
+    grid-gap: 10px 10px;
   }
 }
 
 
-.c-grid--3x1 {
-  
-}
 
-@media (min-width:1000px){
-  .c-grid--3x1{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr auto;
-}
-}
-@media (max-width:999px){
-  .c-grid--3x1{
-    grid-template-columns: 1fr 0 1fr 1fr;
-    max-width:50%;
-}
-}
+
 
 .c-grid--4x1 {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
-  grid-template-rows: auto;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   grid-gap: 2em;
 }
-
 
 
 .c-grid--3x3fixed{
@@ -517,6 +491,7 @@ html {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
   grid-gap: 0.5rem;
+  scroll-snap-type: mandatory;
 }
 
 .c-grid--fill > div {
@@ -539,18 +514,66 @@ html {
 /*GRID 2x2 */
 .c-grid--2x2 {
   display: grid;
-  grid-template-rows: max-content max-content;
   grid-template-columns: 1fr 1fr;
-  height: fit-content;
-  width: 100%;
+  grid-template-rows: 1fr auto;
   grid-gap: 110px;
   /*grid-gap:clamp(24px,2.9282576867vw,40px);*/
 }
 
-@media (min-width: 768px) {
+@media (max-width: 830px) {
   .c-grid--2x2 {
+    padding-top: 10%;
+    grid-template-columns: 1fr;
+    grid-gap: 120px;
+  }
+
+  .jo-is-1{
+    grid-column:1;
+    grid-row:1;
+  }
+
+  .michel-is-2{
+    grid-column:1;
+    grid-row:2;
+  }
+
+  .karolina-is-3{
+    grid-column:1;
+    grid-row:3;
+  }
+
+  .gro-is-4{
+    grid-column:1;
+    grid-row:4;
+  }
+
+  .kristian-is-5{
+    grid-column:1;
+    grid-row:5;
+  }
+
+  .sanne-is-6{
+    grid-column:1;
+    grid-row:6;
+  }
+}
+
+/* plantlist */
+.plantlist {
+  display: grid;
+  grid-template-rows: max-content max-content;
+  grid-template-columns: 1fr 1fr;
+  height: fit-content;
+  width: 100%;
+  grid-gap: 10px 00px;
+  /*grid-gap:clamp(24px,2.9282576867vw,40px);*/
+}
+
+@media (max-width: 1100px) {
+  .plantlist {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr auto;
+    grid-gap: 10px;
   }
 }
 
@@ -673,24 +696,6 @@ html {
   grid-row: 2 / 4;
 }
 
-@media screen and (max-width: 600px) {
-  .c-grid--span {
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: auto;
-  }
-  .c-grid--span-item-a {
-    grid-row: 1;
-    grid-column: 1 / 3;
-  }
-  .c-grid--span-item-b {
-    grid-row: 2;
-    grid-column: 1 / 3;
-  }
-  .c-grid--span-item-c {
-    grid-row: 3;
-    grid-column: 1 / 3;
-  }
-}
 
 /*END OF GRIDS*/
 
@@ -725,14 +730,15 @@ html {
   display:block;
   margin-bottom: 2em;
   width:100%;
+  margin-right:2em;
 }
 
 .o-form__heading {
   margin-bottom: 1em;
   padding-top: 6px;
   position: relative;
-  font-size:22px;
   font-weight:600;
+  font-size:22px;
   letter-spacing: -.03em;
   color:var(--mainGrey);
 }
@@ -1066,6 +1072,10 @@ html {
 
 .padding-sm {
   padding: 5%;
+}
+
+.padding-top {
+  padding-top: 10%;
 }
 
 .padding-section {
