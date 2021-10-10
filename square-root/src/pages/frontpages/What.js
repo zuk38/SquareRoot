@@ -32,15 +32,21 @@ export default function What() {
                   <img
                     className="zoom-on-hover"
                     src="../images/portrait--indoor-wall.jpg"
+                    alt="Indoor Wall"
                   />
                 </div>
                 <div className="c-grid--span-item-b">
-                  <img className="zoom-on-hover" src="../images/rainbeds.png" />
+                  <img
+                    className="zoom-on-hover"
+                    src="../images/rainbeds.png"
+                    alt="Rainbeds"
+                  />
                 </div>
                 <div className="c-grid--span-item-c">
                   <img
                     className="zoom-on-hover"
                     src="../images/netflix-hq.jpg"
+                    alt="Netflix HQ"
                   />
                 </div>
               </div>
@@ -75,7 +81,8 @@ export default function What() {
             <img
               className="attachment-company_into"
               src="../images/relaxation-character.jpg"
-            ></img>
+              alt="Relaxation character"
+            />
           </div>
 
           <div className="grid-item5 u-mrg--txt1">
@@ -90,7 +97,8 @@ export default function What() {
             <img
               className="attachment-company_into"
               src="../images/earth-plants.jpg"
-            ></img>
+              alt="Plants"
+            />
           </div>
 
           <div className="grid-item8 u-mrg--txt1">
@@ -103,7 +111,8 @@ export default function What() {
             <img
               className="attachment-company_into"
               src="../images/project-checklist.png"
-            ></img>
+              alt="Checklist"
+            />
           </div>
         </div>
       </div>

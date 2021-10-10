@@ -1,10 +1,6 @@
 import React, { useState } from "react";
-import { API } from "aws-amplify";
-import Loading from "../../components/Loading";
-import useForm from "../../components/hooks/useForm";
-import validate from "../../components/utility/ContactFormValidation";
 import "../../styles/Partner.css";
-import { useTranslation, Trans } from "react-i18next";
+import { useTranslation } from "react-i18next";
 import ContactForm from "../../components/ContactForm";
 
 export default function Partner(props) {

@@ -12,7 +12,6 @@ import Error from "./pages/Error";
 import AllProjects from "./pages/user-pages/AllProjects";
 import Dashboard from "./pages/user-pages/Dashboard";
 import Greenspace from "./pages/user-pages/Greenspace";
-import Orders from "./pages/user-pages/Orders";
 import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Who from "./pages/frontpages/Who";
@@ -50,11 +49,11 @@ class App extends Component {
       !isAuthenticating && (
         <>
           {this.props.location.pathname.indexOf("/customize") <= -1 &&
-            this.props.location.pathname != "/forgotpassword" &&
-            this.props.location.pathname != "/login" && (
+            this.props.location.pathname !== "/forgotpassword" &&
+            this.props.location.pathname !== "/login" && (
               <Navbar {...this.props} auth={authProps} />
             )}
-          <div className={this.props.location.pathname != "/" ? "content" : ""}>
+          <div className={this.props.location.pathname !== "/" ? "content" : ""}>
             <ScrollToTop />
             <Switch>
               <Route
@@ -153,7 +152,7 @@ class App extends Component {
                 render={(props) => <SingleCategory {...props} />}
               />
 
-              <PrivateRoute
+              {/*<PrivateRoute
                 authed={isAuthenticated}
                 auth={authProps}
                 path="/projects"
@@ -193,16 +192,16 @@ class App extends Component {
                 auth={authProps}
                 path="/pn"
                 component={PN}
-              />
+              />*/}
 
               <Route component={Error} />
             </Switch>
           </div>
-          {this.props.location.pathname != "/login" &&
-            this.props.location.pathname != "/" &&
-            this.props.location.pathname != "/en" &&
-            this.props.location.pathname != "/no" &&
-            this.props.location.pathname != "/forgotpassword" && (
+          {this.props.location.pathname !== "/login" &&
+            this.props.location.pathname !== "/" &&
+            this.props.location.pathname !== "/en" &&
+            this.props.location.pathname !== "/no" &&
+            this.props.location.pathname !== "/forgotpassword" && (
               <FooterContainer />
             )}
         </>

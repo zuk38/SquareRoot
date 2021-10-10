@@ -1,18 +1,15 @@
 import React from "react";
-import Hero from "../components/Hero";
+import { Link } from "react-router-dom";
 import Banner from "../components/Banner";
+import { useTranslation } from "react-i18next";
 
-export default function Error(props) {
+export default function Error() {
+  const { t } = useTranslation();
   return (
-    <Hero>
-      <Banner title="Oops... We didn't find what you were looking for">
-        <button
-          class="button is-light front-btn-2"
-          onClick={() => props.history.push("/")}
-        >
-          Return home
-        </button>
-      </Banner>
-    </Hero>
+    <Banner title={t("error_page.title")}>
+      <Link to="/" className="errorbutton">
+        {t("error_page.return")}
+      </Link>
+    </Banner>
   );
 }

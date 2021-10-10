@@ -30,12 +30,12 @@ export default function SinglePlant({
   const normalizeFeatures = () => {
     let normalizedBenefits = [];
     for (var i of planBenefits) {
-      if (i == "pollinator_friendly")
+      if (i === "pollinator_friendly")
         normalizedBenefits.push("pollinator friendly");
-      if (i == "edible") normalizedBenefits.push("edible");
-      if (i == "pet_kids_friendly")
+      if (i === "edible") normalizedBenefits.push("edible");
+      if (i === "pet_kids_friendly")
         normalizedBenefits.push("pet & children friendly");
-      if (i == "air_puryfying") normalizedBenefits.push("air puryfying");
+      if (i === "air_puryfying") normalizedBenefits.push("air puryfying");
     }
     return normalizedBenefits.join(", ");
   };

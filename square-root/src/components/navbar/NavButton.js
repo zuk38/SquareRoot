@@ -16,6 +16,8 @@ export const NavButton = withStyles({
 
     "&span": {
         marginRight: '5px',
-    }
+    },
+    ["@media (max-width: 360px)"]: { fontSize: 14,
+      padding: "6px 6px", }
   },
 })(Button);

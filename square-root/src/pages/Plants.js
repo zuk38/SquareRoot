@@ -13,8 +13,7 @@ export default function Plants() {
               informasjon."
         style="plants-title"
       />
-      <PlantsContainer isCustomising={false}/>
+      <PlantsContainer isCustomising={false} />
     </>
-    
   );
 }
