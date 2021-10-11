@@ -130,53 +130,9 @@ class SingleCategory extends Component {
                 </div>
               </div>
             </div>
+          </div>
+        </div>
 
-<<<<<<< HEAD
-            
-
-           <div className="c-grid--2x2 c-mrg--top">
-              {plants.map((plant, index) => (
-                <div
-                  key={index}
-                  className={
-                    index % 2 ? "c-grid--2x2" : "c-grid--2x2 margin-left"
-                  }
-                >
-                  {plant.norwegian_name && <div className="grid-item1">{plant.norwegian_name}</div>}
-                  {plant.latin_name && <div className="grid-item1">{plant.latin_name}</div>}
-                </div>
-              ))}
-
-              {/* BUTTON 
-              <div className="grid-item4  c-section--padding-top-24">
-                <button
-                  className="btn-transp float-right zoom-on-hover"
-                  onClick={() =>
-                    this.setState(
-                      (prevState) => ({ isClicked: !prevState.isClicked }),
-                      () => console.log(this.state)
-                    )
-                  }
-                >
-                  {!this.state.isClicked ? (
-                    <div className="float-left">
-                      Vis mer{" "}
-                      <i className="fas fa-angle-down btn-icon bounce" />
-                    </div>
-                  ) : (
-                    <div className="float-left">
-                      Vis mindre <i className="fas fa-angle-up" />
-                    </div>
-                  )}
-                </button>
-              </div>
-                  </div>
-                  </div>*/}
-
-          {/* END PLANT LIST CONTAINER */}
-
-          {/*CONNECT TO DATABASE 
-=======
         <div className="plantlist-container">
           <Accordion>
             <AccordionSummary
@@ -206,7 +162,6 @@ class SingleCategory extends Component {
       </>
 
       /*CONNECT TO DATABASE 
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
         <div className="c-section c-grid--2x1-equal">
         <div className="img-wrap">
           <img src={`../images/${category_name}.jpg`}/>
@@ -248,11 +203,7 @@ class SingleCategory extends Component {
         </div>
         */
 
-<<<<<<< HEAD
-          {/* ---- REMOVE ???? ------
-=======
       /* ---- REMOVE ???? ------
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
 
         <h2 className="c-txt-punchline--sm c-mrg--top">{description}</h2>
         <br />
@@ -311,15 +262,9 @@ class SingleCategory extends Component {
           leveransetid, og legger til slutt din bestilling inn hos
           planteskolene.
         </h2>
-<<<<<<< HEAD
-         */}
-        </div>
-      </div>
-=======
          
         </div>
       </div>*/
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
     );
   }
 }

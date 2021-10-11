@@ -59,7 +59,7 @@ class App extends Component {
               <Route
                 exact
                 path="/login"
-                render={(props) => (
+                children={(props) => (
                   <LoginPage
                     {...props}
                     auth={authProps}
@@ -70,86 +70,86 @@ class App extends Component {
               <Route
                 exact
                 path="/forgotpassword"
-                render={(props) => (
+                children={(props) => (
                   <ForgotPasswordPage {...props} auth={authProps} />
                 )}
               />
               <Route
                 exact
                 path="/"
-                render={(props) => <Home {...props} auth={authProps} />}
+                children={(props) => <Home {...props} auth={authProps} />}
               />
               <Route
                 exact
                 path="/en"
-                render={(props) => <Home {...props} auth={authProps} />}
+                children={(props) => <Home {...props} auth={authProps} />}
               />
               <Route
                 exact
                 path="/no"
-                render={(props) => <Home {...props} auth={authProps} />}
+                children={(props) => <Home {...props} auth={authProps} />}
               />
               <Route
                 exact
                 path="/concepts/:name"
-                render={(props) => <SingleConcept {...props} />}
+                children={(props) => <SingleConcept {...props} />}
               />
 
               <Route
                 exact
                 path="/indoor"
-                render={(props) => <IndoorExample {...props} />}
+                children={(props) => <IndoorExample {...props} />}
               />
 
               <Route
                 exact
                 path="/plants"
-                render={(props) => <Plants {...props} />}
+                children={(props) => <Plants {...props} />}
               />
 
               <Route
                 exact
                 path="/how-it-works"
-                render={(props) => <Howitworks {...props} />}
+                children={(props) => <Howitworks {...props} />}
               />
               <Route
                 exact
                 path="/who-we-are"
-                render={(props) => <Who {...props} />}
+                children={(props) => <Who {...props} />}
               />
               <Route
                 exact
                 path="/about-us"
-                render={(props) => <About {...props} />}
+                children={(props) => <About {...props} />}
               />
               <Route
                 exact
                 path="/become-a-partner"
-                render={(props) => <Partner {...props} />}
+                children={(props) => <Partner {...props} />}
               />
 
               <Route
                 exact
                 path="/what-we-do"
-                render={(props) => <What {...props} />}
+                children={(props) => <What {...props} />}
               />
 
               <Route
                 exact
                 path="/contact-us"
-                render={(props) => <Contact {...props} />}
+                children={(props) => <Contact {...props} />}
               />
 
               <Route
                 exact
                 path="/categories"
-                render={(props) => <Categories {...props} />}
+                children={(props) => <Categories {...props} />}
               />
 
               <Route
                 exact
                 path="/categories/:name"
-                render={(props) => <SingleCategory {...props} />}
+                children={(props) => <SingleCategory {...props} />}
               />
 
               {/*<PrivateRoute
