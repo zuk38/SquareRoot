@@ -729,13 +729,8 @@ html {
 .o-form__group-full {
   display: block;
   margin-bottom: 2em;
-<<<<<<< HEAD
-  width:100%;
-  margin-right:2em;
-=======
   width: 100%;
   margin-right: 2em;
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
 }
 
 .o-form__heading {
