@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import logo from "../../images/logo--dark.png";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
@@ -14,7 +15,7 @@ import { FaAngleDown, FaUser } from "react-icons/fa";
 import { NavButton } from "./NavButton";
 
 export default function Navbar(props) {
-  let history = useHistory();
+  let navigate = useNavigate();
   const { t } = useTranslation();
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, () => setDropdown(false));
@@ -37,8 +38,8 @@ export default function Navbar(props) {
     setClick(false);
     if (path === undefined) return;
     else {
-      history.push(path);
-      if (path.indexOf("/categories") > -1) history.go(0);
+      navigate(path);
+      if (path.indexOf("/categories") > -1) navigate.go(0);
     }
   };
 

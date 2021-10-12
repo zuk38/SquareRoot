@@ -1,12 +1,12 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import Loading from "../Loading";
 
 function ProjectsContainer({ context }) {
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const openProjectDashboard = (name) => {
-    history.push(`/dashboard/${name}`);
+    navigate(`/dashboard/${name}`);
   };
 
   const { projects, loading } = context;

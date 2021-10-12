@@ -1,6 +1,11 @@
 import React, { Component } from "react";
 import "./App.css";
-import { Route, Switch, withRouter } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useLocation,
+} from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
@@ -28,186 +33,124 @@ import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
 import ScrollToTop from "./components/utility/ScrollToTop";
 
-class App extends Component {
-  render() {
-    const {
-      isAuthenticated,
-      isAuthenticating,
-      user,
-      logout,
-    } = this.props.context;
+function App(props) {
+  let location = useLocation();
 
-    const authProps = {
-      isAuthenticated: isAuthenticated,
-      user: user,
-      logout: logout,
-    };
+  const { isAuthenticated, isAuthenticating, user, logout } = props.context;
 
-    
+  const authProps = {
+    isAuthenticated: isAuthenticated,
+    user: user,
+    logout: logout,
+  };
 
-    return (
-      !isAuthenticating && (
-        <>
-          {this.props.location.pathname.indexOf("/customize") <= -1 &&
-            this.props.location.pathname !== "/forgotpassword" &&
-            this.props.location.pathname !== "/login" && (
-              <Navbar {...this.props} auth={authProps} />
-            )}
-          <div className={this.props.location.pathname !== "/" ? "content" : ""}>
-            <ScrollToTop />
-            <Switch>
-              <Route
-                exact
-                path="/login"
-                children={(props) => (
-                  <LoginPage
-                    {...props}
-                    auth={authProps}
-                    context={this.props.context}
-                  />
-                )}
-              />
-              <Route
-                exact
-                path="/forgotpassword"
-                children={(props) => (
-                  <ForgotPasswordPage {...props} auth={authProps} />
-                )}
-              />
-              <Route
-                exact
-                path="/"
-                children={(props) => <Home {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/en"
-                children={(props) => <Home {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/no"
-                children={(props) => <Home {...props} auth={authProps} />}
-              />
-              <Route
-                exact
-                path="/concepts/:name"
-                children={(props) => <SingleConcept {...props} />}
-              />
+  return (
+    !isAuthenticating && (
+      <>
+        {location.pathname.indexOf("/customize") <= -1 &&
+          location.pathname !== "/forgotpassword" &&
+          location.pathname !== "/login" && (
+            <Navbar {...props} auth={authProps} />
+          )}
+        <div className={location.pathname !== "/" ? "content" : ""}>
+          <ScrollToTop />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/en" element={<Home />} />
+            <Route path="/no" element={<Home />} />
+            <Route path="/who-we-are" element={<Who />} />
 
-              <Route
-                exact
-                path="/indoor"
-                children={(props) => <IndoorExample {...props} />}
-              />
+            <Route
+              path="/login"
+              element={
+                <LoginPage
+                  {...props}
+                  auth={authProps}
+                  context={props.context}
+                />
+              }
+            />
+            <Route
+              path="/forgotpassword"
+              element={<ForgotPasswordPage {...props} />}
+            />
+            <Route
+              path="/concepts/:name"
+              element={<SingleConcept {...props} />}
+            />
+            <Route path="/indoor" element={<IndoorExample {...props} />} />
 
-              <Route
-                exact
-                path="/plants"
-                children={(props) => <Plants {...props} />}
-              />
+            <Route path="/plants" element={<Plants {...props} />} />
 
-              <Route
-                exact
-                path="/how-it-works"
-                children={(props) => <Howitworks {...props} />}
-              />
-              <Route
-                exact
-                path="/who-we-are"
-                children={(props) => <Who {...props} />}
-              />
-              <Route
-                exact
-                path="/about-us"
-                children={(props) => <About {...props} />}
-              />
-              <Route
-                exact
-                path="/become-a-partner"
-                children={(props) => <Partner {...props} />}
-              />
+            <Route path="/how-it-works" element={<Howitworks {...props} />} />
+            <Route path="/who-we-are" element={<Who {...props} />} />
+            <Route path="/about-us" element={<About {...props} />} />
+            <Route path="/become-a-partner" element={<Partner {...props} />} />
 
-              <Route
-                exact
-                path="/what-we-do"
-                children={(props) => <What {...props} />}
-              />
+            <Route path="/what-we-do" element={<What {...props} />} />
 
-              <Route
-                exact
-                path="/contact-us"
-                children={(props) => <Contact {...props} />}
-              />
+            <Route path="/contact-us" element={<Contact {...props} />} />
 
-              <Route
-                exact
-                path="/categories"
-                children={(props) => <Categories {...props} />}
-              />
+            <Route path="/categories" element={<Categories {...props} />} />
 
-              <Route
-                exact
-                path="/categories/:name"
-                children={(props) => <SingleCategory {...props} />}
-              />
+            <Route
+              path="/categories/:name"
+              element={<SingleCategory {...props} />}
+            />
 
-              {/*<PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/projects"
-                component={AllProjects}
-              />
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/projects"
+              component={AllProjects}
+            />
 
-              <PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/dashboard/:name"
-                component={Dashboard}
-              />
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/dashboard/:name"
+              component={Dashboard}
+            />
 
-              <PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/greenspace"
-                component={Greenspace}
-              />
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/greenspace"
+              component={Greenspace}
+            />
 
-              <PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/account"
-                component={Account}
-              />
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/account"
+              component={Account}
+            />
 
-              <PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/customize/:conceptName"
-                component={Customize}
-              />
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/customize/:conceptName"
+              component={Customize}
+            />
 
-              <PrivateRoute
-                authed={isAuthenticated}
-                auth={authProps}
-                path="/pn"
-                component={PN}
-              />*/}
+            <PrivateRoute
+              authed={isAuthenticated}
+              auth={authProps}
+              path="/pn"
+              component={PN}
+            />
 
-              <Route component={Error} />
-            </Switch>
-          </div>
-          {this.props.location.pathname !== "/login" &&
-            this.props.location.pathname !== "/" &&
-            this.props.location.pathname !== "/en" &&
-            this.props.location.pathname !== "/no" &&
-            this.props.location.pathname !== "/forgotpassword" && (
-              <FooterContainer />
-            )}
-        </>
-      )
-    );
-  }
+            <Route element={Error} />
+          </Routes>
+        </div>
+        {location.pathname !== "/login" &&
+          location.pathname !== "/" &&
+          location.pathname !== "/en" &&
+          location.pathname !== "/no" &&
+          location.pathname !== "/forgotpassword" && <FooterContainer />}
+      </>
+    )
+  );
 }
 
-export default withRouter(withUserConsumer(App));
+export default withUserConsumer(App);

@@ -9,7 +9,16 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import { styled } from "@mui/material/styles";
 
-class SingleCategory extends Component {
+export default function SingleCategory() {
+  return (
+    <div>
+      single cat
+    </div>
+  )
+}
+
+
+/*class SingleCategory extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -265,7 +274,7 @@ class SingleCategory extends Component {
          
         </div>
       </div>*/
-    );
+    /*);
   }
 }
-export default withTranslation()(SingleCategory);
+export default withTranslation()(SingleCategory);*/

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Redirect } from "react-router-dom";
+import { Navigate } from "react-router-dom";
 import Title from "../Title";
 import "./LoginStyle.scss";
 import useForm from "../hooks/useForm";
@@ -29,7 +29,7 @@ export function Login(props) {
   const { from } = props.location.state || { from: { pathname: "/" } };
 
   if (redirectToRefferer === true) {
-    return <Redirect to={from} />;
+    return <Navigate to={from} />;
   }
 
   return (
