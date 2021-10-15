@@ -17,6 +17,8 @@ import PageContainer from '../../components/container/PageContainer';
 import { StyledEngineProvider } from '@mui/material/styles';
 import Tabs from '../../components/menus/tabs';
 
+import ProjectTitle from "./dashboard-components/ProjectTitle"
+
 const Dashboard1 = () => (
   // 2
 
@@ -24,7 +26,7 @@ const Dashboard1 = () => (
     
     {/* ------------------------- grid wrapper ------------------------- */}
     <Grid container spacing={0}>
-     
+     <ProjectTitle />
       {/* ------------------------- row 2 : tabs ------------------------- */}
       <Grid container spacing={0}>
       <Grid item xs={12} lg={8} sm={8}>
