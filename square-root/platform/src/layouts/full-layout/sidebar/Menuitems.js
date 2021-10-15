@@ -6,20 +6,29 @@ const Menuitems = [
     href: 'Dashboard',
   },
   {
-    title: 'Tekna',
-    icon: 'edit',
-    href: '/dashboards/dashboard1',
+    title: 'My Projects',
+    icon: 'layout',
+    collapse: true,
+    children: [
+      {
+        title: 'Tekna',
+        href: '/dashboards/dashboard1',
+      },
+      {
+        title: 'Sørengkaia',
+        href: '/dashboards/dashboard2',
+      },
+      {
+        title: 'Netflix HQ',
+        href: '/dashboards/dashboard3',
+      },
+      {
+        title: 'Create new project',
+        href: '/dashboards/dashboard3',
+      },
+    ]
   },
-  {
-    title: 'Sørengkaia',
-    icon: 'edit',
-    href: '/dashboards/dashboard2',
-  },
-  {
-    title: 'Netflix HQ',
-    icon: 'edit',
-    href: '/dashboards/dashboard3',
-  },
+  
   {
     navlabel: true,
     subheader: 'PLANTS FOR',
@@ -39,6 +48,11 @@ const Menuitems = [
   {
     title: 'Indoor',
     icon: 'home',
+    href: '',
+  },
+  {
+    title: 'All plants',
+    icon: 'list',
     href: '',
   },
   {
