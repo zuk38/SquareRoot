@@ -179,13 +179,6 @@ export default function Home(props) {
       </section>
 
       <section id="fourth">
-<<<<<<< HEAD
-        <div className="o-container c-section--pad-vh">
-      
-          
-          <div className="c-grid--3x1">
-            <div className="grid-item1 sect-4-item1" onClick={() => openCategory(`categories/takhage`)}>
-=======
         {width >= 768 ? (
           <div className="o-container c-section--pad-vh">
             <div className="container-desktop">
@@ -218,7 +211,6 @@ export default function Home(props) {
               className="grid-item1"
               onClick={() => openCategory(`categories/takhage`)}
             >
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
               <div className="img-wrap-rooftop">
                 <div className="u-txt--middle">
                   <em>{t("home_page.section_four.rooftop")}</em>
@@ -237,9 +229,6 @@ export default function Home(props) {
                     needs.
                   </Trans>
                   <br />
-<<<<<<< HEAD
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/takterrasse")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
-=======
                   <button
                     className="btn-transp float-left zoom-on-hover"
                     onClick={() => openCategory("categories/takhage")}
@@ -247,20 +236,14 @@ export default function Home(props) {
                     {t("home_page.hero.read_more")}
                     <i className="fas fa-chevron-right" />
                   </button>
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
                 </p>
-                
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div className="grid-item3 sect-4-item3" onClick={() => openCategory(`categories/regnbed`)}>
-=======
             <div
               className="grid-item3"
               onClick={() => openCategory("categories/regnbed")}
             >
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
               <div className="img-wrap-rainbed">
                 <div className="u-txt--middle">
                   <em>{t("rainbed2")}</em>
@@ -280,9 +263,6 @@ export default function Home(props) {
                     dry-zone.
                   </Trans>
                   <br />
-<<<<<<< HEAD
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/regnseng")}>{t("home_page.hero.read_more")}<i class="fas fa-chevron-right"></i></button>
-=======
                   <button
                     className="btn-transp float-left zoom-on-hover"
                     onClick={() => openCategory("categories/regnbed")}
@@ -290,19 +270,14 @@ export default function Home(props) {
                     {t("home_page.hero.read_more")}
                     <i className="fas fa-chevron-right"></i>
                   </button>
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
                 </p>
               </div>
             </div>
 
-<<<<<<< HEAD
-            <div className="grid-item9 sect-4-item5" onClick={() => openCategory(`categories/innendørsplanter`)}>
-=======
             <div
               className="grid-item9"
               onClick={() => openCategory("categories/innendørsplanter")}
             >
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
               <div className="img-wrap-indoor">
                 <div className="u-txt--middle">
                   <em>{t("indoor2")}</em>
@@ -320,9 +295,6 @@ export default function Home(props) {
                     are combined with minimal maintenance.
                   </Trans>
                   <br />
-<<<<<<< HEAD
-                  <button className="btn-transp float-left zoom-on-hover" onClick={() => openCategory("categories/innendørsplanter")}>{t("home_page.hero.read_more")} <i class="fas fa-chevron-right"></i></button>
-=======
                   <button
                     className="btn-transp float-left zoom-on-hover"
                     onClick={() => openCategory("categories/innendørsplanter")}
@@ -330,7 +302,6 @@ export default function Home(props) {
                     {t("home_page.hero.read_more")}{" "}
                     <i className="fas fa-chevron-right" />
                   </button>
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
                 </p>
               </div>
             </div>
@@ -379,23 +350,6 @@ export default function Home(props) {
               <div className="short-border-white" />
 
               <div className="grid-item2-stretch1">
-<<<<<<< HEAD
-              <div className="main-punchline">
-                <div className="main-punchline--p is-white">
-                  <Trans i18nKey="home_page.section_six.description">
-                    Our digital platform makes finding and sourcing plants
-                    <em>&nbsp; easy and available everywhere</em>.
-                    <br />
-                    <br />
-                    Through our network of local plant nurseries, we help you
-                    find the right plants for the right spot and show what is
-                    available to have it delivered in time.
-                    <br />
-                    <br />
-                    Coming fall 2021. Stay updated by subscribing to our
-                    newsletter.
-                  </Trans>
-=======
                 <div className="main-punchline">
                   <div className="main-punchline--p is-white">
                     <Trans i18nKey="home_page.section_six.description">
@@ -412,18 +366,12 @@ export default function Home(props) {
                       newsletter.
                     </Trans>
                   </div>
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
                 </div>
-              </div>
               </div>
             </div>
 
             <div className="grid-item3-vertical sect-6-item2 is-white">
-<<<<<<< HEAD
-            <ContactForm
-=======
               <ContactForm
->>>>>>> a7f7a79035082829247c7e34dccb503ee9fe208c
                 demo={true}
                 title="request_demo"
                 title_classname="o-form__heading is-white"

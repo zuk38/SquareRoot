@@ -1,14 +1,13 @@
-import { Redirect, Route } from "react-router-dom";
+import { Route, Navigate } from "react-router-dom";
 
-function PrivateRoute({ component: Component, authed, auth, ...rest }) {
+function PrivateRoute({ component: Component, authed, auth, path, ...rest }) {
   return (
     <Route
-      {...rest}
-      render={(props) =>
+      element={(props) =>
         authed === true ? (
-          <Component {...props} auth={auth}/>
+          <Route path={path} element={<Component {...props} auth={auth} />} />
         ) : (
-          <Redirect
+          <Navigate
             to={{ pathname: "/login", state: { from: props.location } }}
           />
         )

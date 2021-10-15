@@ -2,13 +2,13 @@ import React from "react";
 import "../../styles/frontpages.css";
 import { withConceptConsumer } from "../../context/concepts";
 import Loading from "../../components/Loading";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function Categories({ context }) {
-  const history = useHistory();
+  let navigate = useNavigate();
 
   const redirectToCategory = (name) => {
-    history.push(`/categories/${name.toLowerCase()}`);
+    navigate(`/categories/${name.toLowerCase()}`);
   };
 
   let { loadCat, categories } = context;

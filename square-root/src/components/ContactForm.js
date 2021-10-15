@@ -4,15 +4,15 @@ import Loading from "./Loading";
 import useForm from "./hooks/useForm";
 import validate from "./utility/ContactFormValidation";
 import "../styles/Partner.css";
-import { useHistory } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { Trans, useTranslation } from "react-i18next";
 
 export default function ContactForm(props) {
   const { t } = useTranslation();
-  const history = useHistory();
-  const pathname = history.location.pathname;
+  let location = useLocation();
+  const pathname = location.pathname;
 
   const { values, errors, handleChange, handleSubmit } = useForm(
     addContact,
