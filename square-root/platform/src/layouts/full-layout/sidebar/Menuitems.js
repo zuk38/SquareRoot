@@ -1,28 +1,49 @@
 const Menuitems = [
   {
     navlabel: true,
-    subheader: 'DASHBOARDS',
+    subheader: 'PROJECTS',
     icon: 'mdi mdi-dots-horizontal',
     href: 'Dashboard',
   },
   {
-    title: 'Modern',
-    icon: 'hard-drive',
-    href: '/dashboards/dashboard3',
-  },
-  {
-    title: 'Analytical',
-    icon: 'pie-chart',
+    title: 'Tekna',
+    icon: 'edit',
     href: '/dashboards/dashboard1',
   },
   {
-    title: 'eCommerce',
-    icon: 'shopping-bag',
+    title: 'Sørengkaia',
+    icon: 'edit',
     href: '/dashboards/dashboard2',
   },
   {
+    title: 'Netflix HQ',
+    icon: 'edit',
+    href: '/dashboards/dashboard3',
+  },
+  {
     navlabel: true,
-    subheader: 'APPS',
+    subheader: 'PLANTS FOR',
+    icon: 'mdi mdi-dots-horizontal',
+    href: 'Apps',
+  },
+  {
+    title: 'Roof gardens',
+    icon: 'sun',
+    href: '/shop/lists',
+  },
+  {
+    title: 'Rainbeds',
+    icon: 'cloud-drizzle',
+    href: '',
+  },
+  {
+    title: 'Indoor',
+    icon: 'home',
+    href: '',
+  },
+  {
+    navlabel: true,
+    subheader: 'FLEXY ADDONS',
     icon: 'mdi mdi-dots-horizontal',
     href: 'Apps',
   },
@@ -37,7 +58,7 @@ const Menuitems = [
     href: '/notes',
   },
   {
-    title: 'Mail',
+    title: 'Email',
     icon: 'inbox',
     href: '/email',
   },

@@ -14,12 +14,27 @@ import {
 
 import PageContainer from '../../components/container/PageContainer';
 
+import { StyledEngineProvider } from '@mui/material/styles';
+import Tabs from '../../components/menus/tabs';
+
 const Dashboard1 = () => (
   // 2
 
   <PageContainer title="Analytical Dashboard" description="this is Analytical Dashboard">
+    
+    {/* ------------------------- grid wrapper ------------------------- */}
     <Grid container spacing={0}>
-      {/* ------------------------- row 1 ------------------------- */}
+     
+      {/* ------------------------- row 2 : tabs ------------------------- */}
+      <Grid container spacing={0}>
+      <Grid item xs={12} lg={8} sm={8}>
+      <StyledEngineProvider injectFirst>
+        <Tabs />
+      </StyledEngineProvider>,
+      </Grid>
+      </Grid>
+    <Grid container spacing={0}>
+      {/* ------------------------- row 3 ------------------------- */}
       <Grid item xs={12} lg={6}>
         <WelcomeCard />
         <Grid container spacing={0}>
@@ -34,14 +49,14 @@ const Dashboard1 = () => (
       <Grid item xs={12} lg={6}>
         <SalesOverview />
       </Grid>
-      {/* ------------------------- row 2 ------------------------- */}
+      {/* ------------------------- row 4 ------------------------- */}
       <Grid item xs={12} lg={4}>
         <TotalSales />
       </Grid>
       <Grid item xs={12} lg={8}>
         <ProductPerformance />
       </Grid>
-      {/* ------------------------- row 3 ------------------------- */}
+      {/* ------------------------- row 5 ------------------------- */}
       <Grid item xs={12} lg={4}>
         <BlogCard />
       </Grid>
@@ -51,6 +66,7 @@ const Dashboard1 = () => (
       <Grid item xs={12} lg={4}>
         <DailyActivities />
       </Grid>
+    </Grid>
     </Grid>
   </PageContainer>
 );

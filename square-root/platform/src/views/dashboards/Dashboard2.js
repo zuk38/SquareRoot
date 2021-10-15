@@ -15,9 +15,24 @@ import {
   BlogCard,
 } from './dashboard2-components';
 
+import { StyledEngineProvider } from '@mui/material/styles';
+import Tabs from '../../components/menus/tabs';
+
+
 const Dashboard2 = () => (
   <PageContainer title="eCommerce Dashboard" description="this is eCommerce Dashboard">
     <Grid container spacing={0}>
+      {/* ------------------------- grid wrapper ------------------------- */}
+     
+     {/* ------------------------- row 2 : tabs ------------------------- */}
+     <Grid container spacing={0}>
+     <Grid item xs={12} lg={8} sm={8}>
+     <StyledEngineProvider injectFirst>
+       <Tabs />
+     </StyledEngineProvider>,
+     </Grid>
+     </Grid>
+   <Grid container spacing={0}>
       <Grid item xs={12} lg={4}>
         <EarningsShop />
       </Grid>
@@ -46,6 +61,7 @@ const Dashboard2 = () => (
       <Grid item xs={12} lg={4}>
         <BlogCard />
       </Grid>
+    </Grid>
     </Grid>
   </PageContainer>
 );
