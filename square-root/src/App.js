@@ -32,6 +32,7 @@ import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
 import { withUserConsumer } from "./context/user";
 import ScrollToTop from "./components/utility/ScrollToTop";
+import Dashboard1 from "./pages/dashboards/Dashboard1";
 
 function App(props) {
   let location = useLocation();
@@ -97,6 +98,13 @@ function App(props) {
               path="/categories/:name"
               element={<SingleCategory {...props} />}
             />
+
+            <Route
+              path="/categories/:name"
+              element={<SingleCategory {...props} />}
+            />
+            <Route path="/dashboards" element={<Dashboard1 />} />
+            <Route path="/dashboards/dashboard1" element={<Dashboard1 />} />
 
             <PrivateRoute
               authed={isAuthenticated}
