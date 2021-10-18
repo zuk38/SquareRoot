@@ -5,10 +5,9 @@ import SwipeableViews from 'react-swipeable-views';
 import { autoPlay } from 'react-swipeable-views-utils';
 import FeatherIcon from 'feather-icons-react';
 
-import img1 from '../../assets/images/products/product-detail-1.jpg';
-import img2 from '../../assets/images/products/product-detail-2.jpg';
-import img3 from '../../assets/images/products/product-detail-3.jpg';
-import img4 from '../../assets/images/products/product-detail-4.jpg';
+import img1 from '../../assets/images/products/rooftop-1.jpg';
+import img2 from '../../assets/images/products/rooftop-2.jpg';
+import img3 from '../../assets/images/products/rooftop-4.jpg';
 
 const AutoPlaySwipeableViews = autoPlay(SwipeableViews);
 
@@ -24,10 +23,6 @@ const images = [
   {
     imgPath: img3,
     id: 3,
-  },
-  {
-    imgPath: img4,
-    id: 4,
   },
 ];
 

@@ -1,4 +1,4 @@
-import s1 from '../../../assets/images/products/s1.jpg';
+import s1 from '../../../assets/images/products/rooftop-5.jpg';
 import s2 from '../../../assets/images/products/s2.jpg';
 import s3 from '../../../assets/images/products/s3.jpg';
 import s4 from '../../../assets/images/products/s4.jpg';
@@ -13,13 +13,13 @@ import s12 from '../../../assets/images/products/s12.jpg';
 
 const Shopitems = [
   {
-    title: 'Belgian Chocolate',
-    category: 'Ice-cream shop',
+    title: 'Tekna Roofgarden',
+    category: 'Roofgarden',
     price: '$12',
     colors: [(theme) => theme.palette.secondary.main, (theme) => theme.palette.primary.main],
     photo: s1,
     id: 1,
-    star: [1, 2, 3, 4, 5],
+    icon: "cloud-rain"
   },
   {
     title: 'Fresh Organic Tomato',

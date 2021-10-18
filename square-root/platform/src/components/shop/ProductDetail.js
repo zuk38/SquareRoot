@@ -18,6 +18,8 @@ import FeatherIcon from 'feather-icons-react';
 import CustomSelect from '../forms/custom-elements/CustomSelect';
 import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
 
+
+
 const ProductDetail = () => {
   const [selectedValue, setSelectedValue] = React.useState('a');
 
@@ -42,6 +44,7 @@ const ProductDetail = () => {
   return (
     <Box>
       {/* stock text */}
+      {/** 
       <Box display="flex" alignItems="center">
         <Chip
           label="In Stock"
@@ -66,6 +69,7 @@ const ProductDetail = () => {
           Men Shoes
         </Typography>
       </Box>
+      */}
       {/* title */}
       <Typography
         fontWeight="600"
@@ -78,7 +82,7 @@ const ProductDetail = () => {
           mt: '5px',
         }}
       >
-        Nike branding shoes
+        Tekna Roofgarden
       </Typography>
       <Typography
         variant="body1"
@@ -88,23 +92,54 @@ const ProductDetail = () => {
           color: (theme) => theme.palette.grey.A200,
         }}
       >
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ex arcu, tincidunt bibendum
-        felis.
+        A combination of small and medium sized plants. 
       </Typography>
+      <FeatherIcon icon="cloud-rain" width="18" />
+          
+        <FeatherIcon icon="droplet" width="18" sx={{ mt: '20px'}}/>
 
       <Typography
-        fontWeight="600"
+        fontWeight="500"
         sx={{
           fontSize: {
-            xs: '24px',
-            sm: '30px',
-            lg: '30px',
+            xs: '12px',
+            sm: '18px',
+            lg: '18px',
           },
           mt: '20px',
         }}
       >
-        $546.00
+        Soil -
       </Typography>
+      <Typography
+        fontWeight="500"
+        sx={{
+          fontSize: {
+            xs: '12px',
+            sm: '18px',
+            lg: '18px',
+          },
+          mt: '20px',
+        }}
+      >
+        Maintenance -
+      </Typography>
+      <Typography
+        fontWeight="500"
+        sx={{
+          fontSize: {
+            xs: '12px',
+            sm: '18px',
+            lg: '18px',
+          },
+          mt: '20px',
+        }}
+      >
+        Benefits -
+      </Typography>
+      
+      {/* ---- reviews ---- */}
+      {/**
       <Box
         display="flex"
         alignItems="center"
@@ -131,7 +166,8 @@ const ProductDetail = () => {
           236 reviews
         </Link>
       </Box>
-      {/* colors */}
+ */}
+      {/* -- characteristics icons  -- */}
       <Box
         display="flex"
         alignItems="center"
@@ -140,6 +176,7 @@ const ProductDetail = () => {
           mb: 4,
         }}
       >
+        {/** 
         <CustomFormLabel
           sx={{
             mt: 0,
@@ -147,11 +184,13 @@ const ProductDetail = () => {
         >
           Colors
         </CustomFormLabel>
+        */}
         <Box
           sx={{
             ml: 2,
           }}
         >
+          
           <Radio
             checked={selectedValue === 'a'}
             onChange={handleChange}
@@ -295,22 +334,7 @@ const ProductDetail = () => {
           mt: 2,
         }}
       >
-        <Grid item xs={12} sm={6} lg={6}>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            sx={{
-              pt: '13px',
-              pb: '13px',
-              display: 'block',
-              width: '100%',
-              borderRadius: '9px',
-            }}
-          >
-            Buy Now
-          </Button>
-        </Grid>
+      
         <Grid item xs={12} sm={6} lg={6}>
           <Button
             variant="contained"
@@ -326,15 +350,31 @@ const ProductDetail = () => {
               borderRadius: '9px',
             }}
           >
-            <FeatherIcon icon="shopping-cart" width="20" display="flex" alignitems="center" />
+            <FeatherIcon icon="edit" width="20" display="flex" alignitems="center" />
             <Box
               component="span"
               sx={{
                 ml: 1,
               }}
             >
-              Add to Cart
+              Customize
             </Box>
+          </Button>
+        </Grid>
+        <Grid item xs={12} sm={6} lg={6}>
+          <Button
+            variant="contained"
+            size="large"
+            color="secondary"
+            sx={{
+              pt: '13px',
+              pb: '13px',
+              display: 'block',
+              width: '100%',
+              borderRadius: '9px',
+            }}
+          >
+            Add to Project
           </Button>
         </Grid>
       </Grid>

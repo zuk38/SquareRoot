@@ -9,20 +9,22 @@ import PageContainer from '../../../components/container/PageContainer';
 const BCrumb = [
   {
     to: '/',
-    title: 'Home',
+    title: 'Plants for',
   },
   {
-    title: 'Shop',
+    title: 'Roof gardens',
   },
 ];
+
+
 const ShopPage = () => (
   <PageContainer title="Shop List" description="this is Shop List page">
     {/* breadcrumb */}
-    <Breadcrumb title="Shop" items={BCrumb} />
+    <Breadcrumb title="Roof gardens" items={BCrumb} />
 
     <Grid container spacing={0}>
       {Shopitems.map((product) => (
-        <Grid item xs={12} lg={3} sm={4} display="flex" alignItems="stretch" key={product.id}>
+        <Grid item xs={12} lg={4} sm={4} display="flex" alignItems="stretch" key={product.id}>
           <Card sx={{ p: 0, width: '100%' }}>
             <img src={product.photo} alt="img" width="100%" />
             <CardContent sx={{ p: 3 }}>
@@ -54,6 +56,13 @@ const ShopPage = () => (
                 <Typography variant="h5" sx={{ mr: 'auto' }}>
                   {product.price}
                 </Typography>
+                
+                {/* ---- project icons ---- */}
+                <FeatherIcon>
+                  {product.icons}
+               </FeatherIcon>
+                
+                {/** 
                 {product.star.map((index) => (
                   <FeatherIcon
                     icon="star"
@@ -61,7 +70,9 @@ const ShopPage = () => (
                     size="14"
                     style={{ fill: '#fdd43f', stroke: '#fdd43f' }}
                   />
+
                 ))}
+                */}
               </Box>
             </CardContent>
           </Card>
