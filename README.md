@@ -1,5 +1,5 @@
-# squarerootstudprojectrepo
-A github repo for the squareroot-oslomet student-project
+# SquareRoot Project
+A platform that helps you kick off your new greenspace project in no time! 
 
 # Get Started & run locally
 
