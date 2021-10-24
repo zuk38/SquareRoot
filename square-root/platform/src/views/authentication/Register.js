@@ -9,8 +9,9 @@ import TwitterIcon from '@mui/icons-material/Twitter';
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
+import SignUpDropdown from '../../components/forms/fb-elements/SignUpDropdown';
 
-import img1 from '../../assets/images/backgrounds/login-bg.svg';
+import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 const Register = () => (
@@ -76,7 +77,7 @@ const Register = () => (
               }}
             >
               <Typography fontWeight="700" variant="h2">
-                Welcome to Flexy
+                Welcome to SquareRoot
               </Typography>
               <Box display="flex" alignItems="center">
                 <Typography
@@ -104,22 +105,28 @@ const Register = () => (
               </Box>
               <Box
                 sx={{
-                  mt: 4,
+                  mt: 5,
                 }}
               >
                 <CustomFormLabel htmlFor="name">Name</CustomFormLabel>
                 <CustomTextField id="name" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="email">Email Adddress</CustomFormLabel>
+                <CustomFormLabel htmlFor="email">Email Address</CustomFormLabel>
                 <CustomTextField id="email" variant="outlined" fullWidth />
                 <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
                 <CustomTextField
                   id="password"
                   variant="outlined"
                   fullWidth
-                  sx={{
-                    mb: 3,
-                  }}
                 />
+                {/** --- verify passwords ---- */}
+                <CustomFormLabel htmlFor="password">Repeat Password</CustomFormLabel>
+                <CustomTextField
+                  id="password"
+                  variant="outlined"
+                  fullWidth
+                />
+
+                <SignUpDropdown />
 
                 <Button
                   color="secondary"
@@ -135,6 +142,8 @@ const Register = () => (
                 >
                   Sign Up
                 </Button>
+
+                {/** ----- or sign in with ---- not needed ---
                 <Box
                   sx={{
                     position: 'relative',
@@ -153,6 +162,8 @@ const Register = () => (
                     },
                   }}
                 >
+                  </Box>
+                  
                   <Typography
                     component="span"
                     color="textSecondary"
@@ -167,7 +178,7 @@ const Register = () => (
                   >
                     or sign in with
                   </Typography>
-                </Box>
+                
 
                 <Box>
                   <Button
@@ -304,6 +315,7 @@ const Register = () => (
                     </Button>
                   </Grid>
                 </Grid>
+                */}
               </Box>
             </Box>
           </Grid>
