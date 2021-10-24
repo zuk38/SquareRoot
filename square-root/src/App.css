@@ -31,8 +31,9 @@ body {
   height: 100%;
   margin: 0;
 }
+
 .content {
-  min-height: calc(100vh - 70px);
+  min-height: calc(100vh - var(--nav-size));
 }
 
 body {
@@ -48,6 +49,7 @@ body {
 a {
   color: #84a086;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .loading {
@@ -69,6 +71,7 @@ a {
   text-transform: uppercase;
   margin: 2rem 0;
 }
+
 .empty-search {
   text-align: center;
   margin: 2rem 0;
@@ -173,7 +176,7 @@ a {
 .nav-header {
   display: flex;
   justify-content: space-between;
-  width: 50px;
+  width: 200px;
   float: right;
   margin-left: 3rem;
 }
@@ -275,6 +278,30 @@ a {
   color: black;
 }
 
+@media screen and (max-width: 360px) {
+  .nav-header {
+    width: 400px;
+    margin-left: 0.1rem;
+  }
+
+  .sidebar-bars {
+    --button-size: calc(var(--nav-size) * 0.25);
+    width: var(--button-size);
+    height: var(--button-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 86ms;
+    cursor: pointer;
+  }
+  .sidebar-bars:hover {
+    filter: brightness(5.2);
+  }
+  .sidebar-bars svg {
+    fill: var(--bg);
+  }
+}
+
 @media screen and (min-width: 1190px) {
   .nav-center {
     max-width: 1170px;
@@ -289,18 +316,40 @@ a {
   }
 }
 
-@media screen and (max-width: 1190px) {
+@media screen and (min-width: 361px) and  (max-width: 1190px) { 
+  .sidebar-bars {
+    --button-size: calc(var(--nav-size) * 0.3);
+    width: var(--button-size);
+    height: var(--button-size);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: filter 86ms;
+    cursor: pointer;
+  }
+  .sidebar-bars:hover {
+    filter: brightness(5.2);
+  }
+  .sidebar-bars svg {
+    fill: var(--bg);
+  }
+
+}
+
+@media screen and  (max-width: 1190px) {
   .nav-menu {
     display: flex;
     flex-direction: column;
     width: 100%;
     height: 500vh;
     position: fixed;
-    top: 80px;
+    top: var(--nav-size);
     left: -100%;
     opacity: 1;
     transition: all 0.5s ease;
     position: absolute;
+    padding: 20px 0 0;
+    margin-top: -20px;
   }
 
   .nav-menu.active {
@@ -310,6 +359,8 @@ a {
     transition: all 0.5s ease;
     z-index: 990;
     position: absolute;
+    padding: 20px 0 0;
+    margin-top: -20px;
   }
 
   .fa-caret-down {
@@ -380,68 +431,80 @@ a {
     color: var(--offWhite);
     transition: all 0.2s ease-out;
   }
-
-  .sidebar-bars {
-    --button-size: calc(var(--nav-size) * 0.3);
-    width: var(--button-size);
-    height: var(--button-size);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: filter 86ms;
-    cursor: pointer;
-  }
-  .sidebar-bars:hover {
-    filter: brightness(5.2);
-  }
-  .sidebar-bars svg {
-    fill: var(--bg);
-  }
 }
 /* end of navbar */
+/* Hero */
+.defaultHero {
+  min-height: calc(100vh - var(--nav-size));
+  background: url("./images/background_banner.jpg") center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+/* End of Hero */
 /* Banner */
 .errorBanner {
   display: inline-block;
   color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
+  background: rgba(0, 0, 0, 0.5);
   padding: 2rem 1rem;
   text-align: center;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.8);
+  letter-spacing: var(--mainSpacing);
+  width: 100%;
 }
 
 .errorBanner h1 {
   font-size: 3rem;
-  text-align: center;
-  margin-top: 15rem;
 }
 
 .errorBanner div {
   width: 10rem;
   height: 5px;
   background: var(--mainGreen);
-  margin: 1.7rem auto;
+  margin: 1.7rem auto 4rem;
 }
 
-.banner {
-  display: flex;
-  color: var(--mainWhite);
-  width: 100%;
-  height: 100%;
-  min-height: calc(100vh - var(--nav-size));
-  padding: 2rem 1rem;
-  text-align: left;
-  background: #474646; /* fallback colour. Make sure this is just one solid colour. */
-  background: rgba(54, 54, 54, 0.3);
+.errorBanner p {
+  font-size: 1.2rem;
+  margin-bottom: 2rem;
 }
 
-.banner h1 {
-  font-size: 3rem;
-  text-align: center;
-  margin: auto;
+.errorbutton {
+  background: var(--mainGrey);
+  border-radius: 3px;
+  padding: 10px 16px;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: white;
+  font-size: 17px;
+  white-space: nowrap;
+  transition: all 0.2s ease-in-out;
 }
+
+.errorbutton:hover {
+  transition: all 0.2s ease-in-out;
+  background: darkgray;
+}
+
+@media screen and (min-width: 576px) {
+  .banner {
+    padding: 2rem 3rem;
+  }
+  .banner h1 {
+    font-size: 3rem;
+  }
+}
+@media screen and (min-width: 992px) {
+  .banner {
+    padding: 2rem 6rem;
+  }
+  .banner h1 {
+    font-size: 4rem;
+  }
+}
+
 /* end of banner */
 /* Titles */
 .plants-title {
@@ -723,4 +786,11 @@ a {
   width: 100%;
   height: 100%;
   padding-top: 2%;
+}
+
+.is-danger {
+  color: #ff6863;
+  font-size: 0.8em;
+  padding-left: 2%;
+  text-align: left;
 }

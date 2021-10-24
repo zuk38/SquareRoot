@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
-import logo from "../../images/logo-asterisk-dark.png";
-import { Link, NavLink, useHistory } from "react-router-dom";
+import logo from "../../images/logo--dark.png";
+import { Link, NavLink } from "react-router-dom";
+import { useNavigate } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
@@ -14,7 +15,7 @@ import { FaAngleDown, FaUser } from "react-icons/fa";
 import { NavButton } from "./NavButton";
 
 export default function Navbar(props) {
-  let history = useHistory();
+  let navigate = useNavigate();
   const { t } = useTranslation();
   const dropdownRef = useRef(null);
   useOutsideAlerter(dropdownRef, () => setDropdown(false));
@@ -35,7 +36,11 @@ export default function Navbar(props) {
   const handleClick = () => setClick(!click);
   const closeMobileMenu = (path) => {
     setClick(false);
-    history.push(path);
+    if (path === undefined) return;
+    else {
+      navigate(path);
+      if (path.indexOf("/categories") > -1) navigate.go(0);
+    }
   };
 
   const onMouseEnter = (dropdown) => {
@@ -77,7 +82,7 @@ export default function Navbar(props) {
                   <div
                     key={index}
                     className="nav-links-no-hover-title"
-                    onClick={closeMobileMenu}
+                    onClick={() => closeMobileMenu(undefined)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                   </div>
@@ -109,7 +114,7 @@ export default function Navbar(props) {
                 >
                   <div
                     className="nav-links-no-hover-title"
-                    onClick={closeMobileMenu}
+                    onClick={() => closeMobileMenu(undefined)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     <i className="fas fa-caret-down" />
@@ -117,13 +122,25 @@ export default function Navbar(props) {
                   {
                     {
                       dropdownGreenspaces: navDropdown.dropdownGreenspaces && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownAbout: navDropdown.dropdownAbout && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                       dropdownContact: navDropdown.dropdownContact && (
-                        <NavbarDropdown {...props} item={item} />
+                        <NavbarDropdown
+                          {...props}
+                          item={item}
+                          openLink={closeMobileMenu}
+                        />
                       ),
                     }[item.dropdown]
                   }
@@ -145,7 +162,7 @@ export default function Navbar(props) {
                       className={
                         click ? "nav-links-no-hover-title" : "nav-links-title"
                       }
-                      onClick={closeMobileMenu}
+                      onClick={() => closeMobileMenu(undefined)}
                     >
                       <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
                     </div>
@@ -159,6 +176,7 @@ export default function Navbar(props) {
           {/*language */}
           <LanguageSelect />
           {/* user */}
+          {/** 
           {!props.auth.isAuthenticated ? (
             <NavButton
               onClick={() => closeMobileMenu("/login")}
@@ -180,7 +198,7 @@ export default function Navbar(props) {
                 setDropdown={(value) => setDropdown(value)}
               />
             </div>
-          )}
+          )}*/}
 
           {/*sidebar*/}
           <div className="sidebar-bars" onClick={handleClick}>
@@ -191,72 +209,3 @@ export default function Navbar(props) {
     </>
   );
 }
-
-/*const Navbar = (props) => {
-  const [sidebar, setSidebar] = useState(false);
-  const closeSidebar = () => setSidebar(false);
-  let width = useWindowDimensions();
-
-  return (
-      <nav className="navbar">
-        <div className="nav-center">
-          <div className="nav-header">
-            <Link to="/">
-              <img src={logo} alt="SQUAREROOT" />
-            </Link>
-          </div>
-          <ul className="nav-links">
-            {width > 1190 &&
-              NavbarData.slice(
-                NavbarData.map(function(e) {
-                  return e.title;
-                }).indexOf("ROOFTOP")
-              ).map((item, index) => {
-                return (
-                  <li key={index}>
-                    <NavLink
-                      to={item.path}
-                      exact={true}
-                      activeStyle={{ fontWeight: "bold" }}
-                    >
-                      {item.title}
-                    </NavLink>
-                  </li>
-                );
-              })}
-          </ul>
-        </div>
-        <ul className="navbar-nav">
-          {/* user 
-          {!props.auth.isAuthenticated ? (
-            <a href="/login" className="button is-white pad">
-              <span>Sign in</span>
-              <span className="icon is-small">
-                <i className="fas fa-user"></i>
-              </span>
-            </a>
-          ) : (
-            <>
-              <Dropdown {...props} />
-            </>
-          )}
-
-          {/*sidebar
-          <li className="nav-item">
-            <Link
-              to="#"
-              className="sidebar-bars"
-              onClick={() => setSidebar(!sidebar)}
-            >
-              {!sidebar && <MenuIcon />}
-            </Link>
-          </li>
-          <div className={props.sidebar ? "side-menu active" : "side-menu"}>
-            <Sidebar width={width} onClose={closeSidebar} sidebar={sidebar} />
-          </div>
-        </ul>
-      </nav>
-  );
-};
-
-export default Navbar;*/

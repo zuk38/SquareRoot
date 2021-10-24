@@ -8,12 +8,12 @@ import {
   Column,
   Row,
   Bottom,
-  Separator,
   Description,
   Button,
   Icon,
   BottomLeft,
   BottomRight,
+  Document
 } from "../../styles/Footer";
 import { GoLocation } from "react-icons/go";
 import { HiOutlineMail, HiOutlinePhone } from "react-icons/hi";
@@ -56,7 +56,7 @@ export function FooterContainer() {
               </Icon>
               Thaulows vei 1B, Oslo
             </FooterLink>
-            <FooterLink>
+            <FooterLink mail onClick={() => window.open('mailto:michel@squareroot.cc')}>
               <Icon>
                 <HiOutlineMail />
               </Icon>
@@ -73,7 +73,15 @@ export function FooterContainer() {
       </Wrapper>
       <Bottom>
         <BottomLeft>&copy; {new Date().getFullYear()} SquareRoot</BottomLeft>
-        <BottomRight>Terms of Service | Privacy Policy</BottomRight>
+        <BottomRight>
+          <Document href="https://squareroot-as.github.io/SquareRoot/privacy.html">
+            Privacy Policy
+          </Document>
+          |
+          <Document href="https://squareroot-as.github.io/SquareRoot/tou.html">
+            Terms of Service
+          </Document>
+        </BottomRight>
       </Bottom>
     </Container>
   );

@@ -10,7 +10,7 @@ function Howitworks() {
         tailored to your property’s needs. Learn more about how it works here."
         style="how-title"
       />
-      <img src="../images/Howitworks.png" />
+      <img src="../images/Howitworks.png" alt="How"/>
     </div>
   );
 }

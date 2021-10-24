@@ -1,11 +1,10 @@
-import React, { useState, useRef } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import OutlinedInput from "@material-ui/core/OutlinedInput";
 import FormControl from "@material-ui/core/FormControl";
 import Edit from "@material-ui/icons/Edit";
 import IconButton from "@material-ui/core/IconButton";
 import InputAdornment from "@material-ui/core/InputAdornment";
-import MuiPhoneNumber from "material-ui-phone-number";
 
 const useStyles = makeStyles((theme) => ({
   margin: {

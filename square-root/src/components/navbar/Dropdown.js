@@ -1,5 +1,4 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
 import { ReactComponent as LogoutIcon } from "../../icons/logout.svg";
 import { ReactComponent as HelpICon } from "../../icons/question.svg";
 import { ReactComponent as AccountIcon } from "../../icons/user.svg";
@@ -51,4 +50,4 @@ function Dropdown(props) {
   );
 }
 
-export default withRouter(Dropdown);
+export default Dropdown;

@@ -61,10 +61,6 @@ export const listCategorys = /* GraphQL */ `
       items {
         id
         category_name
-        subheader
-        description
-        createdAt
-        updatedAt
         concepts {
           items {
             concept {
@@ -113,19 +109,20 @@ export const listConcepts = /* GraphQL */ `
               metadata {
                 norwegian_name
                 latin_name
-                type
-                native
-                norwegian_nursery
-                size_in_cm
-                image
-                featured
-                climate_zone
-                pollinator_friendly
-                edible
-                rain_garden
-                pet_kids_friendly
-                air_puryfying
-                sun_seeker
+                #type
+                #native
+                #norwegian_nursery
+                #size_in_cm
+                #image
+                
+                #featured
+                #climate_zone
+                #pollinator_friendly
+                #edible
+                #rain_garden
+                #pet_kids_friendly
+                #air_puryfying
+                #sun_seeker
               }
             }
           }

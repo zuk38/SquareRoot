@@ -41,11 +41,11 @@ function About() {
       </p>
       <div className="inspo-images">
         <div className="inspo-image1">
-          <img src="../images/plantbed.png"></img>
+          <img src="../images/plantbed.png" alt="Plant bed 1" />
           <h className="inspo-h">Project 1</h>
         </div>
         <div className="inspo-image1">
-          <img src="../images/plantbed.png"></img>
+          <img src="../images/plantbed.png" alt="Plant bed 2" />
           <h className="inspo-h">Project 2</h>
         </div>
       </div>
