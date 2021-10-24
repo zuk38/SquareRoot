@@ -11,7 +11,7 @@ import CustomTextField from '../../components/forms/custom-elements/CustomTextFi
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
 
-import img1 from '../../assets/images/backgrounds/login-bg.svg'; 
+import img1 from '../../assets/images/backgrounds/login-bg-transp.png'; 
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 const Login = () => (
@@ -75,7 +75,7 @@ const Login = () => (
               }}
             >
               <Typography fontWeight="700" variant="h2">
-                Welcome to Flexy
+                Welcome to SquareRoot
               </Typography>
               <Box display="flex" alignItems="center">
                 <Typography
@@ -86,7 +86,7 @@ const Login = () => (
                     mr: 1,
                   }}
                 >
-                  New to Flexy?
+                  New to SquareRoot?
                 </Typography>
                 <Typography
                   component={Link}
@@ -131,7 +131,7 @@ const Login = () => (
                   <FormGroup>
                     <FormControlLabel
                       control={<CustomCheckbox defaultChecked />}
-                      label="Remeber this Device"
+                      label="Remember this Device"
                       sx={{
                         mb: 2,
                       }}
@@ -153,7 +153,7 @@ const Login = () => (
                         color: 'primary.main',
                       }}
                     >
-                      Forgot Password ?
+                      Forgot Password?
                     </Typography>
                   </Box>
                 </Box>
