@@ -53,9 +53,12 @@ const ShopPage = () => (
                   mt: '15px',
                 }}
               >
+                {/**  ----- product price -----
                 <Typography variant="h5" sx={{ mr: 'auto' }}>
                   {product.price}
                 </Typography>
+
+                */}
                 
                 {/* ---- project icons ---- */}
                 <FeatherIcon>

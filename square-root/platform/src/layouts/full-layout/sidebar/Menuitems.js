@@ -25,6 +25,7 @@ const Menuitems = [
       {
         title: 'Create new project',
         href: '/dashboards/dashboard3',
+        icon: 'plus',
       },
     ]
   },

@@ -1,4 +1,4 @@
-import s1 from '../../../assets/images/products/rooftop-5.jpg';
+import s1 from '../../../assets/images/products/rooftop-square.jpg';
 import s2 from '../../../assets/images/products/s2.jpg';
 import s3 from '../../../assets/images/products/s3.jpg';
 import s4 from '../../../assets/images/products/s4.jpg';
