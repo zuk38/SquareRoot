@@ -9,13 +9,13 @@ import { PlantProvider } from "./context/plants";
 import { ConceptProvider } from "./context/concepts";
 import { UserProvider } from "./context/user";
 import WebFont from "webfontloader";
-import Amplify from "aws-amplify";
 import "./components/utility/i18n";
 import 'flag-icon-css/css/flag-icon.min.css'
 import { Suspense } from "react";
-import config from "./aws-exports";
 import Loading from "./components/Loading";
-Amplify.configure(config);
+//mport Amplify from "aws-amplify";
+//import config from "./aws-exports";
+//Amplify.configure(config);
 require("dotenv").config();
 
 WebFont.load({
