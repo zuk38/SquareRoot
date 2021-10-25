@@ -13,4 +13,5 @@ assignees: ''
 
 - [ ] I have added a detailed description
 - [ ] I have assigned a Description label (enhancement / bug / etc.)
+- [ ] I have assigned a contributor
 - [ ] I have added a Milestone (if applicable)
