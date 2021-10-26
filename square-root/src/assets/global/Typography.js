@@ -1,7 +1,7 @@
 const typography = {
-  fontFamily: "'DM Sans', sans-serif",
+  fontFamily: ['Poppins', 'sans-serif', 'IBM Plex Serif', 'serif'].join(','), //600 for poppins 700 italic for ibm
   body1: {
-    fontWeight: 400, // or 'bold'
+    fontWeight: 600,  //Poppins
   },
   h1: {
     fontWeight: 500,
