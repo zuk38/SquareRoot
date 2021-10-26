@@ -1,6 +1,9 @@
 import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 
+/* *** Landing page *** */
+const Home = lazy(() => import('../views/landing/Home'));
+
 /* ***Layouts**** */
 const FullLayout = lazy(() => import('../layouts/full-layout/FullLayout'));
 const BlankLayout = lazy(() => import('../layouts/blank-layout/BlankLayout'));
@@ -77,9 +80,14 @@ const ExAlert = lazy(() => import('../views/alert/ExAlert'));
 const Router = [
   {
     path: '/',
-    element: <FullLayout />,
+    element: <BlankLayout />,
     children: [
-      { path: '/', element: <Navigate to="/" /> },
+      /* landing page */
+      { path: '/', element: <Home /> },
+
+      /* platform */
+      
+      
       { path: '/dashboards/dashboard1', element: <Dashboard1 /> },
       { path: '/dashboards/dashboard2', element: <Dashboard2 /> },
       { path: '/dashboards/dashboard3', element: <Dashboard3 /> },
