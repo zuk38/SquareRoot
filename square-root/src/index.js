@@ -5,12 +5,10 @@ import { Provider } from 'react-redux';
 import { configureStore } from './redux/Store';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
-import "@fortawesome/fontawesome-free/css/all.min.css";
 import { ProjectProvider } from "./context/projects";
 import { PlantProvider } from "./context/plants";
 import { ConceptProvider } from "./context/concepts";
 import { UserProvider } from "./context/user";
-import WebFont from "webfontloader";
 import "./components/utility/i18n";
 import 'flag-icon-css/css/flag-icon.min.css'
 
@@ -20,16 +18,6 @@ import Loading from "./components/Loading";
 //import config from "./aws-exports";
 //Amplify.configure(config);
 require("dotenv").config();
-
-WebFont.load({
-  google: {
-    families: [
-      "Poppins Web:100,200,300,400,500,600,700,800",
-      "sans-serif",
-      "IBM Plex Serif: 700",
-    ],
-  },
-});
 
 {/*const loadingMarkup = (<Loading />)*/}
 
