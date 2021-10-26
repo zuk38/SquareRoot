@@ -1,5 +1,12 @@
 import React from 'react';
-import { Grid, Box, Typography, FormGroup, FormControlLabel, Button } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  FormGroup,
+  FormControlLabel,
+  Button,
+} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import GoogleIcon from '@mui/icons-material/Google';
@@ -11,19 +18,24 @@ import CustomTextField from '../../components/forms/custom-elements/CustomTextFi
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
 
-import img1 from '../../assets/images/backgrounds/login-bg-transp.png'; 
+import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 const Login = () => (
-  <PageContainer title="Login" description="this is Login page">
-    <Grid container spacing={0} sx={{ height: '100vh', justifyContent: 'center' }}>
+  <PageContainer title='Login' description='this is Login page'>
+    <Grid
+      container
+      spacing={0}
+      sx={{ height: '100vh', justifyContent: 'center' }}
+    >
       <Grid
         item
         xs={12}
         sm={12}
         lg={6}
         sx={{
-          background: (theme) => `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+          background: (theme) =>
+            `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
         }}
       >
         <Box
@@ -32,9 +44,9 @@ const Login = () => (
           }}
         >
           <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
             sx={{
               position: {
                 xs: 'relative',
@@ -47,7 +59,7 @@ const Login = () => (
           >
             <img
               src={img1}
-              alt="bg"
+              alt='bg'
               style={{
                 width: '100%',
                 maxWidth: '812px',
@@ -66,22 +78,22 @@ const Login = () => (
           </Box>
         </Box>
       </Grid>
-      <Grid item xs={12} sm={8} lg={6} display="flex" alignItems="center">
-        <Grid container spacing={0} display="flex" justifyContent="center">
+      <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
+        <Grid container spacing={0} display='flex' justifyContent='center'>
           <Grid item xs={12} lg={9} xl={6}>
             <Box
               sx={{
                 p: 4,
               }}
             >
-              <Typography fontWeight="700" variant="h2">
+              <Typography variant='secondary'>
                 Welcome to SquareRoot
               </Typography>
-              <Box display="flex" alignItems="center">
+              <Box display='flex' alignItems='center'>
                 <Typography
-                  color="textSecondary"
-                  variant="h6"
-                  fontWeight="500"
+                  color='textSecondary'
+                  variant='h6'
+                  fontWeight='500'
                   sx={{
                     mr: 1,
                   }}
@@ -90,8 +102,8 @@ const Login = () => (
                 </Typography>
                 <Typography
                   component={Link}
-                  to="/auth/register"
-                  fontWeight="500"
+                  to='/auth/register'
+                  fontWeight='500'
                   sx={{
                     display: 'block',
                     textDecoration: 'none',
@@ -106,13 +118,13 @@ const Login = () => (
                   mt: 4,
                 }}
               >
-                <CustomFormLabel htmlFor="email">Email Address</CustomFormLabel>
-                <CustomTextField id="email" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
+                <CustomFormLabel htmlFor='email'>Email Address</CustomFormLabel>
+                <CustomTextField id='email' variant='outlined' fullWidth />
+                <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                 <CustomTextField
-                  id="password"
-                  type="password"
-                  variant="outlined"
+                  id='password'
+                  type='password'
+                  variant='outlined'
                   fullWidth
                   sx={{
                     mb: 3,
@@ -131,7 +143,7 @@ const Login = () => (
                   <FormGroup>
                     <FormControlLabel
                       control={<CustomCheckbox defaultChecked />}
-                      label="Remember this Device"
+                      label='Remember this Device'
                       sx={{
                         mb: 2,
                       }}
@@ -144,8 +156,8 @@ const Login = () => (
                   >
                     <Typography
                       component={Link}
-                      to="/auth/reset-password"
-                      fontWeight="500"
+                      to='/auth/reset-password'
+                      fontWeight='500'
                       sx={{
                         display: 'block',
                         textDecoration: 'none',
@@ -159,12 +171,12 @@ const Login = () => (
                 </Box>
 
                 <Button
-                  color="secondary"
-                  variant="contained"
-                  size="large"
+                  color='secondary'
+                  variant='contained'
+                  size='large'
                   fullWidth
                   component={Link}
-                  to="/"
+                  to='/'
                   sx={{
                     pt: '10px',
                     pb: '10px',
@@ -181,7 +193,9 @@ const Login = () => (
                     '&::before': {
                       content: '""',
                       background: (theme) =>
-                        `${theme.palette.mode === 'dark' ? '#42464d' : '#ecf0f2'}`,
+                        `${
+                          theme.palette.mode === 'dark' ? '#42464d' : '#ecf0f2'
+                        }`,
                       height: '1px',
                       width: '100%',
                       position: 'absolute',
@@ -191,10 +205,10 @@ const Login = () => (
                   }}
                 >
                   <Typography
-                    component="span"
-                    color="textSecondary"
-                    variant="h6"
-                    fontWeight="400"
+                    component='span'
+                    color='textSecondary'
+                    variant='h6'
+                    fontWeight='400'
                     sx={{
                       position: 'relative',
                       padding: '0 12px',
@@ -208,15 +222,17 @@ const Login = () => (
 
                 <Box>
                   <Button
-                    variant="outlined"
-                    size="large"
-                    display="flex"
-                    alignitems="center"
-                    justifycontent="center"
+                    variant='outlined'
+                    size='large'
+                    display='flex'
+                    alignitems='center'
+                    justifycontent='center'
                     sx={{
                       width: '100%',
                       borderColor: (theme) =>
-                        `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                        `${
+                          theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'
+                        }`,
                       borderWidth: '2px',
                       textAlign: 'center',
                       mt: 2,
@@ -224,24 +240,30 @@ const Login = () => (
                       pb: '10px',
                       '&:hover': {
                         borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                          `${
+                            theme.palette.mode === 'dark'
+                              ? '#42464d'
+                              : '#dde3e8'
+                          }`,
                         borderWidth: '2px',
                       },
                     }}
                   >
-                    <Box display="flex" alignItems="center">
+                    <Box display='flex' alignItems='center'>
                       <GoogleIcon
                         sx={{
                           color: (theme) => theme.palette.error.main,
                         }}
                       />
                       <Typography
-                        variant="h6"
+                        variant='h6'
                         sx={{
                           ml: 1,
                           color: (theme) =>
                             `${
-                              theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
+                              theme.palette.mode === 'dark'
+                                ? theme.palette.grey.A200
+                                : '#13152a'
                             }`,
                         }}
                       >
@@ -254,15 +276,19 @@ const Login = () => (
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6} lg={6}>
                     <Button
-                      variant="outlined"
-                      size="large"
-                      display="flex"
-                      alignitems="center"
-                      justifycontent="center"
+                      variant='outlined'
+                      size='large'
+                      display='flex'
+                      alignitems='center'
+                      justifycontent='center'
                       sx={{
                         width: '100%',
                         borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                          `${
+                            theme.palette.mode === 'dark'
+                              ? '#42464d'
+                              : '#dde3e8'
+                          }`,
                         borderWidth: '2px',
                         textAlign: 'center',
                         mt: 2,
@@ -270,24 +296,30 @@ const Login = () => (
                         pb: '10px',
                         '&:hover': {
                           borderColor: (theme) =>
-                            `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                            `${
+                              theme.palette.mode === 'dark'
+                                ? '#42464d'
+                                : '#dde3e8'
+                            }`,
                           borderWidth: '2px',
                         },
                       }}
                     >
-                      <Box display="flex" alignItems="center">
+                      <Box display='flex' alignItems='center'>
                         <FacebookIcon
                           sx={{
                             color: (theme) => theme.palette.secondary.main,
                           }}
                         />
                         <Typography
-                          variant="h6"
+                          variant='h6'
                           sx={{
                             ml: 1,
                             color: (theme) =>
                               `${
-                                theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.grey.A200
+                                  : '#13152a'
                               }`,
                           }}
                         >
@@ -298,15 +330,19 @@ const Login = () => (
                   </Grid>
                   <Grid item xs={12} sm={6} lg={6}>
                     <Button
-                      variant="outlined"
-                      size="large"
-                      display="flex"
-                      alignitems="center"
-                      justifycontent="center"
+                      variant='outlined'
+                      size='large'
+                      display='flex'
+                      alignitems='center'
+                      justifycontent='center'
                       sx={{
                         width: '100%',
                         borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                          `${
+                            theme.palette.mode === 'dark'
+                              ? '#42464d'
+                              : '#dde3e8'
+                          }`,
                         borderWidth: '2px',
                         textAlign: 'center',
                         mt: 2,
@@ -314,24 +350,30 @@ const Login = () => (
                         pb: '10px',
                         '&:hover': {
                           borderColor: (theme) =>
-                            `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
+                            `${
+                              theme.palette.mode === 'dark'
+                                ? '#42464d'
+                                : '#dde3e8'
+                            }`,
                           borderWidth: '2px',
                         },
                       }}
                     >
-                      <Box display="flex" alignItems="center">
+                      <Box display='flex' alignItems='center'>
                         <TwitterIcon
                           sx={{
                             color: (theme) => theme.palette.primary.main,
                           }}
                         />
                         <Typography
-                          variant="h6"
+                          variant='h6'
                           sx={{
                             ml: 1,
                             color: (theme) =>
                               `${
-                                theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
+                                theme.palette.mode === 'dark'
+                                  ? theme.palette.grey.A200
+                                  : '#13152a'
                               }`,
                           }}
                         >
