@@ -1,6 +1,8 @@
-import React from "react";
+import React, {Suspense} from "react";
 import ReactDOM from "react-dom";
 import App from "./App";
+import { Provider } from 'react-redux';
+import { configureStore } from './redux/Store';
 import reportWebVitals from "./reportWebVitals";
 import { BrowserRouter as Router } from "react-router-dom";
 import "@fortawesome/fontawesome-free/css/all.min.css";
@@ -11,7 +13,8 @@ import { UserProvider } from "./context/user";
 import WebFont from "webfontloader";
 import "./components/utility/i18n";
 import 'flag-icon-css/css/flag-icon.min.css'
-import { Suspense } from "react";
+
+import Spinner from './views/spinner/Spinner';
 import Loading from "./components/Loading";
 //mport Amplify from "aws-amplify";
 //import config from "./aws-exports";
@@ -28,10 +31,11 @@ WebFont.load({
   },
 });
 
-const loadingMarkup = (<Loading />)
+{/*const loadingMarkup = (<Loading />)*/}
 
 ReactDOM.render(
-  <Suspense fallback={loadingMarkup}>
+  <Provider store={configureStore()}>
+  <Suspense fallback={<Spinner />}>
   <ConceptProvider>
     <ProjectProvider>
       <PlantProvider>
@@ -43,7 +47,8 @@ ReactDOM.render(
       </PlantProvider>
     </ProjectProvider>
   </ConceptProvider>
-  </Suspense>,
+  </Suspense>
+  </Provider>,
   document.getElementById("root")
 );
 
