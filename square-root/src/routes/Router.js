@@ -84,6 +84,7 @@ const Router = [
     children: [
       /* landing page */
       { path: '/', element: <Home /> },
+      
 
       /* platform */
       

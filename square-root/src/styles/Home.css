@@ -36,9 +36,9 @@ section#first {
       rgba(139, 166, 139, 0.8),
       rgba(139, 166, 139, 0.8)
     ),
-    url("../images/background_banner.jpg");
+    url("../images/background/background_banner.jpg");
   background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(139, 166, 139, 0.2)),
-    url("../images/background_banner.jpg"); /* The least supported option. */
+    url("../images/background/background_banner.jpg"); /* The least supported option. */
   background-size: cover;
   position: relative;
   display: grid;
@@ -373,7 +373,7 @@ section#fourth .container-desktop .card {
 /*end of rooftop, rainbed, indoor */
 
 section#fifth {
-  background-image: url("../images/boots.jpg");
+  background-image: url("../images/background/boots.jpg");
   background-size: cover;
 }
 

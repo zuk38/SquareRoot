@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { Component } from 'react';
 import { useRoutes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -6,10 +6,15 @@ import RTL from './layouts/full-layout/customizer/RTL';
 import ThemeSettings from './layouts/full-layout/customizer/ThemeSettings';
 import Router from './routes/Router';
 import 'react-perfect-scrollbar/dist/css/styles.css';
+import './App.css';
+import { useLocation } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import { withUserConsumer } from "./context/user";
 
-{/*}
+{
+  /*}
 
-import "./App.css";
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -40,28 +45,44 @@ import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
-import { withUserConsumer } from "./context/user";
+
 import ScrollToTop from "./components/utility/ScrollToTop";
 import Dashboard1 from "./pages/dashboards/Dashboard1";
-*/}
+*/
+}
 
-const App = () => {
+const App = (props) => {
   const routing = useRoutes(Router);
   const theme = ThemeSettings();
   const customizer = useSelector((state) => state.CustomizerReducer);
+  const location = useLocation();
+
+  const { isAuthenticated, isAuthenticating, user, logout } = props.context;
+
+  const authProps = {
+    isAuthenticated: isAuthenticated,
+    user: user,
+    logout: logout,
+  };
+
   return (
     <ThemeProvider theme={theme}>
       <RTL direction={customizer.activeDir}>
         <CssBaseline />
+        {/*location.pathname.indexOf('/auth') <= -1 &&
+          location.pathname.indexOf('/dashboard') <= -1 && (
+            <Navbar {...props} auth={authProps} />
+          )*/}
         {routing}
       </RTL>
     </ThemeProvider>
   );
 };
 
-export default App;
+export default withUserConsumer(App);;
 
-{/** ----- landing page ---- 
+{
+  /** ----- landing page ---- 
 function App(props) {
   let location = useLocation();
 
@@ -191,4 +212,5 @@ function App(props) {
 
 export default withUserConsumer(App);
 
-*/}
+*/
+}

@@ -1,4 +1,6 @@
 import React, { useEffect } from 'react';
+import "../../styles/Home.css"
+import "../../styles/frontpages.css"
 import logo from '../../images/logos/logo-white-green.png';
 import arrowDownWhite from '../../icons/down-arrow-white.png';
 import { Trans, useTranslation } from 'react-i18next';
