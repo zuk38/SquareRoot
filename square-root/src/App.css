@@ -66,11 +66,6 @@ a {
   background-color: white;
   z-index: 999;
 }
-.error {
-  text-align: center;
-  text-transform: uppercase;
-  margin: 2rem 0;
-}
 
 .empty-search {
   text-align: center;
@@ -433,79 +428,6 @@ a {
   }
 }
 /* end of navbar */
-/* Hero */
-.defaultHero {
-  min-height: calc(100vh - var(--nav-size));
-  background: url("./images/background/background_banner.jpg") center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: relative;
-}
-/* End of Hero */
-/* Banner */
-.errorBanner {
-  display: inline-block;
-  color: var(--mainWhite);
-  background: rgba(0, 0, 0, 0.5);
-  padding: 2rem 1rem;
-  text-align: center;
-  letter-spacing: var(--mainSpacing);
-  width: 100%;
-}
-
-.errorBanner h1 {
-  font-size: 3rem;
-}
-
-.errorBanner div {
-  width: 10rem;
-  height: 5px;
-  background: var(--mainGreen);
-  margin: 1.7rem auto 4rem;
-}
-
-.errorBanner p {
-  font-size: 1.2rem;
-  margin-bottom: 2rem;
-}
-
-.errorbutton {
-  background: var(--mainGrey);
-  border-radius: 3px;
-  padding: 10px 16px;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  color: white;
-  font-size: 17px;
-  white-space: nowrap;
-  transition: all 0.2s ease-in-out;
-}
-
-.errorbutton:hover {
-  transition: all 0.2s ease-in-out;
-  background: darkgray;
-}
-
-@media screen and (min-width: 576px) {
-  .banner {
-    padding: 2rem 3rem;
-  }
-  .banner h1 {
-    font-size: 3rem;
-  }
-}
-@media screen and (min-width: 992px) {
-  .banner {
-    padding: 2rem 6rem;
-  }
-  .banner h1 {
-    font-size: 4rem;
-  }
-}
-
-/* end of banner */
 /* Titles */
 .plants-title {
   margin: 1rem 0 0 5%;
