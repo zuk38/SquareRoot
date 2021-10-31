@@ -174,7 +174,7 @@ export default function Navbar(props) {
           {/* user */}
           {!props.auth.isAuthenticated ? (
             <NavButton
-              onClick={() => closeMobileMenu("/login")}
+              onClick={() => closeMobileMenu("/auth/login")}
               endIcon={<FaUser />}
             >
               <Trans i18nKey="signIn">Sign in</Trans>

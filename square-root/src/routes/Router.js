@@ -17,8 +17,7 @@ const What = lazy(() => import('../views/landing/What'));
 const Categories = lazy(() => import('../views/landing/Categories'));
 const Error = lazy(() => import('../views/Error'));
 
-
-
+/* *** Auth *** */
 const Login = lazy(() => import('../views/authentication/Login'));
 const Register = lazy(() => import('../views/authentication/Register'));
 const ResetPassword = lazy(() => import('../views/authentication/ResetPassword'));
