@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import { useSelector } from 'react-redux';
@@ -9,7 +9,8 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import { withUserConsumer } from "./context/user";
+import { withUserConsumer } from './context/user';
+import { FooterContainer } from './components/footer/FooterContainer';
 
 {
   /*}
@@ -37,7 +38,7 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Who from "./pages/frontpages/Who";
 import Categories from "./pages/frontpages/Categories";
 import SingleCategory from "./pages/frontpages/SingleCategory";
-import { FooterContainer } from "./components/footer/FooterContainer";
+
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
@@ -69,17 +70,19 @@ const App = (props) => {
     <ThemeProvider theme={theme}>
       <RTL direction={customizer.activeDir}>
         <CssBaseline />
-        {/*location.pathname.indexOf('/auth') <= -1 &&
+        {location.pathname.indexOf('/auth') <= -1 &&
           location.pathname.indexOf('/dashboard') <= -1 && (
             <Navbar {...props} auth={authProps} />
-          )*/}
+          )}
         {routing}
+        {location.pathname.indexOf('/auth') <= -1 &&
+          location.pathname !== '/forgotpassword' && <FooterContainer />}
       </RTL>
     </ThemeProvider>
   );
 };
 
-export default withUserConsumer(App);;
+export default withUserConsumer(App);
 
 {
   /** ----- landing page ---- 
