@@ -43,9 +43,9 @@ export function FooterContainer() {
           </Column>
           <Column>
             <Title>{t("footer.about")}</Title>
+            <FooterLink href="/who-we-are">{t("footer.why")}</FooterLink>
             <FooterLink href="/what-we-do">{t("footer.what")}</FooterLink>
             <FooterLink href="/how-it-works">{t("footer.how")}</FooterLink>
-            <FooterLink href="/why-us">{t("footer.why")}</FooterLink>
           </Column>
 
           <Column>
