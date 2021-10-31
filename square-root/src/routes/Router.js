@@ -15,6 +15,8 @@ const Contact = lazy(() => import('../views/landing/Contact'));
 const Partner = lazy(() => import('../views/landing/Partner'));
 const What = lazy(() => import('../views/landing/What'));
 const Categories = lazy(() => import('../views/landing/Categories'));
+const SingleConcept = lazy(() => import('../views/landing/SingleConcept'));
+const SingleCategory = lazy(() => import('../views/landing/SingleCategory'));
 const Error = lazy(() => import('../views/Error'));
 
 /* *** Auth *** */
@@ -101,6 +103,8 @@ const Router = (isLoggedIn) => [
       { path: 'what-we-do', element: <What /> },
       { path: 'contact-us', element: <Contact /> },
       { path: 'categories', element: <Categories /> },
+      { path: 'concepts/:name', element: <SingleConcept /> },
+      { path: 'categories/:name', element: <SingleCategory /> },
       { path: '404', element: <Error /> },
 
 
