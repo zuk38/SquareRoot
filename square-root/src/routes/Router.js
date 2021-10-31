@@ -1,15 +1,17 @@
 import React, { lazy } from 'react';
 import { Navigate } from 'react-router-dom';
 
-/* *** Landing page *** */
-const Home = lazy(() => import('../views/landing/Home'));
-
 /* ***Layouts**** */
 const FullLayout = lazy(() => import('../layouts/full-layout/FullLayout'));
 const BlankLayout = lazy(() => import('../layouts/blank-layout/BlankLayout'));
 /* ***End Layouts**** */
 
-const Error = lazy(() => import('../views/authentication/Error'));
+/* *** Landing page *** */
+const Home = lazy(() => import('../views/landing/Home'));
+const Error = lazy(() => import('../views/Error'));
+
+
+
 const Login = lazy(() => import('../views/authentication/Login'));
 const Register = lazy(() => import('../views/authentication/Register'));
 const ResetPassword = lazy(() => import('../views/authentication/ResetPassword'));
@@ -84,7 +86,7 @@ const Router = [
     children: [
       /* landing page */
       { path: '/', element: <Home /> },
-      
+      { path: '404', element: <Error /> },
 
       /* platform */
       
@@ -132,18 +134,18 @@ const Router = [
       { path: '/timeline', element: <CustomTimeline /> },
       { path: '/typography', element: <CustomTypography /> },
       { path: '/alert', element: <ExAlert /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
+      { path: '*', element: <Navigate to="/404" /> },
     ],
   },
   {
     path: 'auth',
     element: <BlankLayout />,
     children: [
-      { path: '404', element: <Error /> },
+      
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'reset-password', element: <ResetPassword /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
+      { path: '*', element: <Navigate to="/404" /> },
     ],
   },
 ];
