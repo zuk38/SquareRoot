@@ -53,7 +53,6 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 }
 
 const App = (props) => {
-  const routing = useRoutes(Router);
   const theme = ThemeSettings();
   const customizer = useSelector((state) => state.CustomizerReducer);
   const location = useLocation();
@@ -66,6 +65,8 @@ const App = (props) => {
     logout: logout,
   };
 
+  const routing = useRoutes(Router(isAuthenticated));
+  
   return (
     <ThemeProvider theme={theme}>
       <RTL direction={customizer.activeDir}>

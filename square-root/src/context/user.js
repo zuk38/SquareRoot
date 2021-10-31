@@ -18,7 +18,7 @@ export default class UserProvider extends Component {
     //bool is passed
     this.setState({
       isAuthenticated: auuthenticated,
-    });
+    }, () => console.log(this.state));
   };
 
   setUser = (user) => {
@@ -163,6 +163,7 @@ export default class UserProvider extends Component {
           logout: this.logout,
           updateUser: this.updateUser,
           registerUser: this.register,
+          setAuthStatus: this.setAuthStatus
         }}
       >
         {this.props.children}

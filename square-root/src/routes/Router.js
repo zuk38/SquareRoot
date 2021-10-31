@@ -85,7 +85,7 @@ const ExAlert = lazy(() => import('../views/alert/ExAlert'));
 
 /* ****Routes***** */
 
-const Router = [
+const Router = (isLoggedIn) => [
   {
     path: '/',
     element: <BlankLayout />,
@@ -104,10 +104,8 @@ const Router = [
       { path: '404', element: <Error /> },
 
 
-      /* template elements */
-      { path: '/dashboards/dashboard1', element: <Dashboard1 /> },
-      { path: '/dashboards/dashboard2', element: <Dashboard2 /> },
-      { path: '/dashboards/dashboard3', element: <Dashboard3 /> },
+      /* template elements will be refactored later */
+      
       { path: '/customers/lists', element: <CustomerLists /> },
       { path: '/chats', element: <Chats /> },
       { path: '/notes', element: <Notes /> },
@@ -154,16 +152,18 @@ const Router = [
   /* platform */
   {
     path: 'dashboard',
-    element: <FullLayout />,
+    element: isLoggedIn ? <FullLayout /> : <Navigate to="/auth/login" />,
     children: [
-      
+      { path: 'dashboard1', element: <Dashboard1 /> },
+      { path: 'dashboard2', element: <Dashboard2 /> },
+      { path: 'dashboard3', element: <Dashboard3 /> },
       { path: '*', element: <Navigate to="/404" /> },
     ],
   },
   /* auth */
   {
     path: 'auth',
-    element: <BlankLayout />,
+    element: !isLoggedIn ? <BlankLayout /> : <Navigate to="/dashboard/dashboard1" />,
     children: [
       
       { path: 'login', element: <Login /> },
