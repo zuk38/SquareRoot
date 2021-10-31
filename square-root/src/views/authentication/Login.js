@@ -189,6 +189,20 @@ function Login(props) {
                   >
                     Sign In
                   </Button>
+                  <Button
+                      color='secondary'
+                      size='large'
+                      fullWidth
+                      component={Link}
+                      to='/'
+                      sx={{
+                        pt: '10px',
+                        pb: '10px',
+                        mt: 2,
+                      }}
+                    >
+                      Back to Home
+                    </Button>
                   <Box
                     sx={{
                       position: 'relative',
@@ -211,6 +225,7 @@ function Login(props) {
                       },
                     }}
                   >
+                    
                     <Typography
                       component='span'
                       color='textSecondary'
@@ -402,6 +417,6 @@ function Login(props) {
       </Grid>
     </PageContainer>
   );
-};
+}
 
 export default withUserConsumer(Login);
