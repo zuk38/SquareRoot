@@ -104,9 +104,7 @@ const Router = [
       { path: '404', element: <Error /> },
 
 
-      /* platform */
-      
-      
+      /* template elements */
       { path: '/dashboards/dashboard1', element: <Dashboard1 /> },
       { path: '/dashboards/dashboard2', element: <Dashboard2 /> },
       { path: '/dashboards/dashboard3', element: <Dashboard3 /> },
@@ -153,6 +151,16 @@ const Router = [
       { path: '*', element: <Navigate to="/404" /> },
     ],
   },
+  /* platform */
+  {
+    path: 'dashboard',
+    element: <FullLayout />,
+    children: [
+      
+      { path: '*', element: <Navigate to="/404" /> },
+    ],
+  },
+  /* auth */
   {
     path: 'auth',
     element: <BlankLayout />,
