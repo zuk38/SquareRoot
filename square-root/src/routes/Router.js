@@ -8,6 +8,13 @@ const BlankLayout = lazy(() => import('../layouts/blank-layout/BlankLayout'));
 
 /* *** Landing page *** */
 const Home = lazy(() => import('../views/landing/Home'));
+const Who = lazy(() => import('../views/landing/Who'));
+const Howitworks = lazy(() => import('../views/landing/Howitworks'));
+const About = lazy(() => import('../views/landing/About'));
+const Contact = lazy(() => import('../views/landing/Contact'));
+const Partner = lazy(() => import('../views/landing/Partner'));
+const What = lazy(() => import('../views/landing/What'));
+const Categories = lazy(() => import('../views/landing/Categories'));
 const Error = lazy(() => import('../views/Error'));
 
 
@@ -86,7 +93,17 @@ const Router = [
     children: [
       /* landing page */
       { path: '/', element: <Home /> },
+      { path: 'en', element: <Home /> },
+      { path: 'no', element: <Home /> },
+      { path: 'who-we-are', element: <Who /> },
+      { path: 'how-it-works', element: <Howitworks /> },
+      { path: 'about-us', element: <About /> },
+      { path: 'become-a-partner', element: <Partner /> },
+      { path: 'what-we-do', element: <What /> },
+      { path: 'contact-us', element: <Contact /> },
+      { path: 'categories', element: <Categories /> },
       { path: '404', element: <Error /> },
+
 
       /* platform */
       
