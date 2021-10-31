@@ -22,7 +22,9 @@ const Error = lazy(() => import('../views/Error'));
 /* *** Auth *** */
 const Login = lazy(() => import('../views/authentication/Login'));
 const Register = lazy(() => import('../views/authentication/Register'));
-const ResetPassword = lazy(() => import('../views/authentication/ResetPassword'));
+const ResetPassword = lazy(() =>
+  import('../views/authentication/ResetPassword')
+);
 
 /* ****Pages***** */
 const Dashboard1 = lazy(() => import('../views/dashboards/Dashboard1'));
@@ -38,10 +40,14 @@ const QuillEditor = lazy(() => import('../views/quill-editor/QuillEditor'));
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
 const CustomTimeline = lazy(() => import('../views/timeline/CustomTimeline'));
-const CustomTypography = lazy(() => import('../views/typography/CustomTypography'));
+const CustomTypography = lazy(() =>
+  import('../views/typography/CustomTypography')
+);
 const Calendar = lazy(() => import('../views/apps/calendar/ACalendar'));
 const CustomerEdit = lazy(() => import('../views/apps/customers/CustomerEdit'));
-const CustomerLists = lazy(() => import('../views/apps/customers/CustomerLists'));
+const CustomerLists = lazy(() =>
+  import('../views/apps/customers/CustomerLists')
+);
 /* ****Tables***** */
 const BasicTable = lazy(() => import('../views/tables/BasicTable'));
 const PaginationTable = lazy(() => import('../views/tables/PaginationTable'));
@@ -50,7 +56,9 @@ const CollapsibleTable = lazy(() => import('../views/tables/CollapsibleTable'));
 const FixedHeaderTable = lazy(() => import('../views/tables/FixedHeaderTable'));
 
 // form elements
-const ExAutoComplete = lazy(() => import('../views/form-elements/ExAutoComplete'));
+const ExAutoComplete = lazy(() =>
+  import('../views/form-elements/ExAutoComplete')
+);
 const ExButton = lazy(() => import('../views/form-elements/ExButton'));
 const ExCheckbox = lazy(() => import('../views/form-elements/ExCheckbox'));
 const ExDateTime = lazy(() => import('../views/form-elements/ExDateTime'));
@@ -63,8 +71,12 @@ const FormLayouts = lazy(() => import('../views/form-layouts/FormLayouts'));
 const FormCustom = lazy(() => import('../views/form-layouts/FormCustom'));
 
 // widgets
-const WidgetFeed = lazy(() => import('../views/widgets/widget-feed/WidgetFeed'));
-const WidgetApps = lazy(() => import('../views/widgets/widget-apps/WidgetApps'));
+const WidgetFeed = lazy(() =>
+  import('../views/widgets/widget-feed/WidgetFeed')
+);
+const WidgetApps = lazy(() =>
+  import('../views/widgets/widget-apps/WidgetApps')
+);
 
 // userprofile
 const UserProfile = lazy(() => import('../views/user-profile/UserProfile'));
@@ -105,11 +117,20 @@ const Router = (isLoggedIn) => [
       { path: 'categories', element: <Categories /> },
       { path: 'concepts/:name', element: <SingleConcept /> },
       { path: 'categories/:name', element: <SingleCategory /> },
+      {
+        path: 'privacy-policy',
+        element: (window.location.href =
+          'https://squareroot-as.github.io/SquareRoot/privacy.html'),
+      },
+      {
+        path: 'terms-of-use',
+        element: (window.location.href =
+          'https://squareroot-as.github.io/SquareRoot/tou.html'),
+      },
       { path: '404', element: <Error /> },
 
-
       /* template elements will be refactored later */
-      
+
       { path: '/customers/lists', element: <CustomerLists /> },
       { path: '/chats', element: <Chats /> },
       { path: '/notes', element: <Notes /> },
@@ -150,30 +171,33 @@ const Router = (isLoggedIn) => [
       { path: '/timeline', element: <CustomTimeline /> },
       { path: '/typography', element: <CustomTypography /> },
       { path: '/alert', element: <ExAlert /> },
-      { path: '*', element: <Navigate to="/404" /> },
+      { path: '*', element: <Navigate to='/404' /> },
     ],
   },
   /* platform */
   {
     path: 'dashboard',
-    element: isLoggedIn ? <FullLayout /> : <Navigate to="/auth/login" />,
+    element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
     children: [
       { path: 'dashboard1', element: <Dashboard1 /> },
       { path: 'dashboard2', element: <Dashboard2 /> },
       { path: 'dashboard3', element: <Dashboard3 /> },
-      { path: '*', element: <Navigate to="/404" /> },
+      { path: '*', element: <Navigate to='/404' /> },
     ],
   },
   /* auth */
   {
     path: 'auth',
-    element: !isLoggedIn ? <BlankLayout /> : <Navigate to="/dashboard/dashboard1" />,
+    element: !isLoggedIn ? (
+      <BlankLayout />
+    ) : (
+      <Navigate to='/dashboard/dashboard1' />
+    ),
     children: [
-      
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'reset-password', element: <ResetPassword /> },
-      { path: '*', element: <Navigate to="/404" /> },
+      { path: '*', element: <Navigate to='/404' /> },
     ],
   },
 ];

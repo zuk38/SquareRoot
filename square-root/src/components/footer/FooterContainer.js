@@ -74,11 +74,11 @@ export function FooterContainer() {
       <Bottom>
         <BottomLeft>&copy; {new Date().getFullYear()} SquareRoot</BottomLeft>
         <BottomRight>
-          <Document href="https://squareroot-as.github.io/SquareRoot/privacy.html">
+          <Document to="/privacy-policy" target="_blank" rel="noopener noreferrer">
             Privacy Policy
           </Document>
           |
-          <Document href="https://squareroot-as.github.io/SquareRoot/tou.html">
+          <Document to="/terms-of-use" target="_blank" rel="noopener noreferrer">
             Terms of Service
           </Document>
         </BottomRight>

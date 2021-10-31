@@ -43,7 +43,7 @@ export const BottomRight = styled.div`
   }
 `;
 
-export const Document = styled.a`
+export const Document = styled(Link)`
   color: white;
   display: inline-block;
   cursor: pointer;
