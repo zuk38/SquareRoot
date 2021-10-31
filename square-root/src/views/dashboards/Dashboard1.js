@@ -15,8 +15,7 @@ const Dashboard1 = () => (
     
     {/* ------------------------- grid wrapper ------------------------- */}
     <Grid container spacing={0}>
-     <ProjectTitle xs={{fontWeight: '600'}}/>
-     
+     <ProjectTitle />
      <Grid container spacing={0}>
      <Grid item xs={12} lg={12} sm={12}>
        <ProjectDescription />

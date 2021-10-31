@@ -28,12 +28,14 @@ const ShopPage = () => (
     <Grid container spacing={0}>
       {Shopitems.map((product) => (
         <Grid item xs={12} lg={4} sm={4} display="flex" alignItems="stretch" key={product.id}>
-          <Card sx={{ p: 0, width: '100%', textDecoration: 'none'}} component={Link}
-                to="/shop/shop-detail">
+          <Card sx={{ p: 0, width: '100%' }}>
+
             <img src={product.photo} alt="img" width="100%" />
             <CardContent sx={{ p: 3 }}>
               <Typography variant="caption">{product.category}</Typography>
               <Typography
+                component={Link}
+                to="/shop/shop-detail"
                 fontWeight="500"
                 sx={{
                   display: 'block',

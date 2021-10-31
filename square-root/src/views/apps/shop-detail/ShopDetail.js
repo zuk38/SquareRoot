@@ -7,7 +7,7 @@ import Breadcrumb from '../../../layouts/full-layout/breadcrumb/Breadcrumb';
 import PageContainer from '../../../components/container/PageContainer';
 
 import ProductCarousel from '../../../components/shop/ProductCarousel';
-import ProductDetail from '../../../components/shop/ProductDetail';
+import ConceptDetail from '../../../components/shop/ConceptDetail';
 import ProductRelated from '../../../components/shop/ProductRelated';
 
 const BCrumb = [
@@ -35,7 +35,7 @@ const ShopDetail = () => {
               </Box>
             </Grid>
             <Grid item xs={12} sm={12} lg={6}>
-              <ProductDetail />
+              <ConceptDetail />
             </Grid>
           </Grid>
         </CardContent>
