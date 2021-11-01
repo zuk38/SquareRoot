@@ -102,9 +102,10 @@ const ExAlert = lazy(() => import('../views/alert/ExAlert'));
 const Router = (isLoggedIn) => [
   {
     path: '/',
-    element: <BlankLayout />,
+    element: <Home />,
     children: [
       /* landing page */
+      { path: '/', element: <Navigate to="/" /> },
       { path: '/', element: <Home /> },
       { path: 'en', element: <Home /> },
       { path: 'no', element: <Home /> },
@@ -117,16 +118,6 @@ const Router = (isLoggedIn) => [
       { path: 'categories', element: <Categories /> },
       { path: 'concepts/:name', element: <SingleConcept /> },
       { path: 'categories/:name', element: <SingleCategory /> },
-      {
-        path: 'privacy-policy',
-        element: (window.location.href =
-          'https://squareroot-as.github.io/SquareRoot/privacy.html'),
-      },
-      {
-        path: 'terms-of-use',
-        element: (window.location.href =
-          'https://squareroot-as.github.io/SquareRoot/tou.html'),
-      },
       { path: '404', element: <Error /> },
 
       /* template elements will be refactored later */
