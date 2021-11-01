@@ -1,9 +1,6 @@
 import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
-import { useSelector } from 'react-redux';
-import RTL from './layouts/full-layout/customizer/RTL';
-import ThemeSettings from './layouts/full-layout/customizer/ThemeSettings';
 import Router from './routes/Router';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.css';
@@ -11,10 +8,9 @@ import { useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import { withUserConsumer } from './context/user';
 import { FooterContainer } from './components/footer/FooterContainer';
+import { theme } from './assets/global/Theme-variable';
 
-{
   /*}
-
 
 import {
   BrowserRouter as Router,
@@ -52,9 +48,8 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
 }
 
+
 const App = (props) => {
-  const theme = ThemeSettings();
-  const customizer = useSelector((state) => state.CustomizerReducer);
   const location = useLocation();
 
   const { isAuthenticated, isAuthenticating, user, logout } = props.context;
@@ -69,7 +64,6 @@ const App = (props) => {
   
   return (
     <ThemeProvider theme={theme}>
-      <RTL direction={customizer.activeDir}>
         <CssBaseline />
         {location.pathname.indexOf('/auth') <= -1 &&
           location.pathname.indexOf('/dashboard') <= -1 && (
@@ -78,7 +72,6 @@ const App = (props) => {
         {routing}
         {location.pathname.indexOf('/auth') <= -1 &&
           location.pathname !== '/forgotpassword' && <FooterContainer />}
-      </RTL>
     </ThemeProvider>
   );
 };
