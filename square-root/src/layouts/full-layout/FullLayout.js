@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
-import { experimentalStyled, useMediaQuery, Container, Box } from '@mui/material';
+import {
+  experimentalStyled,
+  useMediaQuery,
+  Container,
+  Box,
+} from '@mui/material';
 import { Outlet } from 'react-router-dom';
-import { useSelector } from 'react-redux';
 import Sidebar from './sidebar/Sidebar';
 import Header from './header/Header';
 import Footer from './footer/Footer';
-import Customizer from './customizer/Customizer';
 import { TopbarHeight } from '../../assets/global/Theme-variable';
 
 const MainWrapper = experimentalStyled('div')(() => ({
@@ -31,21 +34,20 @@ const PageWrapper = experimentalStyled('div')(({ theme }) => ({
 const FullLayout = () => {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
-  const customizer = useSelector((state) => state.CustomizerReducer);
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   return (
-    <MainWrapper className={customizer.activeMode === 'dark' ? 'darkbg' : ''}>
+    <MainWrapper>
       <Header
         sx={{
           paddingLeft: isSidebarOpen && lgUp ? '265px' : '',
-          backgroundColor: customizer.activeMode === 'dark' ? '#20232a' : '#fafbfb',
+          backgroundColor: '#fafbfb',
         }}
         toggleSidebar={() => setSidebarOpen(!isSidebarOpen)}
         toggleMobileSidebar={() => setMobileSidebarOpen(true)}
       />
 
       <Sidebar
-        isSidebardir={customizer.activeDir === 'ltr' ? 'left' : 'right'}
+        isSidebardir='left'
         isSidebarOpen={isSidebarOpen}
         isMobileSidebarOpen={isMobileSidebarOpen}
         onSidebarClose={() => setMobileSidebarOpen(false)}
@@ -62,7 +64,6 @@ const FullLayout = () => {
           <Box sx={{ minHeight: 'calc(100vh - 170px)' }}>
             <Outlet />
           </Box>
-          <Customizer />
           <Footer />
         </Container>
       </PageWrapper>

@@ -1,22 +1,8 @@
 import _ from 'lodash';
 import { createTheme } from '@mui/material/styles';
-import { useSelector } from 'react-redux';
 import typography from './Typography';
 import components from './Override';
 import shadows from './Shadows';
-
-// ##############################import {
-import {
-  BLUE_THEME,
-  GREEN_THEME,
-  RED_THEME,
-  BLACK_THEME,
-  PURPLE_THEME,
-  INDIGO_THEME,
-  ORANGE_THEME,
-} from '../../redux/constants';
-// // // Global Variables
-// ##############################
 
 const SidebarWidth = 265;
 const TopbarHeight = 70;
@@ -25,16 +11,16 @@ const baseTheme = {
   direction: 'ltr',
   palette: {
     primary: {
-      main: '#1a97f5',
-      light: '#e6f4ff',
-      dark: '#1682d4',
+      main: '#8ca68c',
+      light: '#bcd7bc',
+      dark: '#5e775f',
+      contrastText: '#ffffff',
     },
     secondary: {
-      main: '#1e4db7',
+      main: '#3e3d3d',
       light: '#ddebff',
       dark: '#173f98',
     },
-
     success: {
       main: '#00c292',
       light: '#ebfaf2',
@@ -50,9 +36,7 @@ const baseTheme = {
       light: '#a7e3f4',
     },
     error: {
-      main: '#e46a76',
-      light: '#fdf3f5',
-      dark: '#e45a68',
+      main: '#c10810',
     },
     warning: {
       main: '#fec90f',
@@ -100,132 +84,30 @@ const baseTheme = {
   shadows,
 };
 
-const themesOptions = [
-  {
-    name: BLUE_THEME,
-    palette: {
-      primary: {
-        main: '#1a97f5',
-        light: '#e6f4ff',
-        dark: '#1682d4',
-      },
-      secondary: {
-        main: '#1e4db7',
-        light: '#ddebff',
-        dark: '#173f98',
-      },
-    },
-  },
-  {
-    name: GREEN_THEME,
-    palette: {
-      primary: {
-        main: '#8ca68c',
-        light: '#bcd7bc',
-        dark: '#5e775f',
-        contrastText: '#ffffff',
-      },
-      secondary: {
-        main: '#3e3d3d',
-      },
-    },
-  },
-  {
-    name: PURPLE_THEME,
-    palette: {
-      primary: {
-        main: '#7352ff',
-        light: '#e5e0fa',
-        dark: '#5739d6',
-      },
-      secondary: {
-        main: '#402e8d',
-      },
-    },
-  },
-  {
-    name: INDIGO_THEME,
-    palette: {
-      primary: {
-        main: '#1e4db7',
-        light: '#e6f4ff',
-        dark: '#0c399e',
-      },
-      secondary: {
-        main: '#11397b',
-      },
-    },
-  },
-  {
-    name: ORANGE_THEME,
-    palette: {
-      primary: {
-        main: '#03c9d7',
-        light: '#e5fafb',
-        dark: '#05b2bd',
-        contrastText: '#ffffff',
-      },
-      secondary: {
-        main: '#fb9678',
-        light: '#fcf1ed',
-        dark: '#e67e5f',
-        contrastText: '#ffffff',
-      },
-    },
-  },
-  {
-    name: RED_THEME,
-    palette: {
-      primary: {
-        main: '#ff5c8e',
-        light: '#fce6ed',
-        dark: '#d43653',
-        contrastText: '#ffffff',
-      },
-      secondary: {
-        main: '#5e244d',
-      },
-    },
-  },
-  {
-    name: BLACK_THEME,
-    palette: {
-      primary: {
-        main: '#1c2025',
-      },
-    },
-  },
-];
-
-export const BuildTheme = (config = {}) => {
-  let themeOptions = themesOptions.find((theme) => theme.name === config.theme);
-  const customizer = useSelector((state) => state.CustomizerReducer);
-
+export const BuildTheme = () => {
   const baseMode = {
     palette: {
-      mode: customizer.activeMode,
+      mode: 'light',
       background: {
-        default: customizer.activeMode === 'dark' ? '#20232a' : '#fafbfb',
-        dark: customizer.activeMode === 'dark' ? '#1c2025' : '#ffffff',
-        paper: customizer.activeMode === 'dark' ? '#282C34' : '#ffffff',
+        default: '#fafbfb',
+        dark: '#ffffff',
+        paper: '#ffffff',
       },
       text: {
-        primary: customizer.activeMode === 'dark' ? '#e6e5e8' : 'rgba(0, 0, 0, 0.87)',
-        secondary: customizer.activeMode === 'dark' ? '#adb0bb' : '#777e89',
+        primary: 'rgba(0, 0, 0, 0.87)',
+        secondary: '#777e89',
       },
     },
   };
-  if (!themeOptions) {
-    console.warn(new Error(`The theme ${config.theme} is not valid`));
-    [themeOptions] = themesOptions;
-  }
 
   const theme = createTheme(
-    _.merge({}, baseTheme, baseMode, themeOptions, {
-      direction: config.direction,
-    }),
+    _.merge({}, baseTheme, baseMode, {
+      direction: 'ltr',
+    })
   );
   return theme;
 };
+
+export const theme = BuildTheme();
 
 export { TopbarHeight, SidebarWidth, baseTheme };
