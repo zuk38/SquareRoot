@@ -17,10 +17,11 @@ import CircleTwoToneIcon from '@mui/icons-material/CircleTwoTone';
 import FeatherIcon from 'feather-icons-react';
 import CustomSelect from '../forms/custom-elements/CustomSelect';
 import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
+import CustomFormModal from '../forms/custom-elements/CustomFormModal'
 
 
 
-const ProductDetail = () => {
+const ConceptDetail = () => {
   const [selectedValue, setSelectedValue] = React.useState('a');
 
   const handleChange = (event) => {
@@ -41,6 +42,7 @@ const ProductDetail = () => {
   };
   // rating
   const [value, setValue] = React.useState(2);
+
   return (
     <Box>
       {/* stock text */}
@@ -185,6 +187,8 @@ const ProductDetail = () => {
           Colors
         </CustomFormLabel>
         */}
+
+        {/*---- radio buttons / colors -----
         <Box
           sx={{
             ml: 2,
@@ -234,7 +238,9 @@ const ProductDetail = () => {
             }}
           />
         </Box>
+        */}
       </Box>
+      
       {/* sizes */}
       <Divider />
       <Box
@@ -362,20 +368,8 @@ const ProductDetail = () => {
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} lg={6}>
-          <Button
-            variant="contained"
-            size="large"
-            color="secondary"
-            sx={{
-              pt: '13px',
-              pb: '13px',
-              display: 'block',
-              width: '100%',
-              borderRadius: '9px',
-            }}
-          >
-            Add to Project
-          </Button>
+          <CustomFormModal title={"Add to Project"} icon={"plus"} formLabel1={"Select Project"} formLabel2={"Select Greenspace"}/>
+        
         </Grid>
       </Grid>
       {/* subtext */}
@@ -395,4 +389,4 @@ const ProductDetail = () => {
   );
 };
 
-export default ProductDetail;
+export default ConceptDetail;

@@ -1,10 +1,18 @@
 const typography = {
-  fontFamily: "'DM Sans', sans-serif",
+  fontFamily: ['Poppins', 'IBM Plex Serif'].join(','),
+  primary: {
+    fontFamily: 'Poppins',
+    fontWeight: 600,
+  },
+  secondary: {
+    fontFamily: 'IBM Plex Serif',
+    fontWeight: 700,
+    fontStyle: 'italic',
+  },
   body1: {
-    fontWeight: 400, // or 'bold'
+    fontWeight: 600, //Poppins
   },
   h1: {
-    fontWeight: 500,
     fontSize: '1.875rem',
     lineHeight: '1.5',
   },

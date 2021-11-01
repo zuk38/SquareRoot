@@ -16,7 +16,7 @@ import {
 } from './dashboard2-components';
 
 import { StyledEngineProvider } from '@mui/material/styles';
-import Tabs from '../../components/menus/tabs';
+import Tabs from './tabs';
 
 
 const Dashboard2 = () => (

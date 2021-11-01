@@ -7,13 +7,15 @@ const ProjectTitle = () => (
     //Project title
     <Typography
           color="textPrimary"
-          variant="h1"
+          variant="subtitle"
+          
           sx={{
-            ml: 2,
+            ml: 2.5,
             mt: 5
           }}
         >
-          Tekna
+          This is project description
+
         </Typography>
 )
 
