@@ -36,7 +36,6 @@ const Chats = lazy(() => import('../views/apps/chats/Chats'));
 const Notes = lazy(() => import('../views/apps/notes/Notes'));
 const Email = lazy(() => import('../views/apps/email/Email'));
 const Shop = lazy(() => import('../views/apps/shop/Shop'));
-const QuillEditor = lazy(() => import('../views/quill-editor/QuillEditor'));
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
 const CustomTimeline = lazy(() => import('../views/timeline/CustomTimeline'));
@@ -155,7 +154,6 @@ const Router = (isLoggedIn) => [
       { path: '/charts/radialbar-chart', element: <RadialbarChart /> },
       { path: '/react-icons', element: <ReactIcons /> },
       { path: '/form-layouts/form-custom', element: <FormCustom /> },
-      { path: '/quill-editor', element: <QuillEditor /> },
       { path: '/treeview', element: <Treeview /> },
       { path: '/pricing', element: <Pricing /> },
       { path: '/timeline', element: <CustomTimeline /> },
