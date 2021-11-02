@@ -102,10 +102,9 @@ const ExAlert = lazy(() => import('../views/alert/ExAlert'));
 const Router = (isLoggedIn) => [
   {
     path: '/',
-    element: <Home />,
+    element: <BlankLayout />,
     children: [
       /* landing page */
-      { path: '/', element: <Navigate to="/" /> },
       { path: '/', element: <Home /> },
       { path: 'en', element: <Home /> },
       { path: 'no', element: <Home /> },
