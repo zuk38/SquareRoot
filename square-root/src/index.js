@@ -13,13 +13,10 @@ import "./components/utility/i18n";
 import 'flag-icon-css/css/flag-icon.min.css'
 
 import Spinner from './views/spinner/Spinner';
-import Loading from "./components/Loading";
 //mport Amplify from "aws-amplify";
 //import config from "./aws-exports";
 //Amplify.configure(config);
 require("dotenv").config();
-
-{/*const loadingMarkup = (<Loading />)*/}
 
 ReactDOM.render(
   <Provider store={configureStore()}>

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { API } from "aws-amplify";
-import Loading from "./Loading";
+
 import useForm from "./hooks/useForm";
 import validate from "./utility/ContactFormValidation";
 import "../styles/Partner.css";
@@ -55,9 +55,9 @@ export default function ContactForm(props) {
 
   return (
     <>
-      {isSending ? (
+      {/*isSending ? (
         <Loading />
-      ) : (
+      ) : (*/}
         <>
           {sent && (
             <Alert
@@ -259,7 +259,7 @@ export default function ContactForm(props) {
             )}
           </form>
         </>
-      )}{" "}
+      {/*)}{" "}*/}
     </>
   );
 }

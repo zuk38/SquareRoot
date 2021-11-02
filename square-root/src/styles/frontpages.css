@@ -855,7 +855,7 @@ input:focus {
 
 .img-wrap-rooftop {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../images/landscape--rooftop_redigert.png);
+    url("../images/concepts/landscape--rooftop_redigert.png");
   background-size: cover;
   width: 90%;
   height: 100%;
@@ -879,7 +879,7 @@ input:focus {
 
 .img-wrap-rainbed {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../images/leaf_rooftop_4_redigert.jpg);
+    url("../images/concepts/leaf_rooftop_4_redigert.jpg");
   background-size: cover;
   width: 90%;
   height: 100%;
@@ -891,7 +891,7 @@ input:focus {
 
 .img-wrap-indoor {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url(../images/landscape--indoor_redigert.jpg);
+    url("../images/concepts/landscape--indoor_redigert.jpg");
   background-size: cover;
   width: 90%;
   height: 100%;

@@ -6,10 +6,25 @@ const FullLayout = lazy(() => import('../layouts/full-layout/FullLayout'));
 const BlankLayout = lazy(() => import('../layouts/blank-layout/BlankLayout'));
 /* ***End Layouts**** */
 
-const Error = lazy(() => import('../views/authentication/Error'));
+/* *** Landing page *** */
+const Home = lazy(() => import('../views/landing/Home'));
+const Who = lazy(() => import('../views/landing/Who'));
+const Howitworks = lazy(() => import('../views/landing/Howitworks'));
+const About = lazy(() => import('../views/landing/About'));
+const Contact = lazy(() => import('../views/landing/Contact'));
+const Partner = lazy(() => import('../views/landing/Partner'));
+const What = lazy(() => import('../views/landing/What'));
+const Categories = lazy(() => import('../views/landing/Categories'));
+const SingleConcept = lazy(() => import('../views/landing/SingleConcept'));
+const SingleCategory = lazy(() => import('../views/landing/SingleCategory'));
+const Error = lazy(() => import('../views/Error'));
+
+/* *** Auth *** */
 const Login = lazy(() => import('../views/authentication/Login'));
 const Register = lazy(() => import('../views/authentication/Register'));
-const ResetPassword = lazy(() => import('../views/authentication/ResetPassword'));
+const ResetPassword = lazy(() =>
+  import('../views/authentication/ResetPassword')
+);
 
 /* ****Pages***** */
 const Dashboard1 = lazy(() => import('../views/dashboards/Dashboard1'));
@@ -21,14 +36,17 @@ const Chats = lazy(() => import('../views/apps/chats/Chats'));
 const Notes = lazy(() => import('../views/apps/notes/Notes'));
 const Email = lazy(() => import('../views/apps/email/Email'));
 const Shop = lazy(() => import('../views/apps/shop/Shop'));
-const QuillEditor = lazy(() => import('../views/quill-editor/QuillEditor'));
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
 const CustomTimeline = lazy(() => import('../views/timeline/CustomTimeline'));
-const CustomTypography = lazy(() => import('../views/typography/CustomTypography'));
+const CustomTypography = lazy(() =>
+  import('../views/typography/CustomTypography')
+);
 const Calendar = lazy(() => import('../views/apps/calendar/ACalendar'));
 const CustomerEdit = lazy(() => import('../views/apps/customers/CustomerEdit'));
-const CustomerLists = lazy(() => import('../views/apps/customers/CustomerLists'));
+const CustomerLists = lazy(() =>
+  import('../views/apps/customers/CustomerLists')
+);
 /* ****Tables***** */
 const BasicTable = lazy(() => import('../views/tables/BasicTable'));
 const PaginationTable = lazy(() => import('../views/tables/PaginationTable'));
@@ -37,7 +55,9 @@ const CollapsibleTable = lazy(() => import('../views/tables/CollapsibleTable'));
 const FixedHeaderTable = lazy(() => import('../views/tables/FixedHeaderTable'));
 
 // form elements
-const ExAutoComplete = lazy(() => import('../views/form-elements/ExAutoComplete'));
+const ExAutoComplete = lazy(() =>
+  import('../views/form-elements/ExAutoComplete')
+);
 const ExButton = lazy(() => import('../views/form-elements/ExButton'));
 const ExCheckbox = lazy(() => import('../views/form-elements/ExCheckbox'));
 const ExDateTime = lazy(() => import('../views/form-elements/ExDateTime'));
@@ -50,8 +70,12 @@ const FormLayouts = lazy(() => import('../views/form-layouts/FormLayouts'));
 const FormCustom = lazy(() => import('../views/form-layouts/FormCustom'));
 
 // widgets
-const WidgetFeed = lazy(() => import('../views/widgets/widget-feed/WidgetFeed'));
-const WidgetApps = lazy(() => import('../views/widgets/widget-apps/WidgetApps'));
+const WidgetFeed = lazy(() =>
+  import('../views/widgets/widget-feed/WidgetFeed')
+);
+const WidgetApps = lazy(() =>
+  import('../views/widgets/widget-apps/WidgetApps')
+);
 
 // userprofile
 const UserProfile = lazy(() => import('../views/user-profile/UserProfile'));
@@ -74,16 +98,29 @@ const ExAlert = lazy(() => import('../views/alert/ExAlert'));
 
 /* ****Routes***** */
 
-const Router = [
+const Router = (isLoggedIn) => [
   {
     path: '/',
-    element: <FullLayout />,
+    element: <BlankLayout />,
     children: [
-      { path: '/', element: <Navigate to="/dashboards/dashboard1" /> },
-      { path: '/dashboards/dashboard1', exact: true, element: <Dashboard1 /> },
-      { path: '/dashboards/dashboard2', exact: true, element: <Dashboard2 /> },
-      { path: '/dashboards/dashboard3', exact: true, element: <Dashboard3 /> },
-      { path: '/customers/lists', exact: true, element: <CustomerLists /> },
+      /* landing page */
+      { path: '/', element: <Home /> },
+      { path: 'en', element: <Home /> },
+      { path: 'no', element: <Home /> },
+      { path: 'who-we-are', element: <Who /> },
+      { path: 'how-it-works', element: <Howitworks /> },
+      { path: 'about-us', element: <About /> },
+      { path: 'become-a-partner', element: <Partner /> },
+      { path: 'what-we-do', element: <What /> },
+      { path: 'contact-us', element: <Contact /> },
+      { path: 'categories', element: <Categories /> },
+      { path: 'concepts/:name', element: <SingleConcept /> },
+      { path: 'categories/:name', element: <SingleCategory /> },
+      { path: '404', element: <Error /> },
+
+      /* template elements will be refactored later */
+
+      { path: '/customers/lists', element: <CustomerLists /> },
       { path: '/chats', element: <Chats /> },
       { path: '/notes', element: <Notes /> },
       { path: '/email', element: <Email /> },
@@ -117,24 +154,38 @@ const Router = [
       { path: '/charts/radialbar-chart', element: <RadialbarChart /> },
       { path: '/react-icons', element: <ReactIcons /> },
       { path: '/form-layouts/form-custom', element: <FormCustom /> },
-      { path: '/quill-editor', element: <QuillEditor /> },
       { path: '/treeview', element: <Treeview /> },
       { path: '/pricing', element: <Pricing /> },
       { path: '/timeline', element: <CustomTimeline /> },
       { path: '/typography', element: <CustomTypography /> },
       { path: '/alert', element: <ExAlert /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
+      { path: '*', element: <Navigate to='/404' /> },
     ],
   },
+  /* platform */
+  {
+    path: 'dashboard',
+    element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
+    children: [
+      { path: 'dashboard1', element: <Dashboard1 /> },
+      { path: 'dashboard2', element: <Dashboard2 /> },
+      { path: 'dashboard3', element: <Dashboard3 /> },
+      { path: '*', element: <Navigate to='/404' /> },
+    ],
+  },
+  /* auth */
   {
     path: 'auth',
-    element: <BlankLayout />,
+    element: !isLoggedIn ? (
+      <BlankLayout />
+    ) : (
+      <Navigate to='/dashboard/dashboard1' />
+    ),
     children: [
-      { path: '404', element: <Error /> },
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
       { path: 'reset-password', element: <ResetPassword /> },
-      { path: '*', element: <Navigate to="/auth/404" /> },
+      { path: '*', element: <Navigate to='/404' /> },
     ],
   },
 ];
