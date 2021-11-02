@@ -22,10 +22,11 @@ import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 import { checkEmail, checkPassword } from '../../utility/Validation';
+import useForm from '../../components/hooks/useForm';
 
 export default function Login() {
-  const [values, setValues] = useState({});
-  const [errors, setErrors] = useState({});
+  const validate = () => {};
+  const { values, errors, handleChange } = useForm(true, validate);
 
   return (
     <PageContainer title='Login' description='this is Login page'>

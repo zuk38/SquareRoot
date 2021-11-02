@@ -1,9 +1,9 @@
 import { useState } from 'react';
 
 const useForm = (
-  initialFormValues = {},
   validateOnChange = false,
-  validate
+  validate,
+  initialFormValues = {},
 ) => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
