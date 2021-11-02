@@ -185,7 +185,6 @@ export default function Login() {
                     variant='contained'
                     size='large'
                     fullWidth
-                    onClick={() => setAuthStatus(true)}
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -301,117 +300,6 @@ export default function Login() {
                       </Box>
                     </Button>
                   </Box>
-
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} lg={6}>
-                      <Button
-                        variant='outlined'
-                        size='large'
-                        display='flex'
-                        alignitems='center'
-                        justifycontent='center'
-                        sx={{
-                          width: '100%',
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
-                          borderWidth: '2px',
-                          textAlign: 'center',
-                          mt: 2,
-                          pt: '10px',
-                          pb: '10px',
-                          '&:hover': {
-                            borderColor: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? '#42464d'
-                                  : '#dde3e8'
-                              }`,
-                            borderWidth: '2px',
-                          },
-                        }}
-                      >
-                        <Box display='flex' alignItems='center'>
-                          <FacebookIcon
-                            sx={{
-                              color: (theme) => theme.palette.secondary.main,
-                            }}
-                          />
-                          <Typography
-                            variant='h6'
-                            sx={{
-                              ml: 1,
-                              color: (theme) =>
-                                `${
-                                  theme.palette.mode === 'dark'
-                                    ? theme.palette.grey.A200
-                                    : '#13152a'
-                                }`,
-                            }}
-                          >
-                            Facebook
-                          </Typography>
-                        </Box>
-                      </Button>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={6}>
-                      <Button
-                        variant='outlined'
-                        size='large'
-                        display='flex'
-                        alignitems='center'
-                        justifycontent='center'
-                        sx={{
-                          width: '100%',
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
-                          borderWidth: '2px',
-                          textAlign: 'center',
-                          mt: 2,
-                          pt: '10px',
-                          pb: '10px',
-                          '&:hover': {
-                            borderColor: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? '#42464d'
-                                  : '#dde3e8'
-                              }`,
-                            borderWidth: '2px',
-                          },
-                        }}
-                      >
-                        <Box display='flex' alignItems='center'>
-                          <TwitterIcon
-                            sx={{
-                              color: (theme) => theme.palette.primary.main,
-                            }}
-                          />
-                          <Typography
-                            variant='h6'
-                            sx={{
-                              ml: 1,
-                              color: (theme) =>
-                                `${
-                                  theme.palette.mode === 'dark'
-                                    ? theme.palette.grey.A200
-                                    : '#13152a'
-                                }`,
-                            }}
-                          >
-                            Twitter
-                          </Typography>
-                        </Box>
-                      </Button>
-                    </Grid>
-                  </Grid>
                 </Box>
               </Box>
             </Grid>

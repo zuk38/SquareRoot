@@ -9,12 +9,12 @@ const useForm = (
   const [errors, setErrors] = useState({});
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { id, value } = e.target;
     setValues({
       ...values,
-      [name]: value,
+      [id]: value,
     });
-    if (validateOnChange) validate({ [name]: value });
+    if (validateOnChange) validate({ [id]: value });
   };
 
   const resetForm = () => {
