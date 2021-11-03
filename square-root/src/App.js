@@ -46,7 +46,7 @@ import IndoorExample from "./pages/greenspaces/IndoorExample";
 import ScrollToTop from "./components/utility/ScrollToTop";
 import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
-}
+
 
 
 const App = (props) => {
