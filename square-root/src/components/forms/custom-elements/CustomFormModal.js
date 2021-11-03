@@ -54,6 +54,7 @@ export default function FormDialog(props) {
       
       <DialogTitle>
         <Typography
+          variant="h4"
           fontWeight="700"
           sx={{
             marginBottom: '0',

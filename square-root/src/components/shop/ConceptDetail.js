@@ -43,6 +43,11 @@ const ConceptDetail = () => {
   // rating
   const [value, setValue] = React.useState(2);
 
+  const addToProjectModal = [{
+    title: "Add to Project",
+    header: "Select Project",
+  }
+  ]
   return (
     <Box>
       {/* stock text */}
@@ -368,7 +373,7 @@ const ConceptDetail = () => {
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} lg={6}>
-          <CustomFormModal title={"Add to Project"} icon={"plus"} formLabel1={"Select Project"} formLabel2={"Select Greenspace"}/>
+          <CustomFormModal title={"Add to Project"} formLabel1={"Select Project"} formLabel2={"Select Greenspace"}/>
         
         </Grid>
       </Grid>

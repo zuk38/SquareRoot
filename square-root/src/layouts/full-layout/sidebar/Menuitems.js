@@ -56,6 +56,7 @@ const Menuitems = [
     icon: 'list',
     href: '',
   },
+  /** 
   {
     navlabel: true,
     subheader: 'FLEXY ADDONS',
@@ -327,6 +328,7 @@ const Menuitems = [
     icon: 'octagon',
     href: '/charts/radialbar-chart',
   },
+  */
   {
     navlabel: true,
     subheader: 'AUTHENTICATION',

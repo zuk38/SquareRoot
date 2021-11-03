@@ -38,7 +38,15 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
   const SidebarContent = (
     <Scrollbar style={{ height: 'calc(100vh - 5px)' }}>
       <Box sx={{ p: 2 }}>
-        <LogoIcon />
+      <Box sx={{ p: 2 }}>
+       <LogoIcon />
+       <Typography
+                      variant="secondary" //not yet updated with IBM font
+                      sx={{mt: 1, opacity: '0.6' }}
+                    >
+                       The new platform for greenspaces
+                    </Typography>
+        </Box>
         <Box>
           <List>
             {Menuitems.map((item, index) => {
@@ -47,8 +55,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                 return (
                   <li key={item.subheader}>
                     <Typography
-                      variant="subtitle2"
-                      fontWeight="500"
+                      variant="body1"
                       sx={{ my: 2, mt: 4, opacity: '0.4' }}
                     >
                       {item.subheader}

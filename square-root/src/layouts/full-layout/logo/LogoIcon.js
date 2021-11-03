@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import logoSM from "../../../assets/images/logos/logo-is-dark-small.png";
+import logoSM from "../../../assets/images/logos/logo-is-dark-cc-small.png";
 
 const LogoIcon = () => {
   const customizer = useSelector((state) => state.CustomizerReducer);
