@@ -10,7 +10,7 @@ import { withUserConsumer } from './context/user';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
 
-  /*}
+/*}
 
 import {
   BrowserRouter as Router,
@@ -47,8 +47,6 @@ import ScrollToTop from "./components/utility/ScrollToTop";
 import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
 
-
-
 const App = (props) => {
   const location = useLocation();
 
@@ -61,17 +59,17 @@ const App = (props) => {
   };
 
   const routing = useRoutes(Router(isAuthenticated));
-  
+
   return (
     <ThemeProvider theme={theme}>
-        <CssBaseline />
-        {location.pathname.indexOf('/auth') <= -1 &&
-          location.pathname.indexOf('/dashboard') <= -1 && (
-            <Navbar {...props} auth={authProps} />
-          )}
-        {routing}
-        {location.pathname.indexOf('/auth') <= -1 &&
-          location.pathname !== '/forgotpassword' && <FooterContainer />}
+      <CssBaseline />
+      {location.pathname.indexOf('/auth') <= -1 &&
+        location.pathname.indexOf('/dashboard') <= -1 && (
+          <Navbar {...props} auth={authProps} />
+        )}
+      {routing}
+      {location.pathname.indexOf('/auth') <= -1 &&
+        location.pathname !== '/forgotpassword' && <FooterContainer />}
     </ThemeProvider>
   );
 };
