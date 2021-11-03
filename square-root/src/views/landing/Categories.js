@@ -1,7 +1,6 @@
 import React from "react";
 import "../../styles/frontpages.css";
 import { withConceptConsumer } from "../../context/concepts";
-import Loading from "../../components/Loading";
 import { useNavigate } from "react-router-dom";
 
 function Categories({ context }) {
@@ -13,7 +12,7 @@ function Categories({ context }) {
 
   let { loadCat, categories } = context;
 
-  if (loadCat) return <Loading />;
+  /*if (loadCat) return <Loading />;*/
 
   return (
     <div className="c-section background-grey">

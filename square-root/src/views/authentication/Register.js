@@ -15,15 +15,20 @@ import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 const Register = () => (
-  <PageContainer title="Register" description="this is Register page">
-    <Grid container spacing={0} sx={{ height: '100vh', justifyContent: 'center' }}>
+  <PageContainer title='Register' description='this is Register page'>
+    <Grid
+      container
+      spacing={0}
+      sx={{ height: '100vh', justifyContent: 'center' }}
+    >
       <Grid
         item
         xs={12}
         sm={12}
         lg={6}
         sx={{
-          background: (theme) => `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+          background: (theme) =>
+            `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
         }}
       >
         <Box
@@ -32,9 +37,9 @@ const Register = () => (
           }}
         >
           <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
             sx={{
               position: {
                 xs: 'relative',
@@ -47,7 +52,7 @@ const Register = () => (
           >
             <img
               src={img1}
-              alt="bg"
+              alt='bg'
               style={{
                 width: '100%',
                 maxWidth: '812px',
@@ -56,8 +61,8 @@ const Register = () => (
           </Box>
 
           <Box
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             sx={{
               p: 4,
               position: 'absolute',
@@ -68,22 +73,22 @@ const Register = () => (
           </Box>
         </Box>
       </Grid>
-      <Grid item xs={12} sm={8} lg={6} display="flex" alignItems="center">
-        <Grid container spacing={0} display="flex" justifyContent="center">
+      <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
+        <Grid container spacing={0} display='flex' justifyContent='center'>
           <Grid item xs={12} lg={9} xl={6}>
             <Box
               sx={{
                 p: 4,
               }}
             >
-              <Typography fontWeight="700" variant="h2">
+              <Typography fontWeight='700' variant='h2'>
                 Welcome to SquareRoot
               </Typography>
-              <Box display="flex" alignItems="center">
+              <Box display='flex' alignItems='center'>
                 <Typography
-                  color="textSecondary"
-                  variant="h6"
-                  fontWeight="400"
+                  color='textSecondary'
+                  variant='h6'
+                  fontWeight='400'
                   sx={{
                     mr: 1,
                   }}
@@ -92,8 +97,8 @@ const Register = () => (
                 </Typography>
                 <Typography
                   component={Link}
-                  to="/auth/login"
-                  fontWeight="500"
+                  to='/auth/login'
+                  fontWeight='500'
                   sx={{
                     display: 'block',
                     textDecoration: 'none',
@@ -108,39 +113,47 @@ const Register = () => (
                   mt: 5,
                 }}
               >
-                <CustomFormLabel htmlFor="name">Name</CustomFormLabel>
-                <CustomTextField id="name" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="email">Email Address</CustomFormLabel>
-                <CustomTextField id="email" variant="outlined" fullWidth />
-                <CustomFormLabel htmlFor="password">Password</CustomFormLabel>
-                <CustomTextField
-                  id="password"
-                  variant="outlined"
-                  fullWidth
-                />
+                <CustomFormLabel htmlFor='name'>Name</CustomFormLabel>
+                <CustomTextField id='name' variant='outlined' fullWidth />
+                <CustomFormLabel htmlFor='email'>Email Address</CustomFormLabel>
+                <CustomTextField id='email' variant='outlined' fullWidth />
+                <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
+                <CustomTextField id='password' variant='outlined' fullWidth />
                 {/** --- verify passwords ---- */}
-                <CustomFormLabel htmlFor="password">Repeat Password</CustomFormLabel>
-                <CustomTextField
-                  id="password"
-                  variant="outlined"
-                  fullWidth
-                />
+                <CustomFormLabel htmlFor='password'>
+                  Repeat Password
+                </CustomFormLabel>
+                <CustomTextField id='password' variant='outlined' fullWidth />
 
                 <SignUpDropdown />
 
                 <Button
-                  color="secondary"
-                  variant="contained"
-                  size="large"
+                  color='secondary'
+                  variant='contained'
+                  size='large'
                   fullWidth
                   component={Link}
-                  to="/"
+                  to='/'
                   sx={{
                     pt: '10px',
                     pb: '10px',
                   }}
                 >
                   Sign Up
+                </Button>
+                <Button
+                  color='secondary'
+                  size='large'
+                  fullWidth
+                  component={Link}
+                  to='/'
+                  sx={{
+                    pt: '10px',
+                    pb: '10px',
+                    mt: 2,
+                  }}
+                >
+                  Back to Home
                 </Button>
 
                 {/** ----- or sign in with ---- not needed ---

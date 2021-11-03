@@ -43,9 +43,9 @@ export function FooterContainer() {
           </Column>
           <Column>
             <Title>{t("footer.about")}</Title>
+            <FooterLink href="/who-we-are">{t("footer.why")}</FooterLink>
             <FooterLink href="/what-we-do">{t("footer.what")}</FooterLink>
             <FooterLink href="/how-it-works">{t("footer.how")}</FooterLink>
-            <FooterLink href="/why-us">{t("footer.why")}</FooterLink>
           </Column>
 
           <Column>
@@ -74,12 +74,12 @@ export function FooterContainer() {
       <Bottom>
         <BottomLeft>&copy; {new Date().getFullYear()} SquareRoot</BottomLeft>
         <BottomRight>
-          <Document href="https://squareroot-as.github.io/SquareRoot/privacy.html">
+          <Document href="https://squareroot-as.github.io/SquareRoot/privacy.html" target="_blank">
             Privacy Policy
           </Document>
           |
-          <Document href="https://squareroot-as.github.io/SquareRoot/tou.html">
-            Terms of Service
+          <Document href="https://squareroot-as.github.io/SquareRoot/tou.html" target="_blank">
+            Terms of Use
           </Document>
         </BottomRight>
       </Bottom>

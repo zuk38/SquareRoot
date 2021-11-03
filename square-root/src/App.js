@@ -1,14 +1,17 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { useRoutes } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import Router from './routes/Router';
 import 'react-perfect-scrollbar/dist/css/styles.css';
-import { BuildTheme, theme } from './assets/global/Theme-variable';
+import './App.css';
+import { useLocation } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import { withUserConsumer } from './context/user';
+import { FooterContainer } from './components/footer/FooterContainer';
+import { theme } from './assets/global/Theme-variable';
 
-{
-  /*}
+/*}
 
-import "./App.css";
 import {
   BrowserRouter as Router,
   Routes,
@@ -31,7 +34,7 @@ import Howitworks from "./pages/frontpages/Howitworks";
 import Who from "./pages/frontpages/Who";
 import Categories from "./pages/frontpages/Categories";
 import SingleCategory from "./pages/frontpages/SingleCategory";
-import { FooterContainer } from "./components/footer/FooterContainer";
+
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
 import Account from "./pages/user-pages/Account";
@@ -39,24 +42,39 @@ import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
 import IndoorExample from "./pages/greenspaces/IndoorExample";
-import { withUserConsumer } from "./context/user";
+
 import ScrollToTop from "./components/utility/ScrollToTop";
 import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
-}
 
-const App = () => {
-  const routing = useRoutes(Router);
+const App = (props) => {
+  const location = useLocation();
+
+  const { isAuthenticated, isAuthenticating, user, logout } = props.context;
+
+  const authProps = {
+    isAuthenticated: isAuthenticated,
+    user: user,
+    logout: logout,
+  };
+
+  const routing = useRoutes(Router(isAuthenticated));
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
+      {location.pathname.indexOf('/auth') <= -1 &&
+        location.pathname.indexOf('/dashboard') <= -1 && (
+          <Navbar {...props} auth={authProps} />
+        )}
       {routing}
+      {location.pathname.indexOf('/auth') <= -1 &&
+        location.pathname !== '/forgotpassword' && <FooterContainer />}
     </ThemeProvider>
   );
 };
 
-export default App;
+export default withUserConsumer(App);
 
 {
   /** ----- landing page ---- 

@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from "react";
-import logo from "../../images/logo--dark.png";
+import logo from "../../images/logos/logo--dark.png";
 import { Link, NavLink } from "react-router-dom";
 import { useNavigate } from 'react-router-dom';
 import { NavbarData } from "./NavbarData";
@@ -172,10 +172,9 @@ export default function Navbar(props) {
           {/*language */}
           <LanguageSelect />
           {/* user */}
-          {/** 
           {!props.auth.isAuthenticated ? (
             <NavButton
-              onClick={() => closeMobileMenu("/login")}
+              onClick={() => closeMobileMenu("/auth/login")}
               endIcon={<FaUser />}
             >
               <Trans i18nKey="signIn">Sign in</Trans>
@@ -194,7 +193,7 @@ export default function Navbar(props) {
                 setDropdown={(value) => setDropdown(value)}
               />
             </div>
-          )}*/}
+          )}
 
           {/*sidebar*/}
           <div className="sidebar-bars" onClick={handleClick}>
