@@ -21,12 +21,11 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-import { checkEmail, checkPassword } from '../../utility/Validation';
 import { withUserConsumer } from '../../context/user';
 import useForm from '../../components/hooks/useForm';
+import validate from '../../utility/LoginFormValidation';
 
 export default function Login() {
-  const validate = () => {};
   const { values, errors, handleChange } = useForm(true, validate);
 
   return (
@@ -129,12 +128,24 @@ export default function Login() {
                   <CustomFormLabel htmlFor='email'>
                     Email Address
                   </CustomFormLabel>
-                  <CustomTextField id='email' variant='outlined' fullWidth />
+                  <CustomTextField
+                    id='email'
+                    variant='outlined'
+                    fullWidth
+                    value={values.email || ''}
+                    onChange={handleChange}
+                    error={errors.email}
+                    helperText={errors.email}
+                  />
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
                     id='password'
                     type='password'
                     variant='outlined'
+                    value={values.password || ''}
+                    onChange={handleChange}
+                    error={errors.password}
+                    helperText={errors.password}
                     fullWidth
                     sx={{
                       mb: 3,

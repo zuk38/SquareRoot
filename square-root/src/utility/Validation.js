@@ -36,13 +36,15 @@ function validatePhone(phone) {
 //--------------------------------------------------------------------------------------------
 
 function checkEmail(values, errors) {
-  if (!values.email) errors.email = "E-mail adress is required";
+  console.log("lalala")
+  if (!values.email || values.email.length === 0) errors.email = "E-mail adress is required";
   else if (!validateRegexString(values.email))
     errors.email = "E-mail adress is invalid";
 }
 
 function checkPassword(values, errors) {
-  if (!values.password) errors.password = "Password is required";
+  if (!('password' in values)) return
+  if (!values.password || values.password.length === 0) errors.password = "Password is required";
   else if (values.password.length < PASSLENGTH)
     errors.password = "Password must be 8 or more characters";
   else if (!hasLowerCase(values.password))

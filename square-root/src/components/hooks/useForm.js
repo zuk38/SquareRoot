@@ -3,7 +3,7 @@ import { useState } from 'react';
 const useForm = (
   validateOnChange = false,
   validate,
-  initialFormValues = {},
+  initialFormValues = {}
 ) => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
@@ -14,7 +14,7 @@ const useForm = (
       ...values,
       [id]: value,
     });
-    if (validateOnChange) validate({ [id]: value });
+    if (validateOnChange) setErrors(validate(values));
   };
 
   const resetForm = () => {
@@ -28,7 +28,7 @@ const useForm = (
     errors,
     setErrors,
     handleChange,
-    resetForm
+    resetForm,
   };
 };
 
