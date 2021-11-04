@@ -1,11 +1,11 @@
-import React, { useEffect } from "react";
-import Modal from "react-modal";
-import { ReactComponent as DeleteIcon } from "../../icons/delete.svg";
-import ModifyPlantsQuantity from "./ModifyPlantsQuantity";
+import React, { useEffect } from 'react';
+import Modal from 'react-modal';
+import { ReactComponent as DeleteIcon } from '../../icons/delete.svg';
+import ModifyPlantsQuantity from './ModifyPlantsQuantity';
 
 export default function ProjectPlantsModal(props) {
   useEffect(() => {
-    Modal.setAppElement("body");
+    Modal.setAppElement('body');
   }, []);
 
   const {
@@ -31,32 +31,32 @@ export default function ProjectPlantsModal(props) {
   };
 
   const saveConcept = async () => {
-    setModalOpen(false)
-    await saveModifiedConcept()
+    setModalOpen(false);
+    await saveModifiedConcept();
   };
 
   return (
     <Modal
       isOpen={modalOpen}
       onRequestClose={() => setModalOpen(false)}
-      className="project-plants-modal"
+      className='project-plants-modal'
     >
-      <div className="project-plants-modal-content">
+      <div className='project-plants-modal-content'>
         <h1>
           Det er <strong>{plantsNumber}</strong> planter i {name}
         </h1>
         {plants && plants.length != 0 ? (
           plants.map((plant) => (
-            <div className="item" key={plant.norwegian_name}>
-              <div className="buttons">
-                <span className="delete-btn">
+            <div className='item' key={plant.norwegian_name}>
+              <div className='buttons'>
+                <span className='delete-btn'>
                   <DeleteIcon onClick={() => onRemoveCompletely(plant)} />
                 </span>
               </div>
-              <div className="plant-img">
+              <div className='plant-img'>
                 <img src={plant.image} alt={plant.norwegian_name} />
               </div>
-              <div className="description">
+              <div className='description'>
                 <span>{plant.norwegian_name}</span>
                 <span>{plant.latin_name}</span>
                 {/*plant.categories.map((c) => (
@@ -76,19 +76,15 @@ export default function ProjectPlantsModal(props) {
           <h1>No plants</h1>
         )}
       </div>
-      <div className="modal-btns-footer">
+      <div className='modal-btns-footer'>
         <button
-          className="orders-btn-close"
+          className='orders-btn-close'
           onClick={() => setModalOpen(false)}
-          alt="Lukk"
+          alt='Lukk'
         >
           LUKK
         </button>
-        <button
-          className="orders-btn-save"
-          onClick={saveConcept}
-          alt="Lagre"
-        >
+        <button className='orders-btn-save' onClick={saveConcept} alt='Lagre'>
           LAGRE
         </button>
       </div>

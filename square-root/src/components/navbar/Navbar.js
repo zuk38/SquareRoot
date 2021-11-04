@@ -1,18 +1,18 @@
-import React, { useEffect, useState, useRef } from "react";
-import logo from "../../images/logos/logo--dark.png";
-import { Link, NavLink } from "react-router-dom";
+import React, { useEffect, useState, useRef } from 'react';
+import logo from '../../images/logos/logo--dark.png';
+import { Link, NavLink } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
-import { NavbarData } from "./NavbarData";
-import useWindowDimensions from "../hooks/useWindowDimensions";
-import Dropdown from "./Dropdown";
-import { ReactComponent as MenuIcon } from "../../icons/menu.svg";
-import { ReactComponent as CloseIcon } from "../../icons/close.svg";
-import NavbarDropdown from "./NavbarDropdown";
-import useOutsideAlerter from "../hooks/useOutsideAlerter";
-import { Trans, useTranslation } from "react-i18next";
-import LanguageSelect from "./LanguageSelect";
-import { FaAngleDown, FaUser } from "react-icons/fa";
-import { NavButton } from "./NavButton";
+import { NavbarData } from './NavbarData';
+import useWindowDimensions from '../hooks/useWindowDimensions';
+import Dropdown from './Dropdown';
+import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
+import { ReactComponent as CloseIcon } from '../../icons/close.svg';
+import NavbarDropdown from './NavbarDropdown';
+import useOutsideAlerter from '../hooks/useOutsideAlerter';
+import { Trans, useTranslation } from 'react-i18next';
+import LanguageSelect from './LanguageSelect';
+import { FaAngleDown, FaUser } from 'react-icons/fa';
+import { NavButton } from './NavButton';
 
 export default function Navbar(props) {
   let navigate = useNavigate();
@@ -39,7 +39,7 @@ export default function Navbar(props) {
     if (path === undefined) return;
     else {
       navigate(path);
-      if (path.indexOf("/categories") > -1) navigate.go(0);
+      if (path.indexOf('/categories') > -1) navigate.go(0);
     }
   };
 
@@ -58,21 +58,21 @@ export default function Navbar(props) {
 
   return (
     <>
-      <nav className="nav">
-        <div className="nav-header">
-          <Link to="/">
-            <img src={logo} alt="SQUAREROOT" />
+      <nav className='nav'>
+        <div className='nav-header'>
+          <Link to='/'>
+            <img src={logo} alt='SQUAREROOT' />
           </Link>
         </div>
         {click ? (
-          <ul className="nav-menu active">
+          <ul className='nav-menu active'>
             {NavbarData.map((item, index) => (
               <>
                 {!item.dropdown ? (
                   <NavLink
                     to={item.path}
                     key={index}
-                    className="nav-links-no-hover"
+                    className='nav-links-no-hover'
                     onClick={() => closeMobileMenu(item.path)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
@@ -80,7 +80,7 @@ export default function Navbar(props) {
                 ) : (
                   <div
                     key={index}
-                    className="nav-links-no-hover-title"
+                    className='nav-links-no-hover-title'
                     onClick={() => closeMobileMenu(undefined)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
@@ -91,7 +91,7 @@ export default function Navbar(props) {
                     <NavLink
                       to={item.path}
                       key={index}
-                      className="sub-item"
+                      className='sub-item'
                       onClick={() => closeMobileMenu(item.path)}
                     >
                       <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
@@ -101,21 +101,21 @@ export default function Navbar(props) {
             ))}
           </ul>
         ) : (
-          <ul className="nav-menu">
+          <ul className='nav-menu'>
             {NavbarData.map((item, index) =>
               item.dropdown ? (
                 <li
                   key={index}
-                  className="nav-item"
+                  className='nav-item'
                   onMouseEnter={() => onMouseEnter(item.dropdown)}
                   onMouseLeave={onMouseLeave}
                 >
                   <div
-                    className="nav-links-no-hover-title"
+                    className='nav-links-no-hover-title'
                     onClick={() => closeMobileMenu(undefined)}
                   >
                     <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
-                    <i className="fas fa-caret-down" />
+                    <i className='fas fa-caret-down' />
                   </div>
                   {
                     {
@@ -144,11 +144,11 @@ export default function Navbar(props) {
                   }
                 </li>
               ) : (
-                <li key={index} className="nav-item">
+                <li key={index} className='nav-item'>
                   {!item.dropdown ? (
                     <NavLink
                       to={item.path}
-                      className={click ? "nav-links-no-hover" : "nav-links"}
+                      className={click ? 'nav-links-no-hover' : 'nav-links'}
                       onClick={() => closeMobileMenu(item.path)}
                     >
                       <Trans i18nKey={item.i18nKey}>{item.title}</Trans>
@@ -156,7 +156,7 @@ export default function Navbar(props) {
                   ) : (
                     <div
                       className={
-                        click ? "nav-links-no-hover-title" : "nav-links-title"
+                        click ? 'nav-links-no-hover-title' : 'nav-links-title'
                       }
                       onClick={() => closeMobileMenu(undefined)}
                     >
@@ -168,16 +168,16 @@ export default function Navbar(props) {
             )}
           </ul>
         )}
-        <ul className="navbar-nav">
+        <ul className='navbar-nav'>
           {/*language */}
           <LanguageSelect />
           {/* user */}
           {!props.auth.isAuthenticated ? (
             <NavButton
-              onClick={() => closeMobileMenu("/auth/login")}
+              onClick={() => closeMobileMenu('/auth/login')}
               endIcon={<FaUser />}
             >
-              <Trans i18nKey="signIn">Sign in</Trans>
+              <Trans i18nKey='signIn'>Sign in</Trans>
             </NavButton>
           ) : (
             <div ref={dropdownRef}>
@@ -196,7 +196,7 @@ export default function Navbar(props) {
           )}
 
           {/*sidebar*/}
-          <div className="sidebar-bars" onClick={handleClick}>
+          <div className='sidebar-bars' onClick={handleClick}>
             {!click ? <MenuIcon /> : <CloseIcon />}
           </div>
         </ul>

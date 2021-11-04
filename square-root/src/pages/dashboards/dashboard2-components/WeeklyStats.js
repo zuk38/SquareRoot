@@ -98,25 +98,25 @@ const WeeklyStats = () => {
   ];
   return (
     <DashboardCard
-      title="Weekly Stats"
-      subtitle="Average sales"
-      custompadding="0"
-      customheaderpadding="30px"
+      title='Weekly Stats'
+      subtitle='Average sales'
+      custompadding='0'
+      customheaderpadding='30px'
       action={
         <Box>
-          <Tooltip title="Action">
+          <Tooltip title='Action'>
             <IconButton
               aria-expanded={open ? 'true' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleClick}
-              aria-label="action"
-              size="large"
+              aria-label='action'
+              size='large'
             >
-              <FeatherIcon icon="more-horizontal" />
+              <FeatherIcon icon='more-horizontal' />
             </IconButton>
           </Tooltip>
           <Menu
-            id="long-menu"
+            id='long-menu'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -133,7 +133,11 @@ const WeeklyStats = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem
+                key={option}
+                selected={option === 'Pyxis'}
+                onClick={handleClose}
+              >
                 {option}
               </MenuItem>
             ))}
@@ -151,8 +155,8 @@ const WeeklyStats = () => {
         {weeks.map((week) => (
           <Box
             key={week.title}
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             sx={{
               mb: 3,
             }}
@@ -161,7 +165,7 @@ const WeeklyStats = () => {
               sx={{
                 backgroundColor: week.avatarbg,
               }}
-              width="45"
+              width='45'
             >
               <FeatherIcon icon={week.icon} />
             </Avatar>
@@ -170,11 +174,11 @@ const WeeklyStats = () => {
                 ml: 2,
               }}
             >
-              <Typography variant="h5" fontWeight="700">
+              <Typography variant='h5' fontWeight='700'>
                 {week.title}
               </Typography>
 
-              <Typography color="textSecondary" fontWeight="400" variant="h6">
+              <Typography color='textSecondary' fontWeight='400' variant='h6'>
                 {week.subtitle}
               </Typography>
             </Box>
@@ -185,8 +189,8 @@ const WeeklyStats = () => {
             >
               {/* <WeekList> */}
               <Chip
-                color="default"
-                size="small"
+                color='default'
+                size='small'
                 sx={{
                   borderRadius: '6px',
                   color: () => theme.palette.grey.A400,
@@ -203,7 +207,12 @@ const WeeklyStats = () => {
           mt: 3,
         }}
       >
-        <Chart options={optionsweekstats} series={seriesweekstats} type="area" height="200" />
+        <Chart
+          options={optionsweekstats}
+          series={seriesweekstats}
+          type='area'
+          height='200'
+        />
       </Box>
     </DashboardCard>
   );

@@ -5,7 +5,7 @@ import { Box, Typography } from '@mui/material';
 const WidgetCard = ({ title }) => (
   <Box>
     <Typography
-      variant="h4"
+      variant='h4'
       sx={{
         mb: 2,
       }}

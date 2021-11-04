@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import "../styles/Plants.css";
-import PlantMiniature from "./PlantMiniature";
-import SinglePlant from "./SinglePlant";
-import { useLocation } from "react-router-dom";
+import React, { useState } from 'react';
+import '../styles/Plants.css';
+import PlantMiniature from './PlantMiniature';
+import SinglePlant from './SinglePlant';
+import { useLocation } from 'react-router-dom';
 
 export default function PlantsList(props) {
   const location = useLocation();
   let isCustomising;
-  if (location.pathname.indexOf("/customize") <= -1) {
+  if (location.pathname.indexOf('/customize') <= -1) {
     isCustomising = false;
   } else {
     isCustomising = true;
@@ -42,7 +42,7 @@ export default function PlantsList(props) {
 
   if (props.plants.length === 0) {
     return (
-      <div className="empty-search">
+      <div className='empty-search'>
         <h3>unfortunately no plants matched your search parameters</h3>
       </div>
     );
@@ -51,12 +51,13 @@ export default function PlantsList(props) {
   let plants = props.plants;
 
   plants = plants.map((plant) => {
-    let found = false, quantity = 0;
+    let found = false,
+      quantity = 0;
     props.conceptPlants &&
       props.conceptPlants.map((p) => {
         if (p.norwegian_name === plant.norwegian_name) {
           found = true;
-          quantity = p.quantity
+          quantity = p.quantity;
         }
       });
     return (
@@ -78,8 +79,16 @@ export default function PlantsList(props) {
 
   return (
     <>
-      <div className="plantList">
-        <div className={props.isCustomising ? "plantList-center-customise" : "plantList-center"}>{plants}</div>
+      <div className='plantList'>
+        <div
+          className={
+            props.isCustomising
+              ? 'plantList-center-customise'
+              : 'plantList-center'
+          }
+        >
+          {plants}
+        </div>
       </div>
       {activePlant && (
         <SinglePlant

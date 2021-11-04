@@ -9,7 +9,7 @@ const ControlledStateAutocomplete = () => {
   const [value, setValue] = React.useState(options[0]);
   const [inputValue, setInputValue] = React.useState('');
   return (
-    <BaseCard title="Controlled states">
+    <BaseCard title='Controlled states'>
       <Autocomplete
         value={value}
         onChange={(event, newValue) => {
@@ -19,28 +19,28 @@ const ControlledStateAutocomplete = () => {
         onInputChange={(event, newInputValue) => {
           setInputValue(newInputValue);
         }}
-        id="controllable-states-demo"
+        id='controllable-states-demo'
         options={options}
         fullWidth
         renderInput={(params) => (
           <TextField
             {...params}
-            size="small"
-            placeholder="Controllable"
-            aria-label="Controllable"
+            size='small'
+            placeholder='Controllable'
+            aria-label='Controllable'
           />
         )}
       />
       <Typography
-        color="textSecondary"
-        variant="subtitle2"
+        color='textSecondary'
+        variant='subtitle2'
         sx={{
           mt: 1,
         }}
       >{`value: ${value !== null ? `'${value}'` : 'null'}`}</Typography>
       <Typography
-        color="textSecondary"
-        variant="subtitle2"
+        color='textSecondary'
+        variant='subtitle2'
       >{`inputvalue: '${inputValue}'`}</Typography>
     </BaseCard>
   );

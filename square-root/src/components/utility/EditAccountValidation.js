@@ -1,9 +1,16 @@
-import { checkEmail, checkName, checkCognito, checkPhone, checkAddress, checkZip } from "./Validation";
+import {
+  checkEmail,
+  checkName,
+  checkCognito,
+  checkPhone,
+  checkAddress,
+  checkZip,
+} from './Validation';
 
 export default function validate(values, editMode) {
   let errors = {};
-  if (!editMode) return
-  
+  if (!editMode) return;
+
   if (editMode.nameMode) checkName(values, errors);
   if (editMode.emailMode) checkEmail(values, errors);
   if (editMode.phoneMode) checkPhone(values, errors);

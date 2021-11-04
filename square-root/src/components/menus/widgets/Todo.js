@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, FormGroup, FormControlLabel } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  FormGroup,
+  FormControlLabel,
+} from '@mui/material';
 import CustomCheckbox from '../../forms/custom-elements/CustomCheckbox';
 import WidgetCard from '../../base-card/WidgetCard';
 
@@ -49,7 +56,7 @@ const Todo = () => {
           pb: 0,
         }}
       >
-        <WidgetCard title="Todo List" />
+        <WidgetCard title='Todo List' />
 
         {todos.map((todo) => (
           <Box
@@ -61,7 +68,10 @@ const Todo = () => {
             <FormGroup>
               <FormControlLabel
                 control={
-                  <CustomCheckbox bgcolor={todo.color} inputprops={{ 'aria-label': 'checkbox' }} />
+                  <CustomCheckbox
+                    bgcolor={todo.color}
+                    inputprops={{ 'aria-label': 'checkbox' }}
+                  />
                 }
                 label={todo.title}
               />
@@ -73,7 +83,11 @@ const Todo = () => {
                 mt: -1,
               }}
             >
-              <Typography color="textSecondary" variant="caption" fontWeight="400">
+              <Typography
+                color='textSecondary'
+                variant='caption'
+                fontWeight='400'
+              >
                 {todo.subtitle}
               </Typography>
             </Box>

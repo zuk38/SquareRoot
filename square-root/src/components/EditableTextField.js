@@ -1,10 +1,10 @@
-import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import OutlinedInput from "@material-ui/core/OutlinedInput";
-import FormControl from "@material-ui/core/FormControl";
-import Edit from "@material-ui/icons/Edit";
-import IconButton from "@material-ui/core/IconButton";
-import InputAdornment from "@material-ui/core/InputAdornment";
+import React from 'react';
+import { makeStyles } from '@material-ui/core/styles';
+import OutlinedInput from '@material-ui/core/OutlinedInput';
+import FormControl from '@material-ui/core/FormControl';
+import Edit from '@material-ui/icons/Edit';
+import IconButton from '@material-ui/core/IconButton';
+import InputAdornment from '@material-ui/core/InputAdornment';
 
 const useStyles = makeStyles((theme) => ({
   margin: {
@@ -16,18 +16,18 @@ export default function EditableTextField(props) {
   const classes = useStyles();
 
   return (
-    <FormControl fullWidth className={classes.margin} variant="outlined">
+    <FormControl fullWidth className={classes.margin} variant='outlined'>
       <OutlinedInput
         name={props.name}
         defaultValue={props.value}
-        type="text"
+        type='text'
         disabled={!props.editMode}
-        variant="outilned"
+        variant='outilned'
         onChange={(e) => props.onChange(e)}
         endAdornment={
-          <InputAdornment position="end">
+          <InputAdornment position='end'>
             <IconButton
-              aria-label="edit field"
+              aria-label='edit field'
               onClick={() => props.setEditMode(true)}
             >
               <Edit />

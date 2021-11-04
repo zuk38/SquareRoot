@@ -1,13 +1,12 @@
-
-import React, { Component } from "react";
-import { API, Auth, graphqlOperation } from "aws-amplify";
+import React, { Component } from 'react';
+import { API, Auth, graphqlOperation } from 'aws-amplify';
 import {
   listCategorys,
   listConcepts,
   createConceptPlant,
-} from "../api/conceptQueries";
-import { v4 as uuidv4 } from "uuid";
-import { createConcept } from "../api/mutations";
+} from '../api/conceptQueries';
+import { v4 as uuidv4 } from 'uuid';
+import { createConcept } from '../api/mutations';
 
 const ConceptContext = React.createContext();
 
@@ -25,7 +24,7 @@ export default class ConceptProvider extends Component {
     try {
       const { data } = await API.graphql({
         query: listCategorys,
-        authMode: "API_KEY",
+        authMode: 'API_KEY',
       });
       let categories = this.formatData(data.listCategorys.items);
       console.log(categories);
@@ -42,9 +41,9 @@ export default class ConceptProvider extends Component {
     try {
       const { data } = await API.graphql({
         query: listConcepts,
-        authMode: "API_KEY",
+        authMode: 'API_KEY',
       });
-      console.log(data)
+      console.log(data);
       let tempConcepts = this.formatData(data.listConcepts.items);
       let concepts = this.formatConceptData(data.listConcepts.items);
       console.log(concepts);
@@ -85,14 +84,13 @@ export default class ConceptProvider extends Component {
     let owner = user.username;
     let conceptDetails = {
       id: conceptID,
-      name: concept["name"] + uuidv4(),
+      name: concept['name'] + uuidv4(),
       owner: owner,
       userDefined: true,
       image: concept.image,
       featured: false,
       /*price: concept.price,
       description: concept.description,*/
-   
     };
 
     try {
@@ -102,7 +100,7 @@ export default class ConceptProvider extends Component {
         })
       );
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log('error creating todo:', err);
     }
 
     try {
@@ -121,7 +119,7 @@ export default class ConceptProvider extends Component {
         );
       }
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log('error creating todo:', err);
     }
   };
 
@@ -158,7 +156,7 @@ export default class ConceptProvider extends Component {
         let metadata = p.plant.metadata;
         let quantity = p.quantity;
         let plant = { id, quantity, ...metadata };
-        console.log(plant)
+        console.log(plant);
         /*const {
           pollinator_friendly,
           edible,
@@ -189,8 +187,10 @@ export default class ConceptProvider extends Component {
   formatData(items) {
     let categorys = items.map((item) => {
       let tempPlants = item.plants.items.map((plant) => {
-        let norwegian_name = plant.plant.norwegian_name ? plant.plant.norwegian_name : "";
-        let latin_name = plant.plant.latin_name ? plant.plant.latin_name : "";
+        let norwegian_name = plant.plant.norwegian_name
+          ? plant.plant.norwegian_name
+          : '';
+        let latin_name = plant.plant.latin_name ? plant.plant.latin_name : '';
         let p = { norwegian_name, latin_name };
         return p;
       });

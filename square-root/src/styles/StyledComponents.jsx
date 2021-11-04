@@ -1,36 +1,33 @@
-import styled from "styled-components"
+import styled from 'styled-components';
 
-
-const handleFloat = float => {
-    switch (float) {
-        case "right":
-            return "right";
-        case "left":
-            return "left";
-        case "none":
-            return "none";
-    }
+const handleFloat = (float) => {
+  switch (float) {
+    case 'right':
+      return 'right';
+    case 'left':
+      return 'left';
+    case 'none':
+      return 'none';
+  }
 };
 
-
 const ButtonPrimary = styled.button`
-    width: 20%;
-    padding: 10px;
-    background-color: var(--mainGreen); //normal
-    color:  white; //hover
-    font-weight: bold;
-    border: none;
-    font-size: 18px;
-    float: ${({float}) => handleFloat(float)};
-    cursor: pointer;
-    border-radius: 5px;
-    
-    &:hover{
-        background-color: #6C836C;
-    }
-    `
-    export default ButtonPrimary;
+  width: 20%;
+  padding: 10px;
+  background-color: var(--mainGreen); //normal
+  color: white; //hover
+  font-weight: bold;
+  border: none;
+  font-size: 18px;
+  float: ${({ float }) => handleFloat(float)};
+  cursor: pointer;
+  border-radius: 5px;
 
+  &:hover {
+    background-color: #6c836c;
+  }
+`;
+export default ButtonPrimary;
 
 /*
 export const StyleInputFields = styled.inputFields `

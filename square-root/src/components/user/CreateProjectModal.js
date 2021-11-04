@@ -1,10 +1,10 @@
-import React, { useEffect } from "react";
-import useForm from "../../components/hooks/useForm";
-import validate from "../../components/utility/CreateProjectValidation";
-import ProjectForm from "../../components/user/ProjectForm";
-import Modal from "react-modal";
-import { findCityFromZip } from "../../functions/apiCalls";
-import { withProjectConsumer } from "../../context/projects";
+import React, { useEffect } from 'react';
+import useForm from '../../components/hooks/useForm';
+import validate from '../../components/utility/CreateProjectValidation';
+import ProjectForm from '../../components/user/ProjectForm';
+import Modal from 'react-modal';
+import { findCityFromZip } from '../../functions/apiCalls';
+import { withProjectConsumer } from '../../context/projects';
 
 function CreateProjectModal(props) {
   const { isOpen, setModal } = props;
@@ -20,7 +20,7 @@ function CreateProjectModal(props) {
   } = useForm(callback, validate, createNewProject);
 
   useEffect(() => {
-    if (!values.zip || values.zip === "") return;
+    if (!values.zip || values.zip === '') return;
     if (values.zip.length == 4) {
       findCityFromZip(values.zip).then((response) => {
         setCity(response);
@@ -29,7 +29,7 @@ function CreateProjectModal(props) {
   }, [values.zip]);
 
   useEffect(() => {
-    if (!values.name || values.name === "" || !projects.length) return;
+    if (!values.name || values.name === '' || !projects.length) return;
     let found = projects.find((project) => project.name === values.name);
     setProjectExistsErrors(found);
   }, [values.name]);
@@ -48,19 +48,19 @@ function CreateProjectModal(props) {
     <Modal
       isOpen={isOpen}
       onRequestClose={() => setModal(false)}
-      className={"modal-project"}
+      className={'modal-project'}
     >
       <button
         onClick={() => setModal(false)}
-        className="btn-modal-close"
-        alt="Lukk"
+        className='btn-modal-close'
+        alt='Lukk'
       >
-        <i className="fas fa-times fa-lg" />
+        <i className='fas fa-times fa-lg' />
       </button>
-      <div className="p-modal-content">
-        <h1 className="p-h1">La oss lage et økosystem</h1>
+      <div className='p-modal-content'>
+        <h1 className='p-h1'>La oss lage et økosystem</h1>
         <br />
-        <h2 className="p-h2">Fortell oss litt mer om prosjektet</h2>
+        <h2 className='p-h2'>Fortell oss litt mer om prosjektet</h2>
         <ProjectForm
           handleChange={handleChange}
           handleSubmit={handleSubmit}

@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-export default function Title({ title, subtitle, style}) {
+export default function Title({ title, subtitle, style }) {
   return (
     <div className={style}>
       <h1>{title}</h1>

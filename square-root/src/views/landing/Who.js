@@ -1,6 +1,6 @@
-import React from "react";
-import "../../styles/frontpages.css";
-import { Trans, useTranslation } from "react-i18next";
+import React from 'react';
+import '../../styles/frontpages.css';
+import { Trans, useTranslation } from 'react-i18next';
 import {
   Wrapper,
   Column,
@@ -10,20 +10,20 @@ import {
   Name,
   Position,
   Description,
-} from "../../styles/Who";
+} from '../../styles/Who';
 
 export default function Who() {
   const { t } = useTranslation();
 
   return (
     <>
-      <div className="c-section background-grey">
-        <div className="o-container">
-          <div className="c-hero">
-            <h1 className="c-txt--hero">{t("who_page.title")}</h1>
-            <div className="short-border u-mrg--txt1"></div>
-            <p className="main-punchline--p">
-              <Trans i18nKey="who_page.description">
+      <div className='c-section background-grey'>
+        <div className='o-container'>
+          <div className='c-hero'>
+            <h1 className='c-txt--hero'>{t('who_page.title')}</h1>
+            <div className='short-border u-mrg--txt1'></div>
+            <p className='main-punchline--p'>
+              <Trans i18nKey='who_page.description'>
                 Looking for plants to create amazing and resilient urban green
                 areas? Unsure about compliance and availability of these plants?
                 SquareRoot is there to solve this for you!
@@ -45,12 +45,12 @@ export default function Who() {
             <Row>
               <Column>
                 <IamgeContainer>
-                  <Image src="../images/jo-profil.jpeg" alt="Jo" />
+                  <Image src='../images/jo-profil.jpeg' alt='Jo' />
                 </IamgeContainer>
                 <Name>Jo Deketelaere</Name>
-                <Position>{t("who_page.team.jo_img_d")}</Position>
+                <Position>{t('who_page.team.jo_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.jo_d">
+                  <Trans i18nKey='who_page.team.jo_d'>
                     <em>Jo</em>
                     started his career in international business development for
                     large energy companies focusing on climate mitigation,
@@ -73,12 +73,12 @@ export default function Who() {
               </Column>
               <Column>
                 <IamgeContainer>
-                  <Image src="../images/michel-profile.jpeg" alt="Michel" />
+                  <Image src='../images/michel-profile.jpeg' alt='Michel' />
                 </IamgeContainer>
                 <Name>Michel Wolfstirn</Name>
-                <Position>{t("who_page.team.michel_img_d")}</Position>
+                <Position>{t('who_page.team.michel_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.michel_d">
+                  <Trans i18nKey='who_page.team.michel_d'>
                     A lover of nature and the outdoors,
                     <em>Michel</em>
                     is passionate about the environment and contributing to
@@ -103,12 +103,12 @@ export default function Who() {
             <Row>
               <Column>
                 <IamgeContainer square>
-                  <Image src="../images/karolina.jpg" alt="Karolina" />
+                  <Image src='../images/karolina.jpg' alt='Karolina' />
                 </IamgeContainer>
                 <Name>Karolina Maciejewska</Name>
-                <Position>{t("who_page.team.karolina_img_d")}</Position>
+                <Position>{t('who_page.team.karolina_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.karolina_d">
+                  <Trans i18nKey='who_page.team.karolina_d'>
                     The undefeated champion of shilly-shally, eating veggie
                     burgers and having too many ideas at once, <em>Karolina</em>
                     , always aims at perfection. SquareRoot gave her a chance
@@ -125,12 +125,12 @@ export default function Who() {
               </Column>
               <Column>
                 <IamgeContainer square>
-                  <Image src="../images/profile-gro.jpeg" alt="Gro" />
+                  <Image src='../images/profile-gro.jpeg' alt='Gro' />
                 </IamgeContainer>
                 <Name>Gro Elisabeth Oleivsgard</Name>
-                <Position>{t("who_page.team.gro_img_d")}</Position>
+                <Position>{t('who_page.team.gro_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.gro_d">
+                  <Trans i18nKey='who_page.team.gro_d'>
                     Motivated to contribute and solve problems of value to
                     people and the earth we live on, <em>Gro</em> joined
                     SquareRoot with a motivation to make the implementations of
@@ -150,12 +150,12 @@ export default function Who() {
             <Row>
               <Column>
                 <IamgeContainer square>
-                  <Image src="../images/profile-kristian.jpg" alt="Kristian" />
+                  <Image src='../images/profile-kristian.jpg' alt='Kristian' />
                 </IamgeContainer>
                 <Name>Kristian Sørum</Name>
-                <Position>{t("who_page.team.kristian_img_d")}</Position>
+                <Position>{t('who_page.team.kristian_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.kristian_d">
+                  <Trans i18nKey='who_page.team.kristian_d'>
                     With us as an intern, <em>Kristian</em> is motivated to make
                     our platform as user-friendly and self-driven as possible,
                     which in turn will hopefully make the process of including
@@ -172,12 +172,12 @@ export default function Who() {
               </Column>
               <Column>
                 <IamgeContainer square>
-                  <Image src="../images/profile-sanne.png" alt="Sanne" />
+                  <Image src='../images/profile-sanne.png' alt='Sanne' />
                 </IamgeContainer>
                 <Name>Sanne Edland</Name>
-                <Position>{t("who_page.team.sanne_img_d")}</Position>
+                <Position>{t('who_page.team.sanne_img_d')}</Position>
                 <Description>
-                  <Trans i18nKey="who_page.team.sanne_d">
+                  <Trans i18nKey='who_page.team.sanne_d'>
                     <em>Sanne</em> is passionate about the environment and
                     animals and wants to create a more sustainable way of
                     living. She joined Squareroot to contribute to a greener
@@ -478,7 +478,7 @@ export default function Who() {
                     <h className="inspo-h">Project 2</h>
                 </div>
             </div>
-             */}{" "}
+             */}{' '}
     </>
   );
 }

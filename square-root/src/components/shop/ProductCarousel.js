@@ -64,7 +64,7 @@ const ProductCarousel = () => {
           <Box key={step.id}>
             {Math.abs(activeStep - index) <= 2 ? (
               <Box
-                component="img"
+                component='img'
                 sx={{
                   display: 'block',
                   maxWidth: '100%',
@@ -82,24 +82,28 @@ const ProductCarousel = () => {
 
       <MobileStepper
         steps={maxSteps}
-        position="static"
+        position='static'
         activeStep={activeStep}
         nextButton={
-          <Button size="small" onClick={handleNext} disabled={activeStep === maxSteps - 1}>
+          <Button
+            size='small'
+            onClick={handleNext}
+            disabled={activeStep === maxSteps - 1}
+          >
             Next
             {theme.direction === 'rtl' ? (
-              <FeatherIcon icon="arrow-left" width="18" />
+              <FeatherIcon icon='arrow-left' width='18' />
             ) : (
-              <FeatherIcon icon="arrow-right" width="18" />
+              <FeatherIcon icon='arrow-right' width='18' />
             )}
           </Button>
         }
         backButton={
-          <Button size="small" onClick={handleBack} disabled={activeStep === 0}>
+          <Button size='small' onClick={handleBack} disabled={activeStep === 0}>
             {theme.direction === 'rtl' ? (
-              <FeatherIcon icon="arrow-right" width="18" />
+              <FeatherIcon icon='arrow-right' width='18' />
             ) : (
-              <FeatherIcon icon="arrow-left" width="18" />
+              <FeatherIcon icon='arrow-left' width='18' />
             )}
             Back
           </Button>

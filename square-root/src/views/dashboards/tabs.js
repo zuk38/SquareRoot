@@ -32,32 +32,31 @@ export default function LabTabs() {
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: 'divider'}}>
-          <TabList onChange={handleChange} aria-label="">
-            <Tab label="Greenspaces" value="1" sx={{typography: 'h5' }}/>
-            <Tab label="Members" value="2" sx={{typography: 'h5' }}/>
-            <Tab label="Orders" value="3" sx={{typography: 'h5' }}/>
-            <Tab label="Settings" value="4" sx={{typography: 'h5' }}/>
+        <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+          <TabList onChange={handleChange} aria-label=''>
+            <Tab label='Greenspaces' value='1' sx={{ typography: 'h5' }} />
+            <Tab label='Members' value='2' sx={{ typography: 'h5' }} />
+            <Tab label='Orders' value='3' sx={{ typography: 'h5' }} />
+            <Tab label='Settings' value='4' sx={{ typography: 'h5' }} />
           </TabList>
         </Box>
 
-        
-        <TabPanel value="1">
+        <TabPanel value='1'>
           <ProjectGreenspaces />
         </TabPanel>
 
-        <TabPanel value="2">
+        <TabPanel value='2'>
           <MembersTable />
         </TabPanel>
-          
-        <TabPanel value="3">
+
+        <TabPanel value='3'>
           <ProjectOrders />
         </TabPanel>
-          
-        <TabPanel value="4">
-        <Grid item lg={12} md={12} xs={12}>
-        <ProjectSettings />
-      </Grid>
+
+        <TabPanel value='4'>
+          <Grid item lg={12} md={12} xs={12}>
+            <ProjectSettings />
+          </Grid>
         </TabPanel>
       </TabContext>
     </Box>

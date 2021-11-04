@@ -91,31 +91,33 @@ const FormCustom = () => {
     setValue3(newValue);
   };
   return (
-    <PageContainer title="Custom Form" description="this is Custom Form page">
+    <PageContainer title='Custom Form' description='this is Custom Form page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Custom Form" subtitle="custom designed element" />
+      <Breadcrumb title='Custom Form' subtitle='custom designed element' />
       {/* end breadcrumb */}
 
       <Card>
         <CardContent>
           <Grid container spacing={2}>
             <Grid item xs={12} sm={12} lg={4}>
-              <CustomFormLabel htmlFor="name">Name</CustomFormLabel>
+              <CustomFormLabel htmlFor='name'>Name</CustomFormLabel>
               <CustomTextField
-                id="name"
-                placeholder="Enter text"
-                variant="outlined"
+                id='name'
+                placeholder='Enter text'
+                variant='outlined'
                 fullWidth
-                size="small"
+                size='small'
               />
-              <CustomFormLabel htmlFor="demo-simple-select">Select Dropdown</CustomFormLabel>
+              <CustomFormLabel htmlFor='demo-simple-select'>
+                Select Dropdown
+              </CustomFormLabel>
               <CustomSelect
-                labelId="demo-simple-select-label"
-                id="demo-simple-select"
+                labelId='demo-simple-select-label'
+                id='demo-simple-select'
                 value={age}
                 onChange={handleChange}
                 fullWidth
-                size="small"
+                size='small'
               >
                 <MenuItem value={1}>One</MenuItem>
                 <MenuItem value={2}>Two</MenuItem>
@@ -126,15 +128,15 @@ const FormCustom = () => {
             {/* column 2 */}
             {/* ----------------------------------- */}
             <Grid item xs={12} sm={12} lg={4}>
-              <CustomFormLabel htmlFor="cname">Company Name</CustomFormLabel>
+              <CustomFormLabel htmlFor='cname'>Company Name</CustomFormLabel>
               <CustomTextField
-                id="cname"
-                placeholder="Enter text"
-                variant="outlined"
+                id='cname'
+                placeholder='Enter text'
+                variant='outlined'
                 fullWidth
-                size="small"
+                size='small'
               />
-              <CustomFormLabel htmlFor="time">Time</CustomFormLabel>
+              <CustomFormLabel htmlFor='time'>Time</CustomFormLabel>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <TimePicker
                   value={value}
@@ -143,9 +145,9 @@ const FormCustom = () => {
                   }}
                   renderInput={(params) => (
                     <CustomTextField
-                      size="small"
+                      size='small'
                       {...params}
-                      id="time"
+                      id='time'
                       fullWidth
                       sx={{
                         '& .MuiSvgIcon-root': {
@@ -165,14 +167,16 @@ const FormCustom = () => {
             {/* column 3 */}
             {/* ----------------------------------- */}
             <Grid item xs={12} sm={12} lg={4}>
-              <CustomFormLabel htmlFor="disabled">Industry Type</CustomFormLabel>
+              <CustomFormLabel htmlFor='disabled'>
+                Industry Type
+              </CustomFormLabel>
               <CustomTextField
-                id="disabled"
-                placeholder="Disabled filled"
-                variant="outlined"
+                id='disabled'
+                placeholder='Disabled filled'
+                variant='outlined'
                 fullWidth
                 disabled
-                size="small"
+                size='small'
                 sx={{
                   '& .MuiOutlinedInput-notchedOutline': {
                     borderColor: (theme) =>
@@ -184,7 +188,7 @@ const FormCustom = () => {
                   },
                 }}
               />
-              <CustomFormLabel htmlFor="date">Date</CustomFormLabel>
+              <CustomFormLabel htmlFor='date'>Date</CustomFormLabel>
               <LocalizationProvider dateAdapter={AdapterDateFns}>
                 <DatePicker
                   value={value2}
@@ -193,10 +197,10 @@ const FormCustom = () => {
                   }}
                   renderInput={(params) => (
                     <CustomTextField
-                      size="small"
+                      size='small'
                       {...params}
                       fullWidth
-                      id="date"
+                      id='date'
                       sx={{
                         '& .MuiSvgIcon-root': {
                           width: '18px',
@@ -216,24 +220,36 @@ const FormCustom = () => {
             {/* ----------------------------------- */}
             <Grid item xs={12} sm={12} lg={12}>
               <CustomFormLabel>Lorem ipsum dolor sit amet</CustomFormLabel>
-              <RadioGroup aria-label="gender" defaultValue="radio1" name="radio-buttons-group">
+              <RadioGroup
+                aria-label='gender'
+                defaultValue='radio1'
+                name='radio-buttons-group'
+              >
                 <Grid container>
                   <Grid item xs={12} sm={4} lg={4}>
-                    <FormControl component="fieldset">
-                      <FormControlLabel value="radio1" control={<CustomRadio />} label="Male" />
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12} sm={4} lg={4}>
-                    <FormControl component="fieldset">
-                      <FormControlLabel value="radio2" control={<CustomRadio />} label="Female" />
-                    </FormControl>
-                  </Grid>
-                  <Grid item xs={12} sm={4} lg={4}>
-                    <FormControl component="fieldset">
+                    <FormControl component='fieldset'>
                       <FormControlLabel
-                        value="radio3"
+                        value='radio1'
+                        control={<CustomRadio />}
+                        label='Male'
+                      />
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={4} lg={4}>
+                    <FormControl component='fieldset'>
+                      <FormControlLabel
+                        value='radio2'
+                        control={<CustomRadio />}
+                        label='Female'
+                      />
+                    </FormControl>
+                  </Grid>
+                  <Grid item xs={12} sm={4} lg={4}>
+                    <FormControl component='fieldset'>
+                      <FormControlLabel
+                        value='radio3'
                         control={<CustomRadio disabled />}
-                        label="Disabled"
+                        label='Disabled'
                       />
                     </FormControl>
                   </Grid>
@@ -245,22 +261,29 @@ const FormCustom = () => {
             {/* ----------------------------------- */}
             <Grid item xs={12} sm={12} lg={12}>
               <CustomFormLabel>Industry Type</CustomFormLabel>
-              <RadioGroup aria-label="gender" defaultValue="radio1" name="radio-buttons-group">
+              <RadioGroup
+                aria-label='gender'
+                defaultValue='radio1'
+                name='radio-buttons-group'
+              >
                 <Grid container>
                   <Grid item xs={12} sm={4} lg={4}>
                     <FormControlLabel
                       control={<CustomCheckbox defaultChecked />}
-                      label="Enter text"
+                      label='Enter text'
                     />
                   </Grid>
                   <Grid item xs={12} sm={4} lg={4}>
-                    <FormControlLabel control={<CustomCheckbox />} label="Enter text" />
+                    <FormControlLabel
+                      control={<CustomCheckbox />}
+                      label='Enter text'
+                    />
                   </Grid>
                   <Grid item xs={12} sm={4} lg={4}>
                     <FormControlLabel
                       disabled
                       control={<CustomCheckbox disabled />}
-                      label="Disabled"
+                      label='Disabled'
                     />
                   </Grid>
                 </Grid>
@@ -273,7 +296,9 @@ const FormCustom = () => {
               <CustomFormLabel>Slider</CustomFormLabel>
               <CustomRangeSlider
                 components={{ Thumb: CustomThumbComponent }}
-                getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+                getAriaLabel={(index) =>
+                  index === 0 ? 'Minimum price' : 'Maximum price'
+                }
                 defaultValue={[20, 40]}
               />
               <Grid
@@ -285,11 +310,11 @@ const FormCustom = () => {
               >
                 <Grid item xs={12} sm={6} lg={6}>
                   <CustomSelect
-                    id="range1"
+                    id='range1'
                     value={select1}
                     onChange={handleChange4}
                     fullWidth
-                    size="small"
+                    size='small'
                   >
                     <MenuItem value={1}>750</MenuItem>
                     <MenuItem value={2}>850</MenuItem>
@@ -298,11 +323,11 @@ const FormCustom = () => {
                 </Grid>
                 <Grid item xs={12} sm={6} lg={6}>
                   <CustomSelect
-                    id="rang2"
+                    id='rang2'
                     value={select2}
                     onChange={handleChange5}
                     fullWidth
-                    size="small"
+                    size='small'
                   >
                     <MenuItem value={1}>950</MenuItem>
                     <MenuItem value={2}>1050</MenuItem>
@@ -311,14 +336,18 @@ const FormCustom = () => {
                 </Grid>
               </Grid>
               <CustomFormLabel sx={{ mt: 3 }}>Volume</CustomFormLabel>
-              <CustomSlider aria-label="Volume" value={value3} onChange={handleChange6} />
-              <Box display="flex" alignItems="stretch">
+              <CustomSlider
+                aria-label='Volume'
+                value={value3}
+                onChange={handleChange6}
+              />
+              <Box display='flex' alignItems='stretch'>
                 <Typography
                   sx={{
                     color: (theme) => theme.palette.grey.A200,
                   }}
                 >
-                  <FeatherIcon icon="volume-1" width="20" />
+                  <FeatherIcon icon='volume-1' width='20' />
                 </Typography>
                 <Box
                   sx={{
@@ -330,7 +359,7 @@ const FormCustom = () => {
                       color: (theme) => theme.palette.grey.A200,
                     }}
                   >
-                    <FeatherIcon icon="volume-2" width="20" />
+                    <FeatherIcon icon='volume-2' width='20' />
                   </Typography>
                 </Box>
               </Box>
@@ -344,10 +373,16 @@ const FormCustom = () => {
               <CustomFormLabel>Switch</CustomFormLabel>
               <Grid container spacing={0}>
                 <Grid item xs={12} sm={6} lg={3}>
-                  <FormControlLabel control={<CustomSwitch />} label="Enter text" />
+                  <FormControlLabel
+                    control={<CustomSwitch />}
+                    label='Enter text'
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6} lg={3}>
-                  <FormControlLabel control={<CustomSwitch defaultChecked />} label="Enter text" />
+                  <FormControlLabel
+                    control={<CustomSwitch defaultChecked />}
+                    label='Enter text'
+                  />
                 </Grid>
                 <Grid item xs={12} sm={6} lg={3}>
                   <FormControlLabel
@@ -355,13 +390,14 @@ const FormCustom = () => {
                       <CustomSwitch
                         disabled
                         sx={{
-                          '& .MuiSwitch-switchBase.Mui-disabled+.MuiSwitch-track': {
-                            opacity: 1,
-                          },
+                          '& .MuiSwitch-switchBase.Mui-disabled+.MuiSwitch-track':
+                            {
+                              opacity: 1,
+                            },
                         }}
                       />
                     }
-                    label="Disabled"
+                    label='Disabled'
                   />
                 </Grid>
                 <Grid item xs={12} sm={6} lg={3}>
@@ -377,7 +413,7 @@ const FormCustom = () => {
                         }}
                       />
                     }
-                    label="Disabled"
+                    label='Disabled'
                   />
                 </Grid>
               </Grid>
@@ -394,8 +430,8 @@ const FormCustom = () => {
                 }}
               >
                 <Button
-                  variant="contained"
-                  color="primary"
+                  variant='contained'
+                  color='primary'
                   sx={{
                     mb: {
                       xs: 1,
@@ -407,7 +443,7 @@ const FormCustom = () => {
                   Add New
                 </Button>
                 <CustomDisabledButton
-                  variant="contained"
+                  variant='contained'
                   disabled
                   sx={{
                     mb: {
@@ -425,7 +461,7 @@ const FormCustom = () => {
                   Add New
                 </CustomDisabledButton>
                 <CustomOutlinedButton
-                  variant="outlined"
+                  variant='outlined'
                   sx={{
                     mb: {
                       xs: 1,
@@ -447,8 +483,8 @@ const FormCustom = () => {
                   }}
                 >
                   <Button
-                    variant="contained"
-                    color="secondary"
+                    variant='contained'
+                    color='secondary'
                     sx={{
                       mb: {
                         xs: 1,
@@ -465,8 +501,8 @@ const FormCustom = () => {
                     Add New
                   </Button>
                   <Button
-                    variant="contained"
-                    color="success"
+                    variant='contained'
+                    color='success'
                     sx={{
                       mb: {
                         xs: 1,

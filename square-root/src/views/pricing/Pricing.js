@@ -64,14 +64,20 @@ const pricing = [
 
 const Pricing = () => {
   return (
-    <PageContainer title="Pricing" description="this is Pricing page">
+    <PageContainer title='Pricing' description='this is Pricing page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Pricing" items={BCrumb} />
+      <Breadcrumb title='Pricing' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container>
         {pricing.map((price) => (
           <Grid item xs={12} lg={4} sm={6} key={price.id}>
-            <Card sx={{ textAlign: 'center', overflow: 'unset', position: 'relative' }}>
+            <Card
+              sx={{
+                textAlign: 'center',
+                overflow: 'unset',
+                position: 'relative',
+              }}
+            >
               <Chip
                 sx={{
                   bgcolor: (theme) => theme.palette.warning.main,
@@ -86,9 +92,9 @@ const Pricing = () => {
                   ml: 'auto',
                   mr: 'auto',
                 }}
-                label="Popular"
+                label='Popular'
               />
-              <Typography variant="h4" sx={{ mt: 3 }}>
+              <Typography variant='h4' sx={{ mt: 3 }}>
                 {price.package}
               </Typography>
               <Box sx={{ mt: 3 }}>
@@ -96,28 +102,47 @@ const Pricing = () => {
                   <sup style={{ fontSize: '15px' }}>$</sup>
                   {price.dollar}
                 </Box>
-                <Typography sx={{ fontSize: '15px', color: 'grey.A200', fontWeight: '400', ml: 1 }}>
+                <Typography
+                  sx={{
+                    fontSize: '15px',
+                    color: 'grey.A200',
+                    fontWeight: '400',
+                    ml: 1,
+                  }}
+                >
                   Per Month
                 </Typography>
               </Box>
               <Box sx={{ mt: 3 }}>
                 <List>
                   <ListItem>
-                    <ListItemText sx={{ textAlign: 'center' }} primary={price.member} />
+                    <ListItemText
+                      sx={{ textAlign: 'center' }}
+                      primary={price.member}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText sx={{ textAlign: 'center' }} primary={price.device} />
+                    <ListItemText
+                      sx={{ textAlign: 'center' }}
+                      primary={price.device}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText sx={{ textAlign: 'center' }} primary={price.storage} />
+                    <ListItemText
+                      sx={{ textAlign: 'center' }}
+                      primary={price.storage}
+                    />
                   </ListItem>
                   <ListItem>
-                    <ListItemText sx={{ textAlign: 'center' }} primary={price.bkp} />
+                    <ListItemText
+                      sx={{ textAlign: 'center' }}
+                      primary={price.bkp}
+                    />
                   </ListItem>
                 </List>
               </Box>
               <Button
-                variant="contained"
+                variant='contained'
                 size={price.btnsize}
                 color={price.btncolor}
                 sx={{ width: '100%', mt: 4 }}

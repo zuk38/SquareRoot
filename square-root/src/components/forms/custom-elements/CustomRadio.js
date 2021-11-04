@@ -17,11 +17,17 @@ const BpIcon = styled('span')(({ theme }) => ({
     outlineOffset: 2,
   },
   'input:hover ~ &': {
-    backgroundColor: theme.palette.mode === 'dark' ? theme.palette.primary : theme.palette.primary,
+    backgroundColor:
+      theme.palette.mode === 'dark'
+        ? theme.palette.primary
+        : theme.palette.primary,
   },
   'input:disabled ~ &': {
     boxShadow: 'none',
-    background: theme.palette.mode === 'dark' ? 'rgba(57,75,89,.5)' : 'rgba(206,217,224,.5)',
+    background:
+      theme.palette.mode === 'dark'
+        ? 'rgba(57,75,89,.5)'
+        : 'rgba(206,217,224,.5)',
   },
 }));
 
@@ -49,7 +55,7 @@ function CustomRadio({ bgcolor, ...props }) {
         },
       }}
       disableRipple
-      color="default"
+      color='default'
       checkedIcon={
         <BpCheckedIcon
           sx={{

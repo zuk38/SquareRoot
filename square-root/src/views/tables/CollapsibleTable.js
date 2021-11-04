@@ -92,7 +92,11 @@ function Row(props) {
             borderBottom: '0',
           }}
         >
-          <IconButton aria-label="expand row" size="small" onClick={() => setOpen(!open)}>
+          <IconButton
+            aria-label='expand row'
+            size='small'
+            onClick={() => setOpen(!open)}
+          >
             {open ? <KeyboardArrowUpIcon /> : <KeyboardArrowDownIcon />}
           </IconButton>
         </TableCell>
@@ -101,7 +105,7 @@ function Row(props) {
             borderBottom: '0',
           }}
         >
-          <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='center'>
             <Avatar
               src={row.imgsrc}
               alt={row.imgsrc}
@@ -116,7 +120,7 @@ function Row(props) {
                 ml: 2,
               }}
             >
-              <Typography variant="h5" fontWeight="600">
+              <Typography variant='h5' fontWeight='600'>
                 {row.pname}
               </Typography>
             </Box>
@@ -127,7 +131,7 @@ function Row(props) {
             borderBottom: '0',
           }}
         >
-          <Typography color="textSecondary" variant="h5" fontWeight="600">
+          <Typography color='textSecondary' variant='h5' fontWeight='600'>
             {row.customer}
           </Typography>
         </TableCell>
@@ -154,7 +158,7 @@ function Row(props) {
               pl: '3px',
               pr: '3px',
             }}
-            size="small"
+            size='small'
             label={row.inventory}
           />
         </TableCell>
@@ -163,7 +167,7 @@ function Row(props) {
             borderBottom: '0',
           }}
         >
-          <Typography color="textSecondary" variant="h5" fontWeight="400">
+          <Typography color='textSecondary' variant='h5' fontWeight='400'>
             ${row.price}
           </Typography>
         </TableCell>
@@ -172,18 +176,18 @@ function Row(props) {
             borderBottom: '0',
           }}
         >
-          <Typography color="textSecondary" fontWeight="400">
+          <Typography color='textSecondary' fontWeight='400'>
             {row.items}
           </Typography>
         </TableCell>
       </TableRow>
       <TableRow>
         <TableCell sx={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
+          <Collapse in={open} timeout='auto' unmountOnExit>
             <Box margin={1}>
               <Typography
                 gutterBottom
-                variant="h5"
+                variant='h5'
                 sx={{
                   mt: 2,
                   backgroundColor: (theme) => theme.palette.grey.A700,
@@ -198,44 +202,45 @@ function Row(props) {
               >
                 History
               </Typography>
-              <Table size="small" aria-label="purchases">
+              <Table size='small' aria-label='purchases'>
                 <TableHead>
                   <TableRow>
                     <TableCell>
-                      <Typography variant="h6">Date</Typography>
+                      <Typography variant='h6'>Date</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography variant="h6">Customer</Typography>
+                      <Typography variant='h6'>Customer</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography variant="h6">Amount</Typography>
+                      <Typography variant='h6'>Amount</Typography>
                     </TableCell>
                     <TableCell>
-                      <Typography variant="h6">Total price ($)</Typography>
+                      <Typography variant='h6'>Total price ($)</Typography>
                     </TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
                   {row.history.map((historyRow) => (
                     <TableRow key={historyRow.date}>
-                      <TableCell component="th" scope="row">
-                        <Typography color="textSecondary" fontWeight="400">
+                      <TableCell component='th' scope='row'>
+                        <Typography color='textSecondary' fontWeight='400'>
                           {historyRow.date}
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Typography color="textSecondary" fontWeight="400">
+                        <Typography color='textSecondary' fontWeight='400'>
                           {historyRow.customerId}
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Typography color="textSecondary" fontWeight="400">
+                        <Typography color='textSecondary' fontWeight='400'>
                           {historyRow.amount}
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Typography fontWeight="600">
-                          {Math.round(historyRow.amount * row.price * 100) / 100}
+                        <Typography fontWeight='600'>
+                          {Math.round(historyRow.amount * row.price * 100) /
+                            100}
                         </Typography>
                       </TableCell>
                     </TableRow>
@@ -258,7 +263,7 @@ Row.propTypes = {
         amount: PropTypes.number.isRequired,
         customerId: PropTypes.string.isRequired,
         date: PropTypes.string.isRequired,
-      }),
+      })
     ).isRequired,
     inventory: PropTypes.string.isRequired,
     imgsrc: PropTypes.string.isRequired,
@@ -277,15 +282,18 @@ const BCrumb = [
 ];
 
 const CollapsibleTable = () => (
-  <PageContainer title="Collapsible Table" description="this is Collapsible Table page">
+  <PageContainer
+    title='Collapsible Table'
+    description='this is Collapsible Table page'
+  >
     {/* breadcrumb */}
-    <Breadcrumb title="Collapsible Table" items={BCrumb} />
+    <Breadcrumb title='Collapsible Table' items={BCrumb} />
     {/* end breadcrumb */}
     <Card>
       <CardContent>
         <TableContainer component={Paper}>
           <Table
-            aria-label="collapsible table"
+            aria-label='collapsible table'
             sx={{
               whiteSpace: {
                 xs: 'nowrap',
@@ -297,19 +305,19 @@ const CollapsibleTable = () => (
               <TableRow>
                 <TableCell />
                 <TableCell>
-                  <Typography variant="h5">Product</Typography>
+                  <Typography variant='h5'>Product</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Customer</Typography>
+                  <Typography variant='h5'>Customer</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Inventory</Typography>
+                  <Typography variant='h5'>Inventory</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Price</Typography>
+                  <Typography variant='h5'>Price</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Items</Typography>
+                  <Typography variant='h5'>Items</Typography>
                 </TableCell>
               </TableRow>
             </TableHead>

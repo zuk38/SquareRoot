@@ -73,7 +73,8 @@ const top100Films = [
   { title: 'Alien', year: 1979 },
   { title: 'Sunset Boulevard', year: 1950 },
   {
-    title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
+    title:
+      'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
     year: 1964,
   },
   { title: 'The Great Dictator', year: 1940 },
@@ -133,10 +134,10 @@ const top100Films = [
 
 const FreeSoloAutocomplete = () => {
   return (
-    <BaseCard title="Free Solo">
+    <BaseCard title='Free Solo'>
       <Stack>
         <Autocomplete
-          id="free-solo-demo"
+          id='free-solo-demo'
           freeSolo
           fullWidth
           sx={{
@@ -144,21 +145,26 @@ const FreeSoloAutocomplete = () => {
           }}
           options={top100Films.map((option) => option.title)}
           renderInput={(params) => (
-            <TextField {...params} placeholder="FreeSolo" size="small" aria-label="FreeSolo" />
+            <TextField
+              {...params}
+              placeholder='FreeSolo'
+              size='small'
+              aria-label='FreeSolo'
+            />
           )}
         />
         <Autocomplete
           freeSolo
           fullWidth
-          id="free-solo-2-demo"
+          id='free-solo-2-demo'
           disableClearable
           options={top100Films.map((option) => option.title)}
           renderInput={(params) => (
             <TextField
               {...params}
-              size="small"
-              placeholder="Search input"
-              aria-label="Search input"
+              size='small'
+              placeholder='Search input'
+              aria-label='Search input'
               inputprops={{
                 ...params.inputprops,
                 type: 'search',

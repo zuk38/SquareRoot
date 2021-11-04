@@ -7,7 +7,8 @@ const WelcomeCard = () => (
     elevation={0}
     sx={{
       position: 'relative',
-      backgroundColor: (theme) => `${theme.palette.mode === 'dark' ? '#32363e' : ''}`,
+      backgroundColor: (theme) =>
+        `${theme.palette.mode === 'dark' ? '#32363e' : ''}`,
       '&:before': {
         content: `""`,
         position: 'absolute',
@@ -33,7 +34,7 @@ const WelcomeCard = () => (
           position: 'relative',
           zIndex: 9,
         }}
-        variant="h3"
+        variant='h3'
         gutterBottom
       >
         Hey Julia, <br /> Download Latest Report
@@ -42,8 +43,8 @@ const WelcomeCard = () => (
         sx={{
           marginTop: '15px',
         }}
-        variant="contained"
-        color="primary"
+        variant='contained'
+        color='primary'
       >
         Download
       </Button>

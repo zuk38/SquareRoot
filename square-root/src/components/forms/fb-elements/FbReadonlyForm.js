@@ -1,5 +1,12 @@
 import React from 'react';
-import { Card, CardContent, Divider, Box, Typography, Button } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  Divider,
+  Box,
+  Typography,
+  Button,
+} from '@mui/material';
 import CustomTextField from '../custom-elements/CustomTextField';
 import CustomFormLabel from '../custom-elements/CustomFormLabel';
 
@@ -17,11 +24,11 @@ const FbReadonlyForm = () => (
         sx={{
           padding: '15px 30px',
         }}
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
       >
         <Box flexGrow={1}>
-          <Typography fontWeight="500" variant="h4">
+          <Typography fontWeight='500' variant='h4'>
             Readonly Form
           </Typography>
         </Box>
@@ -37,42 +44,44 @@ const FbReadonlyForm = () => (
             sx={{
               mt: 0,
             }}
-            htmlFor="ro-name"
+            htmlFor='ro-name'
           >
             Name
           </CustomFormLabel>
           <CustomTextField
-            id="ro-name"
-            variant="outlined"
-            size="small"
-            defaultValue="Wrappixel"
+            id='ro-name'
+            variant='outlined'
+            size='small'
+            defaultValue='Wrappixel'
             fullWidth
             InputProps={{
               readOnly: true,
             }}
           />
-          <CustomFormLabel htmlFor="ro-email-address">Email</CustomFormLabel>
+          <CustomFormLabel htmlFor='ro-email-address'>Email</CustomFormLabel>
 
           <CustomTextField
-            id="ro-email-address"
+            id='ro-email-address'
             helperText="We'll never share your email with anyone else."
-            variant="outlined"
-            size="small"
-            defaultValue="info@wrappixel.com"
+            variant='outlined'
+            size='small'
+            defaultValue='info@wrappixel.com'
             fullWidth
             InputProps={{
               readOnly: true,
             }}
           />
-          <CustomFormLabel htmlFor="ro-outlined-password-input">Password</CustomFormLabel>
+          <CustomFormLabel htmlFor='ro-outlined-password-input'>
+            Password
+          </CustomFormLabel>
 
           <CustomTextField
-            id="ro-outlined-password-input"
-            type="password"
-            autoComplete="current-password"
-            defaultValue="info@wrappixel.com"
-            variant="outlined"
-            size="small"
+            id='ro-outlined-password-input'
+            type='password'
+            autoComplete='current-password'
+            defaultValue='info@wrappixel.com'
+            variant='outlined'
+            size='small'
             fullWidth
             InputProps={{
               readOnly: true,
@@ -82,7 +91,7 @@ const FbReadonlyForm = () => (
             }}
           />
           <div>
-            <Button color="primary" variant="contained">
+            <Button color='primary' variant='contained'>
               Submit
             </Button>
           </div>

@@ -1,0 +1,49 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "airbnb",
+    "airbnb/hooks",
+    "plugin:prettier/recommneded",
+    "plugin:import/errors",
+    "plugin:import/warnings"
+  ],
+
+  "rules": {
+    "react/no-danger": "off", // it's self explainatory that no-danger should be used sparingly
+    "react/react-in-jsx-scope": "off", // next.js does not require react in most components
+    "no-console": 1, // no console statements - warning
+    "prettier/prettier": "error",
+    "no-plusplus": ["'error'", { "allowForLoopAfterthoughts": true }],
+    "no-alert": "warn",
+    "no-prototype-builtins": "off",
+    "semi": "error",
+    "indent": "error",
+    "no-multi-spaces": "error",
+    "space-in-parens": "error",
+    "no-multiple-empty-lines": "error",
+    "prefer-const": "error"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    },
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx"]
+      },
+      "babel-module": {
+        "extensions": [".js", ".jsx"],
+        "alias": {
+          "@/components": "./square-root/src/components",
+          "@/views": "./square-root/src/views"
+        }
+      }
+    }
+  },
+  "env": {
+    "node": true,
+    "browser": true,
+    "amd": true
+  }
+}

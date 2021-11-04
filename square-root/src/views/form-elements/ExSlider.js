@@ -75,29 +75,29 @@ const ExSlider = () => {
   };
 
   return (
-    <PageContainer title="Slider" description="this is Slider page">
+    <PageContainer title='Slider' description='this is Slider page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Slider" items={BCrumb} />
+      <Breadcrumb title='Slider' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Slider">
-            <CustomSlider defaultValue={30} aria-label="slider" />
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Slider'>
+            <CustomSlider defaultValue={30} aria-label='slider' />
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Volumn Slider">
-            <CustomSlider defaultValue={30} aria-label="slider" />
-            <Box display="flex" alignItems="center">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Volumn Slider'>
+            <CustomSlider defaultValue={30} aria-label='slider' />
+            <Box display='flex' alignItems='center'>
               <Typography
                 sx={{
                   color: (theme) => theme.palette.grey.A200,
                 }}
               >
-                <FeatherIcon icon="volume-1" width="20" />
+                <FeatherIcon icon='volume-1' width='20' />
               </Typography>
               <Box
                 sx={{
@@ -109,7 +109,7 @@ const ExSlider = () => {
                     color: (theme) => theme.palette.grey.A200,
                   }}
                 >
-                  <FeatherIcon icon="volume-2" width="20" />
+                  <FeatherIcon icon='volume-2' width='20' />
                 </Typography>
               </Box>
             </Box>
@@ -117,35 +117,37 @@ const ExSlider = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Range Slider">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Range Slider'>
             <CustomRangeSlider
               components={{ Thumb: AirbnbThumbComponent }}
-              getAriaLabel={(index) => (index === 0 ? 'Minimum price' : 'Maximum price')}
+              getAriaLabel={(index) =>
+                index === 0 ? 'Minimum price' : 'Maximum price'
+              }
               defaultValue={[20, 40]}
             />
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Slider">
-            <Slider defaultValue={30} aria-label="slider" />
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Slider'>
+            <Slider defaultValue={30} aria-label='slider' />
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Disabled Slider">
-            <Slider disabled defaultValue={30} aria-label="slider" />
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Disabled Slider'>
+            <Slider disabled defaultValue={30} aria-label='slider' />
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Volumn Slider">
-            <Box display="flex" alignItems="center">
-              <FeatherIcon icon="volume-1" width="20" />
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Volumn Slider'>
+            <Box display='flex' alignItems='center'>
+              <FeatherIcon icon='volume-1' width='20' />
               <Box
                 sx={{
                   ml: 1,
@@ -154,7 +156,7 @@ const ExSlider = () => {
                 }}
               >
                 <Slider
-                  aria-label="Volume"
+                  aria-label='Volume'
                   value={value}
                   onChange={handleChange}
                   sx={{
@@ -162,19 +164,19 @@ const ExSlider = () => {
                   }}
                 />
               </Box>
-              <FeatherIcon icon="volume-2" width="20" />
+              <FeatherIcon icon='volume-2' width='20' />
             </Box>
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Discrete Slider">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Discrete Slider'>
             <Slider
-              aria-label="Temperature"
+              aria-label='Temperature'
               defaultValue={30}
               getAriaValueText={valuetext}
-              valueLabelDisplay="auto"
+              valueLabelDisplay='auto'
               step={10}
               marks
               min={10}
@@ -184,13 +186,13 @@ const ExSlider = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Range  Slider">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Range  Slider'>
             <Slider
               getAriaLabel={() => 'Temperature range'}
               value={value2}
               onChange={handleChange2}
-              valueLabelDisplay="auto"
+              valueLabelDisplay='auto'
               getAriaValueText={valuetext2}
             />
           </BaseCard>

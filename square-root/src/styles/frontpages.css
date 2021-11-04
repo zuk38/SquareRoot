@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400;1,500;1,600&display=swap');
 
 .c-hero {
   padding-top: clamp(32px, 6.7349926794vw, 92px);
@@ -798,8 +798,8 @@ input:focus {
   text-align: left;
 }
 
-.gdpr-contact-consent label [type="checkbox"],
-.subscribe-contact label [type="checkbox"] {
+.gdpr-contact-consent label [type='checkbox'],
+.subscribe-contact label [type='checkbox'] {
   position: absolute;
   left: 0;
   width: 1.5em;
@@ -855,7 +855,7 @@ input:focus {
 
 .img-wrap-rooftop {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/concepts/landscape--rooftop_redigert.png");
+    url('../images/concepts/landscape--rooftop_redigert.png');
   background-size: cover;
   width: 90%;
   height: 100%;
@@ -879,7 +879,7 @@ input:focus {
 
 .img-wrap-rainbed {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/concepts/leaf_rooftop_4_redigert.jpg");
+    url('../images/concepts/leaf_rooftop_4_redigert.jpg');
   background-size: cover;
   width: 90%;
   height: 100%;
@@ -891,7 +891,7 @@ input:focus {
 
 .img-wrap-indoor {
   background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
-    url("../images/concepts/landscape--indoor_redigert.jpg");
+    url('../images/concepts/landscape--indoor_redigert.jpg');
   background-size: cover;
   width: 90%;
   height: 100%;
@@ -1084,7 +1084,7 @@ input:focus {
 }
 
 .ibm-italic {
-  font-family: "IBM Plex Serif", serif;
+  font-family: 'IBM Plex Serif', serif;
 }
 
 .flip-img {

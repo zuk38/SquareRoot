@@ -10,8 +10,8 @@ const Chats = () => {
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(true);
 
   return (
-    <PageContainer title="Chat ui" description="this is Chat page">
-      <Breadcrumb title="Chat app" subtitle="Messenger" />
+    <PageContainer title='Chat ui' description='this is Chat page'>
+      <Breadcrumb title='Chat app' subtitle='Messenger' />
       <Card sx={{ display: 'flex', p: 0 }}>
         <ChatSidebar
           isMobileSidebarOpen={isMobileSidebarOpen}

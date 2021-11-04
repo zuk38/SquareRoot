@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { PlantContext } from "../context/plants";
-import "../styles/Plants.css";
-import Dropdown from "./Dropdown";
+import React, { Component } from 'react';
+import { PlantContext } from '../context/plants';
+import '../styles/Plants.css';
+import Dropdown from './Dropdown';
 
 //get all unique values
 const getUnique = (items, value) => {
@@ -10,18 +10,14 @@ const getUnique = (items, value) => {
 
 const formatData = (items, index) => {
   let tempItems = items
-    .filter(function(item) {
+    .filter(function (item) {
       //skip nulls
       if (item) return true;
       return false;
     })
     .map((item) => {
       let id = index;
-      let value =
-        item
-          .toString()
-          .charAt(0)
-          .toUpperCase() + item.slice(1);
+      let value = item.toString().charAt(0).toUpperCase() + item.slice(1);
 
       let newItem = { id: id, value: value };
       return newItem;
@@ -31,7 +27,7 @@ const formatData = (items, index) => {
 };
 
 if (!Array.prototype.last) {
-  Array.prototype.last = function() {
+  Array.prototype.last = function () {
     return this[this.length - 1];
   };
 }
@@ -62,7 +58,7 @@ export default class PlantsFilter extends Component {
 
   //to check if user clicked the same filter twice
   objectsAreSame = (x, y) => {
-    if (x === undefined || y === undefined) return false
+    if (x === undefined || y === undefined) return false;
     var objectsAreSame = true;
     for (var propertyName in x) {
       if (x[propertyName] !== y[propertyName]) {
@@ -119,87 +115,87 @@ export default class PlantsFilter extends Component {
     const { handleChange, searchName, minSize, maxSize } = this.context;
 
     //get unique types
-    let types = getUnique(this.props.plants, "type");
+    let types = getUnique(this.props.plants, 'type');
     //format to dropdown
-    types = formatData(types, "type");
+    types = formatData(types, 'type');
 
     //get unique categories
     let categories = [
       ...new Set(this.props.plants.flatMap(({ category }) => category)),
     ].sort();
-    categories = formatData(categories, "category");
+    categories = formatData(categories, 'category');
 
     //get unique climate zones
-    let zones = getUnique(this.props.plants, "climate_zone");
+    let zones = getUnique(this.props.plants, 'climate_zone');
     //format to dropdown
-    zones = formatData(zones, "climate_zone");
+    zones = formatData(zones, 'climate_zone');
 
     const items_properties = [
       {
-        id: "pollinator_friendly",
-        value: "Bievennlig",
+        id: 'pollinator_friendly',
+        value: 'Bievennlig',
       },
       {
-        id: "edible",
-        value: "Spiselig",
+        id: 'edible',
+        value: 'Spiselig',
       },
       {
-        id: "air_puryfying",
-        value: "Luftrensende",
+        id: 'air_puryfying',
+        value: 'Luftrensende',
       },
       {
-        id: "pet_kids_friendly",
-        value: "Dyr- og barnevennlig",
+        id: 'pet_kids_friendly',
+        value: 'Dyr- og barnevennlig',
       },
     ];
 
     const items_size_inputs = [
       {
-        name: "minSize",
-        id: "size_in_cm",
+        name: 'minSize',
+        id: 'size_in_cm',
         value: { minSize },
-        type: "number",
-        className: "size-input",
+        type: 'number',
+        className: 'size-input',
       },
       {
-        name: "maxSize",
-        id: "size_in_cm",
+        name: 'maxSize',
+        id: 'size_in_cm',
         value: { maxSize },
-        type: "number",
-        className: "size-input",
+        type: 'number',
+        className: 'size-input',
       },
     ];
 
     const items_origin = [
       {
-        id: "norwegian_nursery",
-        value: "Norsk planteskole",
+        id: 'norwegian_nursery',
+        value: 'Norsk planteskole',
       },
       {
-        id: "native",
-        value: "Norske planter",
+        id: 'native',
+        value: 'Norske planter',
       },
     ];
 
     const items_light = [
       {
-        id: "sun_seeker",
-        value: "Mest sol",
+        id: 'sun_seeker',
+        value: 'Mest sol',
       },
       {
-        id: "shadow_lover",
-        value: "Mest skygge",
+        id: 'shadow_lover',
+        value: 'Mest skygge',
       },
     ];
 
     let ps = this.props.plants.map((p) => {
-      let newPlant = { id: "name", value: p.norwegian_name, image: p.image };
+      let newPlant = { id: 'name', value: p.norwegian_name, image: p.image };
       return newPlant;
     });
 
     return (
-      <section className="filter-container">
-        <form className="filter-form">
+      <section className='filter-container'>
+        <form className='filter-form'>
           {/*Dropdown.js */}
           <Dropdown
             multi={false}
@@ -207,8 +203,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={true}
             options={ps}
-            placeholder="Search for plant..."
-            onChange={(values) => this.setValues("selectPlant", values)}
+            placeholder='Search for plant...'
+            onChange={(values) => this.setValues('selectPlant', values)}
             itemRenderer={true}
             searchable={true}
           />
@@ -219,8 +215,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={false}
             options={categories}
-            placeholder="Grøntområde"
-            onChange={(values) => this.setValues("selectCategory", values)}
+            placeholder='Grøntområde'
+            onChange={(values) => this.setValues('selectCategory', values)}
           />
           {/*Type */}
           <Dropdown
@@ -229,8 +225,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={false}
             options={types}
-            placeholder="Type"
-            onChange={(values) => this.setValues("selectType", values)}
+            placeholder='Type'
+            onChange={(values) => this.setValues('selectType', values)}
           />
           {/*Zone */}
           <Dropdown
@@ -239,8 +235,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={false}
             options={zones}
-            placeholder="Klimasone"
-            onChange={(values) => this.setValues("selectZone", values)}
+            placeholder='Klimasone'
+            onChange={(values) => this.setValues('selectZone', values)}
           />
           {/* Origin */}
           <Dropdown
@@ -249,8 +245,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={false}
             options={items_origin}
-            placeholder="Opprinnelse"
-            onChange={(values) => this.setValues("selectOrigin", values)}
+            placeholder='Opprinnelse'
+            onChange={(values) => this.setValues('selectOrigin', values)}
           />
           {/*Light */}
           <Dropdown
@@ -259,8 +255,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={true}
             options={items_light}
-            placeholder="Lysforhold"
-            onChange={(values) => this.setValues("selectLight", values)}
+            placeholder='Lysforhold'
+            onChange={(values) => this.setValues('selectLight', values)}
           />
           {/* Properties */}
           <Dropdown
@@ -269,8 +265,8 @@ export default class PlantsFilter extends Component {
             clearable={true}
             closeOnSelect={false}
             options={items_properties}
-            placeholder="Egenskaper"
-            onChange={(values) => this.setValues("selectProperties", values)}
+            placeholder='Egenskaper'
+            onChange={(values) => this.setValues('selectProperties', values)}
           />
 
           {/* end Dropdown.js */}

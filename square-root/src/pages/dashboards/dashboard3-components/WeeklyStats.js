@@ -98,25 +98,25 @@ const WeeklyStats = () => {
   ];
   return (
     <DashboardCard
-      title="Weekly Stats"
-      subtitle="Average sales"
-      custompadding="0"
-      customheaderpadding="30px"
+      title='Weekly Stats'
+      subtitle='Average sales'
+      custompadding='0'
+      customheaderpadding='30px'
       action={
         <Box>
-          <Tooltip title="Action">
+          <Tooltip title='Action'>
             <IconButton
               aria-expanded={open ? 'true' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleClick}
-              size="large"
-              aria-label="action"
+              size='large'
+              aria-label='action'
             >
-              <FeatherIcon icon="more-horizontal" />
+              <FeatherIcon icon='more-horizontal' />
             </IconButton>
           </Tooltip>
           <Menu
-            id="long-menu"
+            id='long-menu'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -133,7 +133,11 @@ const WeeklyStats = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem
+                key={option}
+                selected={option === 'Pyxis'}
+                onClick={handleClose}
+              >
                 {option}
               </MenuItem>
             ))}
@@ -151,8 +155,8 @@ const WeeklyStats = () => {
         {weeks.map((week) => (
           <Box
             key={week.title}
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             sx={{
               mb: 3,
             }}
@@ -162,20 +166,20 @@ const WeeklyStats = () => {
                 backgroundColor: week.avatarbg,
                 color: '#fff',
               }}
-              width="45"
+              width='45'
             >
-              <FeatherIcon icon={week.icon} width="20" />
+              <FeatherIcon icon={week.icon} width='20' />
             </Avatar>
             <Box
               sx={{
                 ml: 2,
               }}
             >
-              <Typography variant="h5" fontWeight="700">
+              <Typography variant='h5' fontWeight='700'>
                 {week.title}
               </Typography>
 
-              <Typography color="textSecondary" variant="h6" fontWeight="400">
+              <Typography color='textSecondary' variant='h6' fontWeight='400'>
                 {week.subtitle}
               </Typography>
             </Box>
@@ -186,8 +190,8 @@ const WeeklyStats = () => {
             >
               {/* <WeekList> */}
               <Chip
-                color="default"
-                size="small"
+                color='default'
+                size='small'
                 sx={{
                   borderRadius: '6px',
                   color: () => theme.palette.grey.A400,
@@ -205,7 +209,12 @@ const WeeklyStats = () => {
           pt: 1,
         }}
       >
-        <Chart options={optionsweekstats} series={seriesweekstats} type="area" height="160" />
+        <Chart
+          options={optionsweekstats}
+          series={seriesweekstats}
+          type='area'
+          height='160'
+        />
       </Box>
     </DashboardCard>
   );

@@ -59,10 +59,10 @@ const products = [
 
 const ProductsPerformance = () => (
   <DashboardCard
-    title="Product Performance"
-    subtitle="Ample Admin Vs Pixel Admin"
-    customdisplay="block"
-    custommargin="10px"
+    title='Product Performance'
+    subtitle='Ample Admin Vs Pixel Admin'
+    customdisplay='block'
+    custommargin='10px'
     action={<ThemeSelect />}
   >
     <Box
@@ -72,7 +72,7 @@ const ProductsPerformance = () => (
       }}
     >
       <Table
-        aria-label="simple table"
+        aria-label='simple table'
         sx={{
           mt: 2,
           whiteSpace: 'nowrap',
@@ -87,22 +87,22 @@ const ProductsPerformance = () => (
         <TableHead>
           <TableRow>
             <TableCell>
-              <Typography variant="h5" color="textSecondary">
+              <Typography variant='h5' color='textSecondary'>
                 Assigned
               </Typography>
             </TableCell>
             <TableCell>
-              <Typography variant="h5" color="textSecondary">
+              <Typography variant='h5' color='textSecondary'>
                 Name
               </Typography>
             </TableCell>
             <TableCell>
-              <Typography variant="h5" color="textSecondary">
+              <Typography variant='h5' color='textSecondary'>
                 Priority
               </Typography>
             </TableCell>
-            <TableCell align="right">
-              <Typography variant="h5" color="textSecondary">
+            <TableCell align='right'>
+              <Typography variant='h5' color='textSecondary'>
                 Budget
               </Typography>
             </TableCell>
@@ -112,11 +112,11 @@ const ProductsPerformance = () => (
           {products.map((product) => (
             <TableRow key={product.name}>
               <TableCell>
-                <Box display="flex" alignItems="center">
+                <Box display='flex' alignItems='center'>
                   <Avatar
                     src={product.imgsrc}
                     alt={product.imgsrc}
-                    width="35"
+                    width='35'
                     sx={{
                       borderRadius: '100%',
                     }}
@@ -126,14 +126,14 @@ const ProductsPerformance = () => (
                       ml: 2,
                     }}
                   >
-                    <Typography variant="h5" fontWeight="600">
+                    <Typography variant='h5' fontWeight='600'>
                       {product.name}
                     </Typography>
                   </Box>
                 </Box>
               </TableCell>
               <TableCell>
-                <Typography color="textSecondary" variant="h6">
+                <Typography color='textSecondary' variant='h6'>
                   {product.pname}
                 </Typography>
               </TableCell>
@@ -155,12 +155,12 @@ const ProductsPerformance = () => (
                     color: '#fff',
                     borderRadius: '6px',
                   }}
-                  size="small"
+                  size='small'
                   label={product.priority}
                 />
               </TableCell>
-              <TableCell align="right">
-                <Typography variant="h6">${product.budget}k</Typography>
+              <TableCell align='right'>
+                <Typography variant='h6'>${product.budget}k</Typography>
               </TableCell>
             </TableRow>
           ))}

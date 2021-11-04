@@ -53,9 +53,8 @@ const components = {
       '.buyNowImg': {
         position: 'absolute',
         right: '-44px',
-        top: '-18px',
-        width: '143px',
-        height: '175px',
+        bottom: '0px',
+        width: '230px',
       },
       '.MuiCardHeader-action': {
         alignSelf: 'center !important',

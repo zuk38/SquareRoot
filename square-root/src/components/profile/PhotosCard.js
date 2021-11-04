@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Card, CardContent, Typography, ImageList, ImageListItem } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  ImageList,
+  ImageListItem,
+} from '@mui/material';
 
 import img1 from '../../assets/images/users/1.jpg';
 import img2 from '../../assets/images/users/2.jpg';
@@ -52,8 +59,8 @@ const photos = [
 const PhotosCard = () => (
   <Card>
     <CardContent>
-      <Box display="flex" alignItems="center">
-        <Typography variant="h3" fontWeight="500">
+      <Box display='flex' alignItems='center'>
+        <Typography variant='h3' fontWeight='500'>
           Photos
         </Typography>
       </Box>
@@ -63,7 +70,7 @@ const PhotosCard = () => (
             <img
               srcSet={`${photo.img} 1x, ${photo.img} 2x`}
               alt={photo.img}
-              loading="lazy"
+              loading='lazy'
               style={{ borderRadius: 8 }}
             />
           </ImageListItem>

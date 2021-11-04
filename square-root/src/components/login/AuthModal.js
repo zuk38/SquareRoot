@@ -1,28 +1,28 @@
-import React from "react";
-import Modal from "react-modal";
-import Title from "../Title";
-import "./LoginStyle.scss";
+import React from 'react';
+import Modal from 'react-modal';
+import Title from '../Title';
+import './LoginStyle.scss';
 
 export default function AuthModal(props) {
   return (
     <Modal
       isOpen={props.showModal}
       onRequestClose={props.setShowWelcomeModal}
-      className="auth-modal"
-      contentLabel="Auth Modal"
+      className='auth-modal'
+      contentLabel='Auth Modal'
       closeTimeoutMS={500}
     >
-      <div className="auth-modal-header">
+      <div className='auth-modal-header'>
         <Title
           title={props.title}
           subtitle={props.subtitle}
-          style="auth-title"
+          style='auth-title'
         />
       </div>
-      <div className="auth-modal-content">
+      <div className='auth-modal-content'>
         <button
-          type="button"
-          className="btn"
+          type='button'
+          className='btn'
           onClick={props.setShowWelcomeModal}
         >
           OK!

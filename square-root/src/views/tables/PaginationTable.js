@@ -57,24 +57,36 @@ function TablePaginationActions(props) {
       <IconButton
         onClick={handleFirstPageButtonClick}
         disabled={page === 0}
-        aria-label="first page"
+        aria-label='first page'
       >
         {theme.direction === 'rtl' ? <LastPageIcon /> : <FirstPageIcon />}
       </IconButton>
-      <IconButton onClick={handleBackButtonClick} disabled={page === 0} aria-label="previous page">
-        {theme.direction === 'rtl' ? <KeyboardArrowRight /> : <KeyboardArrowLeft />}
+      <IconButton
+        onClick={handleBackButtonClick}
+        disabled={page === 0}
+        aria-label='previous page'
+      >
+        {theme.direction === 'rtl' ? (
+          <KeyboardArrowRight />
+        ) : (
+          <KeyboardArrowLeft />
+        )}
       </IconButton>
       <IconButton
         onClick={handleNextButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="next page"
+        aria-label='next page'
       >
-        {theme.direction === 'rtl' ? <KeyboardArrowLeft /> : <KeyboardArrowRight />}
+        {theme.direction === 'rtl' ? (
+          <KeyboardArrowLeft />
+        ) : (
+          <KeyboardArrowRight />
+        )}
       </IconButton>
       <IconButton
         onClick={handleLastPageButtonClick}
         disabled={page >= Math.ceil(count / rowsPerPage) - 1}
-        aria-label="last page"
+        aria-label='last page'
       >
         {theme.direction === 'rtl' ? <FirstPageIcon /> : <LastPageIcon />}
       </IconButton>
@@ -215,7 +227,8 @@ const PaginationTable = () => {
   const [rowsPerPage, setRowsPerPage] = React.useState(5);
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   const handleChangePage = (event, newPage) => {
     setPage(newPage);
@@ -227,9 +240,12 @@ const PaginationTable = () => {
   };
 
   return (
-    <PageContainer title="Pagination Table" description="this is Pagination Table page">
+    <PageContainer
+      title='Pagination Table'
+      description='this is Pagination Table page'
+    >
       {/* breadcrumb */}
-      <Breadcrumb title="Pagination Table" items={BCrumb} />
+      <Breadcrumb title='Pagination Table' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <CardContent>
@@ -242,7 +258,7 @@ const PaginationTable = () => {
             }}
           >
             <Table
-              aria-label="custom pagination table"
+              aria-label='custom pagination table'
               sx={{
                 whiteSpace: 'nowrap',
               }}
@@ -250,41 +266,44 @@ const PaginationTable = () => {
               <TableHead>
                 <TableRow>
                   <TableCell>
-                    <Typography variant="h5">Order No.</Typography>
+                    <Typography variant='h5'>Order No.</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="h5">Customer</Typography>
+                    <Typography variant='h5'>Customer</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="h5">Items</Typography>
+                    <Typography variant='h5'>Items</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="h5">Total</Typography>
+                    <Typography variant='h5'>Total</Typography>
                   </TableCell>
 
                   <TableCell>
-                    <Typography variant="h5">Date</Typography>
+                    <Typography variant='h5'>Date</Typography>
                   </TableCell>
                   <TableCell>
-                    <Typography variant="h5">Status</Typography>
+                    <Typography variant='h5'>Status</Typography>
                   </TableCell>
                 </TableRow>
               </TableHead>
               <TableBody>
                 {(rowsPerPage > 0
-                  ? rows.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                  ? rows.slice(
+                      page * rowsPerPage,
+                      page * rowsPerPage + rowsPerPage
+                    )
                   : rows
                 ).map((row) => (
                   <TableRow key={row.orderno}>
                     <TableCell>
-                      <Typography variant="h5">{row.orderno}</Typography>
+                      <Typography variant='h5'>{row.orderno}</Typography>
                     </TableCell>
                     <TableCell>
-                      <Box display="flex" alignItems="center">
+                      <Box display='flex' alignItems='center'>
                         <Avatar
                           src={row.imgsrc}
                           alt={row.imgsrc}
-                          width="30"
+                          width='30'
                           sx={{
                             borderRadius: '100%',
                           }}
@@ -294,26 +313,34 @@ const PaginationTable = () => {
                             ml: 2,
                           }}
                         >
-                          <Typography variant="h6" fontWeight="600">
+                          <Typography variant='h6' fontWeight='600'>
                             {row.customer}
                           </Typography>
                         </Box>
                       </Box>
                     </TableCell>
                     <TableCell>
-                      <Typography color="textSecondary" variant="h6" fontWeight="400">
+                      <Typography
+                        color='textSecondary'
+                        variant='h6'
+                        fontWeight='400'
+                      >
                         {row.items}
                       </Typography>
                     </TableCell>
 
                     <TableCell>
-                      <Typography color="textSecondary" variant="h6" fontWeight="400">
+                      <Typography
+                        color='textSecondary'
+                        variant='h6'
+                        fontWeight='400'
+                      >
                         ${row.total}
                       </Typography>
                     </TableCell>
 
                     <TableCell>
-                      <Typography variant="h6">{row.date}</Typography>
+                      <Typography variant='h6'>{row.date}</Typography>
                     </TableCell>
                     <TableCell>
                       <Chip
@@ -338,7 +365,7 @@ const PaginationTable = () => {
                           pl: '3px',
                           pr: '3px',
                         }}
-                        size="small"
+                        size='small'
                         label={row.status}
                       />
                     </TableCell>
@@ -354,7 +381,12 @@ const PaginationTable = () => {
               <TableFooter>
                 <TableRow>
                   <TablePagination
-                    rowsPerPageOptions={[5, 10, 25, { label: 'All', value: -1 }]}
+                    rowsPerPageOptions={[
+                      5,
+                      10,
+                      25,
+                      { label: 'All', value: -1 },
+                    ]}
                     colSpan={6}
                     count={rows.length}
                     rowsPerPage={rowsPerPage}

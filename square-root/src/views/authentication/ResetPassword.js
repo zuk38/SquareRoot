@@ -71,7 +71,11 @@ export default function ResetPassword() {
             </Box>
           </Box>
         </Grid>
-        {!emailProvided ? <ResetPassEmail redirectToCode={(arg) => setEmailProvided(arg)}/> : <ResetPassCode />}
+        {!emailProvided ? (
+          <ResetPassEmail redirectToCode={(arg) => setEmailProvided(arg)} />
+        ) : (
+          <ResetPassCode />
+        )}
       </Grid>
     </PageContainer>
   );

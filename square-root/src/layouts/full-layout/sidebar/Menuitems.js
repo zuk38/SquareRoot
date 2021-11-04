@@ -27,9 +27,9 @@ const Menuitems = [
         href: '/dashboards/dashboard3',
         icon: 'plus',
       },
-    ]
+    ],
   },
-  
+
   {
     navlabel: true,
     subheader: 'PLANTS FOR',
@@ -56,6 +56,7 @@ const Menuitems = [
     icon: 'list',
     href: '',
   },
+  /** 
   {
     navlabel: true,
     subheader: 'FLEXY ADDONS',
@@ -327,6 +328,7 @@ const Menuitems = [
     icon: 'octagon',
     href: '/charts/radialbar-chart',
   },
+  */
   {
     navlabel: true,
     subheader: 'AUTHENTICATION',

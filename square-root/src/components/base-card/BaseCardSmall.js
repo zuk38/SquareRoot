@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Card, CardContent, } from '@mui/material';
+import { Card, CardContent } from '@mui/material';
 
 const BaseCardSmall = ({ children }) => (
   <Card

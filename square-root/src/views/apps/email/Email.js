@@ -1,5 +1,12 @@
 import React, { useState } from 'react';
-import { Card, Button, Divider, Box, Drawer, useMediaQuery } from '@mui/material';
+import {
+  Card,
+  Button,
+  Divider,
+  Box,
+  Drawer,
+  useMediaQuery,
+} from '@mui/material';
 import Breadcrumb from '../../../layouts/full-layout/breadcrumb/Breadcrumb';
 import EmailLists from '../../../components/apps/email/EmailList';
 import EmailSidebar from '../../../components/apps/email/EmailSidebar';
@@ -17,8 +24,8 @@ const Email = () => {
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
   const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   return (
-    <PageContainer title="Email App" description="this is email page">
-      <Breadcrumb title="Email app" subtitle="Look at Inbox" />
+    <PageContainer title='Email App' description='this is email page'>
+      <Breadcrumb title='Email app' subtitle='Look at Inbox' />
 
       <Card sx={{ display: 'flex', p: 0 }}>
         {/* Left Part */}
@@ -30,7 +37,7 @@ const Email = () => {
               display: { xs: 'none', zIndex: 0, lg: 'block' },
               [`& .MuiDrawer-paper`]: { position: 'relative' },
             }}
-            variant="permanent"
+            variant='permanent'
           >
             <EmailSidebar />
           </Drawer>
@@ -43,7 +50,7 @@ const Email = () => {
               [`& .MuiDrawer-paper`]: { width: drawerWidth },
               flexShrink: 0,
             }}
-            variant="temporary"
+            variant='temporary'
           >
             <EmailSidebar />
           </Drawer>
@@ -66,8 +73,8 @@ const Email = () => {
         {/* Right Part */}
         {mdUp ? (
           <Drawer
-            anchor="right"
-            variant="permanent"
+            anchor='right'
+            variant='permanent'
             sx={{
               zIndex: 0,
               flex: 'auto',
@@ -80,7 +87,7 @@ const Email = () => {
           </Drawer>
         ) : (
           <Drawer
-            anchor="right"
+            anchor='right'
             open={isRightSidebarOpen}
             onClose={() => setRightSidebarOpen(false)}
             sx={{
@@ -88,13 +95,13 @@ const Email = () => {
               flexShrink: 0,
               [`& .MuiDrawer-paper`]: { width: '85%' },
             }}
-            variant="temporary"
+            variant='temporary'
           >
             <Box sx={{ p: 3 }}>
               <Button
-                variant="outlined"
-                color="primary"
-                size="small"
+                variant='outlined'
+                color='primary'
+                size='small'
                 onClick={() => setRightSidebarOpen(false)}
                 sx={{ mb: 3, display: { xs: 'block', md: 'none', lg: 'none' } }}
               >

@@ -1,10 +1,10 @@
-import React, { useState, useContext, useEffect } from "react";
-import "../../styles/Customize.css";
-import Title from "../../components/Title";
-import ProjectPlantsModal from "../../components/user/ProjectPlantsModal";
-import PlantsContainer from "../../components/PlantsContainer";
-import { ConceptContext, ConceptProvider } from "../../context/concepts";
-import { Link } from "react-router-dom";
+import React, { useState, useContext, useEffect } from 'react';
+import '../../styles/Customize.css';
+import Title from '../../components/Title';
+import ProjectPlantsModal from '../../components/user/ProjectPlantsModal';
+import PlantsContainer from '../../components/PlantsContainer';
+import { ConceptContext, ConceptProvider } from '../../context/concepts';
+import { Link } from 'react-router-dom';
 
 export default function Customize(props) {
   const conceptName = props.match.params.conceptName;
@@ -18,15 +18,15 @@ export default function Customize(props) {
   const [currentPlant, setCurrentPlant] = useState(null);
 
   useEffect(() => {
-    window.addEventListener("beforeunload", alertUser);
+    window.addEventListener('beforeunload', alertUser);
     return () => {
-      window.removeEventListener("beforeunload", alertUser);
+      window.removeEventListener('beforeunload', alertUser);
     };
   }, []);
 
   const alertUser = (e) => {
     e.preventDefault();
-    e.returnValue = "";
+    e.returnValue = '';
   };
 
   useEffect(() => {
@@ -41,7 +41,7 @@ export default function Customize(props) {
 
   useEffect(() => {
     setPlantsNumber(conceptPlants.length);
-    console.log(conceptPlants)
+    console.log(conceptPlants);
   }, [conceptPlants]);
 
   useEffect(() => {
@@ -55,9 +55,9 @@ export default function Customize(props) {
 
   if (!concept) {
     return (
-      <div className="error">
+      <div className='error'>
         <h3> no such concept could be found...</h3>
-        <Link to="/" className="btn-primary">
+        <Link to='/' className='btn-primary'>
           back home
         </Link>
       </div>
@@ -137,10 +137,10 @@ export default function Customize(props) {
   return (
     <ConceptProvider>
       <>
-        <div className="customize-header">
+        <div className='customize-header'>
           <div>
-            <a href={`/concepts/${conceptName}`} className="btn-back btn-white">
-              <i className="fas fa-chevron-left" />
+            <a href={`/concepts/${conceptName}`} className='btn-back btn-white'>
+              <i className='fas fa-chevron-left' />
               Tilbake til {conceptName}
             </a>
           </div>
@@ -148,11 +148,11 @@ export default function Customize(props) {
             <h5>Tilpass {conceptName}</h5>
           </div>
           <div>
-            <button className="btn-orders" onClick={() => setModalOpen(true)}>
-              <i className="fas fa-tasks fa-2x" />
-              <div className="order-items">
+            <button className='btn-orders' onClick={() => setModalOpen(true)}>
+              <i className='fas fa-tasks fa-2x' />
+              <div className='order-items'>
                 {plantsNumber}
-                <i className="fas fa-chevron-left" />
+                <i className='fas fa-chevron-left' />
               </div>
             </button>
           </div>
@@ -172,13 +172,13 @@ export default function Customize(props) {
             saveModifiedConcept(concept, conceptPlants)
           }
         />
-        <div className="cust-concept-title">
+        <div className='cust-concept-title'>
           <Title
-            title="Oslo"
-            subtitle="I Oslo anbefales det med biologisk mangfoldige planter og
+            title='Oslo'
+            subtitle='I Oslo anbefales det med biologisk mangfoldige planter og
                 temperaturregulerende planter. Vi kan skrive mer her for å gi mer
-                informasjon."
-            style="plants-title"
+                informasjon.'
+            style='plants-title'
           />
         </div>
         <PlantsContainer

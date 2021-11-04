@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import { v4 as uuidv4 } from "uuid";
-import { API, graphqlOperation, Storage } from "aws-amplify";
-import { createPlant, createPlantMetadata } from "../api/mutations";
-import config from "../aws-exports";
-import Error from "./Error";
-import Amplify, { Auth } from "aws-amplify";
+import React, { useState, useEffect } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { API, graphqlOperation, Storage } from 'aws-amplify';
+import { createPlant, createPlantMetadata } from '../api/mutations';
+import config from '../aws-exports';
+import Error from './Error';
+import Amplify, { Auth } from 'aws-amplify';
 
 Amplify.configure(config);
 Auth.configure(config);
@@ -25,9 +25,9 @@ const PN = () => {
           idToken: { payload },
         } = cognitoUser;
         // Loop through the groups that the user is a member of PNs group
-        payload["cognito:groups"] &&
-          payload["cognito:groups"].forEach((group) => {
-            if (group === "PNs") updatePNInfo(true);
+        payload['cognito:groups'] &&
+          payload['cognito:groups'].forEach((group) => {
+            if (group === 'PNs') updatePNInfo(true);
           });
       })
       .catch((err) => console.log(err));
@@ -36,15 +36,15 @@ const PN = () => {
 
   const [image, setImage] = useState(null);
   const [plantDetails, setPlantDetails] = useState({
-    id: "",
-    latin_name: "",
-    norwegian_name: "",
-    type: "",
-    image: "",
+    id: '',
+    latin_name: '',
+    norwegian_name: '',
+    type: '',
+    image: '',
     native: false,
     norwegian_nursery: false,
     size_in_cm: 0,
-    climate_zone: "",
+    climate_zone: '',
     pollinator_friendly: false,
     edible: false,
     rain_garden: false,
@@ -59,7 +59,7 @@ const PN = () => {
   }, []);
 
   const handleSubmit = async (e) => {
-    console.log("submit");
+    console.log('submit');
     e.preventDefault();
     try {
       if (!plantDetails.latin_name || !plantDetails.norwegian_name) return;
@@ -72,14 +72,14 @@ const PN = () => {
       };
       await API.graphql(graphqlOperation(createPlant, { input: plant }));
       setPlantDetails({
-        latin_name: "",
-        norwegian_name: "",
-        type: "",
-        image: "",
+        latin_name: '',
+        norwegian_name: '',
+        type: '',
+        image: '',
         native: false,
         norwegian_nursery: false,
         size_in_cm: 0,
-        climate_zone: "",
+        climate_zone: '',
         pollinator_friendly: false,
         edible: false,
         rain_garden: false,
@@ -88,25 +88,25 @@ const PN = () => {
         sun_seeker: false,
       });
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log('error creating todo:', err);
     }
   };
 
   const handleImageUpload = async (e) => {
     e.preventDefault();
     const file = e.target.files[0];
-    const extension = file.name.split(".")[1];
-    const name = file.name.split(".")[0];
+    const extension = file.name.split('.')[1];
+    const name = file.name.split('.')[0];
     const key = `images/plants/${name}.${extension}`;
     const url = `https://${bucket}.s3.${region}.amazonaws.com/public/${key}`;
     try {
       // Upload the file to s3 with public access level.
       await Storage.put(key, file, {
-        level: "public",
+        level: 'public',
         contentType: file.type,
       });
       // Retrieve the uploaded file to display
-      const image = await Storage.get(key, { level: "public" });
+      const image = await Storage.get(key, { level: 'public' });
       setImage(image);
       setPlantDetails({ ...plantDetails, image: url });
     } catch (err) {
@@ -119,29 +119,29 @@ const PN = () => {
   }
 
   return (
-    <section className="admin-wrapper">
+    <section className='admin-wrapper'>
       <section>
-        <header className="form-header">
+        <header className='form-header'>
           <h3>Add New Plant</h3>
         </header>
-        <form className="form-wrapper" onSubmit={handleSubmit}>
-          <div className="form-image">
+        <form className='form-wrapper' onSubmit={handleSubmit}>
+          <div className='form-image'>
             {image ? (
-              <img className="image-preview" src={image} alt="" />
+              <img className='image-preview' src={image} alt='' />
             ) : (
-              <input type="file" onChange={(e) => handleImageUpload(e)} />
+              <input type='file' onChange={(e) => handleImageUpload(e)} />
             )}
           </div>
-          <div className="form-fields">
-            <div className="name-form">
+          <div className='form-fields'>
+            <div className='name-form'>
               <p>
-                <label htmlFor="name">Norwegian Name</label>
+                <label htmlFor='name'>Norwegian Name</label>
               </p>
               <p>
                 <input
-                  name="name"
-                  type="title"
-                  placeholder="Type the norwegian name"
+                  name='name'
+                  type='title'
+                  placeholder='Type the norwegian name'
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
@@ -152,15 +152,15 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="name-form">
+            <div className='name-form'>
               <p>
-                <label htmlFor="name">Latin Name</label>
+                <label htmlFor='name'>Latin Name</label>
               </p>
               <p>
                 <input
-                  name="name"
-                  type="title"
-                  placeholder="Type the latin name"
+                  name='name'
+                  type='title'
+                  placeholder='Type the latin name'
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
@@ -171,14 +171,14 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="pollinator-form">
+            <div className='pollinator-form'>
               <p>
-                <label htmlFor="pollinator">Type</label>
+                <label htmlFor='pollinator'>Type</label>
               </p>
               <p>
                 <select
-                  name="pollinators"
-                  id="pollinators"
+                  name='pollinators'
+                  id='pollinators'
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
@@ -187,22 +187,24 @@ const PN = () => {
                   }
                   required
                 >
-                  <option value="potted" selected>potted</option>
-                  <option value="grass">grass</option>
-                  <option value="berry">berry</option>
-                  <option value="bush">bush</option>
-                  <option value="perennial">perennial</option>
-                  <option value="fern">fern</option>
-                  <option value="herb">herb</option>
+                  <option value='potted' selected>
+                    potted
+                  </option>
+                  <option value='grass'>grass</option>
+                  <option value='berry'>berry</option>
+                  <option value='bush'>bush</option>
+                  <option value='perennial'>perennial</option>
+                  <option value='fern'>fern</option>
+                  <option value='herb'>herb</option>
                 </select>
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Norwegian Nursery?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.norwegian_nursery}
                   onChange={() =>
                     setPlantDetails({
@@ -213,12 +215,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Native?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.native}
                   onChange={() =>
                     setPlantDetails({
@@ -229,12 +231,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Pollinator Friendly?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.pollinator_friendly}
                   onChange={() =>
                     setPlantDetails({
@@ -245,12 +247,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Edible?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.edible}
                   onChange={() =>
                     setPlantDetails({
@@ -261,12 +263,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Rain Garden?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.rain_garden}
                   onChange={() =>
                     setPlantDetails({
@@ -277,12 +279,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Pets and kids friendly?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.pet_kids_friendly}
                   onChange={() =>
                     setPlantDetails({
@@ -293,12 +295,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Sun seeker?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.sun_seeker}
                   onChange={() =>
                     setPlantDetails({
@@ -309,12 +311,12 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="featured-form">
+            <div className='featured-form'>
               <p>
                 <label>Air puryfying?</label>
                 <input
-                  type="checkbox"
-                  className="featured-checkbox"
+                  type='checkbox'
+                  className='featured-checkbox'
                   checked={plantDetails.air_puryfying}
                   onChange={() =>
                     setPlantDetails({
@@ -325,13 +327,13 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="size-form">
+            <div className='size-form'>
               <p>
-                <label htmlFor="price">Height (cm)</label>
+                <label htmlFor='price'>Height (cm)</label>
                 <input
-                  name="height"
-                  type="text"
-                  placeholder="What is the size of the plant (cm)"
+                  name='height'
+                  type='text'
+                  placeholder='What is the size of the plant (cm)'
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
@@ -341,13 +343,13 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="size-form">
+            <div className='size-form'>
               <p>
-                <label htmlFor="climate">climate zone</label>
+                <label htmlFor='climate'>climate zone</label>
                 <input
-                  name="climate"
-                  type="text"
-                  placeholder="What is the climate zone of the plant"
+                  name='climate'
+                  type='text'
+                  placeholder='What is the climate zone of the plant'
                   onChange={(e) =>
                     setPlantDetails({
                       ...plantDetails,
@@ -357,8 +359,8 @@ const PN = () => {
                 />
               </p>
             </div>
-            <div className="submit-form">
-              <button className="btn" type="submit">
+            <div className='submit-form'>
+              <button className='btn' type='submit'>
                 Submit
               </button>
             </div>

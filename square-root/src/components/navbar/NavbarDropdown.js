@@ -1,8 +1,8 @@
-import React, { useState } from "react";
-import { NavbarData } from "./NavbarData";
-import "./Dropdown.css";
-import { Link } from "react-router-dom";
-import { Trans } from "react-i18next";
+import React, { useState } from 'react';
+import { NavbarData } from './NavbarData';
+import './Dropdown.css';
+import { Link } from 'react-router-dom';
+import { Trans } from 'react-i18next';
 
 export default function NavbarDropdown(props) {
   const [click, setClick] = useState(false);
@@ -10,7 +10,7 @@ export default function NavbarDropdown(props) {
 
   return (
     <>
-      <ul onClick={handleClick} className={click ? "d-menu clicked" : "d-menu"}>
+      <ul onClick={handleClick} className={click ? 'd-menu clicked' : 'd-menu'}>
         {NavbarData.map(
           (item) =>
             item.subtitle &&

@@ -79,18 +79,23 @@ const AreaChart = () => {
   ];
 
   return (
-    <PageContainer title="Area Chart" description="this is innerpage">
+    <PageContainer title='Area Chart' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Area Chart" items={BCrumb} />
+      <Breadcrumb title='Area Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Area Charts</Typography>
+            <Typography variant='h4'>Area Charts</Typography>
           </Box>
         </Box>
         <CardContent>
-          <Chart options={optionsareachart} series={seriesareachart} type="area" height="300px" />
+          <Chart
+            options={optionsareachart}
+            series={seriesareachart}
+            type='area'
+            height='300px'
+          />
         </CardContent>
       </Card>
     </PageContainer>

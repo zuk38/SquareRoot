@@ -1,5 +1,13 @@
 import React from 'react';
-import { Grid, Box, Card, CardContent, Typography, Button, Avatar } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Button,
+  Avatar,
+} from '@mui/material';
 import FeatherIcon from 'feather-icons-react';
 import profilecover from '../../assets/images/backgrounds/profilebg.jpg';
 import userimg from '../../assets/images/users/user2.jpg';
@@ -10,7 +18,11 @@ const CoverCard = () => (
       padding: '0',
     }}
   >
-    <img srcSet={`${profilecover} 1x, ${profilecover} 2x`} alt={profilecover} width="100%" />
+    <img
+      srcSet={`${profilecover} 1x, ${profilecover} 2x`}
+      alt={profilecover}
+      width='100%'
+    />
     <CardContent
       sx={{
         pt: '24px',
@@ -57,11 +69,11 @@ const CoverCard = () => (
                   color: (theme) => theme.palette.grey.A200,
                 }}
               >
-                <FeatherIcon icon="file-text" width="20" />
+                <FeatherIcon icon='file-text' width='20' />
               </Typography>
               <Typography
-                variant="h4"
-                fontWeight="600"
+                variant='h4'
+                fontWeight='600'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -69,9 +81,9 @@ const CoverCard = () => (
                 938
               </Typography>
               <Typography
-                color="textSecondary"
-                variant="h5"
-                fontWeight="400"
+                color='textSecondary'
+                variant='h5'
+                fontWeight='400'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -93,11 +105,11 @@ const CoverCard = () => (
                   color: (theme) => theme.palette.grey.A200,
                 }}
               >
-                <FeatherIcon icon="user-check" width="20" />
+                <FeatherIcon icon='user-check' width='20' />
               </Typography>
               <Typography
-                variant="h4"
-                fontWeight="600"
+                variant='h4'
+                fontWeight='600'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -105,9 +117,9 @@ const CoverCard = () => (
                 3,586
               </Typography>
               <Typography
-                color="textSecondary"
-                variant="h5"
-                fontWeight="400"
+                color='textSecondary'
+                variant='h5'
+                fontWeight='400'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -129,11 +141,11 @@ const CoverCard = () => (
                   color: (theme) => theme.palette.grey.A200,
                 }}
               >
-                <FeatherIcon icon="users" width="20" />
+                <FeatherIcon icon='users' width='20' />
               </Typography>
               <Typography
-                variant="h4"
-                fontWeight="600"
+                variant='h4'
+                fontWeight='600'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -141,9 +153,9 @@ const CoverCard = () => (
                 2,659
               </Typography>
               <Typography
-                color="textSecondary"
-                variant="h5"
-                fontWeight="400"
+                color='textSecondary'
+                variant='h5'
+                fontWeight='400'
                 sx={{
                   lineHeight: '1.2',
                 }}
@@ -168,9 +180,9 @@ const CoverCard = () => (
           }}
         >
           <Box
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
             sx={{
               mt: '-90px',
             }}
@@ -182,7 +194,11 @@ const CoverCard = () => (
                   padding: '4px',
                   borderRadius: '50%',
                   border: (theme) =>
-                    `${theme.palette.mode === 'dark' ? '3px solid #3c414c' : '3px solid #fff'}`,
+                    `${
+                      theme.palette.mode === 'dark'
+                        ? '3px solid #3c414c'
+                        : '3px solid #fff'
+                    }`,
                   width: '110px',
                   height: '110px',
                   overflow: 'hidden',
@@ -197,7 +213,11 @@ const CoverCard = () => (
                     width: '96px',
                     height: '96px',
                     border: (theme) =>
-                      `${theme.palette.mode === 'dark' ? '4px solid #3c414c' : '4px solid #fff'}`,
+                      `${
+                        theme.palette.mode === 'dark'
+                          ? '4px solid #3c414c'
+                          : '4px solid #fff'
+                      }`,
                   }}
                 />
               </Box>
@@ -208,7 +228,7 @@ const CoverCard = () => (
                 }}
               >
                 <Typography
-                  fontWeight="500"
+                  fontWeight='500'
                   sx={{
                     fontSize: '20px',
                     textAlign: 'center',
@@ -217,9 +237,9 @@ const CoverCard = () => (
                   Julia Roberts
                 </Typography>
                 <Typography
-                  color="textSecondary"
-                  variant="h6"
-                  fontWeight="400"
+                  color='textSecondary'
+                  variant='h6'
+                  fontWeight='400'
                   sx={{
                     textAlign: 'center',
                   }}
@@ -236,8 +256,8 @@ const CoverCard = () => (
           lg={4}
           sm={12}
           xs={12}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             justifyContent: {
               sm: 'center',
@@ -273,9 +293,9 @@ const CoverCard = () => (
             }}
           >
             <Button
-              color="secondary"
-              variant="contained"
-              size="small"
+              color='secondary'
+              variant='contained'
+              size='small'
               sx={{
                 width: '40px',
                 minWidth: '40px',
@@ -283,12 +303,12 @@ const CoverCard = () => (
                 backgroundColor: '#3762d2',
               }}
             >
-              <FeatherIcon icon="facebook" width="18" />
+              <FeatherIcon icon='facebook' width='18' />
             </Button>
             <Button
-              color="primary"
-              variant="contained"
-              size="small"
+              color='primary'
+              variant='contained'
+              size='small'
               sx={{
                 width: '40px',
                 minWidth: '40px',
@@ -297,12 +317,12 @@ const CoverCard = () => (
                 ml: 1,
               }}
             >
-              <FeatherIcon icon="twitter" width="18" />
+              <FeatherIcon icon='twitter' width='18' />
             </Button>
             <Button
-              color="primary"
-              variant="contained"
-              size="small"
+              color='primary'
+              variant='contained'
+              size='small'
               sx={{
                 width: '40px',
                 minWidth: '40px',
@@ -311,12 +331,12 @@ const CoverCard = () => (
                 ml: 1,
               }}
             >
-              <FeatherIcon icon="linkedin" width="18" />
+              <FeatherIcon icon='linkedin' width='18' />
             </Button>
             <Button
-              color="error"
-              variant="contained"
-              size="small"
+              color='error'
+              variant='contained'
+              size='small'
               sx={{
                 width: '40px',
                 minWidth: '40px',
@@ -325,12 +345,12 @@ const CoverCard = () => (
                 ml: 1,
               }}
             >
-              <FeatherIcon icon="instagram" width="18" />
+              <FeatherIcon icon='instagram' width='18' />
             </Button>
             <Button
-              color="primary"
-              variant="contained"
-              size="small"
+              color='primary'
+              variant='contained'
+              size='small'
               sx={{
                 height: '40px',
                 backgroundColor: '#1a9afb',

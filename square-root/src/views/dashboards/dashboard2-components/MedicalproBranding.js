@@ -34,23 +34,23 @@ const MedicalproBranding = () => {
   };
   return (
     <DashboardCard
-      title="MedicalPro Branding"
-      subtitle="Branding & Website"
+      title='MedicalPro Branding'
+      subtitle='Branding & Website'
       action={
         <Box>
-          <Tooltip title="Action">
+          <Tooltip title='Action'>
             <IconButton
               aria-expanded={open ? 'true' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleClick}
-              size="large"
-              aria-label="action"
+              size='large'
+              aria-label='action'
             >
-              <FeatherIcon icon="more-horizontal" />
+              <FeatherIcon icon='more-horizontal' />
             </IconButton>
           </Tooltip>
           <Menu
-            id="long-menu"
+            id='long-menu'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -67,7 +67,11 @@ const MedicalproBranding = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem
+                key={option}
+                selected={option === 'Pyxis'}
+                onClick={handleClose}
+              >
                 {option}
               </MenuItem>
             ))}
@@ -76,8 +80,8 @@ const MedicalproBranding = () => {
       }
     >
       <Chip
-        size="small"
-        label="16 APR, 2021"
+        size='small'
+        label='16 APR, 2021'
         sx={{
           backgroundColor: (theme) => theme.palette.secondary.light,
           color: (theme) => theme.palette.secondary.main,
@@ -101,10 +105,10 @@ const MedicalproBranding = () => {
               pb: 2,
             }}
           >
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               Due Date
             </Typography>
-            <Typography variant="subtitle2" fontWeight="500">
+            <Typography variant='subtitle2' fontWeight='500'>
               Oct 23, 2021
             </Typography>
           </Grid>
@@ -118,10 +122,10 @@ const MedicalproBranding = () => {
               pl: 1,
             }}
           >
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               Budget
             </Typography>
-            <Typography variant="subtitle2" fontWeight="500">
+            <Typography variant='subtitle2' fontWeight='500'>
               $98,500
             </Typography>
           </Grid>
@@ -134,10 +138,10 @@ const MedicalproBranding = () => {
               pb: 2,
             }}
           >
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               Expense
             </Typography>
-            <Typography variant="subtitle2" fontWeight="500">
+            <Typography variant='subtitle2' fontWeight='500'>
               $63,000
             </Typography>
           </Grid>
@@ -150,17 +154,17 @@ const MedicalproBranding = () => {
           pb: 3,
         }}
       >
-        <Typography variant="h4">Teams</Typography>
+        <Typography variant='h4'>Teams</Typography>
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             mt: 1,
           }}
         >
           <Chip
-            size="small"
-            label="Bootstrap"
+            size='small'
+            label='Bootstrap'
             sx={{
               backgroundColor: (theme) => theme.palette.warning.main,
               color: '#fff',
@@ -170,8 +174,8 @@ const MedicalproBranding = () => {
             }}
           />
           <Chip
-            size="small"
-            label="Angular"
+            size='small'
+            label='Angular'
             sx={{
               backgroundColor: (theme) => theme.palette.error.main,
               color: '#fff',
@@ -190,10 +194,10 @@ const MedicalproBranding = () => {
           pb: 2,
         }}
       >
-        <Typography variant="h4">Leaders</Typography>
+        <Typography variant='h4'>Leaders</Typography>
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             mt: 1,
           }}
@@ -237,13 +241,13 @@ const MedicalproBranding = () => {
       </Box>
       <Divider />
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           pt: 2,
         }}
       >
-        <Button variant="contained" color="primary">
+        <Button variant='contained' color='primary'>
           Add
         </Button>
         <Box
@@ -251,7 +255,7 @@ const MedicalproBranding = () => {
             ml: 'auto',
           }}
         >
-          <Typography color="textSecondary" variant="h6" fontWeight="400">
+          <Typography color='textSecondary' variant='h6' fontWeight='400'>
             36 Recent Transactions
           </Typography>
         </Box>

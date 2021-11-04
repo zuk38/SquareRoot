@@ -7,8 +7,8 @@ import CheckBoxIcon from '@mui/icons-material/CheckBox';
 
 import BaseCard from '../../base-card/BaseCard';
 
-const icon = <CheckBoxOutlineBlankIcon fontSize="small" />;
-const checkedIcon = <CheckBoxIcon fontSize="small" />;
+const icon = <CheckBoxOutlineBlankIcon fontSize='small' />;
+const checkedIcon = <CheckBoxIcon fontSize='small' />;
 
 // Top 100 films as rated by IMDb users. http://www.imdb.com/chart/top
 const top100Films = [
@@ -62,10 +62,10 @@ const top100Films = [
 ];
 
 const CheckboxesAutocomplete = () => (
-  <BaseCard title="Checkboxes">
+  <BaseCard title='Checkboxes'>
     <Autocomplete
       multiple
-      id="checkboxes-tags-demo"
+      id='checkboxes-tags-demo'
       options={top100Films}
       disableCloseOnSelect
       getOptionLabel={(option) => option.title}
@@ -82,7 +82,12 @@ const CheckboxesAutocomplete = () => (
       )}
       fullWidth
       renderInput={(params) => (
-        <TextField {...params} size="small" placeholder="Favorites" aria-label="Favorites" />
+        <TextField
+          {...params}
+          size='small'
+          placeholder='Favorites'
+          aria-label='Favorites'
+        />
       )}
     />
   </BaseCard>

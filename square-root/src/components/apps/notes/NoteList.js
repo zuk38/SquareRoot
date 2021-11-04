@@ -11,7 +11,12 @@ import {
 import { useSelector, useDispatch } from 'react-redux';
 import FeatherIcon from 'feather-icons-react';
 import Scrollbar from '../../custom-scroll/Scrollbar';
-import { fetchNotes, openNote, deleteNote, noteSearch } from '../../../redux/notes/Action';
+import {
+  fetchNotes,
+  openNote,
+  deleteNote,
+  noteSearch,
+} from '../../../redux/notes/Action';
 import CustomTextField from '../../forms/custom-elements/CustomTextField';
 
 const NoteList = () => {
@@ -27,26 +32,29 @@ const NoteList = () => {
       return notes.filter(
         (t) =>
           !t.deleted &&
-          t.title.toLocaleLowerCase().concat(' ').includes(nSearch.toLocaleLowerCase()),
+          t.title
+            .toLocaleLowerCase()
+            .concat(' ')
+            .includes(nSearch.toLocaleLowerCase())
       );
     return notes.filter((t) => !t.deleted);
   };
 
   const notes = useSelector((state) =>
-    filterNotes(state.notesReducer.notes, state.notesReducer.noteSearch),
+    filterNotes(state.notesReducer.notes, state.notesReducer.noteSearch)
   );
 
   return (
     <Box>
       <Box sx={{ p: '15px' }}>
         <CustomTextField
-          id="search"
+          id='search'
           value={searchTerm}
-          placeholder="Search Notes"
+          placeholder='Search Notes'
           inputProps={{ 'aria-label': 'Search Notes' }}
-          size="small"
-          type="search"
-          variant="outlined"
+          size='small'
+          type='search'
+          variant='outlined'
           fullWidth
           onChange={(e) => dispatch(noteSearch(e.target.value))}
         />
@@ -62,7 +70,8 @@ const NoteList = () => {
                     sx={{
                       position: 'relative',
                       cursor: 'pointer',
-                      backgroundColor: activeNote === note.id ? 'rgba(230,244,255,0.3)' : '',
+                      backgroundColor:
+                        activeNote === note.id ? 'rgba(230,244,255,0.3)' : '',
                     }}
                     onClick={() => dispatch(openNote(note.id))}
                   >
@@ -87,13 +96,13 @@ const NoteList = () => {
                             : (theme) => theme.palette.primary.main,
                       }}
                     />
-                    <Typography variant="h5" sx={{ width: '240px' }} noWrap>
+                    <Typography variant='h5' sx={{ width: '240px' }} noWrap>
                       {note.title}
                     </Typography>
                     <Stack
-                      direction="row"
-                      justifyContent="space-between"
-                      alignItems="center"
+                      direction='row'
+                      justifyContent='space-between'
+                      alignItems='center'
                       spacing={2}
                     >
                       <ListItemText
@@ -103,14 +112,14 @@ const NoteList = () => {
                           month: 'short',
                         })}
                       />
-                      <Tooltip title="Delete">
+                      <Tooltip title='Delete'>
                         <IconButton
-                          aria-label="delete"
-                          size="small"
+                          aria-label='delete'
+                          size='small'
                           sx={{ flexShrink: '0' }}
                           onClick={() => dispatch(deleteNote(note.id))}
                         >
-                          <FeatherIcon icon="trash-2" width="16" />
+                          <FeatherIcon icon='trash-2' width='16' />
                         </IconButton>
                       </Tooltip>
                     </Stack>

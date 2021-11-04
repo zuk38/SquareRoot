@@ -25,37 +25,37 @@ const BCrumb = [
 const ExAutoComplete = () => (
   // 2
 
-  <PageContainer title="Autocomplete" description="this is Autocomplete page">
+  <PageContainer title='Autocomplete' description='this is Autocomplete page'>
     {/* breadcrumb */}
-    <Breadcrumb title="AutoComplete" items={BCrumb} />
+    <Breadcrumb title='AutoComplete' items={BCrumb} />
     {/* end breadcrumb */}
     <Grid container spacing={0}>
       {/* ------------------------- row 1 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <ComboBoxAutocomplete />
       </Grid>
       {/* ------------------------- row 2 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <CountrySelectAutocomplete />
       </Grid>
       {/* ------------------------- row 3 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <ControlledStateAutocomplete />
       </Grid>
       {/* ------------------------- row 4 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <FreeSoloAutocomplete />
       </Grid>
       {/* ------------------------- row 5 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <MultipleValuesAutocomplete />
       </Grid>
       {/* ------------------------- row 6 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <CheckboxesAutocomplete />
       </Grid>
       {/* ------------------------- row 7 ------------------------- */}
-      <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
+      <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
         <SizesAutocomplete />
       </Grid>
     </Grid>

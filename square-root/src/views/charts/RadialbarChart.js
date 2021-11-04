@@ -73,41 +73,44 @@ const RadialbarChart = () => {
   ];
 
   return (
-    <PageContainer title="Radialbar & Radar Chart" description="this is innerpage">
+    <PageContainer
+      title='Radialbar & Radar Chart'
+      description='this is innerpage'
+    >
       {/* breadcrumb */}
-      <Breadcrumb title="Radialbar Chart" items={BCrumb} />
+      <Breadcrumb title='Radialbar Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={3}>
         <Grid item lg={6} md={12} xs={12}>
           <Card>
-            <Box p={2} display="flex" alignItems="center">
+            <Box p={2} display='flex' alignItems='center'>
               <Box flexGrow={1}>
-                <Typography variant="h4">Radial bar Charts</Typography>
+                <Typography variant='h4'>Radial bar Charts</Typography>
               </Box>
             </Box>
             <CardContent>
               <Chart
                 options={optionsradialchart}
                 series={seriesradialchart}
-                type="radialBar"
-                height="300px"
+                type='radialBar'
+                height='300px'
               />
             </CardContent>
           </Card>
         </Grid>
         <Grid item lg={6} md={12} xs={12}>
           <Card>
-            <Box p={2} display="flex" alignItems="center">
+            <Box p={2} display='flex' alignItems='center'>
               <Box flexGrow={1}>
-                <Typography variant="h4">Radar Charts</Typography>
+                <Typography variant='h4'>Radar Charts</Typography>
               </Box>
             </Box>
             <CardContent>
               <Chart
                 options={optionsradarchart}
                 series={seriesradarchart}
-                type="radar"
-                height="300px"
+                type='radar'
+                height='300px'
               />
             </CardContent>
           </Card>

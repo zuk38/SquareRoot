@@ -3,7 +3,7 @@ import {
   checkPassword,
   checkCognito,
   checkCode,
-} from "./Validation";
+} from './Validation';
 
 export default function validate(values) {
   let errors = {};

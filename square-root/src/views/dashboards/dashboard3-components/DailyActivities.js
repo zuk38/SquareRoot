@@ -1,5 +1,12 @@
 import React from 'react';
-import { Menu, MenuItem, IconButton, Typography, Box, Tooltip } from '@mui/material';
+import {
+  Menu,
+  MenuItem,
+  IconButton,
+  Typography,
+  Box,
+  Tooltip,
+} from '@mui/material';
 
 import FeatherIcon from 'feather-icons-react';
 
@@ -56,23 +63,23 @@ const DailyActivities = () => {
   };
   return (
     <DashboardCard
-      title="Daily Activities"
-      subtitle="Overview of Years"
+      title='Daily Activities'
+      subtitle='Overview of Years'
       action={
         <Box>
-          <Tooltip title="Action">
+          <Tooltip title='Action'>
             <IconButton
               aria-expanded={open ? 'true' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleClick}
-              size="large"
-              aria-label="action"
+              size='large'
+              aria-label='action'
             >
-              <FeatherIcon icon="more-horizontal" />
+              <FeatherIcon icon='more-horizontal' />
             </IconButton>
           </Tooltip>
           <Menu
-            id="long-menu"
+            id='long-menu'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -89,7 +96,11 @@ const DailyActivities = () => {
             }}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem
+                key={option}
+                selected={option === 'Pyxis'}
+                onClick={handleClose}
+              >
                 {option}
               </MenuItem>
             ))}
@@ -116,20 +127,20 @@ const DailyActivities = () => {
                 flex: '0',
               }}
             >
-              <Typography variant="subtitle2" fontWeight="700">
+              <Typography variant='subtitle2' fontWeight='700'>
                 {activity.time}
               </Typography>
             </TimelineOppositeContent>
             <TimelineSeparator>
               <TimelineDot
-                variant="outlined"
+                variant='outlined'
                 sx={{
                   borderColor: activity.color,
                 }}
               />
               <TimelineConnector />
             </TimelineSeparator>
-            <TimelineContent color="text.secondary" variant="h6">
+            <TimelineContent color='text.secondary' variant='h6'>
               {activity.text}
             </TimelineContent>
           </TimelineItem>

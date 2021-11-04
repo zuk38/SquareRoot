@@ -67,7 +67,10 @@ const ProductsTable = () => {
     setProducts(updateProducts);
   };
   return (
-    <DashboardCard title="Products Performance" subtitle="Latest new products Pending">
+    <DashboardCard
+      title='Products Performance'
+      subtitle='Latest new products Pending'
+    >
       <Box
         sx={{
           overflow: {
@@ -93,7 +96,7 @@ const ProductsTable = () => {
                     pl: 0,
                   }}
                 >
-                  <Box display="flex" alignItems="center">
+                  <Box display='flex' alignItems='center'>
                     <Avatar
                       src={product.imgsrc}
                       alt={product.imgsrc}
@@ -109,8 +112,12 @@ const ProductsTable = () => {
                         ml: 2,
                       }}
                     >
-                      <Typography variant="h5">{product.name}</Typography>
-                      <Typography color="textSecondary" variant="h6" fontWeight="400">
+                      <Typography variant='h5'>{product.name}</Typography>
+                      <Typography
+                        color='textSecondary'
+                        variant='h6'
+                        fontWeight='400'
+                      >
                         {product.tags}
                       </Typography>
                     </Box>
@@ -122,7 +129,7 @@ const ProductsTable = () => {
                   }}
                 >
                   <Typography
-                    variant="h6"
+                    variant='h6'
                     sx={{
                       mb: 1,
                     }}
@@ -131,7 +138,7 @@ const ProductsTable = () => {
                   </Typography>
                   <LinearProgress
                     value={product.percent}
-                    variant="determinate"
+                    variant='determinate'
                     sx={{
                       '& span': {
                         backgroundColor:
@@ -148,9 +155,9 @@ const ProductsTable = () => {
                     }}
                   />
                   <Typography
-                    color="textSecondary"
-                    variant="h6"
-                    fontWeight="400"
+                    color='textSecondary'
+                    variant='h6'
+                    fontWeight='400'
                     sx={{
                       mt: 1,
                       whiteSpace: 'nowrap',
@@ -160,18 +167,22 @@ const ProductsTable = () => {
                   </Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography color="textSecondary" variant="h6" fontWeight="400">
+                  <Typography
+                    color='textSecondary'
+                    variant='h6'
+                    fontWeight='400'
+                  >
                     Earnings
                   </Typography>
-                  <Typography variant="h5">${product.earnings}</Typography>
+                  <Typography variant='h5'>${product.earnings}</Typography>
                 </TableCell>
                 <TableCell>
-                  <Tooltip title="Delete" placement="top">
+                  <Tooltip title='Delete' placement='top'>
                     <IconButton onClick={() => deleteHandler(product.id)}>
                       <FeatherIcon
-                        icon="trash"
-                        width="18"
-                        height="18"
+                        icon='trash'
+                        width='18'
+                        height='18'
                         sx={{
                           color: (theme) => theme.palette.grey.A200,
                         }}

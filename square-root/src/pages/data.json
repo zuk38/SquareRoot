@@ -45,31 +45,25 @@
           "name": "Soil: High",
           "icon": "../../../images/showel.png"
         }
-
       ],
       "description": [
         {
           "name": "Description",
           "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
-          
         }
-
       ],
       "plants": [
         {
-          "plant1":{
+          "plant1": {
             "name": "plante 1",
             "stormwater": true
           },
-          "plant2":{
+          "plant2": {
             "name": "plante 2",
             "stormwater": false
           }
-          
         }
-    
       ]
-
     }
   ],
   "Rainbed": [
@@ -118,31 +112,25 @@
           "name": "Soil: High",
           "icon": "../../../images/showel.png"
         }
-
       ],
       "description": [
         {
           "name": "Description",
           "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
-          
         }
-
       ],
       "plants": [
         {
-          "plant1":{
+          "plant1": {
             "name": "plante 1",
             "stormwater": true
           },
-          "plant2":{
+          "plant2": {
             "name": "plante 2",
             "stormwater": false
           }
-          
         }
-    
       ]
-
     }
   ],
   "Indoor": [
@@ -191,196 +179,181 @@
           "name": "Soil: High",
           "icon": "../../../images/showel.png"
         }
-
       ],
       "description": [
         {
           "name": "Description",
           "info": "This is a description about this particular concept. This concept is a concept that looks like this and is this size and has these plants."
-          
         }
-
       ],
       "plants": [
         {
-          "plant1":{
+          "plant1": {
             "name": "plante 1",
             "stormwater": true
           },
-          "plant2":{
+          "plant2": {
             "name": "plante 2",
             "stormwater": false
           }
-          
         }
-    
       ]
-
     }
   ],
 
   "Projects": [
-    { 
+    {
       "icon": "Rooftop Garden",
       "project": [
         {
-          "projectID":"",
-          "project_name":"Sørengkaia",
-          "project_description":"OBOS",
-          "project_start":"21.04.2021",
-          "project_end":"",
-          "project_groupID":"",
-          "project_adress":"Sørengkaia 63",
-          "project_zip":"0166",
-          "project_city":"Oslo",
-          "user_role":"Eiendomsutvikler",
+          "projectID": "",
+          "project_name": "Sørengkaia",
+          "project_description": "OBOS",
+          "project_start": "21.04.2021",
+          "project_end": "",
+          "project_groupID": "",
+          "project_adress": "Sørengkaia 63",
+          "project_zip": "0166",
+          "project_city": "Oslo",
+          "user_role": "Eiendomsutvikler",
 
-          "projectID2":"",
-          "project_name2":"Tøyenhagen",
-          "project_description2":"Oslo Kommune",
-          "project_start2":"03.12.2021",
-          "project_end2":"",
-          "project_groupID2":"",
-          "project_adress2":"Tøyengata 3",
-          "project_zip2":"0356",
-          "project_city2":"Oslo"
+          "projectID2": "",
+          "project_name2": "Tøyenhagen",
+          "project_description2": "Oslo Kommune",
+          "project_start2": "03.12.2021",
+          "project_end2": "",
+          "project_groupID2": "",
+          "project_adress2": "Tøyengata 3",
+          "project_zip2": "0356",
+          "project_city2": "Oslo"
         }
       ],
 
       "greenspace_category": [
         {
-          "categoryID":"",
-          "category_name":"Rooftop"
+          "categoryID": "",
+          "category_name": "Rooftop"
         }
       ],
 
       "greenspace": [
         {
-    
-          "greenspace_img0":"../../../images/plus-icon-transparent.png",
-          
+          "greenspace_img0": "../../../images/plus-icon-transparent.png",
+
           "greenspaceID": "",
           "greenspace_name": "Oslo Takterrasse",
           "price": "",
-          "greenspace_project":"",
-          "greenspace_category":"Rooftop",
+          "greenspace_project": "",
+          "greenspace_category": "Rooftop",
           "greenspace_description": "Vestre del",
-          "greenspace_img":"../../../images/rooftop.png",
-          
+          "greenspace_img": "../../../images/rooftop.png",
+
           "greenspaceID2": "",
           "greenspace_name2": "Grønn Vegg",
           "price2": "",
-          "greenspace_project2":"",
-          "greenspace_category2":"Green Wall",
+          "greenspace_project2": "",
+          "greenspace_category2": "Green Wall",
           "greenspace_description2": "2. etg",
           "greenspace_img2": "../../../images/greenWall.png",
 
           "greenspaceID3": "",
           "greenspace_name3": "Bievennlig Hage",
           "price3": "",
-          "greenspace_project3":"",
-          "greenspace_category3" :"Biodiversity",
+          "greenspace_project3": "",
+          "greenspace_category3": "Biodiversity",
           "greenspace_description3": "Uteområde 4. etg",
           "greenspace_img3": "../../../images/biodiversity.png",
 
           "greenspaceID4": "",
           "greenspace_name4": "Kjøkkenhage",
           "price4": "",
-          "greenspace_project4":"",
-          "greenspace_category4" :"Rainbeds",
+          "greenspace_project4": "",
+          "greenspace_category4": "Rainbeds",
           "greenspace_description4": "2. etg vestover",
           "greenspace_img4": "../../../images/rainbeds.png",
 
-          "plant_name1":"Kosakkveronika",
-          "plant_quantity1":"2",
-          "plant_date1":"03.04.2021",
-          "plant_img1":"../../images/plant-img1.png"
+          "plant_name1": "Kosakkveronika",
+          "plant_quantity1": "2",
+          "plant_date1": "03.04.2021",
+          "plant_img1": "../../images/plant-img1.png"
         }
-      
       ],
 
       "user": [
         {
-          "userID":"",
-          "user_first_name":"Michel",
-          "user_last_name":"Wolfstirn",
-          "user_email":"michel@squareroot.cc",
-          "user_phone_number":"",
-          "user_role":"Eiendomsutvikler",
+          "userID": "",
+          "user_first_name": "Michel",
+          "user_last_name": "Wolfstirn",
+          "user_email": "michel@squareroot.cc",
+          "user_phone_number": "",
+          "user_role": "Eiendomsutvikler",
 
-          "userID2":"",
-          "user_first_name2":"Jo",
-          "user_last_name2":"Deketelaere",
-          "user_email2":"jo@squareroot.cc",
-          "user_phone_number2":"",
-          "user_role2":"Landskapsarkitekt",
+          "userID2": "",
+          "user_first_name2": "Jo",
+          "user_last_name2": "Deketelaere",
+          "user_email2": "jo@squareroot.cc",
+          "user_phone_number2": "",
+          "user_role2": "Landskapsarkitekt",
 
-          "userID3":"",
-          "user_first_name3":"Andre",
-          "user_last_name3":"Johansen",
-          "user_email3":"andre@squareroot.cc",
-          "user_phone_number3":"",
-          "user_role3":"Landskapsentreprenør"
-
+          "userID3": "",
+          "user_first_name3": "Andre",
+          "user_last_name3": "Johansen",
+          "user_email3": "andre@squareroot.cc",
+          "user_phone_number3": "",
+          "user_role3": "Landskapsentreprenør"
         }
-
       ],
 
       "order": [
         {
-          "orderID":"45679",
-          "greenspace_ordered":"Takterrasse",
-          "greenspace_description":"Vestre del",
-          "order_company":"",
-          "ordered_by_user":"",
-          "order_placed_date":"03.05.2021",
-          "order_price":"",
+          "orderID": "45679",
+          "greenspace_ordered": "Takterrasse",
+          "greenspace_description": "Vestre del",
+          "order_company": "",
+          "ordered_by_user": "",
+          "order_placed_date": "03.05.2021",
+          "order_price": "",
           "order_status": "Under behandling",
 
-          "orderID2":"74329",
-          "greenspace_ordered2":"Regnseng",
-          "greenspace_description2":"2. etg",
-          "order_company2":"",
-          "ordered_by_user2":"",
-          "order_placed_date2":"01.05.2021",
-          "order_price2":"",
+          "orderID2": "74329",
+          "greenspace_ordered2": "Regnseng",
+          "greenspace_description2": "2. etg",
+          "order_company2": "",
+          "ordered_by_user2": "",
+          "order_placed_date2": "01.05.2021",
+          "order_price2": "",
           "order_status2": "Bestilt",
 
           "orderID3": "73829",
-          "greenspace_ordered3":"Biomangfold",
-          "greenspace_description3":"Takterrasse",
-          "order_company3":"",
-          "ordered_by_user3":"",
-          "order_placed_date3":"12.01.2021",
-          "order_price3":"",
+          "greenspace_ordered3": "Biomangfold",
+          "greenspace_description3": "Takterrasse",
+          "order_company3": "",
+          "ordered_by_user3": "",
+          "order_placed_date3": "12.01.2021",
+          "order_price3": "",
           "order_status3": "Bestilt"
         }
       ],
 
-  
-
       "plants": [
         {
-          "plantID":"",
-          "pricePerM2":"",
-          "from_greenery":"",
-          "allergens":"",
-          "friendlyness_to_bees":""
+          "plantID": "",
+          "pricePerM2": "",
+          "from_greenery": "",
+          "allergens": "",
+          "friendlyness_to_bees": ""
         }
       ]
-  
     }
   ],
   "Members": [
-    { 
+    {
       "icon": "Rooftop Garden",
       "greenspace": [
         {
           "greenspaceID": ""
         }
-      
       ]
-  
     }
   ],
 
@@ -402,9 +375,4 @@
       "2_user_role": "Real Estate Developer"
     }
   ]
-  }
-  
-  
-
-
-
+}

@@ -15,7 +15,7 @@ const ChatSidebar = ({ isMobileSidebarOpen, onSidebarClose }) => {
           flexShrink: 0,
           [`& .MuiDrawer-paper`]: { position: 'relative' },
         }}
-        variant="permanent"
+        variant='permanent'
       >
         <ChatListing />
       </Drawer>
@@ -25,7 +25,7 @@ const ChatSidebar = ({ isMobileSidebarOpen, onSidebarClose }) => {
     <Drawer
       open={isMobileSidebarOpen}
       onClose={onSidebarClose}
-      variant="temporary"
+      variant='temporary'
       sx={{ zIndex: 1, [`& .MuiDrawer-paper`]: { paddingTop: '70px' } }}
     >
       <ChatListing />

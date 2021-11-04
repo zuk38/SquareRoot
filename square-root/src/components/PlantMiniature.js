@@ -1,13 +1,13 @@
-import React, { useState, useEffect } from "react";
-import "../styles/Plants.css";
-import QualityBadge from "../images/quality.png";
-import { ReactComponent as BeeIcon } from "../icons/bee.svg";
-import { ReactComponent as EdibleIcon } from "../icons/eat.svg";
-import { ReactComponent as NativeIcon } from "../icons/norway.svg";
-import { ReactComponent as PetKidsIcon } from "../icons/pets.svg";
-import { ReactComponent as AirIcon } from "../icons/air-purifier.svg";
-import { ReactComponent as SunIcon } from "../icons/sun.svg";
-import ModifyPlantsQuantity from "./user/ModifyPlantsQuantity";
+import React, { useState, useEffect } from 'react';
+import '../styles/Plants.css';
+import QualityBadge from '../images/quality.png';
+import { ReactComponent as BeeIcon } from '../icons/bee.svg';
+import { ReactComponent as EdibleIcon } from '../icons/eat.svg';
+import { ReactComponent as NativeIcon } from '../icons/norway.svg';
+import { ReactComponent as PetKidsIcon } from '../icons/pets.svg';
+import { ReactComponent as AirIcon } from '../icons/air-purifier.svg';
+import { ReactComponent as SunIcon } from '../icons/sun.svg';
+import ModifyPlantsQuantity from './user/ModifyPlantsQuantity';
 
 export default function PlantMiniature(props) {
   const [checked, setCheckPlant] = useState(props.conceptPlant);
@@ -53,26 +53,26 @@ export default function PlantMiniature(props) {
     native,
   };
 
-  var features = Object.keys(tempFeatures).filter(function(x) {
+  var features = Object.keys(tempFeatures).filter(function (x) {
     return tempFeatures[x] !== false;
   });
 
   return (
     <>
-      <article className="plant">
-        <div className="plant-img-container">
+      <article className='plant'>
+        <div className='plant-img-container'>
           <img src={image} alt={norwegian_name} />
 
           {norwegian_nursery && !props.customising && (
-            <div className="badge-top">
+            <div className='badge-top'>
               <img src={QualityBadge} />
             </div>
           )}
           {!props.isCustomising && (
-            <div className="featureList">
-              <div className="featureList-center">
+            <div className='featureList'>
+              <div className='featureList-center'>
                 {features.map((icon, index) => (
-                  <span className="icon-button" key={index}>
+                  <span className='icon-button' key={index}>
                     {iconMap[icon]}
                   </span>
                 ))}
@@ -82,20 +82,20 @@ export default function PlantMiniature(props) {
 
           {!props.showModal && (
             <button
-              className="button is-dark plant-link"
+              className='button is-dark plant-link'
               onClick={() => props.setShowPlantModal(props.plant, features)}
             >
               FEATURES
             </button>
           )}
-          <div className="plant-name">
+          <div className='plant-name'>
             <p>{latin_name.toUpperCase()}</p>
           </div>
           {props.isCustomising && (
-            <div className="add-button-container">
+            <div className='add-button-container'>
               {checked ? (
                 <>
-                  <button className="add-button-added">Added</button>
+                  <button className='add-button-added'>Added</button>
                   <ModifyPlantsQuantity
                     onAdd={() => props.onAdd(props.plant)}
                     onRemove={() => props.onRemove(props.plant)}
@@ -107,7 +107,7 @@ export default function PlantMiniature(props) {
                   />
                 </>
               ) : (
-                <button className="add-btn" onClick={() => setCheckedPlant()}>
+                <button className='add-btn' onClick={() => setCheckedPlant()}>
                   Add to greenspace
                 </button>
               )}

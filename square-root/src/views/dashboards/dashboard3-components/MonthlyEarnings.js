@@ -70,7 +70,7 @@ const MonthlyEarnings = () => {
     >
       <CardContent>
         <Typography
-          variant="h4"
+          variant='h4'
           sx={{
             marginBottom: '0',
           }}
@@ -78,16 +78,16 @@ const MonthlyEarnings = () => {
         >
           Monthly Earnings
         </Typography>
-        <Box mt="20px">
+        <Box mt='20px'>
           <Chart
             options={optionsmonthlychart}
             series={seriesmonthlychart}
-            type="bar"
-            height="45px"
+            type='bar'
+            height='45px'
           />
         </Box>
         <Box
-          mt="20px"
+          mt='20px'
           sx={{
             display: {
               sm: 'flex',
@@ -103,14 +103,14 @@ const MonthlyEarnings = () => {
               position: 'relative',
               zIndex: 9,
             }}
-            variant="h2"
+            variant='h2'
             gutterBottom
           >
             $39,358
           </Typography>
-          <Box ml="10px">
+          <Box ml='10px'>
             <FeatherIcon
-              icon="arrow-up-left"
+              icon='arrow-up-left'
               style={{
                 height: '16px',
                 width: '16px',
@@ -119,7 +119,7 @@ const MonthlyEarnings = () => {
           </Box>
 
           <Typography
-            fontWeight="500"
+            fontWeight='500'
             sx={{
               lineHeight: '30px',
               position: 'relative',
@@ -127,7 +127,7 @@ const MonthlyEarnings = () => {
               marginTop: '12px',
               marginBottom: '0px',
             }}
-            variant="h6"
+            variant='h6'
             gutterBottom
           >
             +9 this week

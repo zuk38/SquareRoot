@@ -1,6 +1,8 @@
 import React from 'react';
 import { Box, Button, Typography } from '@mui/material';
 import sidebarBuynowsvg from '../../../assets/images/backgrounds/sidebar-buynow-bg.svg';
+import img1 from '../../../assets/images/backgrounds/login-bg-transp.png';
+import { NavLink } from 'react-router-dom';
 
 const Buynow = () => (
   // const customizer = useSelector((state)=> state.CustomizerReducer);
@@ -17,20 +19,22 @@ const Buynow = () => (
       }}
       style={{ position: 'relative' }}
     >
-      <img src={sidebarBuynowsvg} alt={sidebarBuynowsvg} className="buyNowImg" />
-      <Box pb={3} pt={3} sx={{ width: '60%' }}>
-        <Typography variant="h4" fontWeight="700" mb={2}>
-          Upgrade to Premium
+      <img src={img1} alt={sidebarBuynowsvg} className='buyNowImg' />
+      <Box pb={3} pt={3} sx={{ width: '70%' }} mb={4}>
+        <Typography variant='h4' fontWeight='700'>
+          How it Works
         </Typography>
         <Button
-          color="secondary"
-          href="https://www.wrappixel.com/templates/flexy-react-material-dashboard-admin/"
+          color='secondary'
           fullWidth
-          target="_blank"
+          target='_blank'
           disableElevation
-          variant="contained"
+          variant='contained'
+          size='small'
+          component={NavLink}
+          to='/howitworks'
         >
-          Upgrade
+          Learn More
         </Button>
       </Box>
     </Box>

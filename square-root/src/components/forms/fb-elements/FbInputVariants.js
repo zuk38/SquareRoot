@@ -1,5 +1,12 @@
 import React from 'react';
-import { Card, CardContent, Divider, Box, Typography, FormControl } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  Divider,
+  Box,
+  Typography,
+  FormControl,
+} from '@mui/material';
 import CustomTextField from '../custom-elements/CustomTextField';
 import CustomFormLabel from '../custom-elements/CustomFormLabel';
 
@@ -18,11 +25,11 @@ const FbInputVariants = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Input Variants
             </Typography>
           </Box>
@@ -38,17 +45,17 @@ const FbInputVariants = () => {
               sx={{
                 mt: 0,
               }}
-              htmlFor="success-input"
+              htmlFor='success-input'
             >
               Success Input
             </CustomFormLabel>
             <CustomTextField
-              id="success-input"
-              variant="outlined"
-              defaultValue="Success value"
+              id='success-input'
+              variant='outlined'
+              defaultValue='Success value'
               fullWidth
               required
-              size="small"
+              size='small'
               sx={{
                 '& input:valid + fieldset': {
                   borderColor: '#39cb7f',
@@ -58,13 +65,13 @@ const FbInputVariants = () => {
                 },
               }}
             />
-            <CustomFormLabel htmlFor="error-input">Error Input</CustomFormLabel>
+            <CustomFormLabel htmlFor='error-input'>Error Input</CustomFormLabel>
             <CustomTextField
-              id="error-input"
-              variant="outlined"
+              id='error-input'
+              variant='outlined'
               fullWidth
               required
-              size="small"
+              size='small'
               sx={{
                 '& input:valid + fieldset': {
                   borderColor: '#39cb7f',
@@ -75,15 +82,17 @@ const FbInputVariants = () => {
               }}
             />
             <FormControl fullWidth error>
-              <CustomFormLabel htmlFor="error-text-input">Input with Error text</CustomFormLabel>
+              <CustomFormLabel htmlFor='error-text-input'>
+                Input with Error text
+              </CustomFormLabel>
               <CustomTextField
-                id="error-text-input"
-                variant="outlined"
+                id='error-text-input'
+                variant='outlined'
                 fullWidth
                 required
-                size="small"
+                size='small'
                 error
-                helperText="Incorrect entry."
+                helperText='Incorrect entry.'
               />
             </FormControl>
           </form>

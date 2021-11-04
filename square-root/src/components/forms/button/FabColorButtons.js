@@ -4,7 +4,7 @@ import FeatherIcon from 'feather-icons-react';
 import BaseCard from '../../base-card/BaseCard';
 
 const FabColorButtons = () => (
-  <BaseCard title="Color FAB">
+  <BaseCard title='Color FAB'>
     <Box
       sx={{
         display: 'flex',
@@ -13,35 +13,35 @@ const FabColorButtons = () => (
       }}
     >
       <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }}>
-        <Tooltip title="Send">
-          <Fab aria-label="send">
-            <FeatherIcon icon="send" width="20" />
+        <Tooltip title='Send'>
+          <Fab aria-label='send'>
+            <FeatherIcon icon='send' width='20' />
           </Fab>
         </Tooltip>
-        <Tooltip title="Send">
-          <Fab color="primary" aria-label="send">
-            <FeatherIcon icon="send" width="20" />
+        <Tooltip title='Send'>
+          <Fab color='primary' aria-label='send'>
+            <FeatherIcon icon='send' width='20' />
           </Fab>
         </Tooltip>
-        <Tooltip title="Send">
-          <Fab color="secondary" aria-label="send">
-            <FeatherIcon icon="send" width="20" />
+        <Tooltip title='Send'>
+          <Fab color='secondary' aria-label='send'>
+            <FeatherIcon icon='send' width='20' />
           </Fab>
         </Tooltip>
       </Stack>
     </Box>
-    <Box display="flex" justifyContent="center">
+    <Box display='flex' justifyContent='center'>
       {/* extended */}
       <Stack spacing={1} direction={{ xs: 'column', sm: 'row' }}>
         <Fab
-          variant="extended"
+          variant='extended'
           sx={{
             mr: 1,
             mb: 2,
           }}
-          aria-label="default-send"
+          aria-label='default-send'
         >
-          <FeatherIcon icon="send" width="20" />
+          <FeatherIcon icon='send' width='20' />
           <Typography
             sx={{
               ml: 1,
@@ -52,15 +52,15 @@ const FabColorButtons = () => (
           </Typography>
         </Fab>
         <Fab
-          variant="extended"
-          color="primary"
+          variant='extended'
+          color='primary'
           sx={{
             mr: 1,
             mb: 2,
           }}
-          aria-label="primary-send"
+          aria-label='primary-send'
         >
-          <FeatherIcon icon="send" width="20" />
+          <FeatherIcon icon='send' width='20' />
           <Typography
             sx={{
               ml: 1,
@@ -71,15 +71,15 @@ const FabColorButtons = () => (
           </Typography>
         </Fab>
         <Fab
-          variant="extended"
-          color="secondary"
+          variant='extended'
+          color='secondary'
           sx={{
             mr: 1,
             mb: 2,
           }}
-          aria-label="secondary-send"
+          aria-label='secondary-send'
         >
-          <FeatherIcon icon="send" width="20" />
+          <FeatherIcon icon='send' width='20' />
           <Typography
             sx={{
               ml: 1,

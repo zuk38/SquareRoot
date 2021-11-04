@@ -1,5 +1,13 @@
 import React from 'react';
-import { Card, CardContent, Avatar, Typography, Checkbox, Box, Tooltip } from '@mui/material';
+import {
+  Card,
+  CardContent,
+  Avatar,
+  Typography,
+  Checkbox,
+  Box,
+  Tooltip,
+} from '@mui/material';
 import PropTypes from 'prop-types';
 import Favorite from '@mui/icons-material/Favorite';
 import FavoriteBorder from '@mui/icons-material/FavoriteBorder';
@@ -17,8 +25,8 @@ const BaseFeed = ({ img, username, time, children }) => {
     >
       <CardContent>
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             mb: 3,
           }}
@@ -37,57 +45,57 @@ const BaseFeed = ({ img, username, time, children }) => {
             }}
           >
             <Typography
-              variant="h5"
+              variant='h5'
               sx={{
                 whiteSpace: 'nowrap',
               }}
             >
               {username}
             </Typography>
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               {time}
             </Typography>
           </Box>
         </Box>
         {children}
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             mt: 3,
           }}
         >
-          <Tooltip title="Like">
+          <Tooltip title='Like'>
             <Checkbox
               icon={<FavoriteBorder />}
               checkedIcon={<Favorite />}
-              name="likes"
-              color="error"
-              size="small"
+              name='likes'
+              color='error'
+              size='small'
               sx={{
                 mr: 1,
               }}
             />
           </Tooltip>
-          <Tooltip title="Comment">
+          <Tooltip title='Comment'>
             <Checkbox
               icon={<CommentIcon />}
               checkedIcon={<CommentIcon />}
-              name="share"
-              color="secondary"
-              size="small"
+              name='share'
+              color='secondary'
+              size='small'
               sx={{
                 mr: 1,
               }}
             />
           </Tooltip>
-          <Tooltip title="Share">
+          <Tooltip title='Share'>
             <Checkbox
               icon={<ShareIcon />}
               checkedIcon={<ShareIcon />}
-              name="send"
-              color="secondary"
-              size="small"
+              name='send'
+              color='secondary'
+              size='small'
               sx={{
                 mr: 1,
               }}
@@ -98,13 +106,13 @@ const BaseFeed = ({ img, username, time, children }) => {
               ml: 'auto',
             }}
           >
-            <Tooltip title="Saved">
+            <Tooltip title='Saved'>
               <Checkbox
                 icon={<BookmarkBorderIcon />}
                 checkedIcon={<BookmarkIcon />}
-                name="save"
-                color="default"
-                size="small"
+                name='save'
+                color='default'
+                size='small'
               />
             </Tooltip>
           </Box>

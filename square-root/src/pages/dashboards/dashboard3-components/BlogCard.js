@@ -24,21 +24,26 @@ const BlogCard = () => (
       p: 0,
     }}
   >
-    <img srcSet={`${background2x} 1x, ${background2x} 2x`} alt="img" height="205" width="100%" />
+    <img
+      srcSet={`${background2x} 1x, ${background2x} 2x`}
+      alt='img'
+      height='205'
+      width='100%'
+    />
     <CardContent
       sx={{
         paddingLeft: '30px',
         paddingRight: '30px',
       }}
     >
-      <Box display="flex" alignItems="center">
-        <Typography color="textSecondary" display="flex" alignItems="center">
-          <FeatherIcon icon="clock" width="20" height="20" />
+      <Box display='flex' alignItems='center'>
+        <Typography color='textSecondary' display='flex' alignItems='center'>
+          <FeatherIcon icon='clock' width='20' height='20' />
         </Typography>
 
         <Typography
-          color="textSecondary"
-          variant="subtitle2"
+          color='textSecondary'
+          variant='subtitle2'
           sx={{
             ml: 1,
           }}
@@ -47,7 +52,7 @@ const BlogCard = () => (
         </Typography>
       </Box>
       <Typography
-        variant="h4"
+        variant='h4'
         sx={{
           mt: 3,
           pt: 1,
@@ -56,16 +61,16 @@ const BlogCard = () => (
         Super awesome, React 18 is coming soon!
       </Typography>
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 2,
           pb: 3,
         }}
       >
         <Chip
-          label="Medium"
-          size="small"
+          label='Medium'
+          size='small'
           sx={{
             backgroundColor: (theme) => theme.palette.primary.main,
             color: '#fff',
@@ -75,8 +80,8 @@ const BlogCard = () => (
           }}
         />
         <Chip
-          label="Low"
-          size="small"
+          label='Low'
+          size='small'
           sx={{
             backgroundColor: (theme) => theme.palette.secondary.main,
             color: '#fff',
@@ -89,36 +94,36 @@ const BlogCard = () => (
       </Box>
       <Divider />
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 3,
         }}
       >
-        <Tooltip title="John Deo" placement="top">
-          <Avatar src={img1} width="35" />
+        <Tooltip title='John Deo' placement='top'>
+          <Avatar src={img1} width='35' />
         </Tooltip>
-        <Tooltip title="Micheal Doe" placement="top">
+        <Tooltip title='Micheal Doe' placement='top'>
           <Avatar
             src={img2}
-            width="35"
+            width='35'
             sx={{
               ml: 1,
               mr: 1,
             }}
           />
         </Tooltip>
-        <Tooltip title="John Peter" placement="top">
-          <Avatar src={img3} width="35" />
+        <Tooltip title='John Peter' placement='top'>
+          <Avatar src={img3} width='35' />
         </Tooltip>
         <Box
           sx={{
             ml: 'auto',
           }}
         >
-          <Tooltip title="Add Comment" placement="top">
+          <Tooltip title='Add Comment' placement='top'>
             <IconButton>
-              <FeatherIcon icon="message-circle" />
+              <FeatherIcon icon='message-circle' />
             </IconButton>
           </Tooltip>
         </Box>

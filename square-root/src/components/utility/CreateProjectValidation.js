@@ -1,4 +1,4 @@
-import { checkName, checkAddress, checkZip } from "./Validation";
+import { checkName, checkAddress, checkZip } from './Validation';
 
 export default function validate(values) {
   let errors = {};

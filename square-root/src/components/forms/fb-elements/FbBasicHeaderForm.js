@@ -80,26 +80,26 @@ const FbBasicHeaderForm = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Basic Header Form
             </Typography>
           </Box>
         </Box>
         <Divider />
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           p={2}
           sx={{
             backgroundColor: 'primary.light',
             color: 'primary.main',
           }}
         >
-          <FeatherIcon icon="alert-circle" width="18" />
+          <FeatherIcon icon='alert-circle' width='18' />
           <Box sx={{ ml: 1 }}>Person Info</Box>
         </Box>
         <CardContent
@@ -110,16 +110,25 @@ const FbBasicHeaderForm = () => {
           <form>
             <Grid container spacing={3}>
               <Grid item lg={6} md={12} sm={12}>
-                <CustomFormLabel htmlFor="fname-text">First Name</CustomFormLabel>
-                <CustomTextField id="fname-text" variant="outlined" fullWidth size="small" />
-                <CustomFormLabel htmlFor="standard-select-currency">Select Gender</CustomFormLabel>
+                <CustomFormLabel htmlFor='fname-text'>
+                  First Name
+                </CustomFormLabel>
+                <CustomTextField
+                  id='fname-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+                <CustomFormLabel htmlFor='standard-select-currency'>
+                  Select Gender
+                </CustomFormLabel>
                 <CustomSelect
-                  id="standard-select-currency"
+                  id='standard-select-currency'
                   value={currency}
                   onChange={handleChange2}
                   fullWidth
-                  variant="outlined"
-                  size="small"
+                  variant='outlined'
+                  size='small'
                 >
                   {currencies.map((option) => (
                     <MenuItem key={option.value} value={option.value}>
@@ -138,54 +147,61 @@ const FbBasicHeaderForm = () => {
                     <FormControlLabel
                       checked={selectedValue === 'a'}
                       onChange={handleChange3}
-                      value="a"
-                      label="Free"
-                      name="radio-button-demo"
+                      value='a'
+                      label='Free'
+                      name='radio-button-demo'
                       control={<CustomRadio />}
                       inputprops={{ 'aria-label': 'A' }}
                     />
                     <FormControlLabel
                       checked={selectedValue === 'b'}
                       onChange={handleChange3}
-                      value="b"
-                      label="Paid"
+                      value='b'
+                      label='Paid'
                       control={<CustomRadio />}
-                      name="radio-button-demo"
+                      name='radio-button-demo'
                       inputprops={{ 'aria-label': 'B' }}
                     />
                   </Box>
                 </FormControl>
               </Grid>
               <Grid item lg={6} md={12} sm={12}>
-                <CustomFormLabel htmlFor="lname-text">Last Name</CustomFormLabel>
-
-                <CustomTextField id="lname-text" variant="outlined" fullWidth size="small" />
-                <CustomFormLabel htmlFor="date">Date of Birth</CustomFormLabel>
+                <CustomFormLabel htmlFor='lname-text'>
+                  Last Name
+                </CustomFormLabel>
 
                 <CustomTextField
-                  id="date"
-                  type="date"
-                  variant="outlined"
+                  id='lname-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+                <CustomFormLabel htmlFor='date'>Date of Birth</CustomFormLabel>
+
+                <CustomTextField
+                  id='date'
+                  type='date'
+                  variant='outlined'
                   fullWidth
                   InputLabelProps={{
                     shrink: true,
                   }}
-                  size="small"
+                  size='small'
                 />
               </Grid>
             </Grid>
           </form>
         </CardContent>
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           p={2}
           sx={{
             backgroundColor: 'primary.light',
             color: 'primary.main',
           }}
         >
-          <FeatherIcon icon="alert-circle" width="18" />
+          <FeatherIcon icon='alert-circle' width='18' />
           <Box sx={{ ml: 1 }}>Address</Box>
         </Box>
         <CardContent
@@ -199,62 +215,82 @@ const FbBasicHeaderForm = () => {
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="street-text"
+                htmlFor='street-text'
               >
                 Street
               </CustomFormLabel>
 
-              <CustomTextField id="street-text" variant="outlined" fullWidth size="small" />
+              <CustomTextField
+                id='street-text'
+                variant='outlined'
+                fullWidth
+                size='small'
+              />
             </Grid>
             <Grid item lg={6} md={12} sm={12} xs={12}>
               <CustomFormLabel
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="city-text"
+                htmlFor='city-text'
               >
                 City
               </CustomFormLabel>
-              <CustomTextField id="city-text" variant="outlined" fullWidth size="small" />
+              <CustomTextField
+                id='city-text'
+                variant='outlined'
+                fullWidth
+                size='small'
+              />
             </Grid>
             <Grid item lg={6} md={12} sm={12} xs={12}>
               <CustomFormLabel
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="state-text"
+                htmlFor='state-text'
               >
                 State
               </CustomFormLabel>
-              <CustomTextField id="state-text" variant="outlined" fullWidth size="small" />
+              <CustomTextField
+                id='state-text'
+                variant='outlined'
+                fullWidth
+                size='small'
+              />
             </Grid>
             <Grid item lg={6} md={12} sm={12} xs={12}>
               <CustomFormLabel
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="post-text"
+                htmlFor='post-text'
               >
                 Post Code
               </CustomFormLabel>
-              <CustomTextField id="post-text" variant="outlined" fullWidth size="small" />
+              <CustomTextField
+                id='post-text'
+                variant='outlined'
+                fullWidth
+                size='small'
+              />
             </Grid>
             <Grid item lg={6} md={12} sm={12} xs={12}>
               <CustomFormLabel
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="country-text"
+                htmlFor='country-text'
               >
                 Country
               </CustomFormLabel>
               <CustomSelect
-                id="country-select"
+                id='country-select'
                 value={country}
                 onChange={handleChange4}
                 fullWidth
-                variant="outlined"
-                size="small"
+                variant='outlined'
+                size='small'
               >
                 {countries.map((option) => (
                   <MenuItem key={option.value} value={option.value}>
@@ -268,15 +304,15 @@ const FbBasicHeaderForm = () => {
         <Divider />
         <Box p={3}>
           <Button
-            variant="contained"
-            color="error"
+            variant='contained'
+            color='error'
             sx={{
               mr: 1,
             }}
           >
             Cancel
           </Button>
-          <Button variant="contained" color="primary">
+          <Button variant='contained' color='primary'>
             Submit
           </Button>
         </Box>

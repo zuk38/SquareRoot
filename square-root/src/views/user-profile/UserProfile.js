@@ -21,9 +21,9 @@ const BCrumb = [
 
 const UserProfile = () => {
   return (
-    <PageContainer title="User Profile" description="this is User Profile page">
+    <PageContainer title='User Profile' description='this is User Profile page'>
       {/* breadcrumb */}
-      <Breadcrumb title="User Profile" items={BCrumb} />
+      <Breadcrumb title='User Profile' items={BCrumb} />
       {/* end breadcrumb */}
       <CoverCard />
       <Grid container spacing={0}>

@@ -36,14 +36,14 @@ const ExRadio = () => {
     inputProps: { 'aria-label': item },
   });
   return (
-    <PageContainer title="Radio" description="this is Radio page">
+    <PageContainer title='Radio' description='this is Radio page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Radio" items={BCrumb} />
+      <Breadcrumb title='Radio' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         {/* ------------------------- custom row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Radio">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Radio'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -55,60 +55,63 @@ const ExRadio = () => {
                 inputprops={{ 'aria-label': 'primary checkbox' }}
               />
 
-              <CustomRadio disabled inputprops={{ 'aria-label': 'disabled checked checkbox' }} />
               <CustomRadio
-                color="default"
+                disabled
+                inputprops={{ 'aria-label': 'disabled checked checkbox' }}
+              />
+              <CustomRadio
+                color='default'
                 inputprops={{ 'aria-label': 'checkbox with default color' }}
               />
             </Box>
           </BaseCard>
         </Grid>
         {/* custom row 2 */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Color with Label">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Color with Label'>
             <Box
               sx={{
                 textAlign: 'center',
               }}
             >
               <FormControlLabel
-                value="end"
-                control={<CustomRadio bgcolor="#0bb2fb" checked />}
-                label="Primary"
-                labelPlacement="end"
+                value='end'
+                control={<CustomRadio bgcolor='#0bb2fb' checked />}
+                label='Primary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
-                control={<CustomRadio bgcolor="#1e4db7" checked />}
-                label="Secondary"
-                labelPlacement="end"
+                value='end'
+                control={<CustomRadio bgcolor='#1e4db7' checked />}
+                label='Secondary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
-                control={<CustomRadio bgcolor="#39cb7f" checked />}
-                label="Success"
-                labelPlacement="end"
-              />
-
-              <FormControlLabel
-                value="end"
-                control={<CustomRadio bgcolor="#fc4b6c" checked />}
-                label="Danger"
-                labelPlacement="end"
+                value='end'
+                control={<CustomRadio bgcolor='#39cb7f' checked />}
+                label='Success'
+                labelPlacement='end'
               />
 
               <FormControlLabel
-                value="end"
-                control={<CustomRadio bgcolor="#fec90f" checked />}
-                label="Warning"
-                labelPlacement="end"
+                value='end'
+                control={<CustomRadio bgcolor='#fc4b6c' checked />}
+                label='Danger'
+                labelPlacement='end'
+              />
+
+              <FormControlLabel
+                value='end'
+                control={<CustomRadio bgcolor='#fec90f' checked />}
+                label='Warning'
+                labelPlacement='end'
               />
             </Box>
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Radio">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Radio'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -120,14 +123,20 @@ const ExRadio = () => {
                 inputprops={{ 'aria-label': 'primary checkbox' }}
               />
 
-              <Radio disabled inputprops={{ 'aria-label': 'disabled checked checkbox' }} />
-              <Radio color="default" inputprops={{ 'aria-label': 'checkbox with default color' }} />
+              <Radio
+                disabled
+                inputprops={{ 'aria-label': 'disabled checked checkbox' }}
+              />
+              <Radio
+                color='default'
+                inputprops={{ 'aria-label': 'checkbox with default color' }}
+              />
             </Box>
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Colors">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Colors'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -136,14 +145,14 @@ const ExRadio = () => {
               <Radio
                 checked={checked}
                 onChange={handleChange}
-                color="primary"
+                color='primary'
                 inputprops={{ 'aria-label': 'primary checkbox' }}
               />
 
               <Radio
                 checked={checked}
                 onChange={handleChange}
-                color="secondary"
+                color='secondary'
                 inputprops={{ 'aria-label': 'primary checkbox' }}
               />
 
@@ -198,14 +207,14 @@ const ExRadio = () => {
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Sizes">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Sizes'>
             <Box
               sx={{
                 textAlign: 'center',
               }}
             >
-              <Radio {...controlProps('a')} size="small" />
+              <Radio {...controlProps('a')} size='small' />
               <Radio {...controlProps('b')} />
               <Radio
                 {...controlProps('c')}
@@ -220,49 +229,59 @@ const ExRadio = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Placement">
-            <RadioGroup row aria-label="position" name="position" defaultValue="top">
-              <FormControlLabel value="top" control={<Radio />} label="Top" labelPlacement="top" />
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Placement'>
+            <RadioGroup
+              row
+              aria-label='position'
+              name='position'
+              defaultValue='top'
+            >
               <FormControlLabel
-                value="start"
+                value='top'
                 control={<Radio />}
-                label="Start"
-                labelPlacement="start"
+                label='Top'
+                labelPlacement='top'
               />
               <FormControlLabel
-                value="bottom"
+                value='start'
                 control={<Radio />}
-                label="Bottom"
-                labelPlacement="bottom"
+                label='Start'
+                labelPlacement='start'
               />
-              <FormControlLabel value="end" control={<Radio />} label="End" />
+              <FormControlLabel
+                value='bottom'
+                control={<Radio />}
+                label='Bottom'
+                labelPlacement='bottom'
+              />
+              <FormControlLabel value='end' control={<Radio />} label='End' />
             </RadioGroup>
           </BaseCard>
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Color with Label">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Color with Label'>
             <Box
               sx={{
                 textAlign: 'center',
               }}
             >
               <FormControlLabel
-                value="end"
-                control={<Radio color="primary" checked />}
-                label="Primary"
-                labelPlacement="end"
+                value='end'
+                control={<Radio color='primary' checked />}
+                label='Primary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
-                control={<Radio color="secondary" checked />}
-                label="Secondary"
-                labelPlacement="end"
+                value='end'
+                control={<Radio color='secondary' checked />}
+                label='Secondary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Radio
                     checked
@@ -274,12 +293,12 @@ const ExRadio = () => {
                     }}
                   />
                 }
-                label="Success"
-                labelPlacement="end"
+                label='Success'
+                labelPlacement='end'
               />
 
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Radio
                     checked
@@ -291,12 +310,12 @@ const ExRadio = () => {
                     }}
                   />
                 }
-                label="Danger"
-                labelPlacement="end"
+                label='Danger'
+                labelPlacement='end'
               />
 
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Radio
                     checked
@@ -308,8 +327,8 @@ const ExRadio = () => {
                     }}
                   />
                 }
-                label="Warning"
-                labelPlacement="end"
+                label='Warning'
+                labelPlacement='end'
               />
             </Box>
           </BaseCard>

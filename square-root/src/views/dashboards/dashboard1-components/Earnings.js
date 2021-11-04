@@ -11,9 +11,9 @@ const Earnings = () => (
     }}
   >
     <CardContent>
-      <Box display="flex" alignItems="flex-start">
+      <Box display='flex' alignItems='flex-start'>
         <Typography
-          variant="h3"
+          variant='h3'
           sx={{
             marginBottom: '0',
           }}
@@ -27,21 +27,21 @@ const Earnings = () => (
           }}
         >
           <Fab
-            size="medium"
-            color=""
-            aria-label="add"
-            elevation="0"
+            size='medium'
+            color=''
+            aria-label='add'
+            elevation='0'
             sx={{
               boxShadow: 'none',
             }}
           >
-            <FeatherIcon icon="dollar-sign" />
+            <FeatherIcon icon='dollar-sign' />
           </Fab>
         </Box>
       </Box>
       <Typography
-        variant="h1"
-        fontWeight="500"
+        variant='h1'
+        fontWeight='500'
         sx={{
           marginBottom: '0',
           marginTop: '15px',
@@ -51,8 +51,8 @@ const Earnings = () => (
         $93,438.78
       </Typography>
       <Typography
-        variant="h6"
-        fontWeight="400"
+        variant='h6'
+        fontWeight='400'
         sx={{
           marginBottom: '0',
           opacity: '0.6',

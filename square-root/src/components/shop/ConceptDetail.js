@@ -17,9 +17,7 @@ import CircleTwoToneIcon from '@mui/icons-material/CircleTwoTone';
 import FeatherIcon from 'feather-icons-react';
 import CustomSelect from '../forms/custom-elements/CustomSelect';
 import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
-import CustomFormModal from '../forms/custom-elements/CustomFormModal'
-
-
+import CustomFormModal from '../forms/custom-elements/CustomFormModal';
 
 const ConceptDetail = () => {
   const [selectedValue, setSelectedValue] = React.useState('a');
@@ -43,6 +41,12 @@ const ConceptDetail = () => {
   // rating
   const [value, setValue] = React.useState(2);
 
+  const addToProjectModal = [
+    {
+      title: 'Add to Project',
+      header: 'Select Project',
+    },
+  ];
   return (
     <Box>
       {/* stock text */}
@@ -74,7 +78,7 @@ const ConceptDetail = () => {
       */}
       {/* title */}
       <Typography
-        fontWeight="600"
+        fontWeight='600'
         sx={{
           fontSize: {
             xs: '24px',
@@ -87,21 +91,21 @@ const ConceptDetail = () => {
         Tekna Roofgarden
       </Typography>
       <Typography
-        variant="body1"
-        fontWeight="400"
+        variant='body1'
+        fontWeight='400'
         sx={{
           mt: '10px',
           color: (theme) => theme.palette.grey.A200,
         }}
       >
-        A combination of small and medium sized plants. 
+        A combination of small and medium sized plants.
       </Typography>
-      <FeatherIcon icon="cloud-rain" width="18" />
-          
-        <FeatherIcon icon="droplet" width="18" sx={{ mt: '20px'}}/>
+      <FeatherIcon icon='cloud-rain' width='18' />
+
+      <FeatherIcon icon='droplet' width='18' sx={{ mt: '20px' }} />
 
       <Typography
-        fontWeight="500"
+        fontWeight='500'
         sx={{
           fontSize: {
             xs: '12px',
@@ -114,7 +118,7 @@ const ConceptDetail = () => {
         Soil -
       </Typography>
       <Typography
-        fontWeight="500"
+        fontWeight='500'
         sx={{
           fontSize: {
             xs: '12px',
@@ -127,7 +131,7 @@ const ConceptDetail = () => {
         Maintenance -
       </Typography>
       <Typography
-        fontWeight="500"
+        fontWeight='500'
         sx={{
           fontSize: {
             xs: '12px',
@@ -139,7 +143,7 @@ const ConceptDetail = () => {
       >
         Benefits -
       </Typography>
-      
+
       {/* ---- reviews ---- */}
       {/**
       <Box
@@ -171,8 +175,8 @@ const ConceptDetail = () => {
  */}
       {/* -- characteristics icons  -- */}
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 4,
           mb: 4,
@@ -240,7 +244,7 @@ const ConceptDetail = () => {
         </Box>
         */}
       </Box>
-      
+
       {/* sizes */}
       <Divider />
       <Box
@@ -252,8 +256,8 @@ const ConceptDetail = () => {
         <Grid container spacing={0}>
           <Grid item xs={12} sm={6} lg={6}>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 mb: {
                   xs: 3,
@@ -263,7 +267,7 @@ const ConceptDetail = () => {
               }}
             >
               <CustomFormLabel
-                htmlFor="demo-simple-select-outlined"
+                htmlFor='demo-simple-select-outlined'
                 sx={{
                   mt: 0,
                 }}
@@ -276,14 +280,14 @@ const ConceptDetail = () => {
                   width: '180px',
                 }}
               >
-                <FormControl variant="outlined" fullWidth>
+                <FormControl variant='outlined' fullWidth>
                   <CustomSelect
-                    labelId="demo-simple-select-outlined-label"
-                    id="demo-simple-select-outlined"
+                    labelId='demo-simple-select-outlined-label'
+                    id='demo-simple-select-outlined'
                     value={size}
                     onChange={handleChange2}
                     fullWidth
-                    size="small"
+                    size='small'
                   >
                     <MenuItem value={10}>1</MenuItem>
                     <MenuItem value={20}>2</MenuItem>
@@ -296,9 +300,9 @@ const ConceptDetail = () => {
             </Box>
           </Grid>
           <Grid item xs={12} sm={6} lg={6}>
-            <Box display="flex" alignItems="center">
+            <Box display='flex' alignItems='center'>
               <CustomFormLabel
-                htmlFor="qty-select-outlined"
+                htmlFor='qty-select-outlined'
                 sx={{
                   mt: 0,
                 }}
@@ -311,14 +315,14 @@ const ConceptDetail = () => {
                   width: '180px',
                 }}
               >
-                <FormControl variant="outlined" fullWidth>
+                <FormControl variant='outlined' fullWidth>
                   <CustomSelect
-                    labelId="qty-label"
-                    id="qty-select-outlined"
+                    labelId='qty-label'
+                    id='qty-select-outlined'
                     value={qty}
                     onChange={handleChange3}
                     fullWidth
-                    size="small"
+                    size='small'
                   >
                     <MenuItem value={10}>1</MenuItem>
                     <MenuItem value={20}>2</MenuItem>
@@ -340,15 +344,14 @@ const ConceptDetail = () => {
           mt: 2,
         }}
       >
-      
         <Grid item xs={12} sm={6} lg={6}>
           <Button
-            variant="contained"
-            size="large"
-            color="primary"
-            display="flex"
-            alignitems="center"
-            justifycontent="center"
+            variant='contained'
+            size='large'
+            color='primary'
+            display='flex'
+            alignitems='center'
+            justifycontent='center'
             sx={{
               pt: '13px',
               pb: '13px',
@@ -356,9 +359,14 @@ const ConceptDetail = () => {
               borderRadius: '9px',
             }}
           >
-            <FeatherIcon icon="edit" width="20" display="flex" alignitems="center" />
+            <FeatherIcon
+              icon='edit'
+              width='20'
+              display='flex'
+              alignitems='center'
+            />
             <Box
-              component="span"
+              component='span'
               sx={{
                 ml: 1,
               }}
@@ -368,8 +376,11 @@ const ConceptDetail = () => {
           </Button>
         </Grid>
         <Grid item xs={12} sm={6} lg={6}>
-          <CustomFormModal title={"Add to Project"} icon={"plus"} formLabel1={"Select Project"} formLabel2={"Select Greenspace"}/>
-        
+          <CustomFormModal
+            title={'Add to Project'}
+            formLabel1={'Select Project'}
+            formLabel2={'Select Greenspace'}
+          />
         </Grid>
       </Grid>
       {/* subtext */}
@@ -378,10 +389,10 @@ const ConceptDetail = () => {
           mt: 5,
         }}
       >
-        <Typography color="textSecondary" variant="body1" fontWeight="400">
+        <Typography color='textSecondary' variant='body1' fontWeight='400'>
           Dispatched in 2-3 weeks
         </Typography>
-        <Link href="/" underline="always" color="inherit">
+        <Link href='/' underline='always' color='inherit'>
           Why the longer time for delivery?
         </Link>
       </Box>

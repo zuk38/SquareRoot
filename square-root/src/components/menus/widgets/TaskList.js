@@ -1,5 +1,12 @@
 import React from 'react';
-import { Box, Card, CardContent, Chip, FormGroup, FormControlLabel } from '@mui/material';
+import {
+  Box,
+  Card,
+  CardContent,
+  Chip,
+  FormGroup,
+  FormControlLabel,
+} from '@mui/material';
 import CustomCheckbox from '../../forms/custom-elements/CustomCheckbox';
 import WidgetCard from '../../base-card/WidgetCard';
 
@@ -48,13 +55,13 @@ const TaskList = () => (
         pb: 0,
       }}
     >
-      <WidgetCard title="Task List" />
+      <WidgetCard title='Task List' />
 
       {tasks.map((task) => (
         <Box
           key={task.id}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             pb: 2,
           }}
@@ -62,7 +69,10 @@ const TaskList = () => (
           <FormGroup>
             <FormControlLabel
               control={
-                <CustomCheckbox bgcolor={task.color} inputprops={{ 'aria-label': 'checkbox' }} />
+                <CustomCheckbox
+                  bgcolor={task.color}
+                  inputprops={{ 'aria-label': 'checkbox' }}
+                />
               }
               label={task.title}
             />
@@ -87,7 +97,7 @@ const TaskList = () => (
                 pr: '3px',
                 ml: '5px',
               }}
-              size="small"
+              size='small'
               label={task.time}
             />
           </Box>

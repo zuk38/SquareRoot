@@ -8,7 +8,7 @@ export function configureStore(InitialState) {
   const Store = createStore(
     RootReducers,
     InitialState,
-    composeWithDevTools(applyMiddleware(thunk)),
+    composeWithDevTools(applyMiddleware(thunk))
   );
   return Store;
 }

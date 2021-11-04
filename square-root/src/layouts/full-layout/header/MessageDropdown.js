@@ -1,5 +1,12 @@
 import React from 'react';
-import { Badge, Box, MenuItem, Typography, Avatar, Divider } from '@mui/material';
+import {
+  Badge,
+  Box,
+  MenuItem,
+  Typography,
+  Avatar,
+  Divider,
+} from '@mui/material';
 import * as data from './data';
 
 const MessageDropdown = () => (
@@ -13,8 +20,8 @@ const MessageDropdown = () => (
             borderRadius: '0px',
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Badge variant="dot" color={message.status}>
+          <Box display='flex' alignItems='center'>
+            <Badge variant='dot' color={message.status}>
               <Avatar
                 src={message.avatar}
                 alt={message.avatar}
@@ -31,7 +38,7 @@ const MessageDropdown = () => (
               }}
             >
               <Typography
-                variant="h5"
+                variant='h5'
                 noWrap
                 sx={{
                   width: '240px',
@@ -40,9 +47,9 @@ const MessageDropdown = () => (
                 {message.title}
               </Typography>
               <Typography
-                color="textSecondary"
-                variant="h6"
-                fontWeight="400"
+                color='textSecondary'
+                variant='h6'
+                fontWeight='400'
                 sx={{
                   width: '240px',
                 }}
@@ -50,7 +57,7 @@ const MessageDropdown = () => (
               >
                 {message.subtitle}
               </Typography>
-              <Typography color="textSecondary" variant="body2">
+              <Typography color='textSecondary' variant='body2'>
                 {message.time}
               </Typography>
             </Box>

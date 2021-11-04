@@ -1,5 +1,11 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, LinearProgress } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  LinearProgress,
+} from '@mui/material';
 import WidgetCard from '../../base-card/WidgetCard';
 
 const visits = [
@@ -45,7 +51,7 @@ const Visits = () => (
         pb: 0,
       }}
     >
-      <WidgetCard title="Visit around the countries" />
+      <WidgetCard title='Visit around the countries' />
       <Box sx={{ mt: -1 }}>
         {visits.map((visit) => (
           <Box
@@ -56,7 +62,7 @@ const Visits = () => (
             }}
           >
             <Typography
-              variant="h2"
+              variant='h2'
               sx={{
                 lineHeight: '1.235',
               }}
@@ -64,13 +70,13 @@ const Visits = () => (
               {visit.digit}
             </Typography>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 pb: '3px',
               }}
             >
-              <Typography color="textSecondary" variant="h6">
+              <Typography color='textSecondary' variant='h6'>
                 From {visit.country}
               </Typography>
               <Box
@@ -78,14 +84,14 @@ const Visits = () => (
                   ml: 'auto',
                 }}
               >
-                <Typography color="textSecondary" variant="h6" fontWeight="400">
+                <Typography color='textSecondary' variant='h6' fontWeight='400'>
                   {visit.percent}%
                 </Typography>
               </Box>
             </Box>
             <LinearProgress
               value={visit.percent}
-              variant="determinate"
+              variant='determinate'
               sx={{
                 '& span': {
                   backgroundColor:

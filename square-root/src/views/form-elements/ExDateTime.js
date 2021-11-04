@@ -28,23 +28,23 @@ const ExDateTime = () => {
   const [value2, setValue2] = React.useState(null);
 
   return (
-    <PageContainer title="Date Time" description="this is Date Time page">
+    <PageContainer title='Date Time' description='this is Date Time page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Date Picker" items={BCrumb} />
+      <Breadcrumb title='Date Picker' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Basic Date picker">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Basic Date picker'>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <MobileDateTimePicker
-                placeholder="Start date"
+                placeholder='Start date'
                 onChange={() => {}}
                 renderInput={(inputProps) => (
                   <CustomTextField
                     fullWidth
-                    variant="outlined"
-                    size="small"
+                    variant='outlined'
+                    size='small'
                     inputProps={{ 'aria-label': 'basic date picker' }}
                     {...inputProps}
                   />
@@ -55,12 +55,14 @@ const ExDateTime = () => {
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Different Design for Date picker">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Different Design for Date picker'>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <DateTimePicker
-                renderInput={(props) => <CustomTextField {...props} fullWidth size="small" />}
-                placeholder="DateTimePicker"
+                renderInput={(props) => (
+                  <CustomTextField {...props} fullWidth size='small' />
+                )}
+                placeholder='DateTimePicker'
                 value={value}
                 onChange={(newValue) => {
                   setValue(newValue);
@@ -71,8 +73,8 @@ const ExDateTime = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Time picker">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Time picker'>
             <LocalizationProvider dateAdapter={AdapterDateFns}>
               <TimePicker
                 value={value2}
@@ -81,7 +83,7 @@ const ExDateTime = () => {
                 }}
                 renderInput={(params) => (
                   <CustomTextField
-                    size="small"
+                    size='small'
                     {...params}
                     fullWidth
                     sx={{

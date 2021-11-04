@@ -73,7 +73,8 @@ const top100Films = [
   { title: 'Alien', year: 1979 },
   { title: 'Sunset Boulevard', year: 1950 },
   {
-    title: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
+    title:
+      'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
     year: 1964,
   },
   { title: 'The Great Dictator', year: 1940 },
@@ -132,17 +133,22 @@ const top100Films = [
 ];
 
 const MultipleValuesAutocomplete = () => (
-  <BaseCard title="Multiple values">
+  <BaseCard title='Multiple values'>
     <Autocomplete
       multiple
       fullWidth
-      id="tags-outlined"
+      id='tags-outlined'
       options={top100Films}
       getOptionLabel={(option) => option.title}
       defaultValue={[top100Films[13]]}
       filterSelectedOptions
       renderInput={(params) => (
-        <TextField {...params} size="small" placeholder="Favorites" aria-label="Favorites" />
+        <TextField
+          {...params}
+          size='small'
+          placeholder='Favorites'
+          aria-label='Favorites'
+        />
       )}
     />
   </BaseCard>

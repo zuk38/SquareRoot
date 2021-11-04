@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from "react";
-import "../styles/SinglePlant.css";
-import Modal from "react-modal";
-import Title from "./Title";
+import React, { useState, useEffect } from 'react';
+import '../styles/SinglePlant.css';
+import Modal from 'react-modal';
+import Title from './Title';
 
-Modal.setAppElement("body");
+Modal.setAppElement('body');
 
 export default function SinglePlant({
   plant,
@@ -11,7 +11,16 @@ export default function SinglePlant({
   setShowPlantModal,
   features,
 }) {
-  const { norwegian_name, latin_name, image, norwegian_nursery, size_in_cm, type, sun_seeker, native } = plant;
+  const {
+    norwegian_name,
+    latin_name,
+    image,
+    norwegian_nursery,
+    size_in_cm,
+    type,
+    sun_seeker,
+    native,
+  } = plant;
 
   const [planBenefits, setPlantBenefits] = useState([]);
   useEffect(() => {
@@ -30,14 +39,14 @@ export default function SinglePlant({
   const normalizeFeatures = () => {
     let normalizedBenefits = [];
     for (var i of planBenefits) {
-      if (i === "pollinator_friendly")
-        normalizedBenefits.push("pollinator friendly");
-      if (i === "edible") normalizedBenefits.push("edible");
-      if (i === "pet_kids_friendly")
-        normalizedBenefits.push("pet & children friendly");
-      if (i === "air_puryfying") normalizedBenefits.push("air puryfying");
+      if (i === 'pollinator_friendly')
+        normalizedBenefits.push('pollinator friendly');
+      if (i === 'edible') normalizedBenefits.push('edible');
+      if (i === 'pet_kids_friendly')
+        normalizedBenefits.push('pet & children friendly');
+      if (i === 'air_puryfying') normalizedBenefits.push('air puryfying');
     }
-    return normalizedBenefits.join(", ");
+    return normalizedBenefits.join(', ');
   };
 
   removeFeatures(norwegian_nursery);
@@ -53,30 +62,30 @@ export default function SinglePlant({
     },
     */
     {
-      featureName: "Type:",
+      featureName: 'Type:',
       featureContent: type,
     },
     {
-      featureName: "Size (cm):",
+      featureName: 'Size (cm):',
       featureContent: size_in_cm,
     },
     {
       feature: norwegian_nursery,
-      featureName: "Nursery:",
+      featureName: 'Nursery:',
       featureContent: norwegian_nursery ? `norwegian` : `external`,
     },
     {
       feature: native,
-      featureName: "Origin:",
+      featureName: 'Origin:',
       featureContent: native ? `native` : `imported`,
     },
     {
       feature: sun_seeker,
-      featureName: "Light:",
+      featureName: 'Light:',
       featureContent: sun_seeker ? `sun seeker` : `shadow lover`,
     },
     {
-      featureName: "Benefits:",
+      featureName: 'Benefits:',
       featureContent: normalizeFeatures(),
     },
   ];
@@ -85,35 +94,35 @@ export default function SinglePlant({
     <Modal
       isOpen={showModal}
       onRequestClose={setShowPlantModal}
-      className="plant-modal"
-      contentLabel="Plant Modal"
+      className='plant-modal'
+      contentLabel='Plant Modal'
       closeTimeoutMS={500}
     >
       <button
         onClick={setShowPlantModal}
-        className="btn-plant-modal-close"
-        alt="Lukk"
+        className='btn-plant-modal-close'
+        alt='Lukk'
       >
-        <i className="fas fa-times fa-lg"></i>
+        <i className='fas fa-times fa-lg'></i>
       </button>
 
-      <div className="plant-modal-header">
+      <div className='plant-modal-header'>
         <Title
           title={latin_name.toUpperCase()}
           subtitle={norwegian_name.toUpperCase()}
-          style="plant-modal-title"
+          style='plant-modal-title'
         />
       </div>
-      <div className="plant-modal-content">
-        <div className="plant-modal-img-container">
+      <div className='plant-modal-content'>
+        <div className='plant-modal-img-container'>
           <img src={image} alt={norwegian_name} />
         </div>
-        <div className="features-container">
+        <div className='features-container'>
           {features &&
             featureMap.map((feature, index) => (
-              <div className="feature" key={index}>
-                <div className="feature-name">{feature.featureName}</div>
-                <div className="feature-content">{feature.featureContent}</div>
+              <div className='feature' key={index}>
+                <div className='feature-name'>{feature.featureName}</div>
+                <div className='feature-content'>{feature.featureContent}</div>
               </div>
             ))}
         </div>

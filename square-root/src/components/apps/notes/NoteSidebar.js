@@ -16,7 +16,7 @@ const NoteSidebar = ({ isMobileSidebarOpen, onSidebarClose }) => {
           zIndex: 1,
           [`& .MuiDrawer-paper`]: { position: 'relative' },
         }}
-        variant="permanent"
+        variant='permanent'
       >
         <NoteList />
       </Drawer>
@@ -34,7 +34,7 @@ const NoteSidebar = ({ isMobileSidebarOpen, onSidebarClose }) => {
       }}
       open={isMobileSidebarOpen}
       onClose={onSidebarClose}
-      variant="temporary"
+      variant='temporary'
     >
       <NoteList />
     </Drawer>
