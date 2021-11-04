@@ -1,7 +1,7 @@
-import i18n from "i18next";
-import { initReactI18next } from "react-i18next";
-import LanguageDetector from "i18next-browser-languagedetector";
-import HttpApi from "i18next-http-backend";
+import i18n from 'i18next';
+import { initReactI18next } from 'react-i18next';
+import LanguageDetector from 'i18next-browser-languagedetector';
+import HttpApi from 'i18next-http-backend';
 
 i18n
   // detect user language
@@ -13,14 +13,14 @@ i18n
   // for all options read: https://www.i18next.com/overview/configuration-options
   .use(HttpApi)
   .init({
-    supportedLngs: ["en", "no"],
-    fallbackLng: "en",
+    supportedLngs: ['en', 'no'],
+    fallbackLng: 'en',
     detection: {
-      order: ["path", /*"cookie",*/ "htmlTag", "localStorage", "subdomain"],
+      order: ['path', /*"cookie",*/ 'htmlTag', 'localStorage', 'subdomain'],
       //caches: ["cookie"],
     },
     backend: {
-      loadPath: "/assets/locales/{{lng}}/translation.json",
+      loadPath: '/assets/locales/{{lng}}/translation.json',
     },
     react: { useSuspense: false },
   });

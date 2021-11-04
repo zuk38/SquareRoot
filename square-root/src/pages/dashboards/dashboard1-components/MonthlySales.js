@@ -68,11 +68,11 @@ const MonthlySales = () => {
           paddingRight: '30px',
         }}
       >
-        <Box display="flex" alignItems="flex-start">
+        <Box display='flex' alignItems='flex-start'>
           <Box>
             <Typography
-              variant="h5"
-              color="textSecondary"
+              variant='h5'
+              color='textSecondary'
               sx={{
                 marginBottom: '0',
               }}
@@ -81,7 +81,7 @@ const MonthlySales = () => {
               Monthly Sales
             </Typography>
             <Typography
-              variant="h2"
+              variant='h2'
               sx={{
                 mt: '1px',
                 mb: '0px',
@@ -98,20 +98,25 @@ const MonthlySales = () => {
             }}
           >
             <Fab
-              size="medium"
-              aria-label="add"
-              elevation="0"
-              color="primary"
+              size='medium'
+              aria-label='add'
+              elevation='0'
+              color='primary'
               sx={{
                 boxShadow: 'none',
               }}
             >
-              <FeatherIcon icon="shopping-bag" />
+              <FeatherIcon icon='shopping-bag' />
             </Fab>
           </Box>
         </Box>
       </CardContent>
-      <Chart options={optionsmonthlychart} series={seriesmonthlychart} type="area" height="90px" />
+      <Chart
+        options={optionsmonthlychart}
+        series={seriesmonthlychart}
+        type='area'
+        height='90px'
+      />
     </Card>
   );
 };

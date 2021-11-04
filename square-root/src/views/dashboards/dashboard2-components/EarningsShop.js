@@ -8,7 +8,8 @@ const EarningsShop = () => (
     elevation={0}
     sx={{
       position: 'relative',
-      backgroundColor: (theme) => `${theme.palette.mode === 'dark' ? '#32363e' : ''}`,
+      backgroundColor: (theme) =>
+        `${theme.palette.mode === 'dark' ? '#32363e' : ''}`,
       '&:before': {
         content: `""`,
         position: 'absolute',
@@ -19,29 +20,24 @@ const EarningsShop = () => (
         background: `url(${imgsvg})`,
         backgroundRepeat: 'no-repeat',
         backgroundSize: 'cover',
-        transform: (theme) => `${theme.direction === 'rtl' ? 'scaleX(-1)' : 'unset'}`,
+        transform: (theme) =>
+          `${theme.direction === 'rtl' ? 'scaleX(-1)' : 'unset'}`,
         backgroundPosition: (theme) =>
-          `${theme.direction === 'rtl' ? 'right 19px center' : 'left 70px center'}`,
+          `${
+            theme.direction === 'rtl' ? 'right 19px center' : 'left 70px center'
+          }`,
       },
 
       borderWidth: '0px',
     }}
   >
     <CardContent>
-      <Box display="flex" alignItems="center">
+      <Box display='flex' alignItems='center'>
         <Box>
-          <Typography
-            fontWeight="700"
-            variant="h4" 
-            color="textSecondary"            
-          >
+          <Typography fontWeight='700' variant='h4' color='textSecondary'>
             Earnings
           </Typography>
-          <Typography
-            variant="h3"            
-          >
-            $63,438.78
-          </Typography>
+          <Typography variant='h3'>$63,438.78</Typography>
         </Box>
         <Box
           sx={{
@@ -49,16 +45,16 @@ const EarningsShop = () => (
           }}
         >
           <Fab
-            elevation="0"
-            color="secondary"
-            aria-label="dollar"
+            elevation='0'
+            color='secondary'
+            aria-label='dollar'
             sx={{
               color: '#fff',
               width: '48px',
               height: '48px',
             }}
           >
-            <FeatherIcon icon="dollar-sign" width="24" height="24" />
+            <FeatherIcon icon='dollar-sign' width='24' height='24' />
           </Fab>
         </Box>
       </Box>
@@ -66,8 +62,8 @@ const EarningsShop = () => (
         sx={{
           marginTop: '15px',
         }}
-        variant="contained"
-        color="primary"
+        variant='contained'
+        color='primary'
       >
         Download
       </Button>

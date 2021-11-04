@@ -6,10 +6,10 @@ import FeatherIcon from 'feather-icons-react';
 const Purchases = () => (
   <Card>
     <CardContent>
-      <Box display="flex" alignItems="flex-start">
+      <Box display='flex' alignItems='flex-start'>
         <Typography
-          variant="h4"
-          fontWeight="700"
+          variant='h4'
+          fontWeight='700'
           sx={{
             marginBottom: '0',
           }}
@@ -23,21 +23,21 @@ const Purchases = () => (
           }}
         >
           <Fab
-            size="medium"
-            color="primary"
-            aria-label="add"
-            elevation="0"
+            size='medium'
+            color='primary'
+            aria-label='add'
+            elevation='0'
             sx={{
               boxShadow: 'none',
             }}
           >
-            <FeatherIcon icon="shopping-bag" />
+            <FeatherIcon icon='shopping-bag' />
           </Fab>
         </Box>
       </Box>
       <Typography
-        variant="h1"
-        fontWeight="500"
+        variant='h1'
+        fontWeight='500'
         sx={{
           marginBottom: '0',
           marginTop: '20px',
@@ -47,9 +47,9 @@ const Purchases = () => (
         2,367
       </Typography>
       <Typography
-        variant="h6"
-        fontWeight="400"
-        color="textSecondary"
+        variant='h6'
+        fontWeight='400'
+        color='textSecondary'
         sx={{
           marginBottom: '0',
           opacity: '0.6',

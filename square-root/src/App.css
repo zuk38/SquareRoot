@@ -309,7 +309,7 @@ a {
   }
 }
 
-@media screen and (min-width: 361px) and  (max-width: 1190px) { 
+@media screen and (min-width: 361px) and (max-width: 1190px) {
   .sidebar-bars {
     --button-size: calc(var(--nav-size) * 0.3);
     width: var(--button-size);
@@ -326,10 +326,9 @@ a {
   .sidebar-bars svg {
     fill: var(--bg);
   }
-
 }
 
-@media screen and  (max-width: 1190px) {
+@media screen and (max-width: 1190px) {
   .nav-menu {
     display: flex;
     flex-direction: column;

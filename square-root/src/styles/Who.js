@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const Wrapper = styled.div`
   display: flex;
@@ -24,7 +24,7 @@ export const Row = styled.div`
   display: grid;
   grid-template-columns: repeat(auto-fill, 40%);
   grid-gap: 120px;
-  margin-bottom: ${({ last }) => (last ? "10px" : "80px")};
+  margin-bottom: ${({ last }) => (last ? '10px' : '80px')};
   @media (max-width: 768px) {
     grid-template-columns: repeat(auto-fill, 100%);
     grid-gap: 40px;
@@ -33,8 +33,8 @@ export const Row = styled.div`
 
 export const IamgeContainer = styled.div`
   background: #e9e5fa;
-  width: ${({ square }) => (square ? "260px" : "230px")};
-  height: ${({ square }) => (square ? "230px" : "190px")};
+  width: ${({ square }) => (square ? '260px' : '230px')};
+  height: ${({ square }) => (square ? '230px' : '190px')};
   margin: 0;
   position: relative;
 `;
@@ -58,7 +58,7 @@ export const Position = styled.span`
 export const Description = styled.p`
   margin-top: 20px;
   font-size: 18px;
-  line-height: 20px;  
+  line-height: 20px;
   letter-spacing: 0em;
   line-height: 1.8;
 `;

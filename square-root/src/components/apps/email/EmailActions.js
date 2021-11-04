@@ -18,19 +18,19 @@ const EmailActions = () => {
 
   return (
     <Box sx={{ p: 2 }}>
-      <ButtonGroup size="small" aria-label="small button group" fullWidth>
-        <Button key="one" onClick={() => dispatch(trashEmail(id))}>
-          <FeatherIcon icon="trash" width="17" />
+      <ButtonGroup size='small' aria-label='small button group' fullWidth>
+        <Button key='one' onClick={() => dispatch(trashEmail(id))}>
+          <FeatherIcon icon='trash' width='17' />
         </Button>
-        <Button key="two" onClick={handleClick}>
-          <FeatherIcon icon="folder" width="17" />
+        <Button key='two' onClick={handleClick}>
+          <FeatherIcon icon='folder' width='17' />
         </Button>
-        <Button key="three">
-          <FeatherIcon icon="tag" width="17" />
+        <Button key='three'>
+          <FeatherIcon icon='tag' width='17' />
         </Button>
       </ButtonGroup>
       <Menu
-        id="basic-menu"
+        id='basic-menu'
         anchorEl={anchorEl}
         open={open}
         onClose={handleClose}
@@ -40,11 +40,21 @@ const EmailActions = () => {
           horizontal: 'left',
         }}
       >
-        <MenuItem onClick={() => dispatch(assignFolder(id, 'inbox'))}>Inbox</MenuItem>
-        <MenuItem onClick={() => dispatch(assignFolder(id, 'sent'))}>Sent</MenuItem>
-        <MenuItem onClick={() => dispatch(assignFolder(id, 'draft'))}>Draft</MenuItem>
-        <MenuItem onClick={() => dispatch(assignFolder(id, 'spam'))}>Spam</MenuItem>
-        <MenuItem onClick={() => dispatch(assignFolder(id, 'trash'))}>Trash</MenuItem>
+        <MenuItem onClick={() => dispatch(assignFolder(id, 'inbox'))}>
+          Inbox
+        </MenuItem>
+        <MenuItem onClick={() => dispatch(assignFolder(id, 'sent'))}>
+          Sent
+        </MenuItem>
+        <MenuItem onClick={() => dispatch(assignFolder(id, 'draft'))}>
+          Draft
+        </MenuItem>
+        <MenuItem onClick={() => dispatch(assignFolder(id, 'spam'))}>
+          Spam
+        </MenuItem>
+        <MenuItem onClick={() => dispatch(assignFolder(id, 'trash'))}>
+          Trash
+        </MenuItem>
       </Menu>
     </Box>
   );

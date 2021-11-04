@@ -6,7 +6,7 @@ const PageContainer = ({ title, description, children }) => (
   <div>
     <Helmet>
       <title>{title}</title>
-      <meta name="description" content={description} />
+      <meta name='description' content={description} />
     </Helmet>
     {children}
   </div>

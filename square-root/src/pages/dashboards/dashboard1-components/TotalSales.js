@@ -64,18 +64,22 @@ const TotalSales = () => {
   };
   const seriestotalsales = [25, 35, 35];
   return (
-    <DashboardCard title="Total Sales" subtitle="Overview of Years" action={<ThemeSelect />}>
+    <DashboardCard
+      title='Total Sales'
+      subtitle='Overview of Years'
+      action={<ThemeSelect />}
+    >
       <Divider style={{ marginTop: '0px' }} />
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 3,
         }}
       >
         <Typography
-          color="textSecondary"
-          variant="body1"
+          color='textSecondary'
+          variant='body1'
           sx={{
             fontSize: 'h5.fontSize',
           }}
@@ -88,8 +92,8 @@ const TotalSales = () => {
           }}
         >
           <Typography
-            variant="h2"
-            fontWeight="700"
+            variant='h2'
+            fontWeight='700'
             sx={{
               marginBottom: '0',
             }}
@@ -106,26 +110,31 @@ const TotalSales = () => {
           position: 'relative',
         }}
       >
-        <Chart options={optionstotalsales} series={seriestotalsales} type="donut" height="280" />
+        <Chart
+          options={optionstotalsales}
+          series={seriestotalsales}
+          type='donut'
+          height='280'
+        />
         <Typography
-          color="textSecondary"
+          color='textSecondary'
           sx={{
             position: 'absolute',
             left: '46%',
             top: '45%',
           }}
         >
-          <FeatherIcon icon="shopping-cart" height="30" width="30" />
+          <FeatherIcon icon='shopping-cart' height='30' width='30' />
         </Typography>
       </Box>
       <Box
-        display="flex"
-        justifyContent="space-between"
+        display='flex'
+        justifyContent='space-between'
         sx={{
           mt: 5,
         }}
       >
-        <Box display="flex" alignItems="center">
+        <Box display='flex' alignItems='center'>
           <Box
             sx={{
               backgroundColor: primary,
@@ -135,11 +144,11 @@ const TotalSales = () => {
               mr: 1,
             }}
           />
-          <Typography color="textSecondary" variant="h6">
+          <Typography color='textSecondary' variant='h6'>
             2021
           </Typography>
         </Box>
-        <Box display="flex" alignItems="center">
+        <Box display='flex' alignItems='center'>
           <Box
             sx={{
               backgroundColor: secondary,
@@ -149,11 +158,11 @@ const TotalSales = () => {
               mr: 1,
             }}
           />
-          <Typography color="textSecondary" variant="h6">
+          <Typography color='textSecondary' variant='h6'>
             2020
           </Typography>
         </Box>
-        <Box display="flex" alignItems="center">
+        <Box display='flex' alignItems='center'>
           <Box
             sx={{
               backgroundColor: warning,
@@ -163,7 +172,7 @@ const TotalSales = () => {
               mr: 1,
             }}
           />
-          <Typography color="textSecondary" variant="h6">
+          <Typography color='textSecondary' variant='h6'>
             2019
           </Typography>
         </Box>

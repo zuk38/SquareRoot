@@ -79,7 +79,7 @@ const ACalendar = () => {
           return { ...elem, title, color };
         }
         return elem;
-      }),
+      })
     );
     setOpen(false);
     setTitle('');
@@ -107,7 +107,9 @@ const ACalendar = () => {
     setTitle('');
   };
   const deleteHandler = (event) => {
-    const updatecalEvents = calevents.filter((ind) => ind.title !== event.title);
+    const updatecalEvents = calevents.filter(
+      (ind) => ind.title !== event.title
+    );
     setCalEvents(updatecalEvents);
   };
   const handleClose = () => {
@@ -124,14 +126,14 @@ const ACalendar = () => {
   };
 
   return (
-    <PageContainer title="Calendar ui" description="this is Calendar page">
-      <Breadcrumb title="Calendar" subtitle="App" />
+    <PageContainer title='Calendar ui' description='this is Calendar page'>
+      <Breadcrumb title='Calendar' subtitle='App' />
       <Card>
         <CardContent>
           <Calendar
             selectable
             events={calevents}
-            defaultView="month"
+            defaultView='month'
             scrollToTime={new Date(1970, 1, 1, 6)}
             defaultDate={new Date()}
             localizer={localizer}
@@ -146,33 +148,37 @@ const ACalendar = () => {
       <Dialog open={open} onClose={handleClose} fullWidth>
         <form onSubmit={update ? updateEvent : submitHandler}>
           <DialogContent>
-            <Typography variant="h3" sx={{ mb: 2 }}>
+            <Typography variant='h3' sx={{ mb: 2 }}>
               {update ? 'Update Event' : 'Add Event'}
             </Typography>
-            <CustomFormLabel htmlFor="Event Title">Event Title</CustomFormLabel>
+            <CustomFormLabel htmlFor='Event Title'>Event Title</CustomFormLabel>
             <CustomTextField
-              id="Event Title"
-              placeholder="Enter Event Title"
-              variant="outlined"
+              id='Event Title'
+              placeholder='Enter Event Title'
+              variant='outlined'
               fullWidth
               value={title}
               sx={{ mb: 2 }}
               onChange={inputChangeHandler}
-              size="small"
+              size='small'
             />
             <CustomFormLabel>Select Event Color</CustomFormLabel>
 
             {ColorVariation.map((mcolor) => {
               return (
                 <Fab
-                  color="primary"
+                  color='primary'
                   style={{ backgroundColor: mcolor.eColor }}
                   sx={{ marginRight: '3px' }}
-                  size="small"
+                  size='small'
                   key={mcolor.id}
                   onClick={() => selectinputChangeHandler(mcolor.value)}
                 >
-                  {mcolor.value === color ? <FeatherIcon icon="check" size="16" /> : ''}
+                  {mcolor.value === color ? (
+                    <FeatherIcon icon='check' size='16' />
+                  ) : (
+                    ''
+                  )}
                 </Fab>
               );
             })}
@@ -182,9 +188,9 @@ const ACalendar = () => {
 
             {update ? (
               <Button
-                type="submit"
-                color="error"
-                variant="contained"
+                type='submit'
+                color='error'
+                variant='contained'
                 onClick={() => deleteHandler(update)}
               >
                 Delete
@@ -192,7 +198,7 @@ const ACalendar = () => {
             ) : (
               ''
             )}
-            <Button type="submit" disabled={!title} variant="contained">
+            <Button type='submit' disabled={!title} variant='contained'>
               {update ? 'Update' : 'Add'}
             </Button>
           </DialogActions>

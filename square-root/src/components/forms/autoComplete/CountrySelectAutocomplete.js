@@ -7,7 +7,9 @@ const countryToFlag = (isoCode) =>
   typeof String.fromCodePoint !== 'undefined'
     ? isoCode
         .toUpperCase()
-        .replace(/./g, (char) => String.fromCodePoint(char.charCodeAt(0) + 127397))
+        .replace(/./g, (char) =>
+          String.fromCodePoint(char.charCodeAt(0) + 127397)
+        )
     : isoCode;
 
 const countries = [
@@ -437,16 +439,16 @@ const countries = [
 
 const CountrySelectAutocomplete = () => {
   return (
-    <BaseCard title="Country select">
+    <BaseCard title='Country select'>
       <Autocomplete
-        id="country-select-demo"
+        id='country-select-demo'
         fullWidth
         options={countries}
         autoHighlight
         getOptionLabel={(option) => option.label}
         renderOption={(props, option) => (
           <Box
-            component="li"
+            component='li'
             sx={{ fontSize: 15, '& > span': { mr: '10px', fontSize: 18 } }}
             {...props}
           >
@@ -457,10 +459,10 @@ const CountrySelectAutocomplete = () => {
         renderInput={(params) => (
           <TextField
             {...params}
-            placeholder="Choose a country"
-            aria-label="Choose a country"
-            autoComplete="off"
-            size="small"
+            placeholder='Choose a country'
+            aria-label='Choose a country'
+            autoComplete='off'
+            size='small'
             inputprops={{
               ...params.inputprops,
               autoComplete: 'new-password', // disable autocomplete and autofill

@@ -8,7 +8,8 @@ const BootstrapInput = styled(InputBase)(({ theme }) => ({
     borderRadius: '5px',
   },
   '& .MuiInputBase-input': {
-    backgroundColor: theme.palette.mode === 'light' ? 'white' : theme.palette.grey.A400,
+    backgroundColor:
+      theme.palette.mode === 'light' ? 'white' : theme.palette.grey.A400,
     borderRadius: 5,
     fontSize: 15,
     padding: '8px 33px 8px 16px',
@@ -26,8 +27,8 @@ const ThemeSelect = () => {
 
   return (
     <Select
-      labelId="demo-simple-select-label"
-      id="demo-simple-select"
+      labelId='demo-simple-select-label'
+      id='demo-simple-select'
       value={age}
       onChange={handleChange}
       input={<BootstrapInput />}

@@ -42,7 +42,17 @@ const ColumnChart = () => {
       colors: ['transparent'],
     },
     xaxis: {
-      categories: ['Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct'],
+      categories: [
+        'Feb',
+        'Mar',
+        'Apr',
+        'May',
+        'Jun',
+        'Jul',
+        'Aug',
+        'Sep',
+        'Oct',
+      ],
     },
     yaxis: {
       title: {
@@ -85,22 +95,22 @@ const ColumnChart = () => {
   ];
 
   return (
-    <PageContainer title="Column Chart" description="this is innerpage">
+    <PageContainer title='Column Chart' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Column Chart" items={BCrumb} />
+      <Breadcrumb title='Column Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Column Charts</Typography>
+            <Typography variant='h4'>Column Charts</Typography>
           </Box>
         </Box>
         <CardContent>
           <Chart
             options={optionscolumnchart}
             series={seriescolumnchart}
-            type="bar"
-            height="300px"
+            type='bar'
+            height='300px'
           />
         </CardContent>
       </Card>

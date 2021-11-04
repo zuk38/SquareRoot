@@ -103,22 +103,22 @@ const GredientChart = () => {
   ];
 
   return (
-    <PageContainer title="Gredient Chart" description="this is innerpage">
+    <PageContainer title='Gredient Chart' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Gradient Chart" items={BCrumb} />
+      <Breadcrumb title='Gradient Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Gredient Charts</Typography>
+            <Typography variant='h4'>Gredient Charts</Typography>
           </Box>
         </Box>
         <CardContent>
           <Chart
             options={optionsgredientchart}
             series={seriesgredientchart}
-            type="line"
-            height="300px"
+            type='line'
+            height='300px'
           />
         </CardContent>
       </Card>

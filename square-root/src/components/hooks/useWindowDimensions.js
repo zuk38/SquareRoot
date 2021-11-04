@@ -1,8 +1,9 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
-const getWindowDimensions = () => window.innerWidth 
-|| document.documentElement.clientWidth 
-|| document.body.clientWidth;
+const getWindowDimensions = () =>
+  window.innerWidth ||
+  document.documentElement.clientWidth ||
+  document.body.clientWidth;
 
 export default function useWindowDimensions() {
   const [windowDimensions, setWindowDimensions] = useState(
@@ -12,15 +13,15 @@ export default function useWindowDimensions() {
   // it does not have any dependencies.
   useEffect(() => {
     const resizeListener = () => {
-      setWindowDimensions(getWindowDimensions())
+      setWindowDimensions(getWindowDimensions());
     };
     // set resize listener
-    window.addEventListener("resize", resizeListener);
+    window.addEventListener('resize', resizeListener);
 
     // clean up function
     return () => {
       // remove resize listener
-      window.removeEventListener("resize", resizeListener);
+      window.removeEventListener('resize', resizeListener);
     };
   }, []);
 

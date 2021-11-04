@@ -77,18 +77,23 @@ const LineChart = () => {
   ];
 
   return (
-    <PageContainer title="Line Chart" description="this is innerpage">
+    <PageContainer title='Line Chart' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Line Chart" items={BCrumb} />
+      <Breadcrumb title='Line Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Line Charts</Typography>
+            <Typography variant='h4'>Line Charts</Typography>
           </Box>
         </Box>
         <CardContent>
-          <Chart options={optionslinechart} series={serieslinechart} type="line" height="308px" />
+          <Chart
+            options={optionslinechart}
+            series={serieslinechart}
+            type='line'
+            height='308px'
+          />
         </CardContent>
       </Card>
     </PageContainer>

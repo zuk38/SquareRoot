@@ -1,14 +1,14 @@
-import React from "react";
-import { ReactComponent as PlusIcon } from "../../icons/plus.svg";
-import { ReactComponent as MinusIcon } from "../../icons/minus.svg";
+import React from 'react';
+import { ReactComponent as PlusIcon } from '../../icons/plus.svg';
+import { ReactComponent as MinusIcon } from '../../icons/minus.svg';
 
 export default function ModifyPlantsQuantity(props) {
   return (
-    <div class="quantity">
+    <div class='quantity'>
       <button
-        className="minus-btn"
-        type="button"
-        name="button"
+        className='minus-btn'
+        type='button'
+        name='button'
         onClick={props.onRemove}
       >
         <MinusIcon />
@@ -16,16 +16,16 @@ export default function ModifyPlantsQuantity(props) {
 
       <input
         id={props.id}
-        type="text"
-        name="name"
+        type='text'
+        name='name'
         defaultValue={props.quantity || 0}
         onBlur={props.handleQuantityInput}
       />
 
       <button
-        className="plus-btn"
-        type="button"
-        name="button"
+        className='plus-btn'
+        type='button'
+        name='button'
         onClick={props.onAdd}
       >
         <PlusIcon />

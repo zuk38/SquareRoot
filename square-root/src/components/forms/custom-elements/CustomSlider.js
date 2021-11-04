@@ -7,7 +7,9 @@ const CustomSlider = styled((props) => <Slider {...props} />)(({ theme }) => ({
     height: '9px',
     borderRadius: '9px',
     opacity: '1',
-    backgroundColor: `${theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.09)' : '#ecf0f3'}`,
+    backgroundColor: `${
+      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.09)' : '#ecf0f3'
+    }`,
   },
   '& .MuiSlider-thumb': {
     borderRadius: '50%',

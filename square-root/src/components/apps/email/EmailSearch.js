@@ -11,24 +11,24 @@ const EmailSearch = ({ onClick }) => {
   const dispatch = useDispatch();
 
   return (
-    <Box display="flex" sx={{ p: 2 }}>
+    <Box display='flex' sx={{ p: 2 }}>
       <Button
-        variant="contained"
+        variant='contained'
         onClick={onClick}
-        color="secondary"
-        size="small"
+        color='secondary'
+        size='small'
         sx={{ mr: 1, display: { xs: 'block', lineHeight: '10px', lg: 'none' } }}
       >
-        <FeatherIcon icon="menu" width="16" />
+        <FeatherIcon icon='menu' width='16' />
       </Button>
       <CustomTextField
-        id="outlined-basic"
+        id='outlined-basic'
         inputProps={{ 'aria-label': 'Search emails' }}
         fullWidth
-        size="small"
+        size='small'
         value={searchTerm}
-        placeholder="Search emails"
-        variant="outlined"
+        placeholder='Search emails'
+        variant='outlined'
         onChange={(e) => dispatch(emailSearch(e.target.value))}
       />
     </Box>

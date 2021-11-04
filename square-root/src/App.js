@@ -9,6 +9,7 @@ import Navbar from './components/navbar/Navbar';
 import { withUserConsumer } from './context/user';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
+import TestClassComponent from './components/TestClassComponent';
 
 /*}
 
@@ -68,6 +69,7 @@ const App = (props) => {
           <Navbar {...props} auth={authProps} />
         )}
       {routing}
+      <TestClassComponent />
       {location.pathname.indexOf('/auth') <= -1 &&
         location.pathname !== '/forgotpassword' && <FooterContainer />}
     </ThemeProvider>

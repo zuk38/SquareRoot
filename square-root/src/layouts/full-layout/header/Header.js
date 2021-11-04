@@ -73,11 +73,11 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
     <AppBar sx={sx} elevation={0} className={customClass}>
       <Toolbar>
         <IconButton
-          edge="start"
-          color="inherit"
-          aria-label="menu"
+          edge='start'
+          color='inherit'
+          aria-label='menu'
           onClick={toggleSidebar}
-          size="large"
+          size='large'
           sx={{
             display: {
               lg: 'flex',
@@ -85,13 +85,13 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             },
           }}
         >
-          <FeatherIcon icon="menu" />
+          <FeatherIcon icon='menu' />
         </IconButton>
 
         <IconButton
-          size="large"
-          color="inherit"
-          aria-label="menu"
+          size='large'
+          color='inherit'
+          aria-label='menu'
           onClick={toggleMobileSidebar}
           sx={{
             display: {
@@ -100,23 +100,23 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             },
           }}
         >
-          <FeatherIcon icon="menu" width="20" height="20" />
+          <FeatherIcon icon='menu' width='20' height='20' />
         </IconButton>
         {/* ------------------------------------------- */}
         {/* Search Dropdown */}
         {/* ------------------------------------------- */}
         <IconButton
-          aria-label="show 4 new mails"
-          color="inherit"
-          aria-controls="search-menu"
-          aria-haspopup="true"
+          aria-label='show 4 new mails'
+          color='inherit'
+          aria-controls='search-menu'
+          aria-haspopup='true'
           onClick={() => setShowDrawer2(true)}
-          size="large"
+          size='large'
         >
-          <FeatherIcon icon="search" width="20" height="20" />
+          <FeatherIcon icon='search' width='20' height='20' />
         </IconButton>
         <Drawer
-          anchor="top"
+          anchor='top'
           open={showDrawer2}
           onClose={() => setShowDrawer2(false)}
           sx={{
@@ -125,11 +125,11 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             },
           }}
         >
-          <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='center'>
             <CustomTextField
-              id="tb-search"
-              size="small"
-              placeholder="Search here"
+              id='tb-search'
+              size='small'
+              placeholder='Search here'
               fullWidth
               inputProps={{ 'aria-label': 'Search here' }}
             />
@@ -139,13 +139,13 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               }}
             >
               <IconButton
-                color="inherit"
+                color='inherit'
                 sx={{
                   color: (theme) => theme.palette.grey.A200,
                 }}
                 onClick={handleDrawerClose2}
               >
-                <FeatherIcon icon="x-circle" />
+                <FeatherIcon icon='x-circle' />
               </IconButton>
             </Box>
           </Box>
@@ -156,11 +156,15 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* ------------------------------------------- */}
         {/* Ecommerce Dropdown */}
         {/* ------------------------------------------- */}
-        <IconButton size="large" color="inherit" onClick={() => setShowDrawer(true)}>
-          <FeatherIcon icon="shopping-cart" width="20" height="20" />
+        <IconButton
+          size='large'
+          color='inherit'
+          onClick={() => setShowDrawer(true)}
+        >
+          <FeatherIcon icon='shopping-cart' width='20' height='20' />
         </IconButton>
         <Drawer
-          anchor="right"
+          anchor='right'
           open={showDrawer}
           onClose={() => setShowDrawer(false)}
           sx={{
@@ -173,8 +177,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             },
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Typography variant="h4" fontWeight="500">
+          <Box display='flex' alignItems='center'>
+            <Typography variant='h4' fontWeight='500'>
               Shopping Cart
             </Typography>
             <Box
@@ -183,13 +187,13 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               }}
             >
               <IconButton
-                color="inherit"
+                color='inherit'
                 sx={{
                   color: (theme) => theme.palette.grey.A200,
                 }}
                 onClick={handleDrawerClose}
               >
-                <FeatherIcon icon="x-circle" />
+                <FeatherIcon icon='x-circle' />
               </IconButton>
             </Box>
           </Box>
@@ -204,19 +208,19 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* Messages Dropdown */}
         {/* ------------------------------------------- */}
         <IconButton
-          size="large"
-          aria-label="show 11 new notifications"
-          color="inherit"
-          aria-controls="msgs-menu"
-          aria-haspopup="true"
+          size='large'
+          aria-label='show 11 new notifications'
+          color='inherit'
+          aria-controls='msgs-menu'
+          aria-haspopup='true'
           onClick={handleClick2}
         >
-          <Badge variant="dot" color="primary">
-            <FeatherIcon icon="message-square" width="20" height="20" />
+          <Badge variant='dot' color='primary'>
+            <FeatherIcon icon='message-square' width='20' height='20' />
           </Badge>
         </IconButton>
         <Menu
-          id="msgs-menu"
+          id='msgs-menu'
           anchorEl={anchorEl2}
           keepMounted
           open={Boolean(anchorEl2)}
@@ -239,8 +243,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               mb: 1,
             }}
           >
-            <Box display="flex" alignItems="center">
-              <Typography variant="h4" fontWeight="500">
+            <Box display='flex' alignItems='center'>
+              <Typography variant='h4' fontWeight='500'>
                 Messages
               </Typography>
               <Box
@@ -249,8 +253,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
                 }}
               >
                 <Chip
-                  size="small"
-                  label="5 new"
+                  size='small'
+                  label='5 new'
                   sx={{
                     borderRadius: '6px',
                     pl: '5px',
@@ -270,12 +274,12 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               display: 'block',
               width: '100%',
             }}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             onClick={handleClose2}
           >
             <Link
-              to="/email"
+              to='/email'
               style={{
                 color: '#fff',
                 width: '100%',
@@ -294,19 +298,19 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* Notifications Dropdown */}
         {/* ------------------------------------------- */}
         <IconButton
-          size="large"
-          aria-label="menu"
-          color="inherit"
-          aria-controls="notification-menu"
-          aria-haspopup="true"
+          size='large'
+          aria-label='menu'
+          color='inherit'
+          aria-controls='notification-menu'
+          aria-haspopup='true'
           onClick={handleClick}
         >
-          <Badge variant="dot" color="secondary">
-            <FeatherIcon icon="bell" width="20" height="20" />
+          <Badge variant='dot' color='secondary'>
+            <FeatherIcon icon='bell' width='20' height='20' />
           </Badge>
         </IconButton>
         <Menu
-          id="notification-menu"
+          id='notification-menu'
           anchorEl={anchorEl}
           keepMounted
           open={Boolean(anchorEl)}
@@ -329,8 +333,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               mb: 1,
             }}
           >
-            <Box display="flex" alignItems="center">
-              <Typography variant="h4" fontWeight="500">
+            <Box display='flex' alignItems='center'>
+              <Typography variant='h4' fontWeight='500'>
                 Notifications
               </Typography>
               <Box
@@ -339,8 +343,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
                 }}
               >
                 <Chip
-                  size="small"
-                  label="5 new"
+                  size='small'
+                  label='5 new'
                   sx={{
                     borderRadius: '6px',
                     pl: '5px',
@@ -359,12 +363,12 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               display: 'block',
               width: '100%',
             }}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
             onClick={handleClose}
           >
             <Link
-              to="/email"
+              to='/email'
               style={{
                 color: '#fff',
                 width: '100%',
@@ -393,13 +397,13 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
         {/* Profile Dropdown */}
         {/* ------------------------------------------- */}
         <Button
-          aria-label="menu"
-          color="inherit"
-          aria-controls="profile-menu"
-          aria-haspopup="true"
+          aria-label='menu'
+          color='inherit'
+          aria-controls='profile-menu'
+          aria-haspopup='true'
           onClick={handleClick4}
         >
-          <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='center'>
             <Avatar
               src={userimg}
               alt={userimg}
@@ -417,24 +421,29 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
                 alignItems: 'center',
               }}
             >
-              <Typography color="textSecondary" variant="h5" fontWeight="400" sx={{ ml: 1 }}>
+              <Typography
+                color='textSecondary'
+                variant='h5'
+                fontWeight='400'
+                sx={{ ml: 1 }}
+              >
                 Hi,
               </Typography>
               <Typography
-                variant="h5"
-                fontWeight="700"
+                variant='h5'
+                fontWeight='700'
                 sx={{
                   ml: 1,
                 }}
               >
                 Julia
               </Typography>
-              <FeatherIcon icon="chevron-down" width="20" height="20" />
+              <FeatherIcon icon='chevron-down' width='20' height='20' />
             </Box>
           </Box>
         </Button>
         <Menu
-          id="profile-menu"
+          id='profile-menu'
           anchorEl={anchorEl4}
           keepMounted
           open={Boolean(anchorEl4)}
@@ -455,8 +464,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               mb: 1,
             }}
           >
-            <Box display="flex" alignItems="center">
-              <Typography variant="h4" fontWeight="500">
+            <Box display='flex' alignItems='center'>
+              <Typography variant='h4' fontWeight='500'>
                 User Profile
               </Typography>
             </Box>
@@ -467,7 +476,7 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             style={{
               textDecoration: 'none',
             }}
-            to="/auth/login"
+            to='/auth/login'
           >
             <Button
               sx={{
@@ -475,8 +484,8 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
                 display: 'block',
                 width: '100%',
               }}
-              variant="contained"
-              color="primary"
+              variant='contained'
+              color='primary'
             >
               Logout
             </Button>

@@ -313,7 +313,14 @@ const headCells = [
 ];
 
 function EnhancedTableHead(props) {
-  const { onSelectAllClick, order, orderBy, numSelected, rowCount, onRequestSort } = props;
+  const {
+    onSelectAllClick,
+    order,
+    orderBy,
+    numSelected,
+    rowCount,
+    onRequestSort,
+  } = props;
   const createSortHandler = (property) => (event) => {
     onRequestSort(event, property);
   };
@@ -321,9 +328,9 @@ function EnhancedTableHead(props) {
   return (
     <TableHead>
       <TableRow>
-        <TableCell padding="checkbox">
+        <TableCell padding='checkbox'>
           <CustomCheckbox
-            color="primary"
+            color='primary'
             checked={rowCount > 0 && numSelected === rowCount}
             onChange={onSelectAllClick}
             inputprops={{
@@ -343,11 +350,11 @@ function EnhancedTableHead(props) {
               direction={orderBy === headCell.id ? order : 'asc'}
               onClick={createSortHandler(headCell.id)}
             >
-              <Typography variant="subtitle1" fontWeight="500">
+              <Typography variant='subtitle1' fontWeight='500'>
                 {headCell.label}
               </Typography>
               {orderBy === headCell.id ? (
-                <Box component="span" sx={visuallyHidden}>
+                <Box component='span' sx={visuallyHidden}>
                   {order === 'desc' ? 'sorted descending' : 'sorted ascending'}
                 </Box>
               ) : null}
@@ -378,30 +385,43 @@ const EnhancedTableToolbar = (props) => {
         pr: { xs: 1, sm: 1 },
         ...(numSelected > 0 && {
           bgcolor: (theme) =>
-            alpha(theme.palette.primary.main, theme.palette.action.activatedOpacity),
+            alpha(
+              theme.palette.primary.main,
+              theme.palette.action.activatedOpacity
+            ),
         }),
       }}
     >
       {numSelected > 0 ? (
-        <Typography sx={{ flex: '1 1 100%' }} color="inherit" variant="subtitle2" component="div">
+        <Typography
+          sx={{ flex: '1 1 100%' }}
+          color='inherit'
+          variant='subtitle2'
+          component='div'
+        >
           {numSelected} selected
         </Typography>
       ) : (
-        <Typography sx={{ flex: '1 1 100%' }} variant="h6" id="tableTitle" component="div">
+        <Typography
+          sx={{ flex: '1 1 100%' }}
+          variant='h6'
+          id='tableTitle'
+          component='div'
+        >
           Filter
         </Typography>
       )}
 
       {numSelected > 0 ? (
-        <Tooltip title="Delete">
+        <Tooltip title='Delete'>
           <IconButton>
-            <FeatherIcon icon="trash-2" width="18" />
+            <FeatherIcon icon='trash-2' width='18' />
           </IconButton>
         </Tooltip>
       ) : (
-        <Tooltip title="Filter list">
+        <Tooltip title='Filter list'>
           <IconButton>
-            <FeatherIcon icon="filter" width="18" />
+            <FeatherIcon icon='filter' width='18' />
           </IconButton>
         </Tooltip>
       )}
@@ -459,7 +479,7 @@ const EnhancedTable = () => {
     } else if (selectedIndex > 0) {
       newSelected = newSelected.concat(
         selected.slice(0, selectedIndex),
-        selected.slice(selectedIndex + 1),
+        selected.slice(selectedIndex + 1)
       );
     }
 
@@ -482,12 +502,16 @@ const EnhancedTable = () => {
   const isSelected = (name) => selected.indexOf(name) !== -1;
 
   // Avoid a layout jump when reaching the last page with empty rows.
-  const emptyRows = page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
+  const emptyRows =
+    page > 0 ? Math.max(0, (1 + page) * rowsPerPage - rows.length) : 0;
 
   return (
-    <PageContainer title="Enhanced Table" description="this is Enhanced Table page">
+    <PageContainer
+      title='Enhanced Table'
+      description='this is Enhanced Table page'
+    >
       {/* breadcrumb */}
-      <Breadcrumb title="Enhanced Table" items={BCrumb} />
+      <Breadcrumb title='Enhanced Table' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <CardContent>
@@ -497,7 +521,7 @@ const EnhancedTable = () => {
               <TableContainer>
                 <Table
                   sx={{ minWidth: 750 }}
-                  aria-labelledby="tableTitle"
+                  aria-labelledby='tableTitle'
                   size={dense ? 'small' : 'medium'}
                 >
                   <EnhancedTableHead
@@ -510,7 +534,10 @@ const EnhancedTable = () => {
                   />
                   <TableBody>
                     {stableSort(rows, getComparator(order, orderBy))
-                      .slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
+                      .slice(
+                        page * rowsPerPage,
+                        page * rowsPerPage + rowsPerPage
+                      )
                       .map((row, index) => {
                         const isItemSelected = isSelected(row.name);
                         const labelId = `enhanced-table-checkbox-${index}`;
@@ -519,15 +546,15 @@ const EnhancedTable = () => {
                           <TableRow
                             hover
                             onClick={(event) => handleClick(event, row.name)}
-                            role="checkbox"
+                            role='checkbox'
                             aria-checked={isItemSelected}
                             tabIndex={-1}
                             key={row.id}
                             selected={isItemSelected}
                           >
-                            <TableCell padding="checkbox">
+                            <TableCell padding='checkbox'>
                               <CustomCheckbox
-                                color="primary"
+                                color='primary'
                                 checked={isItemSelected}
                                 inputprops={{
                                   'aria-labelledby': labelId,
@@ -535,11 +562,11 @@ const EnhancedTable = () => {
                               />
                             </TableCell>
                             <TableCell>
-                              <Box display="flex" alignItems="center">
+                              <Box display='flex' alignItems='center'>
                                 <Avatar
                                   src={row.imgsrc}
                                   alt={row.imgsrc}
-                                  width="35"
+                                  width='35'
                                   sx={{
                                     borderRadius: '100%',
                                   }}
@@ -549,22 +576,30 @@ const EnhancedTable = () => {
                                     ml: 2,
                                   }}
                                 >
-                                  <Typography variant="h6" fontWeight="600">
+                                  <Typography variant='h6' fontWeight='600'>
                                     {row.name}
                                   </Typography>
-                                  <Typography color="textSecondary" variant="h6" fontWeight="400">
+                                  <Typography
+                                    color='textSecondary'
+                                    variant='h6'
+                                    fontWeight='400'
+                                  >
                                     {row.email}
                                   </Typography>
                                 </Box>
                               </Box>
                             </TableCell>
                             <TableCell>
-                              <Typography color="textSecondary" variant="h6" fontWeight="400">
+                              <Typography
+                                color='textSecondary'
+                                variant='h6'
+                                fontWeight='400'
+                              >
                                 {row.pname}
                               </Typography>
                             </TableCell>
                             <TableCell>
-                              <Box display="flex" alignItems="center">
+                              <Box display='flex' alignItems='center'>
                                 {row.teams.map((team) => (
                                   <Avatar
                                     key={team.id}
@@ -582,7 +617,7 @@ const EnhancedTable = () => {
                               </Box>
                             </TableCell>
                             <TableCell>
-                              <Box display="flex" alignItems="center">
+                              <Box display='flex' alignItems='center'>
                                 <Box
                                   sx={{
                                     backgroundColor:
@@ -594,16 +629,17 @@ const EnhancedTable = () => {
                                         ? (theme) => theme.palette.primary.main
                                         : row.status === 'Cancel'
                                         ? (theme) => theme.palette.error.main
-                                        : (theme) => theme.palette.secondary.main,
+                                        : (theme) =>
+                                            theme.palette.secondary.main,
                                     borderRadius: '100%',
                                     height: '10px',
                                     width: '10px',
                                   }}
                                 />
                                 <Typography
-                                  color="textSecondary"
-                                  variant="body1"
-                                  fontWeight="400"
+                                  color='textSecondary'
+                                  variant='body1'
+                                  fontWeight='400'
                                   sx={{
                                     ml: 1,
                                   }}
@@ -613,12 +649,18 @@ const EnhancedTable = () => {
                               </Box>
                             </TableCell>
                             <TableCell>
-                              <Typography color="textSecondary" variant="body1" fontWeight="400">
+                              <Typography
+                                color='textSecondary'
+                                variant='body1'
+                                fontWeight='400'
+                              >
                                 {row.weeks}
                               </Typography>
                             </TableCell>
                             <TableCell>
-                              <Typography variant="h6">${row.budget}k</Typography>
+                              <Typography variant='h6'>
+                                ${row.budget}k
+                              </Typography>
                             </TableCell>
                           </TableRow>
                         );
@@ -637,7 +679,7 @@ const EnhancedTable = () => {
               </TableContainer>
               <TablePagination
                 rowsPerPageOptions={[5, 10, 25]}
-                component="div"
+                component='div'
                 count={rows.length}
                 rowsPerPage={rowsPerPage}
                 page={page}
@@ -646,8 +688,10 @@ const EnhancedTable = () => {
               />
             </Paper>
             <FormControlLabel
-              control={<CustomSwitch checked={dense} onChange={handleChangeDense} />}
-              label="Dense padding"
+              control={
+                <CustomSwitch checked={dense} onChange={handleChangeDense} />
+              }
+              label='Dense padding'
             />
           </Box>
         </CardContent>

@@ -15,7 +15,8 @@ const EmailData = [
     subject: 'It is a long established.',
     time: '3:45 PM',
     To: 'abc@company.com',
-    emailExcerpt: 'Contrary to popular belief, Lorem Ipsum is not simply random text. ',
+    emailExcerpt:
+      'Contrary to popular belief, Lorem Ipsum is not simply random text. ',
     emailContent:
       '<p>Dummy text is text that is used in the publishing industry or by web designers to occupy the space which will later be filled with. </p>',
     unread: true,
@@ -36,7 +37,8 @@ const EmailData = [
     subject: 'fact that a reader will be distracted.',
     time: '6:01 PM',
     To: 'abc@company.com',
-    emailExcerpt: 'It has roots in a piece of classical Latin literature from 45 BC',
+    emailExcerpt:
+      'It has roots in a piece of classical Latin literature from 45 BC',
     emailContent:
       '<p>Dummy text is also used to demonstrate the appearance of different typefaces and layouts, and in general the content of dummy text is nonsensical. ',
     unread: true,
@@ -54,7 +56,8 @@ const EmailData = [
     id: 3,
     from: 'Robert Smith',
     thumbnail: user3,
-    subject: 'The point of using Lorem Ipsum is that it has a more-or-less normal',
+    subject:
+      'The point of using Lorem Ipsum is that it has a more-or-less normal',
     time: '7:10 AM',
     To: 'abc@company.com',
     emailExcerpt: 'Richard McClintock, a Latin professor at Hampden-Sydney',
@@ -141,7 +144,8 @@ const EmailData = [
     subject: 'the cites of the word in classical.',
     time: '12:11 PM',
     To: 'abc@company.com',
-    emailExcerpt: 'There are many variations of passages of Lorem Ipsum available',
+    emailExcerpt:
+      'There are many variations of passages of Lorem Ipsum available',
     emailContent:
       '<p>There is now an abundance of readable dummy texts. These are usually used when a text is required purely to fill a space.These alternatives to the classic Lorem Ipsum texts are often amusing and tell short, funny or nonsensical stories.</p>',
     unread: true,
@@ -162,7 +166,8 @@ const EmailData = [
     subject: ' This book is a treatise on the theory of ethics.',
     time: '11:55 AM',
     To: 'abc@company.com',
-    emailExcerpt: 'the majority have suffered alteration in some form, by injected ',
+    emailExcerpt:
+      'the majority have suffered alteration in some form, by injected ',
     emailContent:
       '<p>According to most sources, Lorum Ipsum can be traced back to a text composed by Cicero in 45 BC. Allegedly, a Latin scholar established the origin of the text.</p>',
     unread: false,
@@ -225,7 +230,8 @@ const EmailData = [
     subject: 'All the Lorem Ipsum generators on the Internet.',
     time: '9:44 AM',
     To: 'abc@company.com',
-    emailExcerpt: 'All the Lorem Ipsum generators on the Internet tend to repeat predefined',
+    emailExcerpt:
+      'All the Lorem Ipsum generators on the Internet tend to repeat predefined',
     emailContent:
       '<p>The spread of computers and layout programmes thus made dummy text better known. While in earlier times several lines of the Lorem Ipsum text were repeated in the creation of dummy texts.</p>',
     unread: false,
@@ -267,7 +273,8 @@ const EmailData = [
     subject: 'If you are going to use a passage.',
     time: '6:58 PM',
     To: 'abc@company.com',
-    emailExcerpt: 'Lorem Ipsum is therefore always free from repetition, injected humour',
+    emailExcerpt:
+      'Lorem Ipsum is therefore always free from repetition, injected humour',
     emailContent:
       '<p>The phrasal sequence of the Lorem Ipsum text is now so widespread and commonplace that many DTP programmes can generate dummy text using the starting sequence.</p>',
     unread: false,
@@ -309,7 +316,8 @@ const EmailData = [
     subject: 'first true generator on the Internet.',
     time: '5:47 PM',
     To: 'abc@company.com',
-    emailExcerpt: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+    emailExcerpt:
+      'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
     emailContent:
       '<p>Certain internet providers exploit the fact that fill text cannot be recognized by automatic search engines - meaningful information cannot be distinguished from meaningless.</p>',
     unread: false,
@@ -330,7 +338,8 @@ const EmailData = [
     subject: 'combined with a handful of model sentence structure.',
     time: '1:54 PM',
     To: 'abc@company.com',
-    emailExcerpt: "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
+    emailExcerpt:
+      "Lorem Ipsum has been the industry's standard dummy text ever since the 1500s",
     emailContent:
       "<p>Target-generated dummy text mixed with a certain combination of search terms can lead to an increased frequency of visits by search machine users. As a consequence, advertising revenues, which rely on website 'hits', are increased.</p>",
     unread: true,

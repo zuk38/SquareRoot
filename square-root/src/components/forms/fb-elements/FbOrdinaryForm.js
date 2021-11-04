@@ -35,11 +35,11 @@ const FbOrdinaryForm = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Ordinary Form
             </Typography>
           </Box>
@@ -55,25 +55,27 @@ const FbOrdinaryForm = () => {
               sx={{
                 mt: 0,
               }}
-              htmlFor="email-address"
+              htmlFor='email-address'
             >
               Email
             </CustomFormLabel>
             <CustomTextField
-              id="email-address"
+              id='email-address'
               helperText="We'll never share your email with anyone else."
-              variant="outlined"
-              size="small"
+              variant='outlined'
+              size='small'
               fullWidth
             />
-            <CustomFormLabel htmlFor="ordinary-outlined-password-input">Password</CustomFormLabel>
+            <CustomFormLabel htmlFor='ordinary-outlined-password-input'>
+              Password
+            </CustomFormLabel>
 
             <CustomTextField
-              id="ordinary-outlined-password-input"
-              type="password"
-              autoComplete="current-password"
-              variant="outlined"
-              size="small"
+              id='ordinary-outlined-password-input'
+              type='password'
+              autoComplete='current-password'
+              variant='outlined'
+              size='small'
               fullWidth
               sx={{
                 mb: '10px',
@@ -84,17 +86,17 @@ const FbOrdinaryForm = () => {
                 <CustomCheckbox
                   checked={state.checkedB}
                   onChange={handleChange}
-                  name="checkedB"
-                  color="primary"
+                  name='checkedB'
+                  color='primary'
                 />
               }
-              label="Check Me Out!"
+              label='Check Me Out!'
               sx={{
                 mb: 1,
               }}
             />
             <div>
-              <Button color="primary" variant="contained">
+              <Button color='primary' variant='contained'>
                 Submit
               </Button>
             </div>

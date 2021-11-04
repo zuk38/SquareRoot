@@ -121,15 +121,15 @@ const ProductPerformance = () => {
 
   return (
     <DashboardCard
-      title="Products Performance"
-      subtitle="Latest new products"
-      customdisplay="block"
+      title='Products Performance'
+      subtitle='Latest new products'
+      customdisplay='block'
       action={
-        <Stack direction="row" spacing={2}>
+        <Stack direction='row' spacing={2}>
           <Typography
-            variant="h6"
-            display="flex"
-            alignItems="center"
+            variant='h6'
+            display='flex'
+            alignItems='center'
             sx={{
               color: () => theme.palette.secondary.main,
             }}
@@ -143,14 +143,14 @@ const ProductPerformance = () => {
                 mr: '5px',
               }}
             >
-              <FeatherIcon icon="circle" width="10" height="10" />
+              <FeatherIcon icon='circle' width='10' height='10' />
             </Typography>
             Expence
           </Typography>
           <Typography
-            variant="h6"
-            display="flex"
-            alignItems="center"
+            variant='h6'
+            display='flex'
+            alignItems='center'
             sx={{
               color: () => theme.palette.warning.main,
             }}
@@ -164,7 +164,7 @@ const ProductPerformance = () => {
                 mr: '5px',
               }}
             >
-              <FeatherIcon icon="circle" width="10" height="10" />
+              <FeatherIcon icon='circle' width='10' height='10' />
             </Typography>
             Budget
           </Typography>
@@ -191,12 +191,12 @@ const ProductPerformance = () => {
             pr: 2,
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Typography fontWeight="500" variant="h1">
+          <Box display='flex' alignItems='center'>
+            <Typography fontWeight='500' variant='h1'>
               $93,438
             </Typography>
             <Fab
-              color="success"
+              color='success'
               sx={{
                 backgroundColor: () => theme.palette.success.main,
                 color: '#fff',
@@ -214,7 +214,7 @@ const ProductPerformance = () => {
               23%
             </Fab>
           </Box>
-          <Typography color="textSecondary" variant="h5" fontWeight="400">
+          <Typography color='textSecondary' variant='h5' fontWeight='400'>
             Budget
           </Typography>
           <Box
@@ -222,10 +222,10 @@ const ProductPerformance = () => {
               mt: 3,
             }}
           >
-            <Typography fontWeight="500" variant="h1">
+            <Typography fontWeight='500' variant='h1'>
               $32,839
             </Typography>
-            <Typography color="textSecondary" variant="h5" fontWeight="400">
+            <Typography color='textSecondary' variant='h5' fontWeight='400'>
               Expense
             </Typography>
           </Box>
@@ -235,14 +235,19 @@ const ProductPerformance = () => {
               mb: 2,
             }}
           >
-            <Chart options={optionsreport} series={seriesreport} type="line" height="30" />
+            <Chart
+              options={optionsreport}
+              series={seriesreport}
+              type='line'
+              height='30'
+            />
           </Box>
           <Button
             sx={{
               marginTop: '15px',
             }}
-            variant="contained"
-            color="primary"
+            variant='contained'
+            color='primary'
           >
             Download Report
           </Button>
@@ -252,8 +257,8 @@ const ProductPerformance = () => {
             <Chart
               options={optionsproductperformance}
               series={seriesproductperformance}
-              type="bar"
-              height="265"
+              type='bar'
+              height='265'
             />
           </Box>
         </Grid>

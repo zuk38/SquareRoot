@@ -38,14 +38,14 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
   const SidebarContent = (
     <Scrollbar style={{ height: 'calc(100vh - 5px)' }}>
       <Box sx={{ p: 2 }}>
-      <Box sx={{ p: 2 }}>
-       <LogoIcon />
-       <Typography
-                      variant="secondary" //not yet updated with IBM font
-                      sx={{mt: 1, opacity: '0.6' }}
-                    >
-                       The new platform for greenspaces
-                    </Typography>
+        <Box sx={{ p: 2 }}>
+          <LogoIcon />
+          <Typography
+            variant='secondary' //not yet updated with IBM font
+            sx={{ mt: 1, opacity: '0.6' }}
+          >
+            The new platform for greenspaces
+          </Typography>
         </Box>
         <Box>
           <List>
@@ -55,7 +55,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                 return (
                   <li key={item.subheader}>
                     <Typography
-                      variant="body1"
+                      variant='body1'
                       sx={{ my: 2, mt: 4, opacity: '0.4' }}
                     >
                       {item.subheader}
@@ -69,14 +69,15 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                   <React.Fragment key={item.title}>
                     <ListItem
                       button
-                      component="li"
+                      component='li'
                       onClick={() => handleClick(index)}
                       selected={pathWithoutLastPart === item.href}
                       sx={{
                         mb: 1,
                         ...(pathWithoutLastPart === item.href && {
                           color: 'white',
-                          backgroundColor: (theme) => `${theme.palette.primary.main}!important`,
+                          backgroundColor: (theme) =>
+                            `${theme.palette.primary.main}!important`,
                         }),
                       }}
                     >
@@ -87,17 +88,17 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                           }),
                         }}
                       >
-                        <FeatherIcon icon={item.icon} width="20" height="20" />
+                        <FeatherIcon icon={item.icon} width='20' height='20' />
                       </ListItemIcon>
                       <ListItemText>{item.title}</ListItemText>
                       {index === open || pathWithoutLastPart === item.href ? (
-                        <FeatherIcon icon="chevron-down" size="16" />
+                        <FeatherIcon icon='chevron-down' size='16' />
                       ) : (
-                        <FeatherIcon icon="chevron-right" size="16" />
+                        <FeatherIcon icon='chevron-right' size='16' />
                       )}
                     </ListItem>
-                    <Collapse in={index === open} timeout="auto" unmountOnExit>
-                      <List component="li" disablePadding>
+                    <Collapse in={index === open} timeout='auto' unmountOnExit>
+                      <List component='li' disablePadding>
                         {item.children.map((child) => {
                           return (
                             <ListItem
@@ -123,7 +124,11 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                                   }),
                                 }}
                               >
-                                <FeatherIcon icon={child.icon} width="20" height="20" />
+                                <FeatherIcon
+                                  icon={child.icon}
+                                  width='20'
+                                  height='20'
+                                />
                               </ListItemIcon>
                               <ListItemText>{child.title}</ListItemText>
                             </ListItem>
@@ -136,7 +141,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                 // {/********If Sub No Menu**********/}
               } else {
                 return (
-                  <List component="li" disablePadding key={item.title}>
+                  <List component='li' disablePadding key={item.title}>
                     <ListItem
                       onClick={() => handleClick(index)}
                       button
@@ -147,7 +152,8 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                         mb: 1,
                         ...(pathDirect === item.href && {
                           color: 'white',
-                          backgroundColor: (theme) => `${theme.palette.primary.main}!important`,
+                          backgroundColor: (theme) =>
+                            `${theme.palette.primary.main}!important`,
                         }),
                       }}
                     >
@@ -156,9 +162,11 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                           ...(pathDirect === item.href && { color: 'white' }),
                         }}
                       >
-                        <FeatherIcon icon={item.icon} width="20" height="20" />
+                        <FeatherIcon icon={item.icon} width='20' height='20' />
                       </ListItemIcon>
-                      <ListItemText onClick={onSidebarClose}>{item.title}</ListItemText>
+                      <ListItemText onClick={onSidebarClose}>
+                        {item.title}
+                      </ListItemText>
                     </ListItem>
                   </List>
                 );
@@ -173,9 +181,9 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
   if (lgUp) {
     return (
       <Drawer
-        anchor="left"
+        anchor='left'
         open={isSidebarOpen}
-        variant="persistent"
+        variant='persistent'
         PaperProps={{
           sx: {
             width: SidebarWidth,
@@ -190,7 +198,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
   }
   return (
     <Drawer
-      anchor="left"
+      anchor='left'
       open={isMobileSidebarOpen}
       onClose={onSidebarClose}
       PaperProps={{
@@ -199,7 +207,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
           border: '0 !important',
         },
       }}
-      variant="temporary"
+      variant='temporary'
     >
       {SidebarContent}
     </Drawer>

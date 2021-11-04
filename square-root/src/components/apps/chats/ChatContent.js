@@ -15,15 +15,15 @@ import Scrollbar from '../../custom-scroll/Scrollbar';
 
 const ChatContent = ({ toggleChatSidebar }) => {
   const chatDetails = useSelector(
-    (state) => state.chatReducer.chats[state.chatReducer.chatContent - 1],
+    (state) => state.chatReducer.chats[state.chatReducer.chatContent - 1]
   );
   return (
     <Box>
       {chatDetails ? (
         <div>
           <Box
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             p={2}
             sx={{
               pt: '8px',
@@ -36,14 +36,16 @@ const ChatContent = ({ toggleChatSidebar }) => {
                 mr: '10px',
               }}
             >
-              <FeatherIcon icon="menu" width="18" onClick={toggleChatSidebar} />
+              <FeatherIcon icon='menu' width='18' onClick={toggleChatSidebar} />
             </Box>
             <ListItem key={chatDetails.id} dense disableGutters>
               <ListItemAvatar>
                 <Avatar alt={chatDetails.name} src={chatDetails.thumb} />
               </ListItemAvatar>
               <ListItemText
-                primary={<Typography variant="h4">{chatDetails.name}</Typography>}
+                primary={
+                  <Typography variant='h4'>{chatDetails.name}</Typography>
+                }
                 secondary={chatDetails.status}
               />
             </ListItem>
@@ -55,11 +57,19 @@ const ChatContent = ({ toggleChatSidebar }) => {
                 Object.keys(chatDetails.chatHistory[chat]).map((key) =>
                   Object.keys(chatDetails.chatHistory[chat][key]).map((k) =>
                     k === 'from' ? (
-                      <Box display="flex" alignItems="start   " flexDirection="row" key={k}>
+                      <Box
+                        display='flex'
+                        alignItems='start   '
+                        flexDirection='row'
+                        key={k}
+                      >
                         <ListItemAvatar>
-                          <Avatar alt={chatDetails.name} src={chatDetails.thumb} />
+                          <Avatar
+                            alt={chatDetails.name}
+                            src={chatDetails.thumb}
+                          />
                         </ListItemAvatar>
-                        <div className="pl-3">
+                        <div className='pl-3'>
                           {chatDetails.chatHistory[chat][key][k].map((v) => (
                             <Box
                               mb={1}
@@ -86,10 +96,10 @@ const ChatContent = ({ toggleChatSidebar }) => {
                         {chatDetails.chatHistory[chat][key][k].map((v) => (
                           <Box
                             mb={1}
-                            display="flex"
-                            alignItems="flex-end"
-                            flexDirection="row-reverse"
-                            className="chat-content"
+                            display='flex'
+                            alignItems='flex-end'
+                            flexDirection='row-reverse'
+                            className='chat-content'
                             key={v}
                           >
                             <Box
@@ -111,24 +121,24 @@ const ChatContent = ({ toggleChatSidebar }) => {
                           </Box>
                         ))}
                       </Box>
-                    ),
-                  ),
-                ),
+                    )
+                  )
+                )
               )}
             </Box>
           </Scrollbar>
         </div>
       ) : (
-        <Box display="flex" alignItems="center" p={2} pb={1} pt={1}>
+        <Box display='flex' alignItems='center' p={2} pb={1} pt={1}>
           <Box
             sx={{
               display: { xs: 'flex', md: 'flex', lg: 'none' },
               mr: '10px',
             }}
           >
-            <FeatherIcon icon="menu" width="18" onClick={toggleChatSidebar} />
+            <FeatherIcon icon='menu' width='18' onClick={toggleChatSidebar} />
           </Box>
-          <Typography varient="h4">Select Chat</Typography>
+          <Typography varient='h4'>Select Chat</Typography>
         </Box>
       )}
     </Box>

@@ -1,4 +1,9 @@
-import { TRASH_EMAIL, ASSIGN_FOLDER, ASSIGN_LABEL, SET_SELECTED_EMAIL } from '../constants';
+import {
+  TRASH_EMAIL,
+  ASSIGN_FOLDER,
+  ASSIGN_LABEL,
+  SET_SELECTED_EMAIL,
+} from '../constants';
 
 const SelectedEmail = (state = [], action) => {
   switch (action.type) {

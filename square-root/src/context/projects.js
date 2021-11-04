@@ -1,15 +1,14 @@
-
-import React, { Component } from "react";
-import { Auth, API, graphqlOperation } from "aws-amplify";
-import { listMembers } from "../api/queries";
-import { listProjects } from "../api/projectQueries";
-import { v4 as uuidv4 } from "uuid";
+import React, { Component } from 'react';
+import { Auth, API, graphqlOperation } from 'aws-amplify';
+import { listMembers } from '../api/queries';
+import { listProjects } from '../api/projectQueries';
+import { v4 as uuidv4 } from 'uuid';
 import {
   createProject,
   createMember,
   createProjectMember,
   updateProject,
-} from "../api/mutations";
+} from '../api/mutations';
 
 const ProjectContext = React.createContext();
 
@@ -26,7 +25,7 @@ export default class ProjectProvider extends Component {
       // Switch authMode to AMAZON_COGNITO_USER_POOLS for non-public access
       const { data } = await API.graphql({
         query: listProjects,
-        authMode: "AMAZON_COGNITO_USER_POOLS",
+        authMode: 'AMAZON_COGNITO_USER_POOLS',
       });
       const projects = this.formatData(data.listProjects.items);
       console.log(projects);
@@ -62,7 +61,7 @@ export default class ProjectProvider extends Component {
         })
       );
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log('error creating todo:', err);
     }
   };
 
@@ -93,9 +92,8 @@ export default class ProjectProvider extends Component {
           input: { id: project_id, ...projectDetails },
         })
       );
-      
     } catch (err) {
-      console.log("error updating todo:", err);
+      console.log('error updating todo:', err);
     }
   };
 
@@ -127,7 +125,7 @@ export default class ProjectProvider extends Component {
       let member = {
         id: uuidv4(),
         username: user.username,
-        role: user.attributes["custom:role"],
+        role: user.attributes['custom:role'],
         name: user.attributes.name,
       };
       await API.graphql(
@@ -137,7 +135,7 @@ export default class ProjectProvider extends Component {
       );
       this.setState({ currentMember: member });
     } catch (err) {
-      console.log("error creating todo:", err);
+      console.log('error creating todo:', err);
     }
   };
 

@@ -74,11 +74,11 @@ const FbDefaultForm = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Default Form
             </Typography>
           </Box>
@@ -94,56 +94,60 @@ const FbDefaultForm = () => {
               sx={{
                 mt: 0,
               }}
-              htmlFor="default-value"
+              htmlFor='default-value'
             >
               Default Text
             </CustomFormLabel>
             <CustomTextField
-              id="default-value"
-              variant="outlined"
-              defaultValue="George deo"
+              id='default-value'
+              variant='outlined'
+              defaultValue='George deo'
               fullWidth
-              size="small"
+              size='small'
             />
-            <CustomFormLabel htmlFor="email-text">Email</CustomFormLabel>
+            <CustomFormLabel htmlFor='email-text'>Email</CustomFormLabel>
             <CustomTextField
-              id="email-text"
-              type="email"
-              variant="outlined"
+              id='email-text'
+              type='email'
+              variant='outlined'
               fullWidth
-              size="small"
+              size='small'
             />
-            <CustomFormLabel htmlFor="default-outlined-password-input">Password</CustomFormLabel>
+            <CustomFormLabel htmlFor='default-outlined-password-input'>
+              Password
+            </CustomFormLabel>
 
             <CustomTextField
-              id="default-outlined-password-input"
-              type="password"
-              autoComplete="current-password"
-              variant="outlined"
+              id='default-outlined-password-input'
+              type='password'
+              autoComplete='current-password'
+              variant='outlined'
               fullWidth
-              size="small"
+              size='small'
             />
-            <CustomFormLabel htmlFor="outlined-multiline-static">Textarea</CustomFormLabel>
+            <CustomFormLabel htmlFor='outlined-multiline-static'>
+              Textarea
+            </CustomFormLabel>
 
             <CustomTextField
-              id="outlined-multiline-static"
+              id='outlined-multiline-static'
               multiline
               rows={4}
-              variant="outlined"
+              variant='outlined'
               fullWidth
-              size="small"
+              size='small'
             />
-            <CustomFormLabel htmlFor="readonly-text">Read Only</CustomFormLabel>
+            <CustomFormLabel htmlFor='readonly-text'>Read Only</CustomFormLabel>
 
             <CustomTextField
-              id="readonly-text"
-              defaultValue="Hello World"
+              id='readonly-text'
+              defaultValue='Hello World'
               InputProps={{
                 readOnly: true,
               }}
-              variant="outlined"
+              variant='outlined'
               fullWidth
-              size="small"
+              size='small'
             />
             <Grid
               container
@@ -159,70 +163,72 @@ const FbDefaultForm = () => {
                     <CustomCheckbox
                       checked={state.checkedA}
                       onChange={handleChange}
-                      name="checkedA"
-                      color="primary"
+                      name='checkedA'
+                      color='primary'
                     />
                   }
-                  label="Check this custom checkbox"
+                  label='Check this custom checkbox'
                 />
                 <FormControlLabel
                   control={
                     <CustomCheckbox
                       checked={state.checkedB}
                       onChange={handleChange}
-                      name="checkedB"
-                      color="primary"
+                      name='checkedB'
+                      color='primary'
                     />
                   }
-                  label="Check this custom checkbox"
+                  label='Check this custom checkbox'
                 />
                 <FormControlLabel
                   control={
                     <CustomCheckbox
                       checked={state.checkedC}
                       onChange={handleChange}
-                      name="checkedC"
-                      color="primary"
+                      name='checkedC'
+                      color='primary'
                     />
                   }
-                  label="Check this custom checkbox"
+                  label='Check this custom checkbox'
                 />
               </Grid>
               <Grid item lg={4} md={6} sm={12}>
-                <FormControl component="fieldset">
+                <FormControl component='fieldset'>
                   <RadioGroup
-                    aria-label="gender"
-                    name="gender1"
+                    aria-label='gender'
+                    name='gender1'
                     value={value}
                     onChange={handleChange2}
                   >
                     <FormControlLabel
-                      value="radio1"
+                      value='radio1'
                       control={<CustomRadio />}
-                      label="Toggle this custom radio"
+                      label='Toggle this custom radio'
                     />
                     <FormControlLabel
-                      value="radio2"
+                      value='radio2'
                       control={<CustomRadio />}
-                      label="Toggle this custom radio"
+                      label='Toggle this custom radio'
                     />
                     <FormControlLabel
-                      value="radio3"
+                      value='radio3'
                       control={<CustomRadio />}
-                      label="Toggle this custom radio"
+                      label='Toggle this custom radio'
                     />
                   </RadioGroup>
                 </FormControl>
               </Grid>
             </Grid>
-            <CustomFormLabel htmlFor="standard-select-number">Select</CustomFormLabel>
+            <CustomFormLabel htmlFor='standard-select-number'>
+              Select
+            </CustomFormLabel>
             <CustomSelect
               fullWidth
-              id="standard-select-number"
-              variant="outlined"
+              id='standard-select-number'
+              variant='outlined'
               value={number}
               onChange={handleChange3}
-              size="small"
+              size='small'
               sx={{
                 mb: 2,
               }}
@@ -234,7 +240,7 @@ const FbDefaultForm = () => {
               ))}
             </CustomSelect>
             <div>
-              <Button color="primary" variant="contained">
+              <Button color='primary' variant='contained'>
                 Submit
               </Button>
             </div>

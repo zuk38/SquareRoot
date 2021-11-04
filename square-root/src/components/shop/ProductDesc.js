@@ -7,7 +7,7 @@ const TabPanel = (props) => {
 
   return (
     <div
-      role="tabpanel"
+      role='tabpanel'
       hidden={value !== index}
       id={`simple-tabpanel-${index}`}
       aria-labelledby={`simple-tab-${index}`}
@@ -57,38 +57,38 @@ const ProductDesc = () => {
             <Tabs
               value={value}
               onChange={handleChange}
-              aria-label="basic tabs example"
-              textColor="secondary"
+              aria-label='basic tabs example'
+              textColor='secondary'
               allowScrollButtonsMobile
               scrollButtons
-              indicatorColor="secondary"
+              indicatorColor='secondary'
             >
               <Tab
                 sx={{
                   textTransform: 'capitalize',
                 }}
-                label="Description"
+                label='Description'
                 {...a11yProps(0)}
               />
               <Tab
                 sx={{
                   textTransform: 'capitalize',
                 }}
-                label="Reviews"
+                label='Reviews'
                 {...a11yProps(1)}
               />
               <Tab
                 sx={{
                   textTransform: 'capitalize',
                 }}
-                label="Comments"
+                label='Comments'
                 {...a11yProps(2)}
               />
             </Tabs>
           </Box>
-          <TabPanel value={value} index={0} component="div">
+          <TabPanel value={value} index={0} component='div'>
             <Typography
-              fontWeight="500"
+              fontWeight='500'
               sx={{
                 fontSize: {
                   xs: '16px',
@@ -97,36 +97,39 @@ const ProductDesc = () => {
                 },
               }}
             >
-              Sed at diam elit. Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet
-              lorem pellentesque eu tincidunt a, aliquet sit amet lorem.
+              Sed at diam elit. Vivamus tortor odio, pellentesque eu tincidunt
+              a, aliquet sit amet lorem pellentesque eu tincidunt a, aliquet sit
+              amet lorem.
             </Typography>
             <Typography
-              color="textSecondary"
+              color='textSecondary'
               sx={{
                 mt: 4,
               }}
             >
-              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec
-              fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada. Duis vitae
-              volutpat odio. Integer sit amet elit ac justo sagittis dignissim.
+              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla
+              faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut
+              augue vestibulum malesuada. Duis vitae volutpat odio. Integer sit
+              amet elit ac justo sagittis dignissim.
             </Typography>
             <Typography
-              color="textSecondary"
-              variant="body1"
-              fontWeight="400"
+              color='textSecondary'
+              variant='body1'
+              fontWeight='400'
               sx={{
                 mt: 4,
               }}
             >
-              Vivamus quis metus in nunc semper efficitur eget vitae diam. Proin justo diam,
-              venenatis sit amet eros in, iaculis auctor magna. Pellentesque sit amet accumsan urna,
-              sit amet pretium ipsum. Fusce condimentum venenatis mauris et luctus. Vestibulum ante
-              ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              Vivamus quis metus in nunc semper efficitur eget vitae diam. Proin
+              justo diam, venenatis sit amet eros in, iaculis auctor magna.
+              Pellentesque sit amet accumsan urna, sit amet pretium ipsum. Fusce
+              condimentum venenatis mauris et luctus. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia curae;
             </Typography>
           </TabPanel>
           <TabPanel value={value} index={1}>
             <Typography
-              fontWeight="500"
+              fontWeight='500'
               sx={{
                 fontSize: {
                   xs: '16px',
@@ -135,38 +138,40 @@ const ProductDesc = () => {
                 },
               }}
             >
-              Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet lorem pellentesque
-              eu tincidunt a, aliquet sit amet lorem.
+              Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet
+              lorem pellentesque eu tincidunt a, aliquet sit amet lorem.
             </Typography>
             <Typography
-              color="textSecondary"
-              variant="body1"
-              fontWeight="400"
+              color='textSecondary'
+              variant='body1'
+              fontWeight='400'
               sx={{
                 mt: 4,
               }}
             >
-              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec
-              fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada. Duis vitae
-              volutpat odio. Integer sit amet elit ac justo sagittis dignissim.
+              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla
+              faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut
+              augue vestibulum malesuada. Duis vitae volutpat odio. Integer sit
+              amet elit ac justo sagittis dignissim.
             </Typography>
             <Typography
-              color="textSecondary"
-              variant="body1"
-              fontWeight="400"
+              color='textSecondary'
+              variant='body1'
+              fontWeight='400'
               sx={{
                 mt: 4,
               }}
             >
-              Quis metus in nunc semper efficitur eget vitae diam. Proin justo diam, venenatis sit
-              amet eros in, iaculis auctor magna. Pellentesque sit amet accumsan urna, sit amet
-              pretium ipsum. Fusce condimentum venenatis mauris et luctus. Vestibulum ante ipsum
+              Quis metus in nunc semper efficitur eget vitae diam. Proin justo
+              diam, venenatis sit amet eros in, iaculis auctor magna.
+              Pellentesque sit amet accumsan urna, sit amet pretium ipsum. Fusce
+              condimentum venenatis mauris et luctus. Vestibulum ante ipsum
               primis in faucibus orci luctus et ultrices posuere cubilia curae;
             </Typography>
           </TabPanel>
           <TabPanel value={value} index={2}>
             <Typography
-              fontWeight="500"
+              fontWeight='500'
               sx={{
                 fontSize: {
                   xs: '16px',
@@ -175,33 +180,35 @@ const ProductDesc = () => {
                 },
               }}
             >
-              Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet lorem pellentesque
-              eu tincidunt a, aliquet sit amet lorem.
+              Vivamus tortor odio, pellentesque eu tincidunt a, aliquet sit amet
+              lorem pellentesque eu tincidunt a, aliquet sit amet lorem.
             </Typography>
             <Typography
-              color="textSecondary"
-              variant="body1"
-              fontWeight="400"
+              color='textSecondary'
+              variant='body1'
+              fontWeight='400'
               sx={{
                 mt: 4,
               }}
             >
-              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla faucibus diam nec
-              fermentum ullamcorper. Praesent sed ipsum ut augue vestibulum malesuada. Duis vitae
-              volutpat odio. Integer sit amet elit ac justo sagittis dignissim.
+              Cras eget elit semper, congue sapien id, pellentesque diam. Nulla
+              faucibus diam nec fermentum ullamcorper. Praesent sed ipsum ut
+              augue vestibulum malesuada. Duis vitae volutpat odio. Integer sit
+              amet elit ac justo sagittis dignissim.
             </Typography>
             <Typography
-              color="textSecondary"
-              variant="body1"
-              fontWeight="400"
+              color='textSecondary'
+              variant='body1'
+              fontWeight='400'
               sx={{
                 mt: 4,
               }}
             >
-              Vivamus quis metus in nunc semper efficitur eget vitae diam. Proin justo diam,
-              venenatis sit amet eros in, iaculis auctor magna. Pellentesque sit amet accumsan urna,
-              sit amet pretium ipsum. Fusce condimentum venenatis mauris et luctus. Vestibulum ante
-              ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae;
+              Vivamus quis metus in nunc semper efficitur eget vitae diam. Proin
+              justo diam, venenatis sit amet eros in, iaculis auctor magna.
+              Pellentesque sit amet accumsan urna, sit amet pretium ipsum. Fusce
+              condimentum venenatis mauris et luctus. Vestibulum ante ipsum
+              primis in faucibus orci luctus et ultrices posuere cubilia curae;
             </Typography>
           </TabPanel>
         </Box>

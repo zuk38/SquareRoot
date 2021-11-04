@@ -62,29 +62,29 @@ const FormWizard = () => {
       case 0:
         return (
           <Box sx={{ p: 3 }}>
-            <CustomFormLabel htmlFor="Name">Name</CustomFormLabel>
+            <CustomFormLabel htmlFor='Name'>Name</CustomFormLabel>
             <CustomTextField
-              id="Name"
-              size="small"
-              variant="outlined"
+              id='Name'
+              size='small'
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
-            <CustomFormLabel htmlFor="Email">Email</CustomFormLabel>
+            <CustomFormLabel htmlFor='Email'>Email</CustomFormLabel>
             <CustomTextField
-              id="Email"
-              size="small"
-              type="email"
-              variant="outlined"
+              id='Email'
+              size='small'
+              type='email'
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
-            <CustomFormLabel htmlFor="Password">Password</CustomFormLabel>
+            <CustomFormLabel htmlFor='Password'>Password</CustomFormLabel>
             <CustomTextField
-              id="Password"
-              size="small"
-              type="password"
-              variant="outlined"
+              id='Password'
+              size='small'
+              type='password'
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
@@ -93,29 +93,29 @@ const FormWizard = () => {
       case 1:
         return (
           <Box sx={{ p: 3 }}>
-            <CustomFormLabel htmlFor="Fname">First Name</CustomFormLabel>
+            <CustomFormLabel htmlFor='Fname'>First Name</CustomFormLabel>
             <CustomTextField
-              id="Fname"
-              size="small"
-              variant="outlined"
+              id='Fname'
+              size='small'
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
-            <CustomFormLabel htmlFor="Lname">Last Name</CustomFormLabel>
+            <CustomFormLabel htmlFor='Lname'>Last Name</CustomFormLabel>
             <CustomTextField
-              id="Lname"
-              size="small"
-              type="text"
-              variant="outlined"
+              id='Lname'
+              size='small'
+              type='text'
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
-            <CustomFormLabel htmlFor="Address">Address</CustomFormLabel>
+            <CustomFormLabel htmlFor='Address'>Address</CustomFormLabel>
             <CustomTextField
-              id="Address"
+              id='Address'
               multiline
               rows={4}
-              variant="outlined"
+              variant='outlined'
               fullWidth
               sx={{ mt: 1, mb: 3 }}
             />
@@ -124,15 +124,16 @@ const FormWizard = () => {
       case 2:
         return (
           <Box sx={{ p: 3 }}>
-            <Typography variant="h5">Terms and condition</Typography>
-            <Typography variant="body2" sx={{ mt: 1 }}>
-              Sard about this site or you have been to it, but you cannot figure out what it is or
-              what it can do. MTA web directory isSard about this site or you have been to it, but
-              you cannot figure out what it is or what it can do. MTA web directory is
+            <Typography variant='h5'>Terms and condition</Typography>
+            <Typography variant='body2' sx={{ mt: 1 }}>
+              Sard about this site or you have been to it, but you cannot figure
+              out what it is or what it can do. MTA web directory isSard about
+              this site or you have been to it, but you cannot figure out what
+              it is or what it can do. MTA web directory is
             </Typography>
             <FormControlLabel
               control={<CustomCheckbox defaultChecked />}
-              label="Agree with terms?"
+              label='Agree with terms?'
             />
           </Box>
         );
@@ -146,7 +147,7 @@ const FormWizard = () => {
   };
   return (
     <PageContainer>
-      <Breadcrumb title="Form Wizard" description="this is Form Wizard page" />
+      <Breadcrumb title='Form Wizard' description='this is Form Wizard page' />
       <Card>
         <Box sx={{ width: '100%' }}>
           <Stepper activeStep={activeStep}>
@@ -154,7 +155,9 @@ const FormWizard = () => {
               const stepProps = {};
               const labelProps = {};
               if (isStepOptional(index)) {
-                labelProps.optional = <Typography variant="caption">Optional</Typography>;
+                labelProps.optional = (
+                  <Typography variant='caption'>Optional</Typography>
+                );
               }
               if (isStepSkipped(index)) {
                 stepProps.completed = false;
@@ -168,13 +171,20 @@ const FormWizard = () => {
           </Stepper>
           {activeStep === steps.length ? (
             <>
-              <Box sx={{ m: 3, p: 2, backgroundColor: 'primary.light', borderRadius: 1 }}>
+              <Box
+                sx={{
+                  m: 3,
+                  p: 2,
+                  backgroundColor: 'primary.light',
+                  borderRadius: 1,
+                }}
+              >
                 All steps completed - you&apos;re finished
               </Box>
 
-              <Box display="flex" sx={{ flexDirection: 'row', p: 3 }}>
+              <Box display='flex' sx={{ flexDirection: 'row', p: 3 }}>
                 <Box sx={{ flex: '1 1 auto' }} />
-                <Button onClick={handleReset} variant="contained" color="error">
+                <Button onClick={handleReset} variant='contained' color='error'>
                   Reset
                 </Button>
               </Box>
@@ -183,10 +193,10 @@ const FormWizard = () => {
             <>
               <Box>{handleSteps(activeStep)}</Box>
 
-              <Box display="flex" sx={{ flexDirection: 'row', p: 3 }}>
+              <Box display='flex' sx={{ flexDirection: 'row', p: 3 }}>
                 <Button
-                  color="inherit"
-                  variant="contained"
+                  color='inherit'
+                  variant='contained'
                   disabled={activeStep === 0}
                   onClick={handleBack}
                   sx={{ mr: 1 }}
@@ -195,15 +205,17 @@ const FormWizard = () => {
                 </Button>
                 <Box sx={{ flex: '1 1 auto' }} />
                 {isStepOptional(activeStep) && (
-                  <Button color="inherit" onClick={handleSkip} sx={{ mr: 1 }}>
+                  <Button color='inherit' onClick={handleSkip} sx={{ mr: 1 }}>
                     Skip
                   </Button>
                 )}
 
                 <Button
                   onClick={handleNext}
-                  variant="contained"
-                  color={activeStep === steps.length - 1 ? 'success' : 'secondary'}
+                  variant='contained'
+                  color={
+                    activeStep === steps.length - 1 ? 'success' : 'secondary'
+                  }
                 >
                   {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                 </Button>

@@ -11,11 +11,13 @@ const Emails = (state = emailData, action) => {
   switch (action.type) {
     case STAR_EMAIL:
       return state.map((email) =>
-        email.id === action.id ? { ...email, starred: !email.starred } : email,
+        email.id === action.id ? { ...email, starred: !email.starred } : email
       );
     case IMPORTANT_EMAIL:
       return state.map((email) =>
-        email.id === action.id ? { ...email, important: !email.important } : email,
+        email.id === action.id
+          ? { ...email, important: !email.important }
+          : email
       );
     case TRASH_EMAIL:
       /* eslint no-case-declarations: "off" */

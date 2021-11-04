@@ -1,5 +1,12 @@
 import React from 'react';
-import { Grid, Box, Checkbox, FormGroup, FormControlLabel, FormControl } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Checkbox,
+  FormGroup,
+  FormControlLabel,
+  FormControl,
+} from '@mui/material';
 import CheckBoxOutlineBlankIcon from '@mui/icons-material/CheckBoxOutlineBlank';
 import CheckBoxIcon from '@mui/icons-material/CheckBox';
 import Favorite from '@mui/icons-material/Favorite';
@@ -28,14 +35,14 @@ const ExCheckbox = () => {
     setChecked(event.target.checked);
   };
   return (
-    <PageContainer title="Checkbox" description="this is Checkbox page">
+    <PageContainer title='Checkbox' description='this is Checkbox page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Checkbox" items={BCrumb} />
+      <Breadcrumb title='Checkbox' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         {/* ------------------------- custom row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Checkbox">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Checkbox'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -59,66 +66,69 @@ const ExCheckbox = () => {
               />
               <CustomCheckbox
                 defaultChecked
-                color="default"
+                color='default'
                 inputprops={{ 'aria-label': 'checkbox with default color' }}
               />
             </Box>
           </BaseCard>
         </Grid>
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Custom Checkbox with Color">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Custom Checkbox with Color'>
             <Box
               sx={{
                 textAlign: 'center',
               }}
             >
-              <FormControlLabel control={<CustomCheckbox defaultChecked />} label="Primary" />
               <FormControlLabel
-                control={
-                  <CustomCheckbox
-                    defaultChecked
-                    bgcolor="#1e4db7"
-                    inputprops={{ 'aria-label': 'checkbox with default color' }}
-                  />
-                }
-                label="Secondary"
+                control={<CustomCheckbox defaultChecked />}
+                label='Primary'
               />
               <FormControlLabel
                 control={
                   <CustomCheckbox
                     defaultChecked
-                    bgcolor="#39cb7f"
+                    bgcolor='#1e4db7'
                     inputprops={{ 'aria-label': 'checkbox with default color' }}
                   />
                 }
-                label="Success"
+                label='Secondary'
               />
               <FormControlLabel
                 control={
                   <CustomCheckbox
                     defaultChecked
-                    bgcolor="#fec90f"
+                    bgcolor='#39cb7f'
                     inputprops={{ 'aria-label': 'checkbox with default color' }}
                   />
                 }
-                label="Warning"
+                label='Success'
               />
               <FormControlLabel
                 control={
                   <CustomCheckbox
                     defaultChecked
-                    bgcolor="#fc4b6c"
+                    bgcolor='#fec90f'
                     inputprops={{ 'aria-label': 'checkbox with default color' }}
                   />
                 }
-                label="Error"
+                label='Warning'
+              />
+              <FormControlLabel
+                control={
+                  <CustomCheckbox
+                    defaultChecked
+                    bgcolor='#fc4b6c'
+                    inputprops={{ 'aria-label': 'checkbox with default color' }}
+                  />
+                }
+                label='Error'
               />
             </Box>
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default Checkbox">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default Checkbox'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -142,15 +152,15 @@ const ExCheckbox = () => {
               />
               <Checkbox
                 defaultChecked
-                color="default"
+                color='default'
                 inputprops={{ 'aria-label': 'checkbox with default color' }}
               />
             </Box>
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Default with Colors">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Default with Colors'>
             <Box
               sx={{
                 textAlign: 'center',
@@ -158,12 +168,12 @@ const ExCheckbox = () => {
             >
               <Checkbox
                 defaultChecked
-                color="primary"
+                color='primary'
                 inputprops={{ 'aria-label': 'checkbox with default color' }}
               />
               <Checkbox
                 defaultChecked
-                color="secondary"
+                color='secondary'
                 inputprops={{ 'aria-label': 'checkbox with default color' }}
               />
               <Checkbox
@@ -197,8 +207,8 @@ const ExCheckbox = () => {
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={4} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Sizes & Custom icon">
+        <Grid item xs={12} lg={4} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Sizes & Custom icon'>
             <Box>
               <FormGroup
                 row
@@ -212,30 +222,30 @@ const ExCheckbox = () => {
                     <Checkbox
                       icon={<CheckBoxOutlineBlankIcon />}
                       checkedIcon={<CheckBoxIcon />}
-                      name="checkednormal"
+                      name='checkednormal'
                     />
                   }
-                  label="Normal Size"
+                  label='Normal Size'
                 />
                 <FormControlLabel
                   control={
                     <Checkbox
-                      icon={<CheckBoxOutlineBlankIcon fontSize="small" />}
-                      checkedIcon={<CheckBoxIcon fontSize="small" />}
-                      name="checkedsmall"
+                      icon={<CheckBoxOutlineBlankIcon fontSize='small' />}
+                      checkedIcon={<CheckBoxIcon fontSize='small' />}
+                      name='checkedsmall'
                     />
                   }
-                  label="Small size"
+                  label='Small size'
                 />
                 <FormControlLabel
                   control={
                     <Checkbox
                       icon={<FavoriteBorder />}
                       checkedIcon={<Favorite />}
-                      name="checkedH"
+                      name='checkedH'
                     />
                   }
-                  label="Heart"
+                  label='Heart'
                 />
               </FormGroup>
             </Box>
@@ -243,45 +253,45 @@ const ExCheckbox = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Placement">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Placement'>
             <FormControl
-              component="fieldset"
+              component='fieldset'
               sx={{
                 display: 'flex',
                 justifyContent: 'center',
               }}
             >
               <FormGroup
-                aria-label="position"
+                aria-label='position'
                 row
                 sx={{
                   justifyContent: 'center',
                 }}
               >
                 <FormControlLabel
-                  value="top"
-                  control={<Checkbox color="primary" />}
-                  label="Top"
-                  labelPlacement="top"
+                  value='top'
+                  control={<Checkbox color='primary' />}
+                  label='Top'
+                  labelPlacement='top'
                 />
                 <FormControlLabel
-                  value="start"
-                  control={<Checkbox color="primary" />}
-                  label="Start"
-                  labelPlacement="start"
+                  value='start'
+                  control={<Checkbox color='primary' />}
+                  label='Start'
+                  labelPlacement='start'
                 />
                 <FormControlLabel
-                  value="bottom"
-                  control={<Checkbox color="primary" />}
-                  label="Bottom"
-                  labelPlacement="bottom"
+                  value='bottom'
+                  control={<Checkbox color='primary' />}
+                  label='Bottom'
+                  labelPlacement='bottom'
                 />
                 <FormControlLabel
-                  value="end"
-                  control={<Checkbox color="primary" />}
-                  label="End"
-                  labelPlacement="end"
+                  value='end'
+                  control={<Checkbox color='primary' />}
+                  label='End'
+                  labelPlacement='end'
                 />
               </FormGroup>
             </FormControl>
@@ -289,27 +299,27 @@ const ExCheckbox = () => {
         </Grid>
 
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Color with Label">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Color with Label'>
             <Box
               sx={{
                 textAlign: 'center',
               }}
             >
               <FormControlLabel
-                value="end"
-                control={<Checkbox color="primary" checked />}
-                label="Primary"
-                labelPlacement="end"
+                value='end'
+                control={<Checkbox color='primary' checked />}
+                label='Primary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
-                control={<Checkbox color="secondary" checked />}
-                label="Secondary"
-                labelPlacement="end"
+                value='end'
+                control={<Checkbox color='secondary' checked />}
+                label='Secondary'
+                labelPlacement='end'
               />
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Checkbox
                     checked
@@ -321,12 +331,12 @@ const ExCheckbox = () => {
                     }}
                   />
                 }
-                label="Success"
-                labelPlacement="end"
+                label='Success'
+                labelPlacement='end'
               />
 
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Checkbox
                     checked
@@ -338,12 +348,12 @@ const ExCheckbox = () => {
                     }}
                   />
                 }
-                label="Danger"
-                labelPlacement="end"
+                label='Danger'
+                labelPlacement='end'
               />
 
               <FormControlLabel
-                value="end"
+                value='end'
                 control={
                   <Checkbox
                     checked
@@ -355,8 +365,8 @@ const ExCheckbox = () => {
                     }}
                   />
                 }
-                label="Warning"
-                labelPlacement="end"
+                label='Warning'
+                labelPlacement='end'
               />
             </Box>
           </BaseCard>

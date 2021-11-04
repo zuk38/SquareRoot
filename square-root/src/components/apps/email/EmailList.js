@@ -19,67 +19,69 @@ const EmailList = ({ showrightSidebar }) => {
           (t) =>
             t.inbox &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_SENT:
         return emails.filter(
           (t) =>
             t.sent &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_DRAFTS:
         return emails.filter(
           (t) =>
             t.draft &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_SPAM:
         return emails.filter(
           (t) =>
             t.spam &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_TRASH:
         return emails.filter(
-          (t) => t.trash && t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+          (t) =>
+            t.trash &&
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_STARRED:
         return emails.filter(
           (t) =>
             t.starred &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_IMPORTANT:
         return emails.filter(
           (t) =>
             t.important &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_PROMOTIONAL:
         return emails.filter(
           (t) =>
             t.label === 'Promotional' &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_SOCIAL:
         return emails.filter(
           (t) =>
             t.label === 'Social' &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       case EmailVisibilityFilters.SHOW_HEALTH:
         return emails.filter(
           (t) =>
             t.label === 'Health' &&
             !t.trash &&
-            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase()),
+            t.from.toLocaleLowerCase().includes(emailSearch.toLocaleLowerCase())
         );
       default:
         throw new Error(`Unknown filter: ${filter}`);
@@ -89,7 +91,7 @@ const EmailList = ({ showrightSidebar }) => {
   const emails = getVisibleEmails(
     useSelector((state) => state.emailReducer.Emails),
     useSelector((state) => state.emailReducer.visibilityFilter),
-    useSelector((state) => state.emailReducer.emailSearch),
+    useSelector((state) => state.emailReducer.emailSearch)
   );
 
   const active = useSelector((state) => state.emailReducer.emailContent);
@@ -110,7 +112,8 @@ const EmailList = ({ showrightSidebar }) => {
           onStar={() => dispatch(starEmail(email.id))}
           onImportant={() => dispatch(importantEmail(email.id))}
           onChange={(e) => {
-            if (e.target.checked === true) dispatch(setSelectedEmail(email.id, 'checked'));
+            if (e.target.checked === true)
+              dispatch(setSelectedEmail(email.id, 'checked'));
             else dispatch(setSelectedEmail(email.id, 'unchecked'));
           }}
         />

@@ -27,9 +27,9 @@ const Menuitems = [
         href: '/dashboards/dashboard3',
         icon: 'plus',
       },
-    ]
+    ],
   },
-  
+
   {
     navlabel: true,
     subheader: 'PLANTS FOR',

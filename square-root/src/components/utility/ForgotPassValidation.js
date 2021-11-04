@@ -1,4 +1,4 @@
-import { checkEmail, checkCognito } from "./Validation";
+import { checkEmail, checkCognito } from './Validation';
 
 export default function validate(values) {
   let errors = {};

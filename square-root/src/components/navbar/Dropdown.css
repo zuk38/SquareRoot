@@ -99,18 +99,18 @@
   border: none;
 }
 
-.d-language span{
+.d-language span {
   margin-right: 10px;
 }
 
 .d-language:hover {
   color: var(--offWhite);
-  background: var(--bg)
+  background: var(--bg);
 }
 
 .d-link:hover {
   color: var(--offWhite);
-  background: var(--bg)
+  background: var(--bg);
 }
 
 .d-menu.clicked {

@@ -1,7 +1,7 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
 
 const useForm = (callback, validate, action) => {
-  const [values, setValues] = useState({ role: "Real Estate Developer" });
+  const [values, setValues] = useState({ role: 'Real Estate Developer' });
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [triedSubmitting, setTriedSubmitting] = useState(false);
@@ -39,7 +39,10 @@ const useForm = (callback, validate, action) => {
 
   const handleChange = (event) => {
     event.persist();
-    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+    const value =
+      event.target.type === 'checkbox'
+        ? event.target.checked
+        : event.target.value;
     setValues((values) => ({
       ...values,
       [event.target.name]: value,
@@ -58,15 +61,15 @@ const useForm = (callback, validate, action) => {
   const setCity = (city) => {
     if (city) {
       setValues({ ...values, city: city });
-      setErrors({zip: undefined})
-    }
-    else setErrors({ ...errors, zip: "Invalid zip code" });
+      setErrors({ zip: undefined });
+    } else setErrors({ ...errors, zip: 'Invalid zip code' });
   };
 
   const setProjectExistsErrors = (exist) => {
-    if(exist) setErrors({...errors, name: "Project with that name already exists!"})
-    else setErrors({...errors, name: ""})
-  }
+    if (exist)
+      setErrors({ ...errors, name: 'Project with that name already exists!' });
+    else setErrors({ ...errors, name: '' });
+  };
 
   return {
     handleChange,

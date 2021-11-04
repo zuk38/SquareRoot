@@ -19,8 +19,8 @@ const Notes = () => {
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(true);
 
   return (
-    <PageContainer title="Notes ui" description="this is Note page">
-      <Breadcrumb title="Note app" items={BCrumb} />
+    <PageContainer title='Notes ui' description='this is Note page'>
+      <Breadcrumb title='Note app' items={BCrumb} />
       <Card sx={{ display: 'flex', p: 0 }}>
         <NoteSidebar
           isMobileSidebarOpen={isMobileSidebarOpen}

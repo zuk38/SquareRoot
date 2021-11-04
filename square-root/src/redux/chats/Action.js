@@ -1,5 +1,10 @@
 import axios from 'axios';
-import { SELECTED_CHAT, SEARCH_USER, MSG_SUBMIT, FETCH_CHAT_SUCCESS } from '../constants';
+import {
+  SELECTED_CHAT,
+  SEARCH_USER,
+  MSG_SUBMIT,
+  FETCH_CHAT_SUCCESS,
+} from '../constants';
 
 export const fetchChats = () => (dispatch) => {
   axios

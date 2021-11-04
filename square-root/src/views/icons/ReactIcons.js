@@ -18,9 +18,9 @@ const BCrumb = [
 ];
 
 const ReactIcons = () => (
-  <PageContainer title="Feather Icons" description="this is Feather Icons page">
+  <PageContainer title='Feather Icons' description='this is Feather Icons page'>
     {/* breadcrumb */}
-    <Breadcrumb title="Feather Icons" items={BCrumb} />
+    <Breadcrumb title='Feather Icons' items={BCrumb} />
     {/* end breadcrumb */}
     <Grid container spacing={0}>
       {icons.map((icon) => (
@@ -32,7 +32,7 @@ const ReactIcons = () => (
           >
             <FeatherIcon icon={icon.text} />
             <Typography
-              color="textSecondary"
+              color='textSecondary'
               sx={{
                 fontSize: '14px',
                 mt: '10px',

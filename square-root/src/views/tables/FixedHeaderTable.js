@@ -92,9 +92,12 @@ const FixedHeaderTable = () => {
   const Capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
   return (
-    <PageContainer title="Fixed Header Table" description="this is Fixed Header Table page">
+    <PageContainer
+      title='Fixed Header Table'
+      description='this is Fixed Header Table page'
+    >
       {/* breadcrumb */}
-      <Breadcrumb title="Fixed Header Table" items={BCrumb} />
+      <Breadcrumb title='Fixed Header Table' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <CardContent>
@@ -103,7 +106,7 @@ const FixedHeaderTable = () => {
               maxHeight: 440,
             }}
           >
-            <Table stickyHeader aria-label="sticky table">
+            <Table stickyHeader aria-label='sticky table'>
               <TableHead>
                 <TableRow>
                   {columns.map((column) => (
@@ -112,7 +115,7 @@ const FixedHeaderTable = () => {
                       align={column.align}
                       style={{ minWidth: column.minWidth }}
                     >
-                      <Typography variant="h5" fontWeight="500">
+                      <Typography variant='h5' fontWeight='500'>
                         {column.label}
                       </Typography>
                     </TableCell>
@@ -128,7 +131,7 @@ const FixedHeaderTable = () => {
                           pl: 0,
                         }}
                       >
-                        <Box display="flex" alignItems="center">
+                        <Box display='flex' alignItems='center'>
                           <Avatar
                             src={row.imgsrc}
                             alt={row.imgsrc}
@@ -144,8 +147,12 @@ const FixedHeaderTable = () => {
                               ml: 2,
                             }}
                           >
-                            <Typography variant="h5">{row.name}</Typography>
-                            <Typography color="textSecondary" variant="h6" fontWeight="400">
+                            <Typography variant='h5'>{row.name}</Typography>
+                            <Typography
+                              color='textSecondary'
+                              variant='h6'
+                              fontWeight='400'
+                            >
                               {row.tags}
                             </Typography>
                           </Box>
@@ -157,7 +164,7 @@ const FixedHeaderTable = () => {
                         }}
                       >
                         <Typography
-                          variant="h6"
+                          variant='h6'
                           sx={{
                             mb: 1,
                           }}
@@ -166,7 +173,7 @@ const FixedHeaderTable = () => {
                         </Typography>
                         <LinearProgress
                           value={row.percent}
-                          variant="determinate"
+                          variant='determinate'
                           sx={{
                             '& span': {
                               backgroundColor:
@@ -183,9 +190,9 @@ const FixedHeaderTable = () => {
                           }}
                         />
                         <Typography
-                          color="textSecondary"
-                          variant="h6"
-                          fontWeight="400"
+                          color='textSecondary'
+                          variant='h6'
+                          fontWeight='400'
                           sx={{
                             mt: 1,
                             whiteSpace: 'nowrap',
@@ -195,17 +202,17 @@ const FixedHeaderTable = () => {
                         </Typography>
                       </TableCell>
                       <TableCell>
-                        <Typography color="textSecondary" variant="h6">
+                        <Typography color='textSecondary' variant='h6'>
                           Earnings
                         </Typography>
-                        <Typography variant="h5">${row.earnings}</Typography>
+                        <Typography variant='h5'>${row.earnings}</Typography>
                       </TableCell>
                       <TableCell>
                         <IconButton>
                           <FeatherIcon
-                            icon="trash"
-                            width="18"
-                            height="18"
+                            icon='trash'
+                            width='18'
+                            height='18'
                             sx={{
                               color: (theme) => theme.palette.grey.A200,
                             }}

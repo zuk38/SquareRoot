@@ -20,42 +20,42 @@ const HowItWorks = () => {
   const [open, setOpen] = React.useState(true);
 
   return (
-    <PageContainer title="How it works" description="this is How it Works page">
+    <PageContainer title='How it works' description='this is How it Works page'>
       {/* breadcrumb */}
-      <Breadcrumb title="How it works" items={BCrumb} />
+      <Breadcrumb title='How it works' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Filled Alert">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Filled Alert'>
             <Stack spacing={1}>
-              <Alert variant="filled" severity="error">
+              <Alert variant='filled' severity='error'>
                 This is an error alert — check it out!
               </Alert>
-              <Alert variant="filled" severity="warning">
+              <Alert variant='filled' severity='warning'>
                 This is a warning alert — check it out!
               </Alert>
-              <Alert variant="filled" severity="info">
+              <Alert variant='filled' severity='info'>
                 This is an info alert — check it out!
               </Alert>
-              <Alert variant="filled" severity="success">
+              <Alert variant='filled' severity='success'>
                 This is a success alert — check it out!
               </Alert>
             </Stack>
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Action Alert">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Action Alert'>
             <Stack spacing={1}>
-              <Alert variant="filled" severity="warning" onClose={() => {}}>
+              <Alert variant='filled' severity='warning' onClose={() => {}}>
                 This is a success alert — check it out!
               </Alert>
               <Alert
-                variant="filled"
-                severity="info"
+                variant='filled'
+                severity='info'
                 action={
-                  <Button color="inherit" size="small">
+                  <Button color='inherit' size='small'>
                     UNDO
                   </Button>
                 }
@@ -66,23 +66,23 @@ const HowItWorks = () => {
           </BaseCard>
         </Grid>
         {/* ------------------------- row 1 ------------------------- */}
-        <Grid item xs={12} lg={6} sm={6} display="flex" alignItems="stretch">
-          <BaseCard title="Transition Alert">
+        <Grid item xs={12} lg={6} sm={6} display='flex' alignItems='stretch'>
+          <BaseCard title='Transition Alert'>
             <Stack spacing={1}>
               <Collapse in={open}>
                 <Alert
-                  variant="filled"
-                  severity="info"
+                  variant='filled'
+                  severity='info'
                   action={
                     <IconButton
-                      aria-label="close"
-                      color="inherit"
-                      size="small"
+                      aria-label='close'
+                      color='inherit'
+                      size='small'
                       onClick={() => {
                         setOpen(false);
                       }}
                     >
-                      <FeatherIcon icon="x" width="20" />
+                      <FeatherIcon icon='x' width='20' />
                     </IconButton>
                   }
                 >
@@ -91,7 +91,7 @@ const HowItWorks = () => {
               </Collapse>
               <Button
                 disabled={open}
-                variant="outlined"
+                variant='outlined'
                 onClick={() => {
                   setOpen(true);
                 }}

@@ -73,7 +73,8 @@ const top100Films = [
   { label: 'Alien', year: 1979 },
   { label: 'Sunset Boulevard', year: 1950 },
   {
-    label: 'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
+    label:
+      'Dr. Strangelove or: How I Learned to Stop Worrying and Love the Bomb',
     year: 1964,
   },
   { label: 'The Great Dictator', year: 1940 },
@@ -132,27 +133,35 @@ const top100Films = [
 ];
 
 const SizesAutocomplete = () => (
-  <BaseCard title="Sizes">
+  <BaseCard title='Sizes'>
     <Autocomplete
       disablePortal
-      id="medium-combo-box-demo"
+      id='medium-combo-box-demo'
       options={top100Films}
       fullWidth
       sx={{
         mb: 2,
       }}
       renderInput={(params) => (
-        <TextField {...params} placeholder="Size Medium" aria-label="Size Medium" />
+        <TextField
+          {...params}
+          placeholder='Size Medium'
+          aria-label='Size Medium'
+        />
       )}
     />
     <Autocomplete
       disablePortal
-      id="medium-combo-box-demo"
+      id='medium-combo-box-demo'
       options={top100Films}
       fullWidth
-      size="small"
+      size='small'
       renderInput={(params) => (
-        <TextField {...params} placeholder="Size Small" aria-label="Size Small" />
+        <TextField
+          {...params}
+          placeholder='Size Small'
+          aria-label='Size Small'
+        />
       )}
     />
   </BaseCard>

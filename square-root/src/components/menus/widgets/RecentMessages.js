@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Typography, Card, CardContent, Avatar, Badge, Divider } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Card,
+  CardContent,
+  Avatar,
+  Badge,
+  Divider,
+} from '@mui/material';
 import WidgetCard from '../../base-card/WidgetCard';
 
 import img1 from '../../../assets/images/users/1.jpg';
@@ -55,7 +63,7 @@ const RecentMessages = () => (
         pb: 0,
       }}
     >
-      <WidgetCard title="Recent Messages" />
+      <WidgetCard title='Recent Messages' />
     </CardContent>
     <Box sx={{ mt: -2 }}>
       {messages.map((message) => (
@@ -66,8 +74,8 @@ const RecentMessages = () => (
               borderRadius: '0px',
             }}
           >
-            <Box display="flex" alignItems="center">
-              <Badge variant="dot" color={message.status}>
+            <Box display='flex' alignItems='center'>
+              <Badge variant='dot' color={message.status}>
                 <Avatar
                   src={message.avatar}
                   alt={message.avatar}
@@ -83,11 +91,15 @@ const RecentMessages = () => (
                   ml: 2,
                 }}
               >
-                <Typography variant="h5">{message.title}</Typography>
-                <Typography color="textSecondary" variant="h6" fontWeight="400">
+                <Typography variant='h5'>{message.title}</Typography>
+                <Typography color='textSecondary' variant='h6' fontWeight='400'>
                   {message.subtitle}
                 </Typography>
-                <Typography color="textSecondary" variant="caption" fontWeight="400">
+                <Typography
+                  color='textSecondary'
+                  variant='caption'
+                  fontWeight='400'
+                >
                   {message.time}
                 </Typography>
               </Box>

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
-import Select from "react-dropdown-select";
-import styled from "@emotion/styled";
+import React, { Component } from 'react';
+import Select from 'react-dropdown-select';
+import styled from '@emotion/styled';
 
 export default class Dropdown extends Component {
   constructor(props) {
@@ -9,17 +9,17 @@ export default class Dropdown extends Component {
     this.state = {
       multi: props.multi,
       selectValues: props.selectValues,
-      searchBy: "value",
+      searchBy: 'value',
       clearable: props.clearable,
       handle: true,
-      labelField: "value",
-      valueField: "value",
-      color: "#222",
+      labelField: 'value',
+      valueField: 'value',
+      color: '#222',
       keepSelectedInList: true,
       closeOnSelect: props.closeOnSelect,
-      dropdownPosition: "auto",
-      direction: "ltr",
-      dropdownHeight: "200px",
+      dropdownPosition: 'auto',
+      direction: 'ltr',
+      dropdownHeight: '200px',
       separator: true,
       itemRenderer: props.itemRenderer,
       searchable: props.searchable,
@@ -28,7 +28,7 @@ export default class Dropdown extends Component {
 
   noDataRenderer = () => {
     return (
-      <p style={{ textAlign: "center" }}>
+      <p style={{ textAlign: 'center' }}>
         <strong>Ooops!</strong> No data found
       </p>
     );
@@ -36,9 +36,9 @@ export default class Dropdown extends Component {
 
   itemRenderer = ({ item, itemIndex, props, state, methods }) => (
     <div key={item[props.valueField]} onClick={() => methods.addItem(item)}>
-      <div style={{ margin: "10px" }}>
+      <div style={{ margin: '10px' }}>
         <span>
-          <img alt="" width="32" height="32" src={item.image} />
+          <img alt='' width='32' height='32' src={item.image} />
           <span>{item.value}</span>
         </span>
       </div>
@@ -49,7 +49,7 @@ export default class Dropdown extends Component {
     return (
       <div className={this.props.className}>
         <div>
-          <div style={{ maxWidth: "600px", margin: "0 auto" }}>
+          <div style={{ maxWidth: '600px', margin: '0 auto' }}>
             <StyledSelect
               // handleKeyDownFn={({ event, state, props, methods, setState }) => {
               //   const { cursor } = state;
@@ -96,7 +96,7 @@ export default class Dropdown extends Component {
               dropdownHeight={this.state.dropdownHeight}
               direction={this.state.direction}
               multi={this.state.multi}
-              values={"" || this.props.selectValues}
+              values={'' || this.props.selectValues}
               labelField={this.state.labelField}
               valueField={this.state.valueField}
               options={this.props.options}
@@ -107,7 +107,7 @@ export default class Dropdown extends Component {
               onClearAll={() => undefined}
               onSelectAll={() => undefined}
               onChange={this.props.onChange}
-              noDataLabel="No matches found"
+              noDataLabel='No matches found'
               closeOnSelect={this.state.closeOnSelect}
               noDataRenderer={
                 this.state.noDataRenderer

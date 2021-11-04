@@ -55,7 +55,6 @@ const components = {
         right: '-44px',
         bottom: '0px',
         width: '230px',
-       
       },
       '.MuiCardHeader-action': {
         alignSelf: 'center !important',

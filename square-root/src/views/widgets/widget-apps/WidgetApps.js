@@ -24,9 +24,9 @@ const BCrumb = [
 
 const WidgetApps = () => {
   return (
-    <PageContainer title="Widget Apps" description="this is Widget Apps page">
+    <PageContainer title='Widget Apps' description='this is Widget Apps page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Widget Apps" items={BCrumb} />
+      <Breadcrumb title='Widget Apps' items={BCrumb} />
 
       {/* end breadcrumb */}
       <Grid container spacing={0}>

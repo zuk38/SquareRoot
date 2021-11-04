@@ -1,5 +1,13 @@
 import React from 'react';
-import { Typography, IconButton, Menu, MenuItem, Button, Box, Tooltip } from '@mui/material';
+import {
+  Typography,
+  IconButton,
+  Menu,
+  MenuItem,
+  Button,
+  Box,
+  Tooltip,
+} from '@mui/material';
 import FeatherIcon from 'feather-icons-react';
 import DashboardCard from '../../../components/base-card/DashboardCard';
 import background2x from '../../../assets/images/backgrounds/blog-bg-2x.jpg';
@@ -17,23 +25,23 @@ const BlogCard = () => {
   };
   return (
     <DashboardCard
-      title="Daily Activities"
-      subtitle="Overview of Years"
+      title='Daily Activities'
+      subtitle='Overview of Years'
       action={
         <Box>
-          <Tooltip title="Action">
+          <Tooltip title='Action'>
             <IconButton
               aria-expanded={open ? 'true' : undefined}
-              aria-haspopup="true"
+              aria-haspopup='true'
               onClick={handleClick}
-              size="large"
-              aria-label="action"
+              size='large'
+              aria-label='action'
             >
-              <FeatherIcon icon="more-horizontal" />
+              <FeatherIcon icon='more-horizontal' />
             </IconButton>
           </Tooltip>
           <Menu
-            id="long-menu"
+            id='long-menu'
             MenuListProps={{
               'aria-labelledby': 'long-button',
             }}
@@ -42,7 +50,11 @@ const BlogCard = () => {
             onClose={handleClose}
           >
             {options.map((option) => (
-              <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+              <MenuItem
+                key={option}
+                selected={option === 'Pyxis'}
+                onClick={handleClose}
+              >
                 {option}
               </MenuItem>
             ))}
@@ -50,36 +62,40 @@ const BlogCard = () => {
         </Box>
       }
     >
-      <img srcSet={`${background2x} 1x, ${background2x} 2x`} alt="img" width="100%" />
+      <img
+        srcSet={`${background2x} 1x, ${background2x} 2x`}
+        alt='img'
+        width='100%'
+      />
 
       <Typography
-        variant="h4"
+        variant='h4'
         sx={{
           mt: 4,
         }}
       >
         React 18 coming soon!
       </Typography>
-      <Typography color="textSecondary" variant="subtitle1">
+      <Typography color='textSecondary' variant='subtitle1'>
         By Johnathan Doe
       </Typography>
 
       <Typography
-        color="textSecondary"
+        color='textSecondary'
         sx={{
           fontSize: '14px',
           mt: 2,
         }}
       >
-        This will be the small description for the news you have shown here. There could be some
-        great info.
+        This will be the small description for the news you have shown here.
+        There could be some great info.
       </Typography>
       <Button
         sx={{
           mt: 4,
         }}
-        variant="contained"
-        color="primary"
+        variant='contained'
+        color='primary'
       >
         Read More
       </Button>

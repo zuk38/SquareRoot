@@ -22,8 +22,8 @@ function SimpleDialog(props) {
   };
 
   return (
-    <Dialog aria-labelledby="simple-dialog-title" open={open} fullWidth>
-      <DialogTitle id="simple-dialog-title">
+    <Dialog aria-labelledby='simple-dialog-title' open={open} fullWidth>
+      <DialogTitle id='simple-dialog-title'>
         <Box
           sx={{
             display: {
@@ -37,7 +37,7 @@ function SimpleDialog(props) {
         >
           <CheckCircleTwoToneIcon />
           <Typography
-            variant="h4"
+            variant='h4'
             sx={{
               ml: 2,
             }}
@@ -49,7 +49,7 @@ function SimpleDialog(props) {
               ml: 'auto',
             }}
           >
-            <Button color="error" onClick={handleClose} autoFocus>
+            <Button color='error' onClick={handleClose} autoFocus>
               Close
             </Button>
           </Box>
@@ -92,8 +92,8 @@ const CartDropdown = () => {
         {data.products.map((product) => (
           <Box key={product.name}>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 pb: 4,
                 pt: 3,
@@ -113,24 +113,28 @@ const CartDropdown = () => {
                   ml: 2,
                 }}
               >
-                <Typography variant="h5">{product.name}</Typography>
-                <Typography color="textSecondary" variant="h6">
+                <Typography variant='h5'>{product.name}</Typography>
+                <Typography color='textSecondary' variant='h6'>
                   {product.subtext}
                 </Typography>
                 <Box
-                  display="flex"
-                  alignItems="center"
+                  display='flex'
+                  alignItems='center'
                   sx={{
                     mt: 1,
                   }}
                 >
-                  <Typography variant="h5">${product.price}</Typography>
+                  <Typography variant='h5'>${product.price}</Typography>
                   <Box
                     sx={{
                       ml: 1,
                     }}
                   >
-                    <ButtonGroup size="small" color="success" aria-label="small button group">
+                    <ButtonGroup
+                      size='small'
+                      color='success'
+                      aria-label='small button group'
+                    >
                       <Button
                         onClick={Decrease}
                         sx={{
@@ -139,7 +143,7 @@ const CartDropdown = () => {
                           padding: '5px',
                         }}
                       >
-                        <FeatherIcon icon="minus" width="18" height="18" />
+                        <FeatherIcon icon='minus' width='18' height='18' />
                       </Button>
                       <Button
                         sx={{
@@ -158,7 +162,7 @@ const CartDropdown = () => {
                           padding: '5px',
                         }}
                       >
-                        <FeatherIcon icon="plus" width="18" height="18" />
+                        <FeatherIcon icon='plus' width='18' height='18' />
                       </Button>
                     </ButtonGroup>
                   </Box>
@@ -171,13 +175,13 @@ const CartDropdown = () => {
       </Box>
 
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 2,
         }}
       >
-        <Typography color="textSecondary" variant="h6" fontWeight="400">
+        <Typography color='textSecondary' variant='h6' fontWeight='400'>
           Sub Total
         </Typography>
         <Box
@@ -185,17 +189,17 @@ const CartDropdown = () => {
             ml: 'auto',
           }}
         >
-          <Typography variant="h6">$890</Typography>
+          <Typography variant='h6'>$890</Typography>
         </Box>
       </Box>
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: 2,
         }}
       >
-        <Typography color="textSecondary" variant="h6" fontWeight="400">
+        <Typography color='textSecondary' variant='h6' fontWeight='400'>
           Total
         </Typography>
         <Box
@@ -203,7 +207,7 @@ const CartDropdown = () => {
             ml: 'auto',
           }}
         >
-          <Typography variant="h6">$890</Typography>
+          <Typography variant='h6'>$890</Typography>
         </Box>
       </Box>
       <Button
@@ -212,8 +216,8 @@ const CartDropdown = () => {
           display: 'block',
           width: '100%',
         }}
-        variant="contained"
-        color="primary"
+        variant='contained'
+        color='primary'
         onClick={handleClickOpen}
       >
         Place order

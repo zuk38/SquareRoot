@@ -10,10 +10,10 @@ const Earnings = () => (
     }}
   >
     <CardContent>
-      <Box display="flex" alignItems="flex-start">
+      <Box display='flex' alignItems='flex-start'>
         <Box>
           <Typography
-            variant="h3"
+            variant='h3'
             sx={{
               color: '#fff',
             }}
@@ -27,22 +27,22 @@ const Earnings = () => (
           }}
         >
           <Fab
-            elevation="0"
-            color="primary"
-            aria-label="dollar"
+            elevation='0'
+            color='primary'
+            aria-label='dollar'
             sx={{
               width: '48px',
               height: '48px',
               boxShadow: 'none',
             }}
           >
-            <FeatherIcon icon="dollar-sign" width="24" height="24" />
+            <FeatherIcon icon='dollar-sign' width='24' height='24' />
           </Fab>
         </Box>
       </Box>
       <Typography
-        fontWeight="500"
-        variant="h1"
+        fontWeight='500'
+        variant='h1'
         sx={{
           color: '#fff',
           mt: 3,
@@ -51,8 +51,8 @@ const Earnings = () => (
         $93,438
       </Typography>
       <Typography
-        variant="subtitle1"
-        fontWeight="400"
+        variant='subtitle1'
+        fontWeight='400'
         sx={{
           color: '#fff',
           opacity: '0.5',

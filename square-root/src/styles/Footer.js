@@ -1,5 +1,5 @@
-import styled from "styled-components";
-import { Link } from "react-router-dom";
+import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 
 export const Container = styled.div`
   padding: 30px 0px 130px 0px;
@@ -79,7 +79,7 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: ${({ first }) => (first ? "0px 0px 0px 10px" : "0px  0px 0px 60px")};
+  margin: ${({ first }) => (first ? '0px 0px 0px 10px' : '0px  0px 0px 60px')};
   transition: all 0.2s ease-in-out;
 
   @media (max-width: 1200px) {
@@ -98,9 +98,9 @@ export const Row = styled.div`
 `;
 
 export const Title = styled.p`
-  font-size: ${({ primary }) => (primary ? "32px" : "22px")};
+  font-size: ${({ primary }) => (primary ? '32px' : '22px')};
   color: #fff;
-  margin-bottom: ${({ primary }) => (primary ? "10px" : "40px")};
+  margin-bottom: ${({ primary }) => (primary ? '10px' : '40px')};
   font-weight: bold;
 `;
 
@@ -109,7 +109,7 @@ export const FooterLink = styled.a`
   margin-bottom: 20px;
   text-decoration: none;
   font-size: 16px;
-  cursor: ${({ mail }) => (mail ? "pointer" : "default")};
+  cursor: ${({ mail }) => (mail ? 'pointer' : 'default')};
 
   &:hover {
     color: #8ca68c;

@@ -80,17 +80,17 @@ const FbBasicHeaderForm = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Project Settings
             </Typography>
           </Box>
         </Box>
         <Divider />
-        
+
         <CardContent
           sx={{
             padding: '30px',
@@ -99,92 +99,119 @@ const FbBasicHeaderForm = () => {
           <form>
             <Grid container spacing={3}>
               <Grid item lg={6} md={12} sm={12}>
-                <CustomFormLabel htmlFor="fname-text">Project Name</CustomFormLabel>
-                <CustomTextField id="fname-text" variant="outlined" fullWidth size="small" />
+                <CustomFormLabel htmlFor='fname-text'>
+                  Project Name
+                </CustomFormLabel>
+                <CustomTextField
+                  id='fname-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
                 <FormControl
                   sx={{
                     width: '100%',
                   }}
-                > </FormControl>
+                >
+                  {' '}
+                </FormControl>
               </Grid>
               <Grid item lg={12} md={12} sm={12} xs={12}>
-              <CustomFormLabel
-                sx={{
-                  mt: 0,
-                }}
-                htmlFor="street-text"
-              >
-                Street
-              </CustomFormLabel>
+                <CustomFormLabel
+                  sx={{
+                    mt: 0,
+                  }}
+                  htmlFor='street-text'
+                >
+                  Street
+                </CustomFormLabel>
 
-              <CustomTextField id="street-text" variant="outlined" fullWidth size="small" />
-            </Grid>
-            <Grid item lg={6} md={12} sm={12} xs={12}>
-              <CustomFormLabel
-                sx={{
-                  mt: 0,
-                }}
-                htmlFor="city-text"
-              >
-                City
-              </CustomFormLabel>
-              <CustomTextField id="city-text" variant="outlined" fullWidth size="small" />
-            </Grid>
-            <Grid item lg={6} md={12} sm={12} xs={12}>
-              <CustomFormLabel
-                sx={{
-                  mt: 0,
-                }}
-                htmlFor="state-text"
-              >
-                State
-              </CustomFormLabel>
-              <CustomTextField id="state-text" variant="outlined" fullWidth size="small" />
-            </Grid>
-            <Grid item lg={6} md={12} sm={12} xs={12}>
-              <CustomFormLabel
-                sx={{
-                  mt: 0,
-                }}
-                htmlFor="post-text"
-              >
-                Post Code
-              </CustomFormLabel>
-              <CustomTextField id="post-text" variant="outlined" fullWidth size="small" />
-            </Grid>
-            <Grid item lg={6} md={12} sm={12} xs={12}>
-              <CustomFormLabel
-                sx={{
-                  mt: 0,
-                }}
-                htmlFor="country-text"
-              >
-                Country
-              </CustomFormLabel>
-              <CustomSelect
-                id="country-select"
-                value={country}
-                onChange={handleChange4}
-                fullWidth
-                variant="outlined"
-                size="small"
-              >
-                {countries.map((option) => (
-                  <MenuItem key={option.value} value={option.value}>
-                    {option.label}
-                  </MenuItem>
-                ))}
-              </CustomSelect>
-            </Grid>
-
+                <CustomTextField
+                  id='street-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+              </Grid>
+              <Grid item lg={6} md={12} sm={12} xs={12}>
+                <CustomFormLabel
+                  sx={{
+                    mt: 0,
+                  }}
+                  htmlFor='city-text'
+                >
+                  City
+                </CustomFormLabel>
+                <CustomTextField
+                  id='city-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+              </Grid>
+              <Grid item lg={6} md={12} sm={12} xs={12}>
+                <CustomFormLabel
+                  sx={{
+                    mt: 0,
+                  }}
+                  htmlFor='state-text'
+                >
+                  State
+                </CustomFormLabel>
+                <CustomTextField
+                  id='state-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+              </Grid>
+              <Grid item lg={6} md={12} sm={12} xs={12}>
+                <CustomFormLabel
+                  sx={{
+                    mt: 0,
+                  }}
+                  htmlFor='post-text'
+                >
+                  Post Code
+                </CustomFormLabel>
+                <CustomTextField
+                  id='post-text'
+                  variant='outlined'
+                  fullWidth
+                  size='small'
+                />
+              </Grid>
+              <Grid item lg={6} md={12} sm={12} xs={12}>
+                <CustomFormLabel
+                  sx={{
+                    mt: 0,
+                  }}
+                  htmlFor='country-text'
+                >
+                  Country
+                </CustomFormLabel>
+                <CustomSelect
+                  id='country-select'
+                  value={country}
+                  onChange={handleChange4}
+                  fullWidth
+                  variant='outlined'
+                  size='small'
+                >
+                  {countries.map((option) => (
+                    <MenuItem key={option.value} value={option.value}>
+                      {option.label}
+                    </MenuItem>
+                  ))}
+                </CustomSelect>
+              </Grid>
             </Grid>
           </form>
         </CardContent>
-       
-       
+
         <Divider />
-        <Box p={3} display="flex" justifyContent="right">
-         <Button variant="contained" color="primary" >
+        <Box p={3} display='flex' justifyContent='right'>
+          <Button variant='contained' color='primary'>
             Save
           </Button>
         </Box>

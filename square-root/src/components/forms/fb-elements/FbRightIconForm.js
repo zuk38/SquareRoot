@@ -38,11 +38,11 @@ const FbRightIconForm = () => {
           sx={{
             padding: '15px 30px',
           }}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
         >
           <Box flexGrow={1}>
-            <Typography fontWeight="500" variant="h4">
+            <Typography fontWeight='500' variant='h4'>
               Form with Right Icon
             </Typography>
           </Box>
@@ -59,90 +59,96 @@ const FbRightIconForm = () => {
                 sx={{
                   mt: 0,
                 }}
-                htmlFor="username2-text"
+                htmlFor='username2-text'
               >
                 Username
               </CustomFormLabel>
               <OutlinedInput
                 endAdornment={
-                  <InputAdornment position="end">
-                    <FeatherIcon icon="user" width="20" />
+                  <InputAdornment position='end'>
+                    <FeatherIcon icon='user' width='20' />
                   </InputAdornment>
                 }
-                id="username2-text"
-                placeholder="Username"
+                id='username2-text'
+                placeholder='Username'
                 fullWidth
-                size="small"
+                size='small'
               />
             </FormControl>
             {/* 2 */}
             <FormControl fullWidth>
-              <CustomFormLabel htmlFor="mail2-text">Email</CustomFormLabel>
+              <CustomFormLabel htmlFor='mail2-text'>Email</CustomFormLabel>
               <OutlinedInput
                 endAdornment={
-                  <InputAdornment position="end">
-                    <FeatherIcon icon="mail" width="20" />
+                  <InputAdornment position='end'>
+                    <FeatherIcon icon='mail' width='20' />
                   </InputAdornment>
                 }
-                id="mail2-text"
-                placeholder="Email"
+                id='mail2-text'
+                placeholder='Email'
                 fullWidth
-                size="small"
+                size='small'
               />
             </FormControl>
             {/* 3 */}
             <FormControl fullWidth>
-              <CustomFormLabel htmlFor="pwd2-text">Password</CustomFormLabel>
+              <CustomFormLabel htmlFor='pwd2-text'>Password</CustomFormLabel>
               <OutlinedInput
-                type="password"
+                type='password'
                 endAdornment={
-                  <InputAdornment position="end">
-                    <FeatherIcon icon="lock" width="20" />
+                  <InputAdornment position='end'>
+                    <FeatherIcon icon='lock' width='20' />
                   </InputAdornment>
                 }
-                id="pwd2-text"
-                placeholder="Password"
+                id='pwd2-text'
+                placeholder='Password'
                 fullWidth
-                size="small"
+                size='small'
               />
             </FormControl>
 
             <FormControl fullWidth>
-              <CustomFormLabel htmlFor="cpwd2-text">Confirm Password</CustomFormLabel>
+              <CustomFormLabel htmlFor='cpwd2-text'>
+                Confirm Password
+              </CustomFormLabel>
               <OutlinedInput
                 endAdornment={
-                  <InputAdornment position="end">
-                    <FeatherIcon icon="lock" width="20" />
+                  <InputAdornment position='end'>
+                    <FeatherIcon icon='lock' width='20' />
                   </InputAdornment>
                 }
-                id="cpwd2-text"
-                placeholder="Confirm Password"
+                id='cpwd2-text'
+                placeholder='Confirm Password'
                 fullWidth
-                size="small"
+                size='small'
               />
             </FormControl>
             <FormControlLabel
               control={
-                <CustomCheckbox checked={state.checkedB} onChange={handleChange} name="checkedB" />
+                <CustomCheckbox
+                  checked={state.checkedB}
+                  onChange={handleChange}
+                  name='checkedB'
+                />
               }
               sx={{
                 mb: 2,
                 mt: '10px',
               }}
-              label="Remember Me!"
+              label='Remember Me!'
             />
             <Divider />
             <Box pt={3}>
               <Button
-                color="primary"
-                variant="contained"
+                color='primary'
+                variant='contained'
                 sx={{
                   mr: 1,
                 }}
               >
                 Submit
               </Button>
-              <Button variant="contained" color="error">
+              <Button variant='contained' color='error'>
                 Cancel
               </Button>
             </Box>

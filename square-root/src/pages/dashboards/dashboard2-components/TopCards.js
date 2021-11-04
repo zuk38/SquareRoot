@@ -63,31 +63,33 @@ const TopCards = () => (
             }}
           >
             <Fab
-              size="large"
-              aria-label="top-cards"
+              size='large'
+              aria-label='top-cards'
               sx={{
                 backgroundColor: topcard.btnbg,
                 color: topcard.btntext,
                 boxShadow: 'none',
-                "&:hover": {
+                '&:hover': {
                   backgroundColor: topcard.btnbg,
-                }
+                },
               }}
             >
               <FeatherIcon icon={topcard.icon} />
             </Fab>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 mt: 2,
               }}
             >
-              <Typography variant="h3">{topcard.digits}</Typography>
+              <Typography variant='h3'>{topcard.digits}</Typography>
               <Typography
-                color={topcard.type === 'profit' ? 'success.main' : 'error.main'}
-                variant="caption"
-                fontWeight="400"
+                color={
+                  topcard.type === 'profit' ? 'success.main' : 'error.main'
+                }
+                variant='caption'
+                fontWeight='400'
                 sx={{
                   ml: 1,
                 }}
@@ -95,7 +97,7 @@ const TopCards = () => (
                 {topcard.profit}%
               </Typography>
             </Box>
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               {topcard.subtext}
             </Typography>
           </CardContent>

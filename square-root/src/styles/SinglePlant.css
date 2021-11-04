@@ -59,7 +59,7 @@
   grid-row-gap: 0;
   text-align: left;
   font-size: 18px;
-  font-family: "Segoe UI", Arial;
+  font-family: 'Segoe UI', Arial;
   overflow: auto;
   white-space: pre-line;
 }

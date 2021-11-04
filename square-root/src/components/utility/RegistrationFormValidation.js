@@ -5,7 +5,7 @@ import {
   checkName,
   checkCognito,
   checkPhone,
-} from "./Validation";
+} from './Validation';
 
 export default function validate(values) {
   let errors = {};
@@ -14,7 +14,14 @@ export default function validate(values) {
   checkConfPassword(values, errors);
   checkPhone(values, errors);
   checkName(values, errors);
-  if (values.email && values.password && values.confirmPassword && values.phone && values.name) checkCognito(values, errors);
+  if (
+    values.email &&
+    values.password &&
+    values.confirmPassword &&
+    values.phone &&
+    values.name
+  )
+    checkCognito(values, errors);
 
   return errors;
 }

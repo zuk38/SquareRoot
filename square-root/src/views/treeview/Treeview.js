@@ -23,7 +23,11 @@ const BCrumb = [
 function MinusSquare(props) {
   return (
     <>
-      <FeatherIcon icon="folder-minus" style={{ width: 15, height: 15 }} {...props} />
+      <FeatherIcon
+        icon='folder-minus'
+        style={{ width: 15, height: 15 }}
+        {...props}
+      />
     </>
   );
 }
@@ -31,7 +35,11 @@ function MinusSquare(props) {
 function PlusSquare(props) {
   return (
     <>
-      <FeatherIcon icon="folder-plus" style={{ width: 15, height: 15 }} {...props} />
+      <FeatherIcon
+        icon='folder-plus'
+        style={{ width: 15, height: 15 }}
+        {...props}
+      />
     </>
   );
 }
@@ -39,7 +47,7 @@ function PlusSquare(props) {
 function CloseSquare(props) {
   return (
     <>
-      <FeatherIcon icon="folder" style={{ width: 15, height: 15 }} {...props} />
+      <FeatherIcon icon='folder' style={{ width: 15, height: 15 }} {...props} />
     </>
   );
 }
@@ -87,32 +95,32 @@ const StyledTreeItem = styled((props) => (
 
 const Treeview = () => {
   return (
-    <PageContainer title="Treeview" description="this is Treeview page">
+    <PageContainer title='Treeview' description='this is Treeview page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Treeview" items={BCrumb} />
+      <Breadcrumb title='Treeview' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <TreeView
-          aria-label="customized"
+          aria-label='customized'
           defaultExpanded={['1']}
           defaultCollapseIcon={<MinusSquare />}
           defaultExpandIcon={<PlusSquare />}
           defaultEndIcon={<CloseSquare />}
           sx={{ height: 200, flexGrow: 1, overflowY: 'auto' }}
         >
-          <StyledTreeItem nodeId="1" label="Main">
-            <StyledTreeItem nodeId="2" label="Hello" />
-            <StyledTreeItem nodeId="3" label="Subtree with children">
-              <StyledTreeItem nodeId="6" label="Hello" />
-              <StyledTreeItem nodeId="7" label="Sub-subtree with children">
-                <StyledTreeItem nodeId="9" label="Child 1" />
-                <StyledTreeItem nodeId="10" label="Child 2" />
-                <StyledTreeItem nodeId="11" label="Child 3" />
+          <StyledTreeItem nodeId='1' label='Main'>
+            <StyledTreeItem nodeId='2' label='Hello' />
+            <StyledTreeItem nodeId='3' label='Subtree with children'>
+              <StyledTreeItem nodeId='6' label='Hello' />
+              <StyledTreeItem nodeId='7' label='Sub-subtree with children'>
+                <StyledTreeItem nodeId='9' label='Child 1' />
+                <StyledTreeItem nodeId='10' label='Child 2' />
+                <StyledTreeItem nodeId='11' label='Child 3' />
               </StyledTreeItem>
-              <StyledTreeItem nodeId="8" label="Hello" />
+              <StyledTreeItem nodeId='8' label='Hello' />
             </StyledTreeItem>
-            <StyledTreeItem nodeId="4" label="World" />
-            <StyledTreeItem nodeId="5" label="Something something" />
+            <StyledTreeItem nodeId='4' label='World' />
+            <StyledTreeItem nodeId='5' label='Something something' />
           </StyledTreeItem>
         </TreeView>
       </Card>

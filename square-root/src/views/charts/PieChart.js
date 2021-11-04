@@ -53,18 +53,23 @@ const PieChart = () => {
   const seriespiechart = [45, 15, 27, 18, 35];
 
   return (
-    <PageContainer title="Pie Charts" description="this is innerpage">
+    <PageContainer title='Pie Charts' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Pie Chart" items={BCrumb} />
+      <Breadcrumb title='Pie Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Pie Charts</Typography>
+            <Typography variant='h4'>Pie Charts</Typography>
           </Box>
         </Box>
         <CardContent>
-          <Chart options={optionspiechart} series={seriespiechart} type="pie" height="300px" />
+          <Chart
+            options={optionspiechart}
+            series={seriespiechart}
+            type='pie'
+            height='300px'
+          />
         </CardContent>
       </Card>
     </PageContainer>

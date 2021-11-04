@@ -22,12 +22,14 @@ const ChatListing = () => {
 
   const filterChats = (chats, cSearch) => {
     if (chats)
-      return chats.filter((t) => t.name.toLocaleLowerCase().includes(cSearch.toLocaleLowerCase()));
+      return chats.filter((t) =>
+        t.name.toLocaleLowerCase().includes(cSearch.toLocaleLowerCase())
+      );
     return chats;
   };
 
   const chats = useSelector((state) =>
-    filterChats(state.chatReducer.chats, state.chatReducer.chatSearch),
+    filterChats(state.chatReducer.chats, state.chatReducer.chatSearch)
   );
   return (
     <div>
@@ -39,11 +41,11 @@ const ChatListing = () => {
         }}
       >
         <CustomTextField
-          id="outlined-search"
-          placeholder="Search contacts"
-          size="small"
-          type="search"
-          variant="outlined"
+          id='outlined-search'
+          placeholder='Search contacts'
+          size='small'
+          type='search'
+          variant='outlined'
           inputProps={{ 'aria-label': 'Search Contacts' }}
           fullWidth
           onChange={(e) => dispatch(chatSearch(e.target.value))}
@@ -55,13 +57,13 @@ const ChatListing = () => {
           {chats.map((chat) => (
             <ListItem
               button
-              alignItems="flex-start"
+              alignItems='flex-start'
               key={chat.id}
               onClick={() => dispatch(openChat(chat.id))}
               selected={activeChat === chat.id}
             >
               <ListItemAvatar>
-                <Avatar alt="Remy Sharp" src={chat.thumb} />
+                <Avatar alt='Remy Sharp' src={chat.thumb} />
               </ListItemAvatar>
               <ListItemText primary={chat.name} secondary={chat.excerpt} />
             </ListItem>

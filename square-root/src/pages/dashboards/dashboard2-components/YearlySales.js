@@ -65,25 +65,25 @@ const YearlySales = () => {
         <Grid container spacing={0}>
           <Grid item xs={6} xl={7}>
             <Typography
-              fontWeight="500"
-              variant="h1"
+              fontWeight='500'
+              variant='h1'
               sx={{
                 lineHeight: '35px',
               }}
             >
               43,246
             </Typography>
-            <Typography color="textSecondary" variant="h6">
+            <Typography color='textSecondary' variant='h6'>
               Yearly sales
             </Typography>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 mt: 3,
               }}
             >
-              <Box display="flex" alignItems="center">
+              <Box display='flex' alignItems='center'>
                 <Box
                   sx={{
                     backgroundColor: () => theme.palette.primary.main,
@@ -93,13 +93,17 @@ const YearlySales = () => {
                     mr: 1,
                   }}
                 />
-                <Typography color="textSecondary" variant="body2" fontWeight="400">
+                <Typography
+                  color='textSecondary'
+                  variant='body2'
+                  fontWeight='400'
+                >
                   2021
                 </Typography>
               </Box>
               <Box
-                display="flex"
-                alignItems="center"
+                display='flex'
+                alignItems='center'
                 sx={{
                   ml: 1,
                 }}
@@ -113,19 +117,23 @@ const YearlySales = () => {
                     mr: 1,
                   }}
                 />
-                <Typography color="textSecondary" variant="body2" fontWeight="400">
+                <Typography
+                  color='textSecondary'
+                  variant='body2'
+                  fontWeight='400'
+                >
                   2020
                 </Typography>
               </Box>
             </Box>
             <Box
-              display="flex"
-              alignItems="center"
+              display='flex'
+              alignItems='center'
               sx={{
                 mt: 1,
               }}
             >
-              <Box display="flex" alignItems="center">
+              <Box display='flex' alignItems='center'>
                 <Box
                   sx={{
                     backgroundColor: () => theme.palette.warning.main,
@@ -135,13 +143,17 @@ const YearlySales = () => {
                     mr: 1,
                   }}
                 />
-                <Typography color="textSecondary" variant="body2" fontWeight="400">
+                <Typography
+                  color='textSecondary'
+                  variant='body2'
+                  fontWeight='400'
+                >
                   2019
                 </Typography>
               </Box>
               <Box
-                display="flex"
-                alignItems="center"
+                display='flex'
+                alignItems='center'
                 sx={{
                   ml: 1,
                 }}
@@ -155,13 +167,24 @@ const YearlySales = () => {
                     mr: 1,
                   }}
                 />
-                <Typography color="textSecondary" variant="body2" fontWeight="400">
+                <Typography
+                  color='textSecondary'
+                  variant='body2'
+                  fontWeight='400'
+                >
                   2018
                 </Typography>
               </Box>
             </Box>
           </Grid>
-          <Grid item xs={6} xl={5} display="flex" alignItems="center" justifyContent="flex-end">
+          <Grid
+            item
+            xs={6}
+            xl={5}
+            display='flex'
+            alignItems='center'
+            justifyContent='flex-end'
+          >
             {/* chart */}
             <Box
               sx={{
@@ -172,18 +195,18 @@ const YearlySales = () => {
               <Chart
                 options={optionsyearlysales}
                 series={seriesyearlysales}
-                type="donut"
-                height="145"
+                type='donut'
+                height='145'
               />
               <Typography
-                color="textSecondary"
+                color='textSecondary'
                 sx={{
                   position: 'absolute',
                   left: '42%',
                   top: '41%',
                 }}
               >
-                <FeatherIcon icon="shopping-cart" height="24" width="24" />
+                <FeatherIcon icon='shopping-cart' height='24' width='24' />
               </Typography>
             </Box>
           </Grid>

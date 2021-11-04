@@ -50,10 +50,10 @@ const NewPost = () => (
           }}
         >
           <TextField
-            variant="outlined"
+            variant='outlined'
             fullWidth
-            placeholder="What would you like to post ?"
-            id="add-new-post"
+            placeholder='What would you like to post ?'
+            id='add-new-post'
             inputProps={{ 'aria-label': 'What would you like to post ?' }}
             sx={{
               ml: 1,
@@ -73,13 +73,13 @@ const NewPost = () => (
             sm={4}
             lg={4}
             xs={12}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
           >
             <Button
-              display="flex"
-              alignitems="center"
+              display='flex'
+              alignitems='center'
               sx={{
                 mt: {
                   xs: 1,
@@ -87,13 +87,13 @@ const NewPost = () => (
                   lg: 0,
                 },
               }}
-              color="error"
+              color='error'
             >
-              <Typography display="flex" alignItems="center">
-                <FeatherIcon icon="video" width="20" />
+              <Typography display='flex' alignItems='center'>
+                <FeatherIcon icon='video' width='20' />
                 <Typography
-                  component="span"
-                  fontWeight="500"
+                  component='span'
+                  fontWeight='500'
                   sx={{
                     color: (theme) =>
                       `${
@@ -114,13 +114,13 @@ const NewPost = () => (
             sm={4}
             lg={4}
             xs={12}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
           >
             <Button
-              display="flex"
-              alignitems="center"
+              display='flex'
+              alignitems='center'
               sx={{
                 mt: {
                   xs: 1,
@@ -128,13 +128,13 @@ const NewPost = () => (
                   lg: 0,
                 },
               }}
-              color="success"
+              color='success'
             >
-              <Typography display="flex" alignItems="center">
-                <FeatherIcon icon="camera" width="20" />
+              <Typography display='flex' alignItems='center'>
+                <FeatherIcon icon='camera' width='20' />
                 <Typography
-                  component="span"
-                  fontWeight="500"
+                  component='span'
+                  fontWeight='500'
                   sx={{
                     color: (theme) =>
                       `${
@@ -155,13 +155,13 @@ const NewPost = () => (
             sm={4}
             lg={4}
             xs={12}
-            display="flex"
-            alignItems="center"
-            justifyContent="center"
+            display='flex'
+            alignItems='center'
+            justifyContent='center'
           >
             <Button
-              display="flex"
-              alignitems="center"
+              display='flex'
+              alignitems='center'
               sx={{
                 mt: {
                   xs: 1,
@@ -169,13 +169,13 @@ const NewPost = () => (
                   lg: 0,
                 },
               }}
-              color="primary"
+              color='primary'
             >
-              <Typography display="flex" alignItems="center">
-                <FeatherIcon icon="file" width="20" />
+              <Typography display='flex' alignItems='center'>
+                <FeatherIcon icon='file' width='20' />
                 <Typography
-                  component="span"
-                  fontWeight="500"
+                  component='span'
+                  fontWeight='500'
                   sx={{
                     color: (theme) =>
                       `${

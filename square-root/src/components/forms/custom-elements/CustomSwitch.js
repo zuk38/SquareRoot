@@ -22,7 +22,9 @@ const CustomSwitch = styled((props) => <Switch {...props} />)(({ theme }) => ({
 
   '& .MuiSwitch-track': {
     backgroundColor: `${
-      theme.palette.mode === 'dark' ? 'rgba(255, 255, 255, 0.09)' : 'rgba(73,82,88,0.12)'
+      theme.palette.mode === 'dark'
+        ? 'rgba(255, 255, 255, 0.09)'
+        : 'rgba(73,82,88,0.12)'
     }`,
     opacity: 1,
     borderRadius: '5px',

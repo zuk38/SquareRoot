@@ -43,7 +43,16 @@ const RevenueUpdates = () => {
     colors: [primary, secondary],
 
     xaxis: {
-      categories: ['16/08', '17/08', '18/08', '19/08', '20/08', '21/08', '22/08', '23/08'],
+      categories: [
+        '16/08',
+        '17/08',
+        '18/08',
+        '19/08',
+        '20/08',
+        '21/08',
+        '22/08',
+        '23/08',
+      ],
     },
     markers: {
       size: 4,
@@ -70,15 +79,20 @@ const RevenueUpdates = () => {
     },
   ];
   return (
-    <DashboardCard title="Revenue Updates" action={<ThemeSelect />}>
+    <DashboardCard title='Revenue Updates' action={<ThemeSelect />}>
       {/* chart */}
       <Box>
-        <Chart options={optionsrevenue} series={seriesrevenue} type="line" height="285" />
+        <Chart
+          options={optionsrevenue}
+          series={seriesrevenue}
+          type='line'
+          height='285'
+        />
       </Box>
-      <Box display="flex" justifyContent="center" mt="15px">
+      <Box display='flex' justifyContent='center' mt='15px'>
         <Box
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             color: primary,
           }}
@@ -92,12 +106,12 @@ const RevenueUpdates = () => {
               mr: 1,
             }}
           />
-          <Typography variant="h6">Earnings</Typography>
+          <Typography variant='h6'>Earnings</Typography>
         </Box>
         <Box
-          display="flex"
-          alignItems="center"
-          ml="10px"
+          display='flex'
+          alignItems='center'
+          ml='10px'
           sx={{
             color: secondary,
           }}
@@ -111,7 +125,7 @@ const RevenueUpdates = () => {
               mr: 1,
             }}
           />
-          <Typography variant="h6">Expense</Typography>
+          <Typography variant='h6'>Expense</Typography>
         </Box>
       </Box>
     </DashboardCard>

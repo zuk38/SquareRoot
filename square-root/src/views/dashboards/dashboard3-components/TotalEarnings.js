@@ -6,9 +6,9 @@ import FeatherIcon from 'feather-icons-react';
 const TotalEarnings = () => (
   <Card>
     <CardContent>
-      <Box display="flex" alignItems="flex-start">
+      <Box display='flex' alignItems='flex-start'>
         <Typography
-          variant="h4"
+          variant='h4'
           sx={{
             marginBottom: '0',
           }}
@@ -22,21 +22,21 @@ const TotalEarnings = () => (
           }}
         >
           <Fab
-            size="medium"
-            color="secondary"
-            aria-label="add"
-            elevation="0"
+            size='medium'
+            color='secondary'
+            aria-label='add'
+            elevation='0'
             sx={{
               boxShadow: 'none',
             }}
           >
-            <FeatherIcon icon="dollar-sign" />
+            <FeatherIcon icon='dollar-sign' />
           </Fab>
         </Box>
       </Box>
       <Typography
-        variant="h1"
-        fontWeight="500"
+        variant='h1'
+        fontWeight='500'
         sx={{
           marginBottom: '0',
           marginTop: '20px',
@@ -46,9 +46,9 @@ const TotalEarnings = () => (
         $93,438.78
       </Typography>
       <Typography
-        variant="h6"
-        fontWeight="400"
-        color="textSecondary"
+        variant='h6'
+        fontWeight='400'
+        color='textSecondary'
         sx={{
           marginBottom: '0',
           opacity: '0.6',

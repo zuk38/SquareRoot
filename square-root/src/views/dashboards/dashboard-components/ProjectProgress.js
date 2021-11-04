@@ -16,7 +16,12 @@ import CustomTextField from '../../../components/forms/custom-elements/CustomTex
 import CustomCheckbox from '../../../components/forms/custom-elements/CustomCheckbox';
 import CustomFormLabel from '../../../components/forms/custom-elements/CustomFormLabel';
 
-const steps = ['Create & customize greenspaces', 'Request -?-', 'Confirm -?-', 'Complete project'];
+const steps = [
+  'Create & customize greenspaces',
+  'Request -?-',
+  'Confirm -?-',
+  'Complete project',
+];
 
 const FormWizard = () => {
   const [activeStep, setActiveStep] = React.useState(0);
@@ -60,23 +65,11 @@ const FormWizard = () => {
   const handleSteps = (step) => {
     switch (step) {
       case 0:
-        return (
-          <Box sx={{ p: 0 }}>
-            
-          </Box>
-        );
+        return <Box sx={{ p: 0 }}></Box>;
       case 1:
-        return (
-          <Box sx={{ p: 0 }}>
-            
-          </Box>
-        );
+        return <Box sx={{ p: 0 }}></Box>;
       case 2:
-        return (
-          <Box sx={{ p: 0 }}>
-            
-          </Box>
-        );
+        return <Box sx={{ p: 0 }}></Box>;
       default:
         break;
     }
@@ -94,7 +87,9 @@ const FormWizard = () => {
               const stepProps = {};
               const labelProps = {};
               if (isStepOptional(index)) {
-                labelProps.optional = <Typography variant="caption">Optional</Typography>;
+                labelProps.optional = (
+                  <Typography variant='caption'>Optional</Typography>
+                );
               }
               if (isStepSkipped(index)) {
                 stepProps.completed = false;
@@ -106,15 +101,12 @@ const FormWizard = () => {
               );
             })}
           </Stepper>
-          
+
           {activeStep === steps.length ? (
-            <>
-            </>
+            <></>
           ) : (
             <>
               <Box>{handleSteps(activeStep)}</Box>
-
-            
             </>
           )}
         </Box>

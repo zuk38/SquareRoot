@@ -39,7 +39,7 @@ const BasePost = ({ img, username, time, children }) => {
           p: '30px 30px 15px',
         }}
       >
-        <Box display="flex" alignItems="center">
+        <Box display='flex' alignItems='center'>
           <Avatar
             src={img}
             sx={{
@@ -54,15 +54,15 @@ const BasePost = ({ img, username, time, children }) => {
             }}
           >
             <Typography
-              variant="h5"
-              fontWeight="600"
+              variant='h5'
+              fontWeight='600'
               sx={{
                 whiteSpace: 'nowrap',
               }}
             >
               {username}
             </Typography>
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               {time}
             </Typography>
           </Box>
@@ -71,17 +71,17 @@ const BasePost = ({ img, username, time, children }) => {
               ml: 'auto',
             }}
           >
-            <Tooltip title="Action">
+            <Tooltip title='Action'>
               <IconButton
                 aria-expanded={open ? 'true' : undefined}
-                aria-haspopup="true"
+                aria-haspopup='true'
                 onClick={handleClick}
               >
-                <FeatherIcon icon="more-horizontal" width="18" />
+                <FeatherIcon icon='more-horizontal' width='18' />
               </IconButton>
             </Tooltip>
             <Menu
-              id="long-menu"
+              id='long-menu'
               MenuListProps={{
                 'aria-labelledby': 'long-button',
               }}
@@ -98,7 +98,11 @@ const BasePost = ({ img, username, time, children }) => {
               }}
             >
               {options.map((option) => (
-                <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                <MenuItem
+                  key={option}
+                  selected={option === 'Pyxis'}
+                  onClick={handleClose}
+                >
                   {option}
                 </MenuItem>
               ))}
@@ -123,18 +127,18 @@ const BasePost = ({ img, username, time, children }) => {
             <Grid item sm={4} xs={4} lg={4}>
               <Button>
                 <Typography
-                  display="flex"
-                  alignItems="center"
+                  display='flex'
+                  alignItems='center'
                   sx={{
                     color: (theme) => theme.palette.grey.A200,
                   }}
                 >
-                  <FeatherIcon icon="thumbs-up" width="20" />
+                  <FeatherIcon icon='thumbs-up' width='20' />
                 </Typography>
                 <Typography
-                  component="span"
-                  color="textSecondary"
-                  fontWeight="500"
+                  component='span'
+                  color='textSecondary'
+                  fontWeight='500'
                   sx={{
                     ml: 1,
                     display: {
@@ -159,18 +163,18 @@ const BasePost = ({ img, username, time, children }) => {
             >
               <Button>
                 <Typography
-                  display="flex"
-                  alignItems="center"
+                  display='flex'
+                  alignItems='center'
                   sx={{
                     color: (theme) => theme.palette.grey.A200,
                   }}
                 >
-                  <FeatherIcon icon="message-square" width="20" />
+                  <FeatherIcon icon='message-square' width='20' />
                 </Typography>
                 <Typography
-                  component="span"
-                  color="textSecondary"
-                  fontWeight="500"
+                  component='span'
+                  color='textSecondary'
+                  fontWeight='500'
                   sx={{
                     ml: 1,
                     display: {
@@ -195,18 +199,18 @@ const BasePost = ({ img, username, time, children }) => {
             >
               <Button>
                 <Typography
-                  display="flex"
-                  alignItems="center"
+                  display='flex'
+                  alignItems='center'
                   sx={{
                     color: (theme) => theme.palette.grey.A200,
                   }}
                 >
-                  <FeatherIcon icon="share-2" width="20" />
+                  <FeatherIcon icon='share-2' width='20' />
                 </Typography>
                 <Typography
-                  component="span"
-                  color="textSecondary"
-                  fontWeight="500"
+                  component='span'
+                  color='textSecondary'
+                  fontWeight='500'
                   sx={{
                     ml: 1,
                     display: {

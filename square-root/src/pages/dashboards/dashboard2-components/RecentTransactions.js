@@ -52,7 +52,7 @@ const transactions = [
 ];
 
 const RecentTransactions = () => (
-  <DashboardCard title="Recent Transactions" subtitle="List of payments">
+  <DashboardCard title='Recent Transactions' subtitle='List of payments'>
     <Box
       sx={{
         mt: -3,
@@ -61,8 +61,8 @@ const RecentTransactions = () => (
       {transactions.map((transaction) => (
         <Box
           key={transaction.title}
-          display="flex"
-          alignItems="center"
+          display='flex'
+          alignItems='center'
           sx={{
             mt: 2,
             pt: 1,
@@ -76,21 +76,21 @@ const RecentTransactions = () => (
               height: '45px',
               width: '45px',
               borderRadius: '10px',
-              "&:hover": {
-                  backgroundColor: transaction.btnbg,
-                }
+              '&:hover': {
+                backgroundColor: transaction.btnbg,
+              },
             }}
-            aria-label="transactions"
+            aria-label='transactions'
           >
-            <FeatherIcon icon={transaction.icon} width="20" />
+            <FeatherIcon icon={transaction.icon} width='20' />
           </Fab>
           <Box
             sx={{
               ml: 2,
             }}
           >
-            <Typography variant="h5">{transaction.title}</Typography>
-            <Typography color="textSecondary" variant="h6" fontWeight="400">
+            <Typography variant='h5'>{transaction.title}</Typography>
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
               {transaction.subtitle}
             </Typography>
           </Box>
@@ -100,8 +100,10 @@ const RecentTransactions = () => (
             }}
           >
             <Typography
-              color={transaction.type === 'profit' ? 'success.main' : 'error.main'}
-              variant="h6"
+              color={
+                transaction.type === 'profit' ? 'success.main' : 'error.main'
+              }
+              variant='h6'
             >
               {transaction.profit}
             </Typography>
@@ -110,15 +112,15 @@ const RecentTransactions = () => (
       ))}
     </Box>
     <Box
-      display="flex"
-      alignItems="center"
+      display='flex'
+      alignItems='center'
       sx={{
         borderTop: '1px solid rgba(0,0,0,0.1)',
         pt: 2,
         mt: 3,
       }}
     >
-      <Button variant="contained" color="primary">
+      <Button variant='contained' color='primary'>
         Add
       </Button>
       <Box
@@ -126,7 +128,7 @@ const RecentTransactions = () => (
           ml: 'auto',
         }}
       >
-        <Typography color="textSecondary" variant="h6" fontWeight="400">
+        <Typography color='textSecondary' variant='h6' fontWeight='400'>
           36 Recent Transactions
         </Typography>
       </Box>

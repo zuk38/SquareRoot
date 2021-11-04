@@ -37,14 +37,16 @@ const NotesReducer = (state = INIT_STATE, action) => {
       return {
         ...state,
         notes: state.notes.map((note) =>
-          note.id === action.id ? { ...note, [action.field]: action.value } : note,
+          note.id === action.id
+            ? { ...note, [action.field]: action.value }
+            : note
         ),
       };
     case DELETE_NOTE:
       return {
         ...state,
         notes: state.notes.map((note) =>
-          note.id === action.id ? { ...note, deleted: !note.deleted } : note,
+          note.id === action.id ? { ...note, deleted: !note.deleted } : note
         ),
       };
     case ADD_NOTE:

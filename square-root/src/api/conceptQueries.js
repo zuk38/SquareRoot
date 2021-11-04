@@ -114,7 +114,7 @@ export const listConcepts = /* GraphQL */ `
                 #norwegian_nursery
                 #size_in_cm
                 #image
-                
+
                 #featured
                 #climate_zone
                 #pollinator_friendly

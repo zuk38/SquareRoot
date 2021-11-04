@@ -31,7 +31,7 @@ const DashboardCard = ({
       }}
       title={
         <Typography
-          variant="h3"
+          variant='h3'
           sx={{
             mb: {
               xs: custommargin,

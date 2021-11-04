@@ -1,112 +1,112 @@
-import React, { Component } from "react";
-import "./projects.css";
-import icon from "../../images/proj_icon.png";
-import data from "../data.json";
-import { findCityFromZip } from "../../functions/apiCalls";
+import React, { Component } from 'react';
+import './projects.css';
+import icon from '../../images/proj_icon.png';
+import data from '../data.json';
+import { findCityFromZip } from '../../functions/apiCalls';
 
 export default class Settings extends Component {
   render() {
     return (
       <div>
-        {" "}
+        {' '}
         {data.Projects.map((projects, i) => {
           return (
             <div key={i}>
-              {projects.project.map(function(project, i) {
+              {projects.project.map(function (project, i) {
                 return (
                   <div key={i}>
-                    {projects.user.map(function(user, i) {
+                    {projects.user.map(function (user, i) {
                       return (
                         <div key={i}>
                           {
-                            <div class="p-row">
-                              {" "}
-                              <div class="p-column left">
-                                <a href="/Projects" class="btn-back">
-                                  <i class="fas fa-chevron-left"></i>Alle
+                            <div class='p-row'>
+                              {' '}
+                              <div class='p-column left'>
+                                <a href='/Projects' class='btn-back'>
+                                  <i class='fas fa-chevron-left'></i>Alle
                                   Prosjekter
                                 </a>
-                                <div class="menu-vertical">
-                                  <a href="/Dashboard">
-                                    <i class="fas fa-columns"></i>Dashbord
+                                <div class='menu-vertical'>
+                                  <a href='/Dashboard'>
+                                    <i class='fas fa-columns'></i>Dashbord
                                   </a>
-                                  <a href="/Members">
-                                    <i class="fas fa-users"></i>Medlemmer
+                                  <a href='/Members'>
+                                    <i class='fas fa-users'></i>Medlemmer
                                   </a>
-                                  <a href="/Orders">
-                                    <i class="fas fa-tasks"></i>Bestillinger
+                                  <a href='/Orders'>
+                                    <i class='fas fa-tasks'></i>Bestillinger
                                   </a>
-                                  <a href="/#" class="active">
-                                    <i class="fas fa-cog"></i>Innstillinger
+                                  <a href='/#' class='active'>
+                                    <i class='fas fa-cog'></i>Innstillinger
                                   </a>
                                 </div>
                               </div>
-                              ​{" "}
-                              <div class="p-column right">
-                                {" "}
-                                <div className="p-title">
+                              ​{' '}
+                              <div class='p-column right'>
+                                {' '}
+                                <div className='p-title'>
                                   <img
-                                    className="project-icon"
+                                    className='project-icon'
                                     src={icon}
-                                    alt="Prosjektikon"
-                                  />{" "}
+                                    alt='Prosjektikon'
+                                  />{' '}
                                   {/*GET DATA*/}
-                                  <h1 className="p-h1">
+                                  <h1 className='p-h1'>
                                     {project.project_name}
                                   </h1>
                                 </div>
                                 <br></br>
-                                <h2 className="p-h2">
+                                <h2 className='p-h2'>
                                   Rolle: {project.user_role}
                                 </h2>
-                                <div className="settings-container">
+                                <div className='settings-container'>
                                   <form>
                                     <fieldset>
-                                      <label className="settings-lbl">
-                                        <p className="settings-p">
+                                      <label className='settings-lbl'>
+                                        <p className='settings-p'>
                                           Prosjektnavn
                                         </p>
                                         <input
-                                          name="project_name"
-                                          type="text"
+                                          name='project_name'
+                                          type='text'
                                         />
                                       </label>
-                                      <label className="settings-lbl">
-                                        <p className="settings-p">Adresse</p>
+                                      <label className='settings-lbl'>
+                                        <p className='settings-p'>Adresse</p>
                                         <input
-                                          name="project_name"
-                                          type="text"
-                                          placeholder="Gatenavn..."
+                                          name='project_name'
+                                          type='text'
+                                          placeholder='Gatenavn...'
                                         />
                                       </label>
 
-                                      <div className="p-flex">
-                                        <div className="p-classFlex">
-                                          <label className="settings-lbl">
-                                            <p className="settings-p">Postnr</p>
+                                      <div className='p-flex'>
+                                        <div className='p-classFlex'>
+                                          <label className='settings-lbl'>
+                                            <p className='settings-p'>Postnr</p>
                                             <input
-                                              placeholder="Postnr..."
-                                              type="text"
-                                              className="p-input-inline"
-                                              pattern="[0-4]*"
+                                              placeholder='Postnr...'
+                                              type='text'
+                                              className='p-input-inline'
+                                              pattern='[0-4]*'
                                             />
                                           </label>
                                         </div>
-                                        <div className="p-classFlex">
-                                          <label className="settings-lbl">
-                                            <p className="settings-p">
+                                        <div className='p-classFlex'>
+                                          <label className='settings-lbl'>
+                                            <p className='settings-p'>
                                               Poststed
                                             </p>
                                             <input
-                                              placeholder="Poststed..."
-                                              type="text"
-                                              className="p-input-inline"
+                                              placeholder='Poststed...'
+                                              type='text'
+                                              className='p-input-inline'
                                             />
                                           </label>
                                         </div>
                                       </div>
                                     </fieldset>
-                                    <button type="submit">
+                                    <button type='submit'>
                                       Lagre endringer
                                     </button>
                                   </form>
@@ -114,16 +114,16 @@ export default class Settings extends Component {
                               </div>
                             </div>
                             /*p-row*/
-                          }{" "}
+                          }{' '}
                         </div>
                       );
-                    })}{" "}
+                    })}{' '}
                   </div>
                 );
-              })}{" "}
+              })}{' '}
             </div>
           );
-        })}{" "}
+        })}{' '}
       </div>
     );
   }

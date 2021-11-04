@@ -16,23 +16,32 @@ const BCrumb = [
   },
 ];
 
-
 const ShopPage = () => (
-  <PageContainer title="Shop List" description="this is Shop List page">
+  <PageContainer title='Shop List' description='this is Shop List page'>
     {/* breadcrumb */}
-    <Breadcrumb title="Roof gardens" items={BCrumb} />
+    <Breadcrumb title='Roof gardens' items={BCrumb} />
 
     <Grid container spacing={0}>
       {Shopitems.map((product) => (
-        <Grid item xs={12} lg={4} sm={4} display="flex" alignItems="stretch" key={product.id}>
-          <Card sx={{ p: 0, width: '100%', textDecoration: 'none'}} component={Link}
-                to="/shop/shop-detail" >
-            <img src={product.photo} alt="img" width="100%" />
-            <CardContent sx={{ p: 3 }} >
-              <Typography variant="caption" >{product.category}</Typography>
+        <Grid
+          item
+          xs={12}
+          lg={4}
+          sm={4}
+          display='flex'
+          alignItems='stretch'
+          key={product.id}
+        >
+          <Card
+            sx={{ p: 0, width: '100%', textDecoration: 'none' }}
+            component={Link}
+            to='/shop/shop-detail'
+          >
+            <img src={product.photo} alt='img' width='100%' />
+            <CardContent sx={{ p: 3 }}>
+              <Typography variant='caption'>{product.category}</Typography>
               <Typography
-                
-                fontWeight="500"
+                fontWeight='500'
                 sx={{
                   display: 'block',
                   textDecoration: 'none',
@@ -47,8 +56,8 @@ const ShopPage = () => (
                 {product.title}
               </Typography>
               <Box
-                display="flex"
-                alignItems="center"
+                display='flex'
+                alignItems='center'
                 sx={{
                   mt: '15px',
                 }}
@@ -59,12 +68,10 @@ const ShopPage = () => (
                 </Typography>
 
                 */}
-                
+
                 {/* ---- project icons ---- */}
-                <FeatherIcon>
-                  {product.icons}
-               </FeatherIcon>
-                
+                <FeatherIcon>{product.icons}</FeatherIcon>
+
                 {/** 
                 {product.star.map((index) => (
                   <FeatherIcon

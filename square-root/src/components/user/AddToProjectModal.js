@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import Modal from "react-modal";
-import { withProjectConsumer } from "../../context/projects";
-import { AiOutlinePlus } from "react-icons/ai";
-import CreateProjectModal from "./CreateProjectModal";
+import React, { useState } from 'react';
+import Modal from 'react-modal';
+import { withProjectConsumer } from '../../context/projects';
+import { AiOutlinePlus } from 'react-icons/ai';
+import CreateProjectModal from './CreateProjectModal';
 
 function AddToProjectModal(props) {
   const [selectedProject, setSelectedProject] = useState(null);
   const [hover, setHover] = useState(false);
   const [addNewProject, setAddNewProject] = useState(false);
-  const buttons = document.getElementsByClassName("btn-group-button");
+  const buttons = document.getElementsByClassName('btn-group-button');
 
   const { projects } = props.context;
 
   const removeSelectedButtons = () => {
     for (var i = 0; i < buttons.length; i++) {
-      buttons[i].classList.remove("selected");
+      buttons[i].classList.remove('selected');
     }
   };
 
@@ -28,7 +28,7 @@ function AddToProjectModal(props) {
     setSelectedProject(project);
     removeSelectedButtons();
     var p = document.getElementById(project.id);
-    p.classList.add("selected");
+    p.classList.add('selected');
   };
 
   const setIconHover = () => {
@@ -40,20 +40,20 @@ function AddToProjectModal(props) {
       <Modal
         isOpen={props.isOpen}
         onRequestClose={props.closeModal}
-        className="add-to-project-modal"
-        contentLabel="Add To Project Modal"
+        className='add-to-project-modal'
+        contentLabel='Add To Project Modal'
         closeTimeoutMS={500}
       >
         <button
           onClick={props.closeModal}
-          className="btn-plant-modal-close"
-          alt="Lukk"
+          className='btn-plant-modal-close'
+          alt='Lukk'
         >
-          <i className="fas fa-times fa-lg" />
+          <i className='fas fa-times fa-lg' />
         </button>
 
         <h1>Select Project</h1>
-        <div className="btn-group">
+        <div className='btn-group'>
           <button
             onMouseEnter={setIconHover}
             onMouseLeave={setIconHover}
@@ -66,13 +66,15 @@ function AddToProjectModal(props) {
               id={project.id}
               key={project.id}
               onClick={() => setProject(project)}
-              className="btn-group-button"
+              className='btn-group-button'
             >
-              {project.name}{", "}{project.address}{" "}{project.city}
+              {project.name}
+              {', '}
+              {project.address} {project.city}
             </button>
           ))}
         </div>
-        <button className="btn-continue">Continue</button>
+        <button className='btn-continue'>Continue</button>
       </Modal>
       {addNewProject && (
         <CreateProjectModal

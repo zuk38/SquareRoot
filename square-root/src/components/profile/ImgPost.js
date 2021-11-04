@@ -40,7 +40,7 @@ const ImgPost = () => {
             p: '30px 30px 15px',
           }}
         >
-          <Box display="flex" alignItems="center">
+          <Box display='flex' alignItems='center'>
             <Avatar
               src={img1}
               sx={{
@@ -55,15 +55,15 @@ const ImgPost = () => {
               }}
             >
               <Typography
-                variant="h5"
-                fontWeight="600"
+                variant='h5'
+                fontWeight='600'
                 sx={{
                   whiteSpace: 'nowrap',
                 }}
               >
                 Julia Roberts
               </Typography>
-              <Typography color="textSecondary" variant="h6" fontWeight="400">
+              <Typography color='textSecondary' variant='h6' fontWeight='400'>
                 38 minutes ago
               </Typography>
             </Box>
@@ -72,17 +72,17 @@ const ImgPost = () => {
                 ml: 'auto',
               }}
             >
-              <Tooltip title="Action">
+              <Tooltip title='Action'>
                 <IconButton
                   aria-expanded={open ? 'true' : undefined}
-                  aria-haspopup="true"
+                  aria-haspopup='true'
                   onClick={handleClick}
                 >
-                  <FeatherIcon icon="more-horizontal" width="18" />
+                  <FeatherIcon icon='more-horizontal' width='18' />
                 </IconButton>
               </Tooltip>
               <Menu
-                id="long-menu"
+                id='long-menu'
                 MenuListProps={{
                   'aria-labelledby': 'long-button',
                 }}
@@ -99,7 +99,11 @@ const ImgPost = () => {
                 }}
               >
                 {options.map((option) => (
-                  <MenuItem key={option} selected={option === 'Pyxis'} onClick={handleClose}>
+                  <MenuItem
+                    key={option}
+                    selected={option === 'Pyxis'}
+                    onClick={handleClose}
+                  >
                     {option}
                   </MenuItem>
                 ))}
@@ -114,20 +118,20 @@ const ImgPost = () => {
           }}
         >
           <Typography
-            color="textSecondary"
-            variant="h5"
-            fontWeight="400"
+            color='textSecondary'
+            variant='h5'
+            fontWeight='400'
             sx={{
               mt: 2,
             }}
           >
             How you can become kickass web developer in 2021?{' '}
-            <Link href="/" underline="none">
+            <Link href='/' underline='none'>
               #web development trends
             </Link>
             <Link
-              href="/"
-              underline="none"
+              href='/'
+              underline='none'
               sx={{
                 ml: 1,
               }}
@@ -136,12 +140,14 @@ const ImgPost = () => {
             </Link>{' '}
             check out -
             <Typography
-              component="span"
-              fontWeight="500"
+              component='span'
+              fontWeight='500'
               sx={{
                 color: (theme) =>
                   `${
-                    theme.palette.mode === 'dark' ? theme.palette.grey.A200 : 'rgba(0, 0, 0, 0.87)'
+                    theme.palette.mode === 'dark'
+                      ? theme.palette.grey.A200
+                      : 'rgba(0, 0, 0, 0.87)'
                   }`,
               }}
             >
@@ -151,7 +157,7 @@ const ImgPost = () => {
           </Typography>
         </CardContent>
 
-        <img srcSet={`${img2} 1x, ${img2} 2x`} alt={img2} width="100%" />
+        <img srcSet={`${img2} 1x, ${img2} 2x`} alt={img2} width='100%' />
         <Box
           sx={{
             display: {
@@ -165,11 +171,11 @@ const ImgPost = () => {
             pt: '20px',
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Tooltip title="Like" placement="top">
+          <Box display='flex' alignItems='center'>
+            <Tooltip title='Like' placement='top'>
               <Button
-                variant="contained"
-                color="secondary"
+                variant='contained'
+                color='secondary'
                 sx={{
                   minWidth: '35px',
                   height: '35px',
@@ -178,13 +184,13 @@ const ImgPost = () => {
                   mr: '-5px',
                 }}
               >
-                <FeatherIcon icon="thumbs-up" width="15" />
+                <FeatherIcon icon='thumbs-up' width='15' />
               </Button>
             </Tooltip>
-            <Tooltip title="React" placement="top">
+            <Tooltip title='React' placement='top'>
               <Button
-                variant="contained"
-                color="warning"
+                variant='contained'
+                color='warning'
                 sx={{
                   minWidth: '35px',
                   height: '35px',
@@ -193,13 +199,13 @@ const ImgPost = () => {
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="smile" width="15" />
+                <FeatherIcon icon='smile' width='15' />
               </Button>
             </Tooltip>
-            <Tooltip title="Love" placement="top">
+            <Tooltip title='Love' placement='top'>
               <Button
-                variant="contained"
-                color="error"
+                variant='contained'
+                color='error'
                 sx={{
                   minWidth: '35px',
                   height: '35px',
@@ -208,12 +214,12 @@ const ImgPost = () => {
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="heart" width="15" />
+                <FeatherIcon icon='heart' width='15' />
               </Button>
             </Tooltip>
             <Typography
-              variant="h6"
-              fontWeight="600"
+              variant='h6'
+              fontWeight='600'
               sx={{
                 ml: 1,
               }}
@@ -223,26 +229,26 @@ const ImgPost = () => {
           </Box>
 
           <Box
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             sx={{
               ml: 'auto',
             }}
           >
-            <Link href="/" color="inherit" underline="none">
-              <Typography variant="h6" fontWeight="600">
+            <Link href='/' color='inherit' underline='none'>
+              <Typography variant='h6' fontWeight='600'>
                 6 Comments
               </Typography>
             </Link>
             <Link
-              href="/"
-              color="inherit"
-              underline="none"
+              href='/'
+              color='inherit'
+              underline='none'
               sx={{
                 ml: 2,
               }}
             >
-              <Typography variant="h6" fontWeight="600">
+              <Typography variant='h6' fontWeight='600'>
                 2 Shares
               </Typography>
             </Link>

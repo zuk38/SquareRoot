@@ -6,7 +6,9 @@ import FeatherIcon from 'feather-icons-react';
 import { setEmailVisibilityFilter } from '../../../redux/email/Action';
 
 const FilterEmail = ({ filter, icon, text }) => {
-  const active = useSelector((state) => filter === state.emailReducer.visibilityFilter);
+  const active = useSelector(
+    (state) => filter === state.emailReducer.visibilityFilter
+  );
 
   const dispatch = useDispatch();
 
@@ -18,7 +20,7 @@ const FilterEmail = ({ filter, icon, text }) => {
       selected={active}
     >
       <ListItemIcon sx={{ minWidth: '30px' }}>
-        <FeatherIcon icon={icon} width="20" />
+        <FeatherIcon icon={icon} width='20' />
       </ListItemIcon>
       <ListItemText>{text}</ListItemText>
     </ListItem>

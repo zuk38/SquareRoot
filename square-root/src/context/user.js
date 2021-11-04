@@ -1,5 +1,5 @@
-import React, { Component } from "react";
-import { Auth } from "aws-amplify";
+import React, { Component } from 'react';
+import { Auth } from 'aws-amplify';
 
 const UserContext = React.createContext();
 
@@ -11,14 +11,17 @@ export default class UserProvider extends Component {
     email: null,
     phone_number: null,
     role: null,
-    sub: null
+    sub: null,
   };
 
   setAuthStatus = (auuthenticated) => {
     //bool is passed
-    this.setState({
-      isAuthenticated: auuthenticated,
-    }, () => console.log(this.state));
+    this.setState(
+      {
+        isAuthenticated: auuthenticated,
+      },
+      () => console.log(this.state)
+    );
   };
 
   setUser = (user) => {
@@ -30,11 +33,11 @@ export default class UserProvider extends Component {
       role = null;
       sub = null;
     } else {
-      sub = user.sub
+      sub = user.sub;
       name = user.name;
       email = user.email;
       phone = user.phone_number;
-      role = user["custom:role"];
+      role = user['custom:role'];
     }
 
     this.setState(
@@ -58,7 +61,7 @@ export default class UserProvider extends Component {
       const session = await Auth.currentSession();
       console.log(session);
       this.setAuthStatus(true);
-      const user = await Auth.currentAuthenticatedUser()
+      const user = await Auth.currentAuthenticatedUser();
       console.log(user);
       const { attributes } = user;
       this.setUser(attributes);
@@ -80,11 +83,11 @@ export default class UserProvider extends Component {
           email: email,
           name: name,
           phone_number: phone,
-          "custom:role": role,
+          'custom:role': role,
         },
       });
     } catch (error) {
-      console.log("error signing up:", error);
+      console.log('error signing up:', error);
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
       values.cognito = err;
@@ -98,7 +101,7 @@ export default class UserProvider extends Component {
         password: values.password,
       });
     } catch (error) {
-      console.log("error loging in", error);
+      console.log('error loging in', error);
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
       values.cognito = err;
@@ -132,16 +135,18 @@ export default class UserProvider extends Component {
       name: values.name,
       email: values.email,
       phone_number: values.phone,
-      "custom:role": values.role,
+      'custom:role': values.role,
     };
-    Object.keys(attributes).forEach(key => attributes[key] === undefined ? delete attributes[key] : {});
+    Object.keys(attributes).forEach((key) =>
+      attributes[key] === undefined ? delete attributes[key] : {}
+    );
     //this.removeEmpty(attributes);
     console.log(attributes);
     try {
       await Auth.updateUserAttributes(user, attributes);
       this.fetchUser();
     } catch (error) {
-      console.log("error loging in", error);
+      console.log('error loging in', error);
       let err = null;
       !error.message ? (err = { message: error }) : (err = error);
       values.cognito = err;
@@ -163,7 +168,7 @@ export default class UserProvider extends Component {
           logout: this.logout,
           updateUser: this.updateUser,
           registerUser: this.register,
-          setAuthStatus: this.setAuthStatus
+          setAuthStatus: this.setAuthStatus,
         }}
       >
         {this.props.children}

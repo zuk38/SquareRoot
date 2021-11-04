@@ -22,9 +22,9 @@ const BCrumb = [
 
 const ShopDetail = () => {
   return (
-    <PageContainer title="Shop Detail" description="this is Shop Detail page">
+    <PageContainer title='Shop Detail' description='this is Shop Detail page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Roof gardens" items={BCrumb} />
+      <Breadcrumb title='Roof gardens' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
         <CardContent>

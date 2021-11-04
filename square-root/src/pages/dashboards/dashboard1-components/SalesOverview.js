@@ -88,15 +88,15 @@ const SalesOverview = () => {
   ];
   return (
     <DashboardCard
-      title="Sales Overview"
-      subtitle="Ample Admin Vs Pixel Admin"
-      customdisplay="block"
+      title='Sales Overview'
+      subtitle='Ample Admin Vs Pixel Admin'
+      customdisplay='block'
       action={
-        <Stack direction="row" spacing={2}>
+        <Stack direction='row' spacing={2}>
           <Typography
-            variant="h6"
-            display="flex"
-            alignItems="center"
+            variant='h6'
+            display='flex'
+            alignItems='center'
             sx={{
               color: () => theme.palette.primary.main,
             }}
@@ -110,14 +110,14 @@ const SalesOverview = () => {
                 mr: '5px',
               }}
             >
-              <FeatherIcon icon="circle" width="10" height="10" />
+              <FeatherIcon icon='circle' width='10' height='10' />
             </Typography>
             Ample
           </Typography>
           <Typography
-            variant="h6"
-            display="flex"
-            alignItems="center"
+            variant='h6'
+            display='flex'
+            alignItems='center'
             sx={{
               color: () => theme.palette.secondary.main,
             }}
@@ -131,7 +131,7 @@ const SalesOverview = () => {
                 mr: '5px',
               }}
             >
-              <FeatherIcon icon="circle" width="10" height="10" />
+              <FeatherIcon icon='circle' width='10' height='10' />
             </Typography>
             Pixel Admin
           </Typography>
@@ -142,8 +142,8 @@ const SalesOverview = () => {
         <Chart
           options={optionssalesoverview}
           series={seriessalesoverview}
-          type="bar"
-          height="280px"
+          type='bar'
+          height='280px'
         />
       </Box>
     </DashboardCard>

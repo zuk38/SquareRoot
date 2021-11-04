@@ -1,4 +1,9 @@
-import { SELECTED_CHAT, SEARCH_USER, MSG_SUBMIT, FETCH_CHAT_SUCCESS } from '../constants';
+import {
+  SELECTED_CHAT,
+  SEARCH_USER,
+  MSG_SUBMIT,
+  FETCH_CHAT_SUCCESS,
+} from '../constants';
 
 const INIT_STATE = {
   chatContent: 1,
@@ -25,7 +30,7 @@ const ChatReducer = (state = INIT_STATE, action) => {
         chats: state.chats.map((chat) =>
           chat.id === action.id
             ? { ...chat, ...chat.chatHistory[0][1].to.push(action.chatMsg) }
-            : chat,
+            : chat
         ),
       };
     case SEARCH_USER:

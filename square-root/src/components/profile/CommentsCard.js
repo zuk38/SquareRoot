@@ -1,5 +1,13 @@
 import React from 'react';
-import { Box, Typography, Button, Avatar, Link, Divider, Tooltip } from '@mui/material';
+import {
+  Box,
+  Typography,
+  Button,
+  Avatar,
+  Link,
+  Divider,
+  Tooltip,
+} from '@mui/material';
 import FeatherIcon from 'feather-icons-react';
 import img1 from '../../assets/images/users/1.jpg';
 import img2 from '../../assets/images/users/2.jpg';
@@ -25,7 +33,7 @@ const CommentsCard = () => (
     }}
   >
     <Typography
-      variant="h4"
+      variant='h4'
       sx={{
         borderTop: '1px solid rgba(0,0,0,0.1)',
         pt: 2,
@@ -35,8 +43,8 @@ const CommentsCard = () => (
     </Typography>
 
     <Box
-      display="flex"
-      alignItems="flex-start"
+      display='flex'
+      alignItems='flex-start'
       sx={{
         mt: 3,
         pb: 3,
@@ -54,18 +62,18 @@ const CommentsCard = () => (
           ml: 2,
         }}
       >
-        <Typography variant="subtitle2" fontWeight="600">
+        <Typography variant='subtitle2' fontWeight='600'>
           Bianca Anderson
           <Typography
-            component="span"
-            color="textSecondary"
+            component='span'
+            color='textSecondary'
             sx={{
               fontSize: '14px',
               ml: 1,
             }}
           >
-            This read was amazing! It was so deep that i could easily apply those things to the work
-            i am doing and will be helpful.
+            This read was amazing! It was so deep that i could easily apply
+            those things to the work i am doing and will be helpful.
           </Typography>
         </Typography>
         <Box
@@ -79,11 +87,11 @@ const CommentsCard = () => (
             alignItems: 'center',
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Tooltip title="Like" placement="top">
+          <Box display='flex' alignItems='center'>
+            <Tooltip title='Like' placement='top'>
               <Button
-                variant="contained"
-                color="secondary"
+                variant='contained'
+                color='secondary'
                 sx={{
                   minWidth: '28px',
                   height: '28px',
@@ -91,13 +99,13 @@ const CommentsCard = () => (
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="thumbs-up" width="15" />
+                <FeatherIcon icon='thumbs-up' width='15' />
               </Button>
             </Tooltip>
             <Typography
-              component="span"
-              variant="h6"
-              fontWeight="600"
+              component='span'
+              variant='h6'
+              fontWeight='600'
               sx={{
                 ml: 1,
               }}
@@ -106,26 +114,31 @@ const CommentsCard = () => (
             </Typography>
           </Box>
 
-          <Link underline="none" href="/" color="textSecondary" sx={LinkStyles1}>
-            <Typography variant="h6" fontWeight="500">
+          <Link
+            underline='none'
+            href='/'
+            color='textSecondary'
+            sx={LinkStyles1}
+          >
+            <Typography variant='h6' fontWeight='500'>
               React
             </Typography>
           </Link>
           <Link
-            underline="none"
-            href="/"
-            color="textSecondary"
+            underline='none'
+            href='/'
+            color='textSecondary'
             sx={{
               ml: 2,
             }}
           >
-            <Typography variant="h6" fontWeight="500">
+            <Typography variant='h6' fontWeight='500'>
               Reply
             </Typography>
           </Link>
           <Typography
-            component="span"
-            color="textSecondary"
+            component='span'
+            color='textSecondary'
             sx={{
               fontSize: '14px',
               ml: 2,
@@ -139,8 +152,8 @@ const CommentsCard = () => (
     <Divider />
     {/* 2 */}
     <Box
-      display="flex"
-      alignItems="flex-start"
+      display='flex'
+      alignItems='flex-start'
       sx={{
         mt: 3,
         pb: 3,
@@ -163,19 +176,19 @@ const CommentsCard = () => (
           ml: 2,
         }}
       >
-        <Typography variant="subtitle2" fontWeight="600">
+        <Typography variant='subtitle2' fontWeight='600'>
           Bianca Anderson
           <Typography
-            component="span"
-            color="textSecondary"
-            variant="h6"
-            fontWeight="400"
+            component='span'
+            color='textSecondary'
+            variant='h6'
+            fontWeight='400'
             sx={{
               ml: 1,
             }}
           >
-            This read was amazing! It was so deep that i could easily apply those things to the work
-            i am doing and will be helpful.
+            This read was amazing! It was so deep that i could easily apply
+            those things to the work i am doing and will be helpful.
           </Typography>
         </Typography>
         <Box
@@ -189,11 +202,11 @@ const CommentsCard = () => (
             alignItems: 'center',
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Tooltip title="Love" placement="top">
+          <Box display='flex' alignItems='center'>
+            <Tooltip title='Love' placement='top'>
               <Button
-                variant="contained"
-                color="error"
+                variant='contained'
+                color='error'
                 sx={{
                   minWidth: '28px',
                   height: '28px',
@@ -201,13 +214,13 @@ const CommentsCard = () => (
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="heart" width="15" />
+                <FeatherIcon icon='heart' width='15' />
               </Button>
             </Tooltip>
             <Typography
-              component="span"
-              variant="h6"
-              fontWeight="600"
+              component='span'
+              variant='h6'
+              fontWeight='600'
               sx={{
                 ml: 1,
               }}
@@ -216,26 +229,31 @@ const CommentsCard = () => (
             </Typography>
           </Box>
 
-          <Link underline="none" href="/" color="textSecondary" sx={LinkStyles1}>
-            <Typography variant="h6" fontWeight="500">
+          <Link
+            underline='none'
+            href='/'
+            color='textSecondary'
+            sx={LinkStyles1}
+          >
+            <Typography variant='h6' fontWeight='500'>
               React
             </Typography>
           </Link>
           <Link
-            underline="none"
-            href="/"
-            color="textSecondary"
+            underline='none'
+            href='/'
+            color='textSecondary'
             sx={{
               ml: 2,
             }}
           >
-            <Typography variant="h6" fontWeight="500">
+            <Typography variant='h6' fontWeight='500'>
               Reply
             </Typography>
           </Link>
           <Typography
-            component="span"
-            color="textSecondary"
+            component='span'
+            color='textSecondary'
             sx={{
               fontSize: '14px',
               ml: 2,
@@ -250,8 +268,8 @@ const CommentsCard = () => (
     <Divider />
     {/* 3 */}
     <Box
-      display="flex"
-      alignItems="flex-start"
+      display='flex'
+      alignItems='flex-start'
       sx={{
         mt: 3,
       }}
@@ -268,18 +286,18 @@ const CommentsCard = () => (
           ml: 2,
         }}
       >
-        <Typography variant="subtitle2" fontWeight="600">
+        <Typography variant='subtitle2' fontWeight='600'>
           Bianca Anderson
           <Typography
-            component="span"
-            color="textSecondary"
+            component='span'
+            color='textSecondary'
             sx={{
               fontSize: '14px',
               ml: 1,
             }}
           >
-            This read was amazing! It was so deep that i could easily apply those things to the work
-            i am doing and will be helpful.
+            This read was amazing! It was so deep that i could easily apply
+            those things to the work i am doing and will be helpful.
           </Typography>
         </Typography>
         <Box
@@ -293,11 +311,11 @@ const CommentsCard = () => (
             alignItems: 'center',
           }}
         >
-          <Box display="flex" alignItems="center">
-            <Tooltip title="Like" placement="top">
+          <Box display='flex' alignItems='center'>
+            <Tooltip title='Like' placement='top'>
               <Button
-                variant="contained"
-                color="secondary"
+                variant='contained'
+                color='secondary'
                 sx={{
                   minWidth: '28px',
                   height: '28px',
@@ -305,13 +323,13 @@ const CommentsCard = () => (
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="thumbs-up" width="15" />
+                <FeatherIcon icon='thumbs-up' width='15' />
               </Button>
             </Tooltip>
-            <Tooltip title="React" placement="top">
+            <Tooltip title='React' placement='top'>
               <Button
-                variant="contained"
-                color="warning"
+                variant='contained'
+                color='warning'
                 sx={{
                   minWidth: '28px',
                   height: '28px',
@@ -319,13 +337,13 @@ const CommentsCard = () => (
                   p: 0,
                 }}
               >
-                <FeatherIcon icon="smile" width="15" />
+                <FeatherIcon icon='smile' width='15' />
               </Button>
             </Tooltip>
             <Typography
-              component="span"
-              variant="h6"
-              fontWeight="600"
+              component='span'
+              variant='h6'
+              fontWeight='600'
               sx={{
                 ml: 1,
               }}
@@ -334,28 +352,33 @@ const CommentsCard = () => (
             </Typography>
           </Box>
 
-          <Link underline="none" href="/" color="textSecondary" sx={LinkStyles1}>
-            <Typography variant="h6" fontWeight="500">
+          <Link
+            underline='none'
+            href='/'
+            color='textSecondary'
+            sx={LinkStyles1}
+          >
+            <Typography variant='h6' fontWeight='500'>
               React
             </Typography>
           </Link>
           <Link
-            underline="none"
-            href="/"
-            color="textSecondary"
+            underline='none'
+            href='/'
+            color='textSecondary'
             sx={{
               ml: 2,
             }}
           >
-            <Typography variant="h6" fontWeight="500">
+            <Typography variant='h6' fontWeight='500'>
               Reply
             </Typography>
           </Link>
           <Typography
-            component="span"
-            color="textSecondary"
-            variant="h6"
-            fontWeight="400"
+            component='span'
+            color='textSecondary'
+            variant='h6'
+            fontWeight='400'
             sx={{
               ml: 2,
               whiteSpace: 'nowrap',

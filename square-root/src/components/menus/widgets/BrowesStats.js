@@ -8,7 +8,6 @@ import b4 from '../../../assets/images/browser/edge-logo.svg';
 import b5 from '../../../assets/images/browser/opera-logo.svg';
 import b6 from '../../../assets/images/browser/uc-logo.svg';
 
-
 const stats = [
   {
     id: '1',
@@ -60,25 +59,25 @@ const BrowesStats = () => (
         pb: 0,
       }}
     >
-      <WidgetCard title="Browser Stats" />
+      <WidgetCard title='Browser Stats' />
       <Box sx={{ mt: -1 }}>
         {stats.map((stat) => (
           <Box
             key={stat.id}
-            display="flex"
-            alignItems="center"
+            display='flex'
+            alignItems='center'
             sx={{
               pb: 2,
               pt: 2,
             }}
           >
-            <img src={stat.img} alt={stat.img} width="40" />
+            <img src={stat.img} alt={stat.img} width='40' />
             <Box
               sx={{
                 ml: 2,
               }}
             >
-              <Typography color="textSecondary" variant="h5">
+              <Typography color='textSecondary' variant='h5'>
                 {stat.title}
               </Typography>
             </Box>
@@ -87,7 +86,7 @@ const BrowesStats = () => (
                 ml: 'auto',
               }}
             >
-              <Typography color="textSecondary" variant="h5" fontWeight="400">
+              <Typography color='textSecondary' variant='h5' fontWeight='400'>
                 {stat.percent}%
               </Typography>
             </Box>

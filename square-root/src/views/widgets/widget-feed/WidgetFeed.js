@@ -1,5 +1,13 @@
 import React from 'react';
-import { Grid, Box, Avatar, Typography, Link, Button, Divider } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Avatar,
+  Typography,
+  Link,
+  Button,
+  Divider,
+} from '@mui/material';
 import BaseFeed from '../../../components/base-card/BaseFeed';
 import Breadcrumb from '../../../layouts/full-layout/breadcrumb/Breadcrumb';
 import PageContainer from '../../../components/container/PageContainer';
@@ -31,16 +39,20 @@ const MStyles = {
 
 const WidgetFeed = () => {
   return (
-    <PageContainer title="Widget Feed" description="this is Widget Feed page">
+    <PageContainer title='Widget Feed' description='this is Widget Feed page'>
       {/* breadcrumb */}
-      <Breadcrumb title="Widget Feeds" items={BCrumb} />
+      <Breadcrumb title='Widget Feeds' items={BCrumb} />
       {/* end breadcrumb */}
       <Grid container spacing={0}>
         <Grid item lg={4} md={12} xs={12}>
-          <BaseFeed img={img1} username="Shraddha Chhatraliya" time="Yestarday at 5:06 PM">
+          <BaseFeed
+            img={img1}
+            username='Shraddha Chhatraliya'
+            time='Yestarday at 5:06 PM'
+          >
             <Avatar
               src={postimg1}
-              alt="post-img"
+              alt='post-img'
               sx={{
                 width: '100%',
                 height: '200px',
@@ -53,44 +65,48 @@ const WidgetFeed = () => {
               }}
             />
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 1,
               }}
             >
               Your beauty is one of the things I like about you.
-              <span role="img" aria-label="emoji">
+              <span role='img' aria-label='emoji'>
                 😍 🥰
               </span>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #beauty
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #goa
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #india
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #happylife
               </Link>
             </Typography>
           </BaseFeed>
           {/* 2 card */}
-          <BaseFeed img={img2} username="Maria Hernandez" time="Angular, Reactjs, Vuejs">
+          <BaseFeed
+            img={img2}
+            username='Maria Hernandez'
+            time='Angular, Reactjs, Vuejs'
+          >
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 1,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco.
             </Typography>
             <Divider
               sx={{
@@ -99,14 +115,14 @@ const WidgetFeed = () => {
               }}
             />
             <Box
-              display="flex"
+              display='flex'
               sx={{
                 width: '100%',
               }}
             >
               <Avatar
                 src={img3}
-                alt="img"
+                alt='img'
                 sx={{
                   width: '40px',
                 }}
@@ -117,15 +133,15 @@ const WidgetFeed = () => {
                   width: '100%',
                 }}
               >
-                <Typography fontWeight="500" variant="h5">
+                <Typography fontWeight='500' variant='h5'>
                   John Deo
                 </Typography>
                 <CustomTextField
-                  id="add-cmt"
-                  placeholder="Write a comment"
+                  id='add-cmt'
+                  placeholder='Write a comment'
                   inputProps={{ 'aria-label': 'Write a comment...' }}
                   fullWidth
-                  variant="outlined"
+                  variant='outlined'
                   sx={{
                     mt: 1,
                   }}
@@ -136,7 +152,7 @@ const WidgetFeed = () => {
                     mt: 1,
                   }}
                 >
-                  <Button variant="contained" color="secondary">
+                  <Button variant='contained' color='secondary'>
                     Post
                   </Button>
                 </Box>
@@ -146,28 +162,37 @@ const WidgetFeed = () => {
         </Grid>
         {/* ------------------------- row 2 ------------------------- */}
         <Grid item lg={4} md={12} xs={12}>
-          <BaseFeed img={img2} username="John Smith" time="Yestarday at 5:06 PM">
+          <BaseFeed
+            img={img2}
+            username='John Smith'
+            time='Yestarday at 5:06 PM'
+          >
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 1,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure
-              dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
-              Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-              mollit anim id est
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco laboris
+              nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
+              reprehenderit in voluptate velit esse cillum dolore eu fugiat
+              nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+              sunt in culpa qui officia deserunt mollit anim id est
             </Typography>
           </BaseFeed>
           {/* 2 */}
-          <BaseFeed img={img1} username="Ritesh Deshmukh" time="Today at 6:30 AM">
+          <BaseFeed
+            img={img1}
+            username='Ritesh Deshmukh'
+            time='Today at 6:30 AM'
+          >
             <Avatar
               src={postimg2}
-              alt="post-img"
+              alt='post-img'
               sx={{
                 width: '100%',
                 height: '200px',
@@ -180,36 +205,36 @@ const WidgetFeed = () => {
               }}
             />
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 1,
               }}
             >
               Your beauty is one of the things I like about you.{' '}
-              <span role="img" aria-label="emoji">
+              <span role='img' aria-label='emoji'>
                 😋 🤪
               </span>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #cookie
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #testy
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #best
               </Link>
-              <Link underline="none" href="#" sx={MStyles}>
+              <Link underline='none' href='#' sx={MStyles}>
                 #foodie
               </Link>
             </Typography>
           </BaseFeed>
           {/* 3 */}
-          <BaseFeed img={img3} username="Nirav Joshi" time="Today at 4:30 AM">
+          <BaseFeed img={img3} username='Nirav Joshi' time='Today at 4:30 AM'>
             <Typography
-              color="textSecondary"
-              variant="h5"
+              color='textSecondary'
+              variant='h5'
               sx={{
                 mt: 2,
               }}
@@ -218,7 +243,7 @@ const WidgetFeed = () => {
             </Typography>
             <Avatar
               src={postimg3}
-              alt="post-img"
+              alt='post-img'
               sx={{
                 width: '100%',
                 height: '200px',
@@ -231,18 +256,18 @@ const WidgetFeed = () => {
               }}
             />
             <Typography
-              variant="h4"
-              fontWeight="500"
+              variant='h4'
+              fontWeight='500'
               sx={{
                 mt: 1,
               }}
             >
               Sony Headphone
             </Typography>
-            <Typography color="textSecondary" variant="h5" fontWeight="400">
+            <Typography color='textSecondary' variant='h5' fontWeight='400'>
               Noise One Wireless Bluetooth Headset
               <Link
-                href="#"
+                href='#'
                 sx={{
                   ml: '3px',
                   display: 'inline-block',
@@ -255,25 +280,29 @@ const WidgetFeed = () => {
         </Grid>
         {/* --------------------------- row 3 ------------------------ */}
         <Grid item lg={4} md={12} xs={12}>
-          <BaseFeed img={img3} username="Maria Hernandez" time="Angular, Reactjs, Vuejs">
+          <BaseFeed
+            img={img3}
+            username='Maria Hernandez'
+            time='Angular, Reactjs, Vuejs'
+          >
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 1,
               }}
             >
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
-              incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
-              exercitation ullamco.
+              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+              enim ad minim veniam, quis nostrud exercitation ullamco.
             </Typography>
             <CustomTextField
-              id="add-reply"
-              placeholder="Reply"
+              id='add-reply'
+              placeholder='Reply'
               inputProps={{ 'aria-label': 'Reply' }}
               fullWidth
-              variant="outlined"
+              variant='outlined'
               sx={{
                 mt: 1,
               }}
@@ -284,17 +313,17 @@ const WidgetFeed = () => {
                 mt: 1,
               }}
             >
-              <Button variant="contained" color="secondary">
+              <Button variant='contained' color='secondary'>
                 Post
               </Button>
             </Box>
           </BaseFeed>
           {/* 2 */}
-          <BaseFeed img={img4} username="Sunil Joshi" time="Today at 2:30 PM">
+          <BaseFeed img={img4} username='Sunil Joshi' time='Today at 2:30 PM'>
             <Typography
-              color="textSecondary"
-              variant="h5"
-              fontWeight="400"
+              color='textSecondary'
+              variant='h5'
+              fontWeight='400'
               sx={{
                 mt: 2,
               }}
@@ -303,7 +332,7 @@ const WidgetFeed = () => {
             </Typography>
             <Avatar
               src={postimg4}
-              alt="post-img"
+              alt='post-img'
               sx={{
                 width: '100%',
                 height: '200px',
@@ -316,18 +345,18 @@ const WidgetFeed = () => {
               }}
             />
             <Typography
-              variant="h4"
-              fontWeight="500"
+              variant='h4'
+              fontWeight='500'
               sx={{
                 mt: 1,
               }}
             >
               Polestar 2
             </Typography>
-            <Typography color="textSecondary" variant="h5" fontWeight="400">
+            <Typography color='textSecondary' variant='h5' fontWeight='400'>
               5-door all-electric fastback
               <Link
-                href="#"
+                href='#'
                 sx={{
                   ml: '3px',
                   display: 'inline-block',

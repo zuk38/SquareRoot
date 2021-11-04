@@ -116,22 +116,22 @@ const CandlestickChart = () => {
   ];
 
   return (
-    <PageContainer title="Candlestick Chart" description="this is innerpage">
+    <PageContainer title='Candlestick Chart' description='this is innerpage'>
       {/* breadcrumb */}
-      <Breadcrumb title="Candlestick Chart" items={BCrumb} />
+      <Breadcrumb title='Candlestick Chart' items={BCrumb} />
       {/* end breadcrumb */}
       <Card>
-        <Box p={2} display="flex" alignItems="center">
+        <Box p={2} display='flex' alignItems='center'>
           <Box flexGrow={1}>
-            <Typography variant="h4">Candlestick Charts</Typography>
+            <Typography variant='h4'>Candlestick Charts</Typography>
           </Box>
         </Box>
         <CardContent>
           <Chart
             options={optionscandlestickchart}
             series={seriecandlestickchart}
-            type="candlestick"
-            height="308px"
+            type='candlestick'
+            height='308px'
           />
         </CardContent>
       </Card>

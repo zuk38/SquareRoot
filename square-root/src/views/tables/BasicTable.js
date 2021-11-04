@@ -136,9 +136,9 @@ const BCrumb = [
 ];
 
 const BasicTable = () => (
-  <PageContainer title="Basic Table" description="this is Basic Table page">
+  <PageContainer title='Basic Table' description='this is Basic Table page'>
     {/* breadcrumb */}
-    <Breadcrumb title="Basic Table" items={BCrumb} />
+    <Breadcrumb title='Basic Table' items={BCrumb} />
     {/* end breadcrumb */}
     <Card>
       <CardContent>
@@ -151,7 +151,7 @@ const BasicTable = () => (
           }}
         >
           <Table
-            aria-label="simple table"
+            aria-label='simple table'
             sx={{
               whiteSpace: 'nowrap',
             }}
@@ -159,19 +159,19 @@ const BasicTable = () => (
             <TableHead>
               <TableRow>
                 <TableCell>
-                  <Typography variant="h5">Users</Typography>
+                  <Typography variant='h5'>Users</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Project Name</Typography>
+                  <Typography variant='h5'>Project Name</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Team</Typography>
+                  <Typography variant='h5'>Team</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Status</Typography>
+                  <Typography variant='h5'>Status</Typography>
                 </TableCell>
                 <TableCell>
-                  <Typography variant="h5">Budget</Typography>
+                  <Typography variant='h5'>Budget</Typography>
                 </TableCell>
               </TableRow>
             </TableHead>
@@ -179,11 +179,11 @@ const BasicTable = () => (
               {basics.map((basic) => (
                 <TableRow key={basic.id}>
                   <TableCell>
-                    <Box display="flex" alignItems="center">
+                    <Box display='flex' alignItems='center'>
                       <Avatar
                         src={basic.imgsrc}
                         alt={basic.imgsrc}
-                        width="35"
+                        width='35'
                         sx={{
                           borderRadius: '100%',
                         }}
@@ -193,22 +193,30 @@ const BasicTable = () => (
                           ml: 2,
                         }}
                       >
-                        <Typography variant="h6" fontWeight="600">
+                        <Typography variant='h6' fontWeight='600'>
                           {basic.name}
                         </Typography>
-                        <Typography color="textSecondary" variant="h6" fontWeight="400">
+                        <Typography
+                          color='textSecondary'
+                          variant='h6'
+                          fontWeight='400'
+                        >
                           {basic.post}
                         </Typography>
                       </Box>
                     </Box>
                   </TableCell>
                   <TableCell>
-                    <Typography color="textSecondary" variant="h6" fontWeight="400">
+                    <Typography
+                      color='textSecondary'
+                      variant='h6'
+                      fontWeight='400'
+                    >
                       {basic.pname}
                     </Typography>
                   </TableCell>
                   <TableCell>
-                    <Box display="flex" alignItems="center">
+                    <Box display='flex' alignItems='center'>
                       {basic.teams.map((team) => (
                         <Avatar
                           key={team.id}
@@ -252,12 +260,12 @@ const BasicTable = () => (
                         pl: '3px',
                         pr: '3px',
                       }}
-                      size="small"
+                      size='small'
                       label={basic.status}
                     />
                   </TableCell>
                   <TableCell>
-                    <Typography variant="h6">${basic.budget}k</Typography>
+                    <Typography variant='h6'>${basic.budget}k</Typography>
                   </TableCell>
                 </TableRow>
               ))}

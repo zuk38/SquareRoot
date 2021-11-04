@@ -1,56 +1,56 @@
-import React from "react";
-import "../../styles/frontpages.css";
+import React from 'react';
+import '../../styles/frontpages.css';
 
 export default function What() {
   return (
     <div>
-      <div className="c-section background-grey">
-        <div className="o-container">
-          <div className="c-hero">
-            <h1 className="c-txt--hero">Hva vi gjør</h1>
-            <p className="c-txt--hero-p">
+      <div className='c-section background-grey'>
+        <div className='o-container'>
+          <div className='c-hero'>
+            <h1 className='c-txt--hero'>Hva vi gjør</h1>
+            <p className='c-txt--hero-p'>
               Med vår plattform samler vi markedsaktører på ett sted slik at det
               blir enklere å utvikle bærekraftige byer.
               <br />
-              <div className="c-mrg--bottom"></div>
-              <h2 className="c-txt-punchline--sm c-mrg--top">
+              <div className='c-mrg--bottom'></div>
+              <h2 className='c-txt-punchline--sm c-mrg--top'>
                 Vi har et sterkt fokus på "de beste plantene for det rikige
                 stedet" for prosjekter med urbane grøntområder med mange krav.
                 Vårt utvalg av planter er forskningsbasert, og i samarbeid med
                 arkitekturselskapene &nbsp;
-                <a href="https://www.asplanviak.no">Asplan Viak</a>&nbsp;og
+                <a href='https://www.asplanviak.no'>Asplan Viak</a>&nbsp;og
                 &nbsp;
-                <a href="https://edit.land/home">Edit Atelier</a>. Sammen
+                <a href='https://edit.land/home'>Edit Atelier</a>. Sammen
                 utarbeider vi konsepter bestående av ulike plantearter som
                 passer sammen i et gitt grøntareale, for eksempel på en
                 takterrasse, eller for ønsket funksjonalitet, som
                 overvannshåndtering.
               </h2>
               <br />
-              <div className="c-grid--span">
-                <div className="c-grid--span-item-a">
+              <div className='c-grid--span'>
+                <div className='c-grid--span-item-a'>
                   <img
-                    className="zoom-on-hover"
-                    src="../images/portrait--indoor-wall.jpg"
-                    alt="Indoor Wall"
+                    className='zoom-on-hover'
+                    src='../images/portrait--indoor-wall.jpg'
+                    alt='Indoor Wall'
                   />
                 </div>
-                <div className="c-grid--span-item-b">
+                <div className='c-grid--span-item-b'>
                   <img
-                    className="zoom-on-hover"
-                    src="../images/rainbeds.png"
-                    alt="Rainbeds"
+                    className='zoom-on-hover'
+                    src='../images/rainbeds.png'
+                    alt='Rainbeds'
                   />
                 </div>
-                <div className="c-grid--span-item-c">
+                <div className='c-grid--span-item-c'>
                   <img
-                    className="zoom-on-hover"
-                    src="../images/netflix-hq.jpg"
-                    alt="Netflix HQ"
+                    className='zoom-on-hover'
+                    src='../images/netflix-hq.jpg'
+                    alt='Netflix HQ'
                   />
                 </div>
               </div>
-              <h2 className="c-txt-punchline--sm c-mrg--top">
+              <h2 className='c-txt-punchline--sm c-mrg--top'>
                 På plattformen vår kan disse konseptene bli lagt inn i
                 prosjekter du selv oppretter og administrer. Herfra kan du velge
                 å redigere hvilke planter som skal være med i et konsept, eller
@@ -65,61 +65,61 @@ export default function What() {
         </div>
       </div>
 
-      <div className="c-section o-container background-white">
-        <div className="c-grid--2x3">
-          <div className="grid-item0 u-mrg--txt1">
-            <h2 className="c-txt--sectiontitle u-mrg--txt4">Hva vi tilbyr</h2>
+      <div className='c-section o-container background-white'>
+        <div className='c-grid--2x3'>
+          <div className='grid-item0 u-mrg--txt1'>
+            <h2 className='c-txt--sectiontitle u-mrg--txt4'>Hva vi tilbyr</h2>
           </div>
 
-          <div className="grid-item4 u-mrg--txt1">
-            <h3 className="c-txt-sectiontitle--sm">Sømløs kommunikasjon</h3>
-            <div className="u-mrg--reset c-mrg--top">
-              <p className="c-txt-punchline--sm">description</p>
+          <div className='grid-item4 u-mrg--txt1'>
+            <h3 className='c-txt-sectiontitle--sm'>Sømløs kommunikasjon</h3>
+            <div className='u-mrg--reset c-mrg--top'>
+              <p className='c-txt-punchline--sm'>description</p>
             </div>
           </div>
-          <div className="grid-item2 u-mrg--txt1">
+          <div className='grid-item2 u-mrg--txt1'>
             <img
-              className="attachment-company_into"
-              src="../images/relaxation-character.jpg"
-              alt="Relaxation character"
+              className='attachment-company_into'
+              src='../images/relaxation-character.jpg'
+              alt='Relaxation character'
             />
           </div>
 
-          <div className="grid-item5 u-mrg--txt1">
-            <h3 className="c-txt-sectiontitle--sm">
+          <div className='grid-item5 u-mrg--txt1'>
+            <h3 className='c-txt-sectiontitle--sm'>
               Enkel og rask tilgang til de riktige plantene
             </h3>
-            <div className="u-mrg--reset c-mrg--top">
-              <p className="c-txt-punchline--sm">description</p>
+            <div className='u-mrg--reset c-mrg--top'>
+              <p className='c-txt-punchline--sm'>description</p>
             </div>
           </div>
-          <div className="grid-item6 u-mrg--txt1">
+          <div className='grid-item6 u-mrg--txt1'>
             <img
-              className="attachment-company_into"
-              src="../images/earth-plants.jpg"
-              alt="Plants"
+              className='attachment-company_into'
+              src='../images/earth-plants.jpg'
+              alt='Plants'
             />
           </div>
 
-          <div className="grid-item8 u-mrg--txt1">
-            <h3 className="c-txt-sectiontitle--sm">Tilpass etter dine behov</h3>
-            <div className="u-mrg--reset c-mrg--top">
-              <p className="c-txt-punchline--sm">description</p>
+          <div className='grid-item8 u-mrg--txt1'>
+            <h3 className='c-txt-sectiontitle--sm'>Tilpass etter dine behov</h3>
+            <div className='u-mrg--reset c-mrg--top'>
+              <p className='c-txt-punchline--sm'>description</p>
             </div>
           </div>
-          <div className="grid-item7 u-mrg--txt1">
+          <div className='grid-item7 u-mrg--txt1'>
             <img
-              className="attachment-company_into"
-              src="../images/project-checklist.png"
-              alt="Checklist"
+              className='attachment-company_into'
+              src='../images/project-checklist.png'
+              alt='Checklist'
             />
           </div>
         </div>
       </div>
 
-      <div className="c-section background-grey">
-        <div className="o-container u-mrg--txt4">
-          <p className="c-txt--punchline">
+      <div className='c-section background-grey'>
+        <div className='o-container u-mrg--txt4'>
+          <p className='c-txt--punchline'>
             Det skal være enkelt å velge grønt.
           </p>
           Vi har knyttet alle aktører til samme plattform slik at vi sammen kan

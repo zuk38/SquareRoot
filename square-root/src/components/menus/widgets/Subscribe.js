@@ -10,7 +10,7 @@ const Subscribe = () => (
     }}
   >
     <CardContent>
-      <WidgetCard title="Subscribe" />
+      <WidgetCard title='Subscribe' />
 
       <Box
         sx={{
@@ -18,31 +18,31 @@ const Subscribe = () => (
         }}
       >
         <CustomTextField
-          id="name"
+          id='name'
           fullWidth
-          placeholder="Enter Name"
-          variant="outlined"
-          size="small"
+          placeholder='Enter Name'
+          variant='outlined'
+          size='small'
           inputProps={{ 'aria-label': 'Enter Name' }}
           sx={{
             mb: 1,
           }}
         />
         <CustomTextField
-          id="email"
+          id='email'
           fullWidth
-          placeholder="Enter Email"
+          placeholder='Enter Email'
           inputProps={{ 'aria-label': 'Enter Email' }}
-          variant="outlined"
-          size="small"
+          variant='outlined'
+          size='small'
           sx={{
             mb: 1,
           }}
         />
         <Button
-          variant="contained"
-          color="secondary"
-          size="large"
+          variant='contained'
+          color='secondary'
+          size='large'
           sx={{
             width: '100%',
             display: 'block',
