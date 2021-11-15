@@ -10,8 +10,6 @@ import {
 import { Link } from 'react-router-dom';
 
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 import CustomCheckbox from '../../components/forms/custom-elements/CustomCheckbox';
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
@@ -25,8 +23,8 @@ import { withUserConsumer } from '../../context/user';
 import useForm from '../../components/hooks/useForm';
 import validate from '../../utility/LoginFormValidation';
 
-export default function Login() {
-  const { values, errors, handleChange } = useForm(true, validate);
+function Login() {
+  const { values, errors, handleChange, handleSubmit } = useForm(validate);
 
   return (
     <PageContainer title='Login' description='this is Login page'>
@@ -134,8 +132,11 @@ export default function Login() {
                     fullWidth
                     value={values.email || ''}
                     onChange={handleChange}
-                    error={errors.email}
-                    helperText={errors.email}
+                    {...(errors.email &&
+                      errors.email !== '' && {
+                        error: true,
+                        helperText: errors.email,
+                      })}
                   />
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
@@ -144,8 +145,11 @@ export default function Login() {
                     variant='outlined'
                     value={values.password || ''}
                     onChange={handleChange}
-                    error={errors.password}
-                    helperText={errors.password}
+                    {...(errors.password &&
+                      errors.password !== '' && {
+                        error: true,
+                        helperText: errors.password,
+                      })}
                     fullWidth
                     sx={{
                       mb: 3,
@@ -196,6 +200,7 @@ export default function Login() {
                     variant='contained'
                     size='large'
                     fullWidth
+                    onClick={handleSubmit}
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -225,12 +230,7 @@ export default function Login() {
                       mb: '20px',
                       '&::before': {
                         content: '""',
-                        background: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark'
-                              ? '#42464d'
-                              : '#ecf0f2'
-                          }`,
+                        background: '#ecf0f2',
                         height: '1px',
                         width: '100%',
                         position: 'absolute',
@@ -247,10 +247,7 @@ export default function Login() {
                       sx={{
                         position: 'relative',
                         padding: '0 12px',
-                        background: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark' ? '#282c34' : '#fff'
-                          }`,
+                        background: '#fff',
                       }}
                     >
                       or sign in with
@@ -266,24 +263,14 @@ export default function Login() {
                       justifycontent='center'
                       sx={{
                         width: '100%',
-                        borderColor: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark'
-                              ? '#42464d'
-                              : '#dde3e8'
-                          }`,
+                        borderColor: '#dde3e8',
                         borderWidth: '2px',
                         textAlign: 'center',
                         mt: 2,
                         pt: '10px',
                         pb: '10px',
                         '&:hover': {
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
+                          borderColor: '#dde3e8',
                           borderWidth: '2px',
                         },
                       }}
@@ -320,3 +307,5 @@ export default function Login() {
     </PageContainer>
   );
 }
+
+export default Login;

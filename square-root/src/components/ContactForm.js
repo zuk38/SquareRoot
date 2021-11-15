@@ -1,4 +1,10 @@
-import React, { useState } from 'react';
+import React from 'react';
+
+export default function ContactForm() {
+  return <div>alala</div>;
+} /*}
+
+/*import React, { useState } from 'react';
 import { API } from 'aws-amplify';
 
 import useForm from './hooks/useForm';
@@ -57,7 +63,7 @@ export default function ContactForm(props) {
     <>
       {/*isSending ? (
         <Loading />
-      ) : (*/}
+      ) : (
       <>
         {sent && (
           <Alert
@@ -269,7 +275,7 @@ export default function ContactForm(props) {
           )}
         </form>
       </>
-      {/*)}{" "}*/}
+      )}{" "}
     </>
   );
-}
+}*/

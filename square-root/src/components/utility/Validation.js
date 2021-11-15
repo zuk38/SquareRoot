@@ -5,11 +5,11 @@ const CODELENGTH = 6;
 const ZIPLENGTH = 4;
 
 function hasUpperCase(str) {
-  return str.toLowerCase() != str;
+  return str.toLowerCase() !== str;
 }
 
 function hasLowerCase(str) {
-  return str.toUpperCase() != str;
+  return str.toUpperCase() !== str;
 }
 
 function hasNumber(str) {
@@ -72,7 +72,7 @@ function checkPhone(values, errors) {
 
 function checkCode(values, errors) {
   if (!values.code) errors.code = 'Verification code is required';
-  else if (!isNumeric(values.code) || values.code.length != CODELENGTH)
+  else if (!isNumeric(values.code) || values.code.length !== CODELENGTH)
     errors.code = 'Incorrect verification code';
 }
 
@@ -86,7 +86,7 @@ function checkCognito(values, errors) {
 
 function checkZip(values, errors) {
   if (!values.zip) errors.zip = 'Zip code is required';
-  else if (!isNumeric(values.zip) || values.zip.length != ZIPLENGTH)
+  else if (!isNumeric(values.zip) || values.zip.length !== ZIPLENGTH)
     errors.zip = 'Invalid zip code';
 }
 
