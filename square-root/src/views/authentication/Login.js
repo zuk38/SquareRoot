@@ -21,10 +21,7 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-import { withUserConsumer } from '../../context/user';
-
-function Login(props) {
-  const { setAuthStatus } = props.context;
+export default function Login() {
   return (
     <PageContainer title='Login' description='this is Login page'>
       <Grid
@@ -181,7 +178,6 @@ function Login(props) {
                     variant='contained'
                     size='large'
                     fullWidth
-                    onClick={() => setAuthStatus(true)}
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -417,5 +413,3 @@ function Login(props) {
     </PageContainer>
   );
 }
-
-export default withUserConsumer(Login);

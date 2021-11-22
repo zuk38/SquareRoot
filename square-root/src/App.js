@@ -9,6 +9,8 @@ import Navbar from './components/navbar/Navbar';
 import { withUserConsumer } from './context/user';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUser } from './redux/ducks/userReducer';
 
 /*}
 
@@ -48,17 +50,25 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
 
 const App = (props) => {
+  //const dispatch = useDispatch();
   const location = useLocation();
 
-  const { isAuthenticated, isAuthenticating, user, logout } = props.context;
-
+  /*const { isAuthenticated, isAuthenticating, user, logout } = props.context;
+   */
   const authProps = {
-    isAuthenticated: isAuthenticated,
-    user: user,
-    logout: logout,
+    isAuthenticated: false,
+    user: null,
+    //logout: logout,
   };
 
-  const routing = useRoutes(Router(isAuthenticated));
+  const routing = useRoutes(Router(false));
+
+  /*React.useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
+  const state = useSelector((state) => state.user.user);
+  console.log(state);*/
 
   return (
     <ThemeProvider theme={theme}>
@@ -74,10 +84,9 @@ const App = (props) => {
   );
 };
 
-export default withUserConsumer(App);
+export default App;
 
-{
-  /** ----- landing page ---- 
+/** ----- landing page ---- 
 function App(props) {
   let location = useLocation();
 
@@ -208,4 +217,3 @@ function App(props) {
 export default withUserConsumer(App);
 
 */
-}
