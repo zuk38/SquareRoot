@@ -6,11 +6,9 @@ import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.css';
 import { useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
-import { withUserConsumer } from './context/user';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
-import { useDispatch, useSelector } from 'react-redux';
-import { fetchUser } from './redux/ducks/userReducer';
+import { connect } from 'react-redux';
 
 /*}
 
@@ -50,33 +48,15 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
 
 const App = (props) => {
-  //const dispatch = useDispatch();
   const location = useLocation();
 
-  /*const { isAuthenticated, isAuthenticating, user, logout } = props.context;
-   */
-  const authProps = {
-    isAuthenticated: false,
-    user: null,
-    //logout: logout,
-  };
-
-  const routing = useRoutes(Router(false));
-
-  /*React.useEffect(() => {
-    dispatch(fetchUser());
-  }, [dispatch]);
-
-  const state = useSelector((state) => state.user.user);
-  console.log(state);*/
+  const routing = useRoutes(Router(props.isLoggedIn));
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {location.pathname.indexOf('/auth') <= -1 &&
-        location.pathname.indexOf('/dashboard') <= -1 && (
-          <Navbar {...props} auth={authProps} />
-        )}
+        location.pathname.indexOf('/dashboard') <= -1 && <Navbar {...props} />}
       {routing}
       {location.pathname.indexOf('/auth') <= -1 &&
         location.pathname !== '/forgotpassword' && <FooterContainer />}
@@ -84,7 +64,14 @@ const App = (props) => {
   );
 };
 
-export default App;
+const mapStateToProps = ({ user }) => {
+  return {
+    user: user.user,
+    isLoggedIn: user.isLoggedIn,
+  };
+};
+
+export default connect(mapStateToProps)(App);
 
 /** ----- landing page ---- 
 function App(props) {

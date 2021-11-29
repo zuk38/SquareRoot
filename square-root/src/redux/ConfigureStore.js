@@ -12,9 +12,7 @@ const reducer = combineReducers({
 //listen to any dispatches for redux
 const sagaMiddleware = createSagaMiddleware();
 
-const middleware = [sagaMiddleware];
-
-const store = createStore(reducer, {}, applyMiddleware(...middleware));
+const store = createStore(reducer, applyMiddleware(sagaMiddleware));
 
 //watcher saga listens to any actions and runs them
 sagaMiddleware.run(watcherSaga);

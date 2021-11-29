@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
 import logo from '../../images/logos/logo--dark.png';
-import { Link, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { NavbarData } from './NavbarData';
 import useWindowDimensions from '../hooks/useWindowDimensions';
 import Dropdown from './Dropdown';
@@ -14,7 +13,7 @@ import LanguageSelect from './LanguageSelect';
 import { FaAngleDown, FaUser } from 'react-icons/fa';
 import { NavButton } from './NavButton';
 
-export default function Navbar(props) {
+function Navbar(props) {
   let navigate = useNavigate();
   const { t } = useTranslation();
   const dropdownRef = useRef(null);
@@ -26,6 +25,8 @@ export default function Navbar(props) {
     dropdownGreenspaces: false,
     dropdownContact: false,
   });
+
+  console.log(props);
 
   let width = useWindowDimensions();
 
@@ -172,7 +173,7 @@ export default function Navbar(props) {
           {/*language */}
           <LanguageSelect />
           {/* user */}
-          {!props.auth.isAuthenticated ? (
+          {!props.isLoggedIn ? (
             <NavButton
               onClick={() => closeMobileMenu('/auth/login')}
               endIcon={<FaUser />}
@@ -185,7 +186,7 @@ export default function Navbar(props) {
                 onClick={() => setDropdown(!dropdown)}
                 endIcon={<FaAngleDown />}
               >
-                {props.auth.user}
+                {props.user}
               </NavButton>
               <Dropdown
                 {...props}
@@ -204,3 +205,5 @@ export default function Navbar(props) {
     </>
   );
 }
+
+export default Navbar;

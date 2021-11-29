@@ -21,7 +21,32 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-export default function Login() {
+import Alert from '../../components/Alert';
+import { connect } from 'react-redux';
+import { loginUser } from '../../redux/ducks/userReducer';
+
+function Login(props) {
+  const [data, setData] = React.useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.id]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.login(data);
+    setData({
+      email: '',
+      password: '',
+    });
+  };
+
   return (
     <PageContainer title='Login' description='this is Login page'>
       <Grid
@@ -87,6 +112,7 @@ export default function Login() {
                   p: 4,
                 }}
               >
+                <Alert />
                 <Typography fontWeight='700' variant='h2'>
                   Welcome to SquareRoot
                 </Typography>
@@ -122,13 +148,21 @@ export default function Login() {
                   <CustomFormLabel htmlFor='email'>
                     Email Address
                   </CustomFormLabel>
-                  <CustomTextField id='email' variant='outlined' fullWidth />
+                  <CustomTextField
+                    id='email'
+                    variant='outlined'
+                    fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.email}
+                  />
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
                     id='password'
                     type='password'
                     variant='outlined'
                     fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.password}
                     sx={{
                       mb: 3,
                     }}
@@ -178,6 +212,7 @@ export default function Login() {
                     variant='contained'
                     size='large'
                     fullWidth
+                    onClick={(e) => handleSubmit(e)}
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -413,3 +448,11 @@ export default function Login() {
     </PageContainer>
   );
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  login: (values) => {
+    dispatch(loginUser(values));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Login);
