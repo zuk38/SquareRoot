@@ -1,18 +1,12 @@
 import React from 'react';
-import Snackbar from '@mui/material/Snackbar';
-import Slide from '@mui/material/Slide';
 import { connect } from 'react-redux';
 import Alert from '@mui/material/Alert';
 import { resetAlertAction } from '../redux/ducks/alertReducer';
 
-function TransitionDown(props) {
-  return <Slide {...props} direction='down' />;
-}
-
 const GlobalAlert = (props) => {
   const { text, color } = props.alert;
 
-  setTimeout(() => props.dispatch(resetAlertAction()), 3000);
+  setTimeout(() => props.dispatch(resetAlertAction()), 5000);
 
   if (text === '') {
     return <></>;
