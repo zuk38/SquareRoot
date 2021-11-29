@@ -1,20 +1,15 @@
 import React from 'react';
 import { ReactComponent as LogoutIcon } from '../../icons/logout.svg';
-import { ReactComponent as HelpICon } from '../../icons/question.svg';
 import { ReactComponent as AccountIcon } from '../../icons/user.svg';
 import { ReactComponent as ProjectIcon } from '../../icons/project.svg';
 import { useTranslation } from 'react-i18next';
+import { logout } from '../../redux/ducks/userReducer';
 
 function Dropdown(props) {
+  console.log(props);
   const { t } = useTranslation();
-  const handleLogOut = async (event) => {
-    event.preventDefault();
-    try {
-      await props.auth.logout();
-      props.history.push('/');
-    } catch (error) {
-      console.log(error.message);
-    }
+  const handleLogOut = () => {
+    props.dispatch(logout());
   };
 
   function DropdownItem({ leftIcon, children, onItemClick, path }) {

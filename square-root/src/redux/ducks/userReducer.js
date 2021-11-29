@@ -1,7 +1,7 @@
 //actions
 export const LOGIN = 'loginUser';
 const USER_LOGGED_IN = 'userLoggedIn';
-const LOGOUT = 'logout';
+export const LOGOUT = 'logout';
 const USER_LOGGED_OUT = 'userLoggedOut';
 /*const SIGN_UP = 'signup';
 const FETCH_USER = 'fetchUser';
@@ -33,7 +33,7 @@ export const userLoggedOut = () => ({
 
 const initialState = {
   user: null,
-  isLoggedIn: false,
+  isLoggedIn: true,
   error: {},
 };
 

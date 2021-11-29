@@ -1,7 +1,13 @@
 import { call, put, all, takeEvery } from 'redux-saga/effects';
-import { LOGIN, userLoggedIn } from '../ducks/userReducer';
+import {
+  LOGIN,
+  LOGOUT,
+  userLoggedIn,
+  userLoggedOut,
+} from '../ducks/userReducer';
 import { setAlertAction } from '../ducks/alertReducer';
 import { Auth } from 'aws-amplify';
+import history from '../../history';
 
 export function* login({ values }) {
   try {
@@ -30,6 +36,16 @@ export function* login({ values }) {
   }
 }
 
+export function* logout() {
+  try {
+    yield call([Auth, 'signOut']);
+    yield put(userLoggedOut());
+    history.push('/');
+  } catch (error) {
+    console.log(error.message);
+  }
+}
+
 function* signUp() {
   try {
     yield put(
@@ -52,6 +68,10 @@ function* watchLoginUser() {
   yield takeEvery(LOGIN, login);
 }
 
+function* watchLogoutUser() {
+  yield takeEvery(LOGOUT, logout);
+}
+
 export function* userSaga() {
-  yield all([watchLoginUser()]);
+  yield all([watchLoginUser(), watchLogoutUser()]);
 }

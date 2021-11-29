@@ -4,7 +4,8 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './redux/ConfigureStore';
 import reportWebVitals from './reportWebVitals';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { Router } from 'react-router-dom';
+import history from './history';
 import './components/utility/i18n';
 import 'flag-icon-css/css/flag-icon.min.css';
 
@@ -14,12 +15,10 @@ import config from './aws-exports';
 Amplify.configure(config);
 require('dotenv').config();
 
-console.log(store.getState());
-
 ReactDOM.render(
   <Provider store={store}>
     <Suspense fallback={<Spinner />}>
-      <Router>
+      <Router history={history}>
         <App />
       </Router>
     </Suspense>
