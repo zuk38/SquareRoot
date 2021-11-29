@@ -4,8 +4,7 @@ import App from './App';
 import { Provider } from 'react-redux';
 import store from './redux/ConfigureStore';
 import reportWebVitals from './reportWebVitals';
-import { Router } from 'react-router-dom';
-import history from './history';
+import { BrowserRouter as Router } from 'react-router-dom';
 import './components/utility/i18n';
 import 'flag-icon-css/css/flag-icon.min.css';
 
@@ -18,7 +17,7 @@ require('dotenv').config();
 ReactDOM.render(
   <Provider store={store}>
     <Suspense fallback={<Spinner />}>
-      <Router history={history}>
+      <Router>
         <App />
       </Router>
     </Suspense>

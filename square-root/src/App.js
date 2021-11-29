@@ -1,14 +1,14 @@
 import React from 'react';
-import { useRoutes } from 'react-router-dom';
+import { useRoutes, useLocation } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import Router from './routes/Router';
 import 'react-perfect-scrollbar/dist/css/styles.css';
 import './App.css';
-import { useLocation } from 'react-router-dom';
 import Navbar from './components/navbar/Navbar';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
-import { connect } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
+import { fetchUser } from './redux/ducks/userReducer';
 
 /*}
 
@@ -49,8 +49,17 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 
 const App = (props) => {
   const location = useLocation();
+  const dispatch = useDispatch();
 
-  const routing = useRoutes(Router(props.isLoggedIn));
+  React.useEffect(() => {
+    dispatch(fetchUser());
+  }, [dispatch]);
+
+  const user = useSelector((state) => state.user.user);
+  console.log(user);
+  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
+  console.log(isLoggedIn);
+  const routing = useRoutes(Router(isLoggedIn));
 
   return (
     <ThemeProvider theme={theme}>
@@ -64,14 +73,7 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = ({ user }) => {
-  return {
-    user: user.user,
-    isLoggedIn: user.isLoggedIn,
-  };
-};
-
-export default connect(mapStateToProps)(App);
+export default App;
 
 /** ----- landing page ---- 
 function App(props) {

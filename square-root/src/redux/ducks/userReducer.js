@@ -3,9 +3,9 @@ export const LOGIN = 'loginUser';
 const USER_LOGGED_IN = 'userLoggedIn';
 export const LOGOUT = 'logout';
 const USER_LOGGED_OUT = 'userLoggedOut';
-/*const SIGN_UP = 'signup';
-const FETCH_USER = 'fetchUser';
-const SET_USER = 'setUser';*/
+export const SIGN_UP = 'signupUser';
+export const FETCH_USER = 'fetchUser';
+/*const SET_USER = 'setUser';*/
 
 /*export const AUTH_INIT = 'AUTH_INIT'
 export const AUTH_SIGN_IN = 'AUTH_SIGN_IN'
@@ -31,18 +31,35 @@ export const userLoggedOut = () => ({
   type: USER_LOGGED_OUT,
 });
 
+export const fetchUser = () => ({
+  type: FETCH_USER,
+});
+
+export const signupUser = (values) => ({
+  type: SIGN_UP,
+  values,
+});
+
 const initialState = {
   user: null,
-  isLoggedIn: true,
+  email: null,
+  phone_number: null,
+  role: null,
+  sub: null,
+  isLoggedIn: false,
   error: {},
 };
 
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGGED_IN:
-      return action.data;
+      const { data } = action;
+      return { ...initialState, data };
     case USER_LOGGED_OUT:
       return initialState;
+    case SIGN_UP:
+      const { values } = action;
+      return { ...initialState, values };
     default:
       return state;
   }

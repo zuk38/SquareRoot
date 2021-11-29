@@ -1,7 +1,9 @@
-import { call, put, all, takeEvery } from 'redux-saga/effects';
+import { call, put, all, takeEvery, takeLatest } from 'redux-saga/effects';
 import {
+  FETCH_USER,
   LOGIN,
   LOGOUT,
+  SIGN_UP,
   userLoggedIn,
   userLoggedOut,
 } from '../ducks/userReducer';
@@ -15,13 +17,8 @@ export function* login({ values }) {
       username: values.email,
       password: values.password,
     });
-    yield put(userLoggedIn({ user: user, isLoggedIn: true }));
-    yield put(
-      setAlertAction({
-        text: 'User logged in!',
-        color: 'success',
-      })
-    );
+    console.log(user);
+    yield put(userLoggedIn({ user: user, isLoggedIn: true, error: {} }));
   } catch (error) {
     let err = null;
     !error.message ? (err = { message: error }) : (err = error);
@@ -46,8 +43,18 @@ export function* logout() {
   }
 }
 
-function* signUp() {
+function* signUp({ values }) {
   try {
+    const user = yield call([Auth, 'signUp'], {
+      username: values.email,
+      password: values.password,
+      attributes: {
+        email: values.email,
+        name: values.name,
+        phone_number: values.phone,
+        'custom:role': values.role,
+      },
+    });
     yield put(
       setAlertAction({
         text: 'User Signed Up!',
@@ -55,12 +62,27 @@ function* signUp() {
       })
     );
   } catch (e) {
+    console.log('error signing up:', e);
+    let err = null;
+    !e.message ? (err = { message: e }) : (err = e);
     yield put(
       setAlertAction({
-        text: 'Error signing up',
-        color: 'danger',
+        text: err.message,
+        color: 'error',
       })
     );
+  }
+}
+
+export function* fetchUser() {
+  try {
+    const session = yield call([Auth, 'currentSession']);
+    console.log(session);
+    const user = yield call([Auth, 'currentAuthenticatedUser']);
+    yield put(userLoggedIn({ user: user, isLoggedIn: true, error: {} }));
+  } catch (error) {
+    console.log(error);
+    yield put(userLoggedIn({ user: null, isLoggedIn: false, error }));
   }
 }
 
@@ -68,10 +90,23 @@ function* watchLoginUser() {
   yield takeEvery(LOGIN, login);
 }
 
+function* watchSignupUser() {
+  yield takeEvery(SIGN_UP, signUp);
+}
+
 function* watchLogoutUser() {
   yield takeEvery(LOGOUT, logout);
 }
 
+function* watchFetchUser() {
+  yield takeLatest(FETCH_USER, fetchUser);
+}
+
 export function* userSaga() {
-  yield all([watchLoginUser(), watchLogoutUser()]);
+  yield all([
+    watchLoginUser(),
+    watchLogoutUser(),
+    watchFetchUser(),
+    watchSignupUser(),
+  ]);
 }

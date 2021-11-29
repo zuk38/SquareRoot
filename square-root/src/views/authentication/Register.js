@@ -2,10 +2,6 @@ import React from 'react';
 import { Grid, Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
-import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
-
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
@@ -14,149 +10,210 @@ import SignUpDropdown from '../../components/forms/fb-elements/SignUpDropdown';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-const Register = () => (
-  <PageContainer title='Register' description='this is Register page'>
-    <Grid
-      container
-      spacing={0}
-      sx={{ height: '100vh', justifyContent: 'center' }}
-    >
+import { connect } from 'react-redux';
+import { signupUser } from '../../redux/ducks/userReducer';
+import Alert from '../../components/Alert';
+
+function Register(props) {
+  const [data, setData] = React.useState({
+    email: '',
+    password: '',
+    confirmPassword: '',
+    name: '',
+    phone: '',
+    role: 'Real Estate Developer',
+  });
+
+  const handleChange = (event) => {
+    setData({
+      ...data,
+      [event.target.id]: event.target.value,
+    });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    props.signUp(data);
+    setData({
+      email: '',
+      password: '',
+      confirmPassword: '',
+      name: '',
+      phone: '',
+    });
+  };
+
+  return (
+    <PageContainer title='Register' description='this is Register page'>
       <Grid
-        item
-        xs={12}
-        sm={12}
-        lg={6}
-        sx={{
-          background: (theme) =>
-            `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
-        }}
+        container
+        spacing={0}
+        sx={{ height: '100vh', justifyContent: 'center' }}
       >
-        <Box
+        <Grid
+          item
+          xs={12}
+          sm={12}
+          lg={6}
           sx={{
-            position: 'relative',
+            background: (theme) =>
+              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
           }}
         >
           <Box
-            display='flex'
-            alignItems='center'
-            justifyContent='center'
             sx={{
-              position: {
-                xs: 'relative',
-                lg: 'absolute',
-              },
-              height: { xs: 'auto', lg: '100vh' },
-              right: { xs: 'auto', lg: '-50px' },
-              margin: '0 auto',
+              position: 'relative',
             }}
           >
-            <img
-              src={img1}
-              alt='bg'
-              style={{
-                width: '100%',
-                maxWidth: '812px',
-              }}
-            />
-          </Box>
-
-          <Box
-            display='flex'
-            alignItems='center'
-            sx={{
-              p: 4,
-              position: 'absolute',
-              top: '0',
-            }}
-          >
-            <LogoIcon />
-          </Box>
-        </Box>
-      </Grid>
-      <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
-        <Grid container spacing={0} display='flex' justifyContent='center'>
-          <Grid item xs={12} lg={9} xl={6}>
             <Box
+              display='flex'
+              alignItems='center'
+              justifyContent='center'
               sx={{
-                p: 4,
+                position: {
+                  xs: 'relative',
+                  lg: 'absolute',
+                },
+                height: { xs: 'auto', lg: '100vh' },
+                right: { xs: 'auto', lg: '-50px' },
+                margin: '0 auto',
               }}
             >
-              <Typography fontWeight='700' variant='h2'>
-                Welcome to SquareRoot
-              </Typography>
-              <Box display='flex' alignItems='center'>
-                <Typography
-                  color='textSecondary'
-                  variant='h6'
-                  fontWeight='400'
-                  sx={{
-                    mr: 1,
-                  }}
-                >
-                  Already have an Account?
-                </Typography>
-                <Typography
-                  component={Link}
-                  to='/auth/login'
-                  fontWeight='500'
-                  sx={{
-                    display: 'block',
-                    textDecoration: 'none',
-                    color: 'primary.main',
-                  }}
-                >
-                  Sign In
-                </Typography>
-              </Box>
+              <img
+                src={img1}
+                alt='bg'
+                style={{
+                  width: '100%',
+                  maxWidth: '812px',
+                }}
+              />
+            </Box>
+
+            <Box
+              display='flex'
+              alignItems='center'
+              sx={{
+                p: 4,
+                position: 'absolute',
+                top: '0',
+              }}
+            >
+              <LogoIcon />
+            </Box>
+          </Box>
+        </Grid>
+        <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
+          <Grid container spacing={0} display='flex' justifyContent='center'>
+            <Grid item xs={12} lg={9} xl={6}>
               <Box
                 sx={{
-                  mt: 5,
+                  p: 4,
                 }}
               >
-                <CustomFormLabel htmlFor='name'>Name</CustomFormLabel>
-                <CustomTextField id='name' variant='outlined' fullWidth />
-                <CustomFormLabel htmlFor='email'>Email Address</CustomFormLabel>
-                <CustomTextField id='email' variant='outlined' fullWidth />
-                <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
-                <CustomTextField id='password' variant='outlined' fullWidth />
-                {/** --- verify passwords ---- */}
-                <CustomFormLabel htmlFor='password'>
-                  Repeat Password
-                </CustomFormLabel>
-                <CustomTextField id='password' variant='outlined' fullWidth />
-
-                <SignUpDropdown />
-
-                <Button
-                  color='secondary'
-                  variant='contained'
-                  size='large'
-                  fullWidth
-                  component={Link}
-                  to='/'
+                <Alert />
+                <Typography fontWeight='700' variant='h2'>
+                  Welcome to SquareRoot
+                </Typography>
+                <Box display='flex' alignItems='center'>
+                  <Typography
+                    color='textSecondary'
+                    variant='h6'
+                    fontWeight='400'
+                    sx={{
+                      mr: 1,
+                    }}
+                  >
+                    Already have an Account?
+                  </Typography>
+                  <Typography
+                    component={Link}
+                    to='/auth/login'
+                    fontWeight='500'
+                    sx={{
+                      display: 'block',
+                      textDecoration: 'none',
+                      color: 'primary.main',
+                    }}
+                  >
+                    Sign In
+                  </Typography>
+                </Box>
+                <Box
                   sx={{
-                    pt: '10px',
-                    pb: '10px',
+                    mt: 5,
                   }}
                 >
-                  Sign Up
-                </Button>
-                <Button
-                  color='secondary'
-                  size='large'
-                  fullWidth
-                  component={Link}
-                  to='/'
-                  sx={{
-                    pt: '10px',
-                    pb: '10px',
-                    mt: 2,
-                  }}
-                >
-                  Back to Home
-                </Button>
+                  <CustomFormLabel htmlFor='name'>Name</CustomFormLabel>
+                  <CustomTextField
+                    id='name'
+                    variant='outlined'
+                    fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.name}
+                  />
+                  <CustomFormLabel htmlFor='email'>
+                    Email Address
+                  </CustomFormLabel>
+                  <CustomTextField
+                    id='email'
+                    variant='outlined'
+                    fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.email}
+                  />
+                  <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
+                  <CustomTextField
+                    id='password'
+                    variant='outlined'
+                    fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.password}
+                  />
+                  {/** --- verify passwords ---- */}
+                  <CustomFormLabel htmlFor='confirmPassword'>
+                    Repeat Password
+                  </CustomFormLabel>
+                  <CustomTextField
+                    id='confirmPassword'
+                    variant='outlined'
+                    fullWidth
+                    onChange={(e) => handleChange(e)}
+                    value={data.confirmPassword}
+                  />
 
-                {/** ----- or sign in with ---- not needed ---
+                  <SignUpDropdown />
+
+                  <Button
+                    color='secondary'
+                    variant='contained'
+                    size='large'
+                    fullWidth
+                    component={Link}
+                    to='/'
+                    sx={{
+                      pt: '10px',
+                      pb: '10px',
+                    }}
+                    onClick={(e) => handleSubmit(e)}
+                  >
+                    Sign Up
+                  </Button>
+                  <Button
+                    color='secondary'
+                    size='large'
+                    fullWidth
+                    component={Link}
+                    to='/'
+                    sx={{
+                      pt: '10px',
+                      pb: '10px',
+                      mt: 2,
+                    }}
+                  >
+                    Back to Home
+                  </Button>
+
+                  {/** ----- or sign in with ---- not needed ---
                 <Box
                   sx={{
                     position: 'relative',
@@ -329,13 +386,20 @@ const Register = () => (
                   </Grid>
                 </Grid>
                 */}
+                </Box>
               </Box>
-            </Box>
+            </Grid>
           </Grid>
         </Grid>
       </Grid>
-    </Grid>
-  </PageContainer>
-);
+    </PageContainer>
+  );
+}
 
-export default Register;
+const mapDispatchToProps = (dispatch) => ({
+  signUp: (data) => {
+    dispatch(signupUser(data));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Register);
