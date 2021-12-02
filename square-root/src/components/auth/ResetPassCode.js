@@ -3,9 +3,23 @@ import { Box } from '@mui/system';
 import React from 'react';
 import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
 import CustomTextField from '../forms/custom-elements/CustomTextField';
-import { Link } from 'react-router-dom';
+import useForm from '../hooks/useForm';
+import validate from '../../utility/ForgotPassVerificationValidation';
+import { useNavigate } from 'react-router-dom';
 
 export default function ResetPassEmail() {
+  const navigate = useNavigate();
+  const handleReset = () => {
+    //TODO: set a global alert with the reducer
+    navigate('/auth/login');
+  };
+
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    validate,
+    handleReset,
+    {}
+  );
+
   return (
     <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
       <Grid container spacing={0} display='flex' justifyContent='center'>
@@ -36,19 +50,51 @@ export default function ResetPassEmail() {
                 mt: 4,
               }}
             >
-              <CustomFormLabel htmlFor='reset-code'>
+              <CustomFormLabel htmlFor='code'>
                 Verification Code
               </CustomFormLabel>
-              <CustomTextField id='reset-email' variant='outlined' fullWidth />
-              <CustomFormLabel htmlFor='reset-email'>E-mail</CustomFormLabel>
-              <CustomTextField id='reset-code' variant='outlined' fullWidth />
-              <CustomFormLabel htmlFor='reset-password'>
-                Password
-              </CustomFormLabel>
               <CustomTextField
-                id='reset-password'
+                id='code'
                 variant='outlined'
                 fullWidth
+                value={values.code || ''}
+                onChange={handleChange}
+                {...(errors.code &&
+                  errors.code !== '' && {
+                    error: true,
+                    helperText: errors.code,
+                  })}
+              />
+
+              <CustomFormLabel htmlFor='email'>E-mail</CustomFormLabel>
+              <CustomTextField
+                id='email'
+                variant='outlined'
+                fullWidth
+                value={values.email || ''}
+                onChange={handleChange}
+                {...(errors.email &&
+                  errors.email !== '' && {
+                    error: true,
+                    helperText: errors.email,
+                  })}
+              />
+
+              <CustomFormLabel htmlFor='password'>
+                Your New Password
+              </CustomFormLabel>
+              <CustomTextField
+                id='password'
+                variant='outlined'
+                type='password'
+                fullWidth
+                value={values.password || ''}
+                onChange={handleChange}
+                {...(errors.password &&
+                  errors.password !== '' && {
+                    error: true,
+                    helperText: errors.password,
+                  })}
               />
 
               <Button
@@ -56,8 +102,7 @@ export default function ResetPassEmail() {
                 variant='contained'
                 size='large'
                 fullWidth
-                component={Link}
-                to='/'
+                onClick={handleSubmit}
                 sx={{
                   pt: '10px',
                   pb: '10px',

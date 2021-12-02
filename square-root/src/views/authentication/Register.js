@@ -1,19 +1,28 @@
 import React from 'react';
-import { Grid, Box, Typography, Button } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  FormHelperText,
+  FormControl,
+} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
-import SignUpDropdown from '../../components/forms/fb-elements/SignUpDropdown';
+import SelectDropdown from '../../components/forms/custom-elements/SelectDropdown';
 
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
+import useForm from '../../components/hooks/useForm';
+import validate from '../../utility/RegistrationFormValidation';
+
 import { connect } from 'react-redux';
 import { signupUser } from '../../redux/ducks/userReducer';
 import Alert from '../../components/Alert';
-
 function Register(props) {
   const [data, setData] = React.useState({
     email: '',
@@ -23,6 +32,15 @@ function Register(props) {
     phone: '',
     role: 'Real Estate Developer',
   });
+  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+
+  /* TODO: this will come from the API */
+  const dropdownVals = [
+    'Real Estate Developer',
+    'Landscape Architect',
+    'Plant Nursery',
+    'Other',
+  ];
 
   const handleChange = (event) => {
     setData({
@@ -56,9 +74,7 @@ function Register(props) {
           sm={12}
           lg={6}
           sx={{
-            background: (theme) =>
-              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
-          }}
+            background: '#ffffff',          }}
         >
           <Box
             sx={{
@@ -148,8 +164,13 @@ function Register(props) {
                     id='name'
                     variant='outlined'
                     fullWidth
-                    onChange={(e) => handleChange(e)}
-                    value={data.name}
+                    value={values.name || ''}
+                    onChange={handleChange}
+                    {...(errors.name &&
+                      errors.name !== '' && {
+                        error: true,
+                        helperText: errors.name,
+                      })}
                   />
                   <CustomFormLabel htmlFor='email'>
                     Email Address
@@ -158,16 +179,27 @@ function Register(props) {
                     id='email'
                     variant='outlined'
                     fullWidth
-                    onChange={(e) => handleChange(e)}
-                    value={data.email}
+                    value={values.email || ''}
+                    onChange={handleChange}
+                    {...(errors.email &&
+                      errors.email !== '' && {
+                        error: true,
+                        helperText: errors.email,
+                      })}
                   />
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
                     id='password'
+                    type='password'
                     variant='outlined'
                     fullWidth
-                    onChange={(e) => handleChange(e)}
-                    value={data.password}
+                    value={values.password || ''}
+                    onChange={handleChange}
+                    {...(errors.password &&
+                      errors.password !== '' && {
+                        error: true,
+                        helperText: errors.password,
+                      })}
                   />
                   {/** --- verify passwords ---- */}
                   <CustomFormLabel htmlFor='confirmPassword'>
@@ -175,13 +207,35 @@ function Register(props) {
                   </CustomFormLabel>
                   <CustomTextField
                     id='confirmPassword'
+                    type='password'
                     variant='outlined'
                     fullWidth
-                    onChange={(e) => handleChange(e)}
-                    value={data.confirmPassword}
+                    value={values.confirmPassword || ''}
+                    onChange={handleChange}
+                    {...(errors.confirmPassword &&
+                      errors.confirmPassword !== '' && {
+                        error: true,
+                        helperText: errors.confirmPassword,
+                      })}
                   />
-
-                  <SignUpDropdown />
+                  <FormControl
+                    {...(errors.role && { error: true })}
+                    fullWidth
+                    sx={{ mb: '50px' }}
+                  >
+                    <SelectDropdown
+                      fullwidth
+                      name='role'
+                      options={dropdownVals}
+                      label="I'm a ..."
+                      handleChange={handleChange}
+                      value={values.role || ''}
+                      size='medium'
+                    />
+                    {errors.role && (
+                      <FormHelperText fullwidth>{errors.role}</FormHelperText>
+                    )}
+                  </FormControl>
 
                   <Button
                     color='secondary'
@@ -189,12 +243,12 @@ function Register(props) {
                     size='large'
                     fullWidth
                     component={Link}
+                    onClick={handleSubmit}
                     to='/'
                     sx={{
                       pt: '10px',
                       pb: '10px',
                     }}
-                    onClick={(e) => handleSubmit(e)}
                   >
                     Sign Up
                   </Button>
@@ -212,180 +266,7 @@ function Register(props) {
                   >
                     Back to Home
                   </Button>
-
-                  {/** ----- or sign in with ---- not needed ---
-                <Box
-                  sx={{
-                    position: 'relative',
-                    textAlign: 'center',
-                    mt: '20px',
-                    mb: '20px',
-                    '&::before': {
-                      content: '""',
-                      background: (theme) =>
-                        `${theme.palette.mode === 'dark' ? '#42464d' : '#ecf0f2'}`,
-                      height: '1px',
-                      width: '100%',
-                      position: 'absolute',
-                      left: '0',
-                      top: '13px',
-                    },
-                  }}
-                >
-                  </Box>
-                  
-                  <Typography
-                    component="span"
-                    color="textSecondary"
-                    variant="h6"
-                    fontWeight="400"
-                    sx={{
-                      position: 'relative',
-                      padding: '0 12px',
-                      background: (theme) =>
-                        `${theme.palette.mode === 'dark' ? '#282c34' : '#fff'}`,
-                    }}
-                  >
-                    or sign in with
-                  </Typography>
-                
-
-                <Box>
-                  <Button
-                    variant="outlined"
-                    size="large"
-                    display="flex"
-                    alignitems="center"
-                    justifycontent="center"
-                    sx={{
-                      width: '100%',
-                      borderColor: (theme) =>
-                        `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                      borderWidth: '2px',
-                      textAlign: 'center',
-                      mt: 2,
-                      pt: '10px',
-                      pb: '10px',
-                      '&:hover': {
-                        borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                        borderWidth: '2px',
-                      },
-                    }}
-                  >
-                    <Box display="flex" alignItems="center">
-                      <GoogleIcon
-                        sx={{
-                          color: (theme) => theme.palette.error.main,
-                        }}
-                      />
-                      <Typography
-                        variant="h6"
-                        sx={{
-                          ml: 1,
-                          color: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
-                            }`,
-                        }}
-                      >
-                        Google
-                      </Typography>
-                    </Box>
-                  </Button>
                 </Box>
-
-                <Grid container spacing={2}>
-                  <Grid item xs={12} sm={6} lg={6}>
-                    <Button
-                      variant="outlined"
-                      size="large"
-                      display="flex"
-                      alignitems="center"
-                      justifycontent="center"
-                      sx={{
-                        width: '100%',
-                        borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                        borderWidth: '2px',
-                        textAlign: 'center',
-                        mt: 2,
-                        pt: '10px',
-                        pb: '10px',
-                        '&:hover': {
-                          borderColor: (theme) =>
-                            `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                          borderWidth: '2px',
-                        },
-                      }}
-                    >
-                      <Box display="flex" alignItems="center">
-                        <FacebookIcon
-                          sx={{
-                            color: (theme) => theme.palette.secondary.main,
-                          }}
-                        />
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            ml: 1,
-                            color: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
-                              }`,
-                          }}
-                        >
-                          Facebook
-                        </Typography>
-                      </Box>
-                    </Button>
-                  </Grid>
-                  <Grid item xs={12} sm={6} lg={6}>
-                    <Button
-                      variant="outlined"
-                      size="large"
-                      display="flex"
-                      alignitems="center"
-                      justifycontent="center"
-                      sx={{
-                        width: '100%',
-                        borderColor: (theme) =>
-                          `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                        borderWidth: '2px',
-                        textAlign: 'center',
-                        mt: 2,
-                        pt: '10px',
-                        pb: '10px',
-                        '&:hover': {
-                          borderColor: (theme) =>
-                            `${theme.palette.mode === 'dark' ? '#42464d' : '#dde3e8'}`,
-                          borderWidth: '2px',
-                        },
-                      }}
-                    >
-                      <Box display="flex" alignItems="center">
-                        <TwitterIcon
-                          sx={{
-                            color: (theme) => theme.palette.primary.main,
-                          }}
-                        />
-                        <Typography
-                          variant="h6"
-                          sx={{
-                            ml: 1,
-                            color: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark' ? theme.palette.grey.A200 : '#13152a'
-                              }`,
-                          }}
-                        >
-                          Twitter
-                        </Typography>
-                      </Box>
-                    </Button>
-                  </Grid>
-                </Grid>
-                */}
                 </Box>
               </Box>
             </Grid>

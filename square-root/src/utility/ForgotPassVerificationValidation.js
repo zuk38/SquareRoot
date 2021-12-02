@@ -3,7 +3,7 @@ import {
   checkPassword,
   checkCognito,
   checkCode,
-} from './Validation';
+} from '../components/utility/Validation';
 
 export default function validate(values) {
   let errors = {};
@@ -12,8 +12,8 @@ export default function validate(values) {
   checkPassword(values, errors);
   checkCode(values, errors);
 
-  if (!errors.email && !errors.password && !errors.code)
-    checkCognito(values, errors);
+  /*if (!errors.email && !errors.password && !errors.code)
+    checkCognito(values, errors);*/
 
   return errors;
 }
