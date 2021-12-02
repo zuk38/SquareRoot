@@ -13,7 +13,7 @@
     "react/no-danger": "off", // it's self explainatory that no-danger should be used sparingly
     "react/react-in-jsx-scope": "off", // next.js does not require react in most components
     "no-console": 1, // no console statements - warning
-    "prettier/prettier": "error",
+    "prettier/prettier": "warn",
     "no-plusplus": ["'error'", { "allowForLoopAfterthoughts": true }],
     "no-alert": "warn",
     "no-prototype-builtins": "off",
