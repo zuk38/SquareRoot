@@ -34,8 +34,6 @@ function validatePhone(phone) {
   return phoneRegex.test(String(phone)); // true|false
 }
 
-//--------------------------------------------------------------------------------------------
-
 function checkEmail(values, errors) {
   if (!values.email || values.email.length === 0)
     errors.email = 'E-mail adress is required';
