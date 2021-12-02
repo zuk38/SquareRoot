@@ -1,6 +1,6 @@
 import React from 'react';
 import Modal from 'react-modal';
-import Title from '../Title';
+import Title from './Title';
 import './LoginStyle.scss';
 
 export default function AuthModal(props) {

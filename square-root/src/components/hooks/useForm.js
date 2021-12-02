@@ -1,9 +1,18 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (validate, initialFormValues = {}) => {
+const useForm = (validate, callback = null, initialFormValues = {}) => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
   const [triedSubmitting, setTriedSubmitting] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && isSubmitting) {
+      if (callback) callback();
+      setTriedSubmitting(false);
+      resetForm();
+    }
+  }, [errors, isSubmitting]);
 
   useEffect(() => {
     if (triedSubmitting) setErrors(validate(values)); //update errors every time values change
@@ -17,12 +26,14 @@ const useForm = (validate, initialFormValues = {}) => {
       ...values,
       [key]: value,
     });
+    setIsSubmitting(false);
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     setTriedSubmitting(true);
     setErrors(validate(values));
+    setIsSubmitting(true);
   };
 
   const resetForm = () => {
