@@ -3,8 +3,8 @@ import {
   checkPassword,
   checkConfPassword,
   checkName,
-  checkCognito,
   checkPhone,
+  checkRole,
 } from './Validation';
 
 export default function validate(values) {
@@ -14,14 +14,7 @@ export default function validate(values) {
   checkConfPassword(values, errors);
   checkPhone(values, errors);
   checkName(values, errors);
-  if (
-    values.email &&
-    values.password &&
-    values.confirmPassword &&
-    values.phone &&
-    values.name
-  )
-    checkCognito(values, errors);
+  checkRole(values, errors);
 
   return errors;
 }

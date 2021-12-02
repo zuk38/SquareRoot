@@ -1,5 +1,12 @@
 import React from 'react';
-import { Grid, Box, Typography, Button } from '@mui/material';
+import {
+  Grid,
+  Box,
+  Typography,
+  Button,
+  FormHelperText,
+  FormControl,
+} from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
@@ -153,6 +160,7 @@ function Register() {
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
                     id='password'
+                    type='password'
                     variant='outlined'
                     fullWidth
                     value={values.password || ''}
@@ -169,6 +177,7 @@ function Register() {
                   </CustomFormLabel>
                   <CustomTextField
                     id='confirmPassword'
+                    type='password'
                     variant='outlined'
                     fullWidth
                     value={values.confirmPassword || ''}
@@ -179,13 +188,24 @@ function Register() {
                         helperText: errors.confirmPassword,
                       })}
                   />
-
-                  <SelectDropdown
-                    options={dropdownVals}
-                    label="I'm a ..."
-                    height='50px'
-                    mb='50px'
-                  />
+                  <FormControl
+                    {...(errors.role && { error: true })}
+                    fullWidth
+                    sx={{ mb: '50px' }}
+                  >
+                    <SelectDropdown
+                      fullwidth
+                      name='role'
+                      options={dropdownVals}
+                      label="I'm a ..."
+                      handleChange={handleChange}
+                      value={values.role || ''}
+                      size='medium'
+                    />
+                    {errors.role && (
+                      <FormHelperText fullwidth>{errors.role}</FormHelperText>
+                    )}
+                  </FormControl>
 
                   <Button
                     color='secondary'

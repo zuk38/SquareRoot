@@ -10,11 +10,12 @@ const useForm = (validate, initialFormValues = {}) => {
   }, [values, triedSubmitting, validate]);
 
   const handleChange = (e) => {
-    const { id, value } = e.target;
-    console.log(e.target);
+    const { id, value, name } = e.target;
+    //id undefined for dropdown
+    let key = id === undefined ? name : id;
     setValues({
       ...values,
-      [id]: value,
+      [key]: value,
     });
   };
 

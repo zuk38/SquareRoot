@@ -44,7 +44,6 @@ function checkEmail(values, errors) {
 }
 
 function checkPassword(values, errors) {
-  if (!('password' in values)) return;
   if (!values.password || values.password.length === 0)
     errors.password = 'Password is required';
   else if (values.password.length < PASSLENGTH)
@@ -73,8 +72,10 @@ function checkPhone(values, errors) {
   else if (!validatePhone(values.phone)) errors.phone = 'Invalid phone number';
 }
 
-function checkDropdown(values, errors) {
-  if (!values.role) errors.phone = 'Role is required';
+function checkRole(values, errors) {
+  console.log(values.role);
+  if (values.role === undefined || (values.role && values.role.length === 0))
+    errors.role = 'Role is required';
 }
 
 function checkCode(values, errors) {
@@ -116,7 +117,7 @@ export {
   checkPassword,
   checkConfPassword,
   checkName,
-  checkDropdown,
+  checkRole,
   checkCognito,
   checkCode,
   checkPhone,

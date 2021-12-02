@@ -49,14 +49,12 @@ const SelectDropdown = (props) => {
         {props.label}
       </CustomFormLabel>
       <CustomSelect
-        labelId='demo-simple-select-label'
-        id='demo-simple-select'
+        name={props.name}
         value={props.value}
-        onChange={props.handleChange}
+        onChange={(e) => props.handleChange(e)}
         fullWidth
-        size='small'
+        size={props.size}
         variant={props.variant}
-        sx={{ mb: props.mb, mt: props.mt, height: props.height }}
       >
         {props.options.map((option) => (
           <MenuItem key={option} value={option}>
