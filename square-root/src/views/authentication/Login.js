@@ -19,34 +19,23 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
+import useForm from '../../components/hooks/useForm';
+import validate from '../../utility/RegistrationFormValidation';
+
 import Alert from '../../components/Alert';
-import validate from '../../utility/LoginFormValidation';
 import { connect } from 'react-redux';
 import { loginUser } from '../../redux/ducks/userReducer';
 
+function Login(props) {
+  const callback = () => {
+    props.login(values);
+  };
+
   const { setAuthStatus } = props.context;
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
-
-  const [data, setData] = React.useState({
-    email: '',
-    password: '',
-  });
-
-  const handleChange = (event) => {
-    setData({
-      ...data,
-      [event.target.id]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.login(data);
-    setData({
-      email: '',
-      password: '',
-    });
-  };
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    validate,
+    callback
+  );
 
   return (
     <PageContainer title='Login' description='this is Login page'>
@@ -173,8 +162,6 @@ import { loginUser } from '../../redux/ducks/userReducer';
                         helperText: errors.password,
                       })}
                     fullWidth
-                    onChange={(e) => handleChange(e)}
-                    value={data.password}
                     sx={{
                       mb: 3,
                     }}

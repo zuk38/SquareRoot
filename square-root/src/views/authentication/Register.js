@@ -24,15 +24,14 @@ import { connect } from 'react-redux';
 import { signupUser } from '../../redux/ducks/userReducer';
 import Alert from '../../components/Alert';
 function Register(props) {
-  const [data, setData] = React.useState({
-    email: '',
-    password: '',
-    confirmPassword: '',
-    name: '',
-    phone: '',
-    role: 'Real Estate Developer',
-  });
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+  const callback = () => {
+    props.signUp(values);
+  };
+
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    validate,
+    callback
+  );
 
   /* TODO: this will come from the API */
   const dropdownVals = [
@@ -41,25 +40,6 @@ function Register(props) {
     'Plant Nursery',
     'Other',
   ];
-
-  const handleChange = (event) => {
-    setData({
-      ...data,
-      [event.target.id]: event.target.value,
-    });
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    props.signUp(data);
-    setData({
-      email: '',
-      password: '',
-      confirmPassword: '',
-      name: '',
-      phone: '',
-    });
-  };
 
   return (
     <PageContainer title='Register' description='this is Register page'>
@@ -74,7 +54,8 @@ function Register(props) {
           sm={12}
           lg={6}
           sx={{
-            background: '#ffffff',          }}
+            background: '#ffffff',
+          }}
         >
           <Box
             sx={{
@@ -266,7 +247,6 @@ function Register(props) {
                   >
                     Back to Home
                   </Button>
-                </Box>
                 </Box>
               </Box>
             </Grid>
