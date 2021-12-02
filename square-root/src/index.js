@@ -13,9 +13,9 @@ import './components/utility/i18n';
 import 'flag-icon-css/css/flag-icon.min.css';
 
 import Spinner from './views/spinner/Spinner';
-//mport Amplify from "aws-amplify";
-//import config from "./aws-exports";
-//Amplify.configure(config);
+import Amplify from 'aws-amplify';
+import config from './aws-exports';
+Amplify.configure(config);
 require('dotenv').config();
 
 ReactDOM.render(

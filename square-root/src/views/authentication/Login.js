@@ -19,7 +19,6 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-import { withUserConsumer } from '../../context/user';
 import useForm from '../../components/hooks/useForm';
 import validate from '../../utility/LoginFormValidation';
 
@@ -39,8 +38,7 @@ function Login() {
           sm={12}
           lg={6}
           sx={{
-            background: (theme) =>
-              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+            background: '#ffffff',
           }}
         >
           <Box

@@ -10,12 +10,19 @@ import SelectDropdown from '../../components/forms/custom-elements/SelectDropdow
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-import { withUserConsumer } from '../../context/user';
 import useForm from '../../components/hooks/useForm';
 import validate from '../../utility/RegistrationFormValidation';
 
 function Register() {
   const { values, errors, handleChange, handleSubmit } = useForm(validate);
+
+  /* TODO: this will come from the API */
+  const dropdownVals = [
+    'Real Estate Developer',
+    'Landscape Architect',
+    'Plant Nursery',
+    'Other',
+  ];
 
   return (
     <PageContainer title='Register' description='this is Register page'>
@@ -173,7 +180,12 @@ function Register() {
                       })}
                   />
 
-                  <SelectDropdown />
+                  <SelectDropdown
+                    options={dropdownVals}
+                    label="I'm a ..."
+                    height='50px'
+                    mb='50px'
+                  />
 
                   <Button
                     color='secondary'

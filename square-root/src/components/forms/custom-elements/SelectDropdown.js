@@ -56,7 +56,7 @@ const SelectDropdown = (props) => {
         fullWidth
         size='small'
         variant={props.variant}
-        sx={{ mb: props.mb }}
+        sx={{ mb: props.mb, mt: props.mt, height: props.height }}
       >
         {props.options.map((option) => (
           <MenuItem key={option} value={option}>
