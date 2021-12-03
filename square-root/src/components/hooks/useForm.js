@@ -1,6 +1,11 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (validate, callback = null, initialFormValues = {}) => {
+const useForm = (
+  validate,
+  callback = null,
+  action = null,
+  initialFormValues = {}
+) => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
   const [triedSubmitting, setTriedSubmitting] = useState(false);
@@ -8,14 +13,15 @@ const useForm = (validate, callback = null, initialFormValues = {}) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
+      console.log('callbnack');
       if (callback) callback();
-      setTriedSubmitting(false);
+      resetForm();
     }
-  }, [errors, isSubmitting, callback]);
+  }, [errors]);
 
   useEffect(() => {
     if (triedSubmitting) setErrors(validate(values)); //update errors every time values change
-  }, [values, triedSubmitting, validate]);
+  }, [values]);
 
   const handleChange = (e) => {
     const { id, value, name } = e.target;
@@ -30,14 +36,17 @@ const useForm = (validate, callback = null, initialFormValues = {}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    if (action) action();
+    setErrors(validate(values)); //update errors
     setTriedSubmitting(true);
-    setErrors(validate(values));
     setIsSubmitting(true);
   };
 
   const resetForm = () => {
     setValues(initialFormValues);
     setErrors({});
+    setTriedSubmitting(false);
+    setIsSubmitting(false);
   };
 
   return {

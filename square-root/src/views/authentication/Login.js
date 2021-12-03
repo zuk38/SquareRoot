@@ -20,22 +20,30 @@ import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
 import useForm from '../../components/hooks/useForm';
-import validate from '../../utility/RegistrationFormValidation';
+import validate from '../../utility/LoginFormValidation';
 
 import Alert from '../../components/Alert';
 import { connect } from 'react-redux';
-import { loginUser } from '../../redux/ducks/userReducer';
+import { loginUser, fetchUser } from '../../redux/ducks/userReducer';
 
 function Login(props) {
-  const callback = () => {
-    props.login(values);
-  };
-
-  const { setAuthStatus } = props.context;
-  const { values, errors, handleChange, handleSubmit } = useForm(
+  const { values, errors, handleChange, handleSubmit, resetForm } = useForm(
     validate,
-    callback
+    callback,
+    log
   );
+
+  function callback() {
+    props.fetchU();
+    resetForm();
+  }
+
+  function log() {
+    //form validated
+    //cognito integration here, may detect cognito errors
+    console.log(values);
+    props.login(values);
+  }
 
   return (
     <PageContainer title='Login' description='this is Login page'>
@@ -322,6 +330,9 @@ function Login(props) {
 const mapDispatchToProps = (dispatch) => ({
   login: (values) => {
     dispatch(loginUser(values));
+  },
+  fetchU: () => {
+    dispatch(fetchUser());
   },
 });
 

@@ -57,6 +57,9 @@ const UserReducer = (state = initialState, action) => {
       return { ...initialState, data };
     case USER_LOGGED_OUT:
       return initialState;
+    case LOGIN:
+      const v = action.values;
+      return { ...initialState, v };
     case SIGN_UP:
       const { values } = action;
       return { ...initialState, values };
