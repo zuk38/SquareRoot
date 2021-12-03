@@ -41,20 +41,17 @@ export const signupUser = (values) => ({
 });
 
 const initialState = {
+  //contains email, name, custom:role
   user: null,
-  email: null,
-  phone_number: null,
-  role: null,
-  sub: null,
+  //flag for router
   isLoggedIn: false,
-  error: {},
 };
 
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGGED_IN:
-      const { data } = action;
-      return { ...initialState, data };
+      const { isLoggedIn, user } = action.data;
+      return { ...initialState, isLoggedIn, user };
     case USER_LOGGED_OUT:
       return initialState;
     case LOGIN:

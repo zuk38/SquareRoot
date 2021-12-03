@@ -18,15 +18,11 @@ export function* login({ values }) {
       password: values.password,
     });
     console.log(user);
-    //yield put(userLoggedIn({ user: user, isLoggedIn: true, error: {} }));
+    //yield put(userLoggedIn({ user: user, isLoggedIn: true}));
   } catch (error) {
-    let err = null;
-    !error.message ? (err = { message: error }) : (err = error);
-    console.log(err);
-    //yield put(userLoggedIn({ user: null, isLoggedIn: false, error: err }));
     yield put(
       setAlertAction({
-        text: err.message,
+        text: error.message,
         color: 'error',
       })
     );
@@ -63,12 +59,9 @@ function* signUp({ values }) {
       })
     );
   } catch (e) {
-    console.log('error signing up:', e);
-    let err = null;
-    !e.message ? (err = { message: e }) : (err = e);
     yield put(
       setAlertAction({
-        text: err.message,
+        text: e.message,
         color: 'error',
       })
     );
@@ -83,11 +76,10 @@ export function* fetchUser() {
     console.log(user);
     const { attributes } = user;
     console.log(attributes);
-    yield put(userLoggedIn({ user: attributes, isLoggedIn: true, error: {} }));
-    localStorage.setItem('user', JSON.stringify(user));
+    yield put(userLoggedIn({ user: attributes, isLoggedIn: true }));
   } catch (error) {
     console.log(error);
-    yield put(userLoggedIn({ user: null, isLoggedIn: false, error }));
+    yield put(userLoggedIn({ user: null, isLoggedIn: false }));
   }
 }
 

@@ -34,6 +34,7 @@ function Login(props) {
   );
 
   function callback() {
+    console.log('callback');
     props.fetchU();
     resetForm();
   }
@@ -42,7 +43,7 @@ function Login(props) {
     //form validated
     //cognito integration here, may detect cognito errors
     console.log(values);
-    props.login(values);
+    if (values !== {}) props.login(values);
   }
 
   return (

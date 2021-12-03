@@ -13,7 +13,6 @@ const useForm = (
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      console.log('callbnack');
       if (callback) callback();
       resetForm();
     }

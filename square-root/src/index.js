@@ -14,6 +14,14 @@ import config from './aws-exports';
 Amplify.configure(config);
 require('dotenv').config();
 
+store.subscribe(() => {
+  // When state will be updated(in our case, when items will be fetched),
+  // we will update local component state and force component to rerender
+  // with new data.
+
+  console.log(store.getState());
+});
+
 ReactDOM.render(
   <Provider store={store}>
     <Suspense fallback={<Spinner />}>
