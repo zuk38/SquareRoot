@@ -10,9 +10,8 @@ const useForm = (validate, callback = null, initialFormValues = {}) => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
       if (callback) callback();
       setTriedSubmitting(false);
-      resetForm();
     }
-  }, [errors, isSubmitting]);
+  }, [errors, isSubmitting, callback]);
 
   useEffect(() => {
     if (triedSubmitting) setErrors(validate(values)); //update errors every time values change
