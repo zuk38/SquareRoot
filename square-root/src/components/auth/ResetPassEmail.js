@@ -4,8 +4,20 @@ import React from 'react';
 import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
 import CustomTextField from '../forms/custom-elements/CustomTextField';
 import { Link } from 'react-router-dom';
+import useForm from '../hooks/useForm';
+import validate from '../../utility/ForgotPassValidation';
 
 export default function ResetPassEmail(props) {
+  const handleReset = () => {
+    props.redirectToCode(true);
+  };
+
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    validate,
+    handleReset,
+    {}
+  );
+
   return (
     <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
       <Grid container spacing={0} display='flex' justifyContent='center'>
@@ -36,17 +48,26 @@ export default function ResetPassEmail(props) {
                 mt: 4,
               }}
             >
-              <CustomFormLabel htmlFor='reset-email'>
-                Email Adddress
-              </CustomFormLabel>
-              <CustomTextField id='reset-email' variant='outlined' fullWidth />
+              <CustomFormLabel htmlFor='email'>Email Address</CustomFormLabel>
+              <CustomTextField
+                id='email'
+                variant='outlined'
+                fullWidth
+                value={values.email || ''}
+                onChange={handleChange}
+                {...(errors.email &&
+                  errors.email !== '' && {
+                    error: true,
+                    helperText: errors.email,
+                  })}
+              />
 
               <Button
                 color='secondary'
                 variant='contained'
                 size='large'
                 fullWidth
-                onClick={() => props.redirectToCode(true)}
+                onClick={handleSubmit}
                 sx={{
                   pt: '10px',
                   pb: '10px',

@@ -10,8 +10,6 @@ import {
 import { Link } from 'react-router-dom';
 
 import GoogleIcon from '@mui/icons-material/Google';
-import FacebookIcon from '@mui/icons-material/Facebook';
-import TwitterIcon from '@mui/icons-material/Twitter';
 
 import CustomCheckbox from '../../components/forms/custom-elements/CustomCheckbox';
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
@@ -21,10 +19,12 @@ import PageContainer from '../../components/container/PageContainer';
 import img1 from '../../assets/images/backgrounds/login-bg-transp.png';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 
-import { withUserConsumer } from '../../context/user';
+import useForm from '../../components/hooks/useForm';
+import validate from '../../utility/LoginFormValidation';
 
-function Login(props) {
-  const { setAuthStatus } = props.context;
+function Login() {
+  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+
   return (
     <PageContainer title='Login' description='this is Login page'>
       <Grid
@@ -38,8 +38,7 @@ function Login(props) {
           sm={12}
           lg={6}
           sx={{
-            background: (theme) =>
-              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+            background: '#ffffff',
           }}
         >
           <Box
@@ -90,7 +89,7 @@ function Login(props) {
                   p: 4,
                 }}
               >
-                <Typography fontWeight='700' variant='h2'>
+                <Typography variant='secondary'>
                   Welcome to SquareRoot
                 </Typography>
                 <Box display='flex' alignItems='center'>
@@ -125,12 +124,32 @@ function Login(props) {
                   <CustomFormLabel htmlFor='email'>
                     Email Address
                   </CustomFormLabel>
-                  <CustomTextField id='email' variant='outlined' fullWidth />
-                  <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
-                    id='password'
+                    id='email'
+                    variant='outlined'
+                    fullWidth
+                    value={values.email || ''}
+                    onChange={handleChange}
+                    {...(errors.email &&
+                      errors.email !== '' && {
+                        error: true,
+                        helperText: errors.email,
+                      })}
+                  />
+                  <CustomFormLabel htmlFor='loginPassword'>
+                    Password
+                  </CustomFormLabel>
+                  <CustomTextField
+                    id='loginPassword'
                     type='password'
                     variant='outlined'
+                    value={values.loginPassword || ''}
+                    onChange={handleChange}
+                    {...(errors.loginPassword &&
+                      errors.loginPassword !== '' && {
+                        error: true,
+                        helperText: errors.loginPassword,
+                      })}
                     fullWidth
                     sx={{
                       mb: 3,
@@ -181,7 +200,7 @@ function Login(props) {
                     variant='contained'
                     size='large'
                     fullWidth
-                    onClick={() => setAuthStatus(true)}
+                    onClick={handleSubmit}
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -211,12 +230,7 @@ function Login(props) {
                       mb: '20px',
                       '&::before': {
                         content: '""',
-                        background: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark'
-                              ? '#42464d'
-                              : '#ecf0f2'
-                          }`,
+                        background: '#ecf0f2',
                         height: '1px',
                         width: '100%',
                         position: 'absolute',
@@ -233,10 +247,7 @@ function Login(props) {
                       sx={{
                         position: 'relative',
                         padding: '0 12px',
-                        background: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark' ? '#282c34' : '#fff'
-                          }`,
+                        background: '#fff',
                       }}
                     >
                       or sign in with
@@ -252,24 +263,14 @@ function Login(props) {
                       justifycontent='center'
                       sx={{
                         width: '100%',
-                        borderColor: (theme) =>
-                          `${
-                            theme.palette.mode === 'dark'
-                              ? '#42464d'
-                              : '#dde3e8'
-                          }`,
+                        borderColor: '#dde3e8',
                         borderWidth: '2px',
                         textAlign: 'center',
                         mt: 2,
                         pt: '10px',
                         pb: '10px',
                         '&:hover': {
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
+                          borderColor: '#dde3e8',
                           borderWidth: '2px',
                         },
                       }}
@@ -297,117 +298,6 @@ function Login(props) {
                       </Box>
                     </Button>
                   </Box>
-
-                  <Grid container spacing={2}>
-                    <Grid item xs={12} sm={6} lg={6}>
-                      <Button
-                        variant='outlined'
-                        size='large'
-                        display='flex'
-                        alignitems='center'
-                        justifycontent='center'
-                        sx={{
-                          width: '100%',
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
-                          borderWidth: '2px',
-                          textAlign: 'center',
-                          mt: 2,
-                          pt: '10px',
-                          pb: '10px',
-                          '&:hover': {
-                            borderColor: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? '#42464d'
-                                  : '#dde3e8'
-                              }`,
-                            borderWidth: '2px',
-                          },
-                        }}
-                      >
-                        <Box display='flex' alignItems='center'>
-                          <FacebookIcon
-                            sx={{
-                              color: (theme) => theme.palette.secondary.main,
-                            }}
-                          />
-                          <Typography
-                            variant='h6'
-                            sx={{
-                              ml: 1,
-                              color: (theme) =>
-                                `${
-                                  theme.palette.mode === 'dark'
-                                    ? theme.palette.grey.A200
-                                    : '#13152a'
-                                }`,
-                            }}
-                          >
-                            Facebook
-                          </Typography>
-                        </Box>
-                      </Button>
-                    </Grid>
-                    <Grid item xs={12} sm={6} lg={6}>
-                      <Button
-                        variant='outlined'
-                        size='large'
-                        display='flex'
-                        alignitems='center'
-                        justifycontent='center'
-                        sx={{
-                          width: '100%',
-                          borderColor: (theme) =>
-                            `${
-                              theme.palette.mode === 'dark'
-                                ? '#42464d'
-                                : '#dde3e8'
-                            }`,
-                          borderWidth: '2px',
-                          textAlign: 'center',
-                          mt: 2,
-                          pt: '10px',
-                          pb: '10px',
-                          '&:hover': {
-                            borderColor: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? '#42464d'
-                                  : '#dde3e8'
-                              }`,
-                            borderWidth: '2px',
-                          },
-                        }}
-                      >
-                        <Box display='flex' alignItems='center'>
-                          <TwitterIcon
-                            sx={{
-                              color: (theme) => theme.palette.primary.main,
-                            }}
-                          />
-                          <Typography
-                            variant='h6'
-                            sx={{
-                              ml: 1,
-                              color: (theme) =>
-                                `${
-                                  theme.palette.mode === 'dark'
-                                    ? theme.palette.grey.A200
-                                    : '#13152a'
-                                }`,
-                            }}
-                          >
-                            Twitter
-                          </Typography>
-                        </Box>
-                      </Button>
-                    </Grid>
-                  </Grid>
                 </Box>
               </Box>
             </Grid>
@@ -418,4 +308,4 @@ function Login(props) {
   );
 }
 
-export default withUserConsumer(Login);
+export default Login;

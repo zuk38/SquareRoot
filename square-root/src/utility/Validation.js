@@ -34,16 +34,19 @@ function validatePhone(phone) {
   return phoneRegex.test(String(phone)); // true|false
 }
 
-//--------------------------------------------------------------------------------------------
-
 function checkEmail(values, errors) {
-  if (!values.email) errors.email = 'E-mail adress is required';
+  if (!values.email || values.email.length === 0)
+    errors.email = 'E-mail adress is required';
   else if (!validateRegexString(values.email))
     errors.email = 'E-mail adress is invalid';
 }
 
 function checkPassword(values, errors) {
-  if (!values.password) errors.password = 'Password is required';
+  if (!values.loginPassword || values.loginPassword.length === 0)
+    errors.loginPassword = 'Password is required';
+
+  if (!values.password || values.password.length === 0)
+    errors.password = 'Password is required';
   else if (values.password.length < PASSLENGTH)
     errors.password = 'Password must be 8 or more characters';
   else if (!hasLowerCase(values.password))
@@ -68,6 +71,12 @@ function checkName(values, errors) {
 function checkPhone(values, errors) {
   if (!values.phone) errors.phone = 'Phone number is required';
   else if (!validatePhone(values.phone)) errors.phone = 'Invalid phone number';
+}
+
+function checkRole(values, errors) {
+  console.log(values.role);
+  if (values.role === undefined || (values.role && values.role.length === 0))
+    errors.role = 'Role is required';
 }
 
 function checkCode(values, errors) {
@@ -109,6 +118,7 @@ export {
   checkPassword,
   checkConfPassword,
   checkName,
+  checkRole,
   checkCognito,
   checkCode,
   checkPhone,
