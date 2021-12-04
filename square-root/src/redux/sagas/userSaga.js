@@ -69,6 +69,7 @@ function* signUp({ values }) {
 }
 
 export function* fetchUser() {
+  console.log('fetching user');
   try {
     const session = yield call([Auth, 'currentSession']);
     console.log(session);
