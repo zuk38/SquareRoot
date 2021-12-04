@@ -42,6 +42,9 @@ function checkEmail(values, errors) {
 }
 
 function checkPassword(values, errors) {
+  if (!values.loginPassword || values.loginPassword.length === 0)
+    errors.loginPassword = 'Password is required';
+
   if (!values.password || values.password.length === 0)
     errors.password = 'Password is required';
   else if (values.password.length < PASSLENGTH)
@@ -71,6 +74,7 @@ function checkPhone(values, errors) {
 }
 
 function checkRole(values, errors) {
+  console.log(values.role);
   if (values.role === undefined || (values.role && values.role.length === 0))
     errors.role = 'Role is required';
 }

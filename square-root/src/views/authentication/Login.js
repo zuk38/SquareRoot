@@ -160,15 +160,30 @@ function Login(props) {
                   />
                   <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
-                    id='password'
+                    id='email'
+                    variant='outlined'
+                    fullWidth
+                    value={values.email || ''}
+                    onChange={handleChange}
+                    {...(errors.email &&
+                      errors.email !== '' && {
+                        error: true,
+                        helperText: errors.email,
+                      })}
+                  />
+                  <CustomFormLabel htmlFor='loginPassword'>
+                    Password
+                  </CustomFormLabel>
+                  <CustomTextField
+                    id='loginPassword'
                     type='password'
                     variant='outlined'
-                    value={values.password || ''}
+                    value={values.loginPassword || ''}
                     onChange={handleChange}
-                    {...(errors.password &&
-                      errors.password !== '' && {
+                    {...(errors.loginPassword &&
+                      errors.loginPassword !== '' && {
                         error: true,
-                        helperText: errors.password,
+                        helperText: errors.loginPassword,
                       })}
                     fullWidth
                     sx={{
