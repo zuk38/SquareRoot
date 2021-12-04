@@ -83,6 +83,42 @@ export function* fetchUser() {
   }
 }
 
+//TODO:
+/*removeEmpty = (obj) => {
+    let newObj = {};
+    Object.keys(obj).forEach((key) => {
+      if (obj[key] === Object(obj[key]))
+        newObj[key] = this.removeEmpty(obj[key]);
+      else if (obj[key] !== undefined) newObj[key] = obj[key];
+    });
+    return newObj;
+  };*/
+
+/*updateUser = async (values) => {
+    const user = await Auth.currentAuthenticatedUser();
+    let attributes = {
+      name: values.name,
+      email: values.email,
+      phone_number: values.phone,
+      'custom:role': values.role,
+    };
+    Object.keys(attributes).forEach((key) =>
+      attributes[key] === undefined ? delete attributes[key] : {}
+    );
+    //this.removeEmpty(attributes);
+    console.log(attributes);
+    try {
+      await Auth.updateUserAttributes(user, attributes);
+      this.fetchUser();
+    } catch (error) {
+      console.log('error loging in', error);
+      let err = null;
+      !error.message ? (err = { message: error }) : (err = error);
+      values.cognito = err;
+      console.log(values.cognito);
+    }
+  };*/
+
 function* watchLoginUser() {
   yield takeEvery(LOGIN, login);
 }

@@ -12,6 +12,7 @@ import { Trans, useTranslation } from 'react-i18next';
 import LanguageSelect from './LanguageSelect';
 import { FaAngleDown, FaUser } from 'react-icons/fa';
 import { NavButton } from './NavButton';
+import { connect } from 'react-redux';
 
 function Navbar(props) {
   let navigate = useNavigate();
@@ -205,5 +206,10 @@ function Navbar(props) {
     </>
   );
 }
+
+const mapStateToProps = ({ user }) => ({
+  isLoggedIn: user.isLoggedIn,
+  user: user.user.name,
+});
 
 export default Navbar;

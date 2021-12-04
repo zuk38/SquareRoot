@@ -7,7 +7,7 @@ import './App.css';
 import Navbar from './components/navbar/Navbar';
 import { FooterContainer } from './components/footer/FooterContainer';
 import { theme } from './assets/global/Theme-variable';
-import { useDispatch, useSelector } from 'react-redux';
+import { connect, useDispatch, useSelector } from 'react-redux';
 import { fetchUser } from './redux/ducks/userReducer';
 
 /*}
@@ -49,23 +49,14 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 
 const App = (props) => {
   const location = useLocation();
-  const dispatch = useDispatch();
 
-  React.useEffect(() => {
-    dispatch(fetchUser());
-  }, [dispatch]);
-
-  const user = useSelector((state) => state.user.user);
-  console.log(user);
-  const isLoggedIn = useSelector((state) => state.user.isLoggedIn);
-  console.log(isLoggedIn);
-  const routing = useRoutes(Router(isLoggedIn));
+  const routing = useRoutes(Router(props.isLoggedIn));
 
   return (
     <ThemeProvider theme={theme}>
       <CssBaseline />
       {location.pathname.indexOf('/auth') <= -1 &&
-        location.pathname.indexOf('/dashboard') <= -1 && <Navbar {...props} />}
+        location.pathname.indexOf('/dashboard') <= -1 && <Navbar />}
       {routing}
       {location.pathname.indexOf('/auth') <= -1 &&
         location.pathname !== '/forgotpassword' && <FooterContainer />}
@@ -73,7 +64,12 @@ const App = (props) => {
   );
 };
 
-export default App;
+const mapStateToProps = ({ user }) => ({
+  isLoggedIn: user.isLoggedIn,
+  user: user.name,
+});
+
+export default connect(mapStateToProps)(App);
 
 /** ----- landing page ---- 
 function App(props) {

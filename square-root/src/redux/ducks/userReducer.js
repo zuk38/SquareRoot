@@ -45,6 +45,8 @@ const initialState = {
   user: null,
   //flag for router
   isLoggedIn: false,
+  //assume we are authenticating until it yields
+  //isAunthenticating: false,
 };
 
 const UserReducer = (state = initialState, action) => {
