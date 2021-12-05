@@ -43,7 +43,7 @@ function Login(props) {
     //form validated
     //cognito integration here, may detect cognito errors
     console.log(values);
-    if (values !== {}) props.login(values);
+    props.login(values);
   }
 
   return (
@@ -146,19 +146,6 @@ function Login(props) {
                   <CustomFormLabel htmlFor='email'>
                     Email Address
                   </CustomFormLabel>
-                  <CustomTextField
-                    id='email'
-                    variant='outlined'
-                    fullWidth
-                    value={values.email || ''}
-                    onChange={handleChange}
-                    {...(errors.email &&
-                      errors.email !== '' && {
-                        error: true,
-                        helperText: errors.email,
-                      })}
-                  />
-                  <CustomFormLabel htmlFor='password'>Password</CustomFormLabel>
                   <CustomTextField
                     id='email'
                     variant='outlined'

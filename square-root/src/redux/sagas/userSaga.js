@@ -12,10 +12,11 @@ import { Auth } from 'aws-amplify';
 import history from '../../history';
 
 export function* login({ values }) {
+  console.log(values);
   try {
     const user = yield call([Auth, 'signIn'], {
       username: values.email,
-      password: values.password,
+      password: values.loginPassword,
     });
     console.log(user);
     //yield put(userLoggedIn({ user: user, isLoggedIn: true}));
