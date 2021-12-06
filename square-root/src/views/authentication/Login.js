@@ -25,8 +25,30 @@ import validate from '../../utility/LoginFormValidation';
 import Alert from '../../components/Alert';
 import { connect } from 'react-redux';
 import { loginUser, fetchUser } from '../../redux/ducks/userReducer';
+import { createScript } from '../../services/GoogleService';
 
 function Login(props) {
+  React.useEffect(() => {
+    const ga =
+      window.gapi && window.gapi.auth2
+        ? window.gapi.auth2.getAuthInstance()
+        : null;
+
+    if (!ga) createScript();
+  }, []);
+
+  const signIn = () => {
+    const ga = window.gapi.auth2.getAuthInstance();
+    ga.signIn().then(
+      (googleUser) => {
+        props.loginGoogle(googleUser);
+      },
+      (error) => {
+        console.log(error);
+      }
+    );
+  };
+
   const { values, errors, handleChange, handleSubmit } = useForm(
     validate,
     callback,
@@ -282,6 +304,7 @@ function Login(props) {
                       display='flex'
                       alignitems='center'
                       justifycontent='center'
+                      onClick={signIn}
                       sx={{
                         width: '100%',
                         borderColor: '#dde3e8',
