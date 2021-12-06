@@ -41,10 +41,12 @@ function checkEmail(values, errors) {
     errors.email = 'E-mail adress is invalid';
 }
 
-function checkPassword(values, errors) {
+function checkLoginPassword(values, errors) {
   if (!values.loginPassword || values.loginPassword.length === 0)
     errors.loginPassword = 'Password is required';
+}
 
+function checkRegisterPassword(values, errors) {
   if (!values.password || values.password.length === 0)
     errors.password = 'Password is required';
   else if (values.password.length < PASSLENGTH)
@@ -115,7 +117,8 @@ function checkConditions(values, errors) {
 
 export {
   checkEmail,
-  checkPassword,
+  checkLoginPassword,
+  checkRegisterPassword,
   checkConfPassword,
   checkName,
   checkRole,

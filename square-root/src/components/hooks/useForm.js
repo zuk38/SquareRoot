@@ -12,6 +12,7 @@ const useForm = (
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   useEffect(() => {
+    console.log(Object.keys(errors));
     if (Object.keys(errors).length === 0 && isSubmitting) {
       if (callback) callback();
       resetForm();
@@ -24,6 +25,7 @@ const useForm = (
 
   const handleChange = (e) => {
     const { id, value, name } = e.target;
+    console.log(id);
     //id undefined for dropdown
     let key = id === undefined ? name : id;
     setValues({

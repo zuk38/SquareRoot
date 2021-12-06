@@ -27,7 +27,7 @@ import { connect } from 'react-redux';
 import { loginUser, fetchUser } from '../../redux/ducks/userReducer';
 
 function Login(props) {
-  const { values, errors, handleChange, handleSubmit, resetForm } = useForm(
+  const { values, errors, handleChange, handleSubmit } = useForm(
     validate,
     callback,
     log
@@ -36,7 +36,6 @@ function Login(props) {
   function callback() {
     console.log('callback');
     props.fetchU();
-    resetForm();
   }
 
   function log() {

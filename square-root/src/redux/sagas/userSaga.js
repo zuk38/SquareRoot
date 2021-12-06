@@ -12,7 +12,6 @@ import { Auth } from 'aws-amplify';
 import history from '../../history';
 
 export function* login({ values }) {
-  console.log(values);
   try {
     const user = yield call([Auth, 'signIn'], {
       username: values.email,
@@ -72,8 +71,8 @@ function* signUp({ values }) {
 export function* fetchUser() {
   console.log('fetching user');
   try {
-    const session = yield call([Auth, 'currentSession']);
-    console.log(session);
+    //const session = yield call([Auth, 'currentSession']);
+    //console.log(session);
     const user = yield call([Auth, 'currentAuthenticatedUser']);
     console.log(user);
     const { attributes } = user;
