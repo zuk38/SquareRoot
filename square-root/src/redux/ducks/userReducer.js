@@ -1,5 +1,6 @@
 //actions
 export const LOGIN = 'loginUser';
+export const LOGIN_GOOGLE = 'loginGoogle';
 const USER_LOGGED_IN = 'userLoggedIn';
 export const LOGOUT = 'logout';
 const USER_LOGGED_OUT = 'userLoggedOut';
@@ -15,6 +16,11 @@ export const AUTH_COMPLETE_NEW_PASSWORD = 'AUTH_COMPLETE_NEW_PASSWORD'*/
 
 export const loginUser = (values) => ({
   type: LOGIN,
+  values,
+});
+
+export const loginGoogle = (values) => ({
+  type: LOGIN_GOOGLE,
   values,
 });
 
@@ -46,19 +52,21 @@ const initialState = {
   //flag for router
   isLoggedIn: false,
   //assume we are authenticating until it yields
-  //isAunthenticating: false,
+  isAuthenticating: true,
 };
 
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGGED_IN:
-      const { isLoggedIn, user } = action.data;
-      return { ...initialState, isLoggedIn, user };
+      return { ...initialState, ...action.data };
     case USER_LOGGED_OUT:
       return initialState;
     case LOGIN:
       const v = action.values;
       return { ...initialState, v };
+    case LOGIN_GOOGLE:
+      const google = action.values;
+      return { ...initialState, google };
     case SIGN_UP:
       const { values } = action;
       return { ...initialState, values };

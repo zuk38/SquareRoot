@@ -2,6 +2,7 @@ import { call, put, all, takeEvery, takeLatest } from 'redux-saga/effects';
 import {
   FETCH_USER,
   LOGIN,
+  LOGIN_GOOGLE,
   LOGOUT,
   SIGN_UP,
   userLoggedIn,
@@ -13,12 +14,11 @@ import history from '../../history';
 
 export function* login({ values }) {
   try {
-    const user = yield call([Auth, 'signIn'], {
+    yield call([Auth, 'signIn'], {
       username: values.email,
       password: values.loginPassword,
     });
-    console.log(user);
-    //yield put(userLoggedIn({ user: user, isLoggedIn: true}));
+    yield fetchUser();
   } catch (error) {
     yield put(
       setAlertAction({
@@ -71,16 +71,45 @@ function* signUp({ values }) {
 export function* fetchUser() {
   console.log('fetching user');
   try {
-    //const session = yield call([Auth, 'currentSession']);
+    yield call([Auth, 'currentSession']);
     //console.log(session);
     const user = yield call([Auth, 'currentAuthenticatedUser']);
-    console.log(user);
+    //console.log(user);
     const { attributes } = user;
     console.log(attributes);
-    yield put(userLoggedIn({ user: attributes, isLoggedIn: true }));
+    yield put(
+      userLoggedIn({
+        user: attributes,
+        isLoggedIn: true,
+        isAuthenticating: false,
+      })
+    );
   } catch (error) {
     console.log(error);
-    yield put(userLoggedIn({ user: null, isLoggedIn: false }));
+    yield put(
+      userLoggedIn({ user: null, isLoggedIn: false, isAuthenticating: false })
+    );
+  }
+}
+
+export function* loginGoogle({ googleUser }) {
+  try {
+    const { id_token, expires_at } = googleUser.getAuthResponse();
+    const profile = googleUser.getBasicProfile();
+    let user = {
+      email: profile.getEmail(),
+      name: profile.getName(),
+    };
+
+    const credentials = yield call([Auth, 'federatedSignIn'], {
+      provider: 'google',
+      token: id_token,
+      expires_at,
+      user,
+    });
+    console.log('credentials', credentials);
+  } catch (e) {
+    console.log(e);
   }
 }
 
@@ -122,6 +151,10 @@ export function* fetchUser() {
 
 function* watchLoginUser() {
   yield takeEvery(LOGIN, login);
+}
+
+function* watchLoginGoogleUser() {
+  yield takeEvery(LOGIN_GOOGLE, loginGoogle);
 }
 
 function* watchSignupUser() {

@@ -26,6 +26,7 @@ import Alert from '../../components/Alert';
 import { connect } from 'react-redux';
 import { loginUser, fetchUser } from '../../redux/ducks/userReducer';
 import { createScript } from '../../services/GoogleService';
+import { loginGoogle } from '../../redux/sagas/userSaga';
 
 function Login(props) {
   React.useEffect(() => {
@@ -41,7 +42,8 @@ function Login(props) {
     const ga = window.gapi.auth2.getAuthInstance();
     ga.signIn().then(
       (googleUser) => {
-        props.loginGoogle(googleUser);
+        console.log(googleUser.getAuthResponse());
+        console.log(googleUser.getBasicProfile());
       },
       (error) => {
         console.log(error);
@@ -355,6 +357,9 @@ function Login(props) {
 const mapDispatchToProps = (dispatch) => ({
   login: (values) => {
     dispatch(loginUser(values));
+  },
+  loginGoogle: (values) => {
+    dispatch(loginGoogle(values));
   },
   fetchU: () => {
     dispatch(fetchUser());

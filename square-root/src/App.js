@@ -48,9 +48,8 @@ import Dashboard1 from "./pages/dashboards/Dashboard1";
 */
 
 const App = (props) => {
-  const location = useLocation();
-
-  const routing = useRoutes(Router(props.isLoggedIn));
+  let location = useLocation();
+  let routing = useRoutes(Router(props.isLoggedIn));
 
   return (
     <ThemeProvider theme={theme}>
@@ -66,6 +65,7 @@ const App = (props) => {
 
 const mapStateToProps = ({ user }) => ({
   isLoggedIn: user.isLoggedIn,
+  isAuthenticating: user.isAuthenticating,
   user: user.name,
 });
 
