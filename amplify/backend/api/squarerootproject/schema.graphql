@@ -97,10 +97,11 @@ type Concept
   price: Float
   description: String
   plants: [ConceptPlant] @connection(keyName: "byConcept", fields: ["id"])
-  categories: [ConceptCategory] @connection(keyName: "byConcept", fields: ["id"])
+  categories: [ConceptCategory]
+    @connection(keyName: "byConcept", fields: ["id"])
 }
 
-type Category #rooftop, rainbed, etc.
+type Category  #rooftop, rainbed, etc.
   @model(subscriptions: null)
   @auth(
     rules: [
@@ -119,7 +120,7 @@ type Category #rooftop, rainbed, etc.
   concepts: [ConceptCategory] @connection(keyName: "byCategory", fields: ["id"])
 }
 
-type ConceptCategory  
+type ConceptCategory
   @model(queries: null)
   @auth(
     rules: [
@@ -140,7 +141,7 @@ type ConceptCategory
   category: Category! @connection(fields: ["category_ID"])
 }
 
-type PlantCategory  
+type PlantCategory
   @model(queries: null)
   @auth(
     rules: [
@@ -191,7 +192,7 @@ type Project
       # allow owners of the project to create, update and delete their projects
       { allow: owner }
       # allow members
-      { allow: groups, groupsField: "members", operations: [read, update]}
+      { allow: groups, groupsField: "members", operations: [read, update] }
     ]
   ) {
   id: ID!
@@ -202,12 +203,12 @@ type Project
   end_date: String
   owner: String
   greenspaces: [Greenspace] @connection(keyName: "byProject", fields: ["id"])
-  members: [ProjectMember] @connection(keyName: "byProject", fields: ["id"]) 
+  members: [ProjectMember] @connection(keyName: "byProject", fields: ["id"])
 }
 
 type ProjectMember
-@model(queries: null)
-@auth(
+  @model(queries: null)
+  @auth(
     rules: [
       # allow admins to create, update and delete
       { allow: groups, groups: ["Admin"] }
@@ -215,8 +216,8 @@ type ProjectMember
       { allow: private }
     ]
   )
-@key(name: "byProject", fields: ["project_ID", "member_ID"])  
-@key(name: "byMember", fields: ["member_ID", "project_ID"]) {
+  @key(name: "byProject", fields: ["project_ID", "member_ID"])
+  @key(name: "byMember", fields: ["member_ID", "project_ID"]) {
   id: ID!
   project_ID: ID!
   member_ID: ID!

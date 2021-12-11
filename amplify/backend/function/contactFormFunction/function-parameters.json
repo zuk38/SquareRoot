@@ -1,10 +1,7 @@
 {
   "permissions": {
     "storage": {
-      "contactFormTable": [
-        "create",
-        "read"
-      ]
+      "contactFormTable": ["create", "read"]
     }
   },
   "lambdaLayers": []

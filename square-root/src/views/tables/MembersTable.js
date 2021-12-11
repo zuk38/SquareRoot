@@ -24,35 +24,31 @@ import img5 from '../../assets/images/users/5.jpg';
 const basics = [
   {
     id: '1',
-    imgsrc: img1,
-    name: 'Sunil Joshi',
+    name: 'Andreas Johannessen',
     post: 'Landscape Entrepreneur',
     pname: 'Anlegg Øst',
-    email: 'sil.joshi@anlegg.no',
+    email: 'andreasjohannessen@anleggost.no',
   },
   {
     id: '2',
-    imgsrc: img2,
-    name: 'Andrew McDownland',
+    name: 'Linn Runeson',
     post: 'Landscape Architect',
     pname: 'Edit',
-    email: 'andrew@edit.no',
+    email: 'linn@edit.land',
   },
   {
     id: '3',
-    imgsrc: img3,
-    name: 'Christopher Jamil',
+    name: 'Ingrid Svelvik',
     post: 'Real Estate Developer',
     pname: 'OBOS',
-    email: 'christopher@obos.no',
+    email: 'ingrid@obos.no',
   },
   {
     id: '4',
-    imgsrc: img3,
-    name: 'Nirav Joshi',
+    name: 'Eric Reid',
     post: 'Landscape Architect',
     pname: 'Edit',
-    email: 'nirav@edit.no',
+    email: 'eric@edit.land',
   },
 ];
 
@@ -93,17 +89,9 @@ const MembersTable = () => (
                 <TableRow key={basic.id}>
                   <TableCell>
                     <Box display='flex' alignItems='center'>
-                      <Avatar
-                        src={basic.imgsrc}
-                        alt={basic.imgsrc}
-                        width='35'
-                        sx={{
-                          borderRadius: '100%',
-                        }}
-                      />
                       <Box
                         sx={{
-                          ml: 2,
+                          ml: 0,
                         }}
                       >
                         <Typography variant='h6' fontWeight='600'>

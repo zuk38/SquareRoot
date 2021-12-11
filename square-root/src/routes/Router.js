@@ -35,7 +35,10 @@ const Dashboard3 = lazy(() => import('../views/dashboards/Dashboard3'));
 const Chats = lazy(() => import('../views/apps/chats/Chats'));
 const Notes = lazy(() => import('../views/apps/notes/Notes'));
 const Email = lazy(() => import('../views/apps/email/Email'));
-const Shop = lazy(() => import('../views/apps/shop/Shop'));
+const ShopRooftop = lazy(() => import('../views/apps/shop/ShopRooftop'));
+const ShopRainbed = lazy(() => import('../views/apps/shop/ShopRainbed'));
+const ShopIndoor = lazy(() => import('../views/apps/shop/ShopIndoor'));
+const ShopAllPlants = lazy(() => import('../views/apps/shop/ShopAllPlants'));
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
 const CustomTimeline = lazy(() => import('../views/timeline/CustomTimeline'));
@@ -124,7 +127,10 @@ const Router = (isLoggedIn) => [
       { path: '/chats', element: <Chats /> },
       { path: '/notes', element: <Notes /> },
       { path: '/email', element: <Email /> },
-      { path: '/shop/lists', element: <Shop /> },
+      { path: '/shop/ShopRooftop', element: <ShopRooftop /> },
+      { path: '/shop/ShopRainbed', element: <ShopRainbed /> },
+      { path: '/shop/ShopIndoor', element: <ShopIndoor /> },
+      { path: '/shop/ShopAllPlants', element: <ShopAllPlants /> },
       { path: '/calendar', element: <Calendar /> },
       { path: '/customers/edit', element: <CustomerEdit /> },
       { path: '/tables/basic-table', element: <BasicTable /> },

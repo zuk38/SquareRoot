@@ -14,9 +14,9 @@ See the License for the specific language governing permissions and limitations 
 	STORAGE_CONTACTFORMTABLE_STREAMARN
 Amplify Params - DO NOT EDIT */
 
-var express = require("express");
-var bodyParser = require("body-parser");
-var awsServerlessExpressMiddleware = require("aws-serverless-express/middleware");
+var express = require('express');
+var bodyParser = require('body-parser');
+var awsServerlessExpressMiddleware = require('aws-serverless-express/middleware');
 
 // declare a new express app
 var app = express();
@@ -25,13 +25,13 @@ app.use(awsServerlessExpressMiddleware.eventContext());
 
 // Enable CORS for all methods
 app.use(function (req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "*");
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Headers', '*');
   next();
 });
 
 //aws sdk for dynamoDB, document client for ease of access
-const AWS = require("aws-sdk");
+const AWS = require('aws-sdk');
 const docClient = new AWS.DynamoDB.DocumentClient();
 
 //generate a random id
@@ -39,7 +39,7 @@ function id() {
   return Math.random().toString(36).substring(2) + Date.now().toString(36);
 }
 
-app.post("/contact", function (req, res) {
+app.post('/contact', function (req, res) {
   console.log(req);
   //create new table item from the contact form
   var params = {
@@ -56,12 +56,12 @@ app.post("/contact", function (req, res) {
   //send it to dynamo
   docClient.put(params, function (err, data) {
     if (err) res.json({ err });
-    else res.json({ success: "Contact created successfully!" });
+    else res.json({ success: 'Contact created successfully!' });
   });
 });
 
 app.listen(3000, function () {
-  console.log("App started");
+  console.log('App started');
 });
 
 // Export the app object. When executing the application local this does nothing. However,

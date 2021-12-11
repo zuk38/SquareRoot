@@ -1,5 +1,5 @@
 {
-    "tableName": "contactFormTable",
-    "partitionKeyName": "id",
-    "partitionKeyType": "S"
+  "tableName": "contactFormTable",
+  "partitionKeyName": "id",
+  "partitionKeyType": "S"
 }
