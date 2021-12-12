@@ -24,6 +24,7 @@ import { connect } from 'react-redux';
 import { signupUser } from '../../redux/ducks/userReducer';
 import Alert from '../../components/Alert';
 function Register(props) {
+  console.log(props);
   const callback = () => {
     props.signUp(values);
   };

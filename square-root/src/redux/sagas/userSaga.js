@@ -8,10 +8,12 @@ import {
   LOGIN,
   LOGIN_GOOGLE,
   LOGOUT,
+  setAuth,
   SIGN_UP,
   userLoggedIn,
   userLoggedInGoogle,
   userLoggedOut,
+  userSignedUp,
 } from '../ducks/userReducer';
 import { setAlertAction } from '../ducks/alertReducer';
 import { Auth } from 'aws-amplify';
@@ -23,7 +25,7 @@ export function* login({ values }) {
       username: values.email,
       password: values.loginPassword,
     });
-    yield fetchUser();
+    yield put(setAuth({ status: AUTH_STATES.PRE_AUTHORIZE }));
   } catch (error) {
     yield put(
       setAlertAction({
@@ -46,7 +48,7 @@ export function* logout() {
 
 function* signUp({ values }) {
   try {
-    const user = yield call([Auth, 'signUp'], {
+    yield call([Auth, 'signUp'], {
       username: values.email,
       password: values.password,
       attributes: {
@@ -56,7 +58,7 @@ function* signUp({ values }) {
         'custom:role': values.role,
       },
     });
-    console.log(user);
+    yield put(userSignedUp({ status: AUTH_STATES.SENT_VERIFICATION }));
     yield put(
       setAlertAction({
         text: 'User Signed Up!',
@@ -74,7 +76,6 @@ function* signUp({ values }) {
 }
 
 export function* fetchUser() {
-  console.log('fetching user');
   try {
     yield call([Auth, 'currentSession']);
     const user = yield call([Auth, 'currentAuthenticatedUser']);
@@ -87,7 +88,9 @@ export function* fetchUser() {
     );
   } catch (error) {
     console.log(error);
-    yield put(userLoggedIn({ user: null, status: AUTH_STATES.AUTH_FAILED }));
+    yield put(
+      userLoggedIn({ user: null, status: AUTH_STATES.AUTH_FAILED, error })
+    );
   }
 }
 

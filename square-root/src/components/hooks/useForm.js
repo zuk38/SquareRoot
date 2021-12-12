@@ -8,6 +8,7 @@ const useForm = (validate, action = null, initialFormValues = {}) => {
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
+      if (action) action();
       resetForm();
     }
   }, [errors]);
@@ -29,7 +30,6 @@ const useForm = (validate, action = null, initialFormValues = {}) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (action) action();
     setErrors(validate(values)); //update errors
     setTriedSubmitting(true);
     setIsSubmitting(true);
