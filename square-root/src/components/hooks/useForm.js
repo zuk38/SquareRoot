@@ -11,7 +11,7 @@ const useForm = (validate, action = null, initialFormValues = {}) => {
       if (action) action();
       resetForm();
     }
-  }, [errors]);
+  }, [errors, isSubmitting]);
 
   useEffect(() => {
     if (triedSubmitting) setErrors(validate(values)); //update errors every time values change

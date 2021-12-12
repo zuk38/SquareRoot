@@ -76,7 +76,6 @@ function checkPhone(values, errors) {
 }
 
 function checkRole(values, errors) {
-  console.log(values.role);
   if (values.role === undefined || (values.role && values.role.length === 0))
     errors.role = 'Role is required';
 }

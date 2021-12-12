@@ -68,8 +68,9 @@ export const fetchGoogleUser = () => ({
   type: FETCH_GOOGLE_USER,
 });
 
-export const signupUser = () => ({
+export const signupUser = (values) => ({
   type: SIGN_UP,
+  values,
 });
 
 export const userSignedUp = (data) => ({

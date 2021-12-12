@@ -21,7 +21,7 @@ const App = (props) => {
     if (status === AUTH_STATES.AUTH_FAILED) return;
     if (JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'))) {
       fetchGoogle();
-    } else fetchU();
+    } else if (status === AUTH_STATES.PRE_AUTHORIZE) fetchU();
   }, [status, fetchU, fetchGoogle]);
 
   let location = useLocation();

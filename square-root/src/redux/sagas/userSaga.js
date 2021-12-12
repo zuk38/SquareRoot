@@ -61,7 +61,7 @@ function* signUp({ values }) {
     yield put(userSignedUp({ status: AUTH_STATES.SENT_VERIFICATION }));
     yield put(
       setAlertAction({
-        text: 'User Signed Up!',
+        text: 'User Signed Up! Please click the link sent to the email you provided',
         color: 'success',
       })
     );

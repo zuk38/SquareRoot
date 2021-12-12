@@ -23,16 +23,19 @@ import validate from '../../utility/RegistrationFormValidation';
 import { connect } from 'react-redux';
 import { signupUser } from '../../redux/ducks/userReducer';
 import Alert from '../../components/Alert';
-function Register(props) {
-  console.log(props);
-  const callback = () => {
-    props.signUp(values);
-  };
 
+function Register(props) {
   const { values, errors, handleChange, handleSubmit } = useForm(
     validate,
-    callback
+    register
   );
+
+  function register() {
+    //form validated
+    //cognito integration here, may detect cognito errors
+    console.log(values);
+    props.signUp(values);
+  }
 
   /* TODO: this will come from the API */
   const dropdownVals = [
@@ -224,9 +227,7 @@ function Register(props) {
                     variant='contained'
                     size='large'
                     fullWidth
-                    component={Link}
                     onClick={handleSubmit}
-                    to='/'
                     sx={{
                       pt: '10px',
                       pb: '10px',
