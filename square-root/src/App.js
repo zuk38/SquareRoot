@@ -19,7 +19,8 @@ const App = (props) => {
     }
   }, [status, fetchU]);
   let location = useLocation();
-  let routing = useRoutes(Router(status));
+  let isLoggedIn = status === AUTH_STATES.AUTHED;
+  let routing = useRoutes(Router(isLoggedIn));
 
   return (
     <ThemeProvider theme={theme}>

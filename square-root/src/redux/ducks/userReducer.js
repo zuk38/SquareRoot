@@ -12,7 +12,6 @@ export const LOGOUT = 'logout';
 const USER_LOGGED_OUT = 'userLoggedOut';
 export const SIGN_UP = 'signupUser';
 export const FETCH_USER = 'fetchUser';
-/*const SET_USER = 'setUser';*/
 
 /*export const AUTH_INIT = 'AUTH_INIT'
 export const AUTH_SIGN_IN = 'AUTH_SIGN_IN'
