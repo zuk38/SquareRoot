@@ -2,6 +2,8 @@ export const AUTH_STATES = {
   AUTH_UNKNOWN: 'AUTH_UNKNOWN',
   PRE_AUTHORIZE: 'PRE_AUTHORIZE',
   SENT_VERIFICATION: 'SENT_VERIFICATION',
+  FORGOT_PASSWORD_STARTED: 'FORGOT_PASSWORD_STARTED',
+  CODE_VERIFIED: 'CODE_VERIFIED',
   AUTH_FAILED: 'AUTH_FAILED',
   AUTHED: 'AUTHED',
 };
@@ -96,7 +98,6 @@ const initialState = {
   //contains email, name, custom:role
   user: null,
   status: AUTH_STATES.AUTH_UNKNOWN,
-  error: {},
 };
 
 const UserReducer = (state = initialState, action) => {

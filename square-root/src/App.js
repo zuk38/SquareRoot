@@ -1,5 +1,5 @@
 import React from 'react';
-import { useRoutes, useLocation, Outlet } from 'react-router-dom';
+import { useRoutes, useLocation, Outlet, useNavigate } from 'react-router-dom';
 import { CssBaseline, ThemeProvider } from '@mui/material';
 import Router from './routes/Router';
 import 'react-perfect-scrollbar/dist/css/styles.css';
@@ -16,12 +16,23 @@ import {
 
 const App = (props) => {
   const { status, fetchU, fetchGoogle } = props;
+  let navigate = useNavigate();
 
   React.useEffect(() => {
-    if (status === AUTH_STATES.AUTH_FAILED) return;
+    if (
+      status === AUTH_STATES.AUTH_FAILED ||
+      status === AUTH_STATES.SENT_VERIFICATION ||
+      status === AUTH_STATES.FORGOT_PASSWORD_STARTED
+    )
+      return;
+
+    if (status === AUTH_STATES.CODE_VERIFIED) navigate('/auth/login');
+
     if (JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'))) {
       fetchGoogle();
-    } else if (status === AUTH_STATES.PRE_AUTHORIZE) fetchU();
+    } else {
+      fetchU();
+    }
   }, [status, fetchU, fetchGoogle]);
 
   let location = useLocation();

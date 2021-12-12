@@ -6,17 +6,18 @@ import CustomTextField from '../forms/custom-elements/CustomTextField';
 import { Link } from 'react-router-dom';
 import useForm from '../hooks/useForm';
 import validate from '../../utility/ForgotPassValidation';
+import { forgotPassword } from '../../redux/ducks/userReducer';
+import { connect } from 'react-redux';
 
-export default function ResetPassEmail(props) {
-  const handleReset = () => {
-    props.redirectToCode(true);
-  };
-
+function ResetPassEmail(props) {
   const { values, errors, handleChange, handleSubmit } = useForm(
     validate,
-    handleReset,
-    {}
+    handleReset
   );
+
+  function handleReset() {
+    props.resetPassword(values);
+  }
 
   return (
     <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
@@ -97,3 +98,11 @@ export default function ResetPassEmail(props) {
     </Grid>
   );
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  resetPassword: (data) => {
+    dispatch(forgotPassword(data));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(ResetPassEmail);

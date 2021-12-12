@@ -17,7 +17,6 @@ import {
 } from '../ducks/userReducer';
 import { setAlertAction } from '../ducks/alertReducer';
 import { Auth } from 'aws-amplify';
-import history from '../../history';
 
 export function* login({ values }) {
   try {
@@ -40,7 +39,6 @@ export function* logout() {
   try {
     yield call([Auth, 'signOut']);
     yield put(userLoggedOut());
-    history.push('/');
   } catch (error) {
     console.log(error.message);
   }
@@ -126,6 +124,7 @@ export function* loginGoogle() {
 }
 
 export function* fetchGoogleUser({ credentials }) {
+  console.log('fetch google');
   try {
     yield put(
       userLoggedInGoogle({
@@ -151,11 +150,10 @@ export function* fetchGoogleUser({ credentials }) {
 
 function* forgotPassword({ values }) {
   try {
-    const { email } = values;
-    yield call([Auth, 'forgotPassword'], {
-      username: email,
-    });
+    yield Auth.forgotPassword(values.email);
+    yield put(setAuth({ status: AUTH_STATES.FORGOT_PASSWORD_STARTED }));
   } catch (e) {
+    console.log(e.message);
     yield put(
       setAlertAction({
         text: e.message,
@@ -168,11 +166,14 @@ function* forgotPassword({ values }) {
 function* changePassword({ values }) {
   try {
     const { email, code, password } = values;
-    yield call([Auth, 'forgotPasswordSubmit'], {
-      username: email,
-      code,
-      password,
-    });
+    yield Auth.forgotPasswordSubmit(email, code, password);
+    yield put(setAuth({ status: AUTH_STATES.CODE_VERIFIED }));
+    yield put(
+      setAlertAction({
+        text: 'Password changed!',
+        color: 'success',
+      })
+    );
   } catch (e) {
     yield put(
       setAlertAction({
