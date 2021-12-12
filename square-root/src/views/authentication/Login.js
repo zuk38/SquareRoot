@@ -30,7 +30,6 @@ import {
   loginGoogle,
 } from '../../redux/ducks/userReducer';
 import { createScript } from '../../services/GoogleService';
-import Auth from '@aws-amplify/auth';
 
 function Login(props) {
   React.useEffect(() => {
@@ -42,49 +41,11 @@ function Login(props) {
     if (!ga) createScript();
   }, []);
 
-  const signIn = () => {
-    const ga = window.gapi.auth2.getAuthInstance();
-    ga.signIn().then(
-      (googleUser) => {
-        getAWSCredentials(googleUser);
-      },
-      (error) => {
-        console.log(error);
-      }
-    );
-  };
-
-  const getAWSCredentials = async (googleUser) => {
-    const { id_token, expires_at } = googleUser.getAuthResponse();
-    const profile = googleUser.getBasicProfile();
-    let user = {
-      email: profile.getEmail(),
-      name: profile.getName(),
-    };
-
-    const credentials = await Auth.federatedSignIn(
-      'google',
-      { token: id_token, expires_at },
-      user
-    );
-    console.log('credentials', credentials);
-  };
-
-  const { values, errors, handleChange, handleSubmit } = useForm(
-    validate,
-    callback,
-    log
-  );
-
-  function callback() {
-    console.log('callback');
-    props.fetchU();
-  }
+  const { values, errors, handleChange, handleSubmit } = useForm(validate, log);
 
   function log() {
     //form validated
     //cognito integration here, may detect cognito errors
-    console.log(values);
     props.login(values);
   }
 

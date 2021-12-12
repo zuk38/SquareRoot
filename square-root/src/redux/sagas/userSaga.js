@@ -94,6 +94,7 @@ export function* fetchUser() {
 export function* loginGoogle() {
   try {
     const ga = window.gapi.auth2.getAuthInstance();
+
     const googleUser = yield call(
       () => new Promise((resolve, reject) => ga.signIn().then(resolve, reject))
     );

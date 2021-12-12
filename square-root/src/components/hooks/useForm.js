@@ -1,11 +1,6 @@
 import { useState, useEffect } from 'react';
 
-const useForm = (
-  validate,
-  callback = null,
-  action = null,
-  initialFormValues = {}
-) => {
+const useForm = (validate, action = null, initialFormValues = {}) => {
   const [values, setValues] = useState(initialFormValues);
   const [errors, setErrors] = useState({});
   const [triedSubmitting, setTriedSubmitting] = useState(false);
@@ -13,7 +8,6 @@ const useForm = (
 
   useEffect(() => {
     if (Object.keys(errors).length === 0 && isSubmitting) {
-      if (callback) callback();
       resetForm();
     }
   }, [errors]);
