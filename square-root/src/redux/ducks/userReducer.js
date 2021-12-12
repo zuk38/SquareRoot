@@ -1,3 +1,9 @@
+export const AUTH_STATES = {
+  PRE_AUTHORIZE: 'PRE_AUTHORIZE',
+  AUTH_FAILED: 'AUTH_FAILED',
+  AUTHED: 'AUTHED',
+};
+
 //actions
 export const LOGIN = 'loginUser';
 export const LOGIN_GOOGLE = 'loginGoogle';
@@ -49,10 +55,7 @@ export const signupUser = (values) => ({
 const initialState = {
   //contains email, name, custom:role
   user: null,
-  //flag for router
-  isLoggedIn: false,
-  //assume we are authenticating until it yields
-  isAuthenticating: true,
+  status: AUTH_STATES.PRE_AUTHORIZE,
 };
 
 const UserReducer = (state = initialState, action) => {

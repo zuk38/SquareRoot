@@ -24,9 +24,13 @@ import validate from '../../utility/LoginFormValidation';
 
 import Alert from '../../components/Alert';
 import { connect } from 'react-redux';
-import { loginUser, fetchUser } from '../../redux/ducks/userReducer';
+import {
+  loginUser,
+  fetchUser,
+  loginGoogle,
+} from '../../redux/ducks/userReducer';
 import { createScript } from '../../services/GoogleService';
-import { loginGoogle } from '../../redux/sagas/userSaga';
+import Auth from '@aws-amplify/auth';
 
 function Login(props) {
   React.useEffect(() => {
@@ -42,13 +46,28 @@ function Login(props) {
     const ga = window.gapi.auth2.getAuthInstance();
     ga.signIn().then(
       (googleUser) => {
-        console.log(googleUser.getAuthResponse());
-        console.log(googleUser.getBasicProfile());
+        getAWSCredentials(googleUser);
       },
       (error) => {
         console.log(error);
       }
     );
+  };
+
+  const getAWSCredentials = async (googleUser) => {
+    const { id_token, expires_at } = googleUser.getAuthResponse();
+    const profile = googleUser.getBasicProfile();
+    let user = {
+      email: profile.getEmail(),
+      name: profile.getName(),
+    };
+
+    const credentials = await Auth.federatedSignIn(
+      'google',
+      { token: id_token, expires_at },
+      user
+    );
+    console.log('credentials', credentials);
   };
 
   const { values, errors, handleChange, handleSubmit } = useForm(
@@ -306,7 +325,7 @@ function Login(props) {
                       display='flex'
                       alignitems='center'
                       justifycontent='center'
-                      onClick={signIn}
+                      onClick={props.googleSignIn}
                       sx={{
                         width: '100%',
                         borderColor: '#dde3e8',
@@ -358,8 +377,8 @@ const mapDispatchToProps = (dispatch) => ({
   login: (values) => {
     dispatch(loginUser(values));
   },
-  loginGoogle: (values) => {
-    dispatch(loginGoogle(values));
+  googleSignIn: () => {
+    dispatch(loginGoogle());
   },
   fetchU: () => {
     dispatch(fetchUser());

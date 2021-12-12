@@ -3,7 +3,6 @@ import createSagaMiddleware from 'redux-saga';
 import alertReducer from './ducks/alertReducer';
 import userReducer from './ducks/userReducer';
 import { watcherSaga } from './sagas/rootSaga';
-import { fetchUser } from './ducks/userReducer';
 
 const reducer = combineReducers({
   user: userReducer,
@@ -14,8 +13,6 @@ const reducer = combineReducers({
 const sagaMiddleware = createSagaMiddleware();
 
 const store = createStore(reducer, applyMiddleware(sagaMiddleware));
-
-store.dispatch(fetchUser());
 
 //watcher saga listens to any actions and runs them
 sagaMiddleware.run(watcherSaga);

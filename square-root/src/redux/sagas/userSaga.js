@@ -1,5 +1,6 @@
-import { call, put, all, takeEvery, takeLatest } from 'redux-saga/effects';
+import { call, put, all, takeLatest } from 'redux-saga/effects';
 import {
+  AUTH_STATES,
   FETCH_USER,
   LOGIN,
   LOGIN_GOOGLE,
@@ -80,20 +81,21 @@ export function* fetchUser() {
     yield put(
       userLoggedIn({
         user: attributes,
-        isLoggedIn: true,
-        isAuthenticating: false,
+        status: AUTH_STATES.AUTHED,
       })
     );
   } catch (error) {
     console.log(error);
-    yield put(
-      userLoggedIn({ user: null, isLoggedIn: false, isAuthenticating: false })
-    );
+    yield put(userLoggedIn({ user: null, status: AUTH_STATES.AUTH_FAILED }));
   }
 }
 
-export function* loginGoogle({ googleUser }) {
+export function* loginGoogle() {
   try {
+    const ga = window.gapi.auth2.getAuthInstance();
+    const googleUser = yield call(
+      () => new Promise((resolve, reject) => ga.signIn().then(resolve, reject))
+    );
     const { id_token, expires_at } = googleUser.getAuthResponse();
     const profile = googleUser.getBasicProfile();
     let user = {
@@ -101,13 +103,13 @@ export function* loginGoogle({ googleUser }) {
       name: profile.getName(),
     };
 
-    const credentials = yield call([Auth, 'federatedSignIn'], {
-      provider: 'google',
-      token: id_token,
-      expires_at,
-      user,
-    });
+    const credentials = yield Auth.federatedSignIn(
+      'google',
+      { token: id_token, expires_at },
+      user
+    );
     console.log('credentials', credentials);
+    yield fetchUser();
   } catch (e) {
     console.log(e);
   }
@@ -150,19 +152,19 @@ export function* loginGoogle({ googleUser }) {
   };*/
 
 function* watchLoginUser() {
-  yield takeEvery(LOGIN, login);
+  yield takeLatest(LOGIN, login);
 }
 
 function* watchLoginGoogleUser() {
-  yield takeEvery(LOGIN_GOOGLE, loginGoogle);
+  yield takeLatest(LOGIN_GOOGLE, loginGoogle);
 }
 
 function* watchSignupUser() {
-  yield takeEvery(SIGN_UP, signUp);
+  yield takeLatest(SIGN_UP, signUp);
 }
 
 function* watchLogoutUser() {
-  yield takeEvery(LOGOUT, logout);
+  yield takeLatest(LOGOUT, logout);
 }
 
 function* watchFetchUser() {
@@ -175,5 +177,6 @@ export function* userSaga() {
     watchLogoutUser(),
     watchFetchUser(),
     watchSignupUser(),
+    watchLoginGoogleUser(),
   ]);
 }
