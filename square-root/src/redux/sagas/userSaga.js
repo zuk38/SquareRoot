@@ -1,8 +1,10 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 import {
   AUTH_STATES,
+  CHANGE_PASSWORD,
   FETCH_GOOGLE_USER,
   FETCH_USER,
+  FORGOT_PASSWORD,
   LOGIN,
   LOGIN_GOOGLE,
   LOGOUT,
@@ -143,6 +145,40 @@ export function* fetchGoogleUser({ credentials }) {
   }
 }
 
+function* forgotPassword({ values }) {
+  try {
+    const { email } = values;
+    yield call([Auth, 'forgotPassword'], {
+      username: email,
+    });
+  } catch (e) {
+    yield put(
+      setAlertAction({
+        text: e.message,
+        color: 'error',
+      })
+    );
+  }
+}
+
+function* changePassword({ values }) {
+  try {
+    const { email, code, password } = values;
+    yield call([Auth, 'forgotPasswordSubmit'], {
+      username: email,
+      code,
+      password,
+    });
+  } catch (e) {
+    yield put(
+      setAlertAction({
+        text: e.message,
+        color: 'error',
+      })
+    );
+  }
+}
+
 //TODO:
 /*removeEmpty = (obj) => {
     let newObj = {};
@@ -203,6 +239,14 @@ function* watchFetchGoogleUser() {
   yield takeLatest(FETCH_GOOGLE_USER, fetchGoogleUser);
 }
 
+function* watchForgotPassword() {
+  yield takeLatest(FORGOT_PASSWORD, forgotPassword);
+}
+
+function* watchChangePassword() {
+  yield takeLatest(CHANGE_PASSWORD, changePassword);
+}
+
 export function* userSaga() {
   yield all([
     watchLoginUser(),
@@ -211,5 +255,7 @@ export function* userSaga() {
     watchSignupUser(),
     watchLoginGoogleUser(),
     watchFetchGoogleUser(),
+    watchForgotPassword(),
+    watchChangePassword(),
   ]);
 }

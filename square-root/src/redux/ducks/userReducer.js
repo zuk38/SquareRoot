@@ -14,6 +14,8 @@ const USER_LOGGED_OUT = 'userLoggedOut';
 export const SIGN_UP = 'signupUser';
 export const FETCH_USER = 'fetchUser';
 export const FETCH_GOOGLE_USER = 'fetchGoogleUser';
+export const FORGOT_PASSWORD = 'forgotPassword';
+export const CHANGE_PASSWORD = 'changePassword';
 
 /*export const AUTH_INIT = 'AUTH_INIT'
 export const AUTH_SIGN_IN = 'AUTH_SIGN_IN'
@@ -52,6 +54,7 @@ export const userLoggedOut = () => ({
 export const fetchUser = () => ({
   type: FETCH_USER,
 });
+
 export const fetchGoogleUser = () => ({
   type: FETCH_GOOGLE_USER,
 });
@@ -60,6 +63,20 @@ export const signupUser = (values) => ({
   type: SIGN_UP,
   values,
 });
+
+export const forgotPassword = (values) => {
+  return {
+    type: FORGOT_PASSWORD,
+    values,
+  };
+};
+
+export const changePassword = (values) => {
+  return {
+    type: CHANGE_PASSWORD,
+    values,
+  };
+};
 
 const initialState = {
   //contains email, name, custom:role
@@ -76,14 +93,15 @@ const UserReducer = (state = initialState, action) => {
     case USER_LOGGED_OUT:
       return initialState;
     case LOGIN:
-      const v = action.values;
-      return { ...initialState, v };
+      return { ...initialState, ...action.values };
     case LOGIN_GOOGLE:
-      const google = action.values;
-      return { ...initialState, google };
+      return { ...initialState, ...action.values };
     case SIGN_UP:
-      const { values } = action;
-      return { ...initialState, values };
+      return { ...initialState, ...action.values };
+    case FORGOT_PASSWORD:
+      return { ...initialState, ...action.values };
+    case CHANGE_PASSWORD:
+      return { ...initialState, ...action.values };
     default:
       return state;
   }
