@@ -2,7 +2,7 @@ const typography = {
   fontFamily: ['Poppins', 'IBM Plex Serif'].join(','),
   primary: {
     fontFamily: 'Poppins',
-    fontWeight: 600,
+    fontWeight: 400,
   },
   secondary: {
     fontFamily: 'IBM Plex Serif',
@@ -10,7 +10,7 @@ const typography = {
     fontStyle: 'italic',
   },
   body1: {
-    fontWeight: 600, //Poppins
+    fontWeight: 500, //Poppins
   },
   h1: {
     fontSize: '1.875rem',

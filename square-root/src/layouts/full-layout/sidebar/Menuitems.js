@@ -39,22 +39,22 @@ const Menuitems = [
   {
     title: 'Roof gardens',
     icon: 'sun',
-    href: '/shop/lists',
+    href: '/shop/ShopRooftop',
   },
   {
     title: 'Rainbeds',
     icon: 'cloud-drizzle',
-    href: '',
+    href: '/shop/ShopRainbed',
   },
   {
     title: 'Indoor',
     icon: 'home',
-    href: '',
+    href: '/shop/ShopIndoor',
   },
   {
     title: 'All plants',
     icon: 'list',
-    href: '',
+    href: '/shop/ShopAllPlants',
   },
   /** 
   {

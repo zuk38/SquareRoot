@@ -1,7 +1,5 @@
 {
-  "providers": [
-    "awscloudformation"
-  ],
+  "providers": ["awscloudformation"],
   "projectName": "SquareRootProject",
   "version": "3.1",
   "frontend": "javascript",

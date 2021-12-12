@@ -22,11 +22,7 @@
         {
           "category": "storage",
           "resourceName": "contactFormTable",
-          "attributes": [
-            "Name",
-            "Arn",
-            "StreamArn"
-          ]
+          "attributes": ["Name", "Arn", "StreamArn"]
         }
       ]
     },
@@ -38,9 +34,7 @@
         {
           "category": "storage",
           "resourceName": "contactFormTable",
-          "attributes": [
-            "StreamArn"
-          ]
+          "attributes": ["StreamArn"]
         }
       ]
     }
@@ -86,10 +80,7 @@
         {
           "category": "function",
           "resourceName": "contactFormFunction",
-          "attributes": [
-            "Name",
-            "Arn"
-          ]
+          "attributes": ["Name", "Arn"]
         }
       ]
     }

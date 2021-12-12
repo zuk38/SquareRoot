@@ -1,21 +1,30 @@
 exports.handler = function afterConfirmationTrigger(event, context, callback) {
-  const AWS = require("aws-sdk");
+  const AWS = require('aws-sdk');
   const cognitoISP = new AWS.CognitoIdentityServiceProvider({
-    apiVersion: "2016-04-18",
+    apiVersion: '2016-04-18',
   });
 
   // the user attribute 'custom:role' was set on User Sign Up.  Here, we are
   // using it as a flag. Depending on its value, add to a specified group.
 
-  let groupName = event.request.userAttributes["custom:role"];
-  if (groupName === "Real Estate Developer" || groupName === "Eiendomsutvikler") {
-    groupName = "REDs";
-  } else if (groupName === "Landscape Architect" || groupName === "Landskapsarkitekt") {
-    groupName = "LARKs";
-  } else if (groupName === "Landscape Entrepreneur" || groupName === "Landskapsentreprenør") {
-    groupName = "LENTs";
-  } else if (groupName === "Plant Nursery" || groupName === "Planteskole") {
-    groupName = "PNs";
+  let groupName = event.request.userAttributes['custom:role'];
+  if (
+    groupName === 'Real Estate Developer' ||
+    groupName === 'Eiendomsutvikler'
+  ) {
+    groupName = 'REDs';
+  } else if (
+    groupName === 'Landscape Architect' ||
+    groupName === 'Landskapsarkitekt'
+  ) {
+    groupName = 'LARKs';
+  } else if (
+    groupName === 'Landscape Entrepreneur' ||
+    groupName === 'Landskapsentreprenør'
+  ) {
+    groupName = 'LENTs';
+  } else if (groupName === 'Plant Nursery' || groupName === 'Planteskole') {
+    groupName = 'PNs';
   }
 
   const params = {
