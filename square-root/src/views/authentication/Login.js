@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Grid,
-  Box,
-  Typography,
-  FormGroup,
-  FormControlLabel,
-  Button,
-} from '@mui/material';
+import { Grid, Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import GoogleIcon from '@mui/icons-material/Google';
 
-import CustomCheckbox from '../../components/forms/custom-elements/CustomCheckbox';
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
@@ -190,7 +182,7 @@ function Login(props) {
                       alignItems: 'center',
                     }}
                   >
-                    <FormGroup>
+                    {/*<FormGroup>
                       <FormControlLabel
                         control={<CustomCheckbox defaultChecked />}
                         label='Remember this Device'
@@ -198,7 +190,7 @@ function Login(props) {
                           mb: 2,
                         }}
                       />
-                    </FormGroup>
+                      </FormGroup>*/}
                     <Box
                       sx={{
                         ml: 'auto',
