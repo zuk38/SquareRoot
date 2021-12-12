@@ -311,12 +311,7 @@ function Login(props) {
                           variant='h6'
                           sx={{
                             ml: 1,
-                            color: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.grey.A200
-                                  : '#13152a'
-                              }`,
+                            color: '#13152a',
                           }}
                         >
                           Google

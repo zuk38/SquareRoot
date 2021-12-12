@@ -25,8 +25,7 @@ export default function ResetPassword() {
           sm={12}
           lg={6}
           sx={{
-            background: (theme) =>
-              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+            background: '#ffffff',
           }}
         >
           <Box
