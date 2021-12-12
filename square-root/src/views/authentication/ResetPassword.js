@@ -1,6 +1,6 @@
 import React from 'react';
 import { Grid, Box } from '@mui/material';
-import img1 from '../../assets/images/backgrounds/login-bg.svg';
+import img1 from '../../assets/images/backgrounds/login-bg.jpg';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 import PageContainer from '../../components/container/PageContainer';
 import ResetPassCode from '../../components/auth/ResetPassCode';
