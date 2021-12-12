@@ -11,7 +11,17 @@ import 'flag-icon-css/css/flag-icon.min.css';
 import Spinner from './views/spinner/Spinner';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-Amplify.configure(config);
+
+const updatedAwsConfig = {
+  ...config,
+  oauth: {
+    ...config.oauth,
+    redirectSignIn: config.oauth.redirectSignIn,
+    redirectSignOut: config.oauth.redirectSignOut,
+  },
+};
+
+Amplify.configure(updatedAwsConfig);
 require('dotenv').config();
 
 store.subscribe(() => {

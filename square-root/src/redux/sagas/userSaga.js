@@ -1,12 +1,14 @@
 import { call, put, all, takeLatest } from 'redux-saga/effects';
 import {
   AUTH_STATES,
+  FETCH_GOOGLE_USER,
   FETCH_USER,
   LOGIN,
   LOGIN_GOOGLE,
   LOGOUT,
   SIGN_UP,
   userLoggedIn,
+  userLoggedInGoogle,
   userLoggedOut,
 } from '../ducks/userReducer';
 import { setAlertAction } from '../ducks/alertReducer';
@@ -73,11 +75,8 @@ export function* fetchUser() {
   console.log('fetching user');
   try {
     yield call([Auth, 'currentSession']);
-    //console.log(session);
     const user = yield call([Auth, 'currentAuthenticatedUser']);
-    //console.log(user);
     const { attributes } = user;
-    console.log(attributes);
     yield put(
       userLoggedIn({
         user: attributes,
@@ -109,9 +108,38 @@ export function* loginGoogle() {
       user
     );
     console.log('credentials', credentials);
-    yield fetchUser();
+    yield fetchGoogleUser(credentials);
   } catch (e) {
-    console.log(e);
+    yield put(
+      setAlertAction({
+        text: e.message,
+        color: 'error',
+      })
+    );
+  }
+}
+
+export function* fetchGoogleUser({ credentials }) {
+  try {
+    yield put(
+      userLoggedInGoogle({
+        user: credentials,
+        status: AUTH_STATES.AUTHED,
+      })
+    );
+  } catch (e) {
+    yield put(
+      setAlertAction({
+        text: e.message,
+        color: 'error',
+      })
+    );
+    yield put(
+      userLoggedInGoogle({
+        user: null,
+        status: AUTH_STATES.AUTH_FAILED,
+      })
+    );
   }
 }
 
@@ -171,6 +199,10 @@ function* watchFetchUser() {
   yield takeLatest(FETCH_USER, fetchUser);
 }
 
+function* watchFetchGoogleUser() {
+  yield takeLatest(FETCH_GOOGLE_USER, fetchGoogleUser);
+}
+
 export function* userSaga() {
   yield all([
     watchLoginUser(),
@@ -178,5 +210,6 @@ export function* userSaga() {
     watchFetchUser(),
     watchSignupUser(),
     watchLoginGoogleUser(),
+    watchFetchGoogleUser(),
   ]);
 }

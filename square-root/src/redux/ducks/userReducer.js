@@ -8,10 +8,12 @@ export const AUTH_STATES = {
 export const LOGIN = 'loginUser';
 export const LOGIN_GOOGLE = 'loginGoogle';
 const USER_LOGGED_IN = 'userLoggedIn';
+const USER_LOGGED_IN_GOOGLE = 'userLoggedInGoogle';
 export const LOGOUT = 'logout';
 const USER_LOGGED_OUT = 'userLoggedOut';
 export const SIGN_UP = 'signupUser';
 export const FETCH_USER = 'fetchUser';
+export const FETCH_GOOGLE_USER = 'fetchGoogleUser';
 
 /*export const AUTH_INIT = 'AUTH_INIT'
 export const AUTH_SIGN_IN = 'AUTH_SIGN_IN'
@@ -34,6 +36,11 @@ export const userLoggedIn = (data) => ({
   data,
 });
 
+export const userLoggedInGoogle = (data) => ({
+  type: USER_LOGGED_IN_GOOGLE,
+  data,
+});
+
 export const logout = () => ({
   type: LOGOUT,
 });
@@ -44,6 +51,9 @@ export const userLoggedOut = () => ({
 
 export const fetchUser = () => ({
   type: FETCH_USER,
+});
+export const fetchGoogleUser = () => ({
+  type: FETCH_GOOGLE_USER,
 });
 
 export const signupUser = (values) => ({
@@ -60,6 +70,8 @@ const initialState = {
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case USER_LOGGED_IN:
+      return { ...initialState, ...action.data };
+    case USER_LOGGED_IN_GOOGLE:
       return { ...initialState, ...action.data };
     case USER_LOGGED_OUT:
       return initialState;
