@@ -11,7 +11,6 @@ export default function validate(values) {
   checkEmail(values, errors);
   checkRegisterPassword(values, errors);
   checkConfPassword(values, errors);
-  //checkPhone(values, errors);
   checkName(values, errors);
   checkRole(values, errors);
 

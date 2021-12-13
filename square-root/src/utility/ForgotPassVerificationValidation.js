@@ -7,8 +7,5 @@ export default function validate(values) {
   checkRegisterPassword(values, errors);
   checkCode(values, errors);
 
-  /*if (!errors.email && !errors.password && !errors.code)
-    checkCognito(values, errors);*/
-
   return errors;
 }
