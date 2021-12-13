@@ -2,8 +2,8 @@ import React, { useEffect, useRef, useState } from 'react';
 import useOutsideAlerter from '../hooks/useOutsideAlerter';
 import i18next from 'i18next';
 import cookies from 'js-cookie';
-import { NavButton } from './NavButton';
-import { FaAngleDown } from 'react-icons/fa';
+import DownIcon from '@mui/icons-material/KeyboardArrowDown';
+import { Button } from '@mui/material';
 
 const languages = {
   en: {
@@ -39,8 +39,9 @@ export default function LanguageSelect() {
   return (
     <>
       <div ref={dropdownRef}>
-        <NavButton
-          endIcon={<FaAngleDown />}
+        <Button
+          variant='outlined'
+          endIcon={<DownIcon />}
           onClick={() => setDropdown(!dropdown)}
         >
           <span
@@ -52,7 +53,7 @@ export default function LanguageSelect() {
             }
           />
           {menuAnchor ? menuAnchor.name : languages[selected].name}
-        </NavButton>
+        </Button>
         {dropdown && (
           <ul onClick={() => setDropdown(false)} className='d-language-menu'>
             {Object.keys(languages).map((language) => (
