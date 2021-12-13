@@ -32,9 +32,6 @@ const Dashboard2 = lazy(() => import('../views/dashboards/Dashboard2'));
 const Dashboard3 = lazy(() => import('../views/dashboards/Dashboard3'));
 
 /* ****Apps***** */
-const Chats = lazy(() => import('../views/apps/chats/Chats'));
-const Notes = lazy(() => import('../views/apps/notes/Notes'));
-const Email = lazy(() => import('../views/apps/email/Email'));
 const ShopRooftop = lazy(() => import('../views/apps/shop/ShopRooftop'));
 const ShopRainbed = lazy(() => import('../views/apps/shop/ShopRainbed'));
 const ShopIndoor = lazy(() => import('../views/apps/shop/ShopIndoor'));
@@ -125,9 +122,6 @@ const Router = (isLoggedIn) => [
       /* template elements will be refactored later */
 
       { path: '/customers/lists', element: <CustomerLists /> },
-      { path: '/chats', element: <Chats /> },
-      { path: '/notes', element: <Notes /> },
-      { path: '/email', element: <Email /> },
       { path: '/shop/ShopRooftop', element: <ShopRooftop /> },
       { path: '/shop/ShopRainbed', element: <ShopRainbed /> },
       { path: '/shop/ShopIndoor', element: <ShopIndoor /> },
