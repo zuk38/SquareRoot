@@ -168,6 +168,7 @@ const Router = (isLoggedIn) => [
     path: 'dashboard',
     element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
     children: [
+      { path: '/dashboard', element: <Dashboard1 /> },
       { path: 'dashboard1', element: <Dashboard1 /> },
       { path: 'dashboard2', element: <Dashboard2 /> },
       { path: 'dashboard3', element: <Dashboard3 /> },
@@ -177,11 +178,7 @@ const Router = (isLoggedIn) => [
   /* auth */
   {
     path: 'auth',
-    element: !isLoggedIn ? (
-      <BlankLayout />
-    ) : (
-      <Navigate to='/dashboard/dashboard1' />
-    ),
+    element: !isLoggedIn ? <BlankLayout /> : <Navigate to='/dashboard' />,
     children: [
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },
