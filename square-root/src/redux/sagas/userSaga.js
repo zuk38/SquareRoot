@@ -38,7 +38,12 @@ export function* logout() {
     yield call([Auth, 'signOut']);
     yield put(setAuth(initialState));
   } catch (error) {
-    console.log(error.message);
+    yield put(
+      setAlertAction({
+        text: error.message,
+        color: 'error',
+      })
+    );
   }
 }
 
@@ -78,7 +83,6 @@ export function* fetchUser() {
     const { attributes } = user;
     yield put(setAuth({ user: attributes, status: AUTH_STATES.AUTHED }));
   } catch (error) {
-    console.log(error);
     yield put(setAuth({ user: null, status: AUTH_STATES.AUTH_FAILED }));
   }
 }
@@ -102,7 +106,6 @@ export function* loginGoogle() {
       { token: id_token, expires_at },
       user
     );
-    console.log('credentials', credentials);
     yield fetchGoogleUser(credentials);
   } catch (e) {
     yield put(
@@ -115,8 +118,6 @@ export function* loginGoogle() {
 }
 
 export function* fetchGoogleUser({ credentials }) {
-  console.log('fetch google');
-  console.log(credentials);
   try {
     yield put(setAuth({ user: credentials, status: AUTH_STATES.AUTHED }));
   } catch (e) {
@@ -135,7 +136,6 @@ function* forgotPassword({ values }) {
     yield Auth.forgotPassword(values.email);
     yield put(setAuth({ status: AUTH_STATES.FORGOT_PASSWORD_STARTED }));
   } catch (e) {
-    console.log(e.message);
     yield put(
       setAlertAction({
         text: e.message,

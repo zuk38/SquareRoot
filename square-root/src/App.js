@@ -33,10 +33,8 @@ const App = (props) => {
       undefined
         ? null
         : JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'));
-    console.log(googleCreds);
+
     if (googleCreds) {
-      console.log('fetching google in App');
-      console.log(googleCreds);
       fetchGoogle(googleCreds);
     } else {
       fetchU();
