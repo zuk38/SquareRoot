@@ -122,10 +122,7 @@ const Router = (isLoggedIn) => [
       /* template elements will be refactored later */
 
       { path: '/customers/lists', element: <CustomerLists /> },
-      { path: '/shop/ShopRooftop', element: <ShopRooftop /> },
-      { path: '/shop/ShopRainbed', element: <ShopRainbed /> },
-      { path: '/shop/ShopIndoor', element: <ShopIndoor /> },
-      { path: '/shop/ShopAllPlants', element: <ShopAllPlants /> },
+
       { path: '/calendar', element: <Calendar /> },
       { path: '/customers/edit', element: <CustomerEdit /> },
       { path: '/tables/basic-table', element: <BasicTable /> },
@@ -169,9 +166,13 @@ const Router = (isLoggedIn) => [
     element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
     children: [
       { path: '/dashboard', element: <Dashboard1 /> },
-      { path: 'dashboard1', element: <Dashboard1 /> },
-      { path: 'dashboard2', element: <Dashboard2 /> },
-      { path: 'dashboard3', element: <Dashboard3 /> },
+      { path: '/dashboard/dashboard1', element: <Dashboard1 /> },
+      { path: '/dashboard/dashboard2', element: <Dashboard2 /> },
+      { path: '/dashboard/dashboard3', element: <Dashboard3 /> },
+      { path: 'shop/ShopRooftop', element: <ShopRooftop /> },
+      { path: 'shop/ShopRainbed', element: <ShopRainbed /> },
+      { path: 'shop/ShopIndoor', element: <ShopIndoor /> },
+      { path: 'shop/ShopAllPlants', element: <ShopAllPlants /> },
       { path: '*', element: <Navigate to='/404' /> },
     ],
   },
