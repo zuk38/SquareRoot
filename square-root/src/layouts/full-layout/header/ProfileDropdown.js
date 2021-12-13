@@ -10,8 +10,10 @@ import {
 import FeatherIcon from 'feather-icons-react';
 
 import userimg from '../../../assets/images/users/user2.jpg';
+import { connect } from 'react-redux';
+import { logout } from '../../../redux/ducks/userReducer';
 
-const ProfileDropdown = () => (
+const ProfileDropdown = (props) => (
   <Box>
     <Box
       sx={{
@@ -39,11 +41,13 @@ const ProfileDropdown = () => (
               lineHeight: '1.235',
             }}
           >
-            Julia Roberts
+            {props.name}
           </Typography>
-          <Typography color='textSecondary' variant='h6' fontWeight='400'>
-            Administrator
-          </Typography>
+          {props.role && (
+            <Typography color='textSecondary' variant='h6' fontWeight='400'>
+              {props.role}
+            </Typography>
+          )}
           <Box display='flex' alignItems='center'>
             <Typography
               color='textSecondary'
@@ -57,7 +61,7 @@ const ProfileDropdown = () => (
               <FeatherIcon icon='mail' width='18' />
             </Typography>
             <Typography color='textSecondary' variant='h6'>
-              info@flexy.com
+              {props.email}
             </Typography>
           </Box>
         </Box>
@@ -204,4 +208,14 @@ const ProfileDropdown = () => (
   </Box>
 );
 
-export default ProfileDropdown;
+const mapStateToProps = ({ user }) => ({
+  user: user.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => {
+    dispatch(logout());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(ProfileDropdown);
