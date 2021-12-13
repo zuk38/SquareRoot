@@ -28,8 +28,16 @@ const App = (props) => {
 
     if (status === AUTH_STATES.CODE_VERIFIED) navigate('/auth/login');
 
-    if (JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'))) {
-      fetchGoogle();
+    let googleCreds =
+      JSON.parse(localStorage.getItem('aws-amplify-federatedInfo')) ===
+      undefined
+        ? null
+        : JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'));
+    console.log(googleCreds);
+    if (googleCreds) {
+      console.log('fetching google in App');
+      console.log(googleCreds);
+      fetchGoogle(googleCreds);
     } else {
       fetchU();
     }
@@ -46,6 +54,7 @@ const App = (props) => {
         location.pathname.indexOf('/dashboard') <= -1 && <Navbar />}
       {routing}
       {location.pathname.indexOf('/auth') <= -1 &&
+        location.pathname.indexOf('/dashboard') <= -1 &&
         location.pathname !== '/forgotpassword' && <FooterContainer />}
       <Outlet />
     </ThemeProvider>
@@ -60,8 +69,8 @@ const mapDispatchToProps = (dispatch) => ({
   fetchU: () => {
     dispatch(fetchUser());
   },
-  fetchGoogle: () => {
-    dispatch(fetchGoogleUser());
+  fetchGoogle: (credentials) => {
+    dispatch(fetchGoogleUser(credentials));
   },
 });
 

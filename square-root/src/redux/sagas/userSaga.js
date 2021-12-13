@@ -5,14 +5,12 @@ import {
   FETCH_GOOGLE_USER,
   FETCH_USER,
   FORGOT_PASSWORD,
+  initialState,
   LOGIN,
   LOGIN_GOOGLE,
   LOGOUT,
   setAuth,
   SIGN_UP,
-  userLoggedIn,
-  userLoggedInGoogle,
-  userLoggedOut,
   userSignedUp,
 } from '../ducks/userReducer';
 import { setAlertAction } from '../ducks/alertReducer';
@@ -38,7 +36,7 @@ export function* login({ values }) {
 export function* logout() {
   try {
     yield call([Auth, 'signOut']);
-    yield put(userLoggedOut());
+    yield put(setAuth(initialState));
   } catch (error) {
     console.log(error.message);
   }
@@ -78,17 +76,10 @@ export function* fetchUser() {
     yield call([Auth, 'currentSession']);
     const user = yield call([Auth, 'currentAuthenticatedUser']);
     const { attributes } = user;
-    yield put(
-      userLoggedIn({
-        user: attributes,
-        status: AUTH_STATES.AUTHED,
-      })
-    );
+    yield put(setAuth({ user: attributes, status: AUTH_STATES.AUTHED }));
   } catch (error) {
     console.log(error);
-    yield put(
-      userLoggedIn({ user: null, status: AUTH_STATES.AUTH_FAILED, error })
-    );
+    yield put(setAuth({ user: null, status: AUTH_STATES.AUTH_FAILED }));
   }
 }
 
@@ -125,13 +116,9 @@ export function* loginGoogle() {
 
 export function* fetchGoogleUser({ credentials }) {
   console.log('fetch google');
+  console.log(credentials);
   try {
-    yield put(
-      userLoggedInGoogle({
-        user: credentials,
-        status: AUTH_STATES.AUTHED,
-      })
-    );
+    yield put(setAuth({ user: credentials, status: AUTH_STATES.AUTHED }));
   } catch (e) {
     yield put(
       setAlertAction({
@@ -139,12 +126,7 @@ export function* fetchGoogleUser({ credentials }) {
         color: 'error',
       })
     );
-    yield put(
-      userLoggedInGoogle({
-        user: null,
-        status: AUTH_STATES.AUTH_FAILED,
-      })
-    );
+    yield put(setAuth({ user: null, status: AUTH_STATES.AUTH_FAILED }));
   }
 }
 
