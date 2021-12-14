@@ -1,25 +1,19 @@
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import logo from '../../images/logos/logo--dark.png';
-import { Link, NavLink } from 'react-router-dom';
-import { useNavigate } from 'react-router-dom';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
 import { NavbarData } from './NavbarData';
-import useWindowDimensions from '../hooks/useWindowDimensions';
-import Dropdown from './Dropdown';
-import { ReactComponent as MenuIcon } from '../../icons/menu.svg';
-import { ReactComponent as CloseIcon } from '../../icons/close.svg';
 import NavbarDropdown from './NavbarDropdown';
-import useOutsideAlerter from '../hooks/useOutsideAlerter';
 import { Trans, useTranslation } from 'react-i18next';
 import LanguageSelect from './LanguageSelect';
-import { FaAngleDown, FaUser } from 'react-icons/fa';
-import { NavButton } from './NavButton';
+import { Button, IconButton, Stack, useMediaQuery } from '@mui/material';
+import GoIcon from '@mui/icons-material/ChevronRight';
+import MenuIcon from '@mui/icons-material/Menu';
+import CloseIcon from '@mui/icons-material/Close';
 
-export default function Navbar(props) {
+function Navbar(props) {
   let navigate = useNavigate();
+  const lgUp = useMediaQuery((theme) => theme.breakpoints.down('lg'));
   const { t } = useTranslation();
-  const dropdownRef = useRef(null);
-  useOutsideAlerter(dropdownRef, () => setDropdown(false));
-  const [dropdown, setDropdown] = useState(false);
   const [click, setClick] = useState(false);
   const [navDropdown, setNavDropdown] = useState({
     dropdownAbout: false,
@@ -27,11 +21,9 @@ export default function Navbar(props) {
     dropdownContact: false,
   });
 
-  let width = useWindowDimensions();
-
   useEffect(() => {
     closeMobileMenu();
-  }, [width]);
+  }, [lgUp]);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = (path) => {
@@ -169,38 +161,36 @@ export default function Navbar(props) {
           </ul>
         )}
         <ul className='navbar-nav'>
-          {/*language */}
-          <LanguageSelect />
-          {/* user */}
-          {!props.auth.isAuthenticated ? (
-            <NavButton
-              onClick={() => closeMobileMenu('/auth/login')}
-              endIcon={<FaUser />}
+          <Stack direction='row' spacing={2}>
+            {/*language */}
+            <LanguageSelect />
+            {/* platform */}
+            <Link
+              style={{
+                textDecoration: 'none',
+              }}
+              to='/dashboard'
             >
-              <Trans i18nKey='signIn'>Sign in</Trans>
-            </NavButton>
-          ) : (
-            <div ref={dropdownRef}>
-              <NavButton
-                onClick={() => setDropdown(!dropdown)}
-                endIcon={<FaAngleDown />}
-              >
-                {props.auth.user}
-              </NavButton>
-              <Dropdown
-                {...props}
-                dropdown={dropdown}
-                setDropdown={(value) => setDropdown(value)}
-              />
-            </div>
-          )}
+              <Button variant='contained' endIcon={<GoIcon />}>
+                Visit Platform
+              </Button>
+            </Link>
 
-          {/*sidebar*/}
-          <div className='sidebar-bars' onClick={handleClick}>
-            {!click ? <MenuIcon /> : <CloseIcon />}
-          </div>
+            {/*sidebar*/}
+            {lgUp && (
+              <IconButton
+                aria-label='delete'
+                size='large'
+                onClick={handleClick}
+              >
+                {!click ? <MenuIcon /> : <CloseIcon />}
+              </IconButton>
+            )}
+          </Stack>
         </ul>
       </nav>
     </>
   );
 }
+
+export default Navbar;

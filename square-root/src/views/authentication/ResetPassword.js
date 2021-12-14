@@ -1,13 +1,21 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Grid, Box } from '@mui/material';
-import img1 from '../../assets/images/backgrounds/login-bg.svg';
+import img1 from '../../assets/images/backgrounds/login-bg.jpg';
 import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 import PageContainer from '../../components/container/PageContainer';
 import ResetPassCode from '../../components/auth/ResetPassCode';
 import ResetPassEmail from '../../components/auth/ResetPassEmail';
+import { connect } from 'react-redux';
+import { AUTH_STATES } from '../../redux/ducks/userReducer';
+import Alert from '../../components/Alert';
 
-export default function ResetPassword() {
-  const [emailProvided, setEmailProvided] = useState(false);
+function ResetPassword(props) {
+  const [emailProvided, setEmailProvided] = React.useState(false);
+
+  React.useEffect(() => {
+    if (props.status === AUTH_STATES.FORGOT_PASSWORD_STARTED)
+      setEmailProvided(true);
+  }, [props.status]);
 
   return (
     <PageContainer
@@ -25,8 +33,7 @@ export default function ResetPassword() {
           sm={12}
           lg={6}
           sx={{
-            background: (theme) =>
-              `${theme.palette.mode === 'dark' ? '#1c1f25' : '#ffffff'}`,
+            background: '#ffffff',
           }}
         >
           <Box
@@ -71,12 +78,15 @@ export default function ResetPassword() {
             </Box>
           </Box>
         </Grid>
-        {!emailProvided ? (
-          <ResetPassEmail redirectToCode={(arg) => setEmailProvided(arg)} />
-        ) : (
-          <ResetPassCode />
-        )}
+        <Alert />
+        {!emailProvided ? <ResetPassEmail /> : <ResetPassCode />}
       </Grid>
     </PageContainer>
   );
 }
+
+const mapStateToProps = ({ user }) => ({
+  status: user.status,
+});
+
+export default connect(mapStateToProps)(ResetPassword);

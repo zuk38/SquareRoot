@@ -5,20 +5,19 @@ import CustomFormLabel from '../forms/custom-elements/CustomFormLabel';
 import CustomTextField from '../forms/custom-elements/CustomTextField';
 import useForm from '../hooks/useForm';
 import validate from '../../utility/ForgotPassVerificationValidation';
-import { useNavigate } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { changePassword } from '../../redux/ducks/userReducer';
 
-export default function ResetPassEmail() {
-  const navigate = useNavigate();
-  const handleReset = () => {
-    //TODO: set a global alert with the reducer
-    navigate('/auth/login');
-  };
-
+function ResetPassCode(props) {
   const { values, errors, handleChange, handleSubmit } = useForm(
     validate,
-    handleReset,
-    {}
+    handleReset
   );
+
+  function handleReset() {
+    //TODO: set a global alert with the reducer
+    props.resetPassword(values);
+  }
 
   return (
     <Grid item xs={12} sm={8} lg={6} display='flex' alignItems='center'>
@@ -118,3 +117,11 @@ export default function ResetPassEmail() {
     </Grid>
   );
 }
+
+const mapDispatchToProps = (dispatch) => ({
+  resetPassword: (data) => {
+    dispatch(changePassword(data));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(ResetPassCode);

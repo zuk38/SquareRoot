@@ -32,13 +32,11 @@ const Dashboard2 = lazy(() => import('../views/dashboards/Dashboard2'));
 const Dashboard3 = lazy(() => import('../views/dashboards/Dashboard3'));
 
 /* ****Apps***** */
-const Chats = lazy(() => import('../views/apps/chats/Chats'));
-const Notes = lazy(() => import('../views/apps/notes/Notes'));
-const Email = lazy(() => import('../views/apps/email/Email'));
 const ShopRooftop = lazy(() => import('../views/apps/shop/ShopRooftop'));
 const ShopRainbed = lazy(() => import('../views/apps/shop/ShopRainbed'));
 const ShopIndoor = lazy(() => import('../views/apps/shop/ShopIndoor'));
 const ShopAllPlants = lazy(() => import('../views/apps/shop/ShopAllPlants'));
+
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
 const CustomTimeline = lazy(() => import('../views/timeline/CustomTimeline'));
@@ -124,13 +122,7 @@ const Router = (isLoggedIn) => [
       /* template elements will be refactored later */
 
       { path: '/customers/lists', element: <CustomerLists /> },
-      { path: '/chats', element: <Chats /> },
-      { path: '/notes', element: <Notes /> },
-      { path: '/email', element: <Email /> },
-      { path: '/shop/ShopRooftop', element: <ShopRooftop /> },
-      { path: '/shop/ShopRainbed', element: <ShopRainbed /> },
-      { path: '/shop/ShopIndoor', element: <ShopIndoor /> },
-      { path: '/shop/ShopAllPlants', element: <ShopAllPlants /> },
+
       { path: '/calendar', element: <Calendar /> },
       { path: '/customers/edit', element: <CustomerEdit /> },
       { path: '/tables/basic-table', element: <BasicTable /> },
@@ -173,20 +165,22 @@ const Router = (isLoggedIn) => [
     path: 'dashboard',
     element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
     children: [
-      { path: 'dashboard1', element: <Dashboard1 /> },
-      { path: 'dashboard2', element: <Dashboard2 /> },
-      { path: 'dashboard3', element: <Dashboard3 /> },
+      { path: '/dashboard', element: <Dashboard1 /> },
+      { path: '/dashboard/dashboard1', element: <Dashboard1 /> },
+      { path: '/dashboard/dashboard2', element: <Dashboard2 /> },
+      { path: '/dashboard/dashboard3', element: <Dashboard3 /> },
+      { path: 'shop/shop-detail', element: <ShopDetail /> },
+      { path: 'shop/ShopRooftop', element: <ShopRooftop /> },
+      { path: 'shop/ShopRainbed', element: <ShopRainbed /> },
+      { path: 'shop/ShopIndoor', element: <ShopIndoor /> },
+      { path: 'shop/ShopAllPlants', element: <ShopAllPlants /> },
       { path: '*', element: <Navigate to='/404' /> },
     ],
   },
   /* auth */
   {
     path: 'auth',
-    element: !isLoggedIn ? (
-      <BlankLayout />
-    ) : (
-      <Navigate to='/dashboard/dashboard1' />
-    ),
+    element: !isLoggedIn ? <BlankLayout /> : <Navigate to='/dashboard' />,
     children: [
       { path: 'login', element: <Login /> },
       { path: 'register', element: <Register /> },

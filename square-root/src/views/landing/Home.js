@@ -7,8 +7,8 @@ import { Trans, useTranslation } from 'react-i18next';
 import Button from '@material-ui/core/Button';
 import ContactForm from '../../components/ContactForm';
 import { FooterContainer } from '../../components/footer/FooterContainer';
-import useWindowDimensions from '../../components/hooks/useWindowDimensions';
 import Carousel from 'react-material-ui-carousel';
+import { useMediaQuery } from '@mui/material';
 
 export default function Home(props) {
   useEffect(() => {
@@ -19,6 +19,7 @@ export default function Home(props) {
     };
   }, []);
 
+  const mdUp = useMediaQuery((theme) => theme.breakpoints.up('md'));
   const { t } = useTranslation();
   const executeScroll = (myRef) => {
     let element;
@@ -36,8 +37,6 @@ export default function Home(props) {
     if (path === undefined) return;
     props.history.push(path);
   };
-
-  let width = useWindowDimensions();
 
   const section_fourth_items = [
     {
@@ -179,7 +178,7 @@ export default function Home(props) {
       </section>
 
       <section id='fourth'>
-        {width >= 768 ? (
+        {mdUp ? (
           <div className='o-container c-section--pad-vh'>
             <div className='container-desktop'>
               {section_fourth_items.map((item) => (

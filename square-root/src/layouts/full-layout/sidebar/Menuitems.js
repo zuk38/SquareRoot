@@ -12,19 +12,19 @@ const Menuitems = [
     children: [
       {
         title: 'Tekna',
-        href: '/dashboards/dashboard1',
+        href: 'dashboard1',
       },
       {
         title: 'Sørengkaia',
-        href: '/dashboards/dashboard2',
+        href: 'dashboard2',
       },
       {
         title: 'Netflix HQ',
-        href: '/dashboards/dashboard3',
+        href: 'dashboard3',
       },
       {
         title: 'Create new project',
-        href: '/dashboards/dashboard3',
+        href: 'dashboard3',
         icon: 'plus',
       },
     ],
@@ -39,22 +39,22 @@ const Menuitems = [
   {
     title: 'Roof gardens',
     icon: 'sun',
-    href: '/shop/ShopRooftop',
+    href: 'shop/ShopRooftop',
   },
   {
     title: 'Rainbeds',
     icon: 'cloud-drizzle',
-    href: '/shop/ShopRainbed',
+    href: 'shop/ShopRainbed',
   },
   {
     title: 'Indoor',
     icon: 'home',
-    href: '/shop/ShopIndoor',
+    href: 'shop/ShopIndoor',
   },
   {
     title: 'All plants',
     icon: 'list',
-    href: '/shop/ShopAllPlants',
+    href: 'shop/ShopAllPlants',
   },
   /** 
   {

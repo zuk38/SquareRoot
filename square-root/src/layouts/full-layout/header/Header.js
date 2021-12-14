@@ -22,8 +22,17 @@ import NotificationDropdown from './NotificationDropdown';
 import ProfileDropdown from './ProfileDropdown';
 import CustomTextField from '../../../components/forms/custom-elements/CustomTextField';
 import userimg from '../../../assets/images/users/user2.jpg';
+import { connect } from 'react-redux';
+import { logout } from '../../../redux/ducks/userReducer';
 
-const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
+const Header = ({
+  sx,
+  customClass,
+  toggleSidebar,
+  toggleMobileSidebar,
+  user,
+  logout,
+}) => {
   const [anchorEl, setAnchorEl] = React.useState(null);
 
   const handleClick = (event) => {
@@ -68,6 +77,20 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
   const handleDrawerClose2 = () => {
     setShowDrawer2(false);
   };
+
+  let name, shortname, email, role;
+  //google
+  if ('user' in user) {
+    name = user.user.name;
+    email = user.user.email;
+    role = null;
+    shortname = name.split(' ')[0];
+  } else {
+    name = user.name;
+    shortname = name;
+    email = user.email;
+    role = user['custom:role'];
+  }
 
   return (
     <AppBar sx={sx} elevation={0} className={customClass}>
@@ -436,7 +459,7 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
                   ml: 1,
                 }}
               >
-                Julia
+                {shortname}
               </Typography>
               <FeatherIcon icon='chevron-down' width='20' height='20' />
             </Box>
@@ -471,12 +494,12 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
             </Box>
           </Box>
 
-          <ProfileDropdown />
+          <ProfileDropdown name={name} role={role} email={email} />
           <Link
             style={{
               textDecoration: 'none',
             }}
-            to='/auth/login'
+            to='/'
           >
             <Button
               sx={{
@@ -486,6 +509,7 @@ const Header = ({ sx, customClass, toggleSidebar, toggleMobileSidebar }) => {
               }}
               variant='contained'
               color='primary'
+              onClick={logout}
             >
               Logout
             </Button>
@@ -503,4 +527,14 @@ Header.propTypes = {
   toggleMobileSidebar: PropTypes.func,
 };
 
-export default Header;
+const mapStateToProps = ({ user }) => ({
+  user: user.user,
+});
+
+const mapDispatchToProps = (dispatch) => ({
+  logout: () => {
+    dispatch(logout());
+  },
+});
+
+export default connect(mapStateToProps, mapDispatchToProps)(Header);

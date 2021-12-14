@@ -20,8 +20,22 @@ import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 import useForm from '../../components/hooks/useForm';
 import validate from '../../utility/RegistrationFormValidation';
 
-function Register() {
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+import { connect } from 'react-redux';
+import { signupUser } from '../../redux/ducks/userReducer';
+import Alert from '../../components/Alert';
+
+function Register(props) {
+  const { values, errors, handleChange, handleSubmit } = useForm(
+    validate,
+    register
+  );
+
+  function register() {
+    //form validated
+    //cognito integration here, may detect cognito errors
+    console.log(values);
+    props.signUp(values);
+  }
 
   /* TODO: this will come from the API */
   const dropdownVals = [
@@ -97,6 +111,7 @@ function Register() {
                   p: 4,
                 }}
               >
+                <Alert />
                 <Typography fontWeight='700' variant='h2'>
                   Welcome to SquareRoot
                 </Typography>
@@ -212,9 +227,7 @@ function Register() {
                     variant='contained'
                     size='large'
                     fullWidth
-                    component={Link}
                     onClick={handleSubmit}
-                    to='/'
                     sx={{
                       pt: '10px',
                       pb: '10px',
@@ -246,4 +259,10 @@ function Register() {
   );
 }
 
-export default Register;
+const mapDispatchToProps = (dispatch) => ({
+  signUp: (data) => {
+    dispatch(signupUser(data));
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Register);

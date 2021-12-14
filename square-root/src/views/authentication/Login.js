@@ -1,17 +1,9 @@
 import React from 'react';
-import {
-  Grid,
-  Box,
-  Typography,
-  FormGroup,
-  FormControlLabel,
-  Button,
-} from '@mui/material';
+import { Grid, Box, Typography, Button } from '@mui/material';
 import { Link } from 'react-router-dom';
 
 import GoogleIcon from '@mui/icons-material/Google';
 
-import CustomCheckbox from '../../components/forms/custom-elements/CustomCheckbox';
 import CustomTextField from '../../components/forms/custom-elements/CustomTextField';
 import CustomFormLabel from '../../components/forms/custom-elements/CustomFormLabel';
 import PageContainer from '../../components/container/PageContainer';
@@ -22,8 +14,32 @@ import LogoIcon from '../../layouts/full-layout/logo/LogoIcon';
 import useForm from '../../components/hooks/useForm';
 import validate from '../../utility/LoginFormValidation';
 
-function Login() {
-  const { values, errors, handleChange, handleSubmit } = useForm(validate);
+import Alert from '../../components/Alert';
+import { connect } from 'react-redux';
+import {
+  loginUser,
+  fetchUser,
+  loginGoogle,
+} from '../../redux/ducks/userReducer';
+import { createScript } from '../../services/GoogleService';
+
+function Login(props) {
+  React.useEffect(() => {
+    const ga =
+      window.gapi && window.gapi.auth2
+        ? window.gapi.auth2.getAuthInstance()
+        : null;
+
+    if (!ga) createScript();
+  }, []);
+
+  const { values, errors, handleChange, handleSubmit } = useForm(validate, log);
+
+  function log() {
+    //form validated
+    //cognito integration here, may detect cognito errors
+    props.login(values);
+  }
 
   return (
     <PageContainer title='Login' description='this is Login page'>
@@ -89,7 +105,8 @@ function Login() {
                   p: 4,
                 }}
               >
-                <Typography variant='secondary'>
+                <Alert />
+                <Typography fontWeight='700' variant='h2'>
                   Welcome to SquareRoot
                 </Typography>
                 <Box display='flex' alignItems='center'>
@@ -165,7 +182,7 @@ function Login() {
                       alignItems: 'center',
                     }}
                   >
-                    <FormGroup>
+                    {/*<FormGroup>
                       <FormControlLabel
                         control={<CustomCheckbox defaultChecked />}
                         label='Remember this Device'
@@ -173,7 +190,7 @@ function Login() {
                           mb: 2,
                         }}
                       />
-                    </FormGroup>
+                      </FormGroup>*/}
                     <Box
                       sx={{
                         ml: 'auto',
@@ -261,6 +278,7 @@ function Login() {
                       display='flex'
                       alignitems='center'
                       justifycontent='center'
+                      onClick={props.googleSignIn}
                       sx={{
                         width: '100%',
                         borderColor: '#dde3e8',
@@ -285,12 +303,7 @@ function Login() {
                           variant='h6'
                           sx={{
                             ml: 1,
-                            color: (theme) =>
-                              `${
-                                theme.palette.mode === 'dark'
-                                  ? theme.palette.grey.A200
-                                  : '#13152a'
-                              }`,
+                            color: '#13152a',
                           }}
                         >
                           Google
@@ -308,4 +321,16 @@ function Login() {
   );
 }
 
-export default Login;
+const mapDispatchToProps = (dispatch) => ({
+  login: (values) => {
+    dispatch(loginUser(values));
+  },
+  googleSignIn: () => {
+    dispatch(loginGoogle());
+  },
+  fetchU: () => {
+    dispatch(fetchUser());
+  },
+});
+
+export default connect(null, mapDispatchToProps)(Login);

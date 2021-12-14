@@ -8,7 +8,8 @@
       "DeploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
       "UnauthRoleName": "amplify-squarerootproject-dev-113924-unauthRole",
       "StackName": "amplify-squarerootproject-dev-113924",
-      "StackId": "arn:aws:cloudformation:eu-north-1:387243802874:stack/amplify-squarerootproject-dev-113924/b761f380-80c3-11eb-9a14-0aa8fc20cb38"
+      "StackId": "arn:aws:cloudformation:eu-north-1:387243802874:stack/amplify-squarerootproject-dev-113924/b761f380-80c3-11eb-9a14-0aa8fc20cb38",
+      "AmplifyAppId": "dspokcs4poy9u"
     },
     "categories": {
       "auth": {

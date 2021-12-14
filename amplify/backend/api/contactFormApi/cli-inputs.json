@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "paths": {
+    "/contact": {
+      "permissions": {
+        "setting": "open"
+      },
+      "lambdaFunction": "contactFormFunction"
+    }
+  }
+}

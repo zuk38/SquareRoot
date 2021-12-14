@@ -129,7 +129,7 @@ export default class UserProvider extends Component {
     return newObj;
   };*/
 
-  updateUser = async (values) => {
+  /*updateUser = async (values) => {
     const user = await Auth.currentAuthenticatedUser();
     let attributes = {
       name: values.name,
@@ -152,7 +152,7 @@ export default class UserProvider extends Component {
       values.cognito = err;
       console.log(values.cognito);
     }
-  };
+  };*/
 
   componentDidMount() {
     this.fetchUser();

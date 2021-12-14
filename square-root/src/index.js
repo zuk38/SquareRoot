@@ -2,36 +2,42 @@ import React, { Suspense } from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import { Provider } from 'react-redux';
-import { configureStore } from './redux/Store';
+import store from './redux/ConfigureStore';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
-import { ProjectProvider } from './context/projects';
-import { PlantProvider } from './context/plants';
-import { ConceptProvider } from './context/concepts';
-import { UserProvider } from './context/user';
 import './components/utility/i18n';
 import 'flag-icon-css/css/flag-icon.min.css';
 
 import Spinner from './views/spinner/Spinner';
 import Amplify from 'aws-amplify';
 import config from './aws-exports';
-Amplify.configure(config);
+
+const updatedAwsConfig = {
+  ...config,
+  oauth: {
+    ...config.oauth,
+    redirectSignIn: config.oauth.redirectSignIn,
+    redirectSignOut: config.oauth.redirectSignOut,
+  },
+};
+
+Amplify.configure(updatedAwsConfig);
 require('dotenv').config();
 
+store.subscribe(() => {
+  // When state will be updated(in our case, when items will be fetched),
+  // we will update local component state and force component to rerender
+  // with new data.
+
+  console.log(store.getState());
+});
+
 ReactDOM.render(
-  <Provider store={configureStore()}>
+  <Provider store={store}>
     <Suspense fallback={<Spinner />}>
-      <ConceptProvider>
-        <ProjectProvider>
-          <PlantProvider>
-            <UserProvider>
-              <Router>
-                <App />
-              </Router>
-            </UserProvider>
-          </PlantProvider>
-        </ProjectProvider>
-      </ConceptProvider>
+      <Router>
+        <App />
+      </Router>
     </Suspense>
   </Provider>,
   document.getElementById('root')
