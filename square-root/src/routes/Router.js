@@ -169,6 +169,7 @@ const Router = (isLoggedIn) => [
       { path: '/dashboard/dashboard1', element: <Dashboard1 /> },
       { path: '/dashboard/dashboard2', element: <Dashboard2 /> },
       { path: '/dashboard/dashboard3', element: <Dashboard3 /> },
+      { path: 'shop/shop-detail', element: <ShopDetail /> },
       { path: 'shop/ShopRooftop', element: <ShopRooftop /> },
       { path: 'shop/ShopRainbed', element: <ShopRainbed /> },
       { path: 'shop/ShopIndoor', element: <ShopIndoor /> },
