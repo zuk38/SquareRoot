@@ -15,7 +15,7 @@ const GlobalAlert = (props) => {
   return (
     <Alert
       variant='filled'
-      severity={color !== '' ? color : 'success'}
+      severity={color ?? 'success'}
       sx={{ width: '100%' }}
     >
       {text}

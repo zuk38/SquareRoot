@@ -63,7 +63,7 @@ function Navbar(props) {
                 {!item.dropdown ? (
                   <NavLink
                     to={item.path}
-                    key={index}
+                    key={item.path}
                     className='nav-links-no-hover'
                     onClick={() => closeMobileMenu(item.path)}
                   >
@@ -82,7 +82,7 @@ function Navbar(props) {
                   item.subtitle.map((item, index) => (
                     <NavLink
                       to={item.path}
-                      key={index}
+                      key={item.path}
                       className='sub-item'
                       onClick={() => closeMobileMenu(item.path)}
                     >
@@ -97,7 +97,7 @@ function Navbar(props) {
             {NavbarData.map((item, index) =>
               item.dropdown ? (
                 <li
-                  key={index}
+                  key={item.path}
                   className='nav-item'
                   onMouseEnter={() => onMouseEnter(item.dropdown)}
                   onMouseLeave={onMouseLeave}

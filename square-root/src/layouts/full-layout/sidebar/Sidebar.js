@@ -88,7 +88,11 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                           }),
                         }}
                       >
-                        <FeatherIcon icon={item.icon} width='20' height='20' />
+                        <FeatherIcon
+                          icon={item.icon !== undefined ? item.icon : ''}
+                          width='20'
+                          height='20'
+                        />
                       </ListItemIcon>
                       <ListItemText>{item.title}</ListItemText>
                       {index === open || pathWithoutLastPart === item.href ? (
@@ -125,7 +129,9 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                                 }}
                               >
                                 <FeatherIcon
-                                  icon={child.icon}
+                                  icon={
+                                    child.icon !== undefined ? child.icon : ''
+                                  }
                                   width='20'
                                   height='20'
                                 />
@@ -162,7 +168,11 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                           ...(pathDirect === item.href && { color: 'white' }),
                         }}
                       >
-                        <FeatherIcon icon={item.icon} width='20' height='20' />
+                        <FeatherIcon
+                          icon={item.icon !== undefined ? item.icon : ''}
+                          width='20'
+                          height='20'
+                        />
                       </ListItemIcon>
                       <ListItemText onClick={onSidebarClose}>
                         {item.title}

@@ -13,10 +13,35 @@ import {
   AUTH_STATES,
   fetchGoogleUser,
 } from './redux/ducks/userReducer';
+import config from './aws-exports';
+
+require('dotenv').config();
+const AWS = require('aws-sdk');
+const SESConfig = {
+  apiVersion: 'latest',
+  accessKeyId: process.env.AWS_ACCESS_KEY_ID,
+  accessSecretKey: process.env.AWS_SECRET_ACCESS_KEY,
+  region: 'eu-north-1',
+};
+AWS.config.update(SESConfig);
 
 const App = (props) => {
   const { status, fetchU, fetchGoogle } = props;
   let navigate = useNavigate();
+
+  var params = {
+    UserPoolId: 'eu-north-1_gF4dv0suP',
+  };
+
+  React.useEffect(() => {
+    var cognitoidentityserviceprovider =
+      new AWS.CognitoIdentityServiceProvider();
+    cognitoidentityserviceprovider.listGroups(params, function (err, data) {
+      if (err) console.log(err, err.stack);
+      // an error occurred
+      else console.log(data); // successful response
+    });
+  }, []);
 
   React.useEffect(() => {
     if (
