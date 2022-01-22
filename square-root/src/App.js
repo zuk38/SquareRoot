@@ -39,7 +39,7 @@ const App = (props) => {
     } else {
       fetchU();
     }
-  }, [status, fetchU, fetchGoogle]);
+  }, [status, fetchU, fetchGoogle, navigate]);
 
   let location = useLocation();
   let isLoggedIn = status === AUTH_STATES.AUTHED;

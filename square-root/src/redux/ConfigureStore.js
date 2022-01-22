@@ -1,12 +1,16 @@
 import { combineReducers, createStore, applyMiddleware } from 'redux';
 import createSagaMiddleware from 'redux-saga';
 import alertReducer from './ducks/alertReducer';
+import conceptsReducer from './ducks/conceptsReducer';
 import userReducer from './ducks/userReducer';
+import plantsReducer from './ducks/plantsReducer';
 import { watcherSaga } from './sagas/rootSaga';
 
 const reducer = combineReducers({
   user: userReducer,
   alert: alertReducer,
+  concepts: conceptsReducer,
+  plants: plantsReducer,
 });
 
 //listen to any dispatches for redux

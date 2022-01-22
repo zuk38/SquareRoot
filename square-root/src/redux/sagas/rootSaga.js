@@ -1,4 +1,6 @@
 import { all } from 'redux-saga/effects';
+import { conceptSaga } from './conceptSaga';
+import { plantsSaga } from './plantsSaga';
 import { userSaga } from './userSaga';
 
 //generator functions
@@ -6,5 +8,5 @@ import { userSaga } from './userSaga';
 export function* watcherSaga() {
   //look for dispatches by store
   //and map to handler functions to for api calls
-  yield all([userSaga()]);
+  yield all([userSaga(), conceptSaga(), plantsSaga()]);
 }

@@ -1,18 +1,13 @@
 import React from 'react';
 import '../../styles/frontpages.css';
-import { withConceptConsumer } from '../../context/concepts';
 import { useNavigate } from 'react-router-dom';
 
-function Categories({ context }) {
+function Categories() {
   let navigate = useNavigate();
 
   const redirectToCategory = (name) => {
     navigate(`/categories/${name.toLowerCase()}`);
   };
-
-  let { loadCat, categories } = context;
-
-  /*if (loadCat) return <Loading />;*/
 
   return (
     <div className='c-section background-grey'>
@@ -21,7 +16,7 @@ function Categories({ context }) {
 
         <div className='c-grid--1x'>
           <ul className='no-scroll-grid'>
-            {categories.map((category, index) => (
+            {/*categories.map((category, index) => (
               <button
                 key={index}
                 className='item-portrait zoom-on-hover'
@@ -33,7 +28,7 @@ function Categories({ context }) {
                 />
                 <p>{category.category_name}</p>
               </button>
-            ))}
+            ))*/}
           </ul>
         </div>
       </div>
@@ -41,4 +36,4 @@ function Categories({ context }) {
   );
 }
 
-export default withConceptConsumer(Categories);
+export default Categories;
