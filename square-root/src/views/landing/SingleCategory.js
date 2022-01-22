@@ -1,6 +1,5 @@
 import React from 'react';
 import '../../styles/frontpages.css';
-import { withConceptConsumer } from '../../context/concepts';
 import { Link } from 'react-router-dom';
 import { Trans, useTranslation } from 'react-i18next';
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore';
@@ -13,7 +12,7 @@ import { useParams } from 'react-router';
 function SingleCategory(props) {
   const { t } = useTranslation();
   const params = useParams();
-  const categoryName =
+  /*const categoryName =
     params.name.charAt(0).toUpperCase() + params.name.slice(1);
   const { getCategory } = props.context;
   const category = getCategory(categoryName);
@@ -29,7 +28,7 @@ function SingleCategory(props) {
     );
   }
 
-  const { category_name, plants } = category;
+  const { category_name, plants } = category;*/
 
   const Accordion = styled((props) => (
     <MuiAccordion disableGutters elevation={0} square {...props} />
@@ -78,7 +77,7 @@ function SingleCategory(props) {
       <div className='o-container'>
         <div className='c-hero'>
           <div className='c-grid--2x1'>
-            <div className='grid-item4 margin-left'>
+            {/*<div className='grid-item4 margin-left'>
               <img
                 src={`../images/${category_name.toLowerCase()}.jpg`}
                 className='c-img'
@@ -90,11 +89,15 @@ function SingleCategory(props) {
               <h1 className='c-txt--hero'>
                 {t(`single_category.${category_name}.title`)}
               </h1>
-            </div>
+  </div>*/}
             <div className='grid-item2'>
               <div className='c-txt-punchline--sm'>
                 <br />
-                <Trans i18nKey={`single_category.${category_name}.description`}>
+                <Trans
+                  i18nKey={
+                    `lalala` /*`single_category.${category_name}.description`*/
+                  }
+                >
                   Optimize your roof surface with one our concepts. <br />
                   <br />
                   Roofs can be used for energy production, stormwater
@@ -128,7 +131,7 @@ function SingleCategory(props) {
           </AccordionSummary>
           <AccordionDetails>
             <div className='plantlist'>
-              {plants.map((plant) => (
+              {/*plants.map((plant) => (
                 <div key={plant.norwegian_name} className='names-row'>
                   {plant.norwegian_name && (
                     <div className='norwegian-name'>{plant.norwegian_name}</div>
@@ -137,7 +140,7 @@ function SingleCategory(props) {
                     <div className='latin-name'>{plant.latin_name}</div>
                   )}
                 </div>
-              ))}
+                  ))*/}
             </div>
           </AccordionDetails>
         </Accordion>
@@ -146,4 +149,4 @@ function SingleCategory(props) {
   );
 }
 
-export default withConceptConsumer(SingleCategory);
+export default SingleCategory;

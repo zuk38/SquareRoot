@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { withConceptConsumer } from '../../context/concepts';
 import { Link } from 'react-router-dom';
 import { ReactComponent as BeeIcon } from '../../icons/bee.svg';
 import { ReactComponent as EdibleIcon } from '../../icons/eat.svg';
@@ -16,10 +15,10 @@ function SingleConcept(props) {
   const [plantsModalOpen, setPlantsModalOpen] = useState(false);
   const [projectModalOpen, setProjectModalOpen] = useState(false);
   const params = useParams();
-  const conceptName =
+  /*const conceptName =
     params.name.charAt(0).toUpperCase() + params.name.slice(1);
   const { getConcept } = props.context;
-  const concept = getConcept(conceptName);
+  const concept = getConcept(conceptName);*/
 
   const iconMap = [
     {
@@ -49,7 +48,7 @@ function SingleConcept(props) {
     },
   ];
 
-  if (!concept) {
+  /*if (!concept) {
     return (
       <div className='error'>
         <h3> no such concept could be found...</h3>
@@ -62,15 +61,15 @@ function SingleConcept(props) {
 
   const { name, image, description, plants, benefits, maintenance } = concept;
 
-  console.log(maintenance);
+  console.log(maintenance);*/
 
   return (
     <div>
       <div className='greenspace'>
         <div className='greenspaceinfo'>
-          <img src={image} className='img-greenspace' alt={name} />
+          {/*<img src={image} className='img-greenspace' alt={name} />
           <h5>{name}</h5>
-          <p>{description}</p>
+  <p>{description}</p>*/}
           <button className='button is-medium is-fullwidth'>Velg by</button>
           <div className='options'>
             <div className='tilpass'>
@@ -96,7 +95,7 @@ function SingleConcept(props) {
             <h4>Functional Requirements:</h4>
             <h4>Maintenance Needs:</h4>
             <div className='func_info'>
-              {iconMap.map((icon, index) =>
+              {/*iconMap.map((icon, index) =>
                 Object.keys(benefits).map(
                   (key) =>
                     key === icon.feature && (
@@ -106,12 +105,12 @@ function SingleConcept(props) {
                       </div>
                     )
                 )
-              )}
+                    )*/}
             </div>
             <div className='main_info'>
               <div className='req_box'>
                 <div className='req_info'>
-                  {maintenance ? (
+                  {/*maintenance ? (
                     <>
                       <i className='func_icon'>
                         <SunIcon />
@@ -125,7 +124,7 @@ function SingleConcept(props) {
                       </i>{' '}
                       Sun: low
                     </>
-                  )}
+                  )*/}
                 </div>
               </div>
             </div>
@@ -134,7 +133,7 @@ function SingleConcept(props) {
         <div className='description'>
           <div className='desc'>
             <h4>Description</h4>
-            <div className='desc_info'>{description} </div>
+            <div className='desc_info'>{/*description*/} </div>
           </div>
         </div>
         <div className='plantlist'>
@@ -161,12 +160,12 @@ function SingleConcept(props) {
               <i className='fas fa-times fa-lg' />
             </button>
             <div className='d-modal-content'>
-              <h1 className='p-h1'>{conceptName}</h1>
+              <h1 className='p-h1'>{/*conceptName*/}</h1>
               <br />
               <div className='d-modal-container'>
                 <table className='d-table'>
                   <tbody>
-                    {plants.map((plant, index) => (
+                    {/*plants.map((plant, index) => (
                       <tr key={index}>
                         <td className='d-modal-img'>
                           <img src={plant.image} alt={plant.norwegian_name} />
@@ -174,7 +173,7 @@ function SingleConcept(props) {
                         <td className='d-td'>{plant.norwegian_name}</td>
                         <td className='d-td'>{plant.quantity}</td>
                       </tr>
-                    ))}
+                    ))*/}
                   </tbody>
                 </table>
               </div>
@@ -194,4 +193,4 @@ function SingleConcept(props) {
   );
 }
 
-export default withConceptConsumer(SingleConcept);
+export default SingleConcept;
