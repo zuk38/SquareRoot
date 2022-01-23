@@ -45,34 +45,6 @@ export default function Who() {
             <Row>
               <Column>
                 <IamgeContainer>
-                  <Image src="../images/jo-profil.jpeg" alt="Jo" />
-                </IamgeContainer>
-                <Name>Jo Deketelaere</Name>
-                <Position>{t("who_page.team.jo_img_d")}</Position>
-                <Description>
-                  <Trans i18nKey="who_page.team.jo_d">
-                    <em>Jo</em>
-                    started his career in international business development for
-                    large energy companies focusing on climate mitigation,
-                    environmental policies and investment in low carbon emitting
-                    technologies.
-                    <br />
-                    <br />
-                    He started his own company Greenbeat to develop a smart
-                    blue-green roof combining automated management of urban
-                    vegetation and intelligent control of water reservoirs. This
-                    project called RainBrain has received funding from
-                    OrganiCity and SynchroniCity, both under the H2020 umbrella.
-                    <br />
-                    <br />
-                    He lives in Oslo, Norway with his wife and daughter, enjoys
-                    hiking in local nature and is a happy member of the swimrun
-                    community.
-                  </Trans>
-                </Description>
-              </Column>
-              <Column>
-                <IamgeContainer>
                   <Image src="../images/michel-profile.jpeg" alt="Michel" />
                 </IamgeContainer>
                 <Name>Michel Wolfstirn</Name>
