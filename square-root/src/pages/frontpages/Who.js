@@ -10,6 +10,7 @@ import {
   Name,
   Position,
   Description,
+  RowStretch,
 } from "../../styles/Who";
 
 export default function Who() {
@@ -42,7 +43,7 @@ export default function Who() {
           </div>
 
           <Wrapper>
-            <Row>
+            <RowStretch>
               <Column>
                 <IamgeContainer>
                   <Image src="../images/michel-profile.jpeg" alt="Michel" />
@@ -71,7 +72,7 @@ export default function Who() {
                   </Trans>
                 </Description>
               </Column>
-            </Row>
+            </RowStretch>
             <Row>
               <Column>
                 <IamgeContainer square>
