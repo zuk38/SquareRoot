@@ -3,30 +3,23 @@ import useForm from "../../components/hooks/useForm";
 import validate from "../../components/utility/CreateProjectValidation";
 import ProjectForm from "../../components/user/ProjectForm";
 import Modal from "react-modal";
-import { findCityFromZip } from "../../functions/apiCalls";
 import { withProjectConsumer } from "../../context/projects";
 
 function CreateProjectModal(props) {
   const { isOpen, setModal } = props;
   const { projects, fetchProjects, createProject } = props.context;
 
-  const {
-    values,
-    errors,
-    handleChange,
-    handleSubmit,
-    setCity,
-    setProjectExistsErrors,
-  } = useForm(callback, validate, createNewProject);
+  const { values, errors, handleChange, handleSubmit, setProjectExistsErrors } =
+    useForm(callback, validate, createNewProject);
 
-  useEffect(() => {
+  /*useEffect(() => {
     if (!values.zip || values.zip === "") return;
     if (values.zip.length == 4) {
       findCityFromZip(values.zip).then((response) => {
         setCity(response);
       });
     }
-  }, [values.zip]);
+  }, [values.zip]);*/
 
   useEffect(() => {
     if (!values.name || values.name === "" || !projects.length) return;

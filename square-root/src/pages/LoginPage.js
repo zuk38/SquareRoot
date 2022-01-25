@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Login } from "../components/login/Login";
+import Login from "../components/login/Login";
 import { Register } from "../components/login/Register";
 
 const RightSide = (props) => {
@@ -40,7 +40,7 @@ export default class LoginPage extends Component {
     }
 
     this.setState((prev) => ({ isLoginActive: !prev.isLoginActive }));
-    console.log(this.state)
+    console.log(this.state);
   }
 
   render() {
@@ -48,7 +48,7 @@ export default class LoginPage extends Component {
     const current = isLoginActive ? "Register" : "Login";
     return (
       <>
-        <a href="/" className="btn-back" style={{background: "transparent"}}>
+        <a href="/" className="btn-back" style={{ background: "transparent" }}>
           <i className="fas fa-chevron-left" />
           HOME
         </a>

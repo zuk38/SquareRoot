@@ -8,8 +8,6 @@ import CreateProjectModal from "../../components/user/CreateProjectModal";
 
 function AllProjects(props) {
   useEffect(() => {
-    if (props.location.state && props.location.state.modalOpen)
-      setModalOpen(true);
     Modal.setAppElement("body");
   }, []);
 

@@ -1,7 +1,7 @@
 import React, { useEffect, useState, useRef } from "react";
 import logo from "../../images/logo--dark.png";
 import { Link, NavLink } from "react-router-dom";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import { NavbarData } from "./NavbarData";
 import useWindowDimensions from "../hooks/useWindowDimensions";
 import Dropdown from "./Dropdown";
@@ -72,7 +72,6 @@ export default function Navbar(props) {
                   <NavLink
                     to={item.path}
                     key={index}
-                    exact={true}
                     className="nav-links-no-hover"
                     onClick={() => closeMobileMenu(item.path)}
                   >
@@ -92,7 +91,6 @@ export default function Navbar(props) {
                     <NavLink
                       to={item.path}
                       key={index}
-                      exact={true}
                       className="sub-item"
                       onClick={() => closeMobileMenu(item.path)}
                     >
@@ -150,7 +148,6 @@ export default function Navbar(props) {
                   {!item.dropdown ? (
                     <NavLink
                       to={item.path}
-                      exact={true}
                       className={click ? "nav-links-no-hover" : "nav-links"}
                       onClick={() => closeMobileMenu(item.path)}
                     >
@@ -158,7 +155,6 @@ export default function Navbar(props) {
                     </NavLink>
                   ) : (
                     <div
-                      exact={true}
                       className={
                         click ? "nav-links-no-hover-title" : "nav-links-title"
                       }

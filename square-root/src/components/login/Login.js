@@ -1,12 +1,11 @@
-import React, { useState } from "react";
-import { Navigate } from "react-router-dom";
+import React from "react";
 import Title from "../Title";
 import "./LoginStyle.scss";
 import useForm from "../hooks/useForm";
 import validate from "../utility/LoginFormValidation";
+import { withUserConsumer } from "../../context/user";
 
-export function Login(props) {
-  const [redirectToRefferer, setRedirectToRefferer] = useState(false);
+function Login(props) {
   const { fetchUser, login } = props.context;
 
   const { values, errors, handleChange, handleSubmit } = useForm(
@@ -17,19 +16,12 @@ export function Login(props) {
 
   async function callback() {
     await fetchUser();
-    setRedirectToRefferer(true);
   }
 
   async function log() {
     //form validated
     //cognito integration here, may detect cognito errors
     await login(values);
-  }
-
-  const { from } = props.location.state || { from: { pathname: "/" } };
-
-  if (redirectToRefferer === true) {
-    return <Navigate to={from} />;
   }
 
   return (
@@ -83,3 +75,5 @@ export function Login(props) {
     </div>
   );
 }
+
+export default withUserConsumer(Login);

@@ -17,7 +17,8 @@ function hasNumber(str) {
 }
 
 function validateRegexString(email) {
-  const regexString = /^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$/;
+  const regexString =
+    /^((\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*)\s*[;]{0,1}\s*)+$/;
   return regexString.test(String(email).toLowerCase()); // true|false
 }
 
@@ -88,6 +89,9 @@ function checkZip(values, errors) {
   else if (!isNumeric(values.zip) || values.zip.length != ZIPLENGTH)
     errors.zip = "Invalid zip code";
 }
+function checkCity(values, errors) {
+  if (!values.city) errors.city = "City is required";
+}
 
 function checkAddress(values, errors) {
   if (!values.address) errors.address = "Address is required";
@@ -98,7 +102,9 @@ function checkMessage(values, errors) {
 }
 
 function checkConditions(values, errors) {
-  if (values.conditions === false || values.conditions === undefined) errors.conditions = "Please accept our Terms of Use and Privacy Policy to continue";
+  if (values.conditions === false || values.conditions === undefined)
+    errors.conditions =
+      "Please accept our Terms of Use and Privacy Policy to continue";
 }
 
 export {
@@ -111,6 +117,7 @@ export {
   checkPhone,
   checkAddress,
   checkZip,
+  checkCity,
   checkMessage,
-  checkConditions
+  checkConditions,
 };

@@ -1,6 +1,6 @@
-import React, { Component } from "react";
+import React from "react";
 import "../../styles/frontpages.css";
-import { ConceptContext } from "../../context/concepts";
+import { withConceptConsumer } from "../../context/concepts";
 import { Link } from "react-router-dom";
 import { Trans, withTranslation } from "react-i18next";
 import ExpandMoreIcon from "@mui/icons-material/ExpandMore";
@@ -9,14 +9,12 @@ import MuiAccordionSummary from "@mui/material/AccordionSummary";
 import MuiAccordionDetails from "@mui/material/AccordionDetails";
 import { styled } from "@mui/material/styles";
 
-export default function SingleCategory() {
-  return (
-    <div>
-      single cat
-    </div>
-  )
+function SingleCategory(props) {
+  console.log("tralalala");
+  return <div>single cat</div>;
 }
 
+export default withConceptConsumer(SingleCategory);
 
 /*class SingleCategory extends Component {
   constructor(props) {
@@ -212,7 +210,7 @@ export default function SingleCategory() {
         </div>
         */
 
-      /* ---- REMOVE ???? ------
+/* ---- REMOVE ???? ------
 
         <h2 className="c-txt-punchline--sm c-mrg--top">{description}</h2>
         <br />
@@ -274,7 +272,7 @@ export default function SingleCategory() {
          
         </div>
       </div>*/
-    /*);
+/*);
   }
 }
 export default withTranslation()(SingleCategory);*/

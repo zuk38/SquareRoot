@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 import "./projects.css";
 import "../../styles/Customize.css";
@@ -13,15 +14,15 @@ import validate from "../../components/utility/EditAccountValidation";
 import ProjectForm from "../../components/user/ProjectForm";
 import AuthModal from "../../components/login/AuthModal";
 
-
 function Dashboard(props) {
-  const projectName = props.match.params.name;
+  const params = useParams();
+  const projectName = params.name;
   const [currentPage, setCurrentPage] = useState("/dashboard");
   const { getProject, updateProject, projects } = props.context;
   const currentMember = props.context.currentMember;
   const project = getProject(projectName);
   const [showModal, setShowModal] = useState(false);
-  const[showAddGreenspace, setShowAddGreenspace] = useState(false)
+  const [showAddGreenspace, setShowAddGreenspace] = useState(false);
   const [nameChanged, setNameChanged] = useState(false);
 
   const {
@@ -98,11 +99,13 @@ function Dashboard(props) {
         return (
           <div className="green-container">
             <button onClick={() => setShowAddGreenspace(true)}>
-              <i class="fas fa-plus"/>Legg til grøntområde
+              <i class="fas fa-plus" />
+              Legg til grøntområde
             </button>
             {greenspaces.map((greenspace) => (
               <DashboardContent greenspace={greenspace} />
-            ))}{/*
+            ))}
+            {/*
             <AddGreenspaceModal isOpen={showAddGreenspace} setIsOpen={setShowAddGreenspace}/>*/}
           </div>
         );

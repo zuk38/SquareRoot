@@ -17,7 +17,7 @@ export default function ProjectForm(props) {
     <form>
       {page ? (
         <>
-          <div style={{width: "80%"}}>
+          <div style={{ width: "80%" }}>
             <label className="p-lbl">Navn</label>
             <EditableTextField
               value={values.name || project.name}
@@ -116,11 +116,12 @@ export default function ProjectForm(props) {
                 <label className="p-lblFlex">Poststed</label>
                 <input
                   type="text"
+                  name="city"
                   className="p-input-inline p-text-input"
                   value={values.city || ""}
-                  disabled
                   onChange={handleChange}
                 />
+                {errors.city && <p className="help is-danger">{errors.city}</p>}
               </div>
             </div>
           </div>

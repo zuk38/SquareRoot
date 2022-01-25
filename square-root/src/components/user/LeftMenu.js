@@ -1,7 +1,8 @@
 import React from "react";
+import { useLocation } from "react-router";
 
 export default function LeftMenu(props) {
-  let currentLocation = props.location.pathname,
+  let currentLocation = useLocation().pathname,
     delimiter = "/",
     tokensAfter = currentLocation.split(delimiter).slice(2), //project name
     resultAfter = delimiter + tokensAfter.join(delimiter);
@@ -40,7 +41,9 @@ export default function LeftMenu(props) {
           {locations.map((location, index) => (
             <p
               key={index}
-              className={props.currentPage === location.pahtname ? "active" : ""}
+              className={
+                props.currentPage === location.pahtname ? "active" : ""
+              }
               onClick={() => props.setCurrentPage(location.pahtname)}
             >
               <i className={location.icon} />

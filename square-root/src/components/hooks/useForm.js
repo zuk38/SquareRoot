@@ -39,7 +39,10 @@ const useForm = (callback, validate, action) => {
 
   const handleChange = (event) => {
     event.persist();
-    const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+    const value =
+      event.target.type === "checkbox"
+        ? event.target.checked
+        : event.target.value;
     setValues((values) => ({
       ...values,
       [event.target.name]: value,
@@ -55,24 +58,24 @@ const useForm = (callback, validate, action) => {
     setValues({ ...values, role: event.target.value }); //update role
   };
 
-  const setCity = (city) => {
+  /*const setCity = (city) => {
     if (city) {
       setValues({ ...values, city: city });
       setErrors({zip: undefined})
     }
     else setErrors({ ...errors, zip: "Invalid zip code" });
-  };
+  };*/
 
   const setProjectExistsErrors = (exist) => {
-    if(exist) setErrors({...errors, name: "Project with that name already exists!"})
-    else setErrors({...errors, name: ""})
-  }
+    if (exist)
+      setErrors({ ...errors, name: "Project with that name already exists!" });
+    else setErrors({ ...errors, name: "" });
+  };
 
   return {
     handleChange,
     handleSubmit,
     handleDropDownChange,
-    setCity,
     setProjectExistsErrors,
     values,
     errors,
