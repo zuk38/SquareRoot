@@ -3,7 +3,7 @@
   "version": "1.2.0",
   "author": "SquareRoot",
   "private": true,
-  "homepage": "/",
+  "homepage": "https://squareroot-as.github.io/SquareRoot/",
   "dependencies": {
     "@aws-amplify/cli": "^4.45.0",
     "@emotion/styled": "^11.3.0",
