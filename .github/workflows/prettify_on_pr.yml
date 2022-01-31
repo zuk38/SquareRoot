@@ -13,4 +13,4 @@ jobs:
       - name: Fromat code
         uses: creyD/prettier_action@v4.0
         with:
-          prettier_options: --write --config .prettierrc ./src
+          prettier_options: --write --config .prettierrc ./square-root/src
