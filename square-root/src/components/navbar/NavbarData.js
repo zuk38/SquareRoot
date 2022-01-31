@@ -3,13 +3,13 @@ export const NavbarData = [
     title: "HOME",
     path: "/",
     className: "sidebar-text",
-    i18nKey: "home"
+    i18nKey: "home",
   },
   {
     title: "WHO WE ARE",
     path: "/who-we-are",
     className: "sidebar-text",
-    i18nKey: "who"
+    i18nKey: "who",
   },
   {
     title: "PROJECTS",
@@ -21,19 +21,19 @@ export const NavbarData = [
       {
         title: "ROOFTOP",
         i18nKey: "rooftop",
-        path: "/categories/takhage",
+        path: "/categories/rooftop",
         className: "d-link",
       },
       {
         title: "RAINBED",
         i18nKey: "rainbed",
-        path: "/categories/regnbed",
+        path: "/categories/rainbeds",
         className: "d-link",
       },
       {
         title: "INDOOR",
         i18nKey: "indoor",
-        path: "/categories/innendørsplanter",
+        path: "/categories/indoor",
         className: "d-link",
       },
     ],

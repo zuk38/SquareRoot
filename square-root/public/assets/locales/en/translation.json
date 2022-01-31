@@ -114,15 +114,15 @@
     "PN_d": "Show and sell your plants on our platform"
   },
   "single_category": {
-    "Takhage": {
+    "Rooftop": {
       "title": "Roof Garden",
       "description": "Optimize your roof surface with one our concepts. <1/><2/>Roofs can be used for energy production, stormwater management, increase biodiversity or to create a space for people to meet, relax and enjoy.<4/><5/>Our concepts maximize these benefits and consider weight restrictions of your roof using light weight rooftop soils.  Our plants and hardware are chosen and designed to meet your specific needs."
     },
-    "Regnbed": {
-      "title": "Rain Garden",
-      "description": " A rain garden stores rainwater runoff from roofs and other hard surfaces.   Keeping the water out of the sewage system when it rains hard reduces the risk of floods. <1/><2/>Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.    <3/><4/>It is an efficient tool to manage stormwater, improve biodiversity and the attractiveness of our cities."
+    "Rainbeds": {
+      "title": "Rainbed",
+      "description": " A rainbed stores rainwater runoff from roofs and other hard surfaces.   Keeping the water out of the sewage system when it rains hard reduces the risk of floods. <1/><2/>Our plants for this urban green space are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.    <3/><4/>It is an efficient tool to manage stormwater, improve biodiversity and the attractiveness of our cities."
     },
-    "Innendørsplanter": {
+    "Indoor": {
       "title": "Indoor Plants",
       "description": " Creating cities where people love to live and work means greening inside buildings as well.  Indoor plants clean the air and have a positive effect on our wellbeing.  Building standards like WELL actively promote integrating plants indoor.  <3/><4/>  Our partner Leaf has extensive expertise with indoor plants.  Netflix’ offices in Amsterdam are just one of their amazing projects.  Incredible aesthetics are combined with minimal maintenance.<5/><6/>Plants are grown in modular rectangular tray directly at the nursery and make it easy for the interior architect to design and integrate green jungles in buildings."
     },

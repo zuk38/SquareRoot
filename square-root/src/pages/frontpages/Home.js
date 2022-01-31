@@ -43,19 +43,19 @@ export default function Home(props) {
     {
       name: t("home_page.section_four.rooftop"),
       description: "home_page.section_four.rooftop_description",
-      path: "categories/takhage",
+      path: "categories/rooftop",
       img_url: "../images/landscape--rooftop_redigert.png",
     },
     {
       name: t("rainbed2"),
       description: "home_page.section_four.rainbed_description",
-      path: "categories/regnbed",
+      path: "categories/rainbeds",
       img_url: "../images/leaf_rooftop_4_redigert.jpg",
     },
     {
       name: t("indoor2"),
       description: "home_page.section_four.indoor_description",
-      path: "categories/innendørsplanter",
+      path: "categories/indoor",
       img_url: "../images/landscape--indoor_redigert.jpg",
     },
   ];

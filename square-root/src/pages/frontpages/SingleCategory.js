@@ -17,13 +17,17 @@ class SingleCategory extends Component {
       isClicked: false,
     };
   }
-
   static contextType = ConceptContext;
 
   render() {
     const { getCategory } = this.context;
     let name = this.state.name;
+    let translationName = name;
+    if (name === "rooftop") name = "roof gardens";
+
     name = name.charAt(0).toUpperCase() + name.slice(1);
+    translationName =
+      translationName.charAt(0).toUpperCase() + translationName.slice(1);
     const category = getCategory(name);
 
     const { t } = this.props;
@@ -43,7 +47,7 @@ class SingleCategory extends Component {
 
     const Accordion = styled((props) => (
       <MuiAccordion disableGutters elevation={0} square {...props} />
-    ))(({ theme }) => ({
+    ))(() => ({
       border: `1px solid #f7f7f7`,
       backgroundColor: "#f7f7f7",
       "&:not(:last-child)": {
@@ -90,7 +94,7 @@ class SingleCategory extends Component {
             <div className="c-grid--2x1">
               <div className="grid-item4 margin-left">
                 <img
-                  src={`../images/${category_name.toLowerCase()}.jpg`}
+                  src={`../images/${translationName.toLowerCase()}.jpg`}
                   className="c-img"
                   alt={category_name}
                 />
@@ -98,7 +102,7 @@ class SingleCategory extends Component {
 
               <div className="grid-item0">
                 <h1 className="c-txt--hero">
-                  {t(`single_category.${category_name}.title`)}
+                  {t(`single_category.${translationName}.title`)}
                 </h1>
               </div>
               <div className="grid-item2">
@@ -160,111 +164,6 @@ class SingleCategory extends Component {
           </Accordion>
         </div>
       </>
-
-      /*CONNECT TO DATABASE 
-        <div className="c-section c-grid--2x1-equal">
-        <div className="img-wrap">
-          <img src={`../images/${category_name}.jpg`}/>
-          <div className="img-descr">
-                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
-                  <p>Kort tekst om prosjektet.</p>
-                  <p>Kunde: Tekna</p>
-                  <p>BREEAM poeng: 10</p>
-          </div>
-          </div>
-          <div className="img-wrap">
-          <img src={`../images/${category_name}.jpg`}/>
-          <div className="img-descr">
-                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
-                  <p>Kort tekst om prosjektet.</p>
-                  <p>Kunde: Tekna</p>
-                  <p>BREEAM poeng: 10</p>
-          </div>
-          </div>
-          <div className="img-wrap">
-          <img src={`../images/${category_name}.jpg`}/>
-          <div className="img-descr">
-                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
-                  <p>Kort tekst om prosjektet.</p>
-                  <p>Kunde: Tekna</p>
-                  <p>BREEAM poeng: 10</p>
-          </div>
-          </div>
-          <div className="img-wrap">
-          <img src={`../images/${category_name}.jpg`}/>
-          <div className="img-descr">
-                  <div className="c-txt-punchline--sm"><strong>Prosjektnavn</strong></div>
-                  <p>Kort tekst om prosjektet.</p>
-                  <p>Kunde: Tekna</p>
-                  <p>BREEAM poeng: 10</p>
-          </div>
-          </div>
-                           
-        </div>
-        */
-
-      /* ---- REMOVE ???? ------
-
-        <h2 className="c-txt-punchline--sm c-mrg--top">{description}</h2>
-        <br />
-
-        <div className="c-grid--span">
-          <div className="c-grid--span-item-a">
-            <div className="c-txt-punchline--sm">
-              <strong>Fordeler</strong>
-              <br></br>Contrary to popular belief, Lorem Ipsum is not simply
-              random text. It has roots in a piece of classical Latin literature
-              from 45 BC, making it over 2000 years old. Richard McClintock, a
-              Latin professor at Hampden-Sydney College in Virginia, looked up
-              one of the more obscure Latin words, consectetur, from a Lorem
-              Ipsum passage, and going through the cites of the word in
-              classical literature, discovered the undoubtable source. Lorem
-              Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-              Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-              written in 45 BC. This book is a treatise on the theory of ethics,
-              very popular during the Renaissance. The first line of Lorem
-              Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in
-              section 1.10.32.
-            </div>
-          </div>
-
-          <div className="c-grid--span-item-b background-grey">
-            <div className="c-txt-punchline--sm padding-sm">
-              <strong>Vedlikehold</strong>
-              <br></br>Contrary to popular belief, Lorem Ipsum is not simply
-              random text. It has roots in a piece of classical Latin literature
-              from 45 BC, making it over 2000 years old. Richard McClintock, a
-              Latin professor at Hampden-Sydney College in Virginia, looked up
-              one of the more obscure Latin words, consectetur, from a Lorem
-              Ipsum passage, and going through the cites of the word in
-              classical literature, discovered the undoubtable source. Lorem
-              Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus
-              Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero,
-              written in 45 BC.
-            </div>
-          </div>
-
-          <div className="c-grid--span-item-c">
-            <img
-              className="zoom-on-hover"
-              src={`../images/${category_name}.jpg`}
-              alt={category_name}
-            />
-          </div>
-        </div>
-        <h2 className="c-txt-punchline--sm c-mrg--top">
-          På plattformen vår kan disse konseptene bli lagt inn i prosjekter du
-          selv oppretter og administrer. Herfra kan du velge å redigere hvilke
-          planter som skal være med i et konsept, eller bestille det "as is". Du
-          kan også velge ut planter enkeltvis og utvikle et eget konsept. Vi
-          håndterer deretter bestillingen din og tar oss av kommunikasjonen med
-          ulike planteskoler, og kommer tilbake til deg med et prisestimat og
-          leveransetid, og legger til slutt din bestilling inn hos
-          planteskolene.
-        </h2>
-         
-        </div>
-      </div>*/
     );
   }
 }
