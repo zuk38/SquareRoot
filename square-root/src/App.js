@@ -4,15 +4,9 @@ import { Route, Switch, withRouter } from "react-router-dom";
 import LoginPage from "./pages/LoginPage";
 import ForgotPasswordPage from "./pages/ForgotPasswordPage";
 import Navbar from "./components/navbar/Navbar";
-import PrivateRoute from "./components/PrivateRoute";
 import Home from "./pages/frontpages/Home";
 import Plants from "./pages/Plants";
-import PN from "./pages/PN";
 import Error from "./pages/Error";
-import AllProjects from "./pages/user-pages/AllProjects";
-import Dashboard from "./pages/user-pages/Dashboard";
-import Greenspace from "./pages/user-pages/Greenspace";
-import Customize from "./pages/greenspaces/Customize";
 import Howitworks from "./pages/frontpages/Howitworks";
 import Who from "./pages/frontpages/Who";
 import Categories from "./pages/frontpages/Categories";
@@ -20,7 +14,6 @@ import SingleCategory from "./pages/frontpages/SingleCategory";
 import { FooterContainer } from "./components/footer/FooterContainer";
 import About from "./pages/frontpages/About";
 import Partner from "./pages/frontpages/Partner";
-import Account from "./pages/user-pages/Account";
 import SingleConcept from "./pages/greenspaces/SingleConcept";
 import What from "./pages/frontpages/What";
 import Contact from "./pages/frontpages/Contact";
@@ -30,20 +23,14 @@ import ScrollToTop from "./components/utility/ScrollToTop";
 
 class App extends Component {
   render() {
-    const {
-      isAuthenticated,
-      isAuthenticating,
-      user,
-      logout,
-    } = this.props.context;
+    const { isAuthenticated, isAuthenticating, user, logout } =
+      this.props.context;
 
     const authProps = {
       isAuthenticated: isAuthenticated,
       user: user,
       logout: logout,
     };
-
-    
 
     return (
       !isAuthenticating && (
@@ -53,7 +40,9 @@ class App extends Component {
             this.props.location.pathname !== "/login" && (
               <Navbar {...this.props} auth={authProps} />
             )}
-          <div className={this.props.location.pathname !== "/" ? "content" : ""}>
+          <div
+            className={this.props.location.pathname !== "/" ? "content" : ""}
+          >
             <ScrollToTop />
             <Switch>
               <Route
