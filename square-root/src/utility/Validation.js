@@ -104,6 +104,9 @@ function checkAddress(values, errors) {
   if (!values.address) errors.address = 'Address is required';
 }
 
+function checkCity(values, errors) {
+  if (!values.city) errors.city = 'City is required';
+}
 function checkMessage(values, errors) {
   if (!values.message) errors.message = 'Message is required';
 }
@@ -128,4 +131,5 @@ export {
   checkZip,
   checkMessage,
   checkConditions,
+  checkCity,
 };

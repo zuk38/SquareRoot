@@ -5,12 +5,14 @@ import conceptsReducer from './ducks/conceptsReducer';
 import userReducer from './ducks/userReducer';
 import plantsReducer from './ducks/plantsReducer';
 import { watcherSaga } from './sagas/rootSaga';
+import projectsReducer from './ducks/projectsReducer';
 
 const reducer = combineReducers({
   user: userReducer,
   alert: alertReducer,
   concepts: conceptsReducer,
   plants: plantsReducer,
+  projects: projectsReducer,
 });
 
 //listen to any dispatches for redux

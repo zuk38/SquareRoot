@@ -1,14 +1,14 @@
 import React, { Component } from 'react';
 import { Auth, API, graphqlOperation } from 'aws-amplify';
-import { listMembers } from '../api/queries';
-import { listProjects } from '../api/projectQueries';
+import { listMembers } from '../graphql/queries';
+import { listProjects } from '../graphql/projectQueries';
 import { v4 as uuidv4 } from 'uuid';
 import {
   createProject,
   createMember,
   createProjectMember,
   updateProject,
-} from '../api/mutations';
+} from '../graphql/mutations';
 
 const ProjectContext = React.createContext();
 

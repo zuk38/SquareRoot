@@ -15,7 +15,7 @@ import {
 } from './redux/ducks/userReducer';
 
 const App = (props) => {
-  const { status, fetchU, fetchGoogle } = props;
+  const { status, fetchUser, fetchGoogleUser } = props;
   let navigate = useNavigate();
 
   React.useEffect(() => {
@@ -35,11 +35,11 @@ const App = (props) => {
         : JSON.parse(localStorage.getItem('aws-amplify-federatedInfo'));
 
     if (googleCreds) {
-      fetchGoogle(googleCreds);
+      fetchGoogleUser(googleCreds);
     } else {
-      fetchU();
+      fetchUser();
     }
-  }, [status, fetchU, fetchGoogle, navigate]);
+  }, [status, fetchUser, fetchGoogleUser, navigate]);
 
   let location = useLocation();
   let isLoggedIn = status === AUTH_STATES.AUTHED;
@@ -63,13 +63,4 @@ const mapStateToProps = ({ user }) => ({
   status: user.status,
 });
 
-const mapDispatchToProps = (dispatch) => ({
-  fetchU: () => {
-    dispatch(fetchUser());
-  },
-  fetchGoogle: (credentials) => {
-    dispatch(fetchGoogleUser(credentials));
-  },
-});
-
-export default connect(mapStateToProps, mapDispatchToProps)(App);
+export default connect(mapStateToProps, { fetchUser, fetchGoogleUser })(App);

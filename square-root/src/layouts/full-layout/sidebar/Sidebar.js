@@ -16,11 +16,18 @@ import {
 import FeatherIcon from 'feather-icons-react';
 import { SidebarWidth } from '../../../assets/global/Theme-variable';
 import LogoIcon from '../logo/LogoIcon';
-import Menuitems from './Menuitems';
-import Buynow from './Buynow';
+import LearnMore from './LearnMore';
 import Scrollbar from '../../../components/custom-scroll/Scrollbar';
+import Menuitems from './Menuitems';
+import { button } from 'aws-amplify';
 
-const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
+const Sidebar = ({
+  isMobileSidebarOpen,
+  onSidebarClose,
+  isSidebarOpen,
+  onModalOpen,
+  projects,
+}) => {
   const [open, setOpen] = React.useState(true);
   const { pathname } = useLocation();
   const pathDirect = pathname;
@@ -103,43 +110,109 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
                     </ListItem>
                     <Collapse in={index === open} timeout='auto' unmountOnExit>
                       <List component='li' disablePadding>
-                        {item.children.map((child) => {
-                          return (
-                            <ListItem
-                              key={child.title}
-                              button
-                              component={NavLink}
-                              to={child.href}
-                              onClick={onSidebarClose}
-                              selected={pathDirect === child.href}
-                              sx={{
-                                mb: 1,
-                                ...(pathDirect === child.href && {
-                                  color: 'primary.main',
-                                  backgroundColor: 'transparent!important',
-                                }),
-                              }}
-                            >
-                              <ListItemIcon
+                        {item.title === 'My Projects'
+                          ? projects.map((project) => (
+                              <ListItem
+                                key={project.name}
+                                button
+                                component={NavLink}
+                                to={`/dashboard/${project.name}`}
+                                onClick={onSidebarClose}
+                                selected={
+                                  pathDirect === `/dashboard/${project.name}`
+                                }
                                 sx={{
-                                  svg: { width: '14px', marginLeft: '3px' },
-                                  ...(pathDirect === child.href && {
+                                  mb: 1,
+                                  ...(pathDirect ===
+                                    `/dashboard/${project.name}` && {
                                     color: 'primary.main',
+                                    backgroundColor: 'transparent!important',
                                   }),
                                 }}
                               >
-                                <FeatherIcon
-                                  icon={
-                                    child.icon !== undefined ? child.icon : ''
-                                  }
-                                  width='20'
-                                  height='20'
-                                />
-                              </ListItemIcon>
-                              <ListItemText>{child.title}</ListItemText>
-                            </ListItem>
-                          );
-                        })}
+                                <ListItemIcon
+                                  sx={{
+                                    svg: { width: '14px', marginLeft: '3px' },
+                                    ...(pathDirect ===
+                                      `/dashboard/${project.name}` && {
+                                      color: 'primary.main',
+                                    }),
+                                  }}
+                                >
+                                  <FeatherIcon
+                                    icon={
+                                      project.icon !== undefined
+                                        ? project.icon
+                                        : ''
+                                    }
+                                    width='20'
+                                    height='20'
+                                  />
+                                </ListItemIcon>
+                                <ListItemText>{project.name}</ListItemText>
+                              </ListItem>
+                            ))
+                          : item.children.map((child) => (
+                              <ListItem
+                                key={child.title}
+                                button
+                                component={NavLink}
+                                to={child.href}
+                                onClick={onSidebarClose}
+                                selected={pathDirect === child.href}
+                                sx={{
+                                  mb: 1,
+                                  ...(pathDirect === child.href && {
+                                    color: 'primary.main',
+                                    backgroundColor: 'transparent!important',
+                                  }),
+                                }}
+                              >
+                                <ListItemIcon
+                                  sx={{
+                                    svg: { width: '14px', marginLeft: '3px' },
+                                    ...(pathDirect === child.href && {
+                                      color: 'primary.main',
+                                    }),
+                                  }}
+                                >
+                                  <FeatherIcon
+                                    icon={
+                                      child.icon !== undefined ? child.icon : ''
+                                    }
+                                    width='20'
+                                    height='20'
+                                  />
+                                </ListItemIcon>
+                                <ListItemText>{child.title}</ListItemText>
+                              </ListItem>
+                            ))}
+                        {item.title === 'My Projects' && (
+                          <ListItem
+                            key='new project'
+                            button
+                            component={button}
+                            onClick={() => onModalOpen(true)}
+                            sx={{
+                              mb: 1,
+                              ...{
+                                color: 'secondary.main',
+                              },
+                            }}
+                          >
+                            <ListItemIcon
+                              sx={{
+                                svg: { width: '14px', marginLeft: '3px' },
+                                ...{
+                                  color: 'primary.main',
+                                },
+                              }}
+                            >
+                              <FeatherIcon icon='plus' width='20' height='20' />
+                            </ListItemIcon>
+                            <ListItemText>Create new Project</ListItemText>
+                          </ListItem>
+                        )}
                       </List>
                     </Collapse>
                   </React.Fragment>
@@ -184,7 +257,7 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
             })}
           </List>
         </Box>
-        <Buynow />
+        <LearnMore />
       </Box>
     </Scrollbar>
   );
@@ -227,7 +300,9 @@ const Sidebar = ({ isMobileSidebarOpen, onSidebarClose, isSidebarOpen }) => {
 Sidebar.propTypes = {
   isMobileSidebarOpen: PropTypes.bool,
   onSidebarClose: PropTypes.func,
+  onModalOpen: PropTypes.func,
   isSidebarOpen: PropTypes.bool,
+  projects: PropTypes.object,
 };
 
 export default Sidebar;

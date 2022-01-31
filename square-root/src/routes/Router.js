@@ -27,15 +27,15 @@ const ResetPassword = lazy(() =>
 );
 
 /* ****Pages***** */
-const Dashboard1 = lazy(() => import('../views/dashboards/Dashboard1'));
-const Dashboard2 = lazy(() => import('../views/dashboards/Dashboard2'));
+const Dashboard1 = lazy(() => import('../views/dashboards/AllProjects'));
+const Dashboard2 = lazy(() => import('../views/dashboards/SingleProject'));
 const Dashboard3 = lazy(() => import('../views/dashboards/Dashboard3'));
+const Plants = lazy(() => import('../views/plants/Plants'));
+const ConceptsForCategory = lazy(() =>
+  import('../views/apps/shop/ConceptsForCategory')
+);
 
 /* ****Apps***** */
-const ShopRooftop = lazy(() => import('../views/apps/shop/ShopRooftop'));
-const ShopRainbed = lazy(() => import('../views/apps/shop/ShopRainbed'));
-const ShopIndoor = lazy(() => import('../views/apps/shop/ShopIndoor'));
-const ShopAllPlants = lazy(() => import('../views/apps/shop/ShopAllPlants'));
 
 const Treeview = lazy(() => import('../views/treeview/Treeview'));
 const Pricing = lazy(() => import('../views/pricing/Pricing'));
@@ -165,15 +165,12 @@ const Router = (isLoggedIn) => [
     path: 'dashboard',
     element: isLoggedIn ? <FullLayout /> : <Navigate to='/auth/login' />,
     children: [
-      { path: '/dashboard', element: <Dashboard1 /> },
-      { path: '/dashboard/dashboard1', element: <Dashboard1 /> },
-      { path: '/dashboard/dashboard2', element: <Dashboard2 /> },
-      { path: '/dashboard/dashboard3', element: <Dashboard3 /> },
+      { path: '', element: <Dashboard1 /> },
+      { path: ':name', element: <Dashboard2 /> },
+      { path: 'plants', element: <Plants /> },
+      { path: 'dashboard3', element: <Dashboard3 /> },
+      { path: 'concepts/:name', element: <ConceptsForCategory /> },
       { path: 'shop/shop-detail', element: <ShopDetail /> },
-      { path: 'shop/ShopRooftop', element: <ShopRooftop /> },
-      { path: 'shop/ShopRainbed', element: <ShopRainbed /> },
-      { path: 'shop/ShopIndoor', element: <ShopIndoor /> },
-      { path: 'shop/ShopAllPlants', element: <ShopAllPlants /> },
       { path: '*', element: <Navigate to='/404' /> },
     ],
   },

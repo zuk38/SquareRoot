@@ -81,13 +81,13 @@ export const initialState = {
 const UserReducer = (state = initialState, action) => {
   switch (action.type) {
     case SET_AUTH_STATE:
-      return { ...initialState, ...action.state };
+      return { ...state, ...action.state };
     case USER_SIGNED_UP:
-      return { ...initialState, ...action.values };
+      return { ...state, ...action.values };
     case FORGOT_PASSWORD:
-      return { ...initialState, ...action.values };
+      return { ...state, ...action.values };
     case CHANGE_PASSWORD:
-      return { ...initialState, ...action.values };
+      return { ...state, ...action.values };
     default:
       return state;
   }

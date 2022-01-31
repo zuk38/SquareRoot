@@ -1,9 +1,9 @@
 import { call, put, all, takeEvery } from 'redux-saga/effects';
-import { listCategorys, listConcepts } from '../../api/conceptQueries';
+import { listCategorys, listConcepts } from '../../graphql/conceptQueries';
 import { API } from 'aws-amplify';
 import {
-  categoriesFetched,
-  conceptsFetched,
+  CONCEPTS_FETCHED,
+  CATEGORIES_FETCHED,
   FETCH_CATEGORIES,
   FETCH_CONCEPTS,
 } from '../ducks/conceptsReducer';
@@ -19,7 +19,7 @@ export function* fetchCategories() {
       authMode: 'API_KEY',
     });
     let categories = formatCategoryData(data.listCategorys.items);
-    yield put(categoriesFetched({ categories }));
+    yield put({ type: CATEGORIES_FETCHED, payload: categories });
   } catch (error) {
     console.log(error);
   }
@@ -32,34 +32,11 @@ export function* fetchConcepts() {
       authMode: 'API_KEY',
     });
     let concepts = formatConceptData(data.listConcepts.items);
-    //let featuredConcepts = concepts.filter((concept) => concept.featured);
-    yield put(conceptsFetched({ concepts }));
+    yield put({ type: CONCEPTS_FETCHED, payload: concepts });
   } catch (e) {
     console.log(e);
   }
 }
-
-/*fetchConcepts = async () => {
-  try {
-    const { data } = await API.graphql({
-      query: listConcepts,
-      authMode: 'API_KEY',
-    });
-    console.log(data);
-    let tempConcepts = this.formatData(data.listConcepts.items);
-    let concepts = this.formatConceptData(data.listConcepts.items);
-    console.log(concepts);
-    let featuredConcepts = concepts.filter((concept) => concept.featured);
-    this.setState({
-      concepts,
-      tempConcepts,
-      featuredConcepts,
-      loading: false,
-    });
-  } catch (error) {
-    console.log(error);
-  }
-};*/
 
 function* watchCatFetch() {
   yield takeEvery(FETCH_CATEGORIES, fetchCategories);

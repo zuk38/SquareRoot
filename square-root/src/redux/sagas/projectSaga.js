@@ -1,8 +1,19 @@
-import { call, all, takeEvery } from 'redux-saga/effects';
+import { call, all, takeEvery, put, takeLatest } from 'redux-saga/effects';
 import { API } from 'aws-amplify';
-import { listProjects } from '../../api/projectQueries';
+import { listProjects } from '../../graphql/projectQueries';
 import { formatProjectsData } from '../helpers/projectSagaHelper';
-import { FETCH_PROJECTS } from '../ducks/projectsReducer';
+import {
+  ADD_PROJECT,
+  DELETE_PROJECT,
+  FETCH_PROJECTS,
+  PROJECT_DELETED,
+  SET_PROJECTS_STATE,
+} from '../ducks/projectsReducer';
+import {
+  deleteProject as deleteP,
+  createProject,
+} from '../../graphql/mutations';
+import { v4 as uuidv4 } from 'uuid';
 
 export function* fetchProjects() {
   try {
@@ -11,34 +22,66 @@ export function* fetchProjects() {
       query: listProjects,
       authMode: 'AMAZON_COGNITO_USER_POOLS',
     });
-    formatProjectsData(data.listProjects.items);
+    const projects = data.listProjects.items;
+    yield put({
+      type: SET_PROJECTS_STATE,
+      payload: projects,
+    });
   } catch (e) {
     console.log(e);
   }
 }
 
-/*fetchProjects = async () => {
+export function* deleteProject({ id }) {
   try {
-    // Switch authMode to AMAZON_COGNITO_USER_POOLS for non-public access
-    const { data } = await API.graphql({
-      query: listProjects,
+    yield call([API, 'graphql'], {
+      query: deleteP,
+      variables: { input: id },
       authMode: 'AMAZON_COGNITO_USER_POOLS',
     });
-    const projects = this.formatData(data.listProjects.items);
-    console.log(projects);
-    this.setState({
-      projects,
-      loading: false,
+    yield put({
+      type: PROJECT_DELETED,
+      payload: id,
     });
-  } catch (err) {
-    console.log(err);
+  } catch (e) {
+    console.log(e);
   }
-};*/
+}
+
+export function* addProject({ values }) {
+  try {
+    const { name, zip, city, address, description } = values;
+    let projectDetails = {
+      id: uuidv4(),
+      name,
+      postalCode: zip,
+      city,
+      address,
+      description,
+    };
+    yield call([API, 'graphql'], {
+      query: createProject,
+      variables: { input: projectDetails },
+      authMode: 'AMAZON_COGNITO_USER_POOLS',
+    });
+    yield fetchProjects();
+  } catch (e) {
+    console.log(e);
+  }
+}
 
 function* watchProjectsFetch() {
   yield takeEvery(FETCH_PROJECTS, fetchProjects);
 }
 
-export function* conceptSaga() {
-  yield all([watchProjectsFetch()]);
+function* watchProjectAdd() {
+  yield takeLatest(ADD_PROJECT, addProject);
+}
+
+function* watchProjectDelete() {
+  yield takeEvery(DELETE_PROJECT, deleteProject);
+}
+
+export function* projectSaga() {
+  yield all([watchProjectsFetch(), watchProjectDelete(), watchProjectAdd()]);
 }

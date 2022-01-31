@@ -19,7 +19,6 @@ type PlantMetadata
   #norwegian_nursery: Boolean
   #size_in_cm: Float
   #image: String
-  #featured: Boolean
   #climate_zone: String
   #functional requirements
   #pollinator_friendly: Boolean
@@ -74,7 +73,6 @@ type ConceptPlant
 
 type Concept
   @model(subscriptions: null)
-  @key(name: "byGreenspace", fields: ["greenspace_id", "name"])
   @auth(
     rules: [
       # allow admins to create, update and delete greenspaces
@@ -88,12 +86,10 @@ type Concept
     ]
   ) {
   id: ID!
-  greenspace_id: ID
   name: String!
   owner: String
   userDefined: Boolean
   image: String
-  featured: Boolean
   price: Float
   description: String
   plants: [ConceptPlant] @connection(keyName: "byConcept", fields: ["id"])
@@ -162,29 +158,6 @@ type PlantCategory
   category: Category! @connection(fields: ["category_ID"])
 }
 
-type Greenspace
-  @model(subscriptions: null)
-  @key(name: "byProject", fields: ["project_ID", "name"])
-  @auth(
-    rules: [
-      # allow admins to create, update and delete greenspaces
-      { allow: groups, groups: ["Admin"] }
-      # allow all authenticated users to view greenspaces
-      { allow: private, operations: [read] }
-      # allow all guest users (not authenticated) to view greenspaces
-      { allow: public, operations: [read] }
-      # allow owners to create, update and delete greenspaces
-      { allow: owner }
-    ]
-  ) {
-  id: ID!
-  project_ID: ID!
-  name: String!
-  description: String
-  owner: String
-  concepts: [Concept] @connection(keyName: "byGreenspace", fields: ["id"])
-}
-
 type Project
   @model
   @auth(
@@ -202,7 +175,7 @@ type Project
   postalCode: String!
   end_date: String
   owner: String
-  greenspaces: [Greenspace] @connection(keyName: "byProject", fields: ["id"])
+  description: String
   members: [ProjectMember] @connection(keyName: "byProject", fields: ["id"])
 }
 

@@ -21,9 +21,13 @@ export const formatConceptData = (items) => {
       let plant = { id, quantity, ...metadata };
       return plant;
     });
+    let categories = concept.categories.items.map((c) => {
+      return c.category.category_name;
+    });
     let c = {
       ...concept,
       plants,
+      categories,
     };
     return c;
   });

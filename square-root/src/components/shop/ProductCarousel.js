@@ -26,7 +26,7 @@ const images = [
   },
 ];
 
-const ProductCarousel = () => {
+const ProductCarousel = ({ images }) => {
   const theme = useTheme();
   const [activeStep, setActiveStep] = React.useState(0);
   const maxSteps = images.length;
@@ -42,6 +42,7 @@ const ProductCarousel = () => {
   const handleStepChange = (step) => {
     setActiveStep(step);
   };
+
   return (
     <Box
       sx={{

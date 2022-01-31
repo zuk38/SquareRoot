@@ -1,7 +1,7 @@
 import { call, put, all, takeEvery } from 'redux-saga/effects';
 import { API } from 'aws-amplify';
-import { listPlants } from '../../api/plantsQueries';
-import { FETCH_PLANTS, plantsFetched } from '../ducks/plantsReducer';
+import { listPlants } from '../../graphql/plantsQueries';
+import { FETCH_PLANTS, PLANTS_SET_STATE } from '../ducks/plantsReducer';
 import { formatPlantData } from '../helpers/plantsSagaHelper';
 
 export function* fetchPlants() {
@@ -12,7 +12,10 @@ export function* fetchPlants() {
     });
     let plants = formatPlantData(data.listPlants.items);
 
-    yield put(plantsFetched({ plants }));
+    yield put({
+      type: PLANTS_SET_STATE,
+      payload: plants,
+    });
   } catch (error) {
     console.log(error);
   }

@@ -42,6 +42,12 @@ const useForm = (validate, action = null, initialFormValues = {}) => {
     setIsSubmitting(false);
   };
 
+  const setProjectExistsErrors = (exist) => {
+    if (exist)
+      setErrors({ ...errors, name: 'Project with that name already exists!' });
+    else setErrors({ ...errors, name: '' });
+  };
+
   return {
     values,
     setValues,
@@ -50,6 +56,7 @@ const useForm = (validate, action = null, initialFormValues = {}) => {
     handleChange,
     handleSubmit,
     resetForm,
+    setProjectExistsErrors,
   };
 };
 

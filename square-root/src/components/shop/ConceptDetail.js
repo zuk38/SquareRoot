@@ -41,20 +41,13 @@ const ConceptDetail = () => {
   // rating
   const [value, setValue] = React.useState(2);
 
-  const addToProjectModal = [
-    {
-      title: 'Add to Project',
-      header: 'Select Project',
-    },
-  ];
   return (
     <Box>
       {/* stock text */}
-      {/** 
-      <Box display="flex" alignItems="center">
+      <Box display='flex' alignItems='center'>
         <Chip
-          label="In Stock"
-          color="success"
+          label='In Stock'
+          color='success'
           sx={{
             borderRadius: '6px',
             backgroundColor: (theme) => theme.palette.success.main,
@@ -71,11 +64,10 @@ const ConceptDetail = () => {
             },
           }}
         />
-        <Typography color="textSecondary" variant="caption" fontWeight="400">
+        <Typography color='textSecondary' variant='caption' fontWeight='400'>
           Men Shoes
         </Typography>
       </Box>
-      */}
       {/* title */}
       <Typography
         fontWeight='600'
@@ -145,26 +137,26 @@ const ConceptDetail = () => {
       </Typography>
 
       {/* ---- reviews ---- */}
-      {/**
+
       <Box
-        display="flex"
-        alignItems="center"
+        display='flex'
+        alignItems='center'
         sx={{
           mt: '5px',
         }}
       >
         <Rating
-          name="simple-controlled"
-          size="small"
+          name='simple-controlled'
+          size='small'
           value={value}
           onChange={(event, newValue) => {
             setValue(newValue);
           }}
         />
         <Link
-          href="#"
-          color="inherit"
-          underline="always"
+          href='#'
+          color='inherit'
+          underline='always'
           sx={{
             ml: '5px',
           }}
@@ -172,7 +164,7 @@ const ConceptDetail = () => {
           236 reviews
         </Link>
       </Box>
- */}
+
       {/* -- characteristics icons  -- */}
       <Box
         display='flex'
@@ -182,7 +174,6 @@ const ConceptDetail = () => {
           mb: 4,
         }}
       >
-        {/** 
         <CustomFormLabel
           sx={{
             mt: 0,
@@ -190,22 +181,20 @@ const ConceptDetail = () => {
         >
           Colors
         </CustomFormLabel>
-        */}
 
-        {/*---- radio buttons / colors -----
+        {/*---- radio buttons / colors ----- */}
         <Box
           sx={{
             ml: 2,
           }}
         >
-          
           <Radio
             checked={selectedValue === 'a'}
             onChange={handleChange}
             icon={<CircleIcon />}
             checkedIcon={<CircleTwoToneIcon />}
-            value="a"
-            name="radio-buttons"
+            value='a'
+            name='radio-buttons'
             inputProps={{ 'aria-label': 'A' }}
             sx={{
               '& .MuiSvgIcon-root': {
@@ -218,8 +207,8 @@ const ConceptDetail = () => {
             onChange={handleChange}
             icon={<CircleIcon />}
             checkedIcon={<CircleTwoToneIcon />}
-            value="b"
-            name="radio-buttons"
+            value='b'
+            name='radio-buttons'
             inputProps={{ 'aria-label': 'B' }}
             sx={{
               '& .MuiSvgIcon-root': {
@@ -232,8 +221,8 @@ const ConceptDetail = () => {
             onChange={handleChange}
             icon={<CircleIcon />}
             checkedIcon={<CircleTwoToneIcon />}
-            value="c"
-            name="radio-buttons"
+            value='c'
+            name='radio-buttons'
             inputProps={{ 'aria-label': 'C' }}
             sx={{
               '& .MuiSvgIcon-root': {
@@ -242,7 +231,6 @@ const ConceptDetail = () => {
             }}
           />
         </Box>
-        */}
       </Box>
 
       {/* sizes */}

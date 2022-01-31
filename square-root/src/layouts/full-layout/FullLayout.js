@@ -10,6 +10,8 @@ import Sidebar from './sidebar/Sidebar';
 import Header from './header/Header';
 import Footer from './footer/Footer';
 import { TopbarHeight } from '../../assets/global/Theme-variable';
+import { openAddProjectModal } from '../../redux/ducks/projectsReducer';
+import { connect } from 'react-redux';
 
 const MainWrapper = experimentalStyled('div')(() => ({
   display: 'flex',
@@ -31,7 +33,7 @@ const PageWrapper = experimentalStyled('div')(({ theme }) => ({
   },
 }));
 
-const FullLayout = () => {
+function FullLayout(props) {
   const [isSidebarOpen, setSidebarOpen] = useState(true);
   const [isMobileSidebarOpen, setMobileSidebarOpen] = useState(false);
   const lgUp = useMediaQuery((theme) => theme.breakpoints.up('lg'));
@@ -51,6 +53,8 @@ const FullLayout = () => {
         isSidebarOpen={isSidebarOpen}
         isMobileSidebarOpen={isMobileSidebarOpen}
         onSidebarClose={() => setMobileSidebarOpen(false)}
+        onModalOpen={props.openAddProjectModal}
+        projects={props.projects}
       />
 
       <PageWrapper>
@@ -69,6 +73,12 @@ const FullLayout = () => {
       </PageWrapper>
     </MainWrapper>
   );
-};
+}
 
-export default FullLayout;
+const mapStateToProps = ({ projects }) => ({
+  projects: projects.projects,
+});
+
+export default connect(mapStateToProps, {
+  openAddProjectModal,
+})(FullLayout);

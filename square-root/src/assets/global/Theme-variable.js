@@ -7,9 +7,23 @@ import shadows from './Shadows';
 const SidebarWidth = 265;
 const TopbarHeight = 70;
 
+const commonColors = {
+  black: '#111111',
+  lightGray: '#DDDDDD',
+};
+
 const baseTheme = {
   direction: 'ltr',
   palette: {
+    text: {
+      primary: commonColors.black,
+      secondary: commonColors.lightGray,
+      disabled: '#9e9e9e',
+      danger: '#fc4b6c',
+    },
+    background: {
+      main: commonColors.lightGray,
+    },
     primary: {
       main: '#8ca68c',
       light: '#bcd7bc',
@@ -18,8 +32,8 @@ const baseTheme = {
     },
     secondary: {
       main: '#3e3d3d',
-      light: '#ddebff',
-      dark: '#173f98',
+      light: '#7d7a7a',
+      dark: '#292828',
     },
     success: {
       main: '#00c292',
@@ -43,10 +57,6 @@ const baseTheme = {
       light: '#fff4e5',
       dark: '#dcb014',
       contrastText: '#ffffff',
-    },
-    text: {
-      secondary: '#777e89',
-      danger: '#fc4b6c',
     },
     grey: {
       A100: '#ecf0f2',

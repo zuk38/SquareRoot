@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from 'react-modal';
 import { withProjectConsumer } from '../../context/projects';
 import { AiOutlinePlus } from 'react-icons/ai';
-import CreateProjectModal from './CreateProjectModal';
 
 function AddToProjectModal(props) {
   const [selectedProject, setSelectedProject] = useState(null);
@@ -76,12 +75,6 @@ function AddToProjectModal(props) {
         </div>
         <button className='btn-continue'>Continue</button>
       </Modal>
-      {addNewProject && (
-        <CreateProjectModal
-          isOpen={addNewProject}
-          setModal={setNewProjectModal}
-        />
-      )}
     </>
   );
 }

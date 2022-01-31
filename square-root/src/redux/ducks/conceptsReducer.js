@@ -1,53 +1,42 @@
 //actions
 export const FETCH_CATEGORIES = 'fetchCategories';
-const CATEGORIES_FETCHED = 'categoriesFetched';
+export const CATEGORIES_FETCHED = 'categoriesFetched';
 export const FETCH_CONCEPTS = 'fetchConcepts';
-const CONCEPTS_FETCHED = 'conceptsFetched';
+export const CONCEPTS_FETCHED = 'conceptsFetched';
 
 export const fetchCategories = () => ({
   type: FETCH_CATEGORIES,
-});
-
-export const categoriesFetched = (state) => ({
-  type: CATEGORIES_FETCHED,
-  state,
 });
 
 export const fetchConcepts = () => ({
   type: FETCH_CONCEPTS,
 });
 
-export const conceptsFetched = (state) => ({
-  type: CONCEPTS_FETCHED,
-  state,
-});
-
 export const initialState = {
   concepts: [],
-  tempConcepts: [],
-  featuredConcepts: [],
   categories: [],
 };
 
 const ConceptsReducer = (state = initialState, action) => {
   switch (action.type) {
     case CATEGORIES_FETCHED:
-      return { ...initialState, ...action.state };
+      return { ...state, categories: action.payload };
     case CONCEPTS_FETCHED:
-      return { ...initialState, ...action.state };
+      return { ...state, concepts: action.payload };
     default:
       return state;
   }
 };
 
-export const getCategory = (name) => {
-  let tempCategories = [...initialState.categories];
-  return tempCategories.find((category) => category.category_name === name);
-};
+export const selectCategory = (state, name) =>
+  state.concepts.categories.find((category) => category.category_name === name);
 
-export const getConcept = (name) => {
-  let tempConcepts = [...initialState.concepts];
-  return tempConcepts.find((concept) => concept.name === name);
-};
+export const selectConcept = (state, name) =>
+  state.concepts.concepts.find((concept) => concept.name === name);
+
+export const selectConceptFromCategory = (state, categoryName) =>
+  state.concepts.concepts.filter((concept) =>
+    concept.categories.some((category) => category === categoryName)
+  );
 
 export default ConceptsReducer;

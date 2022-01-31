@@ -1,63 +1,35 @@
 import * as React from 'react';
-import Box from '@mui/material/Box';
-import Tab from '@mui/material/Tab';
-import TabContext from '@mui/lab/TabContext';
-import TabList from '@mui/lab/TabList';
-import TabPanel from '@mui/lab/TabPanel';
+import { Box, Tab } from '@mui/material';
+import { TabContext, TabList, TabPanel } from '@mui/lab';
 
-import { Grid } from '@mui/material';
-import {
-  WelcomeCard,
-  BlogCard,
-  Earnings,
-  MonthlySales,
-  SalesOverview,
-  TotalSales,
-  ProductPerformance,
-  WeeklyStats,
-  DailyActivities,
-} from './dashboard1-components';
-import MembersTable from '../tables/MembersTable';
-import ProjectOrders from './dashboard-components/ProjectOrders';
-import ProjectGreenspaces from './dashboard-components/ProjectGreenspaces';
-import ProjectSettings from './dashboard-components/ProjectSettings';
-
-export default function LabTabs() {
+/* tabs props should be an object that has label, value and a respective component field */
+export default function LabTabs({ tabs }) {
   const [value, setValue] = React.useState('1');
 
-  const handleChange = (event, newValue) => {
-    setValue(newValue);
+  const handleChange = (event) => {
+    //event target id outpus something like: mui-p-45400-T-2
+    let newTab = event.target.id.toString();
+    setValue(newTab.slice(-1));
   };
 
   return (
     <Box sx={{ width: '100%', typography: 'body1' }}>
       <TabContext value={value}>
         <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
-          <TabList onChange={handleChange} aria-label=''>
-            <Tab label='Greenspaces' value='1' sx={{ typography: 'h5' }} />
-            <Tab label='Members' value='2' sx={{ typography: 'h5' }} />
-            <Tab label='Orders' value='3' sx={{ typography: 'h5' }} />
-            <Tab label='Settings' value='4' sx={{ typography: 'h5' }} />
+          <TabList onClick={(e) => handleChange(e)} aria-label=''>
+            {tabs.map((tab) => (
+              <Tab
+                key={tab.label}
+                label={tab.label}
+                value={tab.value}
+                sx={{ typography: 'h5' }}
+              />
+            ))}
           </TabList>
         </Box>
-
-        <TabPanel value='1'>
-          <ProjectGreenspaces />
-        </TabPanel>
-
-        <TabPanel value='2'>
-          <MembersTable />
-        </TabPanel>
-
-        <TabPanel value='3'>
-          <ProjectOrders />
-        </TabPanel>
-
-        <TabPanel value='4'>
-          <Grid item lg={12} md={12} xs={12}>
-            <ProjectSettings />
-          </Grid>
-        </TabPanel>
+        {tabs.map((tab) => (
+          <TabPanel value={tab.value}>{tab.component}</TabPanel>
+        ))}
       </TabContext>
     </Box>
   );
