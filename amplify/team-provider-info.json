@@ -18,16 +18,16 @@
       "function": {
         "addUserToGroup": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/addUserToGroup-44514874645851347032-build.zip"
+          "s3Key": "amplify-builds/addUserToGroup-7964454d2b4d7230566d-build.zip"
         },
         "contactFormFunction": {
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/contactFormFunction-46723767394975502f67-build.zip"
+          "s3Key": "amplify-builds/contactFormFunction-5439684a38746a4e4933-build.zip"
         },
         "sendEmail": {
           "emailAddress": "kmaciejewska14@gmail.com",
           "deploymentBucketName": "amplify-squarerootproject-dev-113924-deployment",
-          "s3Key": "amplify-builds/sendEmail-742f4c6e766f73463645-build.zip"
+          "s3Key": "amplify-builds/sendEmail-683843775a5076437a4a-build.zip"
         }
       }
     }
