@@ -67,7 +67,8 @@ export default function Navbar(props) {
           <ul className="nav-menu active">
             {NavbarData.map((item, index) => (
               <>
-                {!item.dropdown ? (
+                {!item.dropdown ?
+                    (
                   <NavLink
                     to={item.path}
                     key={index}
@@ -171,6 +172,11 @@ export default function Navbar(props) {
             )}
           </ul>
         )}
+        <div className="nav-menu active">
+          <a target="_blank" href="https://platform.squareroot.cc/">
+            <Trans i18nKey={'platform'}></Trans>
+          </a>
+        </div>
         <ul className="navbar-nav">
           {/*language */}
           <LanguageSelect />
