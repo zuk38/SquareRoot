@@ -32,17 +32,9 @@ const loadingMarkup = (<Loading />)
 
 ReactDOM.render(
   <Suspense fallback={loadingMarkup}>
-  <ConceptProvider>
-    <ProjectProvider>
-      <PlantProvider>
-        <UserProvider>
-          <Router>
-            <App />
-          </Router>
-        </UserProvider>
-      </PlantProvider>
-    </ProjectProvider>
-  </ConceptProvider>
+    <Router>
+      <App />
+    </Router>
   </Suspense>,
   document.getElementById("root")
 );

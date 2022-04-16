@@ -8,7 +8,7 @@
   "rainbed2": "Rain garden",
   "indoor2": "Indoor",
   "who": "WHO WE ARE",
-  "platform": "Go to platform",
+  "platform": "Go to beta platform",
   "about": "ABOUT",
   "what": "WHAT WE DO",
   "why": "WHY US",
@@ -29,7 +29,7 @@
       "hero_new": "New to SquareRoot?",
       "see_more": "See more",
       "read_more": "Read more",
-      "demo": "Request Demo"
+      "platform": "Test beta version"
     },
     "section_two": {
       "title": "SquareRoot makes cities <1>green</1>, literally!",
@@ -40,17 +40,25 @@
       "description": "Together with NIBIO, biologists, landscape architects and plant nurseries we have developed plant lists for urban greening and standard concepts, such as roof gardens and rain beds, to manage heavy rainfall and to increase biodiversity."
     },
     "section_four": {
+      "title": "Choose from our plant packages for your project",
+      "description": {
+        "line_one": "Together with NIBIO,",
+        "line_two": " Edit ",
+        "edit_link": "https://www.edit.land/",
+        "line_tree": "and plant nurseries we are constantly developing new plant packages that are adapted to various types of green spaces like:"
+      },
+      "summary": "We’re working on offering more packages based on various climates and regions. Get in touch if you want to contribute to new plant packages!",
       "rooftop": "Rooftop",
+      "rainbed": "Rainbed",
       "rooftop_description": "Optimise your roof surface with one of our <1>rooftop</1> concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
-      "rainbed_description": "Our plants for <1>rainbeds</1> are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone.",
-      "indoor_description": "Our partner Leaf has extensive expertise with <1>indoor</1> plants. Incredible aesthetics are combined with minimal maintenance."
+      "rainbed_description": "Our plants for <1>rainbeds</1> are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone."
     },
     "section_five": {
       "description": "By integrating nature in your project, it helps meet the requirements for stormwater management and using local plants increases <1>biodiversity</1> as well as <3>BREEAM points</3>. <5 /> <6 /> Building projects with a high environmental footprint increases the value of your property and <8>keeps our cities healthy</8>."
     },
     "section_six": {
-      "title": "COMING SOON",
-      "description": "Our digital platform makes finding and sourcing plants <1>easy and available everywhere</1>. <3/> <4/> Through our network of local plant nurseries, we help you find the right plants for the right spot and show what is available to have it delivered in time.<6 /> <7 />Coming fall 2021. Request a Demo to get a look into what's coming."
+      "title": "Our platform",
+      "description": "Our digital platform makes it easy to find and order the best adapted plants for your project. <1/> <2/> Thanks to our network of local plant nurseries we help you to find the right plants for your space. Our database builds on the assortment from local plant nurseries but if you don’t find the plant you wish, you can also put in a special request.<4 /> <5 /> We make sure that what you plan for is also what you actually get! <7 /> <8 />Sign in the platform and start browsing for plants and packages!"
     },
     "section_seven": {
       "title": "In collaboration with"
@@ -71,11 +79,16 @@
   },
   "who_page": {
     "title": "Who we are",
-    "description": "Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you! <1/> <2/>Here you can choose a project type, pick a look for your space, decide the functionality focus and customize the plant list we suggest for you. We make sure the plants fit your requirements and will be available.<4/><5/>Together we will green our cities!<7/>",
+    "description": "Looking for plants to create amazing and resilient urban green areas? Unsure about compliance and availability of these plants? SquareRoot is there to solve this for you! <1/> <2/>Here you can find and choose plants adapted to your project and requirements either by using filters on our database or choosing from our plant packages that are specially suited for certain functionalities and green space types. In collaboration with local plant nurseries we make sure the plants you select will be available.<4/><5/>Our goal is to make it easier to integrate locally produced plants and plants of local origin into urban green spaces. Our starting point is the assortment of plants available at local plant nurseries, and we are also helping the producers adapt to the demand that is constantly evolving.<7/> <8/> Together we will green our cities!<10/>",
     "team": {
-      "title": "Our Team",
+      "title": "The Roots",
+      "support": "We are so grateful they helped us build SquareRoot:",
       "michel_img_d": "Founder and CEO",
-      "michel_d": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.<3/><4/>He co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.<6/><7/>Amongst other things he has contributed building for Gruten, the first norwegian urban farm growing mushrooms on coffee grounds. He is also involved with Pådriv on projects related to sustainable urban development.",
+      "michel_d": "A lover of nature and the outdoors, <1>Michel</1> is passionate about the environment and contributing to solving climate change.<3/><4/>Priori to SquareRoot he co-founded BiomimicryNorway, an NGO dedicated to educating people and companies about sustainable innovation inspired by nature. He has spent a great deal of energy helping various startups and initiatives in the past years using his many skills ranging from design to business modelling for Circular Economy.",
+      "marie_img_d": "Co-founder and COO",
+      "marie_d": "A citizen of the world and animal enthusiast who loves an indoor and outdoor jungle. Marie is committed to people and the environment and has extensive experience in project management. <1/><2/> Contributing to a low-carbon economy is dear to Marie. She has several areas of interest and expertise going from nature preservation, circular economy, social entrepreneurship and animal welfare. <4 /> <5 /> These led her to create Lille Åsen Skogshage where she is currently testing out her passion for nature by creating a big edible forest adapted to the norwegian climate.",
+      "greg_img_d": "CTO",
+      "greg_d": "Greg is a technology enthusiast who wants to keep focus on sustainability.<1 /> <2 /> SquareRoot gives him the chance to combine those two to have a positive impact on our society. His core competencies revolve around data analysis, machine learning and cloud technologies. He puts emphasis on automated processes, reliable delivery and extracting insights that give value. ",
       "karolina_img_d": "Cloud Developer",
       "karolina_d": "The undefeated champion of shilly-shally, eating veggie burgers and having too many ideas at once, <1>Karolina</1> always aims at perfection. SquareRoot gave her a chance for following her passion and working towards a meaningful purpose that starts a positive change in the world we live in. <3/><4/> Apart from pursuing an engineering degree in IT and loving to look through everyone's data, she enjoys a good workout - or a good book - out in the nature. <6/>",
       "gro_img_d": "UX / UI and Frontend Developer",

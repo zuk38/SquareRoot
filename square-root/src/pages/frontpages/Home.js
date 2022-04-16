@@ -43,20 +43,16 @@ export default function Home(props) {
     {
       name: t("home_page.section_four.rooftop"),
       description: "home_page.section_four.rooftop_description",
-      path: "categories/rooftop",
+     // path: "categories/rooftop",
       img_url: "../images/landscape--rooftop_redigert.png",
+      hideMore: true
     },
     {
-      name: t("rainbed2"),
+      name: t("home_page.section_four.rainbed"),
       description: "home_page.section_four.rainbed_description",
-      path: "categories/rainbeds",
+     // path: "categories/rainbeds",
       img_url: "../images/leaf_rooftop_4_redigert.jpg",
-    },
-    {
-      name: t("indoor2"),
-      description: "home_page.section_four.indoor_description",
-      path: "categories/indoor",
-      img_url: "../images/landscape--indoor_redigert.jpg",
+      hideMore: true
     },
   ];
 
@@ -78,9 +74,9 @@ export default function Home(props) {
             </h1>
           </span>
           <div className="signup-btn">
-            <Button onClick={() => executeScroll("contact")}>
-              {t("home_page.hero.demo")}
-            </Button>
+            <a className="o-btn nav-btn" target="_blank" href="https://platform.squareroot.cc/">
+              <Trans i18nKey={'home_page.hero.platform'}></Trans>
+            </a>
           </div>
         </div>
         <div className="see-more">
@@ -179,133 +175,52 @@ export default function Home(props) {
       </section>
 
       <section id="fourth">
-        {width >= 768 ? (
-          <div className="o-container c-section--pad-vh">
-            <div className="container-desktop">
-              {section_fourth_items.map((item) => (
-                <div key={item.name} className="card">
-                  <Card item={item} openCategory={openCategory} />
-                </div>
-              ))}
-            </div>
-          </div>
-        ) : (
-          <div className="container-desktop">
-            <div>
-              <Carousel>
-                {section_fourth_items.map((item) => (
-                  <div
-                    key={item.name}
-                    className="card"
-                    onClick={() => openCategory(item.path)}
-                  >
-                    <Card item={item} openCategory={openCategory} carousel />
-                  </div>
-                ))}
-              </Carousel>
-            </div>
-          </div>
-        )}
-        {/*<div className="c-grid--3x1">
-            <div
-              className="grid-item1"
-              onClick={() => openCategory(`categories/takhage`)}
-            >
-              <div className="img-wrap-rooftop">
-                <div className="u-txt--middle">
-                  <em>{t("home_page.section_four.rooftop")}</em>
-                </div>
-              </div>
-            </div>
+        <div className="pad-me">
+            <div className="position-relative">
+              <div className="main-punchline">
+                <div className="main-punchline--p">
+                    <h3><Trans i18nKey="home_page.section_four.title"></Trans></h3>
 
-            <div className="grid-item2 sect-4-item2">
-              <div className="main-punchline--p">
-                <div className="short-border" />
-                <p className="c-section--p">
-                  <Trans i18nKey="home_page.section_four.rooftop_description">
-                    Optimise your roof surface with one of our
-                    <em>&nbsp;rooftop&nbsp;</em> concepts. Our plants and
-                    hardware are chosen and designed to meet your specific
-                    needs.
-                  </Trans>
-                  <br />
-                  <button
-                    className="btn-transp float-left zoom-on-hover"
-                    onClick={() => openCategory("categories/takhage")}
-                  >
-                    {t("home_page.hero.read_more")}
-                    <i className="fas fa-chevron-right" />
-                  </button>
-                </p>
-              </div>
-            </div>
+                    <p>
+                      <Trans i18nKey="home_page.section_four.description.line_one"></Trans>
+                      <a href={t("home_page.section_four.description.edit_link")}><Trans i18nKey="home_page.section_four.description.line_two"></Trans></a>
+                      <Trans i18nKey="home_page.section_four.description.line_tree"></Trans>
+                    </p>
 
-            <div
-              className="grid-item3"
-              onClick={() => openCategory("categories/regnbed")}
-            >
-              <div className="img-wrap-rainbed">
-                <div className="u-txt--middle">
-                  <em>{t("rainbed2")}</em>
+                    {width >= 768 ? (
+                        <div className="container-desktop">
+                          {section_fourth_items.map((item) => (
+                            <div key={item.name} className="card">
+                              <Card item={item} openCategory={openCategory} />
+                            </div>
+                          ))}
+                        </div>
+                    ) : (
+                      <div className="container-desktop">
+                        <div>
+                          <Carousel>
+                            {section_fourth_items.map((item) => (
+                              <div
+                                key={item.name}
+                                className="card"
+                                onClick={() => openCategory(item.path)}
+                              >
+                                <Card item={item} openCategory={openCategory} carousel />
+                              </div>
+                            ))}
+                          </Carousel>
+                        </div>
+                      </div>
+                    )}
+
+                    <p>
+                      <Trans i18nKey="home_page.section_four.summary"></Trans>
+                    </p>
+
                 </div>
               </div>
             </div>
-
-            <div className="grid-item4 sect-4-item4">
-              <div className="main-punchline--p">
-                <div className="short-border" />
-                <p>
-                  <Trans i18nKey="home_page.section_four.rainbed_description">
-                    Our plants for
-                    <em>&nbsp;rainbeds&nbsp;</em> are carefully chosen with
-                    plants for the wet-zone, able to stand up to 48 hours in the
-                    water and drought tolerant plants at the borders, the
-                    dry-zone.
-                  </Trans>
-                  <br />
-                  <button
-                    className="btn-transp float-left zoom-on-hover"
-                    onClick={() => openCategory("categories/regnbed")}
-                  >
-                    {t("home_page.hero.read_more")}
-                    <i className="fas fa-chevron-right"></i>
-                  </button>
-                </p>
-              </div>
-            </div>
-
-            <div
-              className="grid-item9"
-              onClick={() => openCategory("categories/innendørsplanter")}
-            >
-              <div className="img-wrap-indoor">
-                <div className="u-txt--middle">
-                  <em>{t("indoor2")}</em>
-                </div>
-              </div>
-            </div>
-
-            <div className="grid-item10 sect-4-item6">
-              <div className="main-punchline--p">
-                <div className="short-border" />
-                <p>
-                  <Trans i18nKey="home_page.section_four.indoor_description">
-                    Our partner Leaf has extensive expertise with
-                    <em>&nbsp;indoor&nbsp;</em> plants. Incredible aesthetics
-                    are combined with minimal maintenance.
-                  </Trans>
-                  <br />
-                  <button
-                    className="btn-transp float-left zoom-on-hover"
-                    onClick={() => openCategory("categories/innendørsplanter")}
-                  >
-                    {t("home_page.hero.read_more")}{" "}
-                    <i className="fas fa-chevron-right" />
-                  </button>
-                </p>
-              </div>
-            </div>
-  </div>*/}
+        </div>
       </section>
 
       <section id="fifth">
@@ -353,17 +268,19 @@ export default function Home(props) {
                 <div className="main-punchline">
                   <div className="main-punchline--p is-white">
                     <Trans i18nKey="home_page.section_six.description">
-                      Our digital platform makes finding and sourcing plants
-                      <em>&nbsp; easy and available everywhere</em>.
+                      Our digital platform makes it easy to find and order the best adapted plants for your project.
                       <br />
                       <br />
-                      Through our network of local plant nurseries, we help you
-                      find the right plants for the right spot and show what is
-                      available to have it delivered in time.
+                      Thanks to our network of local plant nurseries we help you to find the right plants for your space.
+                      Our database builds on the assortment from local plant nurseries but if you don’t find the plant you wish,
+                      you can also put in a special request.
                       <br />
                       <br />
-                      Coming fall 2021. Stay updated by subscribing to our
-                      newsletter.
+                      We make sure that what you plan for is also what you actually get!
+                      <br />
+                      <br />
+                      Sign in the platform and start browsing for plants and packages!
+
                     </Trans>
                   </div>
                 </div>
@@ -371,11 +288,20 @@ export default function Home(props) {
             </div>
 
             <div className="grid-item3-vertical sect-6-item2 is-white">
-              <ContactForm
-                demo={true}
-                title="request_demo"
-                title_classname="o-form__heading is-white"
-              />
+              {/*<ContactForm*/}
+              {/*  demo={true}*/}
+              {/*  title="request_demo"*/}
+              {/*  title_classname="o-form__heading is-white"*/}
+              {/*/>*/}
+
+              <div className="platform-img">
+                <img src="../images/platform.png" alt="" />
+              </div>
+              <div className="platform-btn">
+                <a className="o-btn nav-btn" target="_blank" href="https://platform.squareroot.cc/">
+                  <Trans i18nKey={'home_page.hero.platform'}></Trans>
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -438,7 +364,7 @@ function Card({ item, openCategory, carousel }) {
   return (
     <>
       {carousel ? (
-        <div
+         <div
           className="thumb"
           style={{
             background:
@@ -453,7 +379,7 @@ function Card({ item, openCategory, carousel }) {
           </div>
         </div>
       ) : (
-        <div
+           <div
           className="thumb"
           style={{
             background:
@@ -477,10 +403,12 @@ function Card({ item, openCategory, carousel }) {
             designed to meet your specific needs.
           </Trans>
         </p>
+        { !item.hideMore ? (
         <span className="zoom-on-hover" onClick={() => openCategory(item.path)}>
           {t("home_page.hero.read_more")}
           <i className="fas fa-chevron-right" />
         </span>
+            ) : null}
       </article>
     </>
   );

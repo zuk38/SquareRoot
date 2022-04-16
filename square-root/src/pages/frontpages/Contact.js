@@ -1,12 +1,14 @@
 import React from "react";
 import ContactForm from "../../components/ContactForm";
 import { useTranslation } from "react-i18next";
+import {FooterContainer} from "../../components/footer/FooterContainer";
 
 export default function Contact() {
   const { t } = useTranslation();
 
   return (
-    <div className="c-section">
+      <div className="front-container">
+       <div className="c-section">
       <div className="o-container">
         <div className="c-hero">
           <h1 className="c-txt--hero">{t("contact_page.title")}</h1>
@@ -57,5 +59,11 @@ export default function Contact() {
         </div>
       </div>
     </div>
+        <section id="footer">
+          <div className="c-section--pad-vh">
+            <FooterContainer />
+          </div>
+        </section>
+      </div>
   );
 }

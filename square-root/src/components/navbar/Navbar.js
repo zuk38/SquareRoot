@@ -172,12 +172,11 @@ export default function Navbar(props) {
             )}
           </ul>
         )}
-        <div className="nav-menu active">
-          <a target="_blank" href="https://platform.squareroot.cc/">
+        <ul className="navbar-nav">
+          <a className="o-btn nav-btn" target="_blank" href="https://platform.squareroot.cc/">
             <Trans i18nKey={'platform'}></Trans>
           </a>
-        </div>
-        <ul className="navbar-nav">
+
           {/*language */}
           <LanguageSelect />
           {/* user */}

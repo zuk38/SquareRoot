@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { API } from "aws-amplify";
+import {API, graphqlOperation} from "aws-amplify";
 import Loading from "./Loading";
 import useForm from "./hooks/useForm";
 import validate from "./utility/ContactFormValidation";
@@ -24,34 +24,70 @@ export default function ContactForm(props) {
   const [sent, setSent] = useState(false);
 
   async function addContact() {
-    console.log("called add contact")
     setIsSending(true);
-    // create request body
-    const data = {
-      body: {
-        name: values.name,
-        email: values.email,
-        message: values.message || "This is a demo request",
-        phone: values.phone || "",
-        location: values.location || "",
-      },
-    };
-    // call the API gateway
-    const apiData = await API.post("contactFormApi", "/contact", data);
-    console.log({ apiData });
-    setIsSending(false);
-    setSent(true);
+
+    const question = "MESSAGE FROM WEBSITE - Name: " + (values.name || '') + ", Location: " + (values.location || '') + ", Message: " + (values.message || '');
+
+    send({
+      type: "QUESTION",
+      isCompleted: false,
+      owner: values.email,
+      params: [
+        { name: 'senderEmail', value: "site@squareroot.cc"},
+        { name: 'profileEmail', value: values.email },
+        { name: 'profilePhone', value: values.phone || ''},
+        { name: 'question', value: question },
+        { name: 'location', value: values.location || '' },
+        { name: 'name', value: values.name || '' },
+        { name: 'order', value: '' },
+        { name: 'orderLink', value: '' },
+        { name: 'orderWebsite', value: '' },
+      ]
+    }).then((resp) => {
+      setSent(true);
+    }).catch((e) => {
+      setSent(false);
+      console.error(e);
+    }).finally(() => {
+      setIsSending(false);
+    })
   }
 
   function callback() {
-    console.log(values.message);
-    console.log(errors.message);
   }
 
   const openInNewTab = (url) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
   };
+
+  async function send(input) {
+    const statement = `mutation CreateEvent($input: CreateEventInput!, $condition: ModelEventConditionInput) {
+        createEvent(input: $input, condition: $condition) {
+          __typename
+          id
+          type
+          isCompleted
+          owner
+          params {
+            __typename
+            name
+            value
+          }
+          createdAt
+          updatedAt
+          _version
+          _deleted
+          _lastChangedAt
+        }
+      }`;
+
+    return API.graphql(
+        graphqlOperation(statement, {
+          input
+        })
+    );
+  }
 
   return (
     <>

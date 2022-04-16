@@ -26,26 +26,26 @@ export function FooterContainer() {
         <Row>
           <Column first>
             <Title primary>SquareRoot</Title>
-            <Description>{t("footer.description")}</Description>
-            <Button to="/contact-us">{t("footer.button")}</Button>
+            <Description>Org.nr. 926 664 972</Description>
+            {/*<Button to="/contact-us">{t("footer.button")}</Button>*/}
           </Column>
           <Column>
-            <Title>{t("footer.greenspaces")}</Title>
-            <FooterLink href="/categories/takterrasse">
-              {t("footer.rooftop")}
-            </FooterLink>
-            <FooterLink href="/categories/regnseng">
-              {t("footer.rainbed")}
-            </FooterLink>
-            <FooterLink href="/categories/innendørsplanter">
-              {t("footer.indoor")}
-            </FooterLink>
+            {/*<Title>{t("footer.greenspaces")}</Title>*/}
+            {/*<FooterLink href="/categories/takterrasse">*/}
+            {/*  {t("footer.rooftop")}*/}
+            {/*</FooterLink>*/}
+            {/*<FooterLink href="/categories/regnseng">*/}
+            {/*  {t("footer.rainbed")}*/}
+            {/*</FooterLink>*/}
+            {/*<FooterLink href="/categories/innendørsplanter">*/}
+            {/*  {t("footer.indoor")}*/}
+            {/*</FooterLink>*/}
           </Column>
           <Column>
-            <Title>{t("footer.about")}</Title>
-            <FooterLink href="/what-we-do">{t("footer.what")}</FooterLink>
-            <FooterLink href="/how-it-works">{t("footer.how")}</FooterLink>
-            <FooterLink href="/why-us">{t("footer.why")}</FooterLink>
+            {/*<Title>{t("footer.about")}</Title>*/}
+            {/*<FooterLink href="/what-we-do">{t("footer.what")}</FooterLink>*/}
+            {/*<FooterLink href="/how-it-works">{t("footer.how")}</FooterLink>*/}
+            {/*<FooterLink href="/why-us">{t("footer.why")}</FooterLink>*/}
           </Column>
 
           <Column>
@@ -54,7 +54,7 @@ export function FooterContainer() {
               <Icon>
                 <GoLocation />
               </Icon>
-              Thaulows vei 1B, Oslo
+              Startup Campus, Oslo
             </FooterLink>
             <FooterLink mail onClick={() => window.open('mailto:michel@squareroot.cc')}>
               <Icon>

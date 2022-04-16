@@ -158,8 +158,8 @@ export default class ProjectProvider extends Component {
   };
 
   componentDidMount() {
-    this.fetchProjects();
-    this.createMember();
+    // this.fetchProjects();
+    // this.createMember();
   }
 
   render() {

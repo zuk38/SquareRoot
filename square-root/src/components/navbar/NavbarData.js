@@ -11,33 +11,33 @@ export const NavbarData = [
     className: "sidebar-text",
     i18nKey: "who",
   },
-  {
-    title: "PROJECTS",
-    path: "/categories",
-    className: "sidebar-text",
-    i18nKey: "greenspaces",
-    dropdown: "dropdownGreenspaces",
-    subtitle: [
-      {
-        title: "ROOFTOP",
-        i18nKey: "rooftop",
-        path: "/categories/rooftop",
-        className: "d-link",
-      },
-      {
-        title: "RAINBED",
-        i18nKey: "rainbed",
-        path: "/categories/rainbeds",
-        className: "d-link",
-      },
-      {
-        title: "INDOOR",
-        i18nKey: "indoor",
-        path: "/categories/indoor",
-        className: "d-link",
-      },
-    ],
-  },
+  // {
+  //   title: "PROJECTS",
+  //   path: "/categories",
+  //   className: "sidebar-text",
+  //   i18nKey: "greenspaces",
+  //   dropdown: "dropdownGreenspaces",
+  //   subtitle: [
+  //     {
+  //       title: "ROOFTOP",
+  //       i18nKey: "rooftop",
+  //       path: "/categories/rooftop",
+  //       className: "d-link",
+  //     },
+  //     {
+  //       title: "RAINBED",
+  //       i18nKey: "rainbed",
+  //       path: "/categories/rainbeds",
+  //       className: "d-link",
+  //     },
+  //     {
+  //       title: "INDOOR",
+  //       i18nKey: "indoor",
+  //       path: "/categories/indoor",
+  //       className: "d-link",
+  //     },
+  //   ],
+  // },
   {
     title: "CONTACT",
     path: "/contact",

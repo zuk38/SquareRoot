@@ -12,11 +12,23 @@ export const Column = styled.div`
   display: flex;
   flex-direction: column;
   text-align: left;
-  margin: 0;
+  margin: 0 20px 0 0;
   transition: all 0.2s ease-in-out;
   @media (max-width: 1200px) {
     transition: all 0.2s ease-in-out;
   }
+`;
+
+export const ColumnFlex = styled.div`
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 0 20px 0 0;
+  transition: all 0.2s ease-in-out;
+  @media (max-width: 1200px) {
+    transition: all 0.2s ease-in-out;
+  }
+  width: 33%;
 `;
 
 export const Row = styled.div`

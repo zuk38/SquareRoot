@@ -164,6 +164,10 @@ dt:first-child {
   grid-template-columns: auto 1fr;
 }
 
+.card-title {
+  margin-top: 20px;
+}
+
 .c-icon img {
   display: inline-block;
   max-width: 100%;
@@ -835,6 +839,15 @@ input:focus {
   cursor: not-allowed;
 }
 
+.nav-btn {
+  text-align: center;
+  text-transform: none;
+  padding: 5px 20px;
+  width: 100px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+
 /*ON HOVER'S */
 
 .zoom-on-hover {
@@ -1091,6 +1104,23 @@ input:focus {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
 }
+
+.platform-img {
+  margin-top: 45px;
+}
+
+.platform-img > img {
+  width: 100%;
+  border-radius: 10px;
+  margin: 10px;
+  object-fit: contain;
+}
+
+.platform-btn {
+  text-align: center;
+  margin-top: 10px;
+}
+
 /* END SPECIFIC STYLING */
 
 /* ----- OLD CSS FOR WHY.JS------

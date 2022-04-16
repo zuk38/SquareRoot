@@ -29,7 +29,7 @@
       "hero_new": "Ny hos SquareRoot?",
       "see_more": "Se mer",
       "read_more": "Les mer",
-      "demo": "Forespør Demo"
+      "platform": "Test beta versjon"
     },
     "section_two": {
       "title": "SquareRoot gjør byer <1>grønne</1>, bokstavelig talt!",
@@ -40,17 +40,25 @@
       "description": "Sammen med NIBIO, biologer, landskapsarkitekter og planteskoler har vi utviklet plantelister for urbane grøntområder og standardkonsepter, som takhager og regnbed, for å håndtere store nedbørsmengder samt øke biologisk mangfold."
     },
     "section_four": {
+      "title": "Plukk en av våre plantepakker til prosjektet ditt",
+      "description": {
+        "line_one": "Sammen med NIBIO,",
+        "line_two": " Edit ",
+        "edit_link": "https://www.edit.land/",
+        "line_tree": "og planteskoler utvikler vi stadig nye plantepakker som passer til ulike typer grønne arealer som:"
+      },
+      "summary": "Vi jobber for å tilby flere plantepakker basert på ulike forhold og områder. Ta gjerne kontakt om du ønsker å bidra til nye plantepakker!",
+      "rainbed": "Regnbed",
       "rooftop": "Takhage",
       "rooftop_description": "Optimaliser taket med et av våre konsepter for <1>takhage</1>. Plantene og utstyret er utvalgt og designet for å dekke dine behov.",
-      "rainbed_description": "Plantene for <1>regnbed</1> er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen.",
-      "indoor_description": "Vår partner Leaf har omfattende ekspertise med <1>innendørsplanter</1>. Pen estetikk kombineres med minimalt vedlikehold."
+      "rainbed_description": "Plantene for <1>regnbed</1> er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen."
     },
     "section_five": {
       "description": "Ved å integrere natur inn i bygningsprosjektet, vil det bidra til å møte kravene for overvannshåndtering. Lokale planter øker også <1>biomangfoldet</1> og dermed også <3>BREEAM-poeng</3>. <5 /> <6 /> Å bygge prosjekter med et høyt miljøavtrykk øker verdier av eiendommen din og <8>holder byene våres friske</8>."
     },
     "section_six": {
-      "title": "KOMMER SNART",
-      "description": "Vår digitale plattform gjør det å finne og bestille planter <1>enkelt og tilgjengelig overalt</1>. <3/> <4/>Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted og vise hvilke som er tilgjengelige slik at det blir levert i tide. <6 /> <7 />Kommer høsten 2021. Forespør Demo for å se hva som kommer."
+      "title": "Vår plattform",
+      "description": "Vår digital plattform gjør det enkelt å finne og bestille de beste tilpassede planter til prosjektet ditt.  <1/> <2/> Gjennom vårt nettverk bestående av lokale planteskoler, hjelper vi deg med å finne riktige planter til rett sted. Vi baserer oss på det norske sortiment men lar deg også melde hvilken planter du ikke finner hos oss du skulle ønsket. <4 /> <5 /> Vi sørger for at det du planlegger er også det som faktisk leveres! <7 /> <8 />Meld deg inn i plattformen og start å finne planter og plantepakker!"
     },
     "section_seven": {
       "title": "I samarbeid med"
@@ -71,11 +79,16 @@
   },
   "who_page": {
     "title": "Hvem vi er",
-    "description": "Ser du etter planter til å skape utmerket og klimarobuste urbane grønne arealer? Usikker på hvilken planter er tilpasset kravene og om de er tilgjengelige? SquareRoot løser dette for deg!<1/> <2/>Her kan du velge prosjekttyper og stil for arealet ditt, bestemme hvilke funksjonaliteter du ønsker å fokusere på og skreddersy plantelistene vi foreslår for deg. Vi sikrer både respekt av kravene og tilgjengeligheten av planten for deg.<4/><5/>Sammen gjør vi byene våre grønnere!<7/>",
+    "description": "Ser du etter planter til å skape utmerket og klimarobuste urbane grønne arealer? Usikker på hvilken planter er tilpasset kravene og om de er tilgjengelige? SquareRoot løser dette for deg! <1/> <2/> Her kan du finne og velge planter tilpasset prosjektet ditt og kravene enten ved å bruke filtrene til databasen vår eller ved å velge en av våre plantepakker som er spesielt lagt til visse funksjonaliteter og typer grønne arealer. Vi sikrer tilgjengeligheten av plantene for deg i samarbeid med norske planteskolene. <4/><5/> Vi tilrettelegger for flere norskproduserte planter og planter med norsk opphav til urbane grønne arealer. Vi tar utgangspunktet i det norske sortiment, og skal hjelpe planteskolene å tilpasse også til etterspørselen som stadig utvikler seg.<7/> <8/> Sammen gjør vi byene våre grønnere! <10/>",
     "team": {
-      "title": "Vårt Team",
+      "title": "Røttene til SquareRoot ",
+      "support": "Vi er så takknemlig at de hjalp oss å bygge SquareRoot:",
+      "michel_d": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.<3/><4/> Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.",
+      "marie_img_d": "Grunnlegger og COO",
+      "marie_d": "Verdensborger og dyreentusiast som elsker både innedørs og utendørs jungler. Marie er dedikert til mennesker og miljø og har kjempemye erfaring fra prosjekt management. Det er veldig viktig for henne å bidra til en lavkarbon økonomi. <1/><2/> Marie er interessert i og har ekspertise innenfor bl.a. naturvern, silkulærøkonomi, sosialentreprenørskap og dyrevelferd. <4 /> <5 /> Hun bor på en liten gård hvor hun startet også Lille Åsen Skogshage, og hvor hun tester spiselige vekster til skogshager som er tilpasset det norske klima.",
+      "greg_img_d": "CTO",
+      "greg_d": "Greg elsker teknologi og elsker å ha fokus på bærekraft. <1 /> <2 /> Med SquareRoot kombinerer han begge to til å ha en positiv påvirkning på samfunnet. Hans kjernekompetanse er dataanalyse, maskinlæring og cloud teknologier. Han er veldig opptatt av å automatisere prosesser, pålitelig leveranse og det å ekstrahere verdifulle innsikter fra data.",
       "michel_img_d": "Grunnlegger og CEO",
-      "michel_d": "Med en forkjærlighet til naturen og friluftsliv, har <1>Michel</1> en lidenskap for miljøet og å bidra med å løse problemer relatert til klimaendringer.<3/><4/>Han var med på å grunnlegge BiomimicryNorway, en frivillig organisasjon som er dedikert til å utdanne mennesker og selskaper om bærekraftig innovasjon inspirert av naturen. Han har brukt mye energi på å hjelpe forskjellige oppstartsbedrifter og initiativer de siste årene ved å bruke sine mange ferdigheter, alt fra design til forretningsmodellering for sirkulær økonomi.<6/><7/>Michel har også bidratt med å bygge for Gruten, den første norske urbane gården som dyrker sopp på kaffegrut. Han er også involvert med Pådriv i prosjekter knyttet til bærekraftig byutvikling.",
       "karolina_img_d": "Skyutvikler",
       "karolina_d": "Mesteren i å være ubesluttsom, spise veggisburgere og å ha for mange ideer på en gang, sikter <1>Karolina</1> alltid mot perfeksjon. SquareRoot ga henne muligheten til å følge lidenskapen sin, og jobbe med et meningsfylt formål som kan føre til en positiv endring i verden vi lever i. <3/><4/> Vedsiden av å ta en ingeniørgrad i IT og å elske å se gjennom alles data, setter hun pris på trening – eller en god bok – ute i naturen.",
       "gro_img_d": "Interaksjonsdesigner og frontend-utvikler",

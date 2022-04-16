@@ -23,13 +23,14 @@ import ScrollToTop from "./components/utility/ScrollToTop";
 
 class App extends Component {
   render() {
-    const { isAuthenticated, isAuthenticating, user, logout } =
-      this.props.context;
+    const isAuthenticating = false;
+    // const { isAuthenticated, isAuthenticating, user, logout } =
+    //   this.props.context;
 
     const authProps = {
-      isAuthenticated: isAuthenticated,
-      user: user,
-      logout: logout,
+      isAuthenticated: false,
+      user: '',
+      logout: null
     };
 
     return (
@@ -188,6 +189,9 @@ class App extends Component {
           </div>
           {this.props.location.pathname !== "/login" &&
             this.props.location.pathname !== "/" &&
+            this.props.location.pathname !== "/who-we-are" &&
+            this.props.location.pathname !== "/contact-us" &&
+            this.props.location.pathname !== "/become-a-partner" &&
             this.props.location.pathname !== "/en" &&
             this.props.location.pathname !== "/no" &&
             this.props.location.pathname !== "/forgotpassword" && (
