@@ -4,6 +4,10 @@ Smooth Scroll --------*/
   overflow-y: hidden;
 }
 
+.s-descr, .s-summary {
+  font-size: 1.2rem!important;
+}
+
 .front-container {
   /*scroll-behavior: smooth;*/
   /*overscroll-behavior-y: contain;*/

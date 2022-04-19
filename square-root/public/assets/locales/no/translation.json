@@ -50,6 +50,9 @@
       "summary": "Vi jobber for å tilby flere plantepakker basert på ulike forhold og områder. Ta gjerne kontakt om du ønsker å bidra til nye plantepakker!",
       "rainbed": "Regnbed",
       "rooftop": "Takhage",
+      "meadows": "Eng",
+      "front_yard": "Blomstereng",
+      "facade": "Fasader",
       "rooftop_description": "Optimaliser taket med et av våre konsepter for <1>takhage</1>. Plantene og utstyret er utvalgt og designet for å dekke dine behov.",
       "rainbed_description": "Plantene for <1>regnbed</1> er nøye utvalgt til våtområder, for å kunne stå opptil 48 timer i vann, samt med tørke-tolerante planter ved utkanten, i tørkesonen."
     },

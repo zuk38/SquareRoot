@@ -181,39 +181,47 @@ export default function Home(props) {
                 <div className="main-punchline--p">
                     <h3><Trans i18nKey="home_page.section_four.title"></Trans></h3>
 
-                    <p>
+                    <p className="s-descr">
                       <Trans i18nKey="home_page.section_four.description.line_one"></Trans>
                       <a href={t("home_page.section_four.description.edit_link")}><Trans i18nKey="home_page.section_four.description.line_two"></Trans></a>
                       <Trans i18nKey="home_page.section_four.description.line_tree"></Trans>
                     </p>
 
-                    {width >= 768 ? (
-                        <div className="container-desktop">
-                          {section_fourth_items.map((item) => (
-                            <div key={item.name} className="card">
-                              <Card item={item} openCategory={openCategory} />
-                            </div>
-                          ))}
-                        </div>
-                    ) : (
-                      <div className="container-desktop">
-                        <div>
-                          <Carousel>
-                            {section_fourth_items.map((item) => (
-                              <div
-                                key={item.name}
-                                className="card"
-                                onClick={() => openCategory(item.path)}
-                              >
-                                <Card item={item} openCategory={openCategory} carousel />
-                              </div>
-                            ))}
-                          </Carousel>
-                        </div>
-                      </div>
-                    )}
+                  <ul>
+                    <li>{t("home_page.section_four.rooftop")}</li>
+                    <li>{t("home_page.section_four.rainbed")}</li>
+                    <li>{t("home_page.section_four.meadows")}</li>
+                    <li>{t("home_page.section_four.front_yard")}</li>
+                    <li>{t("home_page.section_four.facade")}</li>
+                  </ul>
 
-                    <p>
+                    {/*{width >= 768 ? (*/}
+                    {/*    <div className="container-desktop">*/}
+                    {/*      {section_fourth_items.map((item) => (*/}
+                    {/*        <div key={item.name} className="card">*/}
+                    {/*          <Card item={item} openCategory={openCategory} />*/}
+                    {/*        </div>*/}
+                    {/*      ))}*/}
+                    {/*    </div>*/}
+                    {/*) : (*/}
+                    {/*  <div className="container-desktop">*/}
+                    {/*    <div>*/}
+                    {/*      <Carousel>*/}
+                    {/*        {section_fourth_items.map((item) => (*/}
+                    {/*          <div*/}
+                    {/*            key={item.name}*/}
+                    {/*            className="card"*/}
+                    {/*            onClick={() => openCategory(item.path)}*/}
+                    {/*          >*/}
+                    {/*            <Card item={item} openCategory={openCategory} carousel />*/}
+                    {/*          </div>*/}
+                    {/*        ))}*/}
+                    {/*      </Carousel>*/}
+                    {/*    </div>*/}
+                    {/*  </div>*/}
+                    {/*)}*/}
+
+                    <p className="s-summary">
                       <Trans i18nKey="home_page.section_four.summary"></Trans>
                     </p>
 

@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import {API, graphqlOperation} from "aws-amplify";
 import Loading from "./Loading";
 import useForm from "./hooks/useForm";
 import validate from "./utility/ContactFormValidation";
@@ -8,6 +7,7 @@ import { useHistory } from "react-router-dom";
 import Alert from "@mui/material/Alert";
 import AlertTitle from "@mui/material/AlertTitle";
 import { Trans, useTranslation } from "react-i18next";
+import {sendAWSEmail} from "../api/sendEmail";
 
 export default function ContactForm(props) {
   const { t } = useTranslation();
@@ -23,37 +23,27 @@ export default function ContactForm(props) {
   const [isSending, setIsSending] = useState(false);
   const [sent, setSent] = useState(false);
 
-  async function addContact() {
-    setIsSending(true);
-
-    const question = "MESSAGE FROM WEBSITE - Name: " + (values.name || '') + ", Location: " + (values.location || '') + ", Message: " + (values.message || '');
-
-    send({
-      type: "QUESTION",
-      isCompleted: false,
-      owner: values.email,
-      params: [
-        { name: 'senderEmail', value: "site@squareroot.cc"},
-        { name: 'profileEmail', value: values.email },
-        { name: 'profilePhone', value: values.phone || ''},
-        { name: 'question', value: question },
-        { name: 'location', value: values.location || '' },
-        { name: 'name', value: values.name || '' },
-        { name: 'order', value: '' },
-        { name: 'orderLink', value: '' },
-        { name: 'orderWebsite', value: '' },
-      ]
-    }).then((resp) => {
-      setSent(true);
-    }).catch((e) => {
-      setSent(false);
-      console.error(e);
-    }).finally(() => {
-      setIsSending(false);
-    })
+  function callback() {
+    setIsSending(false);
   }
 
-  function callback() {
+  function addContact() {
+    if (!values.email || !values.message) {
+      return;
+    }
+
+    setIsSending(true);
+
+    values.subject = props.subject;
+
+    sendAWSEmail(values.email, values).then((resp) => {
+        setSent(true);
+      }).catch((e) => {
+        setSent(false);
+        console.error(e);
+      }).finally(() => {
+        setIsSending(false);
+      })
   }
 
   const openInNewTab = (url) => {
@@ -61,35 +51,7 @@ export default function ContactForm(props) {
     if (newWindow) newWindow.opener = null;
   };
 
-  async function send(input) {
-    const statement = `mutation CreateEvent($input: CreateEventInput!, $condition: ModelEventConditionInput) {
-        createEvent(input: $input, condition: $condition) {
-          __typename
-          id
-          type
-          isCompleted
-          owner
-          params {
-            __typename
-            name
-            value
-          }
-          createdAt
-          updatedAt
-          _version
-          _deleted
-          _lastChangedAt
-        }
-      }`;
-
-    return API.graphql(
-        graphqlOperation(statement, {
-          input
-        })
-    );
-  }
-
-  return (
+    return (
     <>
       {isSending ? (
         <Loading />

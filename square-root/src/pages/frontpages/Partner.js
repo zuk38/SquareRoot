@@ -69,7 +69,7 @@ export default function Partner(props) {
                   {t("partner_page.contact")}
                 </h2>
                 <div className="u-txt--center">
-                  <ContactForm />
+                  <ContactForm subject="Partner contact from website" />
                 </div>
               </div>
             </div>

@@ -50,6 +50,9 @@
       "summary": "We’re working on offering more packages based on various climates and regions. Get in touch if you want to contribute to new plant packages!",
       "rooftop": "Rooftop",
       "rainbed": "Rainbed",
+      "meadows": "Meadows",
+      "front_yard": "Front yard",
+      "facade": "Facade",
       "rooftop_description": "Optimise your roof surface with one of our <1>rooftop</1> concepts. Our plants and hardware are chosen and designed to meet your specific needs.",
       "rainbed_description": "Our plants for <1>rainbeds</1> are carefully chosen with plants for the wet-zone, able to stand up to 48 hours in the water and drought tolerant plants at the borders, the dry-zone."
     },
