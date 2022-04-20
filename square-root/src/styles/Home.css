@@ -9,9 +9,9 @@ Smooth Scroll --------*/
 }
 
 .front-container {
-  /*scroll-behavior: smooth;*/
-  /*overscroll-behavior-y: contain;*/
-  /*scroll-snap-type: y mandatory;*/
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100vh - var(--nav-size));
@@ -129,7 +129,7 @@ section#first .d {
   font-weight: 600;
   color: white;
   line-height: 1.2em;
-  letter-spacing: 0.03;
+  letter-spacing: 0.03em;
 }
 
 .list-item {
