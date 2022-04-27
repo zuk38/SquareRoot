@@ -9,14 +9,17 @@ Smooth Scroll --------*/
 }
 
 .front-container {
-  scroll-behavior: smooth;
-  overscroll-behavior-y: contain;
-  scroll-snap-type: y mandatory;
   overflow-y: auto;
   overflow-x: hidden;
   height: calc(100vh - var(--nav-size));
   width: 100%;
   z-index: 1;
+}
+
+.smooth-scroll {
+  scroll-behavior: smooth;
+  overscroll-behavior-y: contain;
+  scroll-snap-type: y mandatory;
 }
 
 /* scroll styles */

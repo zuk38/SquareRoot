@@ -27,7 +27,7 @@ export function sendAWSEmail(email, values) {
     AWS.config.update({region: 'eu-north-1'});
 
     const params = {
-        Destination: {BccAddresses: [], CcAddresses: [], ToAddresses: [email]},
+        Destination: {BccAddresses: [], CcAddresses: [], ToAddresses: ['orders@squareroot.cc']},
         Message: {
             Body: {Html: {Data: generateHTMLInquiryEmail(email, values), Charset: 'UTF-8'}},
             Subject: {Data: values.subject || 'Contact from website', Charset: 'UTF-8'}

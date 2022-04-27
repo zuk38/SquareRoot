@@ -84,10 +84,14 @@ export default function Who() {
                   <Position>{t("who_page.team.marie_img_d")}</Position>
                   <Description>
                     <Trans i18nKey="who_page.team.marie_d">
-                      A citizen of the world and animal enthusiast who loves an indoor and outdoor jungle. Marie is committed to people and the environment and has extensive experience in project management.
+                      A citizen of the world and animal enthusiast who loves an indoor and outdoor jungle.
+                      <em>Marie</em>
+                      is committed to people and the environment and has extensive experience in project management.
                       <br />
                       <br />
-                      Contributing to a low-carbon economy is dear to Marie. She has several areas of interest and expertise going from nature preservation, circular economy,
+                      <span></span>
+                      <em></em>
+                      She has several areas of interest and expertise going from nature preservation, circular economy,
                       social entrepreneurship and animal welfare.
                       <br />
                       <br />
@@ -100,11 +104,11 @@ export default function Who() {
                   <IamgeContainer>
                     <Image src="../images/greg.jpg" alt="Greg" />
                   </IamgeContainer>
-                  <Name>Gégoire Jan </Name>
+                  <Name>Grégoire Jan </Name>
                   <Position>{t("who_page.team.greg_img_d")}</Position>
                   <Description>
                     <Trans i18nKey="who_page.team.greg_d">
-                      Greg is a technology enthusiast who wants to keep focus on sustainability.
+                      <em>Greg</em> is a technology enthusiast who wants to keep focus on sustainability.
                       <br/>
                       <br/>
                       SquareRoot gives him the chance to combine those two to have a positive impact on our society. His core competencies revolve around data analysis, machine learning and cloud technologies. He puts emphasis on automated processes, reliable delivery and extracting insights that give value.

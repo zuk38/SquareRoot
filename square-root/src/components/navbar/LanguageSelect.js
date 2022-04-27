@@ -23,6 +23,7 @@ export default function LanguageSelect() {
   const [menuAnchor, setMenuAnchor] = useState(null);
 
   useEffect(() => {
+    i18next.changeLanguage(selected);
     setMenuAnchor(languages[selected]);
   }, [selected]);
 
@@ -34,6 +35,7 @@ export default function LanguageSelect() {
     setDropdown(!dropdown);
     setMenuAnchor(languages[language]);
     i18next.changeLanguage(language);
+    cookies.set("i18next", language);
   };
 
   return (

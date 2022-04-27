@@ -57,7 +57,7 @@ export default function Home(props) {
   ];
 
   return (
-    <div className="front-container">
+    <div className="front-container smooth-scroll">
       <section id="first">
         <div className="logo">
           <img src={logo} alt="SquareRoot" />
